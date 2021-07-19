@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d948269b-c902-4d8d-8c2b-269473359baa
-ms.date: 7/9/2018
 ms.reviewer:
 title: Activate a mailbox database copy
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,14 +26,14 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 - Estimated time to complete this task: 1 minute
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to move the active mailbox database
 <a name="UseEMC"> </a>
@@ -50,43 +51,43 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 This example activates and mounts a copy of the database DB4 hosted on MBX3 as the new active mailbox database. This command makes DB4 the new active mailbox database, and it doesn't override the database mount dial settings on MBX3.
 
-```
+```powershell
 Move-ActiveMailboxDatabase DB4 -ActivateOnServer MBX3 -MountDialOverride:None
 ```
 
 This example performs a switchover of the database DB2 to the Mailbox server MBX1. When the command completes, MBX1 hosts the active copy of DB2. Because the _MountDialOverride_ parameter is set to `None`, MBX1 mounts the database using its own defined database auto mount dial settings.
 
-```
+```powershell
 Move-ActiveMailboxDatabase DB2 -ActivateOnServer MBX1 -MountDialOverride:None
 ```
 
 This example performs a switchover of the database DB1 to the Mailbox server MBX3. When the command completes, MBX3 hosts the active copy of DB1. Because the _MountDialOverride_ parameter is specified with a value of `Good Availability`, MBX3 mounts the database using a database auto mount dial setting of _GoodAvailability_.
 
-```
+```powershell
 Move-ActiveMailboxDatabase DB1 -ActivateOnServer MBX3 -MountDialOverride:GoodAvailability
 ```
 
 This example performs a switchover of the database DB3 to the Mailbox server MBX4. When the command completes, MBX4 hosts the active copy of DB3. Because the _MountDialOverride_ parameter isn't specified, MBX4 mounts the database using a database auto mount dial setting of _Lossless_.
 
-```
+```powershell
 Move-ActiveMailboxDatabase DB3 -ActivateOnServer MBX4
 ```
 
 This example performs a server switchover for the Mailbox server MBX1. All active mailbox database copies on MBX1 will be activated on one or more other Mailbox servers with healthy copies of the active databases on MBX1.
 
-```
+```powershell
 Move-ActiveMailboxDatabase -Server MBX1
 ```
 
 This example performs a switchover of the database DB4 to the Mailbox server MBX5. In this example, the database copy on MBX5 has a replay queue greater than 6. As a result, the _SkipLagChecks_ parameter must be specified to activate the database copy on MBX5.
 
-```
+```powershell
 Move-ActiveMailboxDatabase DB4 MBX5 -SkipLagChecks
 ```
 
 This example performs a switchover of the database DB5 to the Mailbox server MBX6. In this example, the database copy on MBX6 has a _ContentIndexState_ of Failed. As a result, the _SkipClientExperienceChecks_ parameter must be specified to activate the database copy on MBX6.
 
-```
+```powershell
 Move-ActiveMailboxDatabase DB5 MBX6 -SkipClientExperienceChecks
 ```
 
@@ -99,7 +100,7 @@ To verify that you've successfully activated a mailbox database copy, do one of 
 
 - In the Exchange Management Shell, run the following command to display status information for a database copy.
 
-  ```
+  ```powershell
   Get-MailboxDatabaseCopyStatus <DatabaseCopyName> | Format-List
   ```
 

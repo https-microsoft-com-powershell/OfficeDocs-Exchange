@@ -14,7 +14,8 @@
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "ThirdPartyNotices",
+          "**/common/**"
         ]
       },
       {
@@ -30,7 +31,8 @@
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "ThirdPartyNotices",
+          "**/common/**"
         ]
       },
       {
@@ -94,7 +96,8 @@
         ],
         "exclude": [
           "**/obj/**",
-          "**/includes/**"
+          "**/includes/**",
+          "ExchangeServer/**"
         ]
       },
       {
@@ -109,7 +112,11 @@
         "group": "exchangeserver",
         "exclude": [
           "**/obj/**",
-          "**/includes/**"
+          "**/includes/**",
+          "ExchangeHybrid/**",
+          "ExchangeOnline/**",
+          "ExchangeServer2013/**",
+          "Hub/**"
         ]
       }
     ],
@@ -123,19 +130,48 @@
     "externalReference": [],
     "globalMetadata": {
         "Manager": "serdars",
-        "ms.prod": "exchange",
         "ms.technology": "",
         "ms.devlang": "powershell",
         "ROBOTS": "INDEX,FOLLOW",
         "searchScope": ["Exchange"],
         "breadcrumb_path": "/exchange/breadcrumb/toc.json",
         "extendBreadcrumb": "true",
+        "recommendations": true,
+        "uhfHeaderId": "MSDocsHeader-M365-IT",
         "feedback_system": "GitHub",
         "feedback_github_repo": "MicrosoftDocs/OfficeDocs-Exchange",
-        "feedback_product_url": "https://github.com/MicrosoftDocs/OfficeDocs-Exchange/issues" 
+        "feedback_product_url": "https://github.com/MicrosoftDocs/OfficeDocs-Exchange/issues", 
+        "contributors_to_exclude": [ 
+          "rjagiewich", 
+          "traya1", 
+          "rmca14", 
+          "claydetels19", 
+          "jborsecnik",
+          "tiburd",
+          "garycentric"
+        ]
     },
     "fileMetadata": {
-        
+        "feedback_system": {
+          "ExchangeServer/**/*.md": "none",
+          "ExchangeServer2013/**/*.md": "none"
+         },
+        "feedback_github_repo": {
+          "ExchangeServer/**/*.md": "none",
+          "ExchangeServer2013/**/*.md": "none"        
+        },
+        "feedback_product_url": {
+          "ExchangeServer/**/*.md": "none",
+          "ExchangeServer2013/**/*.md": "none"        
+        },
+        "hideEdit": {
+          "ExchangeServer/**/*.md": false,
+          "ExchangeServer2013/**/*.md": true         
+        },
+        "ms.prod": {
+          "ExchangeServer/**/*.md": "exchange",
+          "ExchangeServer2013/**/*.md": "exchange"
+        }
     },
     "template": [],
     "dest": "OfficeDocs-Exchange",

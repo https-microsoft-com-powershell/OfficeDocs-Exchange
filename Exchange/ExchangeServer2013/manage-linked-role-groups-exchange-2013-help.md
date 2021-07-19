@@ -2,13 +2,14 @@
 title: 'Manage linked role groups: Exchange 2013 Help'
 TOCTitle: Manage linked role groups
 ms:assetid: e2a07395-90c2-4d62-b15d-ac3ff28fe786
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657502(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657502(v=EXCHG.150)
 ms:contentKeyID: 49289439
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,9 +21,9 @@ You can use a linked management role group to enable members of a universal secu
 
 To create and configure linked role groups, you need to use the **New-RoleGroup** and **Set-RoleGroup** cmdlets. For detailed syntax and parameter information, see the following topics:
 
-- [New-RoleGroup](https://technet.microsoft.com/en-us/library/dd638181\(v=exchg.150\))
+- [New-RoleGroup](/powershell/module/exchange/New-RoleGroup)
 
-- [Set-RoleGroup](https://technet.microsoft.com/en-us/library/dd638182\(v=exchg.150\))
+- [Set-RoleGroup](/powershell/module/exchange/Set-RoleGroup)
 
 For additional management tasks related to role groups, see [Permissions](permissions-exchange-2013-help.md).
 
@@ -38,7 +39,7 @@ For additional management tasks related to role groups, see [Permissions](permis
 
 - You must have the following information about the foreign Active Directory forest:
 
-  - **Credentials**: You must have a user name and password that can access the foreign Active Directory forest. This information is used with the *LinkedCredential* parameter on the **New-RoleGroup** and **Set-RoleGroup** cmdlets.
+  - **Credentials**: You must have a username and password that can access the foreign Active Directory forest. This information is used with the *LinkedCredential* parameter on the **New-RoleGroup** and **Set-RoleGroup** cmdlets.
 
   - **Domain controller**: You must have the fully qualified domain name (FQDN) of an Active Directory domain controller in the foreign Active Directory forest. This information is used with the *LinkedDomainController* parameter on the **New-RoleGroup** and **Set-RoleGroup** cmdlets.
 
@@ -47,7 +48,7 @@ For additional management tasks related to role groups, see [Permissions](permis
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a linked role group
 

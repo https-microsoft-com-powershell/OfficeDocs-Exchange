@@ -2,13 +2,14 @@
 title: 'Secondary dial plans: Exchange 2013 Help'
 TOCTitle: Secondary dial plans
 ms:assetid: ecf474c2-042d-4aaf-9f5b-d5138c56ef39
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff629383(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff629383(v=EXCHG.150)
 ms:contentKeyID: 54817012
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -94,25 +95,25 @@ When Microsoft Lync Server is used for Enterprise Voice, Unified Messaging can p
 
 For more information about adding, removing, or changing extensions, see one of the following:
 
-- [Change an extension number](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-extension-number)
+- [Change an extension number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-extension-number.md)
 
-- [Add an extension number](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/add-extension-number)
+- [Add an extension number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-extension-number.md)
 
-- [Remove an extension number](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/remove-extension-number)
+- [Remove an extension number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-extension-number.md)
 
 If you need to change SIP addresses or E.164 numbers for UM-enabled users, see:
 
-- [Add a SIP address](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/add-sip-address)
+- [Add a SIP address](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-sip-address.md)
 
-- [Change a SIP address](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-sip-address)
+- [Change a SIP address](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-sip-address.md)
 
-- [Remove a SIP address](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/remove-sip-address)
+- [Remove a SIP address](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-sip-address.md)
 
-- [Add an E.164 number](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/add-e-164-number)
+- [Add an E.164 number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-e-164-number.md)
 
-- [Change an E.164 number](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-e-164-number)
+- [Change an E.164 number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-e-164-number.md)
 
-- [Remove an E.164 number](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/remove-e-164-number)
+- [Remove an E.164 number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-e-164-number.md)
 
 ## Call answering
 

@@ -2,13 +2,14 @@
 title: 'Export lists from Queue Viewer: Exchange 2013 Help'
 TOCTitle: Export lists from Queue Viewer
 ms:assetid: dcb829cd-0ffd-4ea9-ac3e-eaac5a8d1194
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb691328(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb691328(v=EXCHG.150)
 ms:contentKeyID: 49286853
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -39,7 +40,7 @@ You can export lists to the following file formats:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Export a list from the result pane in Queue Viewer
 

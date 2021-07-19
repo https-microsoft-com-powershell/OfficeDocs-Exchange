@@ -4,9 +4,10 @@ TOCTitle: Create a discovery mailbox
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: bc20285d-35e2-4e49-9bd3-38abf96114ba
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,7 +26,7 @@ For more information, see [Discovery mailboxes](in-place-ediscovery-exchange-201
 
 - Estimated time to complete: 3 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Creating discovery mailboxes" entry in [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Creating discovery mailboxes" entry in [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 - Discovery mailboxes have a mailbox storage quota of 50 gigabytes (GB). This storage quota can't be increased.
 
@@ -34,7 +35,7 @@ For more information, see [Discovery mailboxes](in-place-ediscovery-exchange-201
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Create a discovery mailbox
 
@@ -44,15 +45,15 @@ This example creates a discovery mailbox named SearchResults in the Shell.
 New-Mailbox -Name SearchResults -Discovery
 ```
 
-For detailed syntax and parameter information, see [New-Mailbox](https://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx).
+For detailed syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/new-mailbox).
 
 To display a list of all discovery mailboxes in an Exchange organization, run the following command:
 
 ```powershell
-Get-Mailbox -Resultsize unlimited -Filter {RecipientTypeDetails -eq "DiscoveryMailbox"}
+Get-Mailbox -Resultsize unlimited -Filter "RecipientTypeDetails -eq 'DiscoveryMailbox'"
 ```
 
-For detailed syntax and parameter information, see [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx).
+For detailed syntax and parameter information, see [Get-Mailbox](/powershell/module/exchange/get-mailbox).
 
 ## Step 2: Assign permissions to a discovery mailbox
 
@@ -68,7 +69,7 @@ For example, the following command assigns the Full Access permission to the Lit
 Add-MailboxPermission "Fabrikam Litigation" -User "Litigation Managers" -AccessRights FullAccess -InheritanceType all
 ```
 
-For detailed syntax and parameter information, see [Add-MailboxPermission](https://technet.microsoft.com/library/a9aacbf5-5e6c-47ef-95d6-e24547e95d01.aspx).
+For detailed syntax and parameter information, see [Add-MailboxPermission](/powershell/module/exchange/add-mailboxpermission).
 
 ## More information
 

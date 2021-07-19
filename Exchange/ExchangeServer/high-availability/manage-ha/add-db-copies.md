@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 784bf48f-8af5-422c-a63f-2f01fc0cf151
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Add a mailbox database copy
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -42,7 +43,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to add a mailbox database copy
 <a name="UseEMC"> </a>
@@ -66,19 +67,19 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 This example adds a copy of mailbox database DB1 to the Mailbox server MBX3. Replay lag time and truncation lag time are left at the default values of zero, and the activation preference is configured with a value of 2.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB1 -MailboxServer MBX3 -ActivationPreference 2
 ```
 
 This example adds a copy of mailbox database DB2 to the Mailbox server MBX4. Replay lag time and truncation lag time are left at the default values of zero, and the activation preference is configured with a value of `5`. In addition, seeding is being postponed for this copy so that it can be seeded using a local source server instead of the current active database copy, which is geographically distant from MBX4.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB2 -MailboxServer MBX4 -ActivationPreference 5 -SeedingPostponed
 ```
 
 This example adds a copy of mailbox database DB3 to the Mailbox server MBX5. Replay lag time is set to 3 days, truncation lag time is left at the default value of zero, and the activation preference is configured with a value of `4`.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB3 -MailboxServer MBX5 -ReplayLagTime 3.00:00:00 -ActivationPreference 4
 ```
 
@@ -91,7 +92,7 @@ To verify that you have successfully created a mailbox database copy, do one of 
 
 - In the Exchange Management Shell, run the following command to verify the mailbox database copy was created and is healthy.
 
-  ```
+  ```powershell
   Get-MailboxDatabaseCopyStatus <DatabaseCopyName>
   ```
 

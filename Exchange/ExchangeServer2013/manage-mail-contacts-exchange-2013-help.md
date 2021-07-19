@@ -4,11 +4,12 @@ TOCTitle: Manage mail contacts
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Recipients.NewMailContactWizardForm.NewMailContactIntroductionWizardPage'
 ms.assetid: 74c72aed-e9ff-4927-8eb7-c08a86e79ae0
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,18 +17,18 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Mail contacts are mail-enabled directory service objects that contain information about people or organizations that exist outside your Exchange organization. Each mail contact has an external email address. For more information about mail contacts, see [Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+Mail contacts are mail-enabled directory service objects that contain information about people or organizations that exist outside your Exchange organization. Each mail contact has an external email address. For more information about mail contacts, see [Recipients](recipients-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Mailbox Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a mail contact
 
@@ -144,13 +145,13 @@ Properties for a mail contact are stored in both Active Directory and Exchange. 
 
 For more information, see the following topics:
 
-- [Get-Contact](https://technet.microsoft.com/library/59315afb-fab5-4984-b3a1-ba1f82df8a10.aspx)
+- [Get-Contact](/powershell/module/exchange/get-contact)
 
-- [Set-Contact](https://technet.microsoft.com/library/c86ca5af-bb1d-4619-8af8-9f04c83d84c5.aspx)
+- [Set-Contact](/powershell/module/exchange/set-contact)
 
-- [Get-MailContact](https://technet.microsoft.com/library/d254bdd5-d497-424c-97ad-d7e8f7e73c27.aspx)
+- [Get-MailContact](/powershell/module/exchange/get-mailcontact)
 
-- [Set-MailContact](https://technet.microsoft.com/library/04c4e889-8546-4395-9d26-31af08264e45.aspx)
+- [Set-MailContact](/powershell/module/exchange/set-mailcontact)
 
 Here are some examples of using the Shell to change mail contact properties.
 
@@ -222,5 +223,5 @@ To verify that you've successfully bulk edited mail contacts, do one of the foll
 - In the Shell, use the **Get-Contact** cmdlet to verify the changes. For example, say you used the bulk edit feature in the EAC to change the manager and the office for all mail contacts from a vendor company named A. Datum Corporation. To verify these changes, you could run the following command in the Shell.
 
   ```powershell
-  Get-Contact -ResultSize unlimited -Filter {(Company -eq 'Adatum')} | Format-List Name,Office,Manager
+  Get-Contact -ResultSize unlimited -Filter "Company -eq 'Adatum'" | Format-List Name,Office,Manager
   ```

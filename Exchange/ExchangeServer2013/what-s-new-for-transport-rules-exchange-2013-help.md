@@ -2,13 +2,14 @@
 title: "What's new for transport rules: Exchange 2013 Help"
 TOCTitle: What's new for transport rules
 ms:assetid: 0c2fc0b5-3cd2-4d79-aa2b-0c7622ae15a8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150483(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150483(v=EXCHG.150)
 ms:contentKeyID: 47559940
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,9 +23,9 @@ In Microsoft Exchange Server 2013, several improvements have been made to transp
 
 Data loss prevention (DLP) features in Exchange 2013 can help organizations reduce unintentional disclosure of sensitive data. Transport rules have been updated to support creating rules that accompany and enforce DLP policies. To learn more about DLP support in transport rules, see the following topics:
 
-[Integrating sensitive information rules with transport rules](https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/integrate-sensitive-information-rules)
+[Integrating sensitive information rules with transport rules](../ExchangeOnline/security-and-compliance/data-loss-prevention/integrate-sensitive-information-rules.md)
 
-[Data loss prevention](https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention)
+[Data loss prevention](../ExchangeOnline/security-and-compliance/data-loss-prevention/data-loss-prevention.md)
 
 ## New predicates and actions
 
@@ -40,7 +41,7 @@ For detailed information about using these new predicates and actions, see [Tran
 
 - **HasSenderOverride**: Used to detect messages where the sender has chosen to override a DLP policy restriction.
 
-- **MessageContainsDataClassifications**: Used to detect sensitive information in the message body and any of the attachments. For a list of data classifications available, see [What the sensitive information types in Exchange look for](what-the-sensitive-information-types-in-exchange-look-for-exchange-online-help.md).
+- **MessageContainsDataClassifications**: Used to detect sensitive information in the message body and any of the attachments. For a list of data classifications available, see [What the sensitive information types in Exchange 2013 look for](what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md).
 
 - **MessageSizeOver**: Used to detect messages whose overall size is greater than or equal to the specified limit.
 

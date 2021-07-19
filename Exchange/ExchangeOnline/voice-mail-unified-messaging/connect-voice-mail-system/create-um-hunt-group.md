@@ -3,12 +3,13 @@ localization_priority: Normal
 description: A Unified Messaging (UM) hunt group is a logical representation of a Private Branch eXchange (PBX) or IP PBX hunt group. A UM hunt group acts as a connection or link between a UM IP gateway and a UM dial plan.
 ms.topic: article
 author: msdmaguire
-f1_keywords:
-- Microsoft.Exchange.Management.SnapIn.Esm.Servers.UnifiedMessaging.CreateUMHuntGroupWizardForm.CreateUMHuntGroupWizardPage1
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 43ecb1ec-5f82-4516-9010-de8f954d3758
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- CSH
+ms.custom:
+- Microsoft.Exchange.Management.SnapIn.Esm.Servers.UnifiedMessaging.CreateUMHuntGroupWizardForm.CreateUMHuntGroupWizardPage1
 title: Create a UM hunt group in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -33,7 +34,7 @@ For additional management tasks related to UM hunt groups, see [UM hunt group pr
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM hunt groups" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan.md).
 
@@ -42,7 +43,7 @@ For additional management tasks related to UM hunt groups, see [UM hunt group pr
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create a UM hunt group
 
@@ -68,12 +69,12 @@ For additional management tasks related to UM hunt groups, see [UM hunt group pr
 
 This example creates a UM hunt group named `MyUMHuntGroup` that has a pilot identifier of 12345.
 
-```
+```PowerShell
 New-UMHuntGroup -Name MyUMHuntGroup -PilotIdentifier 12345 -UMDialplan MyUMDialPlan -UMIPGateway MyUMIPGateway
 ```
 
 This example creates a UM hunt group named `MyUMHuntGroup` that has multiple pilot identifiers.
 
-```
+```PowerShell
 New-UMHuntGroup -Name MyUMHuntGroup -PilotIdentifier 5551234,55555 -UMDialplan MyUMDialPlan -UMIPGateway MyUMIPGateway
 ```

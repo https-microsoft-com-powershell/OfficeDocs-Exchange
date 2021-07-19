@@ -5,12 +5,13 @@ ms.topic: hub-page
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 692c59e3-f0b0-4cef-a66e-751aa740abae
-ms.date: 7/27/2018
-ms.reviewer: 
+ms.reviewer:
 title: Planning and deployment for Exchange Server
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -43,7 +44,7 @@ This topic contains links to topics and information about planning for and then 
 
 > Learn about the Windows Server features and the other software that needs to be installed for a successful installation of Exchange.
 
-[Microsoft Exchange Server Deployment Assistant](https://go.microsoft.com/fwlink/p/?LinkId=626978)
+[Microsoft Exchange Server Deployment Assistant](https://assistants.microsoft.com/)
 
 > Use this tool to generate a customized checklist for planning, installing, or upgrading Exchange. Guidance is available for multiple scenarios, including an on-premises, hybrid, or cloud deployment.
 
@@ -55,15 +56,15 @@ This topic contains links to topics and information about planning for and then 
 
 > Learn about the built-in antispam and antimalware protection options in Exchange.
 
-[Exchange Server Hybrid Deployments](https://docs.microsoft.com/exchange/exchange-hybrid)
+[Exchange Server Hybrid Deployments](../../ExchangeHybrid/exchange-hybrid.md)
 
-> Learn about planning a hybrid deployment with Microsoft Office 365 and your on-premises Exchange organization.
+> Learn about planning a hybrid deployment with Microsoft 365 or Office 365 and your on-premises Exchange organization.
 
 [Exchange Server virtualization](../plan-and-deploy/virtualization.md)
 
 > Learn how you can deploy Exchange in a virtualized environment.
 
-[Exchange Online and Exchange development](https://docs.microsoft.com/exchange/client-developer/exchange-server-development)
+[Exchange Online and Exchange development](/exchange/client-developer/exchange-server-development)
 
 > Learn about the application programming interfaces (APIs) that are available for applications that use Exchange 2019.
 
@@ -75,7 +76,7 @@ The test environment will act as your "proof of concept" for your new Exchange d
 
 For many organizations, the costs of building a test lab may be high because of the need to duplicate the production environment. To reduce the hardware costs associated with a prototype lab, we recommend the use of virtualization by using Hyper-V technologies in Windows Server. Hyper-V enables server virtualization, allowing multiple virtual operating systems to run on a single physical machine.
 
-For more detailed information about Hyper-V, see [Server Virtualization](https://go.microsoft.com/fwlink/p/?LinkId=117704). For information about the Microsoft support of production Exchange servers on hardware virtualization software, see [Exchange Server virtualization](virtualization.md).
+For more detailed information about Hyper-V, see [Server Virtualization](/windows-server/virtualization/virtualization). For information about the Microsoft support of production Exchange servers on hardware virtualization software, see [Exchange Server virtualization](virtualization.md).
 
 ## Deploy Exchange 2016 or Exchange 2019
 
@@ -91,6 +92,10 @@ Use the information at the following links to help you deploy Exchange.
 
 > Learn about using the Setup wizard to install Mailbox servers.
 
+  Always install the **latest Exchange Cumulative Update** (CU) ([Exchange Server build numbers and release dates | Microsoft Docs](../new-features/build-numbers-and-release-dates.md)). There is no need to install the RTM build or previous builds and then upgrade to the latest Cumulative Update. This is because each Cumulative Update is a full build of the product.
+
+  Update with **latest Exchange Security Update** (SU) **before** bringing the server online. Verify with the Exchange Health Checker script: <https://aka.ms/ExchangeHealthChecker>.
+
 [Use unattended mode in Exchange Setup](deploy-new-installations/unattended-installs.md)
 
 > Learn about using the unattended setup at the command line to install, remove, update, and recover Exchange servers.
@@ -103,7 +108,19 @@ Use the information at the following links to help you deploy Exchange.
 
 > Learn about finding and installing the latest Cumulative Update (CU) for the Exchange servers in your organization.
 
-[Exchange Server Hybrid Deployments](https://docs.microsoft.com/exchange/exchange-hybrid)
+  Keep your servers as **up to date** as possible. Always be either on latest released Exchange Cumulative Update (CU) or latest released -1 CU.
+
+   1. This page contains links to the latest Exchange CU bits: [Exchange Server build numbers and release dates | Microsoft Docs](../new-features/build-numbers-and-release-dates.md).
+
+   2. See: [Upgrade Exchange to the latest Cumulative Update | Microsoft Docs](./install-cumulative-updates.md).
+
+  Ensure **Windows Update/Microsoft Update** (WU/MU) is turned on and consider further turning on **Automatic Update** to pick up Security Updates (SU's).
+
+  Use an **elevated command prompt** to run [any Cumulative Update or Security Update](/exchange/troubleshoot/setup/ex2019-setup-does-not-run-correctly-started-powershell). If you run into any problems when running update setup, please see <https://aka.ms/exupdatefaq>.
+
+  Periodically, run the **Exchange Health Checker** script will check if the latest Exchange SUs are in place: <https://aka.ms/ExchangeHealthChecker>.
+
+[Exchange Server Hybrid Deployments](../../ExchangeHybrid/exchange-hybrid.md)
 
 > Read this topic for information that will help you deploy Exchange in an existing hybrid deployment.
 
@@ -117,7 +134,7 @@ You can use different types and modes of Exchange Setup to install and maintain 
 
 ### Exchange editions and versions
 
-Exchange is available in two server editions: Standard Edition and Enterprise Edition. The edition you install is defined by your product key (the only available download can install both versions). For more information, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
+Exchange is available in two server editions: Standard Edition and Enterprise Edition. The edition you install is defined by your product key (the only available download can install both versions). For more information, see [Exchange licensing FAQs](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview).
 
 ### Types of Exchange Setup
 

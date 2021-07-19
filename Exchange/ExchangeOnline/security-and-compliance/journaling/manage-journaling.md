@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Admins can learn how to view, create, modify, enable, disable, and delete journal rules in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: d517f27e-f80a-4a06-988c-cbbf981c701d
-ms.date: 
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Manage journaling in Exchange Online
 ms.collection: 
 - exchange-online
@@ -27,16 +28,16 @@ This topic shows you how to perform basic tasks related to managing journaling i
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Journaling" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Journaling" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
-- You need to have a journaling mailbox and (optionally) an alternate journaling mailbox configured. For more information, see [Configure Journaling in Exchange Online](configure-journaling.md).
+- You need to have a journaling mailbox and an alternate journaling mailbox configured. For more information, see [Configure Journaling in Exchange Online](configure-journaling.md).
 
-- In Exchange Online, there's a limit to the number of journal rules that you can create. For details, see [Journal, Transport, and Inbox rule limits](https://docs.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#journal-transport-and-inbox-rule-limits).
+- In Exchange Online, there's a limit to the number of journal rules that you can create. For details, see [Journal, Transport, and Inbox rule limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#journal-transport-and-inbox-rule-limits).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). If you're having trouble with the **JournalingReportDNRTo** mailbox, see [Transport and Mailbox Rules in Exchange Online don't work as expected](https://go.microsoft.com/fwlink/p/?LinkId=331674).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE). If you're having trouble with the **JournalingReportDNRTo** mailbox, see [Transport and Mailbox Rules in Exchange Online don't work as expected](https://support.microsoft.com/help/2829319).
 
 ## Create a journal rule
 
@@ -61,7 +62,7 @@ This topic shows you how to perform basic tasks related to managing journaling i
 
 This example creates the journal rule Discovery Journal Recipients to journal all messages sent from and received by the recipient user1@contoso.com.
 
-```
+```PowerShell
 New-JournalRule -Name "Discovery Journal Recipients" -Recipient user1@contoso.com -JournalEmailAddress "Journal Mailbox" -Scope Global -Enabled $True
 ```
 
@@ -73,7 +74,7 @@ To verify that you have successfully created the journal rule, do one of the fol
 
 - From Exchange Online PowerShell, verify that the new journal rule exists by running the following command (the example below verifies the rule created in Exchange Online PowerShell example above):
 
-   ```
+   ```PowerShell
    Get-JournalRule -Identity "Discovery Journal Recipients"
    ```
 
@@ -93,17 +94,17 @@ To verify that you have successfully created the journal rule, do one of the fol
 
 This example displays a summary list of all journal rules in the Exchange organization:
 
-```
+```PowerShell
 Get-JournalRule
 ```
 
 This example retrieves the journal rule Brokerage Journal Rule, and pipes the output to the **Format-List** command to display rule properties in a list format:
 
-```
+```PowerShell
 Get-JournalRule -Identity "Brokerage Journal Rule" | Format-List
 ```
 
-If you want to modify the properties of a specific rule, you need to use the [Set-JournalRule](https://technet.microsoft.com/library/e72562c6-64d2-43c3-81b0-062e7d7b28c9.aspx) cmdlet. This example changes the name of the journal rule `JR-Sales` to `TraderVault`. The following rule settings are also changed:
+If you want to modify the properties of a specific rule, you need to use the [Set-JournalRule](/powershell/module/exchange/set-journalrule) cmdlet. This example changes the name of the journal rule `JR-Sales` to `TraderVault`. The following rule settings are also changed:
 
 - Recipient
 
@@ -111,7 +112,7 @@ If you want to modify the properties of a specific rule, you need to use the [Se
 
 - Scope
 
-```
+```PowerShell
 Set-JournalRule -Identity "JR-Sales" -Name TraderVault -Recipient traders@woodgrovebank.com -JournalEmailAddress tradervault@woodgrovebank.com -Scope Internal
 ```
 
@@ -123,7 +124,7 @@ To verify that you have successfully modified a journal rule, do one of the foll
 
 - From Exchange Online PowerShell, verify that you modified the journal rule successfully by running the following command. This command will list the properties you modified along with the name of the rule (the example below verifies the rule modified in Exchange Online PowerShell example above):
 
-  ```
+  ```PowerShell
   Get-JournalRule -Identity "TraderVault" | Format-List Name,Recipient,JournalEmailAddress,Scope
   ```
 
@@ -142,13 +143,13 @@ To verify that you have successfully modified a journal rule, do one of the foll
 
 This example enables the rule Contoso.
 
-```
+```PowerShell
 Enable-JournalRule -Identity "Contoso Journal Rule"
 ```
 
 This example disables the rule Contoso.
 
-```
+```PowerShell
 Disable-JournalRule -Identity "Contoso Journal Rule"
 ```
 
@@ -160,7 +161,7 @@ To verify that you have successfully enabled or disabled a journal rule, do one 
 
 - From Exchange Online PowerShell, run the following command to return a list of all journal rules in your organization along, including their status:
 
-  ```
+  ```PowerShell
   Get-JournalRule | Format-Table Name,Enabled
   ```
 
@@ -176,7 +177,7 @@ To verify that you have successfully enabled or disabled a journal rule, do one 
 
 This example removes the rule Brokerage Journal Rule.
 
-```
+```PowerShell
 Remove-JournalRule -Identity "Brokerage Journal Rule"
 ```
 
@@ -188,22 +189,20 @@ To verify that you have successfully removed the journal rule, do one of the fol
 
 - From Exchange Online PowerShell, run the following command to verify that the rule you removed is no longer listed:
 
-  ```
+  ```PowerShell
   Get-JournalRule
   ```
 
 ## For more information
 
-[Disable or Enable Journaling of Voice Mail and Missed Call Notifications](https://technet.microsoft.com/library/5164a92e-69e6-4339-b80c-0cfbf0dc0198.aspx)
+[New-JournalRule](/powershell/module/exchange/new-journalrule)
 
-[New-JournalRule](https://technet.microsoft.com/library/fcad9ef1-b3f2-442d-a1a7-cd1bbe442054.aspx)
+[Get-JournalRule](/powershell/module/exchange/get-journalrule)
 
-[Get-JournalRule](https://technet.microsoft.com/library/7620913f-cf28-4e82-983f-61a79f0b6e5a.aspx)
+[Set-JournalRule](/powershell/module/exchange/set-journalrule)
 
-[Set-JournalRule](https://technet.microsoft.com/library/e72562c6-64d2-43c3-81b0-062e7d7b28c9.aspx)
+[Enable-JournalRule](/powershell/module/exchange/enable-journalrule)
 
-[Enable-JournalRule](https://technet.microsoft.com/library/9a4b01b9-27d4-41e6-9573-86e27e82de2d.aspx)
+[Disable-JournalRule](/powershell/module/exchange/disable-journalrule)
 
-[Disable-JournalRule](https://technet.microsoft.com/library/0324144b-2818-4e7f-a483-d6d6a19f8276.aspx)
-
-[Remove-JournalRule](https://technet.microsoft.com/library/7cb9d691-2b0c-4f64-982d-ce69f3c3e757.aspx)
+[Remove-JournalRule](/powershell/module/exchange/remove-journalrule)

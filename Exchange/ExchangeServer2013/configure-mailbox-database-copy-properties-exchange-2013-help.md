@@ -2,13 +2,14 @@
 title: 'Configure mailbox database copy properties: Exchange 2013 Help'
 TOCTitle: Configure mailbox database copy properties
 ms:assetid: cf186561-ab2c-45c0-90f5-8d3ecfabeeac
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351151(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351151(v=EXCHG.150)
 ms:contentKeyID: 48385566
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ Each mailbox database copy has its own properties that you can configure. These 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to configure mailbox database copy properties
 
@@ -91,8 +92,8 @@ To verify that you've successfully configured a mailbox database copy, do one of
 
 ## For more information
 
-[Set-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd298104\(v=exchg.150\))
+[Set-MailboxDatabaseCopy](/powershell/module/exchange/Set-MailboxDatabaseCopy)
 
-[Get-MailboxDatabaseCopyStatus](https://technet.microsoft.com/en-us/library/dd298044\(v=exchg.150\))
+[Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/Get-MailboxDatabaseCopyStatus)
 
-[Get-MailboxDatabase](https://technet.microsoft.com/en-us/library/bb124924\(v=exchg.150\))
+[Get-MailboxDatabase](/powershell/module/exchange/Get-MailboxDatabase)

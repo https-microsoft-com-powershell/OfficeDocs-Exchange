@@ -7,9 +7,10 @@ author: msdmaguire
 ms.prod: exchange-server-it-pro
 ms.assetid: b7f26eca-b93b-4834-ba50-11febdefbb18
 ms.collection: exchange-server
-ms.date: 7/6/2018
 ms.reviewer:
 manager: serdars
+f1.keywords:
+- NOCSH
 audience: ITPro
 title: Procedures for offline address books in Exchange Server
 
@@ -57,40 +58,40 @@ To change the OAB generation schedule, see [Change the offline address book gene
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Email address and address book permissions](../../permissions/feature-permissions/address-book-permissions.md) topic.
 
-- You can't do most of these procedures in the Exchange admin center (EAC). You need to use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell). For more information about the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md).
+- You can't do most of these procedures in the Exchange admin center (EAC). You need to use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell). For more information about the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to view offline address books
 
 To view OABs, use the following syntax:
 
-```
+```PowerShell
 Get-OfflineAddressBook [-Identity <OABIdentity>]
 ```
 
 This example returns a summary list of all OABs in your organization.
 
-```
+```PowerShell
 Get-OfflineAddressBook
 ```
 
 This example returns detailed information about the OAB named Default Offline Address Book.
 
-```
+```PowerShell
 Get-OfflineAddressBook -Identity "Default Offline Address Book" | Format-List
 ```
 
 This example returns values for the specified properties on all OABs in your organization.
 
-```
+```PowerShell
 Get-OfflineAddressBook | Format-List Name,GUID,AddressLists,GeneratingMailbox,IsDefault,VirtualDirectories,GlobalWebDistributionEnabled,ShadowMailboxDistributionEnabled
 ```
 
-For detailed syntax and parameter information, see [Get-OfflineAddressBook](https://technet.microsoft.com/library/4f865c2b-21c6-46cc-9c77-a3fc98538a40.aspx).
+For detailed syntax and parameter information, see [Get-OfflineAddressBook](/powershell/module/exchange/get-offlineaddressbook).
 
 ## Use the Exchange Management Shell to create offline address books
 
@@ -98,7 +99,7 @@ If you've created multiple address lists, you can use OABs to make the address l
 
 To create new offline address books, use the following syntax:
 
-```
+```PowerShell
 New-OfflineAddressBook -Name "<Name>" -AddressLists "<GlobalAddressListOrAddressList1>","<GlobalAddressListOrAddressList2>,..." [-GlobalWebDistributionEnabled $true] [-GeneratingMailbox <OrganizationMailboxIdentity>] [-IsDefault $true] [-ShadowMailboxDistributionEnabled $true]
 ```
 
@@ -114,17 +115,17 @@ This example creates a new OAB named Contoso Executives OAB with the following p
 
 - Shadow distribution for the OAB is disabled (read-only copies of the OAB aren't copied to all other organization mailboxes, because we didn't use the _ShadowMailboxDistributionEnabled_ parameter with the value `$true`).
 
-```
+```PowerShell
 New-OfflineAddressBook -Name "Contoso Executives OAB" -AddressLists "Default Global Address List","Contoso Executives Address List" -GlobalWebDistributionEnabled $true
 ```
 
-For detailed syntax and parameter information, see [New-OfflineAddressBook](https://technet.microsoft.com/library/8b9a3931-90c3-4b36-9dcb-5e2e65cd7e5e.aspx).
+For detailed syntax and parameter information, see [New-OfflineAddressBook](/powershell/module/exchange/new-offlineaddressbook).
 
 ### How do you know this worked?
 
 To verify that you've successfully created the OAB, run the following command to verify the property values:
 
-```
+```PowerShell
 Get-OfflineAddressBook | Format-List Name,AddressLists,GeneratingMailbox,IsDefault,VirtualDirectories,GlobalWebDistributionEnabled
 ```
 
@@ -132,11 +133,11 @@ Get-OfflineAddressBook | Format-List Name,AddressLists,GeneratingMailbox,IsDefau
 
 To modify OABs, use the following syntax:
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "<OABIdentity>" [-Name <Name>] [-AddressLists "<GlobalAddressListOrAddressList1>","<GlobalAddressListOrAddressList2>,..."] [-VirtualDirectories $null] [-GlobalWebDistributionEnabled $true] [-GeneratingMailbox <OrganizationMailboxIdentity>] [-IsDefault $true] [-ShadowMailboxDistributionEnabled <$true | $false>]
 ```
 
-For detailed syntax and parameter information, see [Set-OfflineAddressBook](https://technet.microsoft.com/library/1221dda7-1923-4fec-a756-7540e18ae9f9.aspx).
+For detailed syntax and parameter information, see [Set-OfflineAddressBook](/powershell/module/exchange/set-offlineaddressbook).
 
 ### Use the Exchange Management Shell to configure the default offline address book
 
@@ -150,7 +151,7 @@ By default, the automatically-created OAB named Default Offline Address Book is 
 
 This example configures the OAB named Contoso Executives OAB to be the default OAB.
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "Contoso Executives OAB" -IsDefault $true
 ```
 
@@ -160,13 +161,13 @@ When you modify the address lists that are configured in an OAB, the values that
 
 In this example, the OAB named Marketing OAB is already configured with Address List 1 and Address List 2. To keeps those address lists and add Address List 3, run the following command:
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "Marketing OAB" -Address Lists "Address List1","Address List 2","Address List 3"
 ```
 
 Similarly, to keep the OAB configured with Address List 1 and Address 2, but remove Address List 3, run the following command:
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "Marketing OAB" -AddressLists "Address List 1","Address List 2"
 ```
 
@@ -176,7 +177,7 @@ Typically, you only need to configure multiple organization mailboxes if you hav
 
 This example changes the organization mailbox that's responsible for generating the OAB named Default Offline Address Book.
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "Default Offline Address Book" -GeneratingMailbox OABGen2
 ```
 
@@ -190,13 +191,13 @@ This example modifies the OAB named Default Offline Address Book to allow any vi
 
 1. Run the following command:
 
-   ```
+   ```PowerShell
    Set-OfflineAddressBook -Identity "Default Offline Address Book" -VirtualDirectories $null
    ```
 
 2. Run the following command:
 
-   ```
+   ```PowerShell
    Set-OfflineAddressBook -Identity "Default Offline Address Book" -GlobalWebDistributionEnabled $true
    ```
 
@@ -206,7 +207,7 @@ Before you enable shadow distribution to distribute a read-only copy of the OAB 
 
 This example enables shadow distribution for the OAB named Contoso Executives OAB.
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "Contoso Executives OAB" -ShadowMailboxDistributionEnabled $true
 ```
 
@@ -214,7 +215,7 @@ Set-OfflineAddressBook -Identity "Contoso Executives OAB" -ShadowMailboxDistribu
 
 To verify that you've successfully modified the OAB, run the following command to verify the property values:
 
-```
+```PowerShell
 Get-OfflineAddressBook | Format-List Name,AddressLists,GeneratingMailbox,IsDefault,VirtualDirectories,GlobalWebDistributionEnabled,
 ```
 
@@ -226,35 +227,35 @@ To change the OAB generation schedule, see [Change the offline address book gene
 
 To update an OAB, use the following syntax:
 
-```
+```PowerShell
 Update-OfflineAddressBook -Identity <OABIdentity>
 ```
 
 This example updates the OAB named Default Offline Address Book.
 
-```
+```PowerShell
 Update-OfflineAddressBook -Identity "Default Offline Address Book"
 ```
 
 This example updates all OABs.
 
-```
+```PowerShell
 Get-OfflineAddressBook | Update-OfflineAddressBook
 ```
 
-For detailed syntax and parameter information, see [Update-OfflineAddressBook](https://technet.microsoft.com/library/08ee5bd7-1c23-492e-8952-d37b2a61c022.aspx).
+For detailed syntax and parameter information, see [Update-OfflineAddressBook](/powershell/module/exchange/update-offlineaddressbook).
 
 ## Use the Exchange Management Shell to remove offline address books
 
 To remove OABs, use the following syntax:
 
-```
+```PowerShell
 Remove-OfflineAddressBook -Identity <OABIdentity>
 ```
 
 This example removes the OAB named Contoso Executives OAB.
 
-```
+```PowerShell
 Remove-OfflineAddressBook -Identity "Contoso Executives OAB"
 ```
 
@@ -264,7 +265,7 @@ Remove-OfflineAddressBook -Identity "Contoso Executives OAB"
 
 To verify that you've successfully removed the OAB, run the following command to verify that the OAB is gone.
 
-```
+```PowerShell
 Get-OfflineAddressBook
 ```
 
@@ -272,13 +273,13 @@ Get-OfflineAddressBook
 
 Only organization mailboxes can generate OABs. An organization mailbox is an arbitration mailbox that has the `OrganizationCapabilityOABGen` value in the **PersistedCapability** property. To find the organization mailboxes in your organization, run the following command:
 
-```
+```PowerShell
 Get-Mailbox -Arbitration | where {$_.PersistedCapabilities -like "*OAB*"} | Format-List Name,ServerName,PersistedCapabilities
 ```
 
 To find the organization mailbox that's used to generate an OAB, run the following command:
 
-```
+```PowerShell
 Get-OfflineAddressBook | Format-List Name,AddressLists,GeneratingMailbox,IsDefault
 ```
 
@@ -290,31 +291,31 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 1. Create an arbitration mailbox by using the following syntax:
 
-   ```
+   ```PowerShell
    New-Mailbox -Arbitration -Name <UniqueName> -UserPrincipalName <UPN> [-Database <DBIdentity>] [-Alias <Alias>] [-DisplayName "<DisplayName>"]
    ```
 
    This example creates a new arbitration mailbox named OAB Gen 2, with the UPN (account name) oabgen2@contoso.com, in the default database.
 
-   ```
+   ```PowerShell
    New-Mailbox -Arbitration -Name "OAB Gen 2" -UserPrincipalName oabgen2@contoso.com
    ```
 
 2. Turn the arbitration mailbox into an organization mailbox by using the following syntax:
 
-   ```
+   ```PowerShell
    Set-Mailbox -Identity <MailboxIdentity> -Arbitration -OABGen $true -MaxSendSize 1GB
    ```
 
    This example turns the OAB Gen 2 arbitration mailbox into an organization mailbox.
 
-   ```
+   ```PowerShell
    Set-Mailbox -Identity "OAB Gen 2" -Arbitration -OABGen $true -MaxSendSize 1GB
    ```
 
 3. To activate the OAB generation capabilities of the new organization mailbox, run **Update-OfflineAddressBook** for *any* OAB in the organization. For example:
 
-   ```
+   ```PowerShell
    Update-OfflineAddressBook -Identity "Default Offline Address Book"
    ```
 
@@ -322,7 +323,7 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 To verify that you've successfully created an organization mailbox, run the following command and verify the mailbox is returned:
 
-```
+```PowerShell
 Get-Mailbox -Arbitration | where {$_.PersistedCapabilities -like "*OAB*"} | Format-List Name,ServerName,PersistedCapabilities
 ```
 
@@ -350,13 +351,13 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 Use the following syntax:
 
-```
+```PowerShell
 Set-MailboxDatabase -Identity <DatabaseIdentity> -OfflineAddressBook <OABIdentity>
 ```
 
 This example assigns the OAB named Contoso Executives OAB to the mailbox database named MBX DB02.
 
-```
+```PowerShell
 Set-MailboxDatabase -Identity "MBX DB02" -OfflineAddressBook "Contoso Executives OAB"
 ```
 
@@ -368,7 +369,7 @@ To verify that you've successfully assigned an OAB to a mailbox database, use ei
 
 - In the Exchange Management Shell, run the following command:
 
-  ```
+  ```PowerShell
   Get-MailboxDatabase | Format-Table -Auto Name,OfflineAddressBook
   ```
 
@@ -382,26 +383,26 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 To assign an OAB to a mailbox, use the following syntax:
 
-```
+```PowerShell
 Set-Mailbox -Identity <MailboxIdentity> -OfflineAddressBook <OABIdentity>
 ```
 
 This example assigns the OAB named Contoso Executives to the mailbox laura@contoso.com.
 
-```
+```PowerShell
 Set-Mailbox -Identity laura@contoso.com -OfflineAddressBook "Contoso Executives OAB"
 ```
 
 This example assigns the OAB named Contoso US to a filtered list of mailboxes.
 
-```
-$USContoso = Get-User -ResultSize Unlimited -Filter {RecipientType -eq "UserMailbox" -and Company -eq "Contoso" -and CountryOrRegion -eq "US"}; $USContoso | foreach {Set-Mailbox $_.Identity -OfflineAddressBook "Contoso United States"}
+```PowerShell
+$USContoso = Get-User -ResultSize Unlimited -Filter "RecipientType -eq 'UserMailbox' -and Company -eq 'Contoso' -and CountryOrRegion -eq 'US'"; $USContoso | foreach {Set-Mailbox $_.Identity -OfflineAddressBook "Contoso United States"}
 ```
 
 ### How do you know this worked?
 
 To verify that you've successfully assigned an OAB to a mailbox, replace _\<MailboxIdentity\>_ with the identity of the mailbox, and run the following command:
 
-```
+```PowerShell
 Get-Mailbox -Identity "<MailboxIdentity>" | Format-Table -Auto Name,OfflineAddressBook
 ```

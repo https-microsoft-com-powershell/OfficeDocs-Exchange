@@ -2,13 +2,14 @@
 title: 'Unified Messaging audio codecs: Exchange 2013 Help'
 TOCTitle: Audio codecs
 ms:assetid: 6c39d65c-c2d3-4128-aae9-8596602819c3
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998670(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998670(v=EXCHG.150)
 ms:contentKeyID: 49315434
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -139,7 +140,7 @@ Frequently, but not always, coding and decoding the digital data also involves c
 
 Sometimes information from the digital data is lost during compression and decompression. The higher the compression that is used to compress the audio file, the greater the loss of information during the conversion. However, less disk space is used because the size of the audio file is reduced. Conversely, the lower the compression, the lower the loss of the information. However, more disk space must be used because of the increased size of each audio file.
 
-RTAudio wideband or high fidelity audio for recording voice messages is also available as an audio codec. However, high fidelity audio using RTAudio is available only after you have successfully integrated Unified Messaging with [Microsoft Lync Server](https://go.microsoft.com/fwlink/p/?linkid=202010). To enable RTAudio as the wire codec, either narrow or wideband, the UM dial plan must be configured as a Session Initiation Protocol (SIP) URI-type dial plan and you must set the call answering codec on the dial plan to MP3 or WMA to enable wideband audio (16Khz).
+RTAudio wideband or high fidelity audio for recording voice messages is also available as an audio codec. However, high fidelity audio using RTAudio is available only after you have successfully integrated Unified Messaging with [Microsoft Lync Server](/lyncserver/microsoft-lync-server-2013). To enable RTAudio as the wire codec, either narrow or wideband, the UM dial plan must be configured as a Session Initiation Protocol (SIP) URI-type dial plan and you must set the call answering codec on the dial plan to MP3 or WMA to enable wideband audio (16Khz).
 
 > [!IMPORTANT]
 > RTAudio is not available in environments where Lync Server is not deployed. This is because, in environments that haven't integrated Lync Server, the dial plan will be set to Telephone Extension or E.164 and not to SIP URI.

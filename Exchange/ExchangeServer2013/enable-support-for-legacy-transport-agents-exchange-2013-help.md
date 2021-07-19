@@ -2,13 +2,14 @@
 title: 'Enable support for legacy transport agents: Exchange 2013 Help'
 TOCTitle: Enable support for legacy transport agents
 ms:assetid: 00617e87-7199-406e-b4a3-94378f657f1f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ591524(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ591524(v=EXCHG.150)
 ms:contentKeyID: 49084757
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -96,7 +97,7 @@ Support for legacy transport agents is controlled by keys in the application con
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Command Prompt to configure support for legacy transport agents
 

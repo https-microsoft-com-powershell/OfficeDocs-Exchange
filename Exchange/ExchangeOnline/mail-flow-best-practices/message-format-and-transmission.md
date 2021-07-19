@@ -1,7 +1,7 @@
 ---
 audience: ITPro
 localization_priority: Normal
-ms.author: dmaguire
+ms.author: jhendr
 manager: serdars
 ms.topic: article
 author: msdmaguire
@@ -10,7 +10,8 @@ ms.assetid: 828cf844-0f26-44f4-9a76-20bdbd58b992
 ms.collection: 
 - exchange-online
 - M365-email-calendar
-ms.date: 6/24/2018
+f1.keywords:
+- NOCSH
 ms.reviewer: 
 title: Message format and transmission in Exchange Online
 
@@ -69,8 +70,6 @@ Users can control the following settings:
 
   - **International options**: You can control the character sets used in messages.
 
-  For more information about Outlook settings, see [Change the message format in Outlook](https://go.microsoft.com/fwlink/p/?LinkID=397890).
+  For more information about Outlook settings, see [Change the message format in Outlook](https://support.microsoft.com/office/338a389d-11da-47fe-b693-cf41f792fefa).
 
 - **Outlook on the web settings**: You can set the default message format for all messages. You can override the default message format as you compose a specific message.
-
-  For more information on Outlook on the web settings, see [Create and respond to messages in Outlook on the web](https://go.microsoft.com/fwlink/p/?LinkID=399384).

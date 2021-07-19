@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 9c0a0bc9-2a39-4cf0-aa6e-6e5ef3fd38b5
-ms.date: 7/5/2018
 ms.reviewer:
 title: Mailbox moves in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,9 +24,10 @@ You use mailbox moves to move mailboxes to, from, and within your Exchange organ
 
 - **Cross-forest mailbox moves**: You move mailboxes to Exchange servers in a different Active Directory forest. You can initiate the move from the target forest where you want to move the mailboxes (known as a *pull* move type), or from the source forest that currently hosts the mailboxes (known as a *push* move type). For more information, see [Prepare mailboxes for cross-forest move requests](../architecture/mailbox-servers/prep-mailboxes-for-cross-forest-moves.md).
 
-- **Remote mailbox moves in hybrid deployments**: In hybrid deployments between on-premises Exchange and Microsoft Office 365, you can move mailboxes from Exchange to Office 365 (known as *onboarding remote move migrations*) and from Office 365 to Exchange (know as *offboarding remote move migrations*). For more information, see [Move Mailboxes Between On-Premises and Exchange Online Organizations in 2013 Hybrid Deployments](https://technet.microsoft.com/library/d6289f7b-f67e-48db-9570-9fd3c9547548.aspx).
+- **Remote mailbox moves in hybrid deployments**: In hybrid deployments between on-premises Exchange and Microsoft Office 365, you can move mailboxes from Exchange to Microsoft 365 or Office 365 (known as *onboarding remote move migrations*) and from Microsoft 365 or Office 365 to Exchange (know as *offboarding remote move migrations*). For more information, see [Move mailboxes between on-premises and Exchange Online organizations in hybrid deployments](../../ExchangeHybrid/hybrid-deployment/move-mailboxes.md).
 
-    **Note**: For more information about migrating on-premises Exchange organizations to Office 365, see [Ways to migrate multiple email accounts to Office 365](https://go.microsoft.com/fwlink/p/?LinkID=524030).
+> [!NOTE]
+> For more information about migrating on-premises Exchange organizations to Microsoft 365 or Office 365, see [Ways to migrate multiple email accounts to Microsoft 365 or Office 365](../../ExchangeOnline/mailbox-migration/mailbox-migration.md).
 
 Mailbox moves in Exchange 2016 and Exchange 2019 use the batch move architecture that was introduced in Exchange 2013. The batch move architecture gives you the ability to move mailboxes in large batches. The enhanced management capabilities in the batch move architecture includes:
 
@@ -39,7 +41,7 @@ Mailbox moves in Exchange 2016 and Exchange 2019 use the batch move architecture
 
 - Periodic incremental syncs to update migration changes.
 
-You can move mailboxes in the Exchange admin center (EAC), or by using the [New-MoveRequest](https://technet.microsoft.com/library/c28ca2ce-963f-4676-81c3-cef3c290ee7b.aspx) or [New-MigrationBatch](https://technet.microsoft.com/library/4f797f11-e4ef-48f9-83ab-dda8a3f61e2b.aspx) cmdlets in the Exchange Management Shell.
+You can move mailboxes in the Exchange admin center (EAC), or by using the [New-MoveRequest](/powershell/module/exchange/new-moverequest) or [New-MigrationBatch](/powershell/module/exchange/new-migrationbatch) cmdlets in the Exchange Management Shell.
 
 ## Scenarios for local and cross-forest mailbox moves
 
@@ -65,21 +67,21 @@ These are some scenarios for cross-forest mailbox moves:
 
 ## CSV files for mailbox moves
 
-One of the major benefits of the batch move architecture is the ability to use a comma-separated value (CSV) to specify the mailboxes to move. The information that's required in the CSV file depends on the type of move. For more information, see [CSV Files for Mailbox Migration](https://technet.microsoft.com/library/e67b3455-3946-4335-b80c-97823c76ac54.aspx).
+One of the major benefits of the batch move architecture is the ability to use a comma-separated value (CSV) to specify the mailboxes to move. The information that's required in the CSV file depends on the type of move. For more information, see [CSV Files for Mailbox Migration](../../ExchangeServer2013/csv-files-for-mailbox-migration-exchange-2013-help.md).
 
 ## Migration endpoints for cross-forest and remote mailbox moves
 
-You use migration endpoints for cross-forest mailbox moves, and remote mailbox moves between Exchange and Office 365 in hybrid deployments. You don't use migration endpoints for local mailbox moves.
+You use migration endpoints for cross-forest mailbox moves, and remote mailbox moves between Exchange and Microsoft 365 or Office 365 in hybrid deployments. You don't use migration endpoints for local mailbox moves.
 
 Migration endpoints specify the remote server information, source throttling settings, and the required credentials for migrating the mailboxes.
 
 - Cross-forest mailbox moves require an ExchangeRemoteMove migration endpoint.
 
-- Onboarding mailbox move migrations in hybrid organizations (from Exchange to Office 365) require an ExchangeRemoteMove migration endpoint as the *source* of the migration batch.
+- Onboarding mailbox move migrations in hybrid organizations (from Exchange to Microsoft 365 or Office 365) require an ExchangeRemoteMove migration endpoint as the *source* of the migration batch.
 
-- Offboarding mailbox move migrations in hybrid organizations (from Office 365 to Exchange) require an ExchangeRemoteMove migration endpoint as the *target* of the migration batch.
+- Offboarding mailbox move migrations in hybrid organizations (from Microsoft 365 or Office 365 to Exchange) require an ExchangeRemoteMove migration endpoint as the *target* of the migration batch.
 
-You can create migration endpoints in the EAC or by using the [New-MigrationEndpoint](https://technet.microsoft.com/library/0383b4ea-10df-4e1d-9470-2eeb9fd1ea68.aspx) cmdlet in the Exchange Management Shell.
+You can create migration endpoints in the EAC or by using the [New-MigrationEndpoint](/powershell/module/exchange/new-migrationendpoint) cmdlet in the Exchange Management Shell.
 
 ## MRS Proxy endpoints for cross-forest and remote mailbox moves
 

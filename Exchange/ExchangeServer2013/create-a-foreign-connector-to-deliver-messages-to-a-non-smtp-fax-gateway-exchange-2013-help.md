@@ -2,13 +2,14 @@
 title: 'Create a Foreign connector to deliver messages to a non-SMTP fax gateway'
 TOCTitle: Create a Foreign connector to deliver messages to a non-SMTP fax gateway
 ms:assetid: 589db487-3c4c-409a-92e3-c78dd8f639b6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ710163(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ710163(v=EXCHG.150)
 ms:contentKeyID: 49369578
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -32,7 +33,7 @@ Interested in scenarios where this procedure is used? See [Planning and deployme
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Use the Shell to create a Foreign connector that sends messages to a non-SMTP gateway server
 

@@ -2,13 +2,14 @@
 title: 'Change a role assignment: Exchange 2013 Help'
 TOCTitle: Change a role assignment
 ms:assetid: 0fa77efc-e393-461f-b3c0-232cc56cee85
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335096(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335096(v=EXCHG.150)
 ms:contentKeyID: 49289170
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ Looking for other management tasks related to role assignments? Check out [Advan
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable a role assignment
 
@@ -61,7 +62,7 @@ This example disables the Help Desk Assignment role assignment.
 Set-ManagementRoleAssignment "Help Desk Assignment" -Enabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).
 
 ## Use the Shell to change a management role or role assignee on a role assignment
 
@@ -89,7 +90,7 @@ This example changes the predefined scope on the John's Assignment role assignme
 Set-ManagementRoleAssignment "John's Assignment" - RecipientRelativeWriteScope MyDistributionGroups
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).
 
 ## Use the Shell to change a recipient filter scope on a role assignment
 
@@ -109,7 +110,7 @@ Set-ManagementRoleAssignment "Redmond Recipient Administrators Assignment" -Cust
 
 If you want to keep the same recipient filter-based scope that's applied to the role assignment but change the recipient filter used to match recipient objects, you need to change the recipient filter on the scope itself. For more information about how to change scopes, see [Change a role scope](change-a-role-scope-exchange-2013-help.md).
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).
 
 ## Use the Shell to change the server filter or list-based configuration scope on a role assignment
 
@@ -129,7 +130,7 @@ Set-ManagementRoleAssignment "Redmond Administrators Assignment" -CustomConfigWr
 
 If you want to keep the same configuration scope that's applied to the role assignment but change the server filter or server list on the scope, you need to change the configuration scope itself. For more information about how to change scopes, see [Change a role scope](change-a-role-scope-exchange-2013-help.md).
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).
 
 ## Use the Shell to change the database filter or list-based configuration scope on a role assignment
 
@@ -149,7 +150,7 @@ Set-ManagementRoleAssignment "Redmond Database Admins" -CustomConfigWriteScope "
 
 If you want to keep the same configuration scope that's applied to the role assignment but change the database filter or database list on the scope, you need to change the configuration scope itself. For more information about how to change scopes, see [Change a role scope](change-a-role-scope-exchange-2013-help.md).
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).
 
 ## Use the Shell to change the organizational unit on a role assignment
 
@@ -167,7 +168,7 @@ This example adds the Engineering\\Users OU in the contoso.com domain to the Eng
 Set-ManagementRoleAssignment "Engineering Help Desk" -RecipientOrganizationalUnitScope contoso.com/Engineering/Users
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).
 
 ## Use the Shell to change an exclusive recipient or configuration scope
 
@@ -185,4 +186,4 @@ This example changes an exclusive recipient write scope.
 Set-ManagementRoleAssignment "Exclusive Executive Users" -ExclusiveRecipientWriteScope "Exclusive Executives"
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleAssignment](/powershell/module/exchange/Set-ManagementRoleAssignment).

@@ -2,13 +2,14 @@
 title: 'Configure archive quotas for an In-Place Archive in Exchange 2013'
 TOCTitle: Configure archive quotas for an In-Place Archive in Exchange 2013
 ms:assetid: f10e77c7-e1d4-415a-bef9-cb3f00e74c34
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee633489(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee633489(v=EXCHG.150)
 ms:contentKeyID: 50470879
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ To learn more about In-Place Archives, see [In-Place Archiving in Exchange 2013]
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to configure the archive quota and archive warning quota for a mailbox
 
@@ -59,7 +60,7 @@ This example sets Chris Ashton's mailbox archive quota to 10 gigabyte (GB), at w
 Set-Mailbox -Identity "Chris Ashton" -ArchiveQuota 10GB -ArchiveWarningQuota 9.5GB
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).
 
 ## How do you know this worked?
 

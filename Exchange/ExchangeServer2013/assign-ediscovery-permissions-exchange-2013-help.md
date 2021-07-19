@@ -4,9 +4,10 @@ TOCTitle: Assign eDiscovery permissions in Exchange
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 729e09d8-614b-431f-ae04-ae41fb4c628e
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -19,7 +20,7 @@ If you want users to be able to use Microsoft Exchange Server 2013 In-Place eDis
 > [!CAUTION]
 > Members of the Discovery Management role group can access sensitive message content. Specifically, these members can use [In-Place eDiscovery](in-place-ediscovery-exchange-2013-help.md) to search all mailboxes in your Exchange organization, preview messages (and other mailbox items), copy them to a Discovery mailbox and export the copied messages to a .pst file. In most organizations, this permission is granted to legal, compliance, or Human Resources personnel. >
 
-To learn more about the Discovery Management role group, see [Discovery Management](https://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx). To learn more about Role Based Access Control (RBAC), see [Understanding Role Based Access Control](https://technet.microsoft.com/library/fd268867-2ae5-441b-8103-7a7583eb2bbe.aspx).
+To learn more about the Discovery Management role group, see [Discovery Management](discovery-management-exchange-2013-help.md). To learn more about Role Based Access Control (RBAC), see [Understanding Role Based Access Control](understanding-role-based-access-control-exchange-2013-help.md).
 
 Interested in scenarios where this procedure is used? See the following topics:
 
@@ -31,7 +32,7 @@ Interested in scenarios where this procedure is used? See the following topics:
 
 - Estimated time to complete: 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role Management Permissions](https://technet.microsoft.com/library/cb9591c4-fbb3-4199-8007-6bbfdfd5a2e9.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Role groups" entry in the [Role management permissions](role-management-permissions-exchange-2013-help.md) topic.
 
 - By default, the Discovery Management role group doesn't contain any members. Administrators with the Organization Management role are also unable to create or manage discovery searches without being added to the Discovery Management role group.
 
@@ -59,7 +60,7 @@ This example adds the user Bsuneja to the Discovery Management role group.
 Add-RoleGroupMember -Identity "Discovery Management" -Member Bsuneja
 ```
 
-For detailed syntax and parameter information, see [Add-RoleGroupMember](https://technet.microsoft.com/library/ed53e269-a855-4066-88a7-1ba36086bd72.aspx).
+For detailed syntax and parameter information, see [Add-RoleGroupMember](/powershell/module/exchange/Add-RoleGroupMember).
 
 ## How do you know this worked?
 
@@ -78,4 +79,4 @@ Get-RoleGroupMember -Identity "Discovery Management"
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

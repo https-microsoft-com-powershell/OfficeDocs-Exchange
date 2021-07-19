@@ -2,13 +2,14 @@
 title: 'Create a Send connector for email sent to the Internet: Exchange 2013 Help'
 TOCTitle: Create a Send connector for email sent to the Internet
 ms:assetid: 6deaefa8-1152-40d9-b1ba-9c19bdf8a928
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657457(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657457(v=EXCHG.150)
 ms:contentKeyID: 49289297
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ Interested in scenarios where this procedure is used? See the following topics:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a send connector for email sent to the Internet
 

@@ -4,9 +4,10 @@ TOCTitle: In-Place Hold and Litigation Hold
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 71031c06-852d-44d8-b558-dff444eaef8c
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -55,7 +56,7 @@ Using this new model, In-Place Hold allows you to create granular hold policies 
 - **Query-based hold** If your organization preserves items based on specified query parameters, you can use a query-based In-Place Hold. You can specify query parameters such as keywords, start and end dates, sender and recipient addresses, and message types. After you create a query-based In-Place Hold, all existing and future mailbox items (including messages received at a later date) that match the query parameters are preserved.
 
    > [!IMPORTANT]
-   > Items that are marked as unsearchable, generally because of failure to index an attachment, are also preserved because it can't be determined whether they match query parameters. For more details about unsearchable item, see [Unsearchable Items in Exchange eDiscovery](https://technet.microsoft.com/library/32550081-9af9-474b-ae7b-28f1e68cad41.aspx).
+   > Items that are marked as unsearchable, generally because of failure to index an attachment, are also preserved because it can't be determined whether they match query parameters. For more details about unsearchable item, see [Unsearchable items in Exchange eDiscovery](unsearchable-items-in-exchange-ediscovery-exchange-2013-help.md).
 
 - **Time-based hold**: Both In-Place Hold and Litigation Hold allow you to specify a duration of time for which to hold items. The duration is calculated from the date a mailbox item is received or created.
 
@@ -80,7 +81,7 @@ For more information, see:
 
 ## Placing a mailbox on In-Place Hold
 
-Authorized users that have been added to the [Discovery Management](https://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) role-based access control (RBAC) role group or assigned the Legal Hold and Mailbox Search management roles can place mailbox users on In-Place Hold. You can delegate the task to records managers, compliance officers, or attorneys in your organization's legal department, while assigning the least privileges. To learn more about assigning the Discovery Management role group, see [Assign eDiscovery permissions in Exchange](assign-ediscovery-permissions-exchange-2013-help.md).
+Authorized users that have been added to the [Discovery Management](discovery-management-exchange-2013-help.md) role-based access control (RBAC) role group or assigned the Legal Hold and Mailbox Search management roles can place mailbox users on In-Place Hold. You can delegate the task to records managers, compliance officers, or attorneys in your organization's legal department, while assigning the least privileges. To learn more about assigning the Discovery Management role group, see [Assign eDiscovery permissions in Exchange](assign-ediscovery-permissions-exchange-2013-help.md).
 
 > [!IMPORTANT]
 > In Exchange 2010, the Legal Hold role provided users with sufficient permissions to place mailboxes on Litigation Hold. In Exchange 2013, you can use the same permission to place mailboxes on an indefinite or time-based In-Place Hold. However, to create a query-based In-Place Hold, the user must be assigned the Mailbox Search role. The Discovery Management role group has both these roles assigned.
@@ -94,7 +95,7 @@ Many organizations require that users be informed when they're placed on hold. A
 
 ## Holds and the Recoverable Items folder
 
-In-Place Hold and Litigation Hold uses the Recoverable Items folder to preserve items. The Recoverable Items folder replaces the feature informally known as the dumpster in previous versions of Exchange. The Recoverable Items folder is hidden from the default view of Outlook, Outlook Web App, and other email clients. To learn more about the Recoverable Items folder, see [Recoverable Items folder](https://technet.microsoft.com/library/efc48fb4-2ed8-4d05-93af-f3505fbc389d.aspx).
+In-Place Hold and Litigation Hold uses the Recoverable Items folder to preserve items. The Recoverable Items folder replaces the feature informally known as the dumpster in previous versions of Exchange. The Recoverable Items folder is hidden from the default view of Outlook, Outlook Web App, and other email clients. To learn more about the Recoverable Items folder, see [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
 
 By default, when a user deletes a message from a folder other than the Deleted Items folder, the message is moved to the Deleted Items folder. This is known as a move. When a user soft deletes an item (accomplished by pressing the SHIFT and DELETE keys) or deletes an item from the Deleted Items folder, the message is moved to the Recoverable Items folder, thereby disappearing from the user's view.
 
@@ -123,23 +124,23 @@ Although the DiscoveryHold, Purges, and Versions folders aren't visible to the u
 
 ## Holds and mailbox quotas
 
-Items in the Recoverable Items folder aren't calculated toward the user's mailbox quota. In Exchange, the Recoverable Items folder has its own quota. For Exchange, the default values for the _RecoverableItemsWarningQuota_ and _RecoverableItemsQuota_ mailbox properties are set to 20 GB and 30 GB respectively. To modify these values for a mailbox database for Exchange Server 2013, use the [Set-MailboxDatabase](https://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet. To modify them for individual mailboxes, use the [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet.
+Items in the Recoverable Items folder aren't calculated toward the user's mailbox quota. In Exchange, the Recoverable Items folder has its own quota. For Exchange, the default values for the _RecoverableItemsWarningQuota_ and _RecoverableItemsQuota_ mailbox properties are set to 20 GB and 30 GB respectively. To modify these values for a mailbox database for Exchange Server 2013, use the [Set-MailboxDatabase](/powershell/module/exchange/set-mailboxdatabase) cmdlet. To modify them for individual mailboxes, use the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet.
 
 When a user's Recoverable Items folder exceeds the warning quota for recoverable items (as specified by the _RecoverableItemsWarningQuota_ parameter), an event is logged in the Application event log of the Mailbox server. When the folder exceeds the quota for recoverable items (as specified by the _RecoverableItemsQuota_ parameter), users won't be able to empty the Deleted Items folder or permanently delete mailbox items. Also copy-on-write won't be able to create copies of modified items. Therefore, it's critical that you monitor Recoverable Items quotas for mailbox users placed on In-Place Hold.
 
 In Exchange Online, the quota for the Recoverable Items folder (in the user's primary mailbox) is automatically increased to 100 GB when you place a mailbox on Litigation Hold or In-Place Hold. When the storage quota for the Recoverable Items folder in the primary mailbox of a mailbox on hold is close to reaching its limit, you can do the following things:
 
-- **Enable the archive mailbox and turn on auto-expanding archiving**: You can enable an unlimited storage capacity for the Recoverable Items folder simply by enabling the archive mailbox and then turning on the auto-expanding archiving feature in Exchange Online. This results in 100 GB for the Recoverable Items folder in the primary mailbox and an unlimited amount of storage capacity for the Recoverable Items folder in the user's archive. See how: [Enable archive mailboxes in the Office 365 Security & Compliance Center](https://go.microsoft.com/fwlink/p/?linkid=863320) and [Enable unlimited archiving in Office 365](https://go.microsoft.com/fwlink/p/?linkid=844569).
+- **Enable the archive mailbox and turn on auto-expanding archiving**: You can enable an unlimited storage capacity for the Recoverable Items folder simply by enabling the archive mailbox and then turning on the auto-expanding archiving feature in Exchange Online. This results in 100 GB for the Recoverable Items folder in the primary mailbox and an unlimited amount of storage capacity for the Recoverable Items folder in the user's archive. See how: [Enable archive mailboxes in the Security & Compliance Center](/microsoft-365/compliance/enable-archive-mailboxes) and [Enable unlimited archiving - Admin Help](/microsoft-365/compliance/enable-unlimited-archiving).
 
   **Notes**:
 
-  - After you enable the archive for a mailbox that's close to exceeding the storage quota for the Recoverable Items folder, you might want to run the Managed Folder Assistant to manually trigger the assistant to process the mailbox so that expired items are moved the Recoverable Items folder in the archive mailbox. For instructions, see Step 4 in [Increase the Recoverable Items quota for mailboxes on hold](https://go.microsoft.com/fwlink/p/?linkid=786479).
+  - After you enable the archive for a mailbox that's close to exceeding the storage quota for the Recoverable Items folder, you might want to run the Managed Folder Assistant to manually trigger the assistant to process the mailbox so that expired items are moved the Recoverable Items folder in the archive mailbox. For instructions, see Step 4 in [Increase the Recoverable Items quota for mailboxes on hold](/microsoft-365/compliance/increase-the-recoverable-quota-for-mailboxes-on-hold).
 
   - Note that other items in the user's mailbox might be moved to the new archive mailbox. Consider telling the user that this might happen after you enable the archive mailbox.
 
 - **Create a custom retention policy for mailboxes on hold** In addition to enabling the archive mailbox and auto-expanding archiving for mailboxes on Litigation Hold or In-Place Hold, you might also want to create a custom retention policy for mailboxes on hold. This let's you apply a retention policy to mailboxes on hold that's different from the Default MRM Policy that's applied to mailboxes that aren't on hold. This lets you to apply retention tags that are specifically designed for mailboxes on hold. This includes creating a new retention tag for the Recoverable Items folder.
 
-For more information, see [Increase the Recoverable Items quota for mailboxes on hold](https://go.microsoft.com/fwlink/p/?linkid=786479).
+For more information, see [Increase the Recoverable Items quota for mailboxes on hold](/microsoft-365/compliance/increase-the-recoverable-quota-for-mailboxes-on-hold).
 
 ## Holds and email forwarding
 
@@ -157,9 +158,9 @@ When you place an Exchange 2013 mailbox on In-Place Hold or Litigation Hold, Mic
 
 To enable archiving of Lync content in Exchange 2013 mailbox, you must configure Lync 2013 integration with Exchange 2013. For details, see the following topics:
 
-- [Planning for Archiving](https://technet.microsoft.com/library/jj205069%28v=ocs.15%29)
+- [Planning for Archiving](/lyncserver/lync-server-2013-planning-for-archiving)
 
-- [Deploying Archiving](https://technet.microsoft.com/library/jj205147%28v=ocs.15%29)
+- [Deploying Archiving](/lyncserver/lync-server-2013-deploying-archiving)
 
 ## Deleting a mailbox on hold
 
@@ -171,9 +172,9 @@ If an administrator deletes a user account that has a mailbox, the Exchange Info
 
 3. Retain the mailbox until all data has been expunged, or until preserving the data is no longer required.
 
-## Migrating mailboxes on hold from Exchange 2013 to Office 365
+## Migrating mailboxes on hold from Exchange 2013 to Microsoft 365 or Office 365
 
-If you have an Exchange hybrid deployment, the following conditions are true when you move (onboard) an on-premises Exchange 2013 mailbox to Exchange Online in Office 365:
+If you have an Exchange hybrid deployment, the following conditions are true when you move (onboard) an on-premises Exchange 2013 mailbox to Exchange Online in Microsoft 365 or Office 365:
 
 - If the on-premises mailbox is on Litigation Hold or In-Place Hold, the hold settings are preserved after the mailbox is moved to Exchange Online.
 
@@ -182,11 +183,11 @@ If you have an Exchange hybrid deployment, the following conditions are true whe
 > [!NOTE]
 > Hold settings and content in the Recoverable Items folder are also preserved when you move (offboard) an Exchange Online mailbox to your on-premises Exchange 2013 organization.
 
-There are other ways to migrate on-premises email data to Office 365, such as using a Staged Exchange migration or a Cutover Exchange migration.
+There are other ways to migrate on-premises email data to Microsoft 365 or Office 365, such as using a Staged Exchange migration or a Cutover Exchange migration.
 
-- A staged migration can be used to migrate mailboxes from Exchange 2003 or Exchange 2007 to Office 365. In these versions of Exchange, the Recoverable Items folder (and its functionality) doesn't exist. So when you migrate Exchange 2003 or Exchange 2007 mailboxes to Office 365, there isn't any Recoverable Items folder content to move.
+- A staged migration can be used to migrate mailboxes from Exchange 2003 or Exchange 2007 to Office 365. In these versions of Exchange, the Recoverable Items folder (and its functionality) doesn't exist. So when you migrate Exchange 2003 or Exchange 2007 mailboxes to Microsoft 365 or Office 365, there isn't any Recoverable Items folder content to move.
 
-- A cutover migration can be used to migrate mailboxes from Exchange 2003, Exchange 2007, and Exchange 2010 to Office 365. As previously stated, Exchange 2003 and Exchange 2007 mailboxes don't have a Recoverable Items folder that can be migrated. Because the Recover Items folder was introduced in Exchange 2010, content in the Recoverable Items folder is migrated to Office 365 when you use a cutover migration to migrate Exchange 2010 mailboxes.
+- A cutover migration can be used to migrate mailboxes from Exchange 2003, Exchange 2007, and Exchange 2010 to Microsoft 365 or Office 365. As previously stated, Exchange 2003 and Exchange 2007 mailboxes don't have a Recoverable Items folder that can be migrated. Because the Recover Items folder was introduced in Exchange 2010, content in the Recoverable Items folder is migrated to Microsoft 365 or Office 365 when you use a cutover migration to migrate Exchange 2010 mailboxes.
 
 > [!TIP]
-> For Exchange 2013 and Exchange 2010, an Exchange hybrid deployment is the recommended way to migrate on-premises mailboxes to Office 365.
+> For Exchange 2013 and Exchange 2010, an Exchange hybrid deployment is the recommended way to migrate on-premises mailboxes to Microsoft 365 or Office 365.

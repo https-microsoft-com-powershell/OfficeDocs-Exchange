@@ -7,6 +7,8 @@ ms.author: dmaguire
 title: Managing devices for Outlook for iOS and Android for Exchange Server
 ms.collection: exchange-server
 ms.reviewer: smithre4
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -16,11 +18,11 @@ manager: serdars
 # Managing devices for Outlook for iOS and Android for Exchange Server
 
 > [!IMPORTANT]
-> Outlook for iOS and Android supports hybrid Modern Authentication for on-premises mailboxes which eliminates the need to leverage basic authentication. The information contained in this article only pertains to basic authentication. For more information, please see [Using hybrid Modern Authentication with Outlook for iOS and Android](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth).
+> Outlook for iOS and Android supports hybrid Modern Authentication for on-premises mailboxes which eliminates the need to leverage basic authentication. The information contained in this article only pertains to basic authentication. For more information, please see [Using hybrid Modern Authentication with Outlook for iOS and Android](./use-hybrid-modern-auth.md).
 
 Microsoft recommends Exchange ActiveSync for managing the mobile devices that are used to access Exchange mailboxes in your on-premises environment. Exchange ActiveSync is a Microsoft Exchange synchronization protocol that lets mobile phones access an organization's information on a server that's running Microsoft Exchange.
 
-This article focuses on specific Exchange ActiveSync features and scenarios for mobile devices running Outlook for iOS and Android when authenticating with Basic authentication. Complete information about the Microsoft Exchange synchronization protocol is available in [Exchange ActiveSync](../../clients/exchange-activesync/exchange-activesync.md). In addition, there is information on [the Office Blog](https://go.microsoft.com/fwlink/p/?LinkId=623922) detailing password enforcement and other benefits of using Exchange ActiveSync with devices running Outlook for iOS and Android.
+This article focuses on specific Exchange ActiveSync features and scenarios for mobile devices running Outlook for iOS and Android when authenticating with Basic authentication. Complete information about the Microsoft Exchange synchronization protocol is available in [Exchange ActiveSync](../../clients/exchange-activesync/exchange-activesync.md). In addition, there is information on [the Office Blog](https://www.microsoft.com/microsoft-365/blog/2015/02/17/pin-lock-updates-outlook-ios-android/) detailing password enforcement and other benefits of using Exchange ActiveSync with devices running Outlook for iOS and Android.
 
 ## Mobile device mailbox policy
 
@@ -28,11 +30,20 @@ Outlook for iOS and Android supports the following mobile device mailbox policy 
 
 - Device encryption enabled
 
-- Min password length
+- Min password length (only on Android)
 
 - Password enabled
 
-For information on how to create or modify an existing mobile device mailbox policy, see [Mobile device mailbox policies](https://docs.microsoft.com/Exchange/clients/exchange-activesync/mobile-device-mailbox-policies).
+- Allow Bluetooth (used to manage the Outlook for Android wearable app)
+
+  - When AllowBluetooth is enabled (default behavior) or configured for HandsfreeOnly, wearable synchronization between Outlook on the Android device and Outlook on the wearable is allowed for the work or school account.
+
+  - When AllowBluetooth is disabled, Outlook for Android will disable synchronization between Outlook on the Android device and Outlook on the wearable for the specified work or school account (and delete any data previously synced for the account). Disabling the synchronization is controlled entirely within Outlook itself; Bluetooth is not disabled on the device or wearable nor is any other wearable app affected.
+
+> [!NOTE]
+> Outlook for Android will roll out support for the AllowBluetooth setting beginning at the end of August.
+
+For information on how to create or modify an existing mobile device mailbox policy, see [Mobile device mailbox policies](../exchange-activesync/mobile-device-mailbox-policies.md).
 
 ### PIN lock and device encryption
 
@@ -54,19 +65,9 @@ Even if the Android device is unencrypted and an attacker is in possession of th
 
 ### Remote wipe with Exchange ActiveSync
 
-Exchange ActiveSync enables administrators to remotely wipe devices, such as if they become compromised or lost/stolen. With Outlook for iOS and Android, a remote wipe is done on the Outlook app itself, and does not trigger a full device wipe.
+Exchange ActiveSync enables administrators to remotely wipe devices, such as if they become compromised or lost/stolen. With Outlook for iOS and Android, a remote wipe only wipes data within the Outlook app itself and does not trigger a full device wipe.
 
-> [!NOTE]
-> Outlook for iOS and Android only supports the "Wipe Data" remote wipe command and does not support "Account Only Remote Wipe Device."
-
-After the remote wipe command is requested by the administrator, the wipe happens within seconds of the Outlook app's next connection to Exchange. The Outlook app will reset and all Outlook email, calendar, contacts, and files data will be removed from the device, as well as from the Outlook service. The wipe will not affect any of the user's personal apps and information outside of Outlook.
-
-Since Outlook for iOS and Android appears as a single mobile device association under a user's mobile devices in Exchange, a remote wipe command will remove data and delete sync relationships from all devices running Outlook (iPhone, iPad, Android) associated with that user.
-
-As a remote wipe action deletes the synchronization profile, when the user adds his or her account to Outlook for iOS and Android, a new Device ID is generated and reported to Exchange on-premises.
-
-> [!NOTE]
-> Due to the Office 365-based architecture, the result of a remote device wipe is not reported back to Exchange. Even when the wipe is successful, the status will display as **Pending**.
+See [Perform a remote wipe on a mobile phone](../exchange-activesync/remote-wipe.md) for more information.
 
 ## Device access policy
 
@@ -81,21 +82,19 @@ You can define a default block rule and then configure an allow rule for Outlook
 
 1. Create the default block rule:
 
-   ```
+   ```powershell
    Set-ActiveSyncOrganizationSettings -DefaultAccessLevel Block
    ```
 
 2. Create an allow rule for Outlook for iOS and Android
 
-   ```
+   ```powershell
    New-ActiveSyncDeviceAccessRule -Characteristic DeviceModel -QueryString "Outlook for iOS and Android" -AccessLevel Allow
    ```
 
-3. **Optional**: Create rules that allow Outlook on Windows devices for Exchange ActiveSync connectivity (WP refers to Windows Phone, WP8 refers to Windows Phone 8 and later, and WindowsMail refers to the Mail app included in Windows 10):
+3. **Optional**: Create rules that allow Outlook on Windows devices for Exchange ActiveSync connectivity (WindowsMail refers to the Mail app included in Windows 10):
 
-   ```
-   New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "WP" -AccessLevel Allow
-   New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "WP8" -AccessLevel Allow
+   ```powershell
    New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "WindowsMail" -AccessLevel Allow
    ```
 
@@ -105,19 +104,19 @@ Alternatively, you can block native Exchange ActiveSync apps on specific Android
 
 1. Confirm that there are no Exchange ActiveSync device access rules in place that block Outlook for iOS and Android:
 
-   ```
+   ```powershell
    Get-ActiveSyncDeviceAccessRule | where {$_.AccessLevel -eq "Block" -and $_.QueryString -like "Outlook*"} | ft Name,AccessLevel,QueryString -auto
    ```
 
    If any device access rules that block Outlook for iOS and Android are found, type the following to remove them:
 
-   ```
+   ```powershell
    Get-ActiveSyncDeviceAccessRule | where {$_.AccessLevel -eq "Block" -and $_.QueryString -like "Outlook*"} | Remove-ActiveSyncDeviceAccessRule
    ```
 
 2. You can block most Android and iOS devices with the following commands:
 
-   ```
+   ```powershell
    New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "Android" -AccessLevel Block
    New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "iPad" -AccessLevel Block
    New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "iPhone" -AccessLevel Block
@@ -126,13 +125,13 @@ Alternatively, you can block native Exchange ActiveSync apps on specific Android
 
 3. Not all Android device manufacturers specify "Android" as the DeviceType. Manufacturers may specify a unique value with each release. In order to find other Android devices that are accessing your environment, execute the following command to generate a report of all devices that have an active Exchange ActiveSync partnership:
 
-   ```
+   ```powershell
    Get-MobileDevice | Select-Object DeviceOS,DeviceModel,DeviceType | Export-CSV c:\temp\easdevices.csv
    ```
 
 4. Create additional block rules, depending on your results from Step 3. For example, if you find your environment has a high usage of HTCOne Android devices, you can create an Exchange ActiveSync device access rule that blocks that particular device, forcing the users to use Outlook for iOS and Android. In this example, you would type:
 
-   ```
+   ```powershell
    New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "HTCOne" -AccessLevel Block
    ```
 
@@ -141,11 +140,11 @@ Alternatively, you can block native Exchange ActiveSync apps on specific Android
 
 **Additional resources**:
 
-- [New-ActiveSyncDeviceAccessRule](https://technet.microsoft.com/library/a33c69d8-4d19-4e9d-b5cf-27727b7c4a8f.aspx)
+- [New-ActiveSyncDeviceAccessRule](/powershell/module/exchange/new-activesyncdeviceaccessrule)
 
-- [Get-MobileDevice](https://technet.microsoft.com/library/ce8a4142-23c1-47d5-89c5-961bd6e9d162.aspx)
+- [Get-MobileDevice](/powershell/module/exchange/get-mobiledevice)
 
-- [Set-ActiveSyncOrganizationSettings](https://technet.microsoft.com/library/a447bf51-fcdc-4f8d-8d06-533d299c11fe.aspx)
+- [Set-ActiveSyncOrganizationSettings](/powershell/module/exchange/set-activesyncorganizationsettings)
 
 ## Blocking Outlook for iOS and Android
 
@@ -165,10 +164,10 @@ With the `New-ActiveSyncDeviceAccessRule` cmdlet, you can define a device access
 
 The following are two examples of a device access rule. The first example uses the `DeviceModel` characteristic; the second example uses the `DeviceType` characteristic.
 
-```
+```powershell
 New-ActiveSyncDeviceAccessRule -Characteristic DeviceType -QueryString "Outlook" -AccessLevel Block
 ```
 
-```
+```powershell
 New-ActiveSyncDeviceAccessRule -Characteristic DeviceModel -QueryString "Outlook for iOS and Android" -AccessLevel Block
 ```

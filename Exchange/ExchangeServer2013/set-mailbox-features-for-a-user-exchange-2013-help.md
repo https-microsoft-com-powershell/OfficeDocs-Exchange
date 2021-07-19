@@ -4,9 +4,10 @@ TOCTitle: Set mailbox features for an Outlook Voice Access user
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer:
 ms.assetid: a56bfd75-7bc5-49b9-b098-06855a720dcd
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -32,7 +33,7 @@ For additional management tasks related to UM users, see [Set mailbox features f
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailboxes" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailboxes" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
 - Before you perform these procedures, confirm that the existing Exchange recipient is enabled for Unified Messaging and voice mail. For detailed steps, see [Enable a user for voice mail](enable-a-user-for-voice-mail-exchange-2013-help.md).
 
@@ -43,7 +44,7 @@ For additional management tasks related to UM users, see [Set mailbox features f
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to modify a single UM-enabled user's TUI settings
 

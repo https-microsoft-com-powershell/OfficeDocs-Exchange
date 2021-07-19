@@ -1,12 +1,13 @@
 ---
 localization_priority: Normal
-description: Set up an organization relationship to share calendar information with an external business partner. Office 365 admins can set up an organization relationship with another Office 365 organization or with an Exchange on-premises organization. If you want to share calendars with an on-premises Exchange organization, the on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known asfederation) and must meet minimum software requirements.
+description: Set up an organization relationship to share calendar information with an external business partner. Microsoft 365 and Office 365 admins can set up an organization relationship with another Microsoft 365 or Office 365 organization or with an Exchange on-premises organization. If you want to share calendars with an on-premises Exchange organization, the on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known as federation) and must meet minimum software requirements.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 58ac4338-b883-404f-a6be-eca38ccd8088
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Organization relationships in Exchange Online
 ms.collection: 
 - exchange-online
@@ -19,11 +20,14 @@ manager: serdars
 
 # Organization relationships in Exchange Online
 
-Set up an organization relationship to share calendar information with an external business partner. Office 365 admins can set up an organization relationship with another Office 365 organization or with an Exchange on-premises organization. If you want to share calendars with an on-premises Exchange organization, the on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known as "federation") and must meet minimum software requirements.
+Set up an organization relationship to share calendar information with an external business partner. Microsoft 365 or Office 365 admins can set up an organization relationship with another Microsoft 365 and Office 365 organization or with an Exchange on-premises organization. If you want to share calendars with an on-premises Exchange organization, the on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known as "federation") and must meet minimum software requirements.
+
+> [!NOTE]
+> Organization functionality of the Classic Exchange admin center experience is available in the new Exchange admin center as we continue to work on updated versions. If you're using **Edge** incognito and this page isn't working, enable the [third-party cookies](https://support.microsoft.com/microsoft-edge/temporarily-allow-cookies-and-site-data-in-microsoft-edge-597f04f2-c0ce-f08c-7c2b-541086362bd2).
 
 An organization relationship is a one-to-one relationship between businesses to allow users in each organization to view calendar availability information. When you set up the organization relationship, you are setting up your side of the relationship and specifying the level of information that the users in the external organization can view. The external organization may set up the same or different settings on their side. For example, if Contoso creates an organization relationship with Tailspin Toys, the users at Tailspin Toys will be able to schedule meetings with the users at Contoso by adding their email address to the meeting invitation. The availability of the invited Contoso user would display to the Tailspin Toys user. However, before Contoso can also see availability for users at Tailspin Toys, their administrator needs to set up an organization relationship with Contoso.
 
-There are three of levels of access that you can specify:
+There are three levels of access that you can specify:
 
 - No access
 
@@ -36,7 +40,7 @@ There are three of levels of access that you can specify:
 >
 > To completely hide their calendar, they can remove the user/group from the list of those with which the calendar is shared. Their free/busy information won't be seen by internal or external users, even if an organization relationship exists. The permissions set by the user will apply.
 
-The following topics will help you configure and manage organization relationships:
+The following articles will help you configure and manage organization relationships:
 
 [Create an organization relationship in Exchange Online](create-an-organization-relationship.md)
 

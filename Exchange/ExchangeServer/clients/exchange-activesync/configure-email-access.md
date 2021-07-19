@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 8d6e2cea-265a-43d9-a074-076f35658436
-ms.date: 7/5/2018
 ms.reviewer: 
 title: Configure mobile phones to access email
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -26,7 +27,7 @@ This article is about enabling users in your organization to access their Exchan
 - Exchange ActiveSync is enabled in your organization.
 
 > [!NOTE]
-> For device-specific information about setting up Exchange-based email on a phone or tablet, see [Set up a mobile device using Office 365 for business](https://support.office.com/article/7dabb6cb-0046-40b6-81fe-767e0b1f014f).
+> For device-specific information about setting up Exchange-based email on a phone or tablet, see [Set up Office apps and email on a mobile device](https://support.microsoft.com/office/7dabb6cb-0046-40b6-81fe-767e0b1f014f).
 
 ## Configure a mobile phone or device to use Exchange ActiveSync
 

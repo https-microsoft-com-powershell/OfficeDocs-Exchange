@@ -2,13 +2,14 @@
 title: 'Enable the MRS Proxy endpoint for remote moves: Exchange 2013 Help'
 TOCTitle: Enable the MRS Proxy endpoint for remote moves
 ms:assetid: 9840f712-127e-4c2d-bfe5-1b35cdb2a31b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn155787(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn155787(v=EXCHG.150)
 ms:contentKeyID: 53903965
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -40,7 +41,7 @@ The Client Access server on which to enable the MRS Proxy endpoint depends on th
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to enable the MRS Proxy endpoint
 
@@ -91,7 +92,7 @@ Get-WebServicesVirtualDirectory | FL Identity,MRSProxyEnabled
 
 Verify that the *MRSProxyEnabled* parameter is set to `True`.
 
-Another way to verify that the MRS Proxy endpoint is enabled is to use the **Test-MigrationServerAvailability** cmdlet to test the ability to communicate with the remote server that hosts the mailboxes that you want to move, or in the case of offboarding Exchange Online mailboxes to your on-premises organization, a server in your on-premises organization. For more information, see [Test-MigrationServerAvailability](https://technet.microsoft.com/en-us/library/jj219169\(v=exchg.150\)).
+Another way to verify that the MRS Proxy endpoint is enabled is to use the **Test-MigrationServerAvailability** cmdlet to test the ability to communicate with the remote server that hosts the mailboxes that you want to move, or in the case of offboarding Exchange Online mailboxes to your on-premises organization, a server in your on-premises organization. For more information, see [Test-MigrationServerAvailability](/powershell/module/exchange/Test-MigrationServerAvailability).
 
 The following example tests the connection to a server in the corp.contoso.com forest.
 

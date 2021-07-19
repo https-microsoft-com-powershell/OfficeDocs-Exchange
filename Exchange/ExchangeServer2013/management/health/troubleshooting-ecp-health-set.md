@@ -2,13 +2,14 @@
 title: Troubleshooting ECP Health Set
 TOCTitle: Troubleshooting ECP Health Set
 ms:assetid: 0a1cfcd5-585c-4a0a-9d3c-28dc49e16a6c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.ecp(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.ecp(v=EXCHG.150)
 ms:contentKeyID: 49720722
-ms.date:
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -57,7 +58,7 @@ The EAC service is monitored by using the following probes and monitors.
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## User Action
 
@@ -123,12 +124,12 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
 6. After the server restarts, rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
-7. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+7. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## For More Information
 
-[What's new in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150540\(v=exchg.150\))
+[What's new in Exchange 2013](../../what-s-new-in-exchange-2013-exchange-2013-help.md)
 
-[Exchange 2013 cmdlets](https://technet.microsoft.com/en-us/library/bb124413\(v=exchg.150\))
+[Exchange PowerShell](/powershell/exchange/)
 
-[Exchange admin center in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150562\(v=exchg.150\))
+[Exchange admin center in Exchange 2013](../../exchange-admin-center-in-exchange-2013-exchange-2013-help.md)

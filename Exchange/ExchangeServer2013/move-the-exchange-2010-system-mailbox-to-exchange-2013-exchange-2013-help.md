@@ -2,13 +2,14 @@
 title: 'Move the Exchange 2010 system mailbox to Exchange 2013: Exchange 2013 Help'
 TOCTitle: Move the Exchange 2010 system mailbox to Exchange 2013
 ms:assetid: a3b03c4e-0bc7-41a2-885c-e9cac37566c8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn249849(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn249849(v=EXCHG.150)
 ms:contentKeyID: 54770204
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -49,7 +50,7 @@ For more information about upgrading to Exchange 2013, see the following topics:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to move the system mailbox
 

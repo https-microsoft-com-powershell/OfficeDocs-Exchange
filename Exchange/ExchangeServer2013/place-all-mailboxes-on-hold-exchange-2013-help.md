@@ -4,9 +4,10 @@ TOCTitle: Place all mailboxes on hold
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 4c141604-3210-44cc-b98e-f3e0f15613b8
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ Before you place all mailboxes in an organization on Litigation Hold or In-Place
 
 - Placing all mailboxes in an organization on hold can significantly impact mailbox sizes. In an Exchange Server 2013 deployment, plan for adequate storage to meet your organization's preservation requirements.
 
-- Preserving mailbox data for a long duration will result in growth of the Recoverable Items folder in a user's primary mailbox and archive mailbox. The Recoverable Items folder has its own storage limit, so items in the folder don't count towards the mailbox storage limit. In Exchange Server 2013, the default storage limit for the Recoverable Items folder is 30 GB. We recommend that you periodically monitor the size of this folder to ensure it doesn't reach the limit. For more information, see [Recoverable Items Folder](https://technet.microsoft.com/library/efc48fb4-2ed8-4d05-93af-f3505fbc389d.aspx).
+- Preserving mailbox data for a long duration will result in growth of the Recoverable Items folder in a user's primary mailbox and archive mailbox. The Recoverable Items folder has its own storage limit, so items in the folder don't count towards the mailbox storage limit. In Exchange Server 2013, the default storage limit for the Recoverable Items folder is 30 GB. We recommend that you periodically monitor the size of this folder to ensure it doesn't reach the limit. For more information, see [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
 
 ## Choosing between Litigation Hold and In-Place Hold
 
@@ -42,17 +43,17 @@ Here are some factors to consider when deciding the hold feature you should use 
 You can easily and quickly place all mailboxes on hold indefinitely or for a specified duration using the Shell. This command places all mailboxes on hold for 2555 days (approximately 7 years).
 
 ```powershell
-Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -LitigationHoldEnabled $true -LitigationHoldDuration 2555
+Get-Mailbox -ResultSize Unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Set-Mailbox -LitigationHoldEnabled $true -LitigationHoldDuration 2555
 ```
 
-The example uses the [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet and a recipient filter to retrieve all user mailboxes in the organization, and then pipes the list of mailboxes to the [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet to enable the Litigation Hold and specify a hold duration. For more information, see [Place a mailbox on Litigation Hold](place-a-mailbox-on-litigation-hold-exchange-2013-help.md).
+The example uses the [Get-Mailbox](/powershell/module/exchange/get-mailbox) cmdlet and a recipient filter to retrieve all user mailboxes in the organization, and then pipes the list of mailboxes to the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet to enable the Litigation Hold and specify a hold duration. For more information, see [Place a mailbox on Litigation Hold](place-a-mailbox-on-litigation-hold-exchange-2013-help.md).
 
 ## Place all mailboxes on In-Place Hold
 
 You can use the EAC to select up to 500 mailboxes and place them on hold. For details, see [Create or remove an In-Place Hold](create-or-remove-in-place-holds-exchange-2013-help.md).
 
 > [!TIP]
-> To place more than 500 users on In-Place Hold, use the Shell. See [New-MailboxSearch](https://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx).
+> To place more than 500 users on In-Place Hold, use the Shell. See [New-MailboxSearch](/powershell/module/exchange/new-mailboxsearch).
 
 ## More information
 
@@ -81,7 +82,7 @@ You can use the EAC to select up to 500 mailboxes and place them on hold. For de
   ```
 
   ```powershell
-  Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -ne "DiscoveryMailbox"}
+  Get-Mailbox -ResultSize Unlimited -Filter "RecipientTypeDetails -ne 'DiscoveryMailbox'"
   ```
 
-  You can use other user mailbox properties in a filter to include or exclude mailboxes. For details, see [Filterable Properties for the -Filter Parameter](https://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
+  You can use other user mailbox properties in a filter to include or exclude mailboxes. For details, see [Filterable Properties for the -Filter Parameter](/powershell/exchange/filter-properties).

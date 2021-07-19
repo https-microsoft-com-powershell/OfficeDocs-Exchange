@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 51ebf2f6-8a02-44ef-a489-ca361cb0f63a
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Pre-stage the cluster name object for a database availability group
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -38,7 +39,7 @@ You create and disable a computer account for the CNO, and then either:
 - After completing the following steps, allow time for Active Directory replication to occur. After the object is replicated, you can add the first member to the DAG.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Pre-stage the CNO
 

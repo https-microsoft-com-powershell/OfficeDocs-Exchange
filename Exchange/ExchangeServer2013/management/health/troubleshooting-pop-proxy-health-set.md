@@ -2,13 +2,14 @@
 title: Troubleshooting POP.Proxy Health Set
 TOCTitle: Troubleshooting POP.Proxy Health Set
 ms:assetid: ea634068-aa8c-4421-a3fc-d8695ea73b80
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.pop.proxy(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.pop.proxy(v=EXCHG.150)
 ms:contentKeyID: 49720910
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,6 +29,6 @@ For detailed information about the POP health set, see [Troubleshooting POP Heal
 
 ## For More Information
 
-[Test-PopConnectivity](https://technet.microsoft.com/en-us/library/bb738143\(v=exchg.150\))
+[Test-PopConnectivity](/powershell/module/exchange/Test-PopConnectivity)
 
-[POP3 and IMAP4](https://technet.microsoft.com/en-us/library/jj657728\(v=exchg.150\))
+[POP3 and IMAP4](../../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md)

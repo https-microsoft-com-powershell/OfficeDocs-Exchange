@@ -2,15 +2,16 @@
 title: 'Enter your Exchange 2013 product key: Exchange 2013 Help'
 TOCTitle: Enter your Exchange 2013 product key
 ms:assetid: ccb14685-4bdc-42a4-a985-35cd2a1a415c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124582(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124582(v=EXCHG.150)
 ms:contentKeyID: 50643913
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
-f1_keywords:
+ms.custom:
 - Microsoft.Exchange.Management.SnapIn.Esm.Servers.EnterProductKeyWizardForm.EnterProductKeyWizardPage
 ---
 
@@ -26,9 +27,9 @@ If you don't enter a product key, your server is automatically licensed as a tri
 > We've noticed some visitors to this page are looking for information on how to install or activate Office. If that's you, check out these pages:
 > <UL>
 > <LI>
-> <P><A href="https://go.microsoft.com/fwlink/p/?linkid=403360">Install Office</A></P>
+> <P><A href="https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658">Install Office</A></P>
 > <LI>
-> <P><A href="https://go.microsoft.com/fwlink/p/?linkid=403361">Need help with your Office product key?</A></P></LI></UL>If you want to enter a product key on an Exchange 2010 server, go to <A href="https://go.microsoft.com/fwlink/p/?linkid=403370">Enter an Exchange 2010 product key</A>.<BR>If you want to enter a product key on an Exchange 2013 server, you're in the right place! Read on.
+> <P><A href="https://support.microsoft.com/office/0a82e5ae-739e-4b92-a6f4-2ec780c185db">Need help with your Office product key?</A></P></LI></UL>If you want to enter a product key on an Exchange 2010 server, go to <A href="/previous-versions/office/exchange-server-2010/bb124582(v=exchg.141)">Enter an Exchange 2010 product key</A>.<BR>If you want to enter a product key on an Exchange 2013 server, you're in the right place! Read on.
 
 ## What do you need to know before you begin?
 
@@ -45,13 +46,13 @@ If you don't enter a product key, your server is automatically licensed as a tri
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to enter the product key
 
 1. Open the EAC by browsing to https://\<*Client Access server name*\>/ecp.
 
-2. Enter your user name and password in **Domain\\user name** and **Password**, and then click **Sign in**.
+2. Enter your username and password in **Domain\\user name** and **Password**, and then click **Sign in**.
 
 3. Go to **Servers** \> **Servers**. Select the server you want to license, and then click **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
@@ -78,7 +79,7 @@ This example uses the **set-ExchangeServer** cmdlet to enter the product key.
 Set-ExchangeServer ExServer01 -ProductKey aaaaa-aaaaa-aaaaa-aaaaa-aaaaa
 ```
 
-For detailed syntax and parameter information, see [Set-ExchangeServer](https://technet.microsoft.com/en-us/library/bb123716\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ExchangeServer](/powershell/module/exchange/Set-ExchangeServer).
 
 If you licensed an Exchange server running the Mailbox server role, do the following to restart the Microsoft Exchange Information Store service:
 
@@ -90,7 +91,7 @@ If you licensed an Exchange server running the Mailbox server role, do the follo
 
 To use the EAC to verify that you've successfully licensed the server as Standard Edition or Enterprise Edition, do the following:
 
-1. Enter your user name and password in **Domain\\user name** and **Password**, and then click **Sign in**.
+1. Enter your username and password in **Domain\\user name** and **Password**, and then click **Sign in**.
 
 2. Go to **Servers** \> **Servers**.
 

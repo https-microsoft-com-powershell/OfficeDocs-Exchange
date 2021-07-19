@@ -2,13 +2,14 @@
 title: 'View mobile device information for users: Exchange 2013 Help'
 TOCTitle: View mobile device information for users
 ms:assetid: 4fd263c0-ad61-416c-bd68-339bf66605cf
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997974(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997974(v=EXCHG.150)
 ms:contentKeyID: 49345045
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ For additional management tasks related to mobile devices, see [Exchange ActiveS
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to view mobile device information for users
 

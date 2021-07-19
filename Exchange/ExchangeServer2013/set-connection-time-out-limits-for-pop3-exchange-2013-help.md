@@ -2,13 +2,14 @@
 title: 'Set connection time-out limits for POP3: Exchange 2013 Help'
 TOCTitle: Set connection time-out limits for POP3
 ms:assetid: 40003115-be4e-4cf1-97b4-f5ca05b314dc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997604(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997604(v=EXCHG.150)
 ms:contentKeyID: 50395396
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ For additional information related to POP3, see [POP3 and IMAP4 in Exchange Serv
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to set connection time-out limits for POP3
 
@@ -53,21 +54,21 @@ After you've set the connection time-out limits for POP3, you must restart the P
 
 ## Use the Shell to set connection time-out limits for POP3
 
-This example sets the connection time-out limit for idle authenticated connections.
+This example sets the connection time-out limit for idle authenticated connections to a server named CAS01.
 
 ```powershell
-Set -PopSettings -Identity CAS01 -AuthenticatedConnectionTimeout TimeValue
+Set-PopSettings -Server CAS01 -AuthenticatedConnectionTimeout TimeValue
 ```
 
-This example sets the connection time-out limit for idle unauthenticated connections.
+This example sets the connection time-out limit for idle unauthenticated connections to a server named CAS01.
 
 ```powershell
-Set -PopSettings -Identity CAS01 -PreAuthenticatedConnectionTimeout TimeValue
+Set-PopSettings -Server CAS01 -PreAuthenticatedConnectionTimeout TimeValue
 ```
 
 After you've set the connection time-out limits for POP3, you must restart the POP3 services for the settings to take effect. For information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 ## How do you know this worked?
 

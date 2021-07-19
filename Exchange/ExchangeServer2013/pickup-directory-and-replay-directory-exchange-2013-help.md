@@ -2,13 +2,14 @@
 title: 'Pickup directory and Replay directory: Exchange 2013 Help'
 TOCTitle: Pickup directory and Replay directory
 ms:assetid: ae191700-953f-411c-906f-dc90feec3d5a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124230(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124230(v=EXCHG.150)
 ms:contentKeyID: 49382861
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -62,7 +63,7 @@ A message file copied to the Pickup directory must meet the following requiremen
 
 This example shows a plain text message that uses acceptable formatting for the Pickup directory.
 
-```text
+```console
 To: mary@contoso.com
 From: bob@fabrikam.com
 Subject: Message subject
@@ -72,7 +73,7 @@ This is the body of the message.
 
 MIME content is also supported in Pickup directory message files. MIME defines a broad range of message content that includes languages that can't be represented in 7-bit ASCII text, HTML, and other multimedia content. A complete description of MIME and its requirements is beyond the scope of this topic. This example shows a simple MIME message that uses acceptable formatting for the Pickup directory.
 
-```text
+```console
 To: mary@contoso.com
 From: bob@fabrikam.com
 Subject: Message subject
@@ -104,7 +105,7 @@ The Pickup directory removes any of the following message header fields from the
 
 The Pickup directory adds its own `Received` header field to a message as part of the message submission process. The `Received` header field is applied in the following format.
 
-```text
+```console
 Received: from localhost by Pickup with Microsoft SMTP Server id <ExchangeServerVersion><datetime>
 ```
 
@@ -134,7 +135,7 @@ The X-Headers described in the following list are required by messages in the Re
 
 - **X-Sender**: This X-Header replaces the `From` message header field requirement in a typical SMTP message. One `X-Sender` field that contains one email address must exist. The Replay directory ignores the `From` message header field if it's present, although the recipient's email client displays the value of the `From` message header field as the sender of the message. Other parameters usually exist in the `X-Sender` field, as shown in the following example.
 
-  ```text
+  ```console
   X-Sender: <bob@fabrikam.com> BODY=7bit RET=HDRS ENVID=12345ABCD auth=<someAuth>
   ```
 
@@ -143,7 +144,7 @@ The X-Headers described in the following list are required by messages in the Re
 
 - **X-Receiver**: This X-Header replaces the `To` message header field requirement in a typical SMTP message. At least one `X-Receiver` field that contains one email address must exist. Multiple `X-Receiver` fields are allowed for multiple recipients. The Replay directory ignores the `To` message header fields if they're present, although the recipient's email client displays the values of the `To` message header fields as the recipients of the message. Other optional parameters may exist in the `X-Receiver` fields, as shown in the following example.
 
-  ```text
+  ```console
   X-Receiver: <mary@contoso.com> NOTIFY=NEVER ORcpt=mary@contoso.com
   ```
 
@@ -166,11 +167,11 @@ The X-Headers described in the following list are optional for message files in 
 
 This example shows a plain text message that uses acceptable formatting for the Replay directory.
 
-```text
+```console
 X-Receiver: <mary@contoso.com> NOTIFY=NEVER ORcpt=mary@contoso.com
 ```
 
-```text
+```console
 X-Sender: <bob@fabrikam.com> BODY=7bit ENVID=12345AB auth=<someAuth>
 Subject: Optional message subject
 
@@ -178,11 +179,11 @@ This is the body of the message.
 ```
 MIME content is also supported in Replay directory message files. MIME defines a broad range of message content that includes languages that can't be represented in 7-bit ASCII text, HTML, and other multimedia content. A complete description of MIME and its requirements is beyond the scope of this topic. This example shows a simple MIME message that uses acceptable formatting for the Replay directory.
 
-```text
+```console
 X-Receiver: <mary@contoso.com> NOTIFY=NEVER ORcpt=mary@contoso.com
 ```
 
-```text
+```console
 X-Sender: <bob@fabrikam.com> BODY=7bit ENVID=12345ABCD auth=<someAuth>
 To: mary@contoso.com
 From: bob@fabrikam.com
@@ -206,7 +207,7 @@ The Replay directory deletes the `Bcc` message header field from the message fil
 
 The Replay directory adds its own `Received` message header field to a message as part of the message submission process. The Received message header field is applied in the following format.
 
-```text
+```console
 Received: from <ReceivingServerName> by Replay with <ExchangeServerVersion><DateTime>
 ```
 
@@ -244,7 +245,7 @@ The following list describes additional security concerns that apply to the Repl
 
 - The X-Headers used by the Replay directory allow for the manual creation of the message envelope. The information in the `X-Sender` and `X-Receiver` fields can be completely different from the `To` or `From` message header fields displayed by email clients. Such an impersonation of a sender and a domain is frequently called *spoofing*. A *spoofed mail* is an email message that has a sending address that was modified to appear as if it originates from a sender other than the actual sender of the message.
 
-- If the `X-CreatedBy` field has the value of **MSExchange15**, the destination is considered trustworthy, and header firewall isn't applied. *Header firewall* is a way for Exchange to preserve X-Headers in messages transmitted between trusted Exchange servers or to remove potentially revealing X-Headers from messages transmitted to untrusted destinations outside the Exchange organization. These X-Headers can be used to share Exchange information such as spam confidence level (SCL), message signing, or encryption between authorized Exchange servers. Revealing this information to unauthorized sources could pose a potential security risk. For more information about header firewall, see [Understanding Header Firewall](https://go.microsoft.com/fwlink/?linkid=268394).
+- If the `X-CreatedBy` field has the value of **MSExchange15**, the destination is considered trustworthy, and header firewall isn't applied. *Header firewall* is a way for Exchange to preserve X-Headers in messages transmitted between trusted Exchange servers or to remove potentially revealing X-Headers from messages transmitted to untrusted destinations outside the Exchange organization. These X-Headers can be used to share Exchange information such as spam confidence level (SCL), message signing, or encryption between authorized Exchange servers. Revealing this information to unauthorized sources could pose a potential security risk. For more information about header firewall, see [Understanding Header Firewall](header-firewall-exchange-2013-help.md).
 
 Tighter security should be applied to the Replay directory because of the additional security risks associated with the Replay directory. Users or applications that must generate and submit messages can be granted access to the Pickup directory, but they shouldn't require access to the Replay directory.
 

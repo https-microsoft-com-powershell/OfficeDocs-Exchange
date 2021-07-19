@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 5420124f-aa4c-4702-b493-40a9a7edb786
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Configure message retry, resubmit, and expiration intervals
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,14 +24,14 @@ In Exchange Server, you can configure message retry, resubmit, and expiration in
 
 - Estimated time to complete each procedure: less than 5 minutes
 
-- You can only use the Exchange admin center (EAC) on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- You can only use the Exchange admin center (EAC) on Mailbox servers. For more information about the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport service" and "Edge Transport severs" entries in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use EdgeTransport.exe.config to configure the queue glitch retry count, the queue glitch retry interval, the mailbox delivery queue retry interval, and the maximum idle time before resubmit interval
 
@@ -49,13 +50,13 @@ To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\Ed
 
 1. In a Command prompt window on the Mailbox server or Edge Transport server, open the EdgeTransport.exe.config file in Notepad by running this command:
 
-   ```
+   ```console
    Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
    ```
 
 2. Locate the following keys in the `<appSettings>` section.
 
-   ```
+   ```xml
    <add key="QueueGlitchRetryCount" value="<Integer>" />
    <add key="QueueGlitchRetryInterval" value="<hh:mm:ss>" />
    <add key="MailboxDeliveryQueueRetryInterval" value="<hh:mm:ss>" />
@@ -64,7 +65,7 @@ To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\Ed
 
    This example changes the queue glitch retry count to 6, the queue glitch retry interval to 30 seconds, the mailbox delivery queue retry interval to 3 minutes, and the maximum idle time before resubmit interval to 6 hours.
 
-   ```
+   ```xml
    <add key="QueueGlitchRetryCount" value="6" />
    <add key="QueueGlitchRetryInterval" value="00:00:30" />
    <add key="MailboxDeliveryQueueRetryInterval" value="00:03:00" />
@@ -75,7 +76,7 @@ To configure these intervals, you modify keys in the %ExchangeInstallPath%Bin\Ed
 
 4. Restart the Exchange Transport service by running this command:
 
-   ```
+   ```console
    net stop MSExchangeTransport && net start MSExchangeTransport
    ```
 
@@ -85,13 +86,13 @@ To verify that you've configured these intervals, do these steps:
 
 1. Open the EdgeTransport.exe.config file in Notepad by running this command:
 
-   ```
+   ```console
    Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
    ```
 
 2. Verify the values of the following keys in the `<appSettings>` section.
 
-   ```
+   ```xml
    <add key="QueueGlitchRetryCount" value="<Integer>" />
    <add key="QueueGlitchRetryInterval" value="<hh:mm:ss>" />
    <add key="MailboxDeliveryQueueRetryInterval" value="<hh:mm:ss>" />
@@ -126,13 +127,13 @@ To verify that you've configured these intervals, do these steps:
 
 To configure the intervals in the Transport service on Mailbox servers or Edge Transport servers, use this syntax:
 
-```
+```powershell
 Set-TransportService -Identity <ServerIdentity> -TransientFailureRetryCount <Integer> -TransientFailureRetryInterval <hh:mm:ss> -OutboundConnectionFailureRetryInterval <dd.hh:mm:ss>
 ```
 
 To configure the intervals in the Front End Transport service on Mailbox servers, use this syntax:
 
-```
+```powershell
 Set-FrontEndTransportService -Identity <ServerIdentity> -TransientFailureRetryCount <Integer> -TransientFailureRetryInterval <hh:mm:ss>
 ```
 
@@ -144,7 +145,7 @@ This example changes the following values on the Mailbox server named Mailbox01:
 
 - The outbound connection failure retry interval is set to 45 minutes.
 
-```
+```powershell
 Set-TransportService -Identity Mailbox01 -TransientFailureRetryCount 8 -TransientFailureRetryInterval 00:01:00 -OutboundConnectionFailureRetryInterval 00:45:00
 ```
 
@@ -156,13 +157,13 @@ To verify that you've configured these intervals, do any of these steps:
 
 - In the Exchange Management Shell on a Mailbox server or Edge Transport server, run this command to verify the property values:
 
-  ```
+  ```powershell
   Get-TransportService | Format-List Name,TransientFailureRetry*,OutboundConnectionFailureRetryInterval
   ```
 
 - In the Exchange Management Shell on a Mailbox serve, run this command to verify the property values:
 
-  ```
+  ```powershell
   Get-FrontEndTransportService | Format-List Name,TransientFailureRetry*
   ```
 
@@ -172,13 +173,13 @@ The message retry interval specifies how long to wait between sending attempts f
 
 To configure the message retry interval, use this syntax:
 
-```
+```powershell
 Set-TransportService -Identity <ServerIdentity> -MessageRetryInterval <dd.hh:mm:ss>
 ```
 
 This example changes the message retry interval to 20 minutes on the Mailbox server named Mailbox01.
 
-```
+```powershell
 Set-TransportService -Identity Mailbox01 -MessageRetryInterval 00:20:00
 ```
 
@@ -186,7 +187,7 @@ Set-TransportService -Identity Mailbox01 -MessageRetryInterval 00:20:00
 
 To verify that you've configured the message retry interval on a Mailbox server or Edget Transport server, run this command in the Exchange Management Shell to verify the **MessageRetryInterval** property value:
 
-```
+```powershell
 Get-TransportService | Format-List Name,MessageRetryInterval
 ```
 
@@ -210,13 +211,13 @@ Get-TransportService | Format-List Name,MessageRetryInterval
 
 To configure the delay DSN message notification timeout interval, use this syntax:
 
-```
+```powershell
 Set-TransportService -Identity <ServerIdentity> -DelayNotificationTimeout <dd.hh:mm:ss>
 ```
 
 This example changes the delay DSN message notification timeout interval to 6 hours on the Mailbox server named Mailbox01.
 
-```
+```powershell
 Set-TransportService -Identity Mailbox01 -DelayNotificationTimeout 06:00:00
 ```
 
@@ -224,19 +225,19 @@ Set-TransportService -Identity Mailbox01 -DelayNotificationTimeout 06:00:00
 
 To configure the delay DSN notification settings, use this syntax:
 
-```
+```powershell
 Set-TransportConfig -ExternalDelayDSNEnabled <$true | $false> -InternalDelayDSNEnabled <$true |$false>
 ```
 
 This example prevents the sending of delay DSN notification messages to external senders.
 
-```
+```powershell
 Set-TransportConfig -ExternalDelayDSNEnabled $false
 ```
 
 This example prevents the sending of delay DSN notification messages to internal senders.
 
-```
+```powershell
 Set-TransportConfig -InternalDelayDSNEnabled $false
 ```
 
@@ -248,11 +249,11 @@ To verify that you've configured the delay DSN timeout settings, do any of these
 
 - In the Exchange Management Shell on a Mailbox server or Edge Transport server, run these commands to verify the property values:
 
-  ```
+  ```powershell
   Get-TransportService | Format-List Name,DelayNotificationTimeout
   ```
 
-  ```
+  ```powershell
   Get-TransportConfig | Format-List *DelayDSNEnabled
   ```
 
@@ -272,13 +273,13 @@ The message expiration timeout interval specifies how long to wait before the me
 
 To configure the message expiration timeout interval, use the following syntax.
 
-```
+```powershell
 Set-TransportService -Identity <ServerIdentity> -MessageExpirationTimeout <dd.hh:mm:ss>
 ```
 
 This example changes the message expiration timeout interval to 4 days on the Exchange server named Mailbox01.
 
-```
+```powershell
 Set-TransportService -Identity Mailbox01 -MessageExpirationTimeout 4.00:00:00
 ```
 
@@ -290,6 +291,6 @@ To verify that you've configured the message expiration timeout interval, do any
 
 - In the Exchange Management Shell on a Mailbox server or Edge Transport server, run this command to verify the **MessageExpirationTimeout** property value:
 
-  ```
+  ```powershell
   Get-TransportService | Format-List Name,MessageExpirationTimeout
   ```

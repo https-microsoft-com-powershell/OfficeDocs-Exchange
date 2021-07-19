@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 11801f73-4934-4025-a1c1-3935dada7e9b
-ms.date: 7/6/2018
 ms.reviewer:
 title: Procedures for accepted domains in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -51,12 +52,12 @@ For more information about accepted domains, see [Accepted domains in Exchange S
 
 - You need to create a Send connector to route mail for non-existent recipients in internal or external relay domains. For more information, see [Create a Send connector to route outbound mail through a smart host](../../mail-flow/connectors/outbound-smart-host-routing.md).
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Create accepted domains
 
@@ -80,19 +81,19 @@ After you create an accepted domain, you can't change the domain value (for exam
 
 To create an accepted domain, use the following syntax:
 
-```
+```PowerShell
 New-AcceptedDomain -Name <Name> -DomainName <DomainOrDomainWithSubdomains> -DomainType <Authoritative | InternalRelay | ExternalRelay>
 ```
 
 This example creates a new authoritative domain named Contoso Corp for contoso.com.
 
-```
+```PowerShell
 New-AcceptedDomain -Name "Contoso Corp" -DomainName contoso.com
 ```
 
 **Note**: We didn't need to use the _DomainType_ parameter, because the default value is `Authoritative`.
 
-For detailed syntax and parameter information, see [New-AcceptedDomain](https://technet.microsoft.com/library/08bcaaec-51e3-447d-b3bf-406a705c64b4.aspx).
+For detailed syntax and parameter information, see [New-AcceptedDomain](/powershell/module/exchange/new-accepteddomain).
 
 ### How do you know this worked?
 
@@ -102,7 +103,7 @@ To verify that you've successfully created an accepted domain, use either of the
 
 - In the Exchange Management Shell, run the following command to verify the property values:
 
-  ```
+  ```PowerShell
   Get-AcceptedDomain | Format-Table -Auto Name,DomainName,DomainType,Default,AddressBookEnabled
   ```
 
@@ -130,23 +131,23 @@ To verify that you've successfully created an accepted domain, use either of the
 
 To modify an accepted domain, use the following syntax:
 
-```
+```PowerShell
 Set-AcceptedDomain -Identity <AcceptedDomainIdentity> [-Name <Name>]  [-DomainType <Authoritative | InternalRelay | ExternalRelay>] [-AddressBookEnabled <$true | $false>] [-MakeDefault $true]
 ```
 
 This example configures the authoritative domain named Contoso Corp as the default domain.
 
-```
+```PowerShell
 Set-AcceptedDomain -Identity "Contoso Corp" -MakeDefault $true
 ```
 
 This example enables Recipient Lookup on a Edge Transport server for the internal relay domain named Fabrikam Corp. All external recipients in the fabrikam.com domain are represented in Exchange as mail users.
 
-```
+```PowerShell
 Set-AcceptedDomain -Identity "Fabrikam Corp" -AddressBookEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-AcceptedDomain](https://technet.microsoft.com/library/2ef9a20b-0974-45d0-9dae-23bab22d736e.aspx).
+For detailed syntax and parameter information, see [Set-AcceptedDomain](/powershell/module/exchange/set-accepteddomain).
 
 ### How do you know this worked?
 
@@ -162,7 +163,7 @@ To verify that you've successfully modified an accepted domain, use either of th
 
 - In the Exchange Management Shell, run the following command to verify the property values:
 
-  ```
+  ```PowerShell
   Get-AcceptedDomain | Format-Table -Auto Name,DomainName,DomainType,Default,AddressBookEnabled
   ```
 
@@ -172,7 +173,7 @@ To verify that you've successfully modified an accepted domain, use either of th
 
 - You can't remove an accepted domain that's defined anywhere in an email address policy (including in the disabled email address templates). To see all the domains that are used in email address policies, run the following command in the Exchange Management Shell:
 
-  ```
+  ```PowerShell
   Get-EmailAddressPolicy | Format-List Name,*EmailAddressTemplate*
   ```
 
@@ -188,17 +189,17 @@ To verify that you've successfully modified an accepted domain, use either of th
 
 To remove an accepted domain, use the following syntax:
 
-```
+```PowerShell
 Remove-AcceptedDomain -Identity <AcceptedDomainIdentity>
 ```
 
 This example removes the accepted domain named Fabrikam Corp.
 
-```
+```PowerShell
 Remove-AcceptedDomain -Identity "Fabrikam Corp"
 ```
 
-For detailed syntax and parameter information, see [remove-AcceptedDomain](https://technet.microsoft.com/library/79bedc01-7b50-4127-ba54-06bf55c3f43d.aspx).
+For detailed syntax and parameter information, see [remove-AcceptedDomain](/powershell/module/exchange/remove-accepteddomain).
 
 ### How do you know this worked?
 
@@ -208,7 +209,7 @@ To verify that you've successfully removed an accepted domain, use either of the
 
 - In the Exchange Management Shell, run the following command to verify that the accepted domain isn't listed:
 
-  ```
+  ```PowerShell
   Get-AcceptedDomain
   ```
 

@@ -2,13 +2,14 @@
 title: Troubleshooting EWS.Protocol Health Set
 TOCTitle: Troubleshooting EWS.Protocol Health Set
 ms:assetid: 826b2d5b-adbb-4bf5-94b6-0a8de2e3aac0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.ews.protocol(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.ews.protocol(v=EXCHG.150)
 ms:contentKeyID: 49720829
-ms.date:
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -65,7 +66,7 @@ The EwsSelfTestProbe does not depend on the Information Store. However, the EwsD
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 When you receive an alert from this HealthSet, the email message contains the following information:
 
@@ -173,8 +174,8 @@ This monitor alert is typically issued for Mailbox servers.
     Set-MailboxServer server1.contoso.com -DatabaseCopyActivationDisabledAndMoveNow $false
     ```
 
-14. If the probe is still failing, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+14. If the probe is still failing, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## For More Information
 
-[What's new in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150540\(v=exchg.150\))
+[What's new in Exchange 2013](../../what-s-new-in-exchange-2013-exchange-2013-help.md)

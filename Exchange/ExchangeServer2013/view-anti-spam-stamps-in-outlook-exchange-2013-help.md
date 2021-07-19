@@ -2,13 +2,14 @@
 title: 'View anti-spam stamps in Outlook: Exchange 2013 Help'
 TOCTitle: View anti-spam stamps in Outlook
 ms:assetid: cddb5dbf-ad1e-471c-9fc8-28ddcf7ec1d0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124595(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124595(v=EXCHG.150)
 ms:contentKeyID: 49345061
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ You can use Microsoft Outlook to view the anti-spam stamps that Microsoft Exchan
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use Outlook 2010 or Outlook 2013 to view anti-spam stamps
 

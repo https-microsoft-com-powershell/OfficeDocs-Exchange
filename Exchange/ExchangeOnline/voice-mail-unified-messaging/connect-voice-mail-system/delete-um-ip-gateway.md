@@ -3,10 +3,11 @@ localization_priority: Normal
 description: When you delete a Unified Messaging (UM) IP gateway, Exchange servers can no longer accept incoming calls from the Voice over IP (VoIP) gateway, Session Initiation Protocol (SIP)-enabled Private Branch eXchange (PBX), IP PBX, or session border controller (SBC) associated with the UM IP gateway.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 569d3741-67dd-4597-8d28-010011be0c12
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Delete a UM IP gateway in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -28,7 +29,7 @@ For additional tasks related to UM IP gateways, see [UM IP gateway procedures](u
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM IP gateways" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan.md).
 
@@ -37,7 +38,7 @@ For additional tasks related to UM IP gateways, see [UM IP gateway procedures](u
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to delete a UM IP gateway
 
@@ -49,6 +50,6 @@ For additional tasks related to UM IP gateways, see [UM IP gateway procedures](u
 
 This example deletes the UM IP gateway named `MyUMIPGateway`.
 
-```
+```PowerShell
 Remove-UMIPGateway -Identity MyUMIPGateway
 ```

@@ -2,15 +2,16 @@
 title: 'Update an address list: Exchange 2013 Help'
 TOCTitle: Update an address list
 ms:assetid: 163e7099-cf14-4bb0-a84c-1401e9db670e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996375(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996375(v=EXCHG.150)
 ms:contentKeyID: 49289182
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
-f1_keywords:
+ms.custom:
 - Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.Mailbox.UpdateAddressListWizardForm.ScheduleWizardPage
 ---
 
@@ -33,7 +34,7 @@ For additional management tasks related to address lists, see [Address list proc
 For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to update an address list
 
@@ -57,4 +58,4 @@ If you have more than one address list with the same name, you must specify the 
 Update-AddressList "North America\Sales"
 ```
 
-For detailed syntax and parameter information, see [Update-AddressList](https://technet.microsoft.com/en-us/library/aa997982\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Update-AddressList](/powershell/module/exchange/Update-AddressList).

@@ -2,13 +2,14 @@
 title: 'Configure Outlook to show the original sender in the quarantine mailbox'
 TOCTitle: Configure Outlook to show the original sender in the quarantine mailbox
 ms:assetid: 9249425d-1b06-48a0-ad95-c4eefb641ff4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee861109(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee861109(v=EXCHG.150)
 ms:contentKeyID: 49345054
-ms.date: 12/09/2016
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,12 +31,12 @@ By default, you can't select these fields in Microsoft Outlook. Before you can a
 
 - This procedure requires that you've configured the anti-spam quarantine mailbox. For more information, see [Configure a spam quarantine mailbox](configure-a-spam-quarantine-mailbox-exchange-2013-help.md).
 
-- To access the quarantine mailbox, you need to configure an Outlook profile for that mailbox and then open the mailbox using Outlook. For more information about configuring and using multiple Outlook profiles, see [Overview of Outlook e-mail profiles](https://go.microsoft.com/fwlink/p/?linkid=178975).
+- To access the quarantine mailbox, you need to configure an Outlook profile for that mailbox and then open the mailbox using Outlook. For more information about configuring and using multiple Outlook profiles, see [Overview of Outlook e-mail profiles](https://support.microsoft.com/office/f544c1ba-3352-4b3b-be0b-8d42a540459d).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Use Notepad to create a custom Outlook form
 
@@ -122,7 +123,7 @@ By default, you can't select these fields in Microsoft Outlook. Before you can a
 
      - *\<OfficeVersion\>*: For Outlook 2007, the value is `Office12`. For Outlook 2010, the value is `Office14`. For Outlook 2013, the value is `Office15`.
 
-     - *\<LCID\>*: This is your locale ID (LCID) value. For example, the LCID for US English is 1033. For more information, see [KB221435: List of supported locale identifiers in Word](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=221435).
+     - *\<LCID\>*: This is your locale ID (LCID) value. For example, the LCID for US English is 1033. For more information, see [Language identifiers and OptionState Id values in Office](/deployoffice/office2016/language-identifiers-and-optionstate-id-values-in-office-2016).
 
    - **Name**: For the rest of this procedure, assume the file is named `QTNE.cfg`. The name of the file isn't important, but be sure to enclose the value in quotation marks so the file is saved as QTNE.cfg and not QTNE.cfg.txt.
 

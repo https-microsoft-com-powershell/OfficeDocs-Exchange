@@ -2,13 +2,14 @@
 title: Getting started with Exchange Server 2013 Management Pack
 TOCTitle: Getting started with Exchange Server 2013 Management Pack
 ms:assetid: 72d1609f-ab32-44d8-aa40-b1de587442d2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn195908(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn195908(v=EXCHG.150)
 ms:contentKeyID: 53181782
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -2,13 +2,14 @@
 title: 'Upgrade from Exchange 2010  to Exchange 2013: Exchange 2013 Help'
 TOCTitle: Upgrade from Exchange 2010  to Exchange 2013
 ms:assetid: c0558850-d583-4c4e-a9a0-0d3593f84fcc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ898583(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ898583(v=EXCHG.150)
 ms:contentKeyID: 50874011
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ You can't upgrade an existing Exchange 2003 organization directly to Exchange 20
 > [!WARNING]
 > You need to remove all instances of Exchange 2003 from your organization before you can upgrade to Exchange 2013.
 
-You can migrate all your Exchange 2003 mailboxes to Exchange Online. For more information about this approach, see [Ways to migrate multiple email accounts to Office 365](https://go.microsoft.com/fwlink/p/?linkid=524030).
+You can migrate all your Exchange 2003 mailboxes to Exchange Online. For more information about this approach, see [Ways to migrate multiple email accounts to Office 365](../ExchangeOnline/mailbox-migration/mailbox-migration.md).
 
 The following table lists the scenarios in which coexistence between Exchange 2013 and earlier versions of Exchange is supported.
 

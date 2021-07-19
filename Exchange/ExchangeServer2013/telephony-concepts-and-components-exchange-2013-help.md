@@ -2,13 +2,14 @@
 title: 'Telephony concepts and components: Exchange 2013 Help'
 TOCTitle: Telephony concepts and components
 ms:assetid: ce70bf6a-db85-411b-8b93-2987703963a9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124606(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124606(v=EXCHG.150)
 ms:contentKeyID: 49315524
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -129,4 +130,4 @@ For more information about IP PBX and PBX configurations, see [PBX and IP PBX co
 
 [UM protocols, ports, and services](um-protocols-ports-and-services-exchange-2013-help.md)
 
-[Telephony advisor for Exchange 2013](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013)
+[Telephony advisor for Exchange 2013](../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013.md)

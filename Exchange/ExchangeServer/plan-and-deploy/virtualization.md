@@ -5,12 +5,13 @@ ms.topic: conceptual
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 36184b2f-4cd9-48f8-b100-867fe4c6b579
-ms.date: 6/8/2018
 ms.reviewer: 
 title: Exchange Server virtualization
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -39,7 +40,7 @@ Microsoft supports Exchange 2016 and Exchange 2019 in production on hardware vir
 
   - Any version of Windows Server with Hyper-V technology or Microsoft Hyper-V Server
 
-  - Any third-party hypervisor that has been validated under the [Windows Server Virtualization Validation Program](https://go.microsoft.com/fwlink/p/?LinkId=125375).
+  - Any third-party hypervisor that has been validated under the [Windows Server Virtualization Validation Program](https://www.windowsservercatalog.com/svvp.aspx?svvppage=svvp.htm).
 
     > [!NOTE]
     > Deployment of Exchange 2016 or Exchange 2019 on Infrastructure-as-a-Service (IaaS) providers is supported if all supportability requirements are met. In the case of providers who are provisioning virtual machines, these requirements include ensuring that the hypervisor being used for Exchange virtual machines is fully supported, and that the infrastructure to be utilized by Exchange meets the performance requirements that were determined during the sizing process. Deployment on Microsoft Azure virtual machines is supported if all storage volumes used for Exchange databases and database transaction logs (including transport databases) are configured for Azure Premium Storage.
@@ -66,7 +67,7 @@ For deployments of Exchange 2016 or Exchange 2019:
 
 - It's possible that guest virtual machines may be prevented from directly communicating with Fibre Channel or SCSI host bus adapters (HBAs) installed in the host machine. In this event, you must configure the adapters in the host machine's operating system and present the logical unit numbers (LUNs) to guest virtual machines as either a virtual disk or a pass-through disk.
 
-- The only supported way to send emails to external domains from Azure compute resources is via an SMTP relay (also known as an SMTP smart host). The Azure compute resource sends the email to the SMTP relay and then the SMTP relay provider delivers the email to the external domain. Microsoft Exchange Online Protection is one provider of an SMTP relay, but there are a number of third party providers as well. For more information, see the Microsoft Azure Support Team Blog post [Sending E-mail from Azure Compute Resource to External Domains](https://go.microsoft.com/fwlink/p/?LinkId=799723).
+- The only supported way to send emails to external domains from Azure compute resources is via an SMTP relay (also known as an SMTP smart host). The Azure compute resource sends the email to the SMTP relay and then the SMTP relay provider delivers the email to the external domain. Microsoft Exchange Online Protection is one provider of an SMTP relay, but there are a number of third-party providers as well. For more information, see [Troubleshoot outbound SMTP connectivity issues in Azure](/azure/virtual-network/troubleshoot-outbound-smtp-connectivity).
 
 ## Host machine storage requirements
 
@@ -76,7 +77,7 @@ The minimum disk space requirements for each host machine are described in the f
 
 - Some hypervisors maintain files on the host machine that are unique to each guest virtual machine. For example, in a Hyper-V environment, a temporary memory storage file (BIN file) is created and maintained for each guest machine. The size of each BIN file is equal to the amount of memory allocated to the guest machine. In addition, other files may also be created and maintained on the host machine for each guest machine.
 
-- If your host machine is running Windows Server 2012 Hyper-V or Hyper-V 2012, and you're configuring a host-based failover cluster that will host Exchange Mailbox servers in a DAG, we recommend following the guidance in [KB2872325](https://support.microsoft.com/kb/2872325).
+- If your host machine is running Windows Server 2012 Hyper-V or Hyper-V 2012, and you're configuring a host-based failover cluster that will host Exchange Mailbox servers in a DAG, we recommend following the guidance in [KB2872325](https://support.microsoft.com/help/2872325).
 
 ## Exchange storage requirements
 
@@ -102,7 +103,7 @@ The following are answers to some frequently asked questions about host-based fa
 
 - **Does Microsoft support third-party migration technology?**
 
-    Microsoft can't make support statements for the integration of third party hypervisor products using these technologies with Exchange, because these technologies aren't part of the Server Virtualization Validation Program (SVVP). The SVVP covers the other aspects of Microsoft support for third-party hypervisors. You need to ensure that your hypervisor vendor supports the combination of their migration and clustering technology with Exchange. If your hypervisor vendor supports their migration technology with Exchange, Microsoft supports Exchange with their migration technology.
+    Microsoft can't make support statements for the integration of third-party hypervisor products using these technologies with Exchange, because these technologies aren't part of the Server Virtualization Validation Program (SVVP). The SVVP covers the other aspects of Microsoft support for third-party hypervisors. You need to ensure that your hypervisor vendor supports the combination of their migration and clustering technology with Exchange. If your hypervisor vendor supports their migration technology with Exchange, Microsoft supports Exchange with their migration technology.
 
 - **How does Microsoft define host-based failover clustering?**
 

@@ -1,16 +1,19 @@
 ---
 title: "Fix email delivery issues for error code 550 5.6.11 in Exchange Online"
-ms.author: dmaguire
+ms.author: jhendr
 author: msdmaguire
 manager: serdars
-ms.date: 
 ms.reviewer: 
 audience: Admin
 ms.topic: troubleshooting
 ms.service: o365-administration
 localization_priority: Normal
+f1.keywords:
+- CSH
 ms.custom: MiniMaven
-search.appverid: BCS160
+search.appverid: 
+- BCS160
+- MET150
 ms.assetid: 81dafee7-26af-4d79-b174-8f78980dfafb
 description: "Learn how to fix email issues for error code 5.6.11 in Exchange Online (the destination email server rejects messages with bare line feeds)."
 ---
@@ -20,8 +23,9 @@ description: "Learn how to fix email issues for error code 5.6.11 in Exchange On
 It's frustrating when you get an error after sending an email message. This topic describes what you can do if you see error code 5.6.11 in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN).
 
 |||||
-|:-----|:-----|:-----|:-----|
+|---|---|---|---|
 |![Email user icon](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How can I fix this?](#im-an-email-admin-how-can-i-fix-this)|
+|
 
 ## Why did I get this bounce message?
 
@@ -31,15 +35,15 @@ A _bare line feed_ is a line feed (LF) character that's not immediately preceded
 
 Typically, each line in an email message ends with a carriage return followed by a line feed (CR LF).
 
-If a message contains bare line feeds, the SMTP Chunking feature is required to transmit the message between email servers. Chunking uses the SMTP BDAT command as defined in [RFC 3030](https://go.microsoft.com/fwlink/p/?LinkId=784893). If the destination email server doesn't support BDAT, then it can't accept messages that contain bare line feeds.
+If a message contains bare line feeds, the SMTP Chunking feature is required to transmit the message between email servers. Chunking uses the SMTP BDAT command as defined in [RFC 3030](https://tools.ietf.org/html/rfc3030). If the destination email server doesn't support BDAT, then it can't accept messages that contain bare line feeds.
 
-Office 365 used to remove bare line feeds from messages to enable delivery to older email servers that didn't support SMTP Chunking and the BDAT command. In an effort to better support security standards (for example, DomainKeys Identified Mail or DKIM), Office 365 no longer removes bare line feeds from messages.
+Microsoft 365 and Office 365 used to remove bare line feeds from messages to enable delivery to older email servers that didn't support SMTP Chunking and the BDAT command. In an effort to better support security standards (for example, DomainKeys Identified Mail or DKIM), Office 365 no longer removes bare line feeds from messages.
 
 ## I got this bounce message. How do I fix it?
 
 If you received this NDR as a result of a message that you sent, you can try the following steps fix the problem:
 
-1. Send the message using a different email program that doesn't add bare line feeds to messages, such as [Outlook on the web](https://support.office.com/article/a096dc77-d053-4e04-864d-c278e5712ef9.aspx) (formerly known as Outlook Web App).
+1. Send the message using a different email program that doesn't add bare line feeds to messages, such as [Outlook on the web](https://support.microsoft.com/office/a096dc77-d053-4e04-864d-c278e5712ef9) (formerly known as Outlook Web App).
 
 2. If the original message contained an attachment, try sending the message without the attachment.
 
@@ -51,7 +55,7 @@ If the steps in the previous section didn't fix the problem, the **recipient's**
 
 ### Solution 1: Disable bare line feed rejection (allow messages that contain bare line feeds) in the destination email server
 
-Some email servers support the ability to disable bare line feed rejection. For example, Receive connectors in Exchange Server support the _BareLinefeedRejectionEnabled_ setting. If the recipient's email server is Exchange, the admin could configure the setting `-BareLinefeedRejectionEnabled $false` on the server's Receive connector for internet mail. For more information, see [Set-ReceiveConnector](https://go.microsoft.com/fwlink/p/?LinkId=784894).
+Some email servers support the ability to disable bare line feed rejection. For example, Receive connectors in Exchange Server support the _BareLinefeedRejectionEnabled_ setting. If the recipient's email server is Exchange, the admin could configure the setting `-BareLinefeedRejectionEnabled $false` on the server's Receive connector for internet mail. For more information, see [Set-ReceiveConnector](/powershell/module/exchange/Set-ReceiveConnector).
 
 ### Solution 2: Upgrade the destination email server to a newer version (or different email server software) that supports the SMTP BDAT command
 
@@ -59,20 +63,20 @@ Email servers that supports the SMTP BDAT command can accept messages with bare 
 
 ## What's a bare line feed?
 
-
+A _bare line feed_ is a single line feed character (LF or ASCII 10) that isn't immediately preceded by the carriage return character (CR or ASCII 13). The line separator in an email message is supposed to be CRLF, not LF.
 
 ## Still need help?
 
-[![Get help from the Office 365 community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://go.microsoft.com/fwlink/p/?LinkId=518605)
+[![Get help from the community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://answers.microsoft.com/)
 
-[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://go.microsoft.com/fwlink/p/?LinkId=519124)
+[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://admin.microsoft.com/AdminPortal/Home#/support)
 
-[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](https://go.microsoft.com/fwlink/p/?LinkID=518322)
+[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](/microsoft-365/Admin/contact-support-for-business-products)
 
 ## See also
 
 [Email non-delivery reports in Exchange Online](non-delivery-reports-in-exchange-online.md)
 
-[RFC 6376 DomainKeys Identified Mail (DKIM) Signatures](https://go.microsoft.com/fwlink/p/?LinkId=784892)
+[RFC 6376 DomainKeys Identified Mail (DKIM) Signatures](https://tools.ietf.org/html/rfc6376)
 
-[RFC 3030 SMTP Service Extensions for Transmission of Large and Binary Mime Messages (BDAT Support)](https://go.microsoft.com/fwlink/p/?LinkId=784893)
+[RFC 3030 SMTP Service Extensions for Transmission of Large and Binary Mime Messages (BDAT Support)](https://tools.ietf.org/html/rfc3030)

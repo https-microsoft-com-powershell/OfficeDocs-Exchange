@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 2ed45d18-2ff3-4099-b841-050eb16a416b
-ms.date: 7/31/2018
 ms.reviewer: 
 title: Overview of Exchange services on Exchange servers
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -30,7 +31,7 @@ The following table describes the Exchange services that are installed on Mailbo
 |**Service name**|**Service short name**|**Description and dependencies**|**Default startup type**|**Security context**|**Dependencies**|**Required or optional**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Microsoft Exchange Active Directory Topology|MSExchangeADTopology|Provides Active Directory topology information to Exchange services. If this service is stopped, most Exchange services can't start.|Automatic|Local System|Net.TCP Port Sharing Service|Required|
-|Microsoft Exchange Anti-spam Update|MSExchangeAntispamUpdate|Provides Exchange SmartScreen spam definition updates. <br/> **Note**: In November, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions were left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://go.microsoft.com/fwlink/p/?linkid=835894).|Automatic|Local System|Microsoft Exchange Active Directory Topology|Optional|
+|Microsoft Exchange Anti-spam Update|MSExchangeAntispamUpdate|Provides Exchange SmartScreen spam definition updates. <br/> **Note**: In November, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions were left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332).|Automatic|Local System|Microsoft Exchange Active Directory Topology|Optional|
 |Microsoft Exchange Compliance Audit|MSComplianceAudit|Provides Exchange auditing features.|Automatic|Local System|Microsoft Exchange Active Directory Topology|Required|
 |Microsoft Exchange Compliance Service|MSExchangeCompliance|Provides a host for Exchange compliance services.|Automatic|Local System|Microsoft Exchange Active Directory Topology|Required|
 |Microsoft Exchange DAG Management|MSExchangeDagMgmt|Provides storage and database layout management for Mailbox servers in database availability groups (DAGs).|Automatic|Local System|Microsoft Exchange Active Directory TopologyNet.TCP Port Sharing Service|Required|
@@ -46,7 +47,7 @@ The following table describes the Exchange services that are installed on Mailbo
 |Microsoft Exchange Mailbox Replication|MSExchangeMailboxReplication|Processes mailbox moves and move requests.|Automatic|Local System|Microsoft Exchange Active Directory TopologyNet.TCP Port Sharing Service|Rquired|
 |Microsoft Exchange Mailbox Transport Delivery|MSExchangeDelivery|Receives SMTP messages from the Microsoft Exchange Transport service (on the local or remote Mailbox servers) and delivers them to a local mailbox database using RPC.|Automatic|Network Service|Microsoft Exchange Active Directory Topology|Required|
 |Microsoft Exchange Mailbox Transport Submission|MSExchangeSubmission|Receives RPC messages from a local mailbox database, and submits them over SMTP to the Microsoft Exchange Transport service (on the local or remote Mailbox servers).|Automatic|Local System|Microsoft Exchange Active Directory Topology|Required|
-|Microsoft Exchange Notifications Broker|MSExchangeNotificationsBroker|Provides Exchange notifications to local and remote Exchange processes.|Automatic|Local System|Microsoft Exchange Active Directory Topology <br/>• Net.TCP Port Sharing Service|Required|
+|Microsoft Exchange Notifications Broker (Exchange 2016 only)|MSExchangeNotificationsBroker|Provides Exchange notifications to local and remote Exchange processes.|Automatic|Local System|Microsoft Exchange Active Directory Topology <br/>• Net.TCP Port Sharing Service|Required|
 |Microsoft Exchange POP3|MSExchangePOP3|Proxies POP3 client connections from the Client Access (frontend) services to the backend IMAP4 service on Mailbox servers. By default, this service isn't running, so POP3 clients can't connect to the Exchange server until this service is started.|Manual|Network Service|Microsoft Exchange Active Directory Topology|Optional|
 |Microsoft Exchange POP3 Backend|MSExchangePOP3BE|Receives proxied POP3 client connections from the from the Client Access (frontend) POP3 service. By default, this service isn't running, so POP3 clients can't connect to the Exchange server until this service is started.|Manual|Network Service|Microsoft Exchange Active Directory Topology|Optional|
 |Microsoft Exchange Replication Service|MSExchangeRepl|Provides replication functionality for mailbox databases in a database availability groups (DAGs).|Automatic|Local System|Microsoft Exchange Active Directory Topology|Required|
@@ -68,7 +69,7 @@ The following table describes the Exchange services that are installed on Edge T
 |**Service name**|**Service short name**|**Description**|**Default startup type**|**Security context**|**Dependencies**|**Required or optional**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Microsoft Exchange ADAM|ADAM_MSExchange|Stores configuration data and recipient data on the Edge Transport server. This service represents the named instance of the Active Directory Lightweight Directory Services (AD LDS) that's automatically created by Exchange Setup.|Automatic|Network Service|COM+ Event System|Required|
-|Microsoft Exchange Anti-spam Update|MSExchangeAntispamUpdate|Provides Exchange SmartScreen spam definition updates. <br/> **Note**: In November, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions were left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://go.microsoft.com/fwlink/p/?linkid=835894).|Automatic|Local System|Microsoft Exchange ADAM|Optional|
+|Microsoft Exchange Anti-spam Update|MSExchangeAntispamUpdate|Provides Exchange SmartScreen spam definition updates. <br/> **Note**: In November, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions were left in place, but their effectiveness will likely degrade over time. For more information, see [Deprecating support for SmartScreen in Outlook and Exchange](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332).|Automatic|Local System|Microsoft Exchange ADAM|Optional|
 |Microsoft Exchange Credential Service|MSExchangeEdgeCredential|Monitors credential changes in Active Directory Lightweight Directory Services (AD LDS) and installs the changes on the Edge Transport server.|Automatic|Local System|Microsoft Exchange ADAM|Required|
 |Microsoft Exchange Diagnostics|MSExchangeDiagnostics|Provides an agent that monitors Exchange server health.|Automatic|Local System|None|Required|
 |Microsoft Exchange Health Manager|MSExchangeHM|Part of managed availability that monitors the health of key components on the Exchange server.|Automatic|Local System|• Windows Event Log <br/>• Windows Management Instrumentation|Required|

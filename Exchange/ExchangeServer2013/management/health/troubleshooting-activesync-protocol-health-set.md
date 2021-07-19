@@ -2,13 +2,14 @@
 title: Troubleshooting ActiveSync.Protocol Health Set
 TOCTitle: Troubleshooting ActiveSync.Protocol Health Set
 ms:assetid: 7351f881-08b2-4504-99f2-63e7acdfcc35
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.activesync.protocol(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.activesync.protocol(v=EXCHG.150)
 ms:contentKeyID: 49720823
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,8 +29,8 @@ It's possible that the ActiveSync service recovered after it issued the alert. T
 
 ## For More Information
 
-[Exchange ActiveSync](https://technet.microsoft.com/en-us/library/aa998357\(v=exchg.150\))
+[Exchange ActiveSync](../../exchange-activesync-exchange-2013-help.md)
 
-[Mobile devices](https://technet.microsoft.com/en-us/library/bb232129\(v=exchg.150\))
+[Mobile devices](../../mobile-devices-exchange-2013-help.md)
 
-[Exchange ActiveSync virtual directory management tasks](https://technet.microsoft.com/en-us/library/bb125170\(v=exchg.150\))
+[Exchange ActiveSync virtual directory management tasks](../../exchange-activesync-virtual-directory-management-tasks-exchange-2013-help.md)

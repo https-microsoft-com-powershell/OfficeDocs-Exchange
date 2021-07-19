@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 056b29f6-e0e9-4974-b763-002518857a93
-ms.date: 6/8/2018
 ms.reviewer:
 title: Plan Exchange 2016 integration with SharePoint and Skype for Business
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -42,9 +43,9 @@ Exchange 2016, SharePoint Server 2016, and Skype for Business Server use the sta
 
 With Exchange 2016 and Lync Server 2013 deployed in an organization, you can configure Skype for Business to archive instant message and on-line meeting content, including shared presentations or documents in the user's Exchange 2016 mailbox. Archiving Skype for Business data in Exchange 2016 allows you to apply retention policies to the data. Archived Skype for Business content also surfaces in any eDiscovery searches. For more details about Skype for Business archiving and how to deploy it, see the following topics:
 
-- [Planning for Archiving](https://go.microsoft.com/fwlink/p/?LinkId=265005)
+- [Planning for Archiving](/SkypeForBusiness/plan-your-deployment/archiving/archiving)
 
-- [Deploying Archiving](https://go.microsoft.com/fwlink/p/?LinkId=265006)
+- [Deploying Archiving](/SkypeForBusiness/deploy/deploy-archiving/deploy-archiving)
 
 ## Preserve documents in SharePoint Server 2016
 
@@ -58,11 +59,11 @@ For more details on eDiscovery see the following topics:
 
 - [In-Place Hold and Litigation Hold in Exchange Server](../../policy-and-compliance/holds/holds.md)
 
-- [Configure eDiscovery in SharePoint 2013](https://go.microsoft.com/fwlink/p/?linkid=257727)
+- [Configure eDiscovery in SharePoint Server](/SharePoint/governance/configure-ediscovery-0)
 
-- [What's new in eDiscovery in SharePoint Server 2013](https://go.microsoft.com/fwlink/p/?linkId=275091)
+- [What's new in eDiscovery in SharePoint Server](/SharePoint/what-s-new/new-and-improved-features-in-sharepoint-server-2016)
 
-- [Configure Exchange for SharePoint eDiscovery Center](https://technet.microsoft.com/library/795c1a3b-295c-4ee5-ade9-52cf3fda3f19.aspx)
+- [Configure Exchange for SharePoint eDiscovery Center](../../../ExchangeServer2013/configure-exchange-for-sharepoint-ediscovery-center-exchange-2013-help.md)
 
 ## Search across applications by using eDiscovery
 
@@ -76,7 +77,7 @@ SharePoint Server 2016 provides the eDiscovery Center to help you locate and the
 
 If your organization adheres to legal discovery requirements, that is, anything related to organizational policy, compliance, or lawsuits, In-Place eDiscovery in Exchange Server 2016 can help you perform discovery searches for relevant content within mailboxes. You can also use In-Place eDiscovery in an Exchange hybrid environment to search on-premises and cloud-based mailboxes in the same search.
 
-When you configure server-to-server authentication betweenExchange 2016 and SharePoint Server 2016 in on-premises deployments, administrators and compliance officers can use the eDiscovery Center. For more information, see [Configure Exchange for SharePoint eDiscovery Center](https://technet.microsoft.com/library/795c1a3b-295c-4ee5-ade9-52cf3fda3f19.aspx). In hybrid deployments, for more information see [Using Oauth Authentication to Support eDiscovery in an Exchange Hybrid Deployment](https://technet.microsoft.com/library/b069f8db-fbe1-4047-ad97-d00172ee6a12.aspx)
+When you configure server-to-server authentication betweenExchange 2016 and SharePoint Server 2016 in on-premises deployments, administrators and compliance officers can use the eDiscovery Center. For more information, see [Configure Exchange for SharePoint eDiscovery Center](../../../ExchangeServer2013/configure-exchange-for-sharepoint-ediscovery-center-exchange-2013-help.md). In hybrid deployments, for more information see [Using Oauth Authentication to Support eDiscovery in an Exchange Hybrid Deployment](../../../ExchangeServer2013/using-oauth-authentication-to-support-ediscovery-in-an-exchange-hybrid-deployment-exchange-2013-help.md)
 
 You can identify and reduce your data set by using keyword syntax, property restrictions, and refinements. The query experience focuses on statistics for individual sources and query fragments to help you make decisions about the content you're searching across. You can also preview SharePoint 2016 and Exchange 2016 content to confirm that you have identified the right set of results.
 
@@ -115,9 +116,9 @@ In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for
 
 In hybrid deployments, you need to configure OAuth authorization protocol between your on-premises Exchange 2016 and Exchange Online organizations. Hybrid deployments by default continue to use the federation trust process.
 
-Certain Exchange 2016 features are only fully available across your organization by using the new OAuth protocol. For example, before you can use In-Place eDiscovery to search on-premises and cloud-based mailboxes in an Exchange hybrid organization, you need to configure OAuth authentication between your Exchange on-premises and Exchange Online organizations. The Hybrid Configuration Wizard doesn't manage the OAuth authorization connection. For more information, see [Configure OAuth Authentication Between Exchange and Exchange Online Organizations](https://technet.microsoft.com/library/f703e153-98e2-4268-8a6e-07a86b0a1d22.aspx).
+Certain Exchange 2016 features are only fully available across your organization by using the new OAuth protocol. For example, before you can use In-Place eDiscovery to search on-premises and cloud-based mailboxes in an Exchange hybrid organization, you need to configure OAuth authentication between your Exchange on-premises and Exchange Online organizations. The Hybrid Configuration Wizard doesn't manage the OAuth authorization connection. For more information, see [Configure OAuth Authentication Between Exchange and Exchange Online Organizations](../../../ExchangeServer2013/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help.md).
 
-In online deployments, Exchange Online, SharePoint Online and Skype for Business Online need to be configured for a modern authentication connection. Modern authentication brings Active Directory Authentication Library (ADAL)-based sign in to Office 2013 Windows clients. Office 2013 client applications sign in to the Office 365 service to gain access to Exchange Online, SharePoint Online and Skype for Business Online. We recommend that you enable Exchange Online for modern authentication when enabling modern authentication for Skype for Business. Modern authentication is enabled by default in SharePoint Online. For more information, see [Enable Exchange Online for modern authentication](https://go.microsoft.com/fwlink/p/?linkId=846120).
+In online deployments, Exchange Online, SharePoint Online and Skype for Business Online need to be configured for a modern authentication connection. Modern authentication brings Active Directory Authentication Library (ADAL)-based sign in to Office 2013 Windows clients. Office 2013 client applications sign in to the Microsoft 365 or Office 365 service to gain access to Exchange Online, SharePoint Online, and Skype for Business Online. We recommend that you enable Exchange Online for modern authentication when enabling modern authentication for Skype for Business. Modern authentication is enabled by default in SharePoint Online. For more information, see [Enable or disable modern authentication for Outlook in Exchange Online](../../../ExchangeOnline/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online.md).
 
 The per service default state of modern authentication is:
 
@@ -139,14 +140,14 @@ In a site mailbox, content is kept where it belongs. Exchange stores the email, 
 
 You can provision and manage site mailboxes from SharePoint Server 2016. For more information, including how to configure site mailboxes, see the following topics.
 
-- [Site Mailboxes](https://technet.microsoft.com/library/2c4393f4-d274-4e6c-bd09-9577e68c5a33.aspx)
+- [Site Mailboxes](../../../ExchangeServer2013/site-mailboxes-exchange-2013-help.md)
 
-- [Configure email integration for a SharePoint Server 2016 farm](https://technet.microsoft.com/library/ee956941(v=office.16).aspx)
+- [Configure email integration for a SharePoint Server farm](/SharePoint/administration/configure-email-integration)
 
 ## Manage access to unified contact store
 <a name="BKMK_OAuth"> </a>
 
-The unified contact store (UCS) feature provides a consistent contact experience across Office products. This feature lets users store all contact information in their Exchange 2016 mailbox so that the same contact information is available globally across Skype for Business, SharePoint, Exchange, Outlook and Outlook on the web. When you deploy aSkype for Business Server and publish the topology, UCS is enabled for all users by default and no additional action is needed. For more information, see [Configure Skype for Business Server 2015 to use the unified contact store](https://technet.microsoft.com/library/jj688083.aspx).
+The unified contact store (UCS) feature provides a consistent contact experience across Office products. This feature lets users store all contact information in their Exchange 2016 mailbox so that the same contact information is available globally across Skype for Business, SharePoint, Exchange, Outlook and Outlook on the web. When you deploy aSkype for Business Server and publish the topology, UCS is enabled for all users by default and no additional action is needed. For more information, see [Configure Skype for Business Server to use the unified contact store](/skypeforbusiness/deploy/integrate-with-exchange-server/use-the-unified-contact-store).
 
 A user's contacts are automatically migrated to the Exchange 2016 server when the user:
 
@@ -156,11 +157,11 @@ A user's contacts are automatically migrated to the Exchange 2016 server when th
 
 - Logs in by using a Skype for Business rich client.
 
-After you have installed SharePoint Server 2016 in an environment with Exchange 2016 and you have configured server-to-server authentication between the two, users can initiate the migration of existing contacts from SharePoint 2016 or Lync Server 2013 to Exchange 2016. For details, see [Planning and Deploying Unified Contact Store](https://go.microsoft.com/fwlink/p/?LinkId=275092).
+After you have installed SharePoint Server 2016 in an environment with Exchange 2016 and you have configured server-to-server authentication between the two, users can initiate the migration of existing contacts from SharePoint 2016 or Skype for Business Server 2015 to Exchange 2016. For details, see [Planning and Deploying Unified Contact Store](/SkypeForBusiness/plan-your-deployment/integrate-with-exchange/unified-contact-store).
 
 ## Manage access to high-resolution user photos
 <a name="BKMK_OAuth"> </a>
 
 The user photos feature lets you store high resolution user photos in Exchange 2016 that can be accessed by client applications, including Outlook, Outlook on the web, SharePoint 2016, Skype for Business, and mobile email clients. A low-resolution photo is also stored in Active Directory. The cmdlet *Set-UserPhoto* stores a copy of a high resolution image in the user's Exchange mailbox, and stores a 64×64 pixel copy of the photo as an image in the Active Directory attribute thumbnailPhoto.
 
-As with UCS, user photos allow your organization to maintain a consistent user profile photo that can be consumed by client applications without requiring each application to have its own user photos and different ways to add and manage them. Users can manage their own photos by using Outlook on the web, SharePoint 2016 or Skype for Business. For detail about managing photos on Outlook on the web, see [My account](https://go.microsoft.com/fwlink/p/?LinkId=269646).
+As with UCS, user photos allow your organization to maintain a consistent user profile photo that can be consumed by client applications without requiring each application to have its own user photos and different ways to add and manage them. Users can manage their own photos by using Outlook on the web, SharePoint 2016 or Skype for Business. For detail about managing photos on Outlook on the web, see [Change your photo and account information in Outlook on the web](https://support.microsoft.com/office/b2dbb289-851d-4bed-93c3-3e136f5659ec).

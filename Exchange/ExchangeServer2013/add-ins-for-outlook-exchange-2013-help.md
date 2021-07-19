@@ -4,9 +4,10 @@ TOCTitle: Add-ins for Outlook
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 28b6f2a1-a235-4023-b561-6fd304962775
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -19,7 +20,7 @@ _**Applies to:** Exchange Server 2013_
 Add-ins for Outlook are applications that extend the usefulness of Outlook clients by adding information or tools that your users can use without having to leave Outlook. Add-ins are built by third-party developers and can be installed either from a file or URL or from the Office Store. By default, all users can install add-ins. Exchange administrators can use Roles to control users' ability to install add-ins.
 
 > [!TIP]
-> For information about add-ins for Outlook from an end-user perspective, check out the Help topic [Installed add-ins](https://go.microsoft.com/fwlink/p/?LinkId=282387) at Office.com. That topic provides an overview of the add-ins and also shows you some of the add-ins for Outlook that may be installed by default.
+> For information about add-ins for Outlook from an end-user perspective, check out [Installed add-ins](https://support.microsoft.com/office/a61762b7-7a82-47bd-b14e-bbc15eaeb70f). The topic provides an overview of the add-ins and also shows you some of the add-ins for Outlook that may be installed by default.
 
 ## Office Store add-ins and custom add-ins
 
@@ -59,7 +60,7 @@ There are a couple of common scenarios that Exchange administrators manage in th
 
   - Next, use the `Remove-App` cmdlet to remove any add-ins from one or more users.
 
-  For more information, see [Get-App](https://technet.microsoft.com/library/85dfb69d-d637-410e-931c-36685dda84c7.aspx) and [Remove-App](https://technet.microsoft.com/library/cfd1245f-dcd2-48c1-b753-a7ebedd2803f.aspx) for Exchange 2013.
+  For more information, see [Get-App](/powershell/module/exchange/get-app) and [Remove-App](/powershell/module/exchange/remove-app) for Exchange 2013.
 
 ## Allow administrators and users to install add-ins
 

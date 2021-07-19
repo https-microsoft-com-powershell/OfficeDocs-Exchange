@@ -2,13 +2,14 @@
 title: 'TNEF conversion options: Exchange 2013 Help'
 TOCTitle: TNEF conversion options
 ms:assetid: 989a62fc-4bc1-448f-90c8-7c7b56fe1084
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb310786(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb310786(v=EXCHG.150)
 ms:contentKeyID: 50934221
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -60,7 +61,7 @@ For remote domains in your organization, you have the following configuration op
 </tbody>
 </table>
 
-For more information about remote domains, see [Remote domains](remote-domains-exchange-2013-help.md) or [Remote domains in Exchange Online](https://technet.microsoft.com/en-us/library/jj966211\(v=exchg.150\)).
+For more information about remote domains, see [Remote domains](remote-domains-exchange-2013-help.md) or [Remote domains in Exchange Online](../ExchangeOnline/mail-flow-best-practices/remote-domains/remote-domains.md).
 
 ## TNEF conversion options for mail users and mail contacts
 

@@ -2,13 +2,14 @@
 title: 'Create a sharing policy: Exchange 2013 Help'
 TOCTitle: Create a sharing policy
 ms:assetid: cae8cab0-6265-448b-8add-5202cdb20678
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657494(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657494(v=EXCHG.150)
 ms:contentKeyID: 49289410
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -135,11 +136,11 @@ You can edit the default sharing policy to allow all of your users to share full
 
 For detailed syntax and parameter information, see the following topics:
 
-- [New-SharingPolicy](https://technet.microsoft.com/en-us/library/dd298186\(v=exchg.150\))
+- [New-SharingPolicy](/powershell/module/exchange/New-SharingPolicy)
 
-- [Set-ExchangeServer](https://technet.microsoft.com/en-us/library/bb123716\(v=exchg.150\))
+- [Set-ExchangeServer](/powershell/module/exchange/Set-ExchangeServer)
 
-- [Set-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/bb123515\(v=exchg.150\))
+- [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory)
 
 ## How do you know this worked?
 
@@ -150,4 +151,4 @@ Get-SharingPolicy <policy name> | format-list
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

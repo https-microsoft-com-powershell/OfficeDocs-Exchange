@@ -4,9 +4,10 @@ TOCTitle: Enable or disable sending voice messages from Outlook Voice Access
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer:
 ms.assetid: 63544ae2-6a28-40b2-82fc-3df83e93ee56
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,20 +19,20 @@ You can enable Outlook Voice Access users to send voice mail messages to other U
 
 By default, this setting is enabled. If you disable this setting, Outlook Voice Access users that call into an Outlook Voice Access number won't be able to send voice messages to users within the same dial plan.
 
-For additional tasks related to UM dial plans, see [UM Dial Plan Procedures](https://technet.microsoft.com/library/1bda77c8-c4e2-4ae0-a001-76ae029bf843.aspx).
+For additional tasks related to UM dial plans, see [UM dial plan procedures in Exchange Server](um-dial-plan-procedures-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan-exchange-2013-help.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to enable or prevent Outlook Voice Access users sending voice messages to users in the same dial plan
 

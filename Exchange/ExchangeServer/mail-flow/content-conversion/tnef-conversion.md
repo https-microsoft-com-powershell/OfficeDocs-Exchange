@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 989a62fc-4bc1-448f-90c8-7c7b56fe1084
-ms.date: 7/6/2018
 ms.reviewer:
 title: TNEF conversion options
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -40,7 +41,7 @@ For more information about other content conversion in Exchange, see [Content co
 ## TNEF conversion options for remote domains
 <a name="RemoteDomains"> </a>
 
-Remote domains specify settings for messages sent to domains that are external to your Exchange organization. For more information, see [Remote Domains](https://technet.microsoft.com/library/10fb7d62-4d78-40a3-82db-d62bcd27ba42.aspx).
+Remote domains specify settings for messages sent to domains that are external to your Exchange organization. For more information, see [Remote Domains](../../../ExchangeServer2013/remote-domains-exchange-2013-help.md).
 
 When you configure TNEF conversion options for a remote domain, the settings are applied to all messages sent to recipients in that domain. You can use the Exchange admin center (EAC) or the Exchange Management Shell to configure these options:
 
@@ -92,7 +93,7 @@ Senders in Outlook 2010 or earlier can also control the default TNEF message con
 
 - **Send using Outlook Rich Text format**: Any TNEF messages sent to remote recipients remain TNEF messages.
 
-To configure the TNEF conversion settings in Outlook, see [Change the message format to HTML, Rich Text Format, or plain text](https://go.microsoft.com/fwlink/p/?linkid=397890).
+To configure the TNEF conversion settings in Outlook, see [Change the message format to HTML, Rich Text Format, or plain text](https://support.microsoft.com/office/338a389d-11da-47fe-b693-cf41f792fefa).
 
 ## Order of precedence for TNEF conversion options
 <a name="Order"> </a>

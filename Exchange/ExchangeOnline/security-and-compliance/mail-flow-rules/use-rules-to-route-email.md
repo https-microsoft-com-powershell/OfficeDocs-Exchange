@@ -1,7 +1,7 @@
 ---
 description: Learn how to use mail flow rules to route email messages based on their contents in Exchange Online.
 localization_priority: Normal
-ms.author: dmaguire
+ms.author: jhendr
 ms.topic: article
 author: msdmaguire
 ms.service: exchange-online
@@ -9,19 +9,22 @@ ms.assetid: 4c5bee1b-58b5-4152-baef-86fa103050ae
 ms.collection: 
 - exchange-online
 - M365-email-calendar
-ms.date: 6/23/2018
 ms.reviewer: 
 manager: serdars
 audience: ITPro
+f1.keywords:
+- NOCSH
 title: Use mail flow rules to route email based on a list of words, phrases, or patterns in Exchange Online
 
 ---
 
 # Use mail flow rules to route email based on a list of words, phrases, or patterns
 
-To help your users comply with your organization's email policies, you can use Exchange mail flow rules (also known as transport rules) to determine how email containing specific words or patterns is routed. For a short list of words or phrases, you can use the Exchange admin center (EAC). For a longer list, you might want to use Exchange Online PowerShell to read the list from a text file.
+In Exchange Online organizations or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, you can use mail flow rules (also known as transport rules) to find and act on messages that contains specific words. This action can help your users comply with your organization's email policies.
 
-If your organization uses Data Loss Prevention (DLP), see [Data loss prevention](../../security-and-compliance/data-loss-prevention/data-loss-prevention.md) for additional options for identifying and routing email that contains sensitive information.
+For a short list of words or phrases, you can use the Exchange admin center (EAC). For a longer list, you can use [Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell) or [standalone EOP PowerShell](/powershell/exchange/connect-to-exchange-online-protection-powershell) to import the words from a text file.
+
+If your Exchange Online organization uses Data Loss Prevention (DLP), see [Data loss prevention](../../security-and-compliance/data-loss-prevention/data-loss-prevention.md) for additional options for identifying and routing email that contains sensitive information (DLP is not available in standalone EOP).
 
 ## Example 1: Use a short list of unacceptable words
 
@@ -35,7 +38,7 @@ This example blocks messages with common typos.
 
 If your list of words, phrases, or patterns is long, you can put them in a text file with each word, phrase, or pattern on its own line. Use Exchange Online PowerShell to read in the list of keywords into a variable, create a mail flow rule, and assign the variable with the keywords to the mail flow rule condition. For example, the following script takes a list of misspellings from a file called C:\My Documents\misspelled_companyname.txt.
 
-```
+```PowerShell
 $Keywords=Get-Content "C:\My Documents\misspelled_companyname.txt"
 New-TransportRule -Name "Block messages with unacceptable words" -SubjectOrBodyContainsWords $Keywords -SentToScope "NotInOrganization" -RejectMessageReasonText "Do not use internal acronyms, product names, or misspellings in external communications."
 ```
@@ -44,20 +47,25 @@ New-TransportRule -Name "Block messages with unacceptable words" -SubjectOrBodyC
 
 The text file can contain regular expressions for patterns. These expressions are not case-sensitive. Common regular expressions include:
 
-|:-----|:-----|
-|**Expression**|**Matches**|
+<br>
+
+****
+
+|Expression|Matches|
+|---|---|
 |**.**|Any single character|
 |**\***|Any additional characters|
 |**\d**|Any decimal digit|
 |[*character_group*]|Any single character in *character_group*.|
+|
 
 For example, this text file contains common misspellings of Microsoft.
 
-```
+```text
 [mn]sft
 [mn]icrosft
 [mn]icro soft
 [mn].crosoft
 ```
 
-To learn how to specify patterns using regular expressions, see [Regular Expression Reference](https://go.microsoft.com/fwlink/p/?LinkId=532394).
+To learn how to specify patterns using regular expressions, see [Regular Expression Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).

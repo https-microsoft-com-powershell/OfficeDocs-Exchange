@@ -2,13 +2,14 @@
 title: 'TLS functionality and related terminology: Exchange 2013 Help'
 TOCTitle: TLS functionality and related terminology
 ms:assetid: 294ba2a9-892d-4a90-beec-9d298426b5f4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb430753(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb430753(v=EXCHG.150)
 ms:contentKeyID: 50934214
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 Microsoft Exchange Server 2013 provides administrative functionality and other enhancements that improve the overall management of Transport Layer Security (TLS). As you work with this functionality, you need to learn about some TLS-related features and functionality. Some terms and concepts apply to more than one TLS-related feature. In this topic, a brief explanation of each feature is provided, which is intended to help you understand some differences and general terminology related to TLS and the Domain Security feature set:
 
-  - **Transport Layer Security   **TLS is a standard protocol that's used to provide secure Web communications on the Internet or intranets. It enables clients to authenticate servers or, optionally, servers to authenticate clients. It also provides a secure channel by encrypting communications. TLS is the latest version of the Secure Sockets Layer (SSL) protocol.
+  - **Transport Layer Security**: TLS is a standard protocol that's used to provide secure Web communications on the Internet or intranets. It enables clients to authenticate servers or, optionally, servers to authenticate clients. It also provides a secure channel by encrypting communications. TLS is the latest version of the Secure Sockets Layer (SSL) protocol.
 
   - **Mutual TLS**: Mutual TLS authentication differs from TLS as TLS is usually deployed. Typically, when TLS is deployed, it's used only to provide confidentiality in the form of encryption. No authentication occurs between the sender and receiver. Additionally, sometimes when TLS is deployed, only the receiving server is authenticated. This deployment of TLS is typical of the HTTP implementation of TLS. This implementation, where only the receiving server is authenticated, is SSL.
 

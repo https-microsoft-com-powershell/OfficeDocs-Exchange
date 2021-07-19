@@ -2,13 +2,14 @@
 title: 'Search message tracking logs: Exchange 2013 Help'
 TOCTitle: Search message tracking logs
 ms:assetid: e1678327-bcd5-42d4-a363-67f33067fe9a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124926(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124926(v=EXCHG.150)
 ms:contentKeyID: 50646519
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -47,7 +48,7 @@ You can use the **Get-MessageTrackingLog** cmdlet in the Exchange Management She
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to search the message tracking logs
 

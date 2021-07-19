@@ -5,17 +5,18 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: b6a3840d-b821-4e53-877b-59c16be77206
-ms.date:
 ms.reviewer:
-title: Message size limits in Exchange Server
+title: Message size and recipient limits in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
 
 ---
 
-# Message size limits in Exchange Server
+# Message size and recipient limits in Exchange Server
 
 You can apply limits to messages that move through your organization. You can set the maximum size of an entire message as a whole, or the size of individual parts of a message, or both. For example, you could restrict the maximum size of the message header or attachments, or set a maximum number of recipients that can be added to the message. You can apply these limits to your entire Exchange organization, to specific mail transport connectors, specific servers, and to individual mailboxes.
 
@@ -51,21 +52,21 @@ The following list describes the basic types of message size limits, and the mes
 
 ## Scope of limits
 
-The following tables show the message limits at the Organization, Connector, Server, and Mailbox levels, including information about how to configure the limits in the Exchange admin center (EAC) or the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+The following tables show the message limits at the Organization, Connector, Server, and Mailbox levels, including information about how to configure the limits in the Exchange admin center (EAC) or the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 ### Organizational limits
 
 Organizational limits apply to all Exchange 2019 servers, Exchange 2016 servers, Exchange 2013 Mailbox servers, and Exchange 2010 Hub Transport servers that exist in your organization. On Edge Transport servers, any organizational limits that you configure are applied to the local server.
 
-**Note**:
-
-Organizational limits also apply to external senders and external recipients (anonymous or unauthenticated senders or recipients):
-
-- For inbound messages from external senders, Exchange applies the organizational maximum send message size limit (the maximum receive message size limit as described in the [Recipient limits](#recipient-limits) section is applied to the internal recipient).
-
-- For outbound messages to external recipients, Exchange applies the organization maximum receive message size limit (the maximum send message size limit as described in the [Recipient limits](#recipient-limits) section is applied to the internal sender).
-
-Therefore, a message size must be within the message size limits for both the sender and the recipient. This concept is also explained in the [Order of precedence and placement of message size limits](#order-of-precedence-and-placement-of-message-size-limits) section later in this topic.
+> [!NOTE]
+> 
+> Organizational limits also apply to external senders and external recipients (anonymous or unauthenticated senders or recipients):
+> 
+> - For inbound messages from external senders, Exchange applies the organizational maximum send message size limit (the maximum receive message size limit as described in the [Recipient limits](#recipient-limits) section is applied to the internal recipient).
+> 
+> - For outbound messages to external recipients, Exchange applies the organization maximum receive message size limit (the maximum send message size limit as described in the [Recipient limits](#recipient-limits) section is applied to the internal sender).
+> 
+> Therefore, a message size must be within the message size limits for both the sender and the recipient. This concept is also explained in the [Order of precedence and placement of message size limits](#order-of-precedence-and-placement-of-message-size-limits) section later in this topic.
 
 |**Size limit**|**Default value**|**EAC configuration**|**Exchange Management Shell configuration**|
 |:-----|:-----|:-----|:-----|
@@ -77,11 +78,11 @@ Therefore, a message size must be within the message size limits for both the se
 
 To see the values of these organizational limits, run the following commands in the Exchange Management Shell:
 
-```
+```PowerShell
 Get-TransportConfig | Format-List MaxReceiveSize,MaxSendSize,MaxRecipientEnvelopeLimit
 ```
 
-```
+```PowerShell
 Get-TransportRule | where {($_.MessageSizeOver -ne $null) -or ($_.AttachmentSizeOver -ne $null)} | Format-Table Name,MessageSizeOver,AttachmentSizeOver
 ```
 
@@ -105,7 +106,7 @@ You can assign specific message size limits to the Delivery Agent connectors and
 
 To see the values of these connector limits, run the following command in the Exchange Management Shell:
 
-```
+```PowerShell
 Get-ReceiveConnector | Format-Table Name,Max*Size,MaxRecipientsPerMessage; Get-SendConnector | Format-Table Name,MaxMessageSize; Get-AdSiteLink | Format-Table Name,MaxMessageSize; Get-DeliveryAgentConnector | Format-Table Name,MaxMessageSize; Get-ForeignConnector | Format-Table Name,MaxMessageSize
 ```
 
@@ -119,7 +120,7 @@ Server limits apply to specific Mailbox servers or Edge Transport servers. You c
 |Maximum size for a message sent by Exchange ActiveSync clients|10 MB|Not available|You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/client-access/client-message-size-limits.md).|
 |Maximum size for a message sent by Exchange Web Services clients|64 MB|Not available|You configure this value in web.config XML application configuration files on the Mailbox server. For more information, see [Configure client-specific message size limits](../architecture/client-access/client-message-size-limits.md).|
 
-The pickup directory that's available on Edge Transport servers and Mailbox servers also has messages size limits that you can configure. Typically, the pickup directory isn't used in everyday mail flow. It's is used by administrators for mail flow testing, or by applications that need to create and submit their own messages files. For more information, see [Configure the Pickup Directory and the Replay Directory](https://technet.microsoft.com/library/c9ca7358-9a08-4f57-89d0-910e4438df8a.aspx).
+The pickup directory that's available on Edge Transport servers and Mailbox servers also has messages size limits that you can configure. Typically, the pickup directory isn't used in everyday mail flow. It's is used by administrators for mail flow testing, or by applications that need to create and submit their own messages files. For more information, see [Configure the Pickup Directory and the Replay Directory](../../ExchangeServer2013/configure-the-pickup-directory-and-the-replay-directory-exchange-2013-help.md).
 
 - Maximum size of all header fields in a message file placed in the pickup directory: 64 KB.
 
@@ -139,13 +140,13 @@ To see the values of these limits, run the corresponding **Get-** cmdlet for the
 
 For example, to see the limits that are configured on a specific mailbox, run the following command:
 
-```
+```PowerShell
 Get-Mailbox <MailboxIdentity> | Format-List MaxReceiveSize,MaxSendSize,RecipientLimits
 ```
 
 To see the limits that are configured on all user mailboxes, run the following command:
 
-```
+```PowerShell
 $mb= Get-Mailbox -ResultSize unlimited; $mb | where {$_.RecipientTypeDetails -eq 'UserMailbox'} | Format-Table Name,MaxReceiveSize,MaxSendSize,RecipientLimits
 ```
 
@@ -158,6 +159,26 @@ An exception to the order is message size limits on mailboxes and messages size 
 Recipient limits between authenticated senders and recipients (typically, internal message senders and recipients) are exempt from the organizational message size restrictions. Therefore, you can configure specific senders and recipients to exceed the default message size limits for your organization. For example, you can allow specific mailboxes to send and receive larger messages than the rest of the organization by configuring custom send and receive limits for those mailboxes.
 
 However, this exemption applies only to messages sent between authenticated senders and recipients (typically, internal senders and recipients). For messages sent between anonymous senders and recipients (typically, Internet senders or Internet recipients), the organizational limits apply. For example, suppose your organizational message size limit is 10 MB, but you configured the users in your marketing department to send and receive messages up to 50 MB. These users will be able to exchange large messages with each other, but not with Internet senders and recipients (unauthenticated senders and recipients).
+
+### How recipient limits work together
+
+The recipient limit on a message is enforced in two places:
+
+  - At the protocol level during email transfer where the Receive connector *MaxRecipientsPerMessage* is enforced.
+
+  - At the Transport level during categorization where *MaxRecipientEnvelopeLimit* is enforced.
+  
+There is also the mailbox level *RecipientLimits*, which overrides the Transport level *MaxRecipientEnvelopeLimit* and is also enforced during message categorization. If the mailbox level *RecipientLimits* is set to `unlimited` (the default value), then the maximum number of recipients per message for the mailbox is controlled by the Transport level *MaxRecipientEnvelopeLimit*.
+
+For inbound email, the Receive connector *MaxRecipientsPerMessage* is verified first. However, if the number of recipients exceeds the limit, the message is not rejected; the connection receives the error, `452 4.5.3 Too many recipients`. Most mail servers understand this error and they will continue to resend the message in another connection until the message is delivered to all recipients.
+
+The Receive connector *MaxRecipientsPerMessage* applies to authenticated and anonymous SMTP client submissions. However, when an Exchange server relays email through another Exchange server in the same organization, the Receive connector *MaxRecipientsPerMessage* is bypassed.
+
+When the message is accepted and email is sent to the categorizer, the mailbox level *RecipientLimits* (if it is not set to `unlimited`) or Transport level *MaxRecipientEnvelopeLimit* are checked. If the number of recipients exceeds this limit, the message is rejected and a bounce message is sent with the error `550 5.5.3 RESOLVER.ADR.RecipLimit; too many recipients`.
+
+Here is an example scenario:
+
+The receive connector `MaxRecipientsPerMessage` is set to 100 and the Transport level `MaxRecipientEnvelopeLimit` is set to 500. Now, if someone sends an inbound email to 1000 recipients, the email will typically be accepted because the Receive connector limit will force the sending server to send email in 10 chunks with 100 recipients on each message, which is lower than the transport categorizer setting `MaxRecipientEnvelopeLimit`.
 
 ## Messages exempt from size limits
 

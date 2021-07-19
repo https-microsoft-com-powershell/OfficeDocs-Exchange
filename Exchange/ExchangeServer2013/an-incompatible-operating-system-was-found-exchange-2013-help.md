@@ -2,13 +2,14 @@
 title: 'An incompatible operating system was found: Exchange 2013 Help'
 TOCTitle: An incompatible operating system was found
 ms:assetid: a3a948d9-4991-4088-9013-0a4c944295e4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.validosversion(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.validosversion(v=EXCHG.150)
 ms:contentKeyID: 49090988
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -69,6 +70,6 @@ Microsoft Exchange Server 2013 Setup can't continue because it detected an incom
 
 For more information, see [Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

@@ -2,13 +2,14 @@
 title: 'The local computer is already running Exchange Server'
 TOCTitle: The local computer is already running Exchange Server_ExchangeAlreadyInstalled
 ms:assetid: 3f168b5d-9910-418f-86fb-e99d852dcb5e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.exchangealreadyinstalled(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.exchangealreadyinstalled(v=EXCHG.150)
 ms:contentKeyID: 46628873
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft® Exchange Server 2007 setup cannot continue because the local computer has previous Microsoft Exchange components installed.
 

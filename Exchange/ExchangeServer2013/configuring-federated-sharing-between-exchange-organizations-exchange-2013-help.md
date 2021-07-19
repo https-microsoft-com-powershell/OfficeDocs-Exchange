@@ -2,13 +2,14 @@
 title: 'Configure federated sharing between Exchange organizations'
 TOCTitle: Configuring federated sharing between Exchange organizations
 ms:assetid: 94e31454-b027-4757-b52f-d3c2ead6d916
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657473(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657473(v=EXCHG.150)
 ms:contentKeyID: 49289355
-ms.date: 12/09/2016
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ This topic provides a summary of the requirements and configuration steps necess
 For additional management tasks related to federated sharing, see [Federation procedures](federation-procedures-exchange-2013-help.md).
 
 > [!IMPORTANT]
-> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="https://go.microsoft.com/fwlink/?linkid=313640">Learn about Office 365 operated by 21Vianet</A>.
+> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see [Office 365 operated by 21Vianet](/microsoft-365/admin/services-in-china/services-in-china)..
 
 ## What do you need to know before you begin?
 
@@ -51,7 +52,7 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
 - Configure federated sharing for the Exchange 2013 organization. Complete the steps in [Configure federated sharing](configure-federated-sharing-exchange-2013-help.md).
 
-- Configure federated delegation (previous name for federated sharing) for the Exchange 2010 SP2 organization. Complete the steps in [Configure federated delegation](https://go.microsoft.com/fwlink/p/?linkid=268410).
+- Configure federated delegation (previous name for federated sharing) for the Exchange 2010 SP2 organization. Complete the steps in [Configure federated delegation](/previous-versions/office/exchange-server-2010/ff601760(v=exchg.141)).
 
 ## Configure free/busy sharing between Exchange 2013 and Exchange 2007 organizations
 
@@ -61,11 +62,11 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
   1. **Add an Exchange 2010 SP2 server**
 
-     An Exchange 2010 SP2 server with the Client Access server role must be installed in the Exchange 2007 organization. If you have existing Exchange 2010 servers, they should also be updated to Exchange 2010 SP2. For information about installing Exchange 2010 in an Exchange 2007 organization, see [Exchange 2007 - Planning Roadmap for Upgrade and Coexistence](https://go.microsoft.com/fwlink/p/?linkid=268411).
+     An Exchange 2010 SP2 server with the Client Access server role must be installed in the Exchange 2007 organization. If you have existing Exchange 2010 servers, they should also be updated to Exchange 2010 SP2. For information about installing Exchange 2010 in an Exchange 2007 organization, see [Exchange 2007 - Planning Roadmap for Upgrade and Coexistence](/previous-versions/office/exchange-server-2010/dd638158(v=exchg.141)).
 
   2. **Configure federated delegation**
 
-     Configure federated delegation for the Exchange 2007 organization. On an Exchange 2010 SP2 server in the Exchange 2007 organization, complete the steps in [Configure federated delegation](https://go.microsoft.com/fwlink/p/?linkid=268410).
+     Configure federated delegation for the Exchange 2007 organization. On an Exchange 2010 SP2 server in the Exchange 2007 organization, complete the steps in [Configure federated delegation](/previous-versions/office/exchange-server-2010/ff601760(v=exchg.141)).
 
   3. **Configure Active Directory synchronization**
 
@@ -73,15 +74,15 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
      - **Prerequisites**: Make sure your organization meets the requirements for installing Active Directory synchronization.
 
-       To learn more, see [Prepare for Active Directory Synchronization](https://go.microsoft.com/fwlink/p/?linkid=247302)
+       To learn more, see [Prepare for Active Directory Synchronization](/office365/enterprise/prepare-for-directory-synchronization)
 
      - **Plan**: Understand the Microsoft Online Services Directory Synchronization tool and installation roadmap.
 
-       To learn more, see [Active Directory Synchronization: Roadmap](https://go.microsoft.com/fwlink/p/?linkid=203007)
+       To learn more, see [Prerequisites for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
 
-     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Office 365 tenant service organization.
+     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Microsoft 365 or Office 365 organization.
 
-       To learn more, see [Install and Upgrade the Microsoft Online Services Directory Synchronization tool](https://go.microsoft.com/fwlink/p/?linkid=247303)
+       To learn more, see [Select which installation type to use for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-select-installation).
 
   4. **Create an availability address space**
 
@@ -93,7 +94,7 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
      Add-AvailabilityAddressSpace -AccessMethod InternalProxy -ProxyUrl https://<Exchange 2010 CAS server name>/ews/exchange.asmx -ForestName <SMTP domain of the remote Exchange organization> -UseServiceAccount $True
      ```
 
-     For detailed syntax and parameter information, see [Add-AvailabilityAddressSpace](https://go.microsoft.com/fwlink/p/?linkid=268413)
+     For detailed syntax and parameter information, see [Add-AvailabilityAddressSpace](/powershell/module/exchange/Add-AvailabilityAddressSpace)
 
 ## Configure Free/Busy Sharing Between Exchange 2013 and Exchange 2003 Organizations
 
@@ -103,30 +104,30 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
   1. **Add Exchange 2010 SP2 server**.
 
-     An Exchange 2010 SP2 server with the Client Access server role must be installed in the Exchange 2003 organization. If you have existing Exchange 2010 servers, they should also be updated to Exchange 2010 SP2. For information about installing Exchange 2010 in an Exchange 2003 organization, see [Exchange 2003 - Planning Roadmap for Upgrade and Coexistence](https://go.microsoft.com/fwlink/?linkid=268414).
+     An Exchange 2010 SP2 server with the Client Access server role must be installed in the Exchange 2003 organization. If you have existing Exchange 2010 servers, they should also be updated to Exchange 2010 SP2. For information about installing Exchange 2010 in an Exchange 2003 organization, see [Exchange 2003 - Planning Roadmap for Upgrade and Coexistence](/previous-versions/office/exchange-server-2010/aa998186(v=exchg.141)).
 
-     > [!WARNING]
-     > For free/busy sharing to work properly between Exchange 2013 and Exchange 2003 organizations, the <STRONG>OU=EXTERNAL (FYDIBOHF25SPDLT)</STRONG> public folder must exist in the public folder hierarchy. This folder is automatically created on the Exchange 2010 Mailbox server in the Exchange 2003 organization only if you select the option to create public folders as part of configuring client settings for Outlook 2003 support during Exchange 2010 Setup. Additionally, this option is presented during the setup process only if the Exchange 2010 Mailbox server is the first Mailbox server installed in the organization. If the <STRONG>OU=EXTERNAL (FYDIBOHF25SPDLT)</STRONG> public folder wasn't created during Setup, you must manually create it. For details about how to create this public folder, see <A href="http://go.microsoft.com/fwlink/p/?linkid=3052&kbid=2555008">How to troubleshoot Free/Busy issues when you use Exchange Federation in the Microsoft Office 365 for enterprises environment</A>.
+     > [!IMPORTANT]
+     > For free/busy sharing to work properly between Exchange 2013 and Exchange 2003 organizations, the **OU=EXTERNAL (FYDIBOHF25SPDLT)** public folder must exist in the public folder hierarchy. This folder is automatically created on the Exchange 2010 Mailbox server in the Exchange 2003 organization only if you select the option to create public folders as part of configuring client settings for Outlook 2003 support during Exchange 2010 Setup. Additionally, this option is presented during the setup process only if the Exchange 2010 Mailbox server is the first Mailbox server installed in the organization. If the **OU=EXTERNAL (FYDIBOHF25SPDLT)** public folder wasn't created during Setup, you must manually create it. For details about how to create this public folder, see [How to troubleshoot free/busy issues in a hybrid deployment of on-premises Exchange Server and Exchange Online in Office 365](https://support.microsoft.com/help/2555008/how-to-troubleshoot-free-busy-issues-in-a-hybrid-deployment-of-on-prem).
 
   2. **Configure federated delegation**.
 
-     Configure federated delegation for the Exchange 2003 organization. On an Exchange 2010 SP2 server in the Exchange 2003 organization, complete the steps in [Configure federated delegation](https://go.microsoft.com/fwlink/p/?linkid=268410).
+     Configure federated delegation for the Exchange 2003 organization. On an Exchange 2010 SP2 server in the Exchange 2003 organization, complete the steps in [Configure federated delegation](/previous-versions/office/exchange-server-2010/ff601760(v=exchg.141)).
 
   3. **Configure Active Directory synchronization**.
 
-     Active Directory synchronization must be configured for all users that need to share free/busy information between the organizations. You can either configure the Active Directory synchronization manually or use an automated Active Directory synchronization service. To learn more about Active Directory synchronization, see [Forefront Identity Management](https://go.microsoft.com/fwlink/?linkid=294645).
+     Active Directory synchronization must be configured for all users that need to share free/busy information between the organizations. You can either configure the Active Directory synchronization manually or use an automated Active Directory synchronization service. To learn more about Active Directory synchronization, see [Forefront Identity Management](https://technet.microsoft.com/library/ff684076.aspx).
 
      - **Prerequisites**: Make sure your organization meets the requirements for installing Active Directory synchronization.
 
-       To learn more, see [Prepare for Active Directory Synchronization](https://go.microsoft.com/fwlink/p/?linkid=247302)
+       To learn more, see [Prepare for Active Directory Synchronization](/office365/enterprise/prepare-for-directory-synchronization)
 
      - **Plan**: Understand the Microsoft Online Services Directory Synchronization tool and installation roadmap.
 
-       To learn more, see [Active Directory Synchronization: Roadmap](https://go.microsoft.com/fwlink/p/?linkid=203007)
+       To learn more, see [Prerequisites for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
 
-     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Office 365 tenant service organization.
+     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Microsoft 365 or Office 365 organization.
 
-       To learn more, see [Install and Upgrade the Microsoft Online Services Directory Synchronization tool](https://go.microsoft.com/fwlink/p/?linkid=247303)
+       [Select which installation type to use for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-select-installation).
 
   4. **Configure public folders for free/busy sharing in your Exchange 2003 organization.**
 
@@ -162,4 +163,4 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
      Modify the *LegacyExchangeDN* parameter on all mail-enabled objects in the Exchange 2003 organization that reference the remote Exchange 2013 organization. Change the existing organizational unit (OU) value for the mail-enabled object to **External (FYDIBOHF25SPDLT)**. For example, **LegacyExchangeDN=/o=First Organization/ou=External (FYDIBOHF25SPDLT)/cn=Recipients/cn=User Name**.
 
-     To modify mail-enabled objects in the Exchange 2003 organization, you can use the [Active Directory Service Interfaces Editor (ADSI Edit) tool](https://go.microsoft.com/fwlink/?linkid=294644).
+     To modify mail-enabled objects in the Exchange 2003 organization, you can use the [Active Directory Service Interfaces Editor (ADSI Edit) tool](/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10)).

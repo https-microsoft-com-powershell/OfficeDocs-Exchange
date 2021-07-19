@@ -2,13 +2,14 @@
 title: 'Mailbox database copies: Exchange 2013 Help'
 TOCTitle: Mailbox database copies
 ms:assetid: ce748bca-3e24-493b-b9e6-153157bffd6a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd979802(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd979802(v=EXCHG.150)
 ms:contentKeyID: 48385558
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -58,6 +59,6 @@ Optionally, you can also specify:
 
   - *TruncationLagTime*: This parameter specifies the amount of time that the Microsoft Exchange Replication service should wait before truncating log files that have replayed into a copy of the database. The time period begins after the log has been successfully replayed into the copy of the database. The format for this parameter is (Days.Hours:Minutes:Seconds). The default setting for this value is 0 seconds. The maximum allowable setting for this value is 14 days. The minimum allowable setting is 0 seconds. Setting the value for truncation lag time to 0 turns off log truncation delay.
 
-  - *SeedingPostponed*: This parameter specifies that the task shouldn't automatically seed the database copy on the specified Mailbox server. This option is typically used when you intend to seed a new mailbox database copy by using an existing passive copy of the database (for example, adding a second copy of a specific database to a remote location). When you use this parameter, you must manually seed the database copy using the [Update-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335201\(v=exchg.150\)) cmdlet.
+  - *SeedingPostponed*: This parameter specifies that the task shouldn't automatically seed the database copy on the specified Mailbox server. This option is typically used when you intend to seed a new mailbox database copy by using an existing passive copy of the database (for example, adding a second copy of a specific database to a remote location). When you use this parameter, you must manually seed the database copy using the [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy) cmdlet.
 
 For more information about creating, using, and managing mailbox database copies, see [Managing mailbox database copies](managing-mailbox-database-copies-exchange-2013-help.md).

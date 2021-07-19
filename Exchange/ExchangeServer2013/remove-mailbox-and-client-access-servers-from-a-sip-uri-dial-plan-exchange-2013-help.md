@@ -2,13 +2,14 @@
 title: 'Remove Mailbox and Client Access servers from a SIP URI dial plan: Exchange 2013 Help'
 TOCTitle: Remove Mailbox and Client Access servers from a SIP URI dial plan
 ms:assetid: 367441e1-1a0f-42c8-9fa8-8abe80b3d015
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997238(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997238(v=EXCHG.150)
 ms:contentKeyID: 53401614
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,12 +27,12 @@ For additional management tasks related to UM dial plans, see [UM dial plan proc
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
-- Before you perform these procedures, confirm that a SIP URI dial plan has been created. For detailed steps, see [Create a UM dial plan](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan).
+- Before you perform these procedures, confirm that a SIP URI dial plan has been created. For detailed steps, see [Create a UM dial plan](../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to remove a Mailbox server from a SIP URI dial plan
 

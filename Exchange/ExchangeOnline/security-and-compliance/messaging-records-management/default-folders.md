@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can use Retention tags and retention policies to manage email lifecycle. Retention Policies contain Retention Tags, which are settings you can use to specify when a message should be automatically moved to the archive or when it should be deleted.
 ms.topic: overview
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: d2e2064f-4102-4018-b688-504d09da6d39
-ms.date: 7/11/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Default folders that support Retention Policy Tags
 ms.collection: 
 - exchange-online
@@ -19,6 +20,11 @@ manager: serdars
 
 # Default folders that support Retention Policy Tags
 
+> [!NOTE]
+> To proactively retain or delete mailbox content for information governance in Microsoft 365, we recommend that you use [retention policies and retention labels](/microsoft-365/compliance/retention) from the [Microsoft 365 compliance center](https://compliance.microsoft.com), instead of messaging records management that's described on this page. However, you should continue using messaging records management to move messages to archive mailboxes.
+> 
+> If you currently use messaging records management, this older feature will continue to work side-by-side with retention policies and retention labels. However, we recommend that going forward, you use retention policies and retention labels instead. They provide you with a single mechanism to centrally manage both retention and deletion of content across Microsoft 365.
+
 You can use [Retention tags and retention policies](retention-tags-and-policies.md) to manage email lifecycle. Retention Policies contain Retention Tags, which are settings you can use to specify when a message should be automatically moved to the archive or when it should be deleted.
 
 A Retention Policy Tag (RPT) is a type of retention tag that you can apply to default folders in a mailbox, such as **Inbox** and **Deleted Items**.
@@ -29,7 +35,7 @@ A Retention Policy Tag (RPT) is a type of retention tag that you can apply to de
 
 You can create RPTs for the default folders shown in the following table.
 
-|**Folder name**|**Details**|
+| Folder name | Details |
 |:-----|:-----|
 |Archive|This folder is the default destination for messages archived with the Archive button in Outlook. The Archive feature provides a fast way for users to remove messages from their Inbox without deleting them. <br/> This RPT is available only in Exchange Online.|
 |Calendar|This default folder is used to store meetings and appointments.|
@@ -43,10 +49,10 @@ You can create RPTs for the default folders shown in the following table.
 |Notes|This folder contains notes created by users in Outlook. These notes are also visible in Outlook on the web.|
 |Outbox|This default folder is used to temporarily store messages sent by the user until they're submitted to a Hub Transport server. A copy of sent messages is saved in the Sent Items default folder. Because messages usually remain in this folder for a brief period, it isn't necessary to create an RPT for this folder.|
 |RSS Feeds|This default folder contains RSS feeds.|
-|Recoverable Items|This is a hidden folder in the Non-IPM sub-tree. It contains the Deletions, Versions, Purges, DiscoveryHolds, and Audits sub-folders. Retention tags for this folder move items from the Recoverable Items folder in the user's primary mailbox to the Recoverable Items folder in the user's archive mailbox. You can assign only the **Move To Archive** retention action to tags for this folder. To learn more, see [Recoverable Items Folder](https://technet.microsoft.com/library/efc48fb4-2ed8-4d05-93af-f3505fbc389d.aspx).|
+|Recoverable Items|This is a hidden folder in the Non-IPM sub-tree. It contains the Deletions, Versions, Purges, DiscoveryHolds, and Audits sub-folders. Retention tags for this folder move items from the Recoverable Items folder in the user's primary mailbox to the Recoverable Items folder in the user's archive mailbox. You can assign only the **Move To Archive** retention action to tags for this folder. To learn more, see [Recoverable Items folder in Exchange Online](../recoverable-items-folder/recoverable-items-folder.md).|
 |Sent Items|This default folder is used to store messages that have been submitted to a Hub Transport server.|
-|Sync Issues|This folder contains synchronization logs. To learn more, see [Synchronization error folders](https://go.microsoft.com/fwlink/p/?linkId=198215).|
-|Tasks|This default folder is used to store tasks. To create an RPT for the Tasks folder, you have to use Exchange Online PowerShell. For more information, see [New-RetentionPolicyTag](https://technet.microsoft.com/library/3f047d2e-1171-4f53-9b7e-e1625c954325.aspx). After the RPT for the Tasks folder is created, you can manage it by using the Exchange admin center.|
+|Sync Issues|This folder contains synchronization logs.|
+|Tasks|This default folder is used to store tasks. To create an RPT for the Tasks folder, you have to use Exchange Online PowerShell. For more information, see [New-RetentionPolicyTag](/powershell/module/exchange/new-retentionpolicytag). After the RPT for the Tasks folder is created, you can manage it by using the Exchange admin center.|
 
 ## More Info
 
@@ -60,4 +66,4 @@ You can create RPTs for the default folders shown in the following table.
 
 - To learn how to create RPTs or other types of retention tags and add them to a retention policy, see [Create a Retention Policy](create-a-retention-policy.md).
 
-- In Exchange Server and Exchange Online, a DPT also applies to the **Calendar** and **Tasks** default folders. This may result in items being deleted or moved to the archive based on the DPT settings. To prevent the DPT settings from deleting items in these folders , create RPTs with retention disabled. To prevent the DPT settings from moving items in a default folder, you can create a disabled Personal Tag with the move to archive action, add it to the retention policy, and then have users apply it to the default folder. For details, see [Prevent archiving of items in a default folder in Exchange 2010](https://go.microsoft.com/fwlink/p/?LinkId=511071).
+- In Exchange Server and Exchange Online, a DPT also applies to the **Calendar** and **Tasks** default folders. This may result in items being deleted or moved to the archive based on the DPT settings. To prevent the DPT settings from deleting items in these folders , create RPTs with retention disabled. To prevent the DPT settings from moving items in a default folder, you can create a disabled Personal Tag with the move to archive action, add it to the retention policy, and then have users apply it to the default folder. For details, see [Prevent archiving of items in a default folder in Exchange 2010](https://techcommunity.microsoft.com/t5/exchange-team-blog/prevent-archiving-of-items-in-a-default-folder-in-exchange-2010/ba-p/603444).

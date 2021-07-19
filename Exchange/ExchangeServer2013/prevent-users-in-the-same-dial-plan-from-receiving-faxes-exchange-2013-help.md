@@ -4,9 +4,10 @@ TOCTitle: Prevent users in the same dial plan from receiving faxes
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 12/9/2016
 ms.reviewer:
 ms.assetid: 4fc66414-c950-4bca-ac20-4e489f288d06
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -21,22 +22,20 @@ You can prevent UM-enabled users from receiving faxes by configuring the UM dial
 > [!NOTE]
 > You can use the EAC to configure fax settings on a UM mailbox policy. However, you must use the Shell to configure fax settings on dial plans or for individual users.
 
-For more information about fax partners, see [Microsoft PinPoint for Fax Partners](https://go.microsoft.com/fwlink/p/?LinkId=190238).
-
 For additional management tasks related to faxing, see [Faxing procedures](faxing-procedures-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan-exchange-2013-help.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to prevent users who are linked to a dial plan from receiving faxes
 

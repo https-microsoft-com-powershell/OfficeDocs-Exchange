@@ -3,10 +3,11 @@ localization_priority: Normal
 description: When you enable a user for UM and link them to a telephone extension dial plan, an EUM proxy address is created for the user that contains the user's extension number. You must define at least one extension number for UM to use so voice mail can be sent to the user's mailbox. The extension number is also used when the user calls in to an Outlook Voice Access number.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: ff22b366-3bfb-4bf7-9f11-62fba48f1caf
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Change an extension number in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -31,7 +32,7 @@ For additional management tasks related to users who are enabled for voice mail,
 
 - Estimated time to complete: 3 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailboxes" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a telephone extension UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -44,7 +45,7 @@ For additional management tasks related to users who are enabled for voice mail,
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to change the primary or secondary extension number
 
@@ -65,7 +66,7 @@ This example changes the extension number to 22222 for Tony Smith, a UM-enabled 
 > [!NOTE]
 > Before you change an extension number using Exchange Online PowerShell, you need to determine the position of the EUM proxy address that you want to change. To determine the position, use the **$mbx.EmailAddresses** command. The first EUM proxy address is the default (primary) extension number and it will be 0 in the list.
 
-```
+```PowerShell
 $mbx=Get-Mailbox tony.smith
 $mbx.EmailAddresses.Item(0)="eum:22222;phone-context=MyDialPlan.contoso.com"
 Set-Mailbox tony.smith -EmailAddresses $mbx.EmailAddresses

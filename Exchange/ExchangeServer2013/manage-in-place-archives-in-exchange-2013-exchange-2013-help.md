@@ -2,13 +2,14 @@
 title: 'Manage In-Place Archives in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Manage In-Place Archives in Exchange 2013
 ms:assetid: 49ef4a3e-d209-4fb2-80a3-6132b0f69bd0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ651146(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ651146(v=EXCHG.150)
 ms:contentKeyID: 49352793
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a mailbox and enable an on-premises archive
 
@@ -63,7 +64,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 
         To learn more, see [In-Place Archiving in Exchange 2013](in-place-archiving-in-exchange-2013-exchange-2013-help.md).
 
-      - **Address book policy**: Use this list to select an address book policy (ABP) for the mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. When assigned to mailbox users, an ABP provides them with access to a customized GAL in Outlook and Outlook Web App. To learn more, see [Address book policies](https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/address-book-policies).
+      - **Address book policy**: Use this list to select an address book policy (ABP) for the mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. When assigned to mailbox users, an ABP provides them with access to a customized GAL in Outlook and Outlook Web App. To learn more, see [Address book policies](../ExchangeOnline/address-books/address-book-policies/address-book-policies.md).
 
 6. When you're finished, click **Save** to create the mailbox.
 
@@ -76,7 +77,7 @@ $password = Read-Host "Enter password" -AsSecureString
 New-Mailbox -UserPrincipalName chris@contoso.com -Alias chris -Archive -Database "DB01" -Name ChrisAshton -OrganizationalUnit Users -Password $password -FirstName Chris -LastName Ashton -DisplayName "Chris Ashton"
 ```
 
-For detailed syntax and parameter information, see [New-Mailbox](https://technet.microsoft.com/en-us/library/aa997663\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/New-Mailbox).
 
 ## How do you know this worked?
 
@@ -90,7 +91,7 @@ To verify that you've successfully created a user mailbox with an on-premises ar
     Get-Mailbox <Name> | FL Name,RecipientTypeDetails,PrimarySmtpAddress,*Archive*
     ```
 
-- In the Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in [Test-ArchiveConnectivity](https://technet.microsoft.com/en-us/library/hh529914\(v=exchg.150\)).
+- In the Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in [Test-ArchiveConnectivity](/powershell/module/exchange/Test-ArchiveConnectivity).
 
 ## Enable an on-premises archive for existing mailbox
 
@@ -120,10 +121,10 @@ Enable-Mailbox "Tony Smith" -Archive
 This example retrieves mailboxes in database DB01 that don't have an on-premises or cloud-based archive enabled and don't have a name starting with DiscoverySearchMailbox. It pipes the result to the **Enable-Mailbox** cmdlet to enable the archive for all mailboxes on mailbox database DB01.
 
 ```powershell
-Get-Mailbox -Database DB01 -Filter {ArchiveGuid -Eq $null -AND ArchiveDomain -eq $null -AND Name -NotLike "DiscoverySearchMailbox*"} | Enable-Mailbox -Archive
+Get-Mailbox -Database DB01 -Filter "ArchiveGuid -Eq `$null -AND ArchiveDomain -eq `$null -AND Name -NotLike 'DiscoverySearchMailbox*'" | Enable-Mailbox -Archive
 ```
 
-For detailed syntax and parameter information, see [Enable-Mailbox](https://technet.microsoft.com/en-us/library/aa998251\(v=exchg.150\)) and [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Enable-Mailbox](/powershell/module/exchange/Enable-Mailbox) and [Get-Mailbox](/powershell/module/exchange/Get-Mailbox).
 
 ## How do you know this worked?
 
@@ -137,7 +138,7 @@ To verify that you've successfully enabled an on-premises archive for an existin
     Get-Mailbox <Name> | FL Name,*Archive*
     ```
 
-- In the Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see Examples in [Test-ArchiveConnectivity](https://technet.microsoft.com/en-us/library/hh529914\(v=exchg.150\)).
+- In the Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see Examples in [Test-ArchiveConnectivity](/powershell/module/exchange/Test-ArchiveConnectivity).
 
 ## Disable an on-premises archive
 
@@ -146,7 +147,7 @@ You may want to disable a user's archive for troubleshooting purposes or if you'
 > [!IMPORTANT]
 > Disabling the archive will remove the archive from the mailbox and mark it in the mailbox database for deletion.
 
-If you want to reconnect the on-premises archive to that mailbox, you can use the [Connect-Mailbox](https://technet.microsoft.com/en-us/library/aa997878\(v=exchg.150\)) cmdlet with the *Archive* parameter.
+If you want to reconnect the on-premises archive to that mailbox, you can use the [Connect-Mailbox](/powershell/module/exchange/Connect-Mailbox) cmdlet with the *Archive* parameter.
 
 ## Use the EAC
 
@@ -167,7 +168,7 @@ This example disables the archive for Chris Ashton's mailbox. It doesn't disable
 Disable-Mailbox -Identity "Chris Ashton" -Archive
 ```
 
-For detailed syntax and parameter information, see [Disable-Mailbox](https://technet.microsoft.com/en-us/library/aa997210\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Disable-Mailbox](/powershell/module/exchange/Disable-Mailbox).
 
 ## How do you know this worked?
 
@@ -240,11 +241,11 @@ When you disable an archive mailbox, it becomes disconnected. A disconnected arc
 
 For detailed syntax and parameter information, see the following topics:
 
-- [Get-MailboxDatabase](https://technet.microsoft.com/en-us/library/bb124924\(v=exchg.150\))
+- [Get-MailboxDatabase](/powershell/module/exchange/Get-MailboxDatabase)
 
-- [Get-MailboxStatistics](https://technet.microsoft.com/en-us/library/bb124612\(v=exchg.150\))
+- [Get-MailboxStatistics](/powershell/module/exchange/Get-MailboxStatistics)
 
-- [Enable-Mailbox](https://technet.microsoft.com/en-us/library/aa998251\(v=exchg.150\))
+- [Enable-Mailbox](/powershell/module/exchange/Enable-Mailbox)
 
 ## How do you know this worked?
 

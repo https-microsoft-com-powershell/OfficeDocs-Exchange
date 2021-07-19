@@ -2,13 +2,14 @@
 title: 'Create a Send connector to send email to a partner, with Transport Layer Security applied'
 TOCTitle: Create a Send connector to send email to a partner, with Transport Layer Security (TLS) applied
 ms:assetid: ff2abefc-dd3e-4431-b947-df942fbf82d9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657514(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657514(v=EXCHG.150)
 ms:contentKeyID: 49289478
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ Interested in scenarios where this procedure is used? See the following topics:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a Send connector to send email to a partner, with TLS applied
 

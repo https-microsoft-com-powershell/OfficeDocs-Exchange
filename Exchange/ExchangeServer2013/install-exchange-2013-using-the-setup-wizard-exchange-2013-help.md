@@ -2,15 +2,16 @@
 title: 'Install Exchange 2013 using the Setup wizard: Exchange 2013 Help'
 TOCTitle: Install Exchange 2013 using the Setup wizard
 ms:assetid: da690d47-3384-4430-a69e-0cd4d3bf80a7
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124778(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124778(v=EXCHG.150)
 ms:contentKeyID: 48385623
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
-f1_keywords:
+ms.custom:
 - Microsoft.Exchange.Management.ExSetupUI.SetupWizardForm.IntroductionPage
 ---
 
@@ -122,6 +123,6 @@ If you're installing the first Exchange 2013 server in the organization, and the
 
 To verify that you've successfully installed Exchange 2013, see [Verify an Exchange 2013 installation](verify-an-exchange-2013-installation-exchange-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

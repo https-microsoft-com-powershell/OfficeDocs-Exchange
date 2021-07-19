@@ -8,6 +8,8 @@ monikerRange: exchserver-2019
 title: MetaCacheDatabase (MCDB) setup
 ms.collection: exchange-server
 ms.reviewer: toklima
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -18,7 +20,12 @@ manager: serdars
 
 The MetaCacheDatabase (MCDB) feature is included in Exchange Server 2019. It allows a database availability group (DAG) to be accelerated by utilizing solid state disks (SSDs). `Manage-MetaCacheDatabase.ps1` is an automation script created for Exchange Server administrators to set up and manage MCDB instances in their Exchange 2019 DAGs.
 
-After installing Exchange Server 2019, you can find `Manage-MetaCacheDatabase.ps1` here: ***drive*:\\Program Files\\Microsoft\\Exchange Server\\V15\\Scripts**.
+After installing Exchange Server 2019, you can find `Manage-MetaCacheDatabase.ps1` here: ***drive*:\\Program Files\\Microsoft\\Exchange Server\\V15\\Scripts**. To make the **Manage-MCDB** CMDLet available in your Exchange Management Shell session, do the following:
+
+```PowerShell
+cd $exscripts
+. .\Manage-MetaCacheDatabase.ps1
+```
 
 You use this script to configure MCDB prerequisites on a properly configured DAG, to enable or disable MCDB, and to configure and repair MCDB on your servers.
 
@@ -47,7 +54,7 @@ The following prerequisites are required for successful configuration and use of
 
    - [Configure AutoReseed for a database availability group](../manage-ha/configure-dag-autoreseed.md)
 
-2. RAW SSD drives are installed, and SSD count and size is equal for each server in the DAG.
+2. RAW SSD drives are installed with the same SSD count and size for each server in the DAG. Make sure that all SSDs are completely empty, unformatted, and not write-protected. To verify this, you can use use [DiskPart](/windows-server/administration/windows-commands/diskpart) or [Clear-Disk](/powershell/module/storage/clear-disk).
 
 3. Exchange Server 2019.
 
@@ -73,7 +80,7 @@ The following sections describe how to utilize the `Manage-MetaCacheDatabase.ps1
 
 These DAG parameters are used to calculate the proper MCDB size on your SSD drives:
 
-- *AutoDagTotalNumberOfDatabases*: The number of databases in your DAG. i.e. 50.
+- *AutoDagTotalNumberOfDatabases*: The number of databases in your DAG (for example, 50).
 
 - *AutoDagDatabaseCopiesPerDatabase*: The number of active and passive copies each individual database has.
 
@@ -81,8 +88,8 @@ These DAG parameters are used to calculate the proper MCDB size on your SSD driv
 
 For example:
 
-```
-Set-DatabaseAvailabilityGroup testdag1 -AutoDagTotalNumberOfDatabases 50 -AutoDagDatabaseCopiesPerDatabase 4 -AutoDagTotalNumberOfServers 8
+```PowerShell
+Set-DatabaseAvailabilityGroup testdag1 -AutoDagTotalNumberOfDatabases 20 -AutoDagDatabaseCopiesPerDatabase 4 -AutoDagTotalNumberOfServers 8
 ```
 
 ### Step 2: Run Manage-MCDB -ConfigureMCDBPrerequisite
@@ -110,7 +117,7 @@ This parameter sets the Active Directory state for the DAG object. Full replicat
 
 **Example**:
 
-```
+```PowerShell
 Manage-MCDB -DagName TestDag1 -ConfigureMCDBPrerequisite -SSDSizeInBytes 5242880000 -SSDCountPerServer 2
 ```
 
@@ -138,11 +145,11 @@ This command sets the local state on each DAG member to allow/disallow MCDB popu
 
 **Examples**:
 
-```
+```PowerShell
 Manage-MCDB -DagName TestDag1 -ServerAllowMCDB $true -ServerName "exhs-5046"
 ```
 
-```
+```PowerShell
 Manage-MCDB -DagName TestDag1 -ServerAllowMCDB $false -ServerName "exhs-5046" -ForceFailover $true
 ```
 
@@ -170,7 +177,7 @@ This command identifies unformatted SSD devices and formats them, and also creat
 
 Example:
 
-```
+```PowerShell
 Manage-MCDB -DagName TestDag1 -ConfigureMCDBOnServer -ServerName "exhs-4056" -SSDSizeInBytes 5242880000
 ```
 
@@ -182,8 +189,8 @@ After performing the previous three steps (configuring _ConfigureMCDBPrerequisit
 
 You can use the _ServerAllowMCDB_ parameter set to cause fail overs of all DB instances present on a given server. Alternatively, you can use the **Move-ActiveMailboxDatabase** cmdlet to cause individual databases to fail over.
 
-```
-Manage-MCDB.ps1 -DagName TestDag1 -ServerAllowMCDB:$true -ServerName "exhs-5046" -ForceFailover $true
+```PowerShell
+Manage-MCDB -DagName TestDag1 -ServerAllowMCDB:$true -ServerName "exhs-5046" -ForceFailover $true
 ```
 
 ## MCDB health states

@@ -4,7 +4,7 @@
 # So if a pull request only touches javascript files, only these owners
 # will be requested to review.
 
-Exchange/ExchangeServer/*  @chrisda @AndreaBarr
-Exchange/ExchangeOnline/* @msdmaguire @AndreaBarr
-Exchange/ExchangeHybrid/* @dstrome @AndreaBarr
-Outlook/* @DHB-MSFT @AndreaBarr
+Exchange/ExchangeServer/*  @chrisda @AndreaBarr @msdmaguire @MattPennaThe3rd
+Exchange/ExchangeOnline/* @msdmaguire @AndreaBarr @MattPennaThe3rd
+Exchange/ExchangeHybrid/* @AndreaBarr @msdmaguire @MattPennaThe3rd
+Outlook/* @AndreaBarr

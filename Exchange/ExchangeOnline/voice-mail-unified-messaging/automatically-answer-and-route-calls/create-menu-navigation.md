@@ -3,12 +3,13 @@ localization_priority: Normal
 description: You can use the New menu navigation entry page to create single or multiple key mappings for business or non-business hours main menu prompts for auto attendants. You can define the action that will be performed when a key on the telephone keypad is pressed, for example, transferring the call to an extension number or another auto attendant.
 ms.topic: article
 author: msdmaguire
-f1_keywords:
-- Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.UnifiedMessaging.AutoAttendantKeyMappingControl
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 3cfc9a01-0a61-4d15-9561-621568dc30d9
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- CSH
+ms.custom:
+- Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.UnifiedMessaging.AutoAttendantKeyMappingControl
 title: Create menu navigation in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -27,7 +28,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM auto attendants" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -36,7 +37,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure UM auto attendant navigation menus
 
@@ -88,20 +89,20 @@ This example enables business hours key mappings so that:
 
 - When they press 3, they will be sent to another auto attendant that will play an audio file.
 
-```
+```PowerShell
 Set-UMAutoAttendant -Identity MyAutoAttendant -BusinessHoursKeyMappingEnabled $true -BusinessHoursKeyMapping "1,Sales,,SalesAutoAttendant","2,Support,12345","3,Directions,,,directions.wav"
 ```
 
 This example sets key mappings defined in a comma-separated value (.csv) file. You must first create the .csv file with the following headings and the correct entry: \<key\>,\<description\>,[\<extension\>],[\<autoattendant name\>],[\<promptfilenamepath\>],[\<asrphrase1;asrphrase2\>],[\<leavevoicemailfor\>],[\<transfertomailbox\>]. The values in brackets are optional. After creating the .csv file, import the .csv file using the **Import-csv** cmdlet.
 
-```
+```PowerShell
 $o = Import-csv -path "C:\UMFiles\AutoAttendants\keymappings.csv"
 Set-UMAutoAttendant MyAutoAttendant -BusinessHoursKeyMapping $o
 ```
 
 This example exports key mappings from an existing UM auto attendant into a .csv file, and then imports the same key mappings into another UM auto attendant. You could also export the key mappings to a .csv file, edit or modify the key mappings in the .csv file, and then import those key mappings into another UM auto attendant.
 
-```
+```PowerShell
 $aa = Get-UMAutoAttendant -Identity MyAutoAttendant
 $aa1 = Get-UMAutoAttendant -Identity MyAutoAttendant2
 $aa.BusinessHoursKeyMapping | Export-csv -path "C:\UMFiles\AutoAttendants\keymappings.csv"

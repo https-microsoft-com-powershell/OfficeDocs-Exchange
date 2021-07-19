@@ -1,16 +1,18 @@
 ---
 localization_priority: Normal
-description: Various types of limits are applied to In-Place eDiscovery searches in Exchange Online and Office 365. These limits help to maintain the health and quality of services provided to Office 365 organizations. In most cases, you can't modify these limits, but you should be aware of them so that you can take these limits into consideration when planning, running, and troubleshooting eDiscovery searches.
+description: Various types of limits are applied to In-Place eDiscovery searches in Exchange Online, Microsoft 365, and Office 365. These limits help to maintain the health and quality of services provided to Microsoft 365 or Office 365 organizations. In most cases, you can't modify these limits, but you should be aware of them so that you can take these limits into consideration when planning, running, and troubleshooting eDiscovery searches.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 65864987-f734-4fab-be97-1ba190a083d4
-ms.date: 6/23/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Search limits for In-Place eDiscovery in Exchange Online
 ms.collection: 
 - exchange-online
 - M365-email-calendar
+search.appverid: MET150
 audience: Admin
 ms.service: exchange-online
 manager: serdars
@@ -19,7 +21,7 @@ manager: serdars
 
 # Search limits for In-Place eDiscovery in Exchange Online
 
-Various types of limits are applied to In-Place eDiscovery searches in Exchange Online and Office 365. These limits help to maintain the health and quality of services provided to Office 365 organizations. In most cases, you can't modify these limits, but you should be aware of them so that you can take these limits into consideration when planning, running, and troubleshooting eDiscovery searches.
+Various types of limits are applied to In-Place eDiscovery searches in Exchange Online. These limits help to maintain the health and quality of services provided to Exchange Online organizations. In most cases, you can't modify these limits, but you should be aware of them so that you can take these limits into consideration when planning, running, and troubleshooting eDiscovery searches.
 
 ## Source mailbox limits
 <a name="mailboxlimits"> </a>
@@ -28,9 +30,9 @@ In-Place eDiscovery has limits on the number of source mailboxes that can be sea
 
 |**Description of limit**|**Limit**|**More information and suggested workarounds**|
 |:-----|:-----|:-----|
-|The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search.|10,000|If you have more than 10,000 mailboxes in your organization, you won't be able to use the **Search all mailboxes** option on the **Mailboxes** page in the EAC. To search large numbers of mailboxes (up to 10,000 mailboxes total), you can organize users into distribution groups or dynamic distribution groups and then specify a group on the **Mailboxes** page in the EAC. <sup>1</sup> <br/> One workaround for this limit is to use the Compliance Search feature in the Office 365 Compliance Center, which doesn't have a limit for the number of mailboxes that can be searched in a single search. You run a search in the Compliance Center to search all mailboxes in your organization to identify those that contain search results. Then you can use that list of mailboxes as the source mailboxes for an In-Place eDiscovery search in the EAC. For details, see [Use Compliance Search in your eDiscovery workflow](https://go.microsoft.com/fwlink/p/?LinkId=626925).|
+|The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search.|10,000|If you have more than 10,000 mailboxes in your organization, you won't be able to use the **Search all mailboxes** option on the **Mailboxes** page in the EAC. To search large numbers of mailboxes (up to 10,000 mailboxes total), you can organize users into distribution groups or dynamic distribution groups and then specify a group on the **Mailboxes** page in the EAC. <sup>1</sup> <br/> |
 |The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search that still allows you to view keyword statistics.|100|After you run an eDiscovery search estimate, you can view keyword statistics. These statistics show details about the number of items returned for each keyword used in the search query. If more than 100 source mailboxes are included in the search, an error will be returned if you try to view keyword statistics. <br/> To view keyword statistics, reduce the number of source mailboxes to 100 or fewer, and then rerun the search estimate. When you're satisfied with the search query, you can add additional source mailboxes to the search and then copy or export the search results.|
-|The maximum number of mailboxes that can be placed on In-Place Hold in a single In-Place eDiscovery search.|10,000|You can place up to 10,000 mailboxes on In-Place Hold by using a single eDiscovery search. However, if you select the **Search all mailboxes** option on the **Sources** page, you won't be able to enable an In-Place Hold for that search. To place a large number of mailboxes on hold using a single In-Place Hold, use distribution groups or dynamic distribution groups to group mailboxes together, and then specify one of those groups on the **Mailboxes** page in the EAC. <sup>1</sup> <br/> A better option for placing a hold on a large number of mailboxes is to use a Litigation Hold. Using lots of single In-Place eDiscovery searches to place mailboxes on hold isn't recommended. For more information, see [Place all mailboxes on hold](https://technet.microsoft.com/library/4c141604-3210-44cc-b98e-f3e0f15613b8.aspx).|
+|The maximum number of mailboxes that can be placed on In-Place Hold in a single In-Place eDiscovery search.|10,000|You can place up to 10,000 mailboxes on In-Place Hold by using a single eDiscovery search. However, if you select the **Search all mailboxes** option on the **Sources** page, you won't be able to enable an In-Place Hold for that search. To place a large number of mailboxes on hold using a single In-Place Hold, use distribution groups or dynamic distribution groups to group mailboxes together, and then specify one of those groups on the **Mailboxes** page in the EAC. <sup>1</sup> <br/> A better option for placing a hold on a large number of mailboxes is to use a Litigation Hold. Using lots of single In-Place eDiscovery searches to place mailboxes on hold isn't recommended.|
 
 > [!NOTE]
 > <sup>1</sup> Group membership is calculated only when the search or a hold is created. If a user gets added to the group after the search is created, the user's mailbox won't be added automatically as a source mailbox. You'll have to edit the search and add the mailbox. The same thing applies when a user is removed from a group that is used to create a search or hold. You'll have to edit the search to remove the mailbox.

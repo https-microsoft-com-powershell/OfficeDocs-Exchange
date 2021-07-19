@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Admin can learn about how policy tips can display compliance information to users as they compose email messages that contain sensitive content.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 4266b83c-dd8a-4b3d-99ff-402e68fc810c
-ms.date: 7/11/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Policy Tips in Exchange Online
 ms.collection: 
 - exchange-online
@@ -21,22 +22,22 @@ manager: serdars
 
 You can help to prevent your organization's Outlook, Outlook on the web (formerly known as Outlook Web App), and OWA for Devices email users from inappropriately sending sensitive information by creating data loss prevention (DLP) policies that include Policy Tip notification messages. Similar to MailTips that were introduced in Exchange Server 2010, Policy Tip notification messages are displayed to users in Outlook while they are composing an email message. Policy Tip notification messages only show up if something about the sender's email message seems to violate a DLP policy that you have in place and that policy includes a rule to notify the sender when the conditions that you establish are met. Watch this video to learn more.
 
-[!VIDEO](https://www.microsoft.com/videoplayer/embed/dd629bb7-063d-49f3-b7e1-8f2e0aa4de13?autoplay=false)
+[!VIDEO https://www.microsoft.com/videoplayer/embed/dd629bb7-063d-49f3-b7e1-8f2e0aa4de13?autoplay=false]
 
 In order to show Policy Tips to your email senders, your rules must include the **Notify the sender with a Policy Tip** action. You can add this in the rules editor from the Exchange admin center. For more information, see [Manage policy tips](manage-policy-tips.md).
 
 DLP policies do not differentiate between email message attachments, body text, or subject lines while evaluating messages and the conditions within your policies. For example, if a user creates an email message that includes a credit card number in the body of the message and then attempts to address the message to a recipient outside your organization, then a Policy Tip notification message can be shown to that user in Outlook or Outlook on the web reminding them of your enterprise's expectations for such information. However, this type of notification will only show up if you have configured a DLP policy that restricts the example actions described; in this case adding an external email alias to the header of a message with credit card data. There is a great variety of conditions, actions, and exceptions you can choose from while creating DLP policies. This variety allows you to tailor your data loss prevention efforts in a way that meets your specific organization's needs.
 
-Any time you use either the notify sender action or an override action within a rule, we recommend that you also include the condition that the message was sent from within your organization. You can do this by using the policy rules editor to add the following condition: **The sender is located...** \> **inside the organization**. Learn more about changing existing DLP policies at [Manage DLP Policies](https://technet.microsoft.com/library/ba81fabd-7f7f-4ef7-968f-ce851ada9d70.aspx). This is a best practice recommendation because the notify sender action is applied as part of your company's message creation experience. The senders referred to by the action are the authors of messages within your company. The user interaction presented by Policy Tips cannot be acted upon by your users for incoming messages and will be ignored when the sender is located outside your organization. You can apply DLP policies to scan incoming messages and take a variety of actions, but when you do this, don't add the notify sender action.
+Any time you use either the notify sender action or an override action within a rule, we recommend that you also include the condition that the message was sent from within your organization. You can do this by using the policy rules editor to add the following condition: **The sender is located...** \> **inside the organization**. This is a best practice recommendation because the notify sender action is applied as part of your company's message creation experience. The senders referred to by the action are the authors of messages within your company. The user interaction presented by Policy Tips cannot be acted upon by your users for incoming messages and will be ignored when the sender is located outside your organization. You can apply DLP policies to scan incoming messages and take a variety of actions, but when you do this, don't add the notify sender action.
 
 If email senders in your organization who are in the act of composing a message are made aware of your organizational expectations and standards in real time through Policy Tip notifications, then they are less likely to violate standards that your organization wants to enforce.
 
 > [!NOTE]
-> DLP is a premium feature that requires an Exchange Online Plan 2 subscription. For more information, see [Exchange Online Licensing](https://go.microsoft.com/fwlink/p/?linkid=286154).
+> DLP is a premium feature that requires an Exchange Online Plan 2 subscription. For more information, see [Compare Exchange Online Licensing plans](https://www.microsoft.com/microsoft-365/exchange/compare-microsoft-exchange-online-plans).
 
 ## Default text for Policy Tips and rule options
 
-You have a range of possible options when you add sender notification rules to DLP policies. When you add a rule to notify the sender by using the **Notify the sender with a Policy Tip** action within a DLP policy, you can choose how restrictive to be. The notification options in the following table are available. For general information about editing policies, see [Manage DLP Policies](https://technet.microsoft.com/library/ba81fabd-7f7f-4ef7-968f-ce851ada9d70.aspx). For specific information about creating Policy Tips, see [Manage policy tips](manage-policy-tips.md).
+You have a range of possible options when you add sender notification rules to DLP policies. When you add a rule to notify the sender by using the **Notify the sender with a Policy Tip** action within a DLP policy, you can choose how restrictive to be. The notification options in the following table are available. For specific information about creating Policy Tips, see [Manage policy tips](manage-policy-tips.md).
 
 |**Notification rule**|**Meaning**|**Default Policy Tip notification message that Outlook users will see**|
 |:-----|:-----|:-----|
@@ -62,7 +63,5 @@ For procedures that explain how to create your own Policy Tips, see [Manage poli
 ## For more information
 
 [Data loss prevention](data-loss-prevention.md)
-
-[Manage DLP Policies](https://technet.microsoft.com/library/ba81fabd-7f7f-4ef7-968f-ce851ada9d70.aspx)
 
 [Manage policy tips](manage-policy-tips.md)

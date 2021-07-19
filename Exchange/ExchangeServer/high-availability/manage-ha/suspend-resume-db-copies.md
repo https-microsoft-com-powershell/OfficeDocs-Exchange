@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 96aa1b82-3e15-4215-843e-3d583af9504b
-ms.date: 7/9/2018
 ms.reviewer:
 title: Suspend or resume a mailbox database copy
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,14 +26,14 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 - Estimated time to complete this task: 1 minute
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Suspend a mailbox database copy
 
@@ -54,17 +55,17 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 This example suspends continuous replication for a copy of the database DB1 hosted on the server MBX1. An optional comment has also been specified.
 
-```
+```powershell
 Suspend-MailboxDatabaseCopy -Identity DB1\MBX1 -SuspendComment "Maintenance on MBX1" -Confirm:$False
 ```
 
 This example suspends activation for a copy of the database DB2 hosted on the server MBX2.
 
-```
+```powershell
 Suspend-MailboxDatabaseCopy -Identity DB2\MBX2 -ActivationOnly -Confirm:$False
 ```
 
-For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](https://technet.microsoft.com/library/b6e03402-706e-40c6-b392-92e3da21b5c0.aspx).
+For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/suspend-mailboxdatabasecopy).
 
 ## Resume a mailbox database copy
 
@@ -83,17 +84,17 @@ For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy]
 
 This example resumes a copy of the database DB1 on the server MBX1.
 
-```
+```powershell
 Resume-MailboxDatabaseCopy -Identity DB1\MBX1
 ```
 
 This example resumes a copy of the database DB2 on the server MBX2 for replication only.
 
-```
+```powershell
 Resume-MailboxDatabaseCopy -Identity DB2\MBX2 -ReplicationOnly
 ```
 
-For detailed syntax and parameter information, see [Resume-MailboxDatabaseCopy](https://technet.microsoft.com/library/3d90b006-9914-415b-9a1f-730bd91c8548.aspx).
+For detailed syntax and parameter information, see [Resume-MailboxDatabaseCopy](/powershell/module/exchange/resume-mailboxdatabasecopy).
 
 ## How do you know this worked?
 
@@ -103,6 +104,6 @@ To verify that you have successfully suspended or resumed a mailbox database cop
 
 - In the Exchange Management Shell, run the following command to display status information for a database copy:
 
-  ```
+  ```powershell
   Get-MailboxDatabaseCopyStatus <DatabaseCopyName> | Format-List
   ```

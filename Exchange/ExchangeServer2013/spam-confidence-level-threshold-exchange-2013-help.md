@@ -2,13 +2,14 @@
 title: 'Spam Confidence Level Threshold: Exchange 2013 Help'
 TOCTitle: Spam Confidence Level Threshold
 ms:assetid: 0009b4af-be6d-41d2-98bc-b5487272c74a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa995744(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa995744(v=EXCHG.150)
 ms:contentKeyID: 49248673
-ms.date: 11/17/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -17,7 +18,7 @@ mtps_version: v=EXCHG.150
 _**Applies to:** Exchange Server 2013_
 
 > [!NOTE]
-> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://go.microsoft.com/fwlink/p/?linkid=835894">Deprecating support for SmartScreen in Outlook and Exchange</A>.
+> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332">Deprecating support for SmartScreen in Outlook and Exchange</A>.
 
 In Microsoft Exchange Server 2013, you can define specific actions according to spam confidence level (SCL) thresholds. For example, you can define different thresholds for rejecting, deleting, or quarantining messages on an Exchange server that's running the Content Filter agent.
 

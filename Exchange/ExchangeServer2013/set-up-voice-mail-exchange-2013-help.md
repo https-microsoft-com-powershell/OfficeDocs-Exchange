@@ -4,9 +4,10 @@ TOCTitle: Set up voice mail for users
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer: 
 ms.assetid: 572991d6-0dc7-4a65-b716-ac6acdc5c9c6
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

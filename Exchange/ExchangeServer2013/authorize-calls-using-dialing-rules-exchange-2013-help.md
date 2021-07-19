@@ -4,9 +4,10 @@ TOCTitle: Authorize calls using dialing rules
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 3/9/2015
 ms.reviewer: 
 ms.assetid: 4c18bc07-f55c-42b7-81c1-729878aa93aa
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

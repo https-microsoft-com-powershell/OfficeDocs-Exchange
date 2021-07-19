@@ -2,29 +2,31 @@
 title: 'Help identify issues with automatic checks - 3rd Party Tools'
 TOCTitle: Help Identify My Issues with Automatic Checks - 3rd Party Tools
 ms:assetid: 83b71e35-892e-44e3-9fce-c608b49bbc61
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn793974(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn793974(v=EXCHG.150)
 ms:contentKeyID: 62632388
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
+ms.custom: SaRA-Download_ExRCA
 ---
 
-# Help Identify My Issues with Automatic Checks - 3rd Party Tools
+# Help Identify My Issues with Automatic Checks - Third-party tools
 
 _**Applies to:** Exchange Server 2013_
 
 The check(s) on this page will help identify some of the most common configuration challenges. You can use the automatic check(s) below to validate your configuration and help you update your environment.
 
-You'll be asked to sign-in on a new page.  If you already have an Office 365 user account select **sign-in**.  You won't need an Azure ID account. You might be asked for a user account again when the checks run. Use your username@youroffice365login.domain and your password.
+You'll be asked to sign-in on a new page.  If you already have an user account select **sign-in**.  You won't need an Azure ID account. You might be asked for a user account again when the checks run. Use your *user name*\@*yourFQDN* and your password.
 
 ## Prerequisites
 
 We'll check to see if you have the necessary pre-requisites on your Windows 7 x64 or Windows Server 2008 R2 computer automatically.
 
-## 3rd Party Tools Check
+## Third-party tools check
 
 <table>
 <colgroup>
@@ -39,9 +41,9 @@ We'll check to see if you have the necessary pre-requisites on your Windows 7 x6
 <td><p>Check</p></td>
 </tr>
 <tr class="even">
-<td><p>3rd Party Tools</p></td>
-<td><p>Im not sure what 3rd party integrations/applications I have installed in my messaging environment</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant for Office 365</a></p></td>
+<td><p>Third-party Tools</p></td>
+<td><p>Im not sure what third-party integrations/applications I have installed in my messaging environment</p></td>
+<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant</a></p></td>
 </tr>
 </tbody>
 </table>

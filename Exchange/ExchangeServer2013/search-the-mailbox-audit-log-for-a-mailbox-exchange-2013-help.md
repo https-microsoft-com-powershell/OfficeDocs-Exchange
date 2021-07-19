@@ -2,13 +2,14 @@
 title: 'Search the mailbox audit log for a mailbox: Exchange 2013 Help'
 TOCTitle: Search the mailbox audit log for a mailbox
 ms:assetid: 5b518a08-3b51-4ba3-bfbd-0e35cc5ff374
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff461930(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff461930(v=EXCHG.150)
 ms:contentKeyID: 49300503
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,8 +36,8 @@ For additional management tasks related to mailbox audit logging, see [Mailbox a
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to search the mailbox audit log for a mailbox
 
-For examples of how to use the Shell to search the mailbox audit log for a mailbox, see [Examples](https://technet.microsoft.com/en-us/ff522360\(exchg.150\)#examples) in [Search-MailboxAuditLog](https://technet.microsoft.com/en-us/library/ff522360\(v=exchg.150\)).
+For examples of how to use the Shell to search the mailbox audit log for a mailbox, see [Examples](/powershell/module/exchange/Search-MailboxAuditLog#examples) in [Search-MailboxAuditLog](/powershell/module/exchange/Search-MailboxAuditLog).

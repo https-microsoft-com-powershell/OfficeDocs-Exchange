@@ -2,13 +2,14 @@
 title: 'Apply a sharing policy to mailboxes: Exchange 2013 Help'
 TOCTitle: Apply a sharing policy to mailboxes
 ms:assetid: dd4cc765-8469-4176-bb6e-d5b0f5235927
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657501(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657501(v=EXCHG.150)
 ms:contentKeyID: 49289435
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -67,7 +68,7 @@ Set-Mailbox -Identity Barbara -SharingPolicy "Contoso"
 This example specifies that all user mailboxes in the Marketing department use the sharing policy Contoso Marketing.
 
 ```powershell
-Get-Mailbox -Filter {Department -eq "Marketing"} | Set-Mailbox -SharingPolicy "Contoso Marketing"
+Get-Mailbox -Filter "Department -eq 'Marketing'" | Set-Mailbox -SharingPolicy "Contoso Marketing"
 ```
 
 This example returns all mailboxes that have the sharing policy Contoso applied, and it sorts the users into a table that displays only their aliases and email addresses.
@@ -76,7 +77,7 @@ This example returns all mailboxes that have the sharing policy Contoso applied,
 Get-Mailbox -ResultSize unlimited | Where {$_.SharingPolicy -eq "Contoso" } | format-table Alias, EmailAddresses
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)) and [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) and [Get-Mailbox](/powershell/module/exchange/Get-Mailbox).
 
 ## How do you know this worked?
 
@@ -91,4 +92,4 @@ To verify that you have successfully applied the sharing policy to a user mailbo
   ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

@@ -8,8 +8,9 @@ ms.assetid: 49f4fa77-1722-4703-81c9-8724ae0334fb
 monikerRange: exchserver-2016 || exchserver-2019
 title: Turn off access to the Exchange admin center
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
-ms.date: 9/20/2018
 ms.reviewer: 
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -46,7 +47,7 @@ But, this configuration introduces a new problem: access to the EAC is completel
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Step 1: Use the Exchange Management Shell to disable access to the EAC
 
@@ -54,13 +55,13 @@ Remember, this step disables access to the EAC on the server for internal and ex
 
 To disable access to the EAC on an Exchange server, use the following syntax:
 
-```
+```PowerShell
 Set-ECPVirtualDirectory -Identity "<Server>\ecp (Default Web Site)" -AdminEnabled $false
 ```
 
 This example turns disables access to the EAC on the server named MBX01.
 
-```
+```PowerShell
 Set-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" -AdminEnabled $false
 ```
 
@@ -68,11 +69,11 @@ Set-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" -AdminEnabled $
 
 To verify that you've disabled access to the EAC on the server, replace _\<Server\>_ with the name of your Exchange server, and run the following command to verify the value of the **AdminEnabled** property:
 
-```
-Get-ECPVirtualDirectory -Identity "MBX01\ecp (Default Web Site)" | Format-List AdminEnabled
+```PowerShell
+ -Identity "MBX01\ecp (Default Web Site)" | Format-List AdminEnabled
 ```
 
-When you open https://\<servername\>/ecp or from the internal network, your own **Settings** \> **Options** page in Outlook on the web opens instead of the EAC.
+When you open `https://<servername>/ecp` or from the internal network, your own **Settings** \> **Options** page in Outlook on the web opens instead of the EAC.
 
 ## Step 2: Give access to the EAC on the internal network
 
@@ -82,13 +83,13 @@ Choose either of the following options.
 
 The default value of the **AdminEnabled** property is `True` on the default EAC virtual directory. To confirm this value on the second server, replace _\<Server\>_ with the name of the server, and run the following command:
 
-```
+```PowerShell
 Get-ECPVirtualDirectory -Identity "<Server>\ecp (Default Web Site)" | Format-List AdminEnabled
 ```
 
 If the value is `False`, replace _\<Server\>_ with the name of the server, and run the following command:
 
-```
+```PowerShell
 Set-ECPVirtualDirectory -Identity "<Server>\ecp (Default Web Site)" -AdminEnabled $true
 ```
 
@@ -213,15 +214,15 @@ The steps to assign a second IP address to the existing network adapter are desc
 
 #### Step 2d: Use the Exchange Management Shell to create new EAC and Outlook on the web virtual directories for the new web site
 
-To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 Replace _\<Server\>_ with the name of your server, and run the following commands to create the new EAC and Outlook on the web virtual directories for the new web site.
 
-```
+```PowerShell
 New-EcpVirtualDirectory -Server <Server> -Role ClientAccess -WebSiteName EAC_Secondary -Path "C:\inetpub\EAC_Secondary\ecp"
 ```
 
-```
+```PowerShell
 New-OwaVirtualDirectory -Server <Server> -Role ClientAccess -WebSiteName EAC_Secondary -Path "C:\inetpub\EAC_Secondary\owa"
 ```
 
@@ -233,11 +234,11 @@ New-OwaVirtualDirectory -Server <Server> -Role ClientAccess -WebSiteName EAC_Sec
 
 **Note**: To restart IIS from the command line, open an elevated command prompt (a Command Prompt window that you opened by selecting **Run as administrator**) and run the following commands:
 
-```
-net stop was /y
+```console
+net stop w3svc /y
 ```
 
-```
+```console
 net start w3svc
 ```
 
@@ -245,11 +246,11 @@ net start w3svc
 
 To verify that you have successfully disabled access to the EAC on an Exchange server, perform the following steps:
 
-1. Test your organization's internal and external URL for Outlook on the web. For example, if the external URL is https://mail.contoso.com/owa, and the internal URL is https://mbx01.contoso.com/owa use the following procedures to verify your configuration:
+1. Test your organization's internal and external URL for Outlook on the web. For example, if the external URL is <https://mail.contoso.com/owa>, and the internal URL is <https://mbx01.contoso.com/owa> use the following procedures to verify your configuration:
 
    - Verify that internal and external users can open their mailboxes by using Outlook on the web, including the **Settings** \> **Options** page.
 
-   - Verify that https://mail.contoso.com/ecp and https://mbx01.contoso.com/ecp return either of the following results:
+   - Verify that <https://mail.contoso.com/ecp> and <https://mbx01.contoso.com/ecp> return either of the following results:
 
      - **404 - website not found**
 
@@ -257,7 +258,7 @@ To verify that you have successfully disabled access to the EAC on an Exchange s
 
 2. Verify that administrators can access the EAC on the internal network based on your configuration selection:
 
-   - **Second Exchange server**: If the second Exchange server is named MBX02, verify that https://mbx02.contoso.com/ecp opens the EAC.
+   - **Second Exchange server**: If the second Exchange server is named MBX02, verify that <https://mbx02.contoso.com/ecp> opens the EAC.
 
-   - **New EAC web site on the existing Exchange server**: If the IP address of the new EAC web site is 10.1.1.12, verify that https://10.1.1.12/ecp opens the EAC.
+   - **New EAC web site on the existing Exchange server**: If the IP address of the new EAC web site is 10.1.1.12, verify that <https://10.1.1.12/ecp> opens the EAC.
 ::: moniker-end

@@ -2,13 +2,14 @@
 title: 'Remove an address list: Exchange 2013 Help'
 TOCTitle: Remove an address list
 ms:assetid: 39a313f3-41d4-4c8f-af67-df2316f3687f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997294(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997294(v=EXCHG.150)
 ms:contentKeyID: 49289233
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ For additional management tasks related to address lists, see [Address list proc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to remove an address list
 
@@ -51,7 +52,7 @@ Remove-AddressList -Identity "Sales Department"
 
 Type **Y** to confirm that you want to remove this address list, and then press ENTER.
 
-For detailed syntax and parameter information, see [Remove-AddressList](https://technet.microsoft.com/en-us/library/bb124342\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-AddressList](/powershell/module/exchange/Remove-AddressList).
 
 ## Use the Shell to remove an address list that contains child address lists
 
@@ -63,4 +64,4 @@ Remove-AddressList -Identity Departments -Recursive
 
 Type **Y** to confirm that you want to remove the parent address list and its child address lists, and then press ENTER.
 
-For detailed syntax and parameter information, see [Remove-AddressList](https://technet.microsoft.com/en-us/library/bb124342\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-AddressList](/powershell/module/exchange/Remove-AddressList).

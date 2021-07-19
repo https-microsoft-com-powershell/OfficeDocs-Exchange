@@ -2,13 +2,14 @@
 title: Import the Exchange Server 2013 Management Pack
 TOCTitle: Import the Exchange Server 2013 Management Pack
 ms:assetid: dc929928-61b8-448b-9ae5-d3fa73a18ee9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn195914(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn195914(v=EXCHG.150)
 ms:contentKeyID: 53181787
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -38,7 +39,7 @@ Before you can import the management pack, verify that the following conditions 
 
 Use the following steps to import the Exchange Server 2013 Management Pack. This procedure assumes that you have extracted the management pack contents to a local drive on your System Center Operations Manager (SCOM) server. You can download the Exchange Server 2013 Management Pack from the.
 
-1. Log on to your SCOM server, and download the Exchange Server 2013 Management Pack from [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?linkid=268587).
+1. Log on to your SCOM server, and download the Exchange Server 2013 Management Pack from [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=39039).
 
 2. Extract the management pack contents to a folder on your system by running the `ExchangeServerManagementPack.msi` file.
 

@@ -4,10 +4,11 @@ TOCTitle: Third-party copyright notices
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 
 ms.reviewer: 
 ms.collection: Ent_O365_Hybrid
 ms.assetid: e94f1244-acb8-4ddd-b54e-5cc37f903bbf
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

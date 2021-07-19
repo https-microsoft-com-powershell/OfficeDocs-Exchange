@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Admins can learn how to view and modify accepted domains in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 0fc0ecc0-e133-48fa-9d72-cb4793a73960
-ms.date: 
 ms.reviewer: 
 title: Manage accepted domains in Exchange Online
 ms.collection: 
 - exchange-online
 - M365-email-calendar
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.service: exchange-online
 manager: serdars
@@ -19,29 +20,28 @@ manager: serdars
 
 # Manage accepted domains in Exchange Online
 
-When you add your domain to Office 365, it's called an accepted domain. This means that users in this domain can send and receive mail. For more information on how to add your domain to Office 365 using the Microsoft 365 admin center, see [Add a domain to Office 365](https://support.office.com/article/6383f56d-3d09-4dcb-9b41-b5f5a5efd611).
+When you add your domain to Microsoft 365 or Office 365, it's called an accepted domain. This means that users in this domain can send and receive mail. For more information on how to add your domain to Microsoft 365 or Office 365 using the Microsoft 365 admin center, see [Add a domain to Microsoft 365 or Office 365](/microsoft-365/admin/setup/add-domain).
 
 After you add your domain using the Microsoft 365 admin center, you can use the Exchange admin center (EAC) to view your accepted domains and configure the domain type.
 
 There are two types of accepted domains in Exchange Online:
 
-- **Authoritative**: Email is delivered to email addresses that are listed for recipients in Office 365 for this domain. Emails for unknown recipients are rejected.
+- **Authoritative**: Email is delivered to email addresses that are listed for recipients in Microsoft 365 or Office 365 for this domain. Emails for unknown recipients are rejected.
 
-  - If you just added your domain to Office 365 and you select this option, it's critical that you add your recipients to Office 365 before setting up mail to flow through the service.
+  - If you just added your domain to Microsoft 365 or Office 365 and you select this option, it's critical that you add your recipients to Microsoft 365 or Office 365 before setting up mail to flow through the service.
 
-  - Typically, you use this option when all the email recipients in your domain are using Office 365. You can also use it if some recipients exist on your own email servers. However, if recipients exist on your own email servers, you must add your recipients to this Office 365 domain in order to make sure that mail is delivered as expected. For more information about how to manage your recipients, see these topics:
+  - Typically, you use this option when all the email recipients in your domain are using Microsoft 365 or Office 365. You can also use it if some recipients exist on your own email servers. However, if recipients exist on your own email servers, you must add your recipients to this Microsoft 365 or Office 365 domain in order to make sure that mail is delivered as expected. For more information about how to manage your recipients, see these topics:
 
     - **Exchange Online**: [Manage mail users](../../recipients-in-exchange-online/manage-mail-users.md)
-
-    - **Exchange Online Protection**: [Manage Mail Users in EOP](https://technet.microsoft.com/library/4bfaf2ab-e633-4227-8bde-effefb41a3db.aspx)
+    - **Exchange Online Protection**: [Manage mail users in EOP](/exchange/standalone-eop/manage-mail-users-in-eop)
 
   - Setting this option enables Directory Based Edge Blocking (DBEB), which rejects messages for invalid recipients at the service network perimeter. For more information about configuring DBEB during a migration, see [Use Directory Based Edge Blocking to reject messages sent to invalid recipients](../../mail-flow-best-practices/use-directory-based-edge-blocking.md).
 
-- **Internal relay (also known as non-authoritative**): Recipients for this domain can be in Office 365 or your own email servers. Email is delivered to known recipients in Office 365 or is relayed to your own email server if the recipients aren't known to Office 365.
+- **Internal relay (also known as non-authoritative**): Recipients for this domain can be in Microsoft 365 or Office 365 or your own email servers. Email is delivered to known recipients in Office 365 or is relayed to your own email server if the recipients aren't known to Microsoft 365 or Office 365.
 
-  - **You should not select this option if all of the recipients for this domain are in Office 365.**
+  - **You should not select this option if all of the recipients for this domain are in Microsoft 365 or Office 365.**
 
-  - If you select this option, you must create a connector for mail flow from Office 365 to your on-premises email server; otherwise recipients on the domain who are not hosted in Office 365 won't be able to receive mail on your own email servers. For more information about setting up connectors, see [Set up connectors to route mail between Office 365 and your own email servers](../../mail-flow-best-practices/use-connectors-to-configure-mail-flow/set-up-connectors-to-route-mail.md).
+  - If you select this option, you must create a connector for mail flow from Microsoft 365 or Office 365 to your on-premises email server; otherwise recipients on the domain who are not hosted in Microsoft 365 or Office 365 won't be able to receive mail on your own email servers. For more information about setting up connectors, see [Set up connectors to route mail between Microsoft 365 or Office 365 and your own email servers](../../mail-flow-best-practices/use-connectors-to-configure-mail-flow/set-up-connectors-to-route-mail.md).
 
   - This option is required if you enable the subdomain routing option on a domain in order to let email pass through the service and be delivered to any subdomains of your accepted domains. For more information, see [Enable mail flow for subdomains in Exchange Online](enable-mail-flow-for-subdomains.md).
 
@@ -49,14 +49,14 @@ There are two types of accepted domains in Exchange Online:
 
 - Estimated time to complete: 10 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Domains" entry in the [Mail flow permissions](https://technet.microsoft.com/library/f49f4fb5-af75-43cb-900f-c5f7b8cfa143.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Domains" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
-- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## View accepted domains
 
@@ -70,19 +70,19 @@ There are two types of accepted domains in Exchange Online:
 
 To view summary information about all accepted domains, run the following command:
 
-```
+```powershell
 Get-AcceptedDomain
 ```
 
 To view details about a specific accepted domain, use the following syntax.
 
-```
+```powershell
 Get-AcceptedDomain -Identity <Name> | Format-List
 ```
 
 This example shows details about the accepted domain named contoso.com.
 
-```
+```powershell
 Get-AcceptedDomain -Identity contoso.com | Format-List
 ```
 
@@ -108,17 +108,17 @@ After you add a domain to your Exchange Online organization in the Microsoft 365
 
 To configure the domain type, use the following syntax:
 
-```
+```powershell
 Set-AcceptedDomain -Identity <Name> -DomainType <Authoritative | InternalRelay>
 ```
 
 This example configures the accepted domain named contoso.com as an internal relay domain.
 
-```
+```powershell
 Set-AcceptedDomain -Identity contoso.com -DomainType InternalRelay
 ```
 
-For detailed syntax and parameter information, see [Set-AcceptedDomain](https://docs.microsoft.com/powershell/module/exchange/mail-flow/set-accepteddomain).
+For detailed syntax and parameter information, see [Set-AcceptedDomain](/powershell/module/exchange/set-accepteddomain).
 
 ### How do you know this worked?
 

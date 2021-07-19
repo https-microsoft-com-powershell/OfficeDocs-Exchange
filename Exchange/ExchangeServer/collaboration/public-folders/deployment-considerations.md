@@ -5,10 +5,11 @@ ms.topic: reference
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 2e416eed-b88f-45db-a482-1232fd2610fa
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Considerations when deploying public folders
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

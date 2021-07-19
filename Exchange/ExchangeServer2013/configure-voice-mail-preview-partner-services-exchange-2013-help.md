@@ -4,9 +4,10 @@ TOCTitle: Configure Voice Mail Preview partner services for users
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 12/9/2016
 ms.reviewer:
 ms.assetid: 7bb914ca-5502-4e64-bae5-555034138d8a
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,7 +26,7 @@ For additional management tasks related to UM mailbox policies, see [UM mailbox 
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan-exchange-2013-help.md).
 
@@ -34,11 +35,11 @@ For additional management tasks related to UM mailbox policies, see [UM mailbox 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Sign up with a partner service
 
-To find the list of certified partners and detailed instructions for how to sign up, see [Voice Mail Preview advisor](voice-mail-preview-advisor-exchange-2013-help.md) or see the [Microsoft PinPoint](https://go.microsoft.com/fwlink/p/?LinkId=281966) website. After you've signed up, the Voice Mail Preview partner will provide you a partner ID and the SMTP address to use to forward the voice messages.
+To find the list of certified partners and detailed instructions for how to sign up, see [Voice Mail Preview advisor](voice-mail-preview-advisor-exchange-2013-help.md) or see the [Microsoft Solution Providers](https://www.microsoft.com/solution-providers) website. After you've signed up, the Voice Mail Preview partner will provide you a partner ID and the SMTP address to use to forward the voice messages.
 
 In Step 2, you'll apply the Partner ID and SMTP address you acquired in Step 1 to the required UM mailbox policies.
 
@@ -71,6 +72,6 @@ If you want to configure the Voice Mail Preview partner service for some, but no
 
 - [Assign a UM mailbox policy](assign-um-mailbox-policy-exchange-2013-help.md)
 
-- [Set-UMMailbox](https://technet.microsoft.com/library/dd7b429d-53a8-46dd-b16b-3a8ca8424bbc.aspx)
+- [Set-UMMailbox](/powershell/module/exchange/set-ummailbox)
 
 For more information about the Voice Mail Preview partner program, see [Voice Mail Preview advisor](voice-mail-preview-advisor-exchange-2013-help.md).

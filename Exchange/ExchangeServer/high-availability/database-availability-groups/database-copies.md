@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: ce748bca-3e24-493b-b9e6-153157bffd6a
-ms.date: 7/9/2018
 ms.reviewer:
 title: Mailbox database copies
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -59,6 +60,6 @@ Optionally, you can also specify:
 
 - _TruncationLagTime_: This parameter specifies the amount of time that the Microsoft Exchange Replication service should wait before truncating log files that have replayed into a copy of the database. The time period begins after the log has been successfully replayed into the copy of the database. The format for this parameter is (Days.Hours:Minutes:Seconds). The default setting for this value is 0 seconds. The maximum allowable setting for this value is 14 days. The minimum allowable setting is 0 seconds. Setting the value for truncation lag time to 0 turns off log truncation delay.
 
-- _SeedingPostponed_: This parameter specifies that the task shouldn't automatically seed the database copy on the specified Mailbox server. This option is typically used when you intend to seed a new mailbox database copy by using an existing passive copy of the database (for example, adding a second copy of a specific database to a remote location). When you use this parameter, you must manually seed the database copy using the [Update-MailboxDatabaseCopy](https://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet.
+- _SeedingPostponed_: This parameter specifies that the task shouldn't automatically seed the database copy on the specified Mailbox server. This option is typically used when you intend to seed a new mailbox database copy by using an existing passive copy of the database (for example, adding a second copy of a specific database to a remote location). When you use this parameter, you must manually seed the database copy using the [Update-MailboxDatabaseCopy](/powershell/module/exchange/update-mailboxdatabasecopy) cmdlet.
 
-For more information about creating, using, and managing mailbox database copies, see [Managing mailbox database copies](https://docs.microsoft.com/en-us/exchange/high-availability/manage-ha/manage-database-copies?view=exchserver-2019)
+For more information about creating, using, and managing mailbox database copies, see [Manage mailbox database copies](../manage-ha/manage-database-copies.md).

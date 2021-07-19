@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: de53c00b-091c-4a31-aacc-1bd40c756ce2
-ms.date: 7/13/2018
 ms.reviewer:
 title: Changes to high availability and site resilience over previous versions of Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -17,21 +18,21 @@ manager: serdars
 
 # Changes to high availability and site resilience over previous versions of Exchange Server
 
-Exchange Server 2013 and later uses DAGs and mailbox database copies (along with other features such as single item recovery, retention policies, and lagged database copies) to provide high availability, site resilience, and Exchange native data protection. The high availability platform, Exchange Information Store and Extensible Storage Engine (ESE) have all been enhanced since Exchange 2010 to provide availability and less complex management, and to reduce costs. These enhancements include:
+Exchange Server 2013 and later uses DAGs and mailbox database copies (along with other features such as single item recovery, retention policies, and lagged database copies) to provide high availability, site resilience, and Exchange native data protection. The high availability platform, Exchange Information Store, and Extensible Storage Engine (ESE) have all been enhanced since Exchange 2010 to provide availability and less complex management, and to reduce costs. These enhancements include:
 
-- **Reduction in IOPS**: This enables you to leverage larger disks in terms of capacity and IOPS as efficiently as possible.
+- **Reduction in IOPS**: This enables you to use larger disks in terms of capacity and IOPS as efficiently as possible.
 
-- **Managed availability**: With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and initiate server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end-user experience rather than just server and component uptime to help keep the service continuously available.
+- **Managed availability**: With managed availability, internal monitoring and recovery-oriented features are tightly integrated to help prevent failures, proactively restore services, and start server failovers automatically or alert administrators to take action. The focus is on monitoring and managing the end-user experience rather than just server and component uptime to help keep the service continuously available.
 
 - **Managed Store**: The Managed Store is the name of the rewritten Information Store processes in Exchange 2013 or later. The Managed Store is written in C# and tightly integrated with the Microsoft Exchange Replication service (MSExchangeRepl.exe) to provide higher availability through improved resiliency.
 
-- **Support for multiple databases per disk**: Enhancements enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby leveraging larger disks in terms of capacity and IOPS as efficiently as possible.
+- **Support for multiple databases per disk**: Enhancements enable you to support multiple databases (mixtures of active and passive copies) on the same disk, thereby using larger disks in terms of capacity and IOPS as efficiently as possible.
 
 - **AutoReseed**: Automatic reseeding capability enables you to quickly restore database redundancy after disk failure. If a disk fails, the database copy stored on that disk is copied from the active database copy to a spare disk on the same server. If multiple database copies were stored on the failed disk, they can all be automatically reseeded on a spare disk. This enables faster reseeds, as the active databases are likely to be on multiple servers and the data is copied in parallel.
 
-- **Automatic recovery from storage failures**: This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. Exchange now includes additional recovery behaviors for long I/O times, excessive memory consumption by MSExchangeRepl.exe, and severe cases where the system is in such a bad state that threads can't be scheduled.
+- **Automatic recovery from storage failures**: This feature continues the innovation that was introduced in Exchange 2010 to allow the system to recover from failures that affect resiliency or redundancy. Exchange now includes more recovery behaviors for long I/O times, excessive memory consumption by MSExchangeRepl.exe, and severe cases where the system is in such a bad state that threads can't be scheduled.
 
-- **Lagged copy enhancements**: Lagged copies can now care for themselves to a certain extent using automatic log play down. Lagged copies will automatically play down log files in a variety of situations, such as page patching and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy to perform page patching. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can leverage Safety Net, making recovery or activation much easier.
+- **Lagged copy enhancements**: Lagged copies can now care for themselves to a certain extent using automatic log play down. Lagged copies will automatically play down log files in various situations, such as page patching and low disk space scenarios. If the system detects that page patching is required for a lagged copy, the logs will be automatically replayed into the lagged copy to do page patching. Lagged copies will also invoke this auto replay feature when a low disk space threshold has been reached, and when the lagged copy has been detected as the only available copy for a specific period of time. In addition, lagged copies can use Safety Net, making recovery or activation much easier.
 
 - **Single copy alert enhancements**: The single copy alert introduced in Exchange 2010 is no longer a separate scheduled script. It's now integrated into the managed availability components within the system and is a native function within Exchange.
 
@@ -39,9 +40,9 @@ Exchange Server 2013 and later uses DAGs and mailbox database copies (along with
 
 ## Reduction in IOPS
 
-In Exchange 2010, passive database copies have a very low checkpoint depth, which is required for fast failover. In addition, the passive copy performs aggressive pre-reading of data to keep up with a 5-megabyte (MB) checkpoint depth. As a result of using a low checkpoint depth and performing these aggressive pre-read operations, IOPS for a passive database copy was equal to IOPS for an active copy in Exchange 2010.
+In Exchange 2010, passive database copies have a low checkpoint depth, that is required for fast failover. In addition, the passive copy does aggressive pre-reading of data to keep up with a 5 megabyte (MB) checkpoint depth. As a result of using a low checkpoint depth and doing these aggressive pre-read operations, IOPS for a passive database copy is equal to IOPS for an active copy in Exchange 2010.
 
-In Exchange 2013 or later, the system is able to provide fast failover while using a high checkpoint depth on the passive copy (100 MB). Because passive copies have 100-MB checkpoint depth, they've been de-tuned to no longer be so aggressive. As a result of increasing the checkpoint depth and de-tuning the aggressive pre-reads, IOPS for a passive copy is about 50 percent of the active copy IOPS.
+In Exchange 2013 or later, the system can provide fast failover while using a high checkpoint depth on the passive copy (100 MB). Because passive copies have 100-MB checkpoint depth, they've been de-tuned to no longer be so aggressive. As a result of increasing the checkpoint depth and de-tuning the aggressive pre-reads, IOPS for a passive copy are about 50 percent of the active copy IOPS.
 
 Having a higher checkpoint depth on the passive copy also results in other changes. On failover in Exchange 2010, the database cache is flushed as the database is converted from a passive copy to an active copy. Starting in Exchange 2013, ESE logging was rewritten so that the cache is persisted through the transition from passive to active. Because ESE doesn't need to flush the cache, you get fast failover.
 
@@ -51,13 +52,13 @@ As a result of these changes, Exchange now provides a significant reduction in I
 
 ## Managed Availability
 
-Managed Availability is the integration of built-in, active monitoring and the Exchange high availability platform. With Managed Availability, the system can make a determination on when to fail over a database based on service health. Managed Availability is an internal infrastructure that's deployed in the Client Access (frontend) services and backend services on Mailbox servers. Managed Availability includes three main asynchronous components that are constantly doing work:
+Managed Availability is the integration of built-in, active monitoring, and the Exchange high availability platform. With Managed Availability, the system can make a determination on when to fail over a database based on service health. Managed Availability is an internal infrastructure that's deployed in the Client Access (frontend) services and backend services on Mailbox servers. Managed Availability includes three main asynchronous components that are constantly doing work:
 
-1. The first component is the probe engine, which is responsible for taking measurements on the server and collecting data. The results of those measurements flow into the second component, the monitor.
+1. The first component is the probe engine, that is responsible for taking measurements on the server and collecting data. The results of those measurements flow into the second component, the monitor.
 
 2. The monitor contains all of the business logic used by the system based on what is considered healthy on the data collected. Similar to a pattern recognition engine, the monitor looks for the various different patterns on all the collected measurements, and then it decides whether something is considered healthy.
 
-3. Finally, there is the responder engine, which is responsible for recovery actions.
+3. Finally, there's the responder engine, that is responsible for recovery actions.
 
 When something is unhealthy, the first action is to attempt to recover that component. This could include multi-stage recovery actions; for example:
 
@@ -75,9 +76,9 @@ Managed availability is implemented in the form of two services:
 
 - **Exchange Health Manager Service (MSExchangeHMHost.exe)**: This is a controller process that's used to manage worker processes. It's used to build, execute, and start and stop the worker process as needed. It's also used to recover the worker process in case that process crashes, to prevent the worker process from being a single point of failure.
 
-- **Exchange Health Manager Worker process (MSExchangeHMWorker.exe)**: This is the worker process that's responsible for performing the runtime tasks.
+- **Exchange Health Manager Worker process (MSExchangeHMWorker.exe)**: This is the worker process that's responsible for doing the runtime tasks.
 
-Managed availability uses persistent storage to perform its functions:
+Managed availability uses persistent storage to do its functions:
 
 - XML configuration files are used to initialize the work item definitions during startup of the worker process.
 
@@ -89,13 +90,13 @@ For more information about managed availability, see [Managed availability](mana
 
 ## Managed Store
 
-Exchange 2010 and earlier versions support running a single instance of the Information Store process (Store.exe) on the Mailbox server role. This single Store instance hosts all databases on the server: active, passive, lagged, and recovery. In these Exchange architectures, there is little, if any, isolation between the different databases hosted on a Mailbox server. An issue with a single mailbox database has the potential to negatively affect all other databases, and crashes resulting from a mailbox corruption can affect service for all users whose databases are hosted on that server.
+Exchange 2010 and earlier versions support running a single instance of the Information Store process (Store.exe) on the Mailbox server role. This single Store instance hosts all databases on the server: active, passive, lagged, and recovery. In these Exchange architectures, there's little, if any, isolation between the different databases hosted on a Mailbox server. An issue with a single mailbox database has the potential to negatively affect all other databases, and crashes resulting from a mailbox corruption can affect service for all users whose databases are hosted on that server.
 
-Another challenge with a single Store instance is the lack of processor scalability with the Extensible Storage Engine (ESE). ESE scales well to 8-12 processor cores, but beyond that, cross-processor communication and cache synchronization issues lead to negative performance. Given today's servers with 16+ core systems available, this would impose the administrative challenge of managing the affinity of 8-12 cores for ESE and using the other cores for non-Store processes (for example, Assistants, Search Foundation, Managed Availability, etc.). Moreover, the previous architecture restricted scale-up for the Store process.
+Another challenge with a single Store instance is the lack of processor scalability with the Extensible Storage Engine (ESE). ESE scales well to 8-12 processor cores, but beyond that, cross-processor communication and cache synchronization issues lead to negative performance. Given today's servers with 16+ core systems available, this would impose the administrative challenge of managing the affinity of 8-12 cores for ESE and using the other cores for non-Store processes (for example, Assistants, Search Foundation, Managed Availability, and so on). Moreover, the previous architecture restricted scale-up for the Store process.
 
 The Store.exe process has evolved considerably throughout the years as Exchange Server itself evolved, but as a single process, ultimately its scalability is limited, and it represents a single point of failure. Because of these limits, Store.exe was removed in Exchange 2013 and replaced by the Managed Store.
 
-For more information, see [Managed Store](https://technet.microsoft.com/library/efdaf80b-335c-491c-8eb5-1fafd297e8a2.aspx).
+For more information, see [Managed Store](../../ExchangeServer2013/managed-store-exchange-2013-help.md).
 
 ## Multiple databases per volume
 
@@ -113,9 +114,9 @@ Although the storage improvements in Exchange are designed primarily for just a 
 
 - Limited agility exists to recover from low disk space conditions.
 
-The trend of increasing storage capacity continues. For example, the Exchange best practice guideline for maximum database size (2 terabytes) on an 8 terabyte drive means you would waste more than 5 terabytes of disk space.
+The trend of increasing storage capacity continues. For example, the Exchange best practice guideline for maximum database size (2 terabytes) on an 8-terabyte drive means you would waste more than 5 terabytes of disk space.
 
-A ssolution would be to simply grow the databases larger, but that inhibits manageability because it might introduce long reseed times (including operationally unmanagable reseed times) and compromised reliability of copying that amount of data over the network.
+A solution would be to grow the databases larger, but that inhibits manageability because it might introduce long reseed times (including operationally unmanageable reseed times) and compromised reliability of copying that amount of data over the network.
 
 In addition, in the Exchange 2010 model, the disk storing a passive copy is underutilized in terms of IOPS. In the case of a lagged passive copy, not only is the disk underutilized in terms of IOPS, but it's also asymmetric in terms of its size, relative to the disks used to store the active and non-lagged passive copies.
 
@@ -143,7 +144,7 @@ In addition, activation preference is configured so that it's balanced across th
 
 In addition to having a better distribution of users across the existing volumes, another benefit of using multiple databases per disk is a reduction in the amount of time to restore data protection for failures that require a reseed (for example, disk failure).
 
-As a database gets bigger, reseeding the database takes longer. For example, a 2 terabyte database could take 23 hours to reseed, whereas an 8 terabyte database could take as long as 93 hours (almost 4 days). Both seeds would occur at about 20 MB per second. This generally means that a very large database can't be seeded within an operationally reasonable amount of time.
+As a database gets bigger, reseeding the database takes longer. For example, a 2-terabyte database could take 23 hours to reseed, whereas an 8-terabyte database could take as long as 93 hours (almost 4 days). Both seeds would occur at about 20 MB per second. This generally means that a very large database can't be seeded within an operationally reasonable amount of time.
 
 In the case of a single database copy per disk scenario, the seeding operation is effectively source-bound, because it's always seeding the disk from a single source.
 
@@ -193,7 +194,7 @@ Lagged copy enhancements include integration with Safety Net and automatic play 
 
 Safety Net takes some responsibility from shadow redundancy in DAG environments. In DAG environments, shadow redundancy doesn't need to keep another copy of the delivered message in a shadow queue while it waits for the delivered message to replicate to the passive copies of mailbox databases on the other Mailbox servers in the DAG. The copy of the delivered message is already stored in Safety Net, so shadow redundancy can redeliver the message from Safety Net if necessary.
 
-With Safety Net, activating a lagged database copy becomes significantly easier. For example, consider a lagged copy that has a 2-day replay lag. In that case, you would configure Safety Net for a period of 2 days. If you encounter a situation in which you need to use your lagged copy, you can:
+With Safety Net, activating a lagged database copy becomes easier. For example, consider a lagged copy that has a 2-day replay lag. In that case, you would configure Safety Net for a period of 2 days. If you encounter a situation in which you need to use your lagged copy, you can:
 
 1. Suspend replication to it.
 
@@ -217,7 +218,7 @@ In Exchange 2010, page patching wasn't available for lagged copies. In Exchange 
 
 Lagged copy play down behavior is disabled by default, and can be enabled by running the following command.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup <DAGName> -ReplayLagManagerEnabled $true
 ```
 
@@ -231,13 +232,13 @@ To enable play down for low disk space thresholds, you must configure the follow
 
 After configuring either of these registry settings, restart the Microsoft Exchange DAG Management service for the changes to take effect.
 
-As an example, consider an environment where a given database has 4 copies (3 highly available copies and 1 lagged copy), and the default setting is used for _ReplayLagManagerNumAvailableCopies_. If a non-lagged copy is out-of-service for any reason (for example, it is suspended, etc.) then the lagged copy will automatically play down its log files in 24 hours.
+As an example, consider an environment where a given database has four copies (three highly available copies and one lagged copy), and the default setting is used for _ReplayLagManagerNumAvailableCopies_. If a non-lagged copy is out-of-service for any reason (for example, it is suspended, etc.) then the lagged copy will automatically play down its log files in 24 hours.
 
 ## Single copy alert enhancements
 
 Ensuring that your servers are operating reliably and that your mailbox database copies are healthy are primary objectives of daily Exchange messaging operations. You must actively monitor the hardware, the Windows operating system, and the Exchange services.
 
-But in an Exchange mailbox resiliency environment, it's important that you monitor the health and status of the DAG and your mailbox database copies. It's especially vital to perform data redundancy risk management and monitor for periods in which a replicated database is down to just a single copy. This is particularly critical in environments that don't use Redundant Array of Independent Disks (RAID) and instead deploy JBOD configurations. In a RAID environment, a single disk failure doesn't affect an active mailbox database copy. However, in a JBOD environment, a single disk failure will trigger a database failover.
+But in an Exchange mailbox resiliency environment, it's important that you monitor the health and status of the DAG and your mailbox database copies. It's especially vital to perform data redundancy risk management and monitor for periods in which a replicated database is down to just a single copy. This is critical in environments that don't use Redundant Array of Independent Disks (RAID) and instead deploy JBOD configurations. In a RAID environment, a single disk failure doesn't affect an active mailbox database copy. However, in a JBOD environment, a single disk failure will trigger a database failover.
 
 The CheckDatabaseRedundancy.ps1 script was introduced in Exchange 2010. As its name implies, the purpose of the script was to monitor the redundancy of replicated mailbox databases by validating that there is at least two configured, healthy, and current copies, and to alert an administrator through event log generation when only a single healthy copy of a replicated database exists. In this case, both active and passive copies are counted when determining redundancy.
 
@@ -245,7 +246,7 @@ Single copy conditions include, but aren't limited to:
 
 - Failure of an active copy to replicate to any passive copy.
 
-- Failure of all passive copies, which includes FailedAndSuspended and Failed states in addition to healthy states where the copy is behind in log copying or replay. Note that lagged copies aren't considered behind if they're within ten minutes in replaying their logs to their lag period.
+- Failure of all passive copies, which includes FailedAndSuspended and Failed states in addition to healthy states where the copy is behind in log copying or replay. Lagged copies aren't considered behind if they're within 10 minutes in replaying their logs to their lag period.
 
 - Failure of the system to accurately know the current log generation of the active copy.
 
@@ -295,7 +296,7 @@ BCSS includes several new health checks that are now part of the built-in manage
 
 4. **Same as Source**: Checks for a server hosting a copy of the affected database that has monitoring components in a state that's the same as the current server hosting the affected copy.
 
-If BCSS is invoked as a result of a failover that's triggered by a managed availability monitoring component (for example, via a Failover responder), an additional mandatory constraint is enforced where the target server's component health must be better than the server on which the failover occurred. For example, if a failure of Outlook on the web (formerly known as Outlook Web App) triggers a managed availability failover via a Failover responder, BCSS must select a server hosting a copy of the affected database on which Oulook on the web is healthy.
+If BCSS is invoked as a result of a failover that's triggered by a managed availability monitoring component (for example, via a Failover responder), an additional mandatory constraint is enforced where the target server's component health must be better than the server on which the failover occurred. For example, if a failure of Outlook on the web (formerly known as Outlook Web App) triggers a managed availability failover via a Failover responder, BCSS must select a server hosting a copy of the affected database on which Outlook on the web is healthy.
 
 ## DAG Management Service
 

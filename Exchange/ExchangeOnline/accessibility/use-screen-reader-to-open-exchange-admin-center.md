@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 69a5beef-a6e7-4d2e-9446-e2a0de9514f4
-ms.date: 
 ms.reviewer: 
 manager: serdars
 description: Admins can learn how to use a screen reader to open the Exchange admin center (EAC) in Exchange Online.
@@ -13,6 +12,8 @@ ms.collection:
 - exchange-online
 - M365-email-calendar
 audience: ITPro
+f1.keywords:
+- CSH
 ms.custom: A11y_UseSR
 ms.service: exchange-online
 
@@ -23,9 +24,9 @@ ms.service: exchange-online
 The Exchange admin center (EAC) is a web-based app that lets you manage your Exchange Online organization in a web browser. Using a screen reader and keyboard shortcuts, you can open the EAC and perform administrative tasks (based on your permissions).
 
 > [!NOTE]
-> When you work in the EAC, we recommend that you use Internet Explorer as your web browser. For more information about the keyboard shortcuts you can use to navigate the EAC and about other accessibility features that are available for Exchange Online, see [Learn more about Internet Explorer keyboard shortcuts](https://go.microsoft.com/fwlink/p/?LinkID=786972) and [Accessibility in Exchange Online](accessibility.md).
+> When you work in the EAC, we recommend that you use Internet Explorer as your web browser. For more information about the keyboard shortcuts you can use to navigate the EAC and about other accessibility features that are available for Exchange Online, see [Learn more about Internet Explorer keyboard shortcuts](https://support.microsoft.com/help/15363/) and [Accessibility in Exchange Online](accessibility.md).
 
-1. Sign in to your organization's Office 365 account. In the **App launcher**, move the focus to the **Admin** app. You hear "Go to the Microsoft 365 admin center, Link." Press Enter.
+1. Sign in to your organization's Microsoft 365 or Office 365 account. In the **App launcher**, move the focus to the **Admin** app. You hear "Go to the Microsoft 365 admin center, Link." Press Enter.
 
    > [!TIP]
    > If you use the **My apps** page to open your apps, to quickly move to the **Admin** app (sometimes one of the last apps on the list), move the focus to the **Search apps** box (one of the first elements on the page). In JAWS, you hear "Leaving menus, My apps, Edit, Type text." In Narrator, you hear "Search apps, Editing." Type admin, and then move the focus to the only search result on the page: **Admin** app. You hear "Admin link." Press Enter.

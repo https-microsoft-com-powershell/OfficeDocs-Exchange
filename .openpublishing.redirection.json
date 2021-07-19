@@ -1,145 +1,839 @@
 {
-
   "redirections": [
-      {
-        "source_path": "Exchange/ExchangeOnline/security-and-compliance/data-loss-prevention/document-fingerprinting.md",
-        "redirect_url": "/Office365/SecurityCompliance/document-fingerprinting",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeOnline/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting.md",
-        "redirect_url": "/Office365/SecurityCompliance/document-fingerprinting",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/the-fully-qualified-domain-name-of-the-computer-matches-a-recipient-policy-serverfqdnmatchessmtppolicy-exchange-2013-help.md",
-        "redirect_url": "/Exchange/serverfqdnmatchessmtppolicy-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/configure-an-accepted-domain-for-a-business-unit-with-mailboxes-outside-your-exchange-organization-exchange-2013-help.md",
-        "redirect_url": "/Exchange/config-accepted-domain-business-unit-outside-org-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-schemafsmonotwin2003spn-exchange-2013-help.md",
-        "redirect_url": "/Exchange/schemafsmonotwin2003spn-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/the-distributed-transaction-coordinator-service-must-be-started-before-setup-can-continue-msdtcstopped-exchange-2013-help.md",
-        "redirect_url": "/Exchange/msdtcstopped-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/the-local-computer-is-responsible-for-expanding-group-membership-serverisdynamicgroupexpansionserver-exchange-2013-help.md",
-        "redirect_url": "/Exchange/serverisdynamicgroupexpansionserver-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/cannot-install-exchange-2007-roles-after-you-prepare-active-directory-for-exchange-2010-noe12serverwarning-exchange-2013-help.md",
-        "redirect_url": "/Exchange/noe12serverwarning-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/the-windows-process-activation-service-process-model-component-is-required-longhornwasprocessmodelinstalled-exchange-2013-help.md",
-        "redirect_url": "/Exchange/longhornwasprocessmodelinstalled-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-domaincontrollerisoutofsite-exchange-2013-help.md",
-        "redirect_url": "/Exchange/domaincontrollerisoutofsite-exchange-2013-help",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/exchange-server-supportability-matrix-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/Exchange/plan-and-deploy/supportability-matrix",
-        "redirect_document_id": false
-      },
-     {
-        "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/owa-for-devices-contact-sync.md",
-        "redirect_url": "https://docs.microsoft.com/Exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android",
-        "redirect_document_id": true
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/outlook-for-ios-and-android-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/outlook-for-ios-and-android?view=exchserver-2019",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/using-hybrid-modern-authentication-with-outlook-for-ios-and-android-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth?view=exchserver-2019",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/using-basic-authentication-with-outlook-for-ios-and-android-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/clients/outlook-for-ios-and-android/use-basic-auth?view=exchserver-2019",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/account-setup-in-outlook-for-ios-and-android-using-basic-authentication-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/clients/outlook-for-ios-and-android/account-setup?view=exchserver-2019",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/passwords-and-security-in-outlook-for-ios-and-android-for-exchange-server-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/clients/outlook-for-ios-and-android/passwords-and-security?view=exchserver-2019",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeServer2013/managing-devices-for-outlook-for-ios-and-android-for-exchange-server-exchange-2013-help.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/clients/outlook-for-ios-and-android/manage-devices?view=exchserver-2019",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "exchange/outlook/common/office/enterprise-includes/o365endpoints/office-365-worldwide-endpoints.md",
-        "redirect_url": "https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeOnline/exchange-online-and-exchange-online-protection-service-upgrade.md",
-        "redirect_url": "https://docs.microsoft.com/office365/securitycompliance/eop/exchange-online-protection-overview",
-        "redirect_document_id": false
-      },
-      {      
-      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365/fix-outlook-and-office-365-issues.md",
-      "redirect_url": "https://support.office.com/article/e90bb691-c2a7-4697-a94f-88836856c72f",
-      "redirect_document_id": false
-      },
-      {
-      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365/diagnostic-log-collection-in-support-and-recovery-assistant.md",
-      "redirect_url": "https://docs.microsoft.com/office365/troubleshoot/administration/diagnostic-log-collection-in-support-and-recovery-assistant",
-      "redirect_document_id": false
-      },
-      {
-      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365/find-and-fix-email-delivery-issues-as-an-office-365-for-business-admin.md",
-      "redirect_url": "https://docs.microsoft.com/exchange/troubleshoot/mail-delivery/email-delivery-issues",
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3.md",
+      "redirect_url": "/Exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365",
       "redirect_document_id": true
-      },
-      {
-        "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/find-and-fix-email-delivery-issues-as-an-office-365-for-business-admin.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/troubleshoot/mail-delivery/email-delivery-issues",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365.md",
-        "redirect_url": "https://docs.microsoft.com/exchange/troubleshoot/outlook-connectivity/outlook-connection-issues",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Outlook/cached-exchange-mode.md",
-        "redirect_url": "https://docs.microsoft.com/outlook/troubleshoot/deployment/cached-exchange-mode",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Outlook/kerberos-authentication-outlook-2016-for-mac.md",
-        "redirect_url": "https://docs.microsoft.com/outlook/troubleshoot/sign-in/set-delay-renew-kerberos-ticket",
-        "redirect_document_id": false
-      },
-      {
-        "source_path": "Outlook/plan-outlook-2016-deployment.md",
-        "redirect_url": "https://docs.microsoft.com/outlook/troubleshoot/deployment/plan-outlook-2016-deployment",
-        "redirect_document_id": false
-      }
-    ]
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/data-loss-prevention/document-fingerprinting.md",
+      "redirect_url": "/Office365/SecurityCompliance/document-fingerprinting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting.md",
+      "redirect_url": "/Office365/SecurityCompliance/document-fingerprinting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/the-fully-qualified-domain-name-of-the-computer-matches-a-recipient-policy-serverfqdnmatchessmtppolicy-exchange-2013-help.md",
+      "redirect_url": "/Exchange/serverfqdnmatchessmtppolicy-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/configure-an-accepted-domain-for-a-business-unit-with-mailboxes-outside-your-exchange-organization-exchange-2013-help.md",
+      "redirect_url": "/Exchange/config-accepted-domain-business-unit-outside-org-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-schemafsmonotwin2003spn-exchange-2013-help.md",
+      "redirect_url": "/Exchange/schemafsmonotwin2003spn-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/the-distributed-transaction-coordinator-service-must-be-started-before-setup-can-continue-msdtcstopped-exchange-2013-help.md",
+      "redirect_url": "/Exchange/msdtcstopped-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/the-local-computer-is-responsible-for-expanding-group-membership-serverisdynamicgroupexpansionserver-exchange-2013-help.md",
+      "redirect_url": "/Exchange/serverisdynamicgroupexpansionserver-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/cannot-install-exchange-2007-roles-after-you-prepare-active-directory-for-exchange-2010-noe12serverwarning-exchange-2013-help.md",
+      "redirect_url": "/Exchange/noe12serverwarning-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/the-windows-process-activation-service-process-model-component-is-required-longhornwasprocessmodelinstalled-exchange-2013-help.md",
+      "redirect_url": "/Exchange/longhornwasprocessmodelinstalled-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-domaincontrollerisoutofsite-exchange-2013-help.md",
+      "redirect_url": "/Exchange/domaincontrollerisoutofsite-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/exchange-server-supportability-matrix-exchange-2013-help.md",
+      "redirect_url": "/Exchange/plan-and-deploy/supportability-matrix",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/owa-for-devices-contact-sync.md",
+      "redirect_url": "/Exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/outlook-for-ios-and-android-exchange-2013-help.md",
+      "redirect_url": "/Exchange/clients/outlook-for-ios-and-android/outlook-for-ios-and-android?view=exchserver-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/using-hybrid-modern-authentication-with-outlook-for-ios-and-android-exchange-2013-help.md",
+      "redirect_url": "/exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth?view=exchserver-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/using-basic-authentication-with-outlook-for-ios-and-android-exchange-2013-help.md",
+      "redirect_url": "/exchange/clients/outlook-for-ios-and-android/use-basic-auth?view=exchserver-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/account-setup-in-outlook-for-ios-and-android-using-basic-authentication-exchange-2013-help.md",
+      "redirect_url": "/exchange/clients/outlook-for-ios-and-android/account-setup?view=exchserver-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/passwords-and-security-in-outlook-for-ios-and-android-for-exchange-server-exchange-2013-help.md",
+      "redirect_url": "/exchange/clients/outlook-for-ios-and-android/passwords-and-security?view=exchserver-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/managing-devices-for-outlook-for-ios-and-android-for-exchange-server-exchange-2013-help.md",
+      "redirect_url": "/exchange/clients/outlook-for-ios-and-android/manage-devices?view=exchserver-2019",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "exchange/outlook/common/office/enterprise-includes/o365endpoints/office-365-worldwide-endpoints.md",
+      "redirect_url": "/office365/enterprise/urls-and-ip-address-ranges",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/exchange-online-and-exchange-online-protection-service-upgrade.md",
+      "redirect_url": "/office365/securitycompliance/eop/exchange-online-protection-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365/fix-outlook-and-office-365-issues.md",
+      "redirect_url": "https://support.microsoft.com/office/e90bb691-c2a7-4697-a94f-88836856c72f",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365/diagnostic-log-collection-in-support-and-recovery-assistant.md",
+      "redirect_url": "/office365/troubleshoot/administration/diagnostic-log-collection-in-support-and-recovery-assistant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365/find-and-fix-email-delivery-issues-as-an-office-365-for-business-admin.md",
+      "redirect_url": "/exchange/troubleshoot/mail-delivery/email-delivery-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/find-and-fix-email-delivery-issues-as-an-office-365-for-business-admin.md",
+      "redirect_url": "/exchange/troubleshoot/mail-delivery/email-delivery-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/fix-outlook-connection-problems-in-office-365/fix-outlook-connection-problems-in-office-365.md",
+      "redirect_url": "/exchange/troubleshoot/outlook-connectivity/outlook-connection-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Outlook/cached-exchange-mode.md",
+      "redirect_url": "/outlook/troubleshoot/deployment/cached-exchange-mode",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Outlook/kerberos-authentication-outlook-2016-for-mac.md",
+      "redirect_url": "/outlook/troubleshoot/sign-in/set-delay-renew-kerberos-ticket",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Outlook/plan-outlook-2016-deployment.md",
+      "redirect_url": "/outlook/troubleshoot/deployment/plan-outlook-2016-deployment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/how-to-configure-iis-for-relay-with-office-365.md",
+      "redirect_url": "/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/smime.md",
+      "redirect_url": "/Exchange/policy-and-compliance/smime/smime",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "outlook/mobile/resources.md",
+      "redirect_url": "https://adoption.microsoft.com/outlook-mobile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/offline-address-books/change-address-book-generation-schedule.md",
+      "redirect_url": "/Exchange/change-address-book-generation-schedule-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/offline-address-books/create-virtual-directory.md",
+      "redirect_url": "/Exchange/create-virtual-directory-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeHybrid/about-exchange-documentation/index.md",
+      "redirect_url": "about-exchange-documentation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeHybrid/exchange-2013-and-2007-hybrid/index.md",
+      "redirect_url": "exchange-2013-and-2007-hybrid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeHybrid/exchange-2013-and-2010-hybrid/index.md",
+      "redirect_url": "exchange-2013-and-2010-hybrid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeHybrid/hybrid-deployment/index.md",
+      "redirect_url": "hybrid-deployment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeHybrid/org-config-transfer-attributes/index.md",
+      "redirect_url": "org-config-transfer-attributes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/accessibility/index.md",
+      "redirect_url": "accessibility",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/address-book-policies/index.md",
+      "redirect_url": "address-book-policies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/address-lists/index.md",
+      "redirect_url": "address-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/hierarchical-address-books/index.md",
+      "redirect_url": "hierarchical-address-books",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/index.md",
+      "redirect_url": "address-books",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/address-books/offline-address-books/index.md",
+      "redirect_url": "offline-address-books",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/add-ins-for-outlook/index.md",
+      "redirect_url": "add-ins-for-outlook",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/client-access-rules/index.md",
+      "redirect_url": "client-access-rules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/exchange-activesync/index.md",
+      "redirect_url": "exchange-activesync",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/index.md",
+      "redirect_url": "clients-and-mobile-in-exchange-online",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/index.md",
+      "redirect_url": "mailtips",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/index.md",
+      "redirect_url": "mobile-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/index.md",
+      "redirect_url": "outlook-for-ios-and-android",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/index.md",
+      "redirect_url": "outlook-on-the-web",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/pop3-and-imap4/index.md",
+      "redirect_url": "pop3-and-imap4",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/collaboration-exo/index.md",
+      "redirect_url": "collaboration-exo",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/collaboration-exo/public-folders/index.md",
+      "redirect_url": "public-folders",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/index.md",
+      "redirect_url": "mail-flow-best-practices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/manage-accepted-domains/index.md",
+      "redirect_url": "manage-accepted-domains",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/non-delivery-reports-in-exchange-online/index.md",
+      "redirect_url": "email-non-delivery-reports-in-office-365",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/remote-domains/index.md",
+      "redirect_url": "remote-domains",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/mail-flow-best-practices/use-connectors-to-configure-mail-flow/index.md",
+      "redirect_url": "use-connectors-to-configure-mail-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/monitoring/index.md",
+      "redirect_url": "monitoring",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/monitoring/trace-an-email-message/index.md",
+      "redirect_url": "trace-an-email-message",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/permissions-exo/index.md",
+      "redirect_url": "permissions-exo",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/recipients-in-exchange-online/index.md",
+      "redirect_url": "recipients-in-exchange-online",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/recipients-in-exchange-online/manage-distribution-groups/index.md",
+      "redirect_url": "manage-distribution-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/recipients-in-exchange-online/manage-dynamic-distribution-groups/index.md",
+      "redirect_url": "manage-dynamic-distribution-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/index.md",
+      "redirect_url": "manage-user-mailboxes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/data-loss-prevention/index.md",
+      "redirect_url": "data-loss-prevention",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/exchange-auditing-reports/index.md",
+      "redirect_url": "exchange-auditing-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/in-place-ediscovery/index.md",
+      "redirect_url": "in-place-ediscovery",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search.md",
+      "redirect_url": "/microsoft-365/compliance/content-search",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/index.md",
+      "redirect_url": "security-and-compliance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/journaling/index.md",
+      "redirect_url": "journaling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/mail-flow-rules/index.md",
+      "redirect_url": "mail-flow-rules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/messaging-records-management/index.md",
+      "redirect_url": "messaging-records-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/recoverable-items-folder/index.md",
+      "redirect_url": "recoverable-items-folder",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/sharing/index.md",
+      "redirect_url": "sharing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/sharing/organization-relationships/index.md",
+      "redirect_url": "organization-relationships",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/sharing/sharing-policies/index.md",
+      "redirect_url": "sharing-policies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/index.md",
+      "redirect_url": "automatically-answer-and-route-calls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/index.md",
+      "redirect_url": "connect-voice-mail-system",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/index.md",
+      "redirect_url": "greetings-announcements-menus-and-prompts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/index.md",
+      "redirect_url": "voice-mail-unified-messaging",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/index.md",
+      "redirect_url": "run-voice-mail-call-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/index.md",
+      "redirect_url": "set-outlook-voice-access-pin-security",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/index.md",
+      "redirect_url": "set-up-client-voice-mail-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/index.md",
+      "redirect_url": "set-up-voice-mail",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/index.md",
+      "redirect_url": "telephone-system-integration-with-um",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/about-documentation/index.md",
+      "redirect_url": "about-documentation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/antispam-and-antimalware/antimalware-protection/index.md",
+      "redirect_url": "antimalware-protection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/antispam-and-antimalware/antispam-protection/index.md",
+      "redirect_url": "antispam-protection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/antispam-and-antimalware/index.md",
+      "redirect_url": "antispam-and-antimalware",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/architecture/client-access/index.md",
+      "redirect_url": "client-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/architecture/edge-transport-servers/index.md",
+      "redirect_url": "edge-transport-servers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/architecture/index.md",
+      "redirect_url": "architecture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/architecture/mailbox-servers/index.md",
+      "redirect_url": "mailbox-servers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/architecture/mailbox-servers/managed-store/index.md",
+      "redirect_url": "managed-store",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/client-access-rules/index.md",
+      "redirect_url": "client-access-rules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/exchange-activesync/index.md",
+      "redirect_url": "exchange-activesync",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/index.md",
+      "redirect_url": "clients",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/mapi-over-http/index.md",
+      "redirect_url": "mapi-over-http",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/outlook-for-ios-and-android/index.md",
+      "redirect_url": "outlook-for-ios-and-android",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/outlook-on-the-web/index.md",
+      "redirect_url": "outlook-on-the-web",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/clients/pop3-and-imap4/index.md",
+      "redirect_url": "pop3-and-imap4",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/collaboration/index.md",
+      "redirect_url": "collaboration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/collaboration/public-folders/index.md",
+      "redirect_url": "public-folders",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/collaboration/shared-mailboxes/index.md",
+      "redirect_url": "shared-mailboxes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/email-addresses-and-address-books/address-book-policies/index.md",
+      "redirect_url": "address-book-policies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/email-addresses-and-address-books/address-lists/index.md",
+      "redirect_url": "address-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/email-addresses-and-address-books/email-address-policies/index.md",
+      "redirect_url": "email-address-policies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/email-addresses-and-address-books/index.md",
+      "redirect_url": "email-addresses-and-address-books",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/email-addresses-and-address-books/offline-address-books/index.md",
+      "redirect_url": "offline-address-books",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/high-availability/database-availability-groups/index.md",
+      "redirect_url": "database-availability-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/high-availability/disaster-recovery/index.md",
+      "redirect_url": "disaster-recovery",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/high-availability/index.md",
+      "redirect_url": "high-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/high-availability/manage-ha/index.md",
+      "redirect_url": "manage-ha",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/high-availability/managed-availability/index.md",
+      "redirect_url": "managed-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/accepted-domains/index.md",
+      "redirect_url": "accepted-domains",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/connectors/index.md",
+      "redirect_url": "connectors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/content-conversion/index.md",
+      "redirect_url": "content-conversion",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/index.md",
+      "redirect_url": "mail-flow",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/mail-routing/index.md",
+      "redirect_url": "mail-routing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/non-delivery-reports-and-bounce-messages/index.md",
+      "redirect_url": "non-delivery-reports-and-bounce-messages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/queues/index.md",
+      "redirect_url": "queues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/transport-high-availability/index.md",
+      "redirect_url": "transport-high-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/mail-flow/transport-logs/index.md",
+      "redirect_url": "transport-logs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/new-features/index.md",
+      "redirect_url": "new-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/permissions/feature-permissions/index.md",
+      "redirect_url": "feature-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/permissions/index.md",
+      "redirect_url": "permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/plan-and-deploy/active-directory/index.md",
+      "redirect_url": "active-directory",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/plan-and-deploy/deploy-new-installations/index.md",
+      "redirect_url": "deploy-new-installations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/plan-and-deploy/deployment-ref/index.md",
+      "redirect_url": "deployment-ref",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/plan-and-deploy/index.md",
+      "redirect_url": "plan-and-deploy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/plan-and-deploy/integration-with-sharepoint-and-skype/index.md",
+      "redirect_url": "integration-with-sharepoint-and-skype",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/plan-and-deploy/post-installation-tasks/index.md",
+      "redirect_url": "post-installation-tasks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/admin-audit-logging/index.md",
+      "redirect_url": "admin-audit-logging",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/data-loss-prevention/index.md",
+      "redirect_url": "data-loss-prevention",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/ediscovery/index.md",
+      "redirect_url": "ediscovery",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/holds/index.md",
+      "redirect_url": "holds",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/in-place-archiving/index.md",
+      "redirect_url": "in-place-archiving",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/index.md",
+      "redirect_url": "policy-and-compliance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/journaling/index.md",
+      "redirect_url": "journaling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/mail-flow-rules/index.md",
+      "redirect_url": "mail-flow-rules",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/mailbox-audit-logging/index.md",
+      "redirect_url": "mailbox-audit-logging",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/mrm/index.md",
+      "redirect_url": "mrm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/recoverable-items-folder/index.md",
+      "redirect_url": "recoverable-items-folder",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/recipients/disconnected-mailboxes/index.md",
+      "redirect_url": "disconnected-mailboxes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/recipients/dynamic-distribution-groups/index.md",
+      "redirect_url": "dynamic-distribution-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/recipients/index.md",
+      "redirect_url": "recipients",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/recipients/mailbox-import-and-export/index.md",
+      "redirect_url": "mailbox-import-and-export",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/recipients/user-mailboxes/index.md",
+      "redirect_url": "user-mailboxes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/server-health/index.md",
+      "redirect_url": "server-health",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/management/health/index.md",
+      "redirect_url": "exchange-2013-management-pack-health-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/management/index.md",
+      "redirect_url": "exchange-server-2013-management-pack-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/technical-articles/index.md",
+      "redirect_url": "exchange-server-2013-technical-articles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Outlook/index.md",
+      "redirect_url": "plan-outlook-2016-deployment",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Outlook/mobile/index.md",
+      "redirect_url": "https://adoption.microsoft.com/outlook-mobile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/what-the-sensitive-information-types-in-exchange-look-for-exchange-online-help.md",
+      "redirect_url": "/Exchange/what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer2013/organization-wide-disclaimers-signatures-footers-or-headers-exchange-online-help.md",
+      "redirect_url": "/Exchange/organization-wide-disclaimers-signatures-footers-or-headers-exchange-2013-help",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "exchange/ExchangeOnline/collaboration-exo/public-folders/migrate-your-public-folders-to-office-365-groups.md",
+      "redirect_url": "/exchange/collaboration-exo/public-folders/migrate-your-public-folders-to-microsoft-365-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "exchange/exchangeonline/collaboration-exo/public-folders/set-up-modern-hybrid-public-folders.md",
+      "redirect_url": "/exchange/hybrid-deployment/set-up-modern-hybrid-public-folders",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "exchange/exchangeonline/collaboration-exo/public-folders/batch-migration-of-exchange-2013-public-folders.md",
+      "redirect_url": "/exchange/collaboration/public-folders/migrate-to-exchange-online",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/mail-flow-rules/manage-message-approval.md",
+      "redirect_url": "/exchange/recipients-in-exchange-online/moderated-recipients-exo/moderated-recipients-exo",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/recipients-in-exchange-online/configure-a-moderated-recipient.md",
+      "redirect_url": "/exchange/recipients-in-exchange-online/moderated-recipients-exo/configure-moderated-recipients-exo",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/mail-flow-rules/ttroubleshoot-message-approval.md",
+      "redirect_url": "/exchange/architecture/mailbox-servers/reassign-and-remove-arbitration-mailboxes-for-moderation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/security-and-compliance/mail-flow-rules/enable-encryption-and-decryption.md",
+      "redirect_url": "/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email",
+      "redirect_document_id": false
+    }
+]
 }

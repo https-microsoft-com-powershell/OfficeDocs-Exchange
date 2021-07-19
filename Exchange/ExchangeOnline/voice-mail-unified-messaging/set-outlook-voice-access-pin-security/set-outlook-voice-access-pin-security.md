@@ -3,10 +3,11 @@ localization_priority: Normal
 description: When Unified Messaging (UM) users connect to the voice mail system by telephone, they use Outlook Voice Access to navigate the menu system. Before users can access the voice mail system, the system prompts them to enter their PIN. As the administrator, you can configure PIN settings and requirements and perform PIN management tasks. After a user has been enabled for voice mail and a PIN has been generated, the user's PIN is stored encrypted in the user's mailbox.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: ef6d9151-d333-4f52-9338-273f7a291e54
-ms.date: 6/24/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Set Outlook Voice Access PIN security in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -94,7 +95,7 @@ When planning for Outlook Voice Access PINs, you must choose the appropriate lev
 After you set the Outlook Voice Access PIN requirements, you must create and configure a UM mailbox policy to enforce your organizational PIN requirements. For details about how to create a UM mailbox policy, see [Create a UM mailbox policy](../../voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy.md). For details about how to manage UM mailbox policies, see [Manage a UM mailbox policy](../../voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy.md).
 
 > [!NOTE]
-> After you create the UM mailbox policy, you must link the UM-enabled user or users with the appropriate UM mailbox policy. You can do this by using the **Enable-UMMailbox** cmdlet in Exchange Online PowerShell or by using the Exchange admin center (EAC). For more information about Exchange Online PowerShell cmdlet, see [Enable-UMMailbox](https://technet.microsoft.com/library/5391a63c-ca60-498c-8358-5f0667140738.aspx).
+> After you create the UM mailbox policy, you must link the UM-enabled user or users with the appropriate UM mailbox policy. You can do this by using the **Enable-UMMailbox** cmdlet in Exchange Online PowerShell or by using the Exchange admin center (EAC). For more information about Exchange Online PowerShell cmdlet, see [Enable-UMMailbox](/powershell/module/exchange/enable-ummailbox).
 
 There are situations in which Outlook Voice Access users forget their PIN or are locked out of voice mail access to their mailbox. In either case, it may be necessary for you to reset a UM-enabled user's PIN. For details, see [Reset a voice mail PIN](reset-a-voice-mail-pin.md).
 

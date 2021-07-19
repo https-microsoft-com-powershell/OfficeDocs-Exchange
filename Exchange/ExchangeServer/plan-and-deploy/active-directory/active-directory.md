@@ -5,12 +5,13 @@ ms.topic: conceptual
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 8e8464df-2d1d-4d68-82de-b0c158c549c3
-ms.date: 7/26/2018
 ms.reviewer: 
 title: Active Directory in Exchange organizations
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,7 +26,7 @@ Exchange Server 2016 and Exchange Server 2019 use Active Directory to store and 
 
 The Active Directory driver is the core Microsoft Exchange component that allows Exchange services to create, modify, delete, and query for Active Directory Domain Services (AD DS) data. In Exchange 2013 and later, all access to Active Directory is done using the Active Directory driver itself. In previous versions of Exchange, DSAccess provided directory lookup services for components such as SMTP, message transfer agent (MTA), and the Exchange store.
 
-The Active Directory driver also uses the Microsoft Exchange Active Directory Topology (MSExchangeADTopology) server, which allows the Active Directory driver to use Directory Service Access (DSAccess) topology data. This data includes the list of available domain controllers and global catalog servers that are available to handle Exchange requests. For more information about the Active Directory Driver, see [Active Directory Domain Services](https://go.microsoft.com/fwlink/p/?linkid=110942).
+The Active Directory driver also uses the Microsoft Exchange Active Directory Topology (MSExchangeADTopology) server, which allows the Active Directory driver to use Directory Service Access (DSAccess) topology data. This data includes the list of available domain controllers and global catalog servers that are available to handle Exchange requests. For more information about the Active Directory Driver, see [Active Directory Domain Services](/windows-server/identity/ad-ds/active-directory-domain-services).
 
 ## Active Directory schema changes
 
@@ -35,6 +36,6 @@ Exchange add new attributes to the Active Directory domain service schema and al
 
 To learn more about how Exchange stores and retrieves information in Active Directory so that you can plan for access to it, see [Access to Active Directory in Exchange Server](ad-access.md).
 
-For more information about Active Directory forest design, see [AD DS Design Guide](https://go.microsoft.com/fwlink/p/?LinkId=264957).
+For more information about Active Directory forest design, see [AD DS Design Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754678(v=ws.10)).
 
-To learn more about computers running Windows in an Active Directory domain and deploying Exchange 2013 or later in a domain that has a disjoint namespace, see [Disjoint Namespace Scenarios](https://technet.microsoft.com/library/bb676377(v=exchg.150).aspx).
+To learn more about computers running Windows in an Active Directory domain and deploying Exchange 2013 or later in a domain that has a disjoint namespace, see [Disjoint Namespace Scenarios](../../../ExchangeServer2013/disjoint-namespace-scenarios-exchange-2013-help.md).

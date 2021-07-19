@@ -2,13 +2,14 @@
 title: 'Manage address rewriting on Edge Transport servers: Exchange 2013 Help'
 TOCTitle: Manage address rewriting on Edge Transport servers
 ms:assetid: 323a0b55-f921-425d-b1b0-18ad0fac315c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997185(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997185(v=EXCHG.150)
 ms:contentKeyID: 61200282
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -45,7 +46,7 @@ You can create address rewrite entries that apply to a single recipient, to all 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable address rewriting
 

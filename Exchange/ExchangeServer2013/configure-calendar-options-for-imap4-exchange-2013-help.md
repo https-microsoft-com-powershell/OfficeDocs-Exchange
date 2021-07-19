@@ -2,13 +2,14 @@
 title: 'Configure calendar options for IMAP4: Exchange 2013 Help'
 TOCTitle: Configure calendar options for IMAP4
 ms:assetid: 6679c8b2-3f0f-449a-a17c-a7b30001538c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998606(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998606(v=EXCHG.150)
 ms:contentKeyID: 50395400
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,20 +30,20 @@ For additional information related to IMAP4, see [POP3 and IMAP4 in Exchange Ser
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to set the calendar options for IMAP4
 
 This example enables IMAP4 users to use the iCalendar standard, a standard for exchanging calendar information.
 
 ```powershell
-Set-ImapSettings -Identity CAS01 -CalendarItemRetrievalOption iCalendar
+Set-ImapSettings -Server CAS01 -CalendarItemRetrievalOption iCalendar
 ```
 
 This example enables IMAP4 users to access calendar information from an internal server.
 
 ```powershell
-Set-ImapSettings -Identity CAS01 -CalendarItemRetrievalOption IntranetUrl
+Set-ImapSettings -Server CAS01 -CalendarItemRetrievalOption IntranetUrl
 ```
 
 This example enables IMAP4 users to access calendar information from the Internet on an external server.
@@ -59,7 +60,7 @@ Set-Imap4Settings -CalendarItemRetrievalOption Custom -OwaServerUrl "https://Owa
 
 After you've specified the calendar options for IMAP4, you must restart the IMAP4 services. For information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings).
 
 ## How do you know this worked?
 

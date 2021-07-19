@@ -2,13 +2,14 @@
 title: 'Use Windows Server Backup to restore a backup of Exchange: Exchange 2013 Help'
 TOCTitle: Use Windows Server Backup to restore a backup of Exchange
 ms:assetid: 2d0f31dc-eb32-451a-8852-591269026506
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876864(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876864(v=EXCHG.150)
 ms:contentKeyID: 48384931
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 - When restoring a database to its original location, the database can remain in a dirty shutdown state and be mountable by the system. When restoring to an alternate location (for example, in preparation to use a recovery database), the database must be manually brought into a clean shutdown state by using Exchange Server Database Utilities (Eseutil.exe).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use Windows Server Backup to restore a backup of Exchange
 

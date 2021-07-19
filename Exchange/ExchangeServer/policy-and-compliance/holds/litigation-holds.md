@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: adee4621-3626-4aec-aa53-00b35ff0d0b0
-ms.date: 7/6/2018
 ms.reviewer:
 title: Place a mailbox on Litigation Hold
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -59,7 +60,7 @@ Place a mailbox on Litigation Hold to preserve all mailbox content, including de
 
 This example places the mailbox bsuneja@contoso.com on Litigation Hold. Items in the mailbox are held indefinitely or until the hold is removed.
 
-```
+```PowerShell
 Set-Mailbox bsuneja@contoso.com -LitigationHoldEnabled $true
 ```
 
@@ -70,7 +71,7 @@ Set-Mailbox bsuneja@contoso.com -LitigationHoldEnabled $true
 
 This example places the mailbox bsuneja@contoso.com on Litigation Hold and preserves items for 2555 days (approximately 7 years).
 
-```
+```PowerShell
 Set-Mailbox bsuneja@contoso.com -LitigationHoldEnabled $true -LitigationHoldDuration 2555
 ```
 
@@ -80,11 +81,11 @@ Your organization may require that all mailbox data be preserved.
 
 This example places all user mailboxes in the organization on Litigation Hold and sets the hold duration for one year (365 days).
 
-```
-Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -LitigationHoldEnabled $true -LitigationHoldDuration 365
+```PowerShell
+Get-Mailbox -ResultSize Unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Set-Mailbox -LitigationHoldEnabled $true -LitigationHoldDuration 365
 ```
 
-The example uses the [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) cmdlet to retrieve all mailboxes in the organization, specifies a recipient filter to include all user mailboxes, and then pipes the list of mailboxes to the [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet to enable the Litigation Hold and set the hold duration.
+The example uses the [Get-Mailbox](/powershell/module/exchange/get-mailbox) cmdlet to retrieve all mailboxes in the organization, specifies a recipient filter to include all user mailboxes, and then pipes the list of mailboxes to the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet to enable the Litigation Hold and set the hold duration.
 
 To place all user mailboxes on an indefinite hold, run the previous command but don't include the _LitigationHoldDuration_ parameter.
 
@@ -94,7 +95,7 @@ See the [More information](#more-information) section for examples of using othe
 
 This example removes the mailbox bsuneja@contoso.com from Litigation Hold.
 
-```
+```PowerShell
 Set-Mailbox bsuneja@contoso.com -LitigationHoldEnabled $false
 ```
 
@@ -116,14 +117,14 @@ To verify that you have successfully placed a mailbox on Litigation Hold, do the
 
 - In the Exchange Management Shell, run one of the following commands:
 
-  ```
+  ```PowerShell
   Get-Mailbox <name of mailbox> | Format-List LitigationHold*
   ```
 
     or
 
-  ```
-  Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Format-List Name,LitigationHold*
+  ```PowerShell
+  Get-Mailbox -ResultSize Unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Format-List Name,LitigationHold*
   ```
 
     If a mailbox is placed on Litigation Hold indefinitely, the value for the _LitigationHoldDuration_ property mailbox is set to `Unlimited`.
@@ -149,7 +150,7 @@ To verify that you have successfully placed a mailbox on Litigation Hold, do the
 
   - The Recoverable Items folder has its own storage limit, so items in the folder don't count towards the mailbox storage limit. As previously explained, preserving mailbox data for a long period of time will result in growth of the Recoverable Items folder in a user's mailbox and archive. We recommend that you periodically monitor the size of this folder by using the **Get-MailboxFolderStatistics** cmdlet to ensure it doesn't reach the limit. For more information, see:
 
-    - [Get-MailboxFolderStatistics](https://docs.microsoft.com/powershell/module/exchange/mailboxes/get-mailboxfolderstatistics)
+    - [Get-MailboxFolderStatistics](/powershell/module/exchange/get-mailboxfolderstatistics)
 
     - [Clean up or delete items from the Recoverable Items folder](../recoverable-items-folder/clean-up-deleted-items.md).
 
@@ -157,24 +158,24 @@ To verify that you have successfully placed a mailbox on Litigation Hold, do the
 
   Here are some examples of using the **Get-Mailbox** and **Get-Recipient** cmdlets to return a subset of mailboxes based on common user or mailbox properties. These examples assume that relevant mailbox properties (such as _CustomAttributeN_ or _Department_) have been populated.
 
-  ```
+  ```PowerShell
   Get-Mailbox -RecipientTypeDetails UserMailbox -ResultSize unlimited -Filter 'CustomAttribute15 -eq "OneYearLitigationHold"'
   ```
 
-  ```
+  ```PowerShell
   Get-Recipient -RecipientTypeDetails UserMailbox -ResultSize unlimited -Filter 'Department -eq "HR"'
   ```
 
-  ```
+  ```PowerShell
   Get-Recipient -RecipientTypeDetails UserMailbox -ResultSize unlimited -Filter 'PostalCode -eq "98052"'
   ```
 
-  ```
+  ```PowerShell
   Get-Recipient -RecipientTypeDetails UserMailbox -ResultSize unlimited -Filter 'StateOrProvince -eq "WA"'
   ```
 
-  ```
-  Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -ne "DiscoveryMailbox"}
+  ```PowerShell
+  Get-Mailbox -ResultSize Unlimited -Filter "RecipientTypeDetails -ne 'DiscoveryMailbox'"
   ```
 
-  You can use other user mailbox properties in a filter to include or exclude mailboxes. For details, see [Filterable Properties for the -Filter Parameter](https://technet.microsoft.com/library/b02b0005-2fb6-4bc2-8815-305259fa5432.aspx).
+  You can use other user mailbox properties in a filter to include or exclude mailboxes. For details, see [Filterable Properties for the -Filter Parameter](/powershell/exchange/filter-properties).

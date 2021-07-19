@@ -2,13 +2,14 @@
 title: 'View transport agents in the transport pipeline: Exchange 2013 Help'
 TOCTitle: View transport agents in the transport pipeline
 ms:assetid: bd715d8e-7b21-48de-8f68-d425d8506e4c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124395(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124395(v=EXCHG.150)
 ms:contentKeyID: 50873810
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ You can view a list of all the enabled transport agents that have encountered me
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to view a list of transport agents in the transport pipeline
 

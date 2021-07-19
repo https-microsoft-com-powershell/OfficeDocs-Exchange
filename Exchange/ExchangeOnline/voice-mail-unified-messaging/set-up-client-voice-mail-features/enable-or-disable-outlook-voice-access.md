@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can enable or disable access to Outlook Voice Access for UM-enabled users who are associated with a Unified Messaging (UM) mailbox policy. Outlook Voice Access is a feature used by UM-enabled users to access their mailbox over a phone. By default, this setting is enabled.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: c0c244a0-ad2f-4adf-bc1f-1d55fd7ea2d5
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Enable or disable Outlook Voice Access for users in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -25,7 +26,7 @@ For additional management tasks related to UM mailbox policies, see [UM mailbox 
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -34,7 +35,7 @@ For additional management tasks related to UM mailbox policies, see [UM mailbox 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to enable or disable Outlook Voice Access
 
@@ -50,12 +51,12 @@ For additional management tasks related to UM mailbox policies, see [UM mailbox 
 
 This example allows users who are associated with the UM mailbox policy `MyUMMailboxPolicy` to use Outlook Voice Access.
 
-```
+```PowerShell
 Set-UMMailboxPolicy -identity MyUMMailboxPolicy -AllowSubscriberAccess $true
 ```
 
 This example prevents users who are associated with the UM mailbox policy `MyUMMailboxPolicy` from using Outlook Voice Access.
 
-```
+```PowerShell
 Set-UMMailboxPolicy -identity MyUMMailboxPolicy -AllowSubscriberAccess $false
 ```

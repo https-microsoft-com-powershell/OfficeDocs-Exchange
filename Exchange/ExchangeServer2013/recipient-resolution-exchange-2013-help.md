@@ -2,13 +2,14 @@
 title: 'Recipient resolution: Exchange 2013 Help'
 TOCTitle: Recipient resolution
 ms:assetid: 09deda5a-d405-45b1-a3ff-fefd3d76cdea
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb430743(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb430743(v=EXCHG.150)
 ms:contentKeyID: 50934209
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -90,7 +91,7 @@ The following table describes the recipient objects that are found in Active Dir
 </tr>
 <tr class="even">
 <td><p>DynamicDistributionGroup</p></td>
-<td><p>An object that has the Active Directory class <strong>msExchDynamicDistributionList</strong>. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups">Manage dynamic distribution groups</a>.</p></td>
+<td><p>An object that has the Active Directory class <strong>msExchDynamicDistributionList</strong>. For more information, see <a href="/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups">Manage dynamic distribution groups</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Mailbox</p></td>
@@ -98,11 +99,11 @@ The following table describes the recipient objects that are found in Active Dir
 </tr>
 <tr class="even">
 <td><p>MailUser</p></td>
-<td><p>A user object that has an email address without a defined <em>Database</em> parameter. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-users">Manage mail users</a>.</p></td>
+<td><p>A user object that has an email address without a defined <em>Database</em> parameter. For more information, see <a href="/exchange/recipients-in-exchange-online/manage-mail-users">Manage mail users</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>MailContact</p></td>
-<td><p>A contact object that has an email address. Typically, a mail contact is used for recipients outside the Exchange organization. A mail contact is also used in cross-forest Exchange environments. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-contacts">Manage mail contacts</a>.</p></td>
+<td><p>A contact object that has an email address. Typically, a mail contact is used for recipients outside the Exchange organization. A mail contact is also used in cross-forest Exchange environments. For more information, see <a href="/exchange/recipients-in-exchange-online/manage-mail-contacts">Manage mail contacts</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>MailPublicFolder</p></td>

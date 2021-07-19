@@ -2,13 +2,14 @@
 title: 'Recover an Exchange Server: Exchange 2013 Help'
 TOCTitle: Recover an Exchange Server
 ms:assetid: 46e9a1cf-b64c-43c3-a898-6171176da761
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876880(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876880(v=EXCHG.150)
 ms:contentKeyID: 48385039
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -53,11 +54,11 @@ Looking for other management tasks related to backing up and restoring data? Che
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Recover a Lost Exchange Server
 
-1. Reset the computer account for the lost server. For detailed steps, see [Reset a Computer Account](https://go.microsoft.com/fwlink/p/?linkid=165388).
+1. Reset the computer account for the lost server. For detailed steps, see [Reset a Computer Account](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753596(v=ws.11)).
 
 2. Install the proper operating system and name the new server with the same name as the lost server. Recovery won't succeed if the server on which recovery is being performed doesn't have the same name as the lost server.
 
@@ -83,7 +84,7 @@ The successful completion of Setup will be the primary indicator that the recove
 
 If you previously enabled the Scripting Agent in your Exchange organization, the recovery process might fail. The error will look like this:
 
-```text
+```console
 "Initialization failed: '"Scripting Agent initialization failed: "File is not found: 'C:\Program Files\Microsoft\Exchange Server\V15\Bin\CmdletExtensionAgents\ScriptingAgentConfig.xml'.""' ---> Microsoft.Exchange.Provisioning.ProvisioningException: "Scripting Agent initialization failed: "File is not found: 'C:\Program Files\Microsoft\Exchange Server\V15\Bin\CmdletExtensionAgents\ScriptingAgentConfig.xml'."" ---> System.IO.FileNotFoundException: "File is not found: 'C:\Program Files\Microsoft\Exchange Server\V15\Bin\CmdletExtensionAgents\ScriptingAgentConfig.xml'."
 ```
 

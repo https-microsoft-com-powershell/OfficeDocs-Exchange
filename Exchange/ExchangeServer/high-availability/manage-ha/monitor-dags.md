@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: f5bdfd6e-e93c-4d96-8bc2-548750d51930
-ms.date: 7/9/2018
 ms.reviewer:
 title: Monitor database availability groups
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -22,7 +23,7 @@ You can use the details in this topic for monitoring mailbox database copies for
 ## Get-MailboxDatabaseCopyStatus cmdlet
 <a name="Get"> </a>
 
-Use the [Get-MailboxDatabaseCopyStatus](https://technet.microsoft.com/library/6ad690fb-3a23-41d4-b19d-666b34e62b26.aspx) cmdlet to view status information about mailbox database copies. This cmdlet enables you to view information about all copies of a particular database, information about a specific copy of a database on a specific server, or information about all database copies on a server. The following table describes possible values for the copy status of a mailbox database copy.
+Use the [Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/get-mailboxdatabasecopystatus) cmdlet to view status information about mailbox database copies. This cmdlet enables you to view information about all copies of a particular database, information about a specific copy of a database on a specific server, or information about all database copies on a server. The following table describes possible values for the copy status of a mailbox database copy.
 
 **Database copy status**
 
@@ -53,28 +54,28 @@ The following examples use the **Get-MailboxDatabaseCopyStatus** cmdlet. Each ex
 
 This example returns status information for all copies of the database DB2.
 
-```
+```powershell
 Get-MailboxDatabaseCopyStatus -Identity DB2 | Format-List
 ```
 
 This example returns the status for all database copies on the Mailbox server MBX2.
 
-```
+```powershell
 Get-MailboxDatabaseCopyStatus -Server MBX2 | Format-List
 ```
 
 This example returns the status for all database copies on the local Mailbox server.
 
-```
+```powershell
 Get-MailboxDatabaseCopyStatus -Local | Format-List
 ```
 
-For more information about using the **Get-MailboxDatabaseCopyStatus** cmdlet, see [Get-MailboxDatabaseCopyStatus](https://technet.microsoft.com/library/6ad690fb-3a23-41d4-b19d-666b34e62b26.aspx).
+For more information about using the **Get-MailboxDatabaseCopyStatus** cmdlet, see [Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/get-mailboxdatabasecopystatus).
 
 ## Test-ReplicationHealth cmdlet
 <a name="Test"> </a>
 
-You can use the [Test-ReplicationHealth](https://technet.microsoft.com/library/da55fa0f-e100-44b1-b9b4-bf14e55a5b4d.aspx) cmdlet to view continuous replication status information about mailbox database copies. This cmdlet can be used to check all aspects of the replication and replay status to provide a complete overview of a specific Mailbox server in a DAG.
+You can use the [Test-ReplicationHealth](/powershell/module/exchange/test-replicationhealth) cmdlet to view continuous replication status information about mailbox database copies. This cmdlet can be used to check all aspects of the replication and replay status to provide a complete overview of a specific Mailbox server in a DAG.
 
 The **Test-ReplicationHealth** cmdlet is designed for the proactive monitoring of continuous replication and the continuous replication pipeline, the availability of Active Manager, and the health and status of the underlying cluster service, quorum, and network components. It can be run locally on or remotely against any Mailbox server in a DAG. The **Test-ReplicationHealth** cmdlet performs the tests listed in the following table.
 
@@ -105,7 +106,7 @@ The **Test-ReplicationHealth** cmdlet is designed for the proactive monitoring o
 
 This example uses the **Test-ReplicationHealth** cmdlet to test the health of replication for the Mailbox server MBX1.
 
-```
+```powershell
 Test-ReplicationHealth -Identity MBX1
 ```
 
@@ -191,21 +192,21 @@ The script supports parameters that allow you to customize the script's behavior
 
 The following example collects metrics for all databases that match DB\* (which includes a wildcard character) in the DAG DAG1. After the metrics are collected, an HTML report is generated and displayed.
 
-```
+```powershell
 CollectOverMetrics.ps1 -DatabaseAvailabilityGroup DAG1 -Database:"DB*" -GenerateHTMLReport -ShowHTMLReport
 ```
 
 The following examples demonstrate ways that the summary HTML report may be filtered. The first uses the _Database_ parameter, which takes a list of database names. The summary report then contains data only about those databases. The next two examples use the _ReportFilter_ option. The last example filters out all the default databases.
 
-```
+```powershell
 CollectOverMetrics.ps1 -SummariseCsvFiles (dir *.csv) -Database MailboxDatabase123,MailboxDatabase456
 ```
 
-```
+```powershell
 CollectOverMetrics.ps1 -SummariseCsvFiles (dir *.csv) -ReportFilter {$_.DatabaseName -notlike "Mailbox Database*"}
 ```
 
-```
+```powershell
 CollectOverMetrics.ps1 -SummariseCsvFiles (dir *.csv) -ReportFilter {($_.ActiveOnStart -like "ServerXYZ*") -and ($_.ActiveOnEnd -notlike "ServerXYZ*")}
 ```
 
@@ -241,12 +242,12 @@ The CollectReplicationMetrics.ps1 script supports parameters that allow you to c
 
 The following example gathers one hour's worth of data from all the servers in the DAG DAG1, sampled at one minute intervals, and then generates a summary report. In addition, the _ReportPath_ parameter is used, which causes the script to place all the files in the current directory.
 
-```
+```powershell
 CollectReplicationMetrics.ps1 -DagName DAG1 -Duration "01:00:00" -Frequency "00:01:00" -ReportPath
 ```
 
 The following example reads the data from all the files matching CounterData\* and then generates a summary report.
 
-```
+```powershell
 CollectReplicationMetrics.ps1 -SummariseFiles (dir CounterData*) -Mode ProcessOnly -ReportPath
 ```

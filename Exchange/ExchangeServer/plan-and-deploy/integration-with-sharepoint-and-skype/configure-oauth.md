@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: ca3c78a3-80cc-4df2-859f-0106bbd57a07
-ms.date: 6/8/2018
 ms.reviewer:
 title: Configure OAuth authentication with SharePoint 2013 and Lync 2013
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -38,7 +39,7 @@ Exchange 2016 supports partner applications such as SharePoint Server 2016 and S
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Configure OAuth authentication with a partner application
 
@@ -46,7 +47,7 @@ This procedure uses the `Configure-EnterpriseApplication.ps1` script to configur
 
 1. This example configures OAuth authentication for SharePoint 2016.
 
-   ```
+   ```console
    Cd C:\Program Files\Microsoft\Exchange Server\V15\Scripts
    Configure-EnterprisePartnerApplication.ps1 -AuthMetaDataUrl https://sharepoint.contoso.com/_layouts/15/metadata/json/1 -ApplicationType SharePoint
 
@@ -54,7 +55,7 @@ This procedure uses the `Configure-EnterpriseApplication.ps1` script to configur
 
 2. This example configures OAuth authentication for Skype for Business or Lync Server 2013.
 
-   ```
+   ```console
    Cd C:\Program Files\Microsoft\Exchange Server\V15\Scripts
    Configure-EnterprisePartnerApplication.ps1 -AuthMetaDataUrl https://lync.contoso.com/metadata/json/1 -ApplicationType Lync
 
@@ -64,10 +65,10 @@ This procedure uses the `Configure-EnterpriseApplication.ps1` script to configur
 
 ## How do you know this worked?
 
-To verify that you have successfully configured an enterprise partner application to authenticate to Exchange 2016 , run the [Get-PartnerApplication](https://technet.microsoft.com/library/e6ce8128-f174-4bca-91e6-004fc94cf0f8.aspx) cmdlet in the Exchange Management Shell to retrieve the configuration. You can also run the [Test-OAuthConnectivity](https://technet.microsoft.com/library/26aa9772-aa31-4765-b2a4-d0dd78d77fc8.aspx) cmdlet to test OAuth connectivity with a partner application for a user.
+To verify that you have successfully configured an enterprise partner application to authenticate to Exchange 2016 , run the [Get-PartnerApplication](/powershell/module/exchange/get-partnerapplication) cmdlet in the Exchange Management Shell to retrieve the configuration. You can also run the [Test-OAuthConnectivity](/powershell/module/exchange/test-oauthconnectivity) cmdlet to test OAuth connectivity with a partner application for a user.
 
 ## Hybrid and on-premises deployments
 
-- In hybrid deployments, you can use OAuth authentication between your on-premises Exchange 2016 organization and the Exchange Online organization. For more information, see [Using Oauth Authentication to Support eDiscovery in an Exchange Hybrid Deployment](https://technet.microsoft.com/library/b069f8db-fbe1-4047-ad97-d00172ee6a12.aspx).
+- In hybrid deployments, you can use OAuth authentication between your on-premises Exchange 2016 organization and the Exchange Online organization. For more information, see [Using Oauth Authentication to Support eDiscovery in an Exchange Hybrid Deployment](../../../ExchangeServer2013/using-oauth-authentication-to-support-ediscovery-in-an-exchange-hybrid-deployment-exchange-2013-help.md).
 
-- In on-premises deployments, you can configure server-to-server authentication between Exchange 2016 and SharePoint 2016 so administrators and compliance officers can search Exchange 2016 by using the SharePoint 2016 eDiscovery Center.. For more information, see [Configure Exchange for SharePoint eDiscovery Center](https://technet.microsoft.com/library/795c1a3b-295c-4ee5-ade9-52cf3fda3f19.aspx).
+- In on-premises deployments, you can configure server-to-server authentication between Exchange 2016 and SharePoint 2016 so administrators and compliance officers can search Exchange 2016 by using the SharePoint 2016 eDiscovery Center.. For more information, see [Configure Exchange for SharePoint eDiscovery Center](../../../ExchangeServer2013/configure-exchange-for-sharepoint-ediscovery-center-exchange-2013-help.md).

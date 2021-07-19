@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can enable callers to transfer calls to users through an auto attendant, or prevent them from doing so. By default this option is enabled, and lets callers transfer calls to UM-enabled users in the Unified Messaging (UM) dial plan that's associated with the UM auto attendant.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: ca961cc8-cc24-4e05-b72d-79979c155cf9
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Enable or prevent transferring calls from an auto attendant in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -25,7 +26,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM auto attendants" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -34,7 +35,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to enable or prevent call transfers to users from a UM auto attendant
 
@@ -53,12 +54,12 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 
 This example prevents call transfers on a UM auto attendant named `MyUMAutoAttendant`.
 
-```
+```PowerShell
 Set-UMAutoAttendant -Identity MyUMAutoAttendant -AllowDialPlanSubscribers $false
 ```
 
 This example enables call transfers on a UM auto attendant named `MyUMAutoAttendant`.
 
-```
+```PowerShell
 Set-UMAutoAttendant -Identity MyUMAutoAttendant -AllowDialPlanSubscribers $true
 ```

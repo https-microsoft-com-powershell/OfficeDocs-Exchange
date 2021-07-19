@@ -2,13 +2,14 @@
 title: 'Exchange 2013 Active Directory schema changes: Exchange 2013 Help'
 TOCTitle: Exchange 2013 Active Directory schema changes
 ms:assetid: 7e879e4e-1124-4a41-94d2-c64500beb24e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb738144(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb738144(v=EXCHG.150)
 ms:contentKeyID: 49289322
-ms.date: 05/18/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

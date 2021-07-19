@@ -14,7 +14,8 @@
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "ThirdPartyNotices",
+          "**/common/**"
         ]
       }
     ],
@@ -33,7 +34,8 @@
           "**/obj/**",
           "**/includes/**",
           "_themes/**",
-          "_themes.pdf/**"
+          "_themes.pdf/**",
+          "**/common/**"
         ]
       }
     ],
@@ -43,11 +45,26 @@
       "searchScope": ["Outlook", "Exchange"],
       "breadcrumb_path": "/exchange/outlook/breadcrumb/toc.json",
       "extendBreadcrumb": true,
+      "uhfHeaderId": "MSDocsHeader-M365-IT",
       "searchScope": ["Exchange"],
       "feedback_system": "None",
-      "hideEdit": true
+      "hideEdit": true,
+      "recommendations": true,
+      "contributors_to_exclude": [ 
+        "rjagiewich", 
+        "traya1", 
+        "rmca14", 
+        "claydetels19", 
+        "jborsecnik",
+        "tiburd",
+        "garycentric"
+      ]
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "titleSuffix":{
+        "Outlook/mobile/**/*.md": "Outlook mobile"
+      }
+    },
     "template": [],
     "dest": "OfficeDocs-OutlookClient",
     "markdownEngineName": "markdig"

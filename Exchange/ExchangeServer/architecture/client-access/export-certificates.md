@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 7e4c4013-8a2b-4c25-a287-b367c65e48aa
-ms.date: 6/7/2018
 ms.reviewer:
 title: Export a certificate from an Exchange server
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,14 +28,14 @@ You can export a certificate from an Exchange server as a backup or to import th
 
 - In the EAC, you need to export the certificate file to a UNC path (`\\<Server>\<Share>\` or `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to export a certificate
 
@@ -54,7 +55,7 @@ You can export a certificate from an Exchange server as a backup or to import th
 
 To export a binary certificate file that you can import on other clients or servers, use the following syntax:
 
-```
+```PowerShell
 Export-ExchangeCertificate -Thumbprint <Thumbprint> -FileName "<FilePathOrUNCPath>\<FileName>.pfx" -BinaryEncoded -Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force) [-Server <ServerIdentity>]
 ```
 
@@ -66,7 +67,7 @@ This example exports a certificate from the local Exchange server to a file with
 
 - The password for the certificate file is `P@ssw0rd1`.
 
-```
+```PowerShell
 Export-ExchangeCertificate -Thumbprint 5113ae0233a72fccb75b1d0198628675333d010e -FileName "C:\Data\Fabrikam.pfx" -BinaryEncoded -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
 ```
 
@@ -76,7 +77,7 @@ Export-ExchangeCertificate -Thumbprint 5113ae0233a72fccb75b1d0198628675333d010e 
 
 - You can use a similar procedure to export a pending certificate request (also known as a certificate signing request or CSR). For example, if you need to resubmit the certificate request to the certification authority, and you can't find the original certificate request file. When you export a certificate request, you typically don't need to use the _Password_ parameter or the _BinaryEncoded_ switch, and you save the request to a .req file. Note that you can't import an exported certificate request on another server.
 
-- For more information, see [Export-ExchangeCertificate](https://technet.microsoft.com/library/0fffc597-7b46-4bc3-915c-f00c9eb56b40.aspx).
+- For more information, see [Export-ExchangeCertificate](/powershell/module/exchange/export-exchangecertificate).
 
 ## How do you know this worked?
 

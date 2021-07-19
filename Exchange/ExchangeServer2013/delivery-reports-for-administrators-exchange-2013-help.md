@@ -2,13 +2,14 @@
 title: 'Delivery reports for administrators: Exchange 2013 Help'
 TOCTitle: Delivery reports for administrators
 ms:assetid: d98623d3-e0b7-4cb9-93fb-6351b4a06137
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ919241(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ919241(v=EXCHG.150)
 ms:contentKeyID: 50646520
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 With delivery reports for administrators, you can track delivery information about messages sent by or received from any specific mailbox in your organization. Specifically, delivery reports for administrators uses the Exchange admin center (EAC) to perform a targeted search of the message tracking logs. The search is always scoped to a specific mailbox. You can search for messages sent by the mailbox, or sent to the mailbox, and you can filter the search results by the message subject.
 
-The content of the message body isn't returned in a delivery report, but the subject line is displayed in the results. If you want to search the mailboxes in your organization for specific email messages based on message content, see [In-Place eDiscovery](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery).
+The content of the message body isn't returned in a delivery report, but the subject line is displayed in the results. If you want to search the mailboxes in your organization for specific email messages based on message content, see [In-Place eDiscovery](../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md).
 
 You may find delivery report searches useful in the following situations:
 
@@ -32,14 +33,12 @@ After you create a delivery report search, the resulting delivery report will sh
 
 ## More about delivery reports
 
-  - Here's how to create a new delivery report: [Track messages with delivery reports](track-messages-with-delivery-reports-exchange-2013-help.md).
+- Here's how to create a new delivery report: [Track messages with delivery reports](track-messages-with-delivery-reports-exchange-2013-help.md).
 
-  - On-premises Exchange organizations can use the Exchange Management Shell to query the message tracking logs directly. For more information, see [Search message tracking logs](search-message-tracking-logs-exchange-2013-help.md).
+- On-premises Exchange organizations can use the Exchange Management Shell to query the message tracking logs directly. For more information, see [Search message tracking logs](search-message-tracking-logs-exchange-2013-help.md).
 
-  - Users can track their own messages. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/?linkid=279920).
+- If your organization contains a previous version of Exchange, you need to consider how the delivery reports feature in Exchange 2013 works across Exchange versions.
 
-  - If your organization contains a previous version of Exchange, you need to consider how the delivery reports feature in Exchange 2013 works across Exchange versions.
+  - Exchange 2013 delivery reports can track messages across Exchange 2010 servers in the same Active Directory site.
 
-      - Exchange 2013 delivery reports can track messages across Exchange 2010 servers in the same Active Directory site.
-
-      - Exchange 2013 delivery reports can't track messages across Exchange 2007 servers in the same Active Directory site. The delivery reports feature uses a remote procedure call and a web service interface that doesn't exist in Exchange 2007.
+  - Exchange 2013 delivery reports can't track messages across Exchange 2007 servers in the same Active Directory site. The delivery reports feature uses a remote procedure call and a web service interface that doesn't exist in Exchange 2007.

@@ -2,13 +2,14 @@
 title: 'Edge Transport servers: Exchange 2013 Help'
 TOCTitle: Edge Transport servers
 ms:assetid: cfff9f59-afac-447c-8297-afcebe49a52d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124701(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124701(v=EXCHG.150)
 ms:contentKeyID: 61200300
-ms.date: 09/29/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

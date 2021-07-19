@@ -4,11 +4,12 @@ TOCTitle: Create and manage distribution groups
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Recipients.CreateDistributionGroupWizardForm.CreateDistributionGroupIntroductionWizardPage'
 ms.assetid: c4c43493-55e1-46d2-bd4b-d6f6cecd747f
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,7 +31,7 @@ It's important to note the terminology differences between Active Directory and 
 
 - Estimated time to complete: 2 to 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution groups" entry in the [Recipients Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution groups" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - If your organization has configured a group naming policy, it's applied only to groups created by users. When you or other administrators use the EAC to create distribution groups, the group naming policy is ignored and isn't applied to the group name. However, if you use the Shell to create or rename a distribution group, the policy is applied unless you use the _IgnoreNamingPolicy_ parameter to override the group naming policy. For more information, see:
 
@@ -93,7 +94,7 @@ This example creates a distribution group with an alias **itadmin** and the name
 New-DistributionGroup -Name "IT Administrators" -Alias itadmin -MemberJoinRestriction open
 ```
 
-For more information about using the Shell to create distribution groups, see [New-DistributionGroup](https://technet.microsoft.com/library/7446962a-cf07-47a1-90d8-45df44057065.aspx).
+For more information about using the Shell to create distribution groups, see [New-DistributionGroup](/powershell/module/exchange/new-distributiongroup).
 
 ### How do you know this worked?
 
@@ -108,7 +109,7 @@ To verify that you've successfully created a distribution group, do one of the f
   ```
 
 > [!NOTE]
-> You can create or mail-enable only universal distribution groups. To convert a domain-local or a global group to a universal group, you can use the [Set-Group](https://technet.microsoft.com/library/924e6eb5-bb06-4e15-b122-cab414291cef.aspx) cmdlet using the Shell. You may have mail-enabled groups that were migrated from previous versions of Exchange that are not universal groups. You can use the EAC or the Shell to manage these groups
+> You can create or mail-enable only universal distribution groups. To convert a domain-local or a global group to a universal group, you can use the [Set-Group](/powershell/module/exchange/set-group) cmdlet using the Shell. You may have mail-enabled groups that were migrated from previous versions of Exchange that are not universal groups. You can use the EAC or the Shell to manage these groups
 
 ## Change distribution group properties
 
@@ -246,9 +247,9 @@ To assign permissions to delegates, click **Add** under the appropriate permissi
 
 Use the **Get-DistributionGroup** and **Set-DistributionGroup** cmdlets to view and change properties for distribution groups. Advantages of using the Shell are the ability to change the properties that aren't available in the EAC and to change properties for multiple groups. For information about which parameters correspond to distribution group properties, see the following topics:
 
-- [Get-DistributionGroup](https://technet.microsoft.com/library/d84f5670-f3ac-4d63-a6ac-af9de67677c5.aspx)
+- [Get-DistributionGroup](/powershell/module/exchange/get-distributiongroup)
 
-- [Set-DistributionGroup](https://technet.microsoft.com/library/e3a8c709-770a-4900-9a57-adcf0d98ff68.aspx)
+- [Set-DistributionGroup](/powershell/module/exchange/set-distributiongroup)
 
 Here are some examples of using the Shell to change distribution group properties.
 
@@ -261,7 +262,7 @@ Set-DistributionGroup "Seattle Employees" -EmailAddresses SMTP:sea.employees@con
 This example limits the maximum message size that can be sent to all distribution groups in the organization to 10 megabytes (MB).
 
 ```powershell
-Get-DistributionGroup -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'MailUniversalDistributionGroup')} | Set-DistributionGroup -MaxReceiveSize 10MB
+Get-DistributionGroup -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'MailUniversalDistributionGroup'" | Set-DistributionGroup -MaxReceiveSize 10MB
 ```
 
 This example enables moderation for the distribution group Customer Support and sets the moderator to Amy. In addition, this moderated distribution group will notify senders who send mail from within the organization if their messages aren't approved.
@@ -285,7 +286,7 @@ To verify that you've successfully changed properties for a distribution group, 
 - In the Shell, use the **Get-DistributionGroup** cmdlet to verify the changes. One advantage of using the Shell is that you can view multiple properties for multiple groups. In the example above where the recipient limit was changed, run the following command to verify the new value.
 
   ```powershell
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Format-List Name,RecipientLimits
+  Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Format-List Name,RecipientLimits
   ```
 
   For the example above where the message limits were changed, run this command.

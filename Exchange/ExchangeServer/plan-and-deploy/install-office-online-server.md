@@ -5,12 +5,13 @@ ms.topic: get-started-article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 9c2b4186-be7d-4c57-b119-17a1c36fd6a0
-ms.date:
 ms.reviewer: 
 title: Install Office Online Server in an Exchange organization
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -44,54 +45,32 @@ If you want users outside of your network to view supported file attachments in 
 
 ## Office Online Server system requirements
 
-Office Online Server requires the following to install:
+To set up Office Online Server, you will need the following:
 
-- Windows Server 2012 R2
+- Windows Server 2012 R2 or Windows Server 2016
 
 - Exchange 2016 Cumulative Update 1 (CU1) or later, or Exchange 2019
 
    > [!NOTE]
    > If you're running Windows Server 2016, you will need Exchange 2016 CU3 or later, as detailed in [Exchange Server prerequisites](prerequisites.md).
 
-- [Microsoft .NET Framework 4.5.2](https://go.microsoft.com/fwlink/p/?linkId=616890)
+- [Microsoft .NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42643)
 
-- [Visual C++ Redistributable for Visual Studio 2015](https://go.microsoft.com/fwlink/p/?linkId=616889)
+- [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/download/details.aspx?id=48145)
+
+- [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784)
+
+- [Microsoft.IdentityModel.Extention.dll](https://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-64.msi)
 
 - All available Windows updates installed
 
-Office Online Server can't be installed on an Exchange server, SharePoint server, Active Directory domain controller, or any other computer with existing applications installed.
-
-## Install Office Online Server prerequisites
-
-To install Office Online Server prerequisites, do the following:
-
-1. Install .NET Framework 4.5.2.
-
-2. Install the required operating system features by running the following command:
-
-   ```
-   Install-WindowsFeature Web-Server, Web-Mgmt-Tools, Web-Mgmt-Console, Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Static-Content, Web-Performance, Web-Stat-Compression, Web-Dyn-Compression, Web-Security, Web-Filtering, Web-Windows-Auth, Web-App-Dev, Web-Net-Ext45, Web-Asp-Net45, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Includes, InkandHandwritingServices, Windows-Identity-Foundation
-   ```
-
-3. Reboot the computer after the Windows features have been installed.
+> [!NOTE]
+>
+> Office Online Server can't be installed on an Exchange server, SharePoint server, Active Directory domain controller, or any other computer with existing applications installed.
 
 ## Install Office Online Server
 
-To install Office Online Server, do the following on the computer where you want to install it:
-
-1. Download Office Online Server from the [Volume License Service Center](https://go.microsoft.com/fwlink/p/?linkId=195442).
-
-   **Note**: Office Online Server is part of the downloads for Office Professional Plus 2016 in the Volume License Service Center. If you qualify for Office Online Server but don't have access to the Volume License Servicing Center, you have the following options:
-
-   - Volume License or Open customers can contact their [Support Center](https://www.microsoft.com/Licensing/servicecenter/Help/Contact.aspx).
-
-   - Direct customers can submit a request from their Microsoft 365 admin center or [contact support](https://support.office.com/article/32a17ca7-6fa0-4870-8a8d-e25ba4ccfd4b).
-
-2. Navigate to the location where you downloaded Office Online Server and run setup.exe.
-
-3. Follow the Office Online Server setup wizard, select an installation location and then click **Install Now**.
-
-4. If you want to install Office Online Server server language packs, go to [Language Packs for Office Web Apps Server](https://go.microsoft.com/fwlink/p/?LinkId=798136).
+1. To install Office Online Server, follow Steps 1 through 3 in the section **Prepare servers to run Office Online Server** of the article [Deploy Office Online Server](/officeonlineserver/deploy-office-online-server#prepare-servers-to-run-office-online-server) before proceeding.
 
 5. Obtain and import an SSL certificate with the fully qualified domain name(s) (FQDN) of the Office Online Server server. If your organization is configured for split DNS, you only need to configure one FQDN on the certificate. For example, oos.contoso.com. If you have different internal and external FQDNs, you'll need to configure both FQDNs on the certificate. For example, oos.internal.contoso.com and oos.contoso.com.
 
@@ -99,7 +78,7 @@ To install Office Online Server, do the following on the computer where you want
 
 7. Open Windows PowerShell and run the following commands. When you run the commands, replace the example FQDNs and certificate friendly name with your own.
 
-   ```
+   ```powershell
    New-OfficeWebAppsFarm -InternalURL "https://oos.contoso.com" -ExternalURL "https://oos.contoso.com" -CertificateName "Office Online Server Preview Certificate"`
    ```
 
@@ -112,13 +91,13 @@ After you've configured the Office Online Server server, do the following on you
 
 1. Open the Exchange Management Shell and run the following command. Replace the example server name and URL with your own.
 
-   ```
+   ```powershell
    Set-MailboxServer MBX -WacDiscoveryEndpoint "https://oos.contoso.com/hosting/discovery"
    ```
 
 2. Restart the MsExchangeOwaAppPool by running the following command.
 
-   ```
+   ```powershell
    Restart-WebAppPool MsExchangeOwaAppPool
    ```
 
@@ -128,7 +107,7 @@ After you've configured the Office Online Server server, do the following on you
 
 1. Open the Exchange Management Shell and run the following command. Replace the example URL with your own.
 
-   ```
+   ```powershell
    Set-OrganizationConfig -WacDiscoveryEndpoint "https://oos.internal.contoso.com/hosting/discovery"
    ```
 
@@ -137,6 +116,6 @@ After you've configured the Office Online Server server, do the following on you
 
 2. Restart the MsExchangeOwaAppPool by running the following command.
 
-   ```
+   ```powershell
    Restart-WebAppPool MsExchangeOwaAppPool
    ```

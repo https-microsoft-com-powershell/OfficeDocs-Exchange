@@ -3,10 +3,11 @@ localization_priority: Normal
 description: With Unified Messaging (UM), users in an Exchange organization can receive all their email and voice messages in one mailbox. The Unified Messaging functionality and voice mail features increase user productivity and enable more flexible messaging throughout an organization.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 48e1f43b-fb7e-4a52-a2cb-0fb5da6ca65f
-ms.date: 6/24/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Voice mail for users in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -75,13 +76,13 @@ After you create an Exchange mailbox for the user, you can configure the UM mail
 
 This example enables Unified Messaging and voice mail on the mailbox for tonysmith@contoso.com, sets the extension and manually sets the PIN for the user, and then assigns the user to a UM mailbox policy named `MyUMMailboxPolicy`.
 
-```
+```PowerShell
 Enable-UMMailbox -Identity tonysmith@contoso.com -UMMailboxPolicy MyUMMailboxPolicy -Extensions 51234 -PIN 5643892 -PINExpired $true
 ```
 
 This example enables Unified Messaging and voice mail on a mailbox for tonysmith@contoso.com, assigns the user to a UM mailbox policy named `MyUMMailboxPolicy`, and sets the extension number, SIP address, and manually sets the PIN for the user.
 
-```
+```PowerShell
 Enable-UMMailbox -Identity tonysmith@contoso.com -UMMailboxPolicy MyUMMailboxPolicy -Extensions 51234 -PIN 5643892 -SIPResourceIdentifier "tonysmith@contoso.com" -PINExpired $true
 ```
 

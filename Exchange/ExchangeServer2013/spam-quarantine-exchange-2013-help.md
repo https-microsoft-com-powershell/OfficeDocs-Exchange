@@ -2,13 +2,14 @@
 title: 'Spam quarantine: Exchange 2013 Help'
 TOCTitle: Spam quarantine
 ms:assetid: 4535496f-de6a-43df-8e53-c9a97f65cccc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997692(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997692(v=EXCHG.150)
 ms:contentKeyID: 49248678
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

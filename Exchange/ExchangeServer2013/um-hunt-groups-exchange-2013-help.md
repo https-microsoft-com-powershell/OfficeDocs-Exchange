@@ -4,9 +4,10 @@ TOCTitle: UM hunt groups
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/24/2018
 ms.reviewer: 
 ms.assetid: 026129a1-b0b5-410a-bed6-2d49f85205b3
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -2,13 +2,14 @@
 title: 'Manage Connection Filtering on Edge Transport Servers: Exchange 2013 Help'
 TOCTitle: Manage Connection Filtering on Edge Transport Servers
 ms:assetid: baebc865-ec3e-48ca-ac48-7aac8b34c003
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124376(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124376(v=EXCHG.150)
 ms:contentKeyID: 61200297
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -39,7 +40,7 @@ Each of these features can be enabled or disabled separately.
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable connection filtering
 
@@ -264,7 +265,7 @@ The following example configures all IP Block List providers with the following 
 Set-IPBlockListProvidersConfig -BypassedRecipients chris@fabrikam.com,michelle@fabrikam.com -InternalMailEnabled $true
 ```
 
-For more information, see [Set-IPBlockListProvidersConfig](https://technet.microsoft.com/en-us/library/aa998543\(v=exchg.150\)).
+For more information, see [Set-IPBlockListProvidersConfig](/powershell/module/exchange/Set-IPBlockListProvidersConfig).
 
 ## How do you know this worked?
 
@@ -315,7 +316,7 @@ Add-IPBlockListProvider -Name "Contoso IP Block List Provider" -LookupDomain rbl
 > [!NOTE]
 > When you add a new IP Block List provider, it's enabled by default (the value of <EM>Enabled</EM> is <CODE>$true</CODE>), and the priority value is incremented (the first entry has the <EM>Priority</EM> value 1).
 
-For more information, see [Add-IPBlockListProvider](https://technet.microsoft.com/en-us/library/bb124358\(v=exchg.150\)).
+For more information, see [Add-IPBlockListProvider](/powershell/module/exchange/Add-IPBlockListProvider).
 
 ## How do you know this worked?
 
@@ -369,7 +370,7 @@ For example, to add the IP address status code 127.0.0.1 to the list of existing
 Set-IPBlockListProvider "Contoso IP Block List Provider" -IPAddressesMatch @{Add="127.0.0.1"}
 ```
 
-For more information, see [Set-IPBlockListProvider](https://technet.microsoft.com/en-us/library/bb124979\(v=exchg.150\)).
+For more information, see [Set-IPBlockListProvider](/powershell/module/exchange/Set-IPBlockListProvider).
 
 ## How do you know this worked?
 
@@ -598,7 +599,7 @@ This example configures all IP Allow List providers to filter incoming connectio
 Set-IPAllowListProvidersConfig -InternalMailEnabled $true
 ```
 
-For more information, see [Set-IPBlockListProvidersConfig](https://technet.microsoft.com/en-us/library/aa998543\(v=exchg.150\)).
+For more information, see [Set-IPBlockListProvidersConfig](/powershell/module/exchange/Set-IPBlockListProvidersConfig).
 
 ## How do you know this worked?
 
@@ -649,7 +650,7 @@ Add-IPAllowListProvider -Name "Contoso IP Allow List Provider" -LookupDomain all
 > [!NOTE]
 > When you add a new IP Allow List provider, it's enabled by default (the value of <EM>Enabled</EM> is <CODE>$true</CODE>), and the priority value is incremented (the first entry has the <EM>Priority</EM> value 1).
 
-For more information, see [Add-IPBlockListProvider](https://technet.microsoft.com/en-us/library/bb124358\(v=exchg.150\)).
+For more information, see [Add-IPBlockListProvider](/powershell/module/exchange/Add-IPBlockListProvider).
 
 ## How do you know this worked?
 
@@ -703,7 +704,7 @@ For example, to add the IP address status code 127.0.0.1 to the list of existing
 Set-IPAllowListProvider "Contoso IP Allow List Provider" -IPAddressesMatch @{Add="127.0.0.1"}
 ```
 
-For more information, see [Set-IPBlockListProvider](https://technet.microsoft.com/en-us/library/bb124979\(v=exchg.150\)).
+For more information, see [Set-IPBlockListProvider](/powershell/module/exchange/Set-IPBlockListProvider).
 
 ## How do you know this worked?
 

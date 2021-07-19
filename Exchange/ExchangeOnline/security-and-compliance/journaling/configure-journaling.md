@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Learn about the requirements for the journaling mailbox and the alternate journaling mailbox in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 3033715d-a6d0-485e-af0d-15876550fd4d
-ms.date: 
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Configure Journaling in Exchange Online
 ms.collection: 
 - exchange-online
@@ -34,8 +35,10 @@ Exchange Online doesn't support delivering journal reports to an Exchange Online
 
 ## Specify an alternate journaling mailbox for undeliverable journal reports
 
-As previously explained, undeliverable journal reports are queued on Microsoft datacenter servers. Undeliverable journal reports can't be returned to the sender in a non-delivery report (also known as an NDR or bounce message) because the sender is the Exchange Online service. To handle the NDRs for undelivered journal reports, you have to you specify an alternate journaling mailbox that accepts the NDRs for all undeliverable journal reports. Like the journaling mailbox, the alternate journaling mailbox can't be an Exchange Online mailbox.
+As previously explained, undeliverable journal reports are queued on Microsoft datacenter servers and will be retried periodically until the MessageExpirationTimeout. After expiration, undeliverable journal reports can't be returned to the sender in a non-delivery report (also known as an NDR or bounce message) because the sender is the Exchange Online service. To handle the NDRs for undelivered journal reports, you must specify an alternate journaling mailbox that accepts the NDRs for all undeliverable journal reports. Like the journaling mailbox, the alternate journaling mailbox can't be an Exchange Online mailbox.
 
 ![Select an alternative journaling mailbox to receive NDRs for undeliverable journal reports](../../media/23408455-a7d2-454b-8375-45be81563c36.png)
 
-The original journal report is an attachment in the NDR. When the journaling mailbox for a undelivered journal report becomes available again, you can use the **Resend this message** feature in Outlook on the NDRs in the alternate journaling mailbox to send the unaltered delivery report to the journaling mailbox.
+The original journal report is an attachment in the NDR. When the journaling mailbox for a undelivered journal report becomes available again, you can use the **Send Again** feature in Outlook on the NDRs in the alternate journaling mailbox to send the unaltered delivery report to the journaling mailbox.
+
+![use the Send Again feature in Outlook on the NDRs in the alternate journaling mailbox](../../media/f0101a6f-280a-41a8-84c2-a5718fd1ab9c.png)

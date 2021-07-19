@@ -2,13 +2,14 @@
 title: 'KB2619234 update not installed: Exchange 2013 Help'
 TOCTitle: KB2619234 update not installed
 ms:assetid: d6734ca6-e443-4367-9eb7-0308aa87b9ff
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.win7rpchttpassoccookieguidupdatenotinstalled(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.win7rpchttpassoccookieguidupdatenotinstalled(v=EXCHG.150)
 ms:contentKeyID: 46629145
-ms.date: 12/15/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,8 +26,8 @@ Download and install the 64-bit update from the following URL, and then click **
 > [!NOTE]
 > If this update requires a reboot to complete installation, you'll need to exit Exchange 2013 Setup, reboot, and then start Setup again.
 
-Microsoft Knowledge Base article KB2619234, [A hotfix is available to enable the Association Cookie/GUID that is used by RPC over HTTP to also be used at the RPC layer in Windows 7 and in Windows Server 2008 R2)](https://go.microsoft.com/fwlink/?linkid=3052&kbid=2619234)
+Microsoft Knowledge Base article KB2619234, [A hotfix is available to enable the Association Cookie/GUID that is used by RPC over HTTP to also be used at the RPC layer in Windows 7 and in Windows Server 2008 R2)](https://support.microsoft.com/help/2619234)
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

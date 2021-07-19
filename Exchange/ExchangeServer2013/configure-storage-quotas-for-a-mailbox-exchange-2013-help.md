@@ -2,13 +2,14 @@
 title: 'Configure storage quotas for a mailbox: Exchange 2013 Help'
 TOCTitle: Configure storage quotas for a mailbox
 ms:assetid: 5f5fe292-c80e-4a0b-b3e6-e193ea5171d0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998353(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998353(v=EXCHG.150)
 ms:contentKeyID: 50387717
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -21,11 +22,11 @@ _**Applies to:** Exchange Server 2013_
 Storage quotas let you control the size of mailboxes and manage the growth of mailbox databases. When a mailbox reaches or exceeds a specified storage quota, Exchange sends a descriptive notification to the mailbox owner.
 
 > [!NOTE]
-> Storage quotas apply against the size of a given mailbox size as defined by the property <CODE>TotalItemSize</CODE> when you run the cmdlet <CODE>Get-MailboxStatistics</CODE>. For more information, see <A href="https://technet.microsoft.com/en-us/library/bb124612(v=exchg.150)">Get-MailboxStatistics</A>.
+> Storage quotas apply against the size of a given mailbox size as defined by the property <CODE>TotalItemSize</CODE> when you run the cmdlet <CODE>Get-MailboxStatistics</CODE>. For more information, see <A href="/powershell/module/exchange/Get-MailboxStatistics">Get-MailboxStatistics</A>.
 
 Storage quotas are typically configured on a per-database basis. This means that the quotas configured for a mailbox database apply to all mailboxes in that database. For more information about managing per-database mailbox settings, see [Manage mailbox databases in Exchange 2013](manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md).
 
-This topic shows you how to customize storage settings for a specific mailbox instead of using the storage settings from the mailbox database. For additional management tasks related to user mailboxes, see [Manage user mailboxes](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes).
+This topic shows you how to customize storage settings for a specific mailbox instead of using the storage settings from the mailbox database. For additional management tasks related to user mailboxes, see [Manage user mailboxes](../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes.md).
 
 ## What do you need to know before you begin?
 
@@ -36,7 +37,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to configure storage quotas for a mailbox
 
@@ -76,7 +77,7 @@ This example sets the issue warning, prohibit send, and prohibit send and receiv
 Set-Mailbox -Identity "Ayla Kol" -IssueWarningQuota 900mb -ProhibitSendQuota 950mb -ProhibitSendReceiveQuota 1gb -UseDatabaseQuotaDefaults $false
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).
 
 ## How do you know this worked?
 

@@ -2,13 +2,14 @@
 title: 'Configure activation policy for a mailbox database copy: Exchange 2013 Help'
 TOCTitle: Configure activation policy for a mailbox database copy
 ms:assetid: 6b37ed6e-2e36-4688-b485-8fdbb8193ec8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298046(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298046(v=EXCHG.150)
 ms:contentKeyID: 48385199
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to configure the activation policy for a mailbox database copy
 
@@ -57,7 +58,7 @@ This example resumes the copy of the database DB1 on the server MBX2 for activat
 Resume-MailboxDatabaseCopy -Identity DB1\MBX2
 ```
 
-For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd351074\(v=exchg.150\)) or [Resume-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335220\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/Suspend-MailboxDatabaseCopy) or [Resume-MailboxDatabaseCopy](/powershell/module/exchange/Resume-MailboxDatabaseCopy).
 
 ## Use the Shell to configure the activation policy for a server
 
@@ -79,7 +80,7 @@ This example configures the database copies on server MBX4 as unblocked for acti
 Set-MailboxServer -Identity MBX4 -DatabaseCopyAutoActivationPolicy Unrestricted
 ```
 
-For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd351074\(v=exchg.150\)), [Resume-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335220\(v=exchg.150\)), or [Set-MailboxServer](https://technet.microsoft.com/en-us/library/aa998651\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/Suspend-MailboxDatabaseCopy), [Resume-MailboxDatabaseCopy](/powershell/module/exchange/Resume-MailboxDatabaseCopy), or [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer).
 
 ## How do you know this worked?
 

@@ -2,13 +2,14 @@
 title: "Current account isn't logged into an Active Directory domain"
 TOCTitle: The current account isn't logged into an Active Directory domain
 ms:assetid: 0e229d10-605a-420f-bf8b-58a7fcb5b259
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.loggedontodomain(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.loggedontodomain(v=EXCHG.150)
 ms:contentKeyID: 46628803
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,6 +26,6 @@ To resolve this issue, grant the logged-on user the appropriate permissions, or 
 > [!IMPORTANT]
 > Cross-forest installation of Exchange 2013 isn't supported. Use an account that is a member of the Active Directory forest where you're installing Exchange 2013.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

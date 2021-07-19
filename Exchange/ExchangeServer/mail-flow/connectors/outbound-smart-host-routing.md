@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 4a9ef08e-bd62-4c6b-8790-d24fb0f8f24b
-ms.date: 7/6/2018
 ms.reviewer:
 title: Create a Send connector to route outbound mail through a smart host
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,14 +26,14 @@ Instead of routing all outbound messages directly to the Internet, you may need 
 
 - See [Deploy a new installation of Exchange Server](../../plan-and-deploy/deploy-new-installations/deploy-new-installations.md) if you're beginning your installation. After the installation you can use the steps in this topic to create your outbound connector.
 
-- The smart host described in this topic needs to use SMTP to transmit messages. If it doesn't, you need to use a Delivery Agent connector or a Foreign connector. For more information, see[Delivery Agents and Delivery Agent Connectors](https://technet.microsoft.com/library/38c942ee-b59d-47ec-87eb-bebad441ada5.aspx) and [Foreign Connectors](https://technet.microsoft.com/library/21c6a7a9-f4d2-4359-9ac9-930701b63a4e.aspx).
+- The smart host described in this topic needs to use SMTP to transmit messages. If it doesn't, you need to use a Delivery Agent connector or a Foreign connector. For more information, see[Delivery Agents and Delivery Agent Connectors](../../../ExchangeServer2013/delivery-agents-and-delivery-agent-connectors-exchange-2013-help.md) and [Foreign Connectors](../../../ExchangeServer2013/foreign-connectors-exchange-2013-help.md).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Send connectors" entry in the [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create a Send connector that uses smart host routing
 
@@ -61,7 +62,7 @@ Instead of routing all outbound messages directly to the Internet, you may need 
    |**Authentication mechanism**|**Description**|
    |:-----|:-----|
    |**None**|No authentication. For example, when access to the smart host is restricted by the source IP address.|
-   |**Basic authentication**|Basic authentication. Requires a user name and password. The user name and password are sent in clear text.|
+   |**Basic authentication**|Basic authentication. Requires a username and password. The username and password are sent in clear text.|
    |**Offer basic authentication only after starting TLS**|Basic authentication that's encrypted with TLS. This requires a server certificate on the smart host that contains the exact FQDN of the smart host that's defined on the Send connector.|
    |**Exchange Server authentication**|Generic Security Services application programming interface (GSSAPI) and Mutual GSSAPI authentication.|
    |**Externally secured**|The connection is presumed to be secured by using a security mechanism that's external to Exchange. The connection may be an Internet Protocol security (IPsec) association or a virtual private network (VPN). Alternatively, the servers may reside in a trusted, physically controlled network.|
@@ -92,11 +93,11 @@ After you create the Send connector, it appears in the Send connector list.
 
 ## Use the Exchange Management Shell to create a Send connector that uses smart host routing
 
-1. Open the Exchange Management Shell. For more information, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+1. Open the Exchange Management Shell. For more information, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 2. Use the following syntax:
 
-   ```
+   ```PowerShell
    New-SendConnector -Name <Name> -AddressSpaces * -Custom -DnsRoutingEnabled $false -SmartHosts <SmartHost1>[,<SmartHost2>...] [-SourceTransportServer <fqdn1>,<fqdn2>...]
    ```
 
@@ -112,11 +113,11 @@ After you create the Send connector, it appears in the Send connector list.
 
    - The Send connector isn't scoped to the local Active Directory site. We aren't using the _IsScopedConnector_ parameter, and the default value is `$false`. The Send connector is useable by all Exchange transport servers in the Active Directory forest.
 
-   ```
+   ```PowerShell
    New-SendConnector -Name "Smart host to Internet" -AddressSpaces * -Custom -DNSRoutingEnabled $false -SmartHosts 192.168.3.2 -SmartHostAuthMechanism None
    ```
 
-For information about other options, see [New-SendConnector](https://technet.microsoft.com/library/7b315ab0-8778-4835-a252-fb94129d7a8e.aspx).
+For information about other options, see [New-SendConnector](/powershell/module/exchange/new-sendconnector).
 
 ## How do you know this worked?
 

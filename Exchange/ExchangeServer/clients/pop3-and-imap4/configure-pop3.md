@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: e226a5f1-429d-4046-b925-da6cc151709e
-ms.date: 6/8/2018
 ms.reviewer:
 title: Enable and configure POP3 on an Exchange server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -49,14 +50,14 @@ For more information about POP3, see [POP3 and IMAP4 in Exchange Server](pop3-an
 
 - Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/).
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "POP3 and IMAP4 Permissions" section in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Step 1: Start the POP3 services, and configure the services to start automatically
 
@@ -94,17 +95,17 @@ You can perform this step by using the Windows Services console, or the Exchange
 
 1. Run the following command to start the POP3 services:
 
-   ```
+   ```powershell
    Start-Service MSExchangePOP3; Start-Service MSExchangePOP3BE
    ```
 
 2. Run the following command to configure the POP3 services to start automatically:
 
-   ```
+   ```powershell
    Set-Service MSExchangePOP3 -StartupType Automatic; Set-Service MSExchangePOP3BE -StartupType Automatic
    ```
 
-For more information about these cmdlets, see [Start-Service](https://go.microsoft.com/fwlink/p/?LinkID=113406) and [Set-Service](https://go.microsoft.com/fwlink/p/?LinkID=113399).
+For more information about these cmdlets, see [Start-Service](/powershell/module/microsoft.powershell.management/start-service) and [Set-Service](/powershell/module/microsoft.powershell.management/set-service).
 
 ### How do you know this step worked?
 
@@ -114,7 +115,7 @@ To verify that you've successfully started the POP3 services, use either of the 
 
 - In the Exchange Management Shell, run the following command to verify that the POP3 services are running:
 
-  ```
+  ```powershell
   Get-Service MSExchangePOP3; Get-Service MSExchangePOP3BE
   ```
 
@@ -122,7 +123,7 @@ To verify that you've successfully started the POP3 services, use either of the 
 
 To configure the POP3 settings for external clients, use the following syntax:
 
-```
+```powershell
 Set-PopSettings -ExternalConnectionSettings "<FQDN1>:<TCPPort1>:<SSL | TLS | blank>", "<FQDN2>:<TCPPort2>:<SSL | TLS | blank>"...  -X509CertificateName <FQDN> [-SSLBindings "<IPv4Orv6Address1>:<TCPPort1>","<IPv4Orv6Address2>:<TCPPort2>"...] [-UnencryptedOrTLSBindings "<IPv4Orv6Address1>:<TCPPort1>","<IPv4Orv6Address2>:<TCPPort2>"...]
 ```
 
@@ -138,13 +139,13 @@ This example allows configures the following settings for external POP3 connecti
 
 - **FQDN used for encryption**: mail.contoso.com. This value identifies the certificate that matches or contains the POP3 server FQDN.
 
-```
+```powershell
 Set-PopSettings -ExternalConnectionSettings "mail.contoso.com:995:SSL","mail.contoso.com:110:TLS" -X509CertificateName mail.contoso.com
 ```
 
 **Notes**:
 
-- For detailed syntax and parameter information, see [Set-PopSettings](https://technet.microsoft.com/library/307a1dd0-3a4c-4431-bd9f-35aa5cb57aad.aspx).
+- For detailed syntax and parameter information, see [Set-PopSettings](/powershell/module/exchange/set-popsettings).
 
 - The external POP3 server FQDN that you configure needs to have a corresponding record in your public DNS, and the TCP port (110 or 995) needs to be allowed through your firewall to the Exchange server.
 
@@ -158,11 +159,11 @@ Set-PopSettings -ExternalConnectionSettings "mail.contoso.com:995:SSL","mail.con
 
 To verify that you've successfully configured the POP3 settings for external clients, run the following command in the Exchange Management Shell and verify the settings:
 
-```
+```powershell
 Get-PopSettings | Format-List *ConnectionSettings,*Bindings,X509CertificateName
 ```
 
-For more information, see [Get-POPSettings](https://technet.microsoft.com/library/30bd001f-d923-4936-a997-f005a392302e.aspx).
+For more information, see [Get-POPSettings](/powershell/module/exchange/get-popsettings).
 
 ## Step 3: Restart the POP3 services
 
@@ -180,15 +181,15 @@ After you enable and configure POP3, you need to restart the POP3 services on th
 
 Run the following command to restart the POP3 services.
 
-```
+```powershell
 Restart-Service MSExchangePOP3; Restart-Service MSExchangePOP3BE
 ```
 
-For more information about this cmdlet, see [Restart-Service](https://go.microsoft.com/fwlink/p/?LinkID=113385).
+For more information about this cmdlet, see [Restart-Service](/powershell/module/microsoft.powershell.management/restart-service).
 
 To verify that you've successfully restarted the POP3 services, run the following command:
 
-```
+```powershell
 Get-Service MSExchangePOP3; Get-Service MSExchangePOP3BE
 ```
 
@@ -209,15 +210,15 @@ To verify that you have enabled and configured POP3 on the Exchange server, perf
 
     ![POP settings in Outlook on the web](../../media/8c89500e-90ad-4fb5-9334-7013de6607a2.png)
 
-    **Note**: If you configured 995/SSL **and** 110/TLS values for the _ExternalConnectionSettings_ parameter on the **Set-PopSettings** cmdlet, only the 995/SSL value is displayed in Outlook on the web. Also, if the external POP3 settings that you configured don't appear as expected in Outlook on the web after you restart the POP3 services, run the commands `net stop was /y` and `net start w3svc` to restart Internet Information Services (IIS).
+    **Note**: If you configured 995/SSL **and** 110/TLS values for the _ExternalConnectionSettings_ parameter on the **Set-PopSettings** cmdlet, only the 995/SSL value is displayed in Outlook on the web. Also, if the external POP3 settings that you configured don't appear as expected in Outlook on the web after you restart the POP3 services, run the commands `net stop w3svc /y` and `net start w3svc` to restart Internet Information Services (IIS).
 
 3. You can test POP3 client connectivity to the Exchange server by using the following methods:
 
-   - **Internal clients**: Use the **Test-PopConnectivity** cmdlet. For example, `Test-PopConnectivity -ClientAccessServer <ServerName> -Lightmode -MailboxCredential (Get-Credential)`. For more information, see [Test-PopConnectivity](https://technet.microsoft.com/library/73f0ce87-e723-43e5-a32c-29cd2d899ff9.aspx).
+   - **Internal clients**: Use the **Test-PopConnectivity** cmdlet. For example, `Test-PopConnectivity -ClientAccessServer <ServerName> -Lightmode -MailboxCredential (Get-Credential)`. For more information, see [Test-PopConnectivity](/powershell/module/exchange/test-popconnectivity).
 
      **Note**: The _Lightmode_ switch tells the command test POP3 logons to the server. To test sending (SMTP) and receiving (POP3) a message, you need to configure the authenticated SMTP settings as described in [POP3 and IMAP4 in Exchange Server](pop3-and-imap4.md).
 
-   - **External clients**: Use the **Exchange Server** \> **POP Email** test in the Microsoft Remote Connectivity Analyzer at [https://go.microsoft.com/fwlink/p/?LinkID=313839](https://go.microsoft.com/fwlink/p/?LinkID=313839).
+   - **External clients**: Use the **POP Email** test in the [Microsoft Remote Connectivity Analyzer](https://testconnectivity.microsoft.com/tests/o365).
 
      **Note**: You can't use POP3 to connect to the Administrator mailbox. This limitation was intentionally included in Exchange 2016 and Exchange 2019 to enhance the security of the Administrator mailbox.
 

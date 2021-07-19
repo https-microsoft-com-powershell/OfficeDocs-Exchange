@@ -2,13 +2,14 @@
 title: 'Sharing policies: Exchange 2013 Help'
 TOCTitle: Sharing policies
 ms:assetid: 8a1b5de1-8f97-4e19-97d6-de3c0770c55e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657466(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657466(v=EXCHG.150)
 ms:contentKeyID: 49289334
-ms.date: 06/04/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

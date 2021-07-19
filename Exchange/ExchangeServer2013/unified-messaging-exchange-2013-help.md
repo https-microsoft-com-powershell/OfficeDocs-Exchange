@@ -2,13 +2,14 @@
 title: 'Unified Messaging: Exchange 2013 Help'
 TOCTitle: Unified Messaging
 ms:assetid: 004b5d1a-cae8-4034-ab65-db41bd2f7b97
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150478(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150478(v=EXCHG.150)
 ms:contentKeyID: 47559933
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -42,7 +43,7 @@ The voice mail features found in Unified Messaging offer benefits for both end u
 
 ## Features for end users
 
-When you deploy Unified Messaging, users can access voice mail, email, and calendar information that's located in their mailbox from an email client, for example, Outlook or Microsoft Outlook Web App, from a mobile phone with Microsoft Exchange ActiveSync set up, such as a Windows Phone, or from a telephone. Additionally, users can use the following features:
+When you deploy Unified Messaging, users can access voice mail, email, and calendar information that's located in their mailbox from an email client, for example, Outlook or Microsoft Outlook Web App, from a mobile phone with Microsoft Exchange ActiveSync set up, or from a telephone. Additionally, users can use the following features:
 
 - **Access to Exchange information**: UM-enabled users can access a full set of voice mail features from Internet-capable mobile phones, Microsoft Office Outlook 2007 or later versions, and Outlook Web App. These features include many voice mail configuration options and the ability to play a voice message from either the Reading Pane, using an integrated Windows Media Player, or the message list, using computer speakers.
 
@@ -72,7 +73,7 @@ When you deploy Unified Messaging, users can access voice mail, email, and calen
 
 - **Message Waiting Indicator**: Message Waiting Indicator is a feature found in most legacy voice mail systems and can refer to any mechanism that indicates the existence of a new message. In Exchange 2007, this functionality was provided by a third-party application, which indicated receipt of a new voice message by lighting the lamp on the desk phone. This feature was added to Exchange 2010, and third-party software is no longer needed. Enabling or disabling Message Waiting Indicator is done on the user's mailbox or on a UM mailbox policy.
 
-- **Missed call and voice mail notifications using SMS**: When users are part of a hybrid or Office 365 deployment, and they configure their voice mail settings with their mobile phone number and configure call forwarding, they can receive notifications about missed calls and new voice messages on their cell phones in a text message via the Short Messaging Service (SMS). However, to receive these types of notifications, the users must first configure text messaging and also enable notifications on their account.
+- **Missed call and voice mail notifications using SMS**: When users are part of a hybrid or Microsoft 365 or Office 365 deployment, and they configure their voice mail settings with their mobile phone number and configure call forwarding, they can receive notifications about missed calls and new voice messages on their cell phones in a text message via the Short Messaging Service (SMS). However, to receive these types of notifications, the users must first configure text messaging and also enable notifications on their account.
 
 - **Protected Voice Mail**: Protected Voice Mail is Unified Messaging functionality that enables users to send private mail. This mail is protected by Active Directory Rights Management Services (AD RMS), and users are restricted from forwarding, copying, or extracting the voice file from email. Protected Voice Mail increases the confidentiality of Unified Messaging, and lets users limit the audience for voice messages. This functionality is similar to the way private email messages were handled in Exchange 2007 but now it also applies to voice mail messages.
 
@@ -124,9 +125,9 @@ Exchange 2013 Unified Messaging offers administrators:
 
 - **Incoming fax support**: Exchange 2013 provides built-in incoming fax support for users who have a UM-enabled mailbox. They can receive fax messages via calls placed to their extension number.
 
-    Customers who require a fax solution will have to deploy a fax partner solution. Fax partner solutions are available from several fax partners. The fax partner solutions are designed to be tightly integrated with Exchange and enable UM-enabled users to receive incoming fax messages. You can find a fax partner solution by visiting [Microsoft Pinpoint for Fax Partners](https://go.microsoft.com/fwlink/?linkid=190238).
+    Customers who require a fax solution will have to deploy a fax partner solution. Fax partner solutions are available from several fax partners. The fax partner solutions are designed to be tightly integrated with Exchange and enable UM-enabled users to receive incoming fax messages.
 
-- **Support for multiple languages**:    All available language packs contain the Text-to-Speech (TTS) engine and the prerecorded prompts for a specified language and ASR support. However, only some language packs contain support for Voice Mail Preview. The US English (en-US) language pack is included on the installation media and additional UM language packs can be downloaded from the [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?linkid=266542).
+- **Support for multiple languages**:    All available language packs contain the Text-to-Speech (TTS) engine and the prerecorded prompts for a specified language and ASR support. However, only some language packs contain support for Voice Mail Preview. The US English (en-US) language pack is included on the installation media and additional UM language packs can be downloaded from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=35368).
 
 - **Auto attendant**: An auto attendant is a set of voice prompts that gives external and internal users access to the voice mail system. Users can use the telephone keypad or speech inputs to move through the auto attendant menu, place a call to a user, or locate a user in your organization and then place a call to them. An auto attendant gives the administrator the ability to:
 
@@ -231,19 +232,19 @@ The following table contains links to topics that will help you learn about and 
 <td><p>Learn about UM language packs and language settings.</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephone-system-integration-with-um">Telephone system integration with UM</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephone-system-integration-with-um">Telephone system integration with UM</a></p></td>
 <td><p>Learn about integrating your telephony network with UM.</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/connect-voice-mail-system">Connect your voice mail system to your telephone network</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/connect-voice-mail-system/connect-voice-mail-system">Connect your voice mail system to your telephone network</a></p></td>
 <td><p>Learn how to use and configure UM components to connect your telephony network to Exchange UM.</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/automatically-answer-and-route-calls">Automatically answer and route incoming calls</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/automatically-answer-and-route-calls">Automatically answer and route incoming calls</a></p></td>
 <td><p>Learn how to create UM auto attendants and manage settings for navigation menus, greetings, and business and non-business hours.</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="set-up-https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/voice-mail-for-users">Set up voice mail for users</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/voice-mail-for-users">Set up voice mail for users</a></p></td>
 <td><p>Learn how to create and manage UM mailbox policies and how to enable users for UM.</p></td>
 </tr>
 <tr class="odd">
@@ -251,7 +252,7 @@ The following table contains links to topics that will help you learn about and 
 <td><p>Learn how to set up client features to enable users to access and manage their voice mail messages.</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-outlook-voice-access-pin-security">Set Outlook Voice Access PIN security</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-outlook-voice-access-pin-security">Set Outlook Voice Access PIN security</a></p></td>
 <td><p>Learn how to set PIN requirements for Outlook Voice Access users.</p></td>
 </tr>
 <tr class="odd">
@@ -259,7 +260,7 @@ The following table contains links to topics that will help you learn about and 
 <td><p>Learn how to use UM to protect voice messages.</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/run-voice-mail-call-reports">Run reports for voice mail calls</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/run-voice-mail-call-reports">Run reports for voice mail calls</a></p></td>
 <td><p>Learn about UM call reports.</p></td>
 </tr>
 </tbody>

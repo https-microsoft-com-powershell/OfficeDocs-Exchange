@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Use Microsoft Outlook on the web mailbox policies to create organization-level policies to manage access to features in Outlook on the web.
 ms.topic: overview
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 213b8b7a-1c29-49ee-8c98-d0364ddf4f9d
-ms.date: 
 ms.reviewer: 
 title: Outlook on the web mailbox policies in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---

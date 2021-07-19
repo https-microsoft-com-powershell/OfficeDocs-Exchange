@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 50daeac5-a16f-4362-a325-19e0fe25d59d
-ms.date: 6/7/2018
 ms.reviewer:
 title: Configure database availability group properties
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -38,7 +39,7 @@ The Exchange Management Shell enables you to configure DAG properties that aren'
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure database availability group properties
 
@@ -70,43 +71,43 @@ The Exchange Management Shell enables you to configure DAG properties that aren'
 
 This example sets the witness directory to C:\DAG1DIR for the DAG DAG1.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -WitnessDirectory C:\DAG1DIR
 ```
 
 This example preconfigures an alternate witness server of MBX3 and an alternate witness directory of C:\DAGFileShareWitnesses\DAG1.contoso.com for the DAG DAG1.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -AlternateWitnessDirectory C:\DAGFileShareWitnesses\DAG1.contoso.com -AlternateWitnessServer MBX3
 ```
 
 This example configures the DAG DAG1 to use Dynamic Host Configuration Protocol (DHCP) to obtain an IP address.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -DatabaseAvailabilityGroupIPAddresses 0.0.0.0
 ```
 
 This example configures the DAG DAG1 to use a static IP address of 10.0.0.8.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -DatabaseAvailabilityGroupIPAddresses 10.0.0.8
 ```
 
 This example configures the multi-subnet DAG DAG1 with multiple static IP addresses.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -DatabaseAvailabilityGroupIPAddresses 10.0.0.8,10.0.1.8
 ```
 
 This example configures the DAG DAG1 for DAC mode.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -DatacenterActivationMode DagOnly
 ```
 
 This example configures the replication port for the DAG DAG1 to be 63132.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -ReplicationPort 63132
 ```
 
@@ -119,7 +120,7 @@ To verify that you've successfully configured the DAG, do the following:
 
 - In the Exchange Management Shell, run the following command to display DAG configuration settings and verify the DAG was configured successfully.
 
-  ```
+  ```powershell
   Get-DatabaseAvailabilityGroup <DAGName> | Format-List
   ```
 
@@ -133,6 +134,6 @@ To verify that you've successfully configured the DAG, do the following:
 
 [Manage database availability group membership](dag-memberships.md)
 
-[Get-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/ea64d731-55ae-4a39-9eec-a72aa36d6dad.aspx)
+[Get-DatabaseAvailabilityGroup](/powershell/module/exchange/get-databaseavailabilitygroup)
 
-[Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx)
+[Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup)

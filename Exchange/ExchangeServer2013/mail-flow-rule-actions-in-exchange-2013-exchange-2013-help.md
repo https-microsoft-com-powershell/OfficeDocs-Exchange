@@ -2,13 +2,14 @@
 title: 'Transport rule actions in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Transport rule actions
 ms:assetid: 5d11a955-b1cc-4150-a0b9-a8cc48ba9bde
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998315(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998315(v=EXCHG.150)
 ms:contentKeyID: 49361077
-ms.date: 05/03/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,7 +25,7 @@ For more information about transport rules in Exchange Server 2013, see [Transpo
 
 For more information about conditions and exceptions in transport rules, see [Transport rule conditions and exceptions (predicates) in Exchange 2013](mail-flow-rule-conditions-and-exceptions-predicates-in-exchange-2013-exchange-2013-help.md).
 
-For more information about actions in transport rules in Exchange Online or Exchange Online Protection, see [Transport rule actions in Exchange Online](https://technet.microsoft.com/en-us/library/jj919237\(v=exchg.150\)) or [Transport rule actions in Exchange Online Protection](https://technet.microsoft.com/en-us/library/jj920117\(v=exchg.150\)).
+For more information about actions in transport rules in Exchange Online or Exchange Online Protection, see [Mail flow rule actions in Exchange Online](/-exchange/security-and-compliance/mail-flow-rules/mail-flow-rule-actions).
 
 ## Actions for transport rules on Mailbox servers
 
@@ -59,7 +60,7 @@ The actions that are available in transport rules on Mailbox servers are describ
 <p><strong>Forward the message for approval</strong> &gt; <strong>to these people</strong></p></td>
 <td><p><em>ModerateMessageByUser</em></p></td>
 <td><p><code>Addresses</code></p></td>
-<td><p>Forwards the message to the specified moderators as an attachment wrapped in an approval request. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/common-message-approval-scenarios">Common message approval scenarios</a>. You can't use a distribution group as a moderator.</p></td>
+<td><p>Forwards the message to the specified moderators as an attachment wrapped in an approval request. For more information, see <a href="/exchange/security-and-compliance/mail-flow-rules/common-message-approval-scenarios">Common message approval scenarios</a>. You can't use a distribution group as a moderator.</p></td>
 <td><p>Exchange 2010 or later</p></td>
 </tr>
 <tr class="even">
@@ -208,7 +209,7 @@ The actions that are available in transport rules on Mailbox servers are describ
 <td><p><em>ApplyRightsProtectionTemplate</em></p></td>
 <td><p><code>RMSTemplate</code></p></td>
 <td><p>Applies the specified Rights Management Services (RMS) template to the message.</p>
-<p>RMS requires Exchange Enterprise client access licenses (CALs) for each mailbox. For more information about CALs, see <a href="https://go.microsoft.com/fwlink/p/?linkid=237292">Exchange Server Licensing</a>.</p></td>
+<p>RMS requires Exchange Enterprise client access licenses (CALs) for each mailbox. For more information about CALs, see <a href="https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview">Exchange licensing FAQs</a>.</p></td>
 <td><p>Exchange 2010 or later</p></td>
 </tr>
 <tr class="even">
@@ -253,13 +254,6 @@ The actions that are available in transport rules on Mailbox servers are describ
 <td><p>Exchange 2013 or later</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Notify the recipient with a message</strong></p></td>
-<td><p><em>GenerateNotification</em></p></td>
-<td><p><code>NotificationMessageText</code></p></td>
-<td><p>Specifies the text, HTML tags, and message keywords to include in the notification message that's sent to the message's recipients. For example, you can notify recipients that the message was rejected by the rule, or marked as spam and delivered to their Junk Email folder.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="odd">
 <td><p><strong>Properties of this rule</strong> section &gt; <strong>Audit this rule with severity level</strong></p></td>
 <td><p><em>SetAuditSeverity</em></p></td>
 <td><p><code>AuditSeverityLevel</code></p></td>
@@ -270,7 +264,7 @@ The actions that are available in transport rules on Mailbox servers are describ
 </ul></td>
 <td><p>Exchange 2013 or later</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p><strong>Properties of this rule</strong> section &gt; <strong>Stop processing more rules</strong></p>
 <p><strong>More options</strong> &gt; <strong>Properties of this rule</strong> section &gt; <strong>Stop processing more rules</strong></p></td>
 <td><p><em>StopRuleProcessing</em></p></td>
@@ -599,7 +593,7 @@ The property values that are used for actions in transport rules are described i
 <td><p>Specifies the Rights Management Services (RMS) template that's applied to the message.</p>
 <p>In the EAC, you select the RMS template from a list.</p>
 <p>In the Exchange Management Shell, use the <strong>Get-RMSTemplate</strong> cmdlet to see the RMS templates that are available.</p>
-<p>RMS requires Exchange Enterprise client access licenses (CALs) for each mailbox. For more information about CALs, see <a href="https://go.microsoft.com/fwlink/p/?linkid=237292">Exchange Server Licensing</a>.</p></td>
+<p>RMS requires Exchange Enterprise client access licenses (CALs) for each mailbox. For more information about CALs, see <a href="https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview">Exchange licensing FAQs</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p><code>SCLValue</code></p></td>
@@ -627,8 +621,4 @@ The property values that are used for actions in transport rules are described i
 
 [Transport rule conditions and exceptions (predicates) in Exchange 2013](mail-flow-rule-conditions-and-exceptions-predicates-in-exchange-2013-exchange-2013-help.md)
 
-[Transport rule actions in Exchange Online](https://technet.microsoft.com/en-us/library/jj919237\(v=exchg.150\)) for Exchange Online
-
-[Transport rule actions in Exchange Online Protection](https://technet.microsoft.com/en-us/library/jj920117\(v=exchg.150\)) for Exchange Online Protection
-
-[Organization-wide message disclaimers, signatures, footers, or headers in Office 365](https://technet.microsoft.com/en-us/library/dn600323\(v=exchg.150\))
+[Organization-wide disclaimers, signatures, footers, or headers in Exchange 2013](organization-wide-disclaimers-signatures-footers-or-headers-exchange-2013-help.md)

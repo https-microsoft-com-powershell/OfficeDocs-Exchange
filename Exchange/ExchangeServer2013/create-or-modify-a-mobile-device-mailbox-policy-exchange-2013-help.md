@@ -2,13 +2,14 @@
 title: 'Create or modify a mobile device mailbox policy: Exchange 2013 Help'
 TOCTitle: Create or modify a mobile device mailbox policy
 ms:assetid: b4a37a81-25e3-40ff-a18a-a62ae4493635
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124315(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124315(v=EXCHG.150)
 ms:contentKeyID: 49345057
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ For additional information related to mobile device mailbox policies, see [Mobil
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a new mobile device mailbox policy
 

@@ -3,9 +3,8 @@ localization_priority: Normal
 description: A list of topic links for the procedures that admins uses to manage address lists in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 595e1f02-4398-4a7a-b4a4-768af8b9e42e
-ms.date: 
 ms.reviewer: 
 title: Address list procedures in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---

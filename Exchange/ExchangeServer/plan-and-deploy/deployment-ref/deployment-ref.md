@@ -5,12 +5,13 @@ ms.topic: hub-page
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 1999c070-1441-4605-b36b-118a5d78defe
-ms.date: 10/28/2015
 ms.reviewer: 
 title: Deployment reference
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

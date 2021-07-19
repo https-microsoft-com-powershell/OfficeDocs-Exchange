@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can configure a Unified Messaging (UM) IP gateway with either an IP address or a fully qualified domain name (FQDN). When you create a UM IP gateway, you must define the IP address or the FQDN configured on the VoIP gateway, IP PBX, or session border controller (SBC) that you're using. You can change the IP address or FQDN after the UM IP gateway is created.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: af093f87-59b7-44a8-a9a2-8f17f0cc7db8
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Configure a fully qualified domain name in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -29,7 +30,7 @@ For additional management tasks related to UM IP gateways, see [UM IP gateway pr
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM IP gateways" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan.md).
 
@@ -38,7 +39,7 @@ For additional management tasks related to UM IP gateways, see [UM IP gateway pr
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure an FQDN
 
@@ -55,12 +56,12 @@ For additional management tasks related to UM IP gateways, see [UM IP gateway pr
 
 This example configures a UM IP gateway named `MyUMIPGateway` with an FQDN named voipgateway.contoso.com.
 
-```
+```PowerShell
 Set-UMIPGateway -Identity MyUMIPGateway -Address voipgateway.contoso.com
 ```
 
 This example configures a UM IP gateway named `MySBC` with an FQDN of sbc.contoso.com and listens for SIP requests on TCP port 5061.
 
-```
+```PowerShell
 Set-UMIPGateway -Identity MySBC -Address sbc.contoso.com -Port 5061
 ```

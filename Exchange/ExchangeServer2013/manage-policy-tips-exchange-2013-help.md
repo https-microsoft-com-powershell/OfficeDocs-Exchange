@@ -4,9 +4,10 @@ TOCTitle: Manage policy tips
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: cec50a35-1d00-47b3-b72f-ac1bb0fd630e
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ Policy Tips are informative notices that are displayed to email senders while th
 
 - Estimated time to complete each procedure: 30 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 - Policy Tips will only show up for email senders when the following conditions are met:
 
@@ -37,7 +38,7 @@ Policy Tips are informative notices that are displayed to email senders while th
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create or modify a notify-only Policy Tip
 
@@ -201,7 +202,7 @@ The following example creates a new English-language Policy Tip that will block 
 New-PolicyTipConfig -Name en\Reject -Value "This message appears to contain restricted content and will not be delivered."
 ```
 
-For more information about DLP cmdlets, see [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx).
+For detailed syntax and parameter information, see [New-PolicyTipConfig](/powershell/module/exchange/new-policytipconfig).
 
 ### Use the Shell to modify custom Policy Tip notification text
 
@@ -211,7 +212,7 @@ The following example modifies an existing English-language, notify-only Policy 
 Set-PolicyTipConfig en\NotifyOnly "Sending bank account numbers in email is not recommended."
 ```
 
-For more information about DLP cmdlets, see [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx).
+For detailed syntax and parameter information, see [Set-PolicyTipConfig](/powershell/module/exchange/set-policytipconfig).
 
 ### How do you know this worked?
 
@@ -231,6 +232,6 @@ To verify that you have successfully created custom Policy Tip text, do the foll
 
 [Policy Tips](policy-tips-exchange-2013-help.md)
 
-[Transport rules](https://technet.microsoft.com/library/743bd525-0ca2-426d-b76c-b4a052bc8886.aspx)
+[Transport rules in Exchange 2013](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md)
 
-[Exchange 2010 MailTips](https://go.microsoft.com/fwlink/p/?LinkId=265179)
+[Exchange 2010 MailTips](/previous-versions/office/exchange-server-2010/dd297974(v=exchg.141))

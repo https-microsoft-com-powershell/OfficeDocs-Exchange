@@ -2,13 +2,14 @@
 title: 'Configure POP3 and IMAP4 message retrieval format options: Exchange 2013 Help'
 TOCTitle: Configure POP3 and IMAP4 message retrieval format options
 ms:assetid: 481096e0-4492-46c2-8ca8-bdf84a84531e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997869(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997869(v=EXCHG.150)
 ms:contentKeyID: 50395398
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,30 +17,30 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can configure the message retrieval format for users who connect to their email using POP3 and IMAP4. Message retrieval options can be configured at the server level using the EAC or the Shell, and can be configured at the user level using the Shell.
+You can configure the message retrieval format for users who connect to their email using POP3 and IMAP4. Message retrieval options can be configured at the server level using the Exchange admin center (EAC) or the Exchange Management Shell, and can be configured at the user level using the Shell.
 
-For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exchange Server 2013](pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md).
+For more information on POP3 and IMAP4, see [POP3 and IMAP4 in Exchange Server 2013](pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "POP3 settings" and "IMAP4 settings" entries in the [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md) topic.
+- You need to be assigned permissions before you can perform the following procedures. To see what permissions you need, see the "POP3 settings" and "IMAP4 settings" entries in [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md).
 
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
+- For information about keyboard shortcuts that may apply to the following procedures, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Set the POP3 message retrieval format at the server level
 
-## Use the EAC to set the POP3 message retrieval format at the server level
+### Use the EAC to set the POP3 message retrieval format at the server level
 
-1. In the EAC, navigate to **Servers** \> **Servers**.
+1. In the EAC, navigate to **Servers** > **Servers**.
 
-2. In the list of servers, select the Client Access server, and then click **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
+2. In the list of servers, select the Client Access server, and then select **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
-3. On the server properties page, click **POP3**.
+3. On the server properties page, select **POP3**.
 
 4. Under **Message MIME format**, choose from the following settings:
 
@@ -57,16 +58,16 @@ For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exc
 
     - TNEF
 
-5. Click **Save**.
+5. Select **Save**.
 
-After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
+After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For more information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-## Use the Shell to set the POP3 message retrieval format at the server level
+### Use the Shell to set the POP3 message retrieval format at the server level
 
 This example sets the message retrieval format option to text only for all POP3 users on server CAS01.
 
 ```powershell
-Set-PopSettings -Identity CAS01 -MessageRetrievalMimeFormat TextOnly
+Set-PopSettings -Server CAS01 -MessageRetrievalMimeFormat TextOnly
 ```
 
 You can choose from the following settings. You can specify the value for the *MessageRetrievalMimeFormat* parameter by using a numerical value or a text string.
@@ -112,13 +113,13 @@ You can choose from the following settings. You can specify the value for the *M
 </tbody>
 </table>
 
-After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
+After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For more information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
-## How do you know this worked?
+### How do you know this worked?
 
-Do the following to verify that you've successfully set POP3 message retrieval settings on a server.
+To verify that you've successfully set POP3 message retrieval settings on a server:
 
 1. Run the following command in the Shell.
 
@@ -130,13 +131,13 @@ Do the following to verify that you've successfully set POP3 message retrieval s
 
 ## Set the IMAP4 message retrieval format at the server level
 
-## Use the EAC to set the IMAP4 message retrieval format at the server level
+### Use the EAC to set the IMAP4 message retrieval format at the server level
 
-1. In the EAC, navigate to **Servers** \> **Servers**.
+1. In the EAC, navigate to **Servers** > **Servers**.
 
-2. In the list of servers, select the Client Access server, and then click **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
+2. In the list of servers, select the Client Access server, and then select **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
-3. On the server properties page, click **IMAP4**.
+3. On the server properties page, select **IMAP4**.
 
 4. Under **Message MIME format**, choose from the following settings:
 
@@ -154,16 +155,16 @@ Do the following to verify that you've successfully set POP3 message retrieval s
 
     - TNEF
 
-5. Click **Save**.
+5. Select **Save**.
 
 After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
-## Use the Shell to set the IMAP4 message retrieval format at the server level
+### Use the Shell to set the IMAP4 message retrieval format at the server level
 
 This example sets the message retrieval format option to text only for all IMAP4 users on server CAS01.
 
 ```powershell
-Set-ImapSettings -Identity CAS01 -MessageRetrievalMimeFormat TextOnly
+Set-ImapSettings -Server CAS01 -MessageRetrievalMimeFormat TextOnly
 ```
 
 You can choose from the following settings. You can specify the value for the *MessageRetrievalMimeFormat* parameter by using a numerical value or a text string.
@@ -209,13 +210,13 @@ You can choose from the following settings. You can specify the value for the *M
 </tbody>
 </table>
 
-After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
+After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For more information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings).
 
-## How do you know this worked?
+### How do you know this worked?
 
-Do the following to verify that you've successfully set IMAP4 message retrieval settings on a server.
+To verify that you've successfully set IMAP4 message retrieval settings on a server:
 
 1. Run the following command in the Shell.
 
@@ -227,7 +228,7 @@ Do the following to verify that you've successfully set IMAP4 message retrieval 
 
 ## Set the POP3 message retrieval format for a user
 
-## Use the Shell to set the POP3 message retrieval format for a user
+### Use the Shell to set the POP3 message retrieval format for a user
 
 This example sets the message retrieval format to text only for POP3 access for `USER01`.
 
@@ -278,13 +279,13 @@ You can choose from the following settings. You can specify the value for the *P
 </tbody>
 </table>
 
-After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
+After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For more information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-CASMailbox](https://technet.microsoft.com/en-us/library/bb125264\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-CASMailbox](/powershell/module/exchange/Set-CASMailbox).
 
-## How do you know this worked?
+### How do you know this worked?
 
-Do the following to verify that you've successfully set POP3 message retrieval format options for a user.
+To verify that you've successfully set POP3 message retrieval format options for a user:
 
 1. Run the following command in the Shell.
 
@@ -296,7 +297,7 @@ Do the following to verify that you've successfully set POP3 message retrieval f
 
 ## Set the IMAP4 message retrieval format for a user
 
-## Use the Shell to set the IMAP4 message retrieval format for a user
+### Use the Shell to set the IMAP4 message retrieval format for a user
 
 This example sets the message retrieval format to text only for IMAP4 access for `USER01`.
 
@@ -347,13 +348,13 @@ You can specify the value for the *ImapMessagesRetrievalMimeFormat* parameter by
 </tbody>
 </table>
 
-After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
+After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For more information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-CASMailbox](https://technet.microsoft.com/en-us/library/bb125264\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-CASMailbox](/powershell/module/exchange/Set-CASMailbox).
 
-## How do you know this worked?
+### How do you know this worked?
 
-Do the following to verify that you've successfully set IMAP4 message retrieval format options for a user.
+To verify that you've successfully set IMAP4 message retrieval format options for a user:
 
 1. Run the following command in the Shell.
 

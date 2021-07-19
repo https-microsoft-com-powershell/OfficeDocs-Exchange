@@ -2,13 +2,14 @@
 title: 'Create linked role groups that mirror built-in role groups: Exchange 2013 Help'
 TOCTitle: Create linked role groups that mirror built-in role groups
 ms:assetid: 89dfcbb3-0568-4bbf-a885-746b91ba307e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876918(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876918(v=EXCHG.150)
 ms:contentKeyID: 49289333
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -40,7 +41,7 @@ Looking for other management tasks related to role groups? Check out [Permission
 
 - You must have the following information about the foreign Active Directory forest:
 
-  - **Credentials**: You must have a user name and password that can access the foreign Active Directory forest. This information is used with the *LinkedCredential* parameter on the **New-RoleGroup** cmdlet. This information is obtained by running the **Get-Credential** cmdlet. The format of the user name is *domain*\\*username*.
+  - **Credentials**: You must have a username and password that can access the foreign Active Directory forest. This information is used with the *LinkedCredential* parameter on the **New-RoleGroup** cmdlet. This information is obtained by running the **Get-Credential** cmdlet. The format of the username is *domain*\\*username*.
 
   - **Domain controller**: You must have the fully qualified domain name (FQDN) of an Active Directory domain controller in the foreign Active Directory forest. This information is used with the *LinkedDomainController* parameter on the **New-RoleGroup** cmdlet.
 
@@ -49,7 +50,7 @@ Looking for other management tasks related to role groups? Check out [Permission
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to create linked role groups that replicate built-in role groups
 

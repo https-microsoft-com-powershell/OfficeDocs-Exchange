@@ -2,13 +2,14 @@
 title: 'Federation procedures: Exchange 2013 Help'
 TOCTitle: Federation procedures
 ms:assetid: 124d7253-095c-428e-b8f7-f43a9a2d0150
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ676768(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ676768(v=EXCHG.150)
 ms:contentKeyID: 49361074
-ms.date: 02/28/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,4 +34,4 @@ _**Applies to:** Exchange Server 2013_
 [Configure OAuth authentication between Exchange and Exchange Online organizations](configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help.md)
 
 > [!IMPORTANT]
-> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="https://go.microsoft.com/fwlink/?linkid=313640">Learn about Office 365 operated by 21Vianet</A>.
+> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="/microsoft-365/admin/services-in-china/services-in-china">Learn about Office 365 operated by 21Vianet</A>.

@@ -2,13 +2,14 @@
 title: 'Checklist: Upgrade from Exchange 2010: Exchange 2013 Help'
 TOCTitle: 'Checklist: Upgrade from Exchange 2010'
 ms:assetid: 06c1045a-5fcf-4e24-a901-1a979302fb8d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee332309(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee332309(v=EXCHG.150)
 ms:contentKeyID: 50873999
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -139,7 +140,7 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <tr class="even">
 <td><p> </p></td>
 <td><p>15. Configure DNS records</p></td>
-<td><p><a href="https://technet.microsoft.com/en-us/library/dn307232(v=exchg.150)">Configure DNS records for Exchange 2010 multiple-server install</a></p></td>
+<td><p><a href="/previous-versions/exchange-server/exchange-150/dn307232(v=exchg.150)">Configure DNS records for Exchange 2010 multiple-server install</a></p></td>
 </tr>
 <tr class="odd">
 <td><p> </p></td>
@@ -150,7 +151,7 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <td><p> </p></td>
 <td><p>17. Move public folder data from Exchange 2013 to Exchange 2013</p></td>
 <td><p><a href="public-folders-exchange-2013-help.md">Public folders</a></p>
-<p><a href="https://technet.microsoft.com/en-us/library/jj150486(v=exchg.150)">Use serial migration to migrate public folders to Exchange 2013 from previous versions</a></p></td>
+<p><a href="/previous-versions/exchange-server/exchange-150/jj150486(v=exchg.150)">Use serial migration to migrate public folders to Exchange 2013 from previous versions</a></p></td>
 </tr>
 <tr class="odd">
 <td><p> </p></td>

@@ -2,13 +2,14 @@
 title: 'Manage sender reputation: Exchange 2013 Help'
 TOCTitle: Manage sender reputation
 ms:assetid: f2716bd9-e3ac-46d9-9264-4e3dabfa0f38
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125186(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125186(v=EXCHG.150)
 ms:contentKeyID: 49248691
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ Sender reputation is provided by the Protocol Analysis agent. Sender reputation 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable sender reputation
 

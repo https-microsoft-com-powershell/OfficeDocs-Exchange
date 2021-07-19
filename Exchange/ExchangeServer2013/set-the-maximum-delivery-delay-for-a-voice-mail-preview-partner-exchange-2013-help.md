@@ -4,9 +4,10 @@ TOCTitle: Set the maximum delivery delay for a Voice Mail Preview partner
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer:
 ms.assetid: c9a07f6d-6f7f-4036-9a4a-d668d21e2c76
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ For additional management tasks related to voice mail preview, see [Voice Mail P
 
 - Estimated time to complete: 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan-exchange-2013-help.md).
 
@@ -36,7 +37,7 @@ For additional management tasks related to voice mail preview, see [Voice Mail P
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to set the maximum delivery delay for a Voice Mail Preview partner
 

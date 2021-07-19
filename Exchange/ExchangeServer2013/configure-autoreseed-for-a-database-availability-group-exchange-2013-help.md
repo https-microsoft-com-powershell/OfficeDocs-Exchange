@@ -2,13 +2,14 @@
 title: 'Configure AutoReseed for a database availability group: Exchange 2013 Help'
 TOCTitle: Configure AutoReseed for a database availability group
 ms:assetid: 4a8bd779-b52a-40ed-8040-4d76eabeb41e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ619303(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ619303(v=EXCHG.150)
 ms:contentKeyID: 49289245
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,7 +37,7 @@ For additional management tasks related to DAGs, see [Managing database availabi
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Configure the root paths for databases and volumes
 

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 6b37ed6e-2e36-4688-b485-8fdbb8193ec8
-ms.date: 7/9/2018
 ms.reviewer:
 title: Configure activation policy for a mailbox database copy
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -30,7 +31,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure the activation policy for a mailbox database copy
 <a name="UseEMC"> </a>
@@ -50,40 +51,40 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 This example blocks the copy of the database DB1 on the server MBX2 for activation.
 
-```
+```powershell
 Suspend-MailboxDatabaseCopy -Identity DB1\MBX2 -ActivationOnly
 ```
 
 This example resumes the copy of the database DB1 on the server MBX2 for activation.
 
-```
+```powershell
 Resume-MailboxDatabaseCopy -Identity DB1\MBX2
 ```
 
-For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](https://technet.microsoft.com/library/b6e03402-706e-40c6-b392-92e3da21b5c0.aspx) or [Resume-MailboxDatabaseCopy](https://technet.microsoft.com/library/3d90b006-9914-415b-9a1f-730bd91c8548.aspx).
+For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/suspend-mailboxdatabasecopy) or [Resume-MailboxDatabaseCopy](/powershell/module/exchange/resume-mailboxdatabasecopy).
 
 ## Use the Exchange Management Shell to configure the activation policy for a server
 <a name="UseEMC"> </a>
 
 This example configures the database copies on server MBX2 as blocked for activation.
 
-```
+```powershell
 Set-MailboxServer -Identity MBX2 -DatabaseCopyAutoActivationPolicy Blocked
 ```
 
 This example configures the database copies on server MBX3 as blocked for out-of-site activation.
 
-```
+```powershell
 Set-MailboxServer -Identity MBX3 -DatabaseCopyAutoActivationPolicy IntrasiteOnly
 ```
 
 This example configures the database copies on server MBX4 as unblocked for activation.
 
-```
+```powershell
 Set-MailboxServer -Identity MBX4 -DatabaseCopyAutoActivationPolicy Unrestricted
 ```
 
-For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](https://technet.microsoft.com/library/b6e03402-706e-40c6-b392-92e3da21b5c0.aspx), [Resume-MailboxDatabaseCopy](https://technet.microsoft.com/library/3d90b006-9914-415b-9a1f-730bd91c8548.aspx), or [Set-MailboxServer](https://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx).
+For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/suspend-mailboxdatabasecopy), [Resume-MailboxDatabaseCopy](/powershell/module/exchange/resume-mailboxdatabasecopy), or [Set-MailboxServer](/powershell/module/exchange/set-mailboxserver).
 
 ## How do you know this worked?
 <a name="UseEMC"> </a>
@@ -92,12 +93,12 @@ To verify that you've successfully configured the activation policy, do one of t
 
 - In the Exchange Management Shell, run the following command to verify activation settings for a database copy.
 
-  ```
+  ```powershell
   Get-MailboxDatabaseCopyStatus <DatabaseCopyName> | Format-List ActivationSuspended
   ```
 
 - In the Exchange Management Shell, run the following command to verify activation settings for a DAG member.
 
-  ```
+  ```powershell
   Get-MailboxServer <ServerName> | Format-List DatabaseCopyAutoActivationPolicy
   ```

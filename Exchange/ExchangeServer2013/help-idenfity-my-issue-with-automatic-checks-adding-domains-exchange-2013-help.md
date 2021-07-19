@@ -2,14 +2,16 @@
 title: 'Help idenfity issue with automatic checks - adding domains'
 TOCTitle: Help Idenfity My Issue with Automatic Checks - Adding Domains
 ms:assetid: ea90a24b-7c9c-48d5-9475-0eb7777452f3
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn793981(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn793981(v=EXCHG.150)
 ms:contentKeyID: 62632395
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
+ms.custom: SaRA-Download_ExRCA
 ---
 
 # Help Idenfity My Issue with Automatic Checks - Adding Domains
@@ -18,7 +20,7 @@ _**Applies to:** Exchange Server 2013_
 
 The check(s) on this page will help identify some of the most common configuration challenges. You can use the automatic check(s) below to validate your configuration and help you update your environment.
 
-If you already have an Office 365 user account, select **Sign In**. You don't need an Azure ID account. You might be asked for a user account again when the checks run. If so, your user account is in the format of username@youroffice365login.domain and your password.
+If you already have an user account, select **Sign In**. You don't need an Azure ID account. You might be asked for a user account again when the checks run. If so, your user account is in the format of *username*\@*yourFQDN* and your password.
 
 ## Adding Domains Checks
 

@@ -2,13 +2,14 @@
 title: 'Manage attachment filtering on Edge Transport servers: Exchange 2013 Help'
 TOCTitle: Manage attachment filtering on Edge Transport servers
 ms:assetid: 2ec91cc6-6ade-48ee-88bb-66153874393d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997139(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997139(v=EXCHG.150)
 ms:contentKeyID: 61200281
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ Attachment filtering is provided by the Attachment Filter agent that's available
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable attachment filtering
 
@@ -203,7 +204,7 @@ This example makes the following changes to the attachment filtering configurati
 Set-AttachmentFilterListConfig -Action Reject -RejectResponse "This message contains a prohibited attachment. Your message can't be delivered. Please resend the message without the attachment."
 ```
 
-For more information, see [Set-AttachmentFilterListConfig](https://technet.microsoft.com/en-us/library/bb123483\(v=exchg.150\)).
+For more information, see [Set-AttachmentFilterListConfig](/powershell/module/exchange/Set-AttachmentFilterListConfig).
 
 ## How do you know this worked?
 

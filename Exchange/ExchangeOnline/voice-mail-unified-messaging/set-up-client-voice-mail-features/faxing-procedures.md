@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Set the partner fax server URI to allow faxing
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 6732a834-c9d2-4757-8ad9-44aeff6be9f7
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Faxing procedures in Exchange Online
 ms.collection: exchange-online
 audience: ITPro

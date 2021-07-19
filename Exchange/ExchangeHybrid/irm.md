@@ -3,6 +3,8 @@ title: "IRM in Exchange hybrid deployments"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-it-pro
@@ -20,19 +22,19 @@ description: "Summary: How IRM works in an Exchange hybrid environment, and how 
 
  **Summary**: How IRM works in an Exchange hybrid environment, and how to configure IRM to work between Exchange Online and your on-premises Exchange servers.
 
-Information Rights Management (IRM) helps you to protect against leakage of sensitive information by providing persistent online and offline protection of email messages and attachments. Both your Exchange on-premises organization and Exchange Online, in Office 365 for enterprises, support IRM. However, there are differences between the two implementations, and you need to configure IRM in the Exchange Online organization before users in that organization can use it.
+Information Rights Management (IRM) helps you to protect against leakage of sensitive information by providing persistent online and offline protection of email messages and attachments. Both your Exchange on-premises organization and Exchange Online, in Microsoft 365 or Office 365 for enterprises, support IRM. However, there are differences between the two implementations, and you need to configure IRM in the Exchange Online organization before users in that organization can use it.
 
 IRM uses Active Directory Rights Management Services (AD RMS), which is a component of Windows Server 2008 and later. AD RMS allows users to create rights-protected content, such as email messages and attachments, and then control how that content is used, and to whom it's distributed. Users can specify templates that determine how content can be used. For example, a user may specify that an email message can't be forwarded to other recipients or that information in the message can't be copied.
 
-Learn more about IRM in Exchange 2010 at: [Understanding Information Rights Management](https://technet.microsoft.com/library/dd638140%28v=exchg.141%29.aspx).
+Learn more about IRM in Exchange 2010 at: [Understanding Information Rights Management](/previous-versions/office/exchange-server-2010/dd638140(v=exchg.141)).
 
-Learn more about IRM in Exchange 2013 and Exchange 2016 at [Information Rights Management](https://technet.microsoft.com/library/6ea3a695-3ddd-4d53-b3c6-90041f44ef64.aspx).
+Learn more about IRM in Exchange Server at [Information Rights Management](../ExchangeServer/policy-and-compliance/information-rights-management.md).
 
-Learn more about AD RMS at [Active Directory Rights Management Services Overview](https://go.microsoft.com/fwlink/p/?LinkId=215243).
+Learn more about AD RMS at [Active Directory Rights Management Services Overview](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771627(v=ws.10)).
 
 ## Differences between IRM in Exchange On-premises and Exchange Online
 
-IRM functionality that's available in your on-premises Exchange organization may be different than the functionality available in your Exchange Online organization. The following table provides a summary of features and functionality available in each organization. (Learn more about these features at: [Understanding Information Rights Management](https://technet.microsoft.com/library/6ea3a695-3ddd-4d53-b3c6-90041f44ef64.aspx))
+IRM functionality that's available in your on-premises Exchange organization may be different than the functionality available in your Exchange Online organization. The following table provides a summary of features and functionality available in each organization. (Learn more about these features at: [Information Rights Management](../ExchangeServer/policy-and-compliance/information-rights-management.md))
 
 **Available IRM features**
 
@@ -52,9 +54,9 @@ IRM functionality that's available in your on-premises Exchange organization may
 
 ## IRM in hybrid deployments
 
-Exchange uses AD RMS servers in the Active Directory forest in which the Exchange server is installed. For your on-premises Exchange servers, the on-premises AD RMS server is used. For your Exchange Online organization, AD RMS servers that are maintained within the Office 365 datacenters are used. The AD RMS configuration that each Exchange organization uses is independent of any other AD RMS deployment.
+Exchange uses AD RMS servers in the Active Directory forest in which the Exchange server is installed. For your on-premises Exchange servers, the on-premises AD RMS server is used. For your Exchange Online organization, AD RMS servers that are maintained within the Microsoft 365 and Office 365 datacenters are used. The AD RMS configuration that each Exchange organization uses is independent of any other AD RMS deployment.
 
-AD RMS configuration, and therefore IRM configuration, isn't automatically replicated between your on-premises Exchange organization and the Exchange Online organization. Any AD RMS templates that you've defined aren't automatically copied to the Exchange Online organization. If you want the same AD RMS templates to be available in the Exchange Online organization, you must manually export the templates from your on-premises organization and apply them to the Office 365 organization. See [Configure IRM in hybrid deployments](#configure-irm-in-hybrid-deployments) later in this topic.
+AD RMS configuration, and therefore IRM configuration, isn't automatically replicated between your on-premises Exchange organization and the Exchange Online organization. Any AD RMS templates that you've defined aren't automatically copied to the Exchange Online organization. If you want the same AD RMS templates to be available in the Exchange Online organization, you must manually export the templates from your on-premises organization and apply them to the Microsoft 365 or Office 365 organization. See [Configure IRM in hybrid deployments](#configure-irm-in-hybrid-deployments) later in this topic.
 
 ### User experience
 
@@ -87,7 +89,7 @@ The Exchange Online organization provides several additional IRM-related feature
 
 IRM in Exchange relies on AD RMS being deployed in the Active Directory forest in which the Exchange server resides. AD RMS configuration isn't automatically synchronized between the on-premises and Exchange Online organizations. You must manually export the AD RMS configuration, known as a trusted publishing domain (TPD), from your on-premises AD RMS server, and import that configuration into the Exchange Online organization. The TPD contains the AD RMS configuration, including templates, which the Exchange Online organization needs to use IRM.
 
-Learn more at [AD RMS Trusted Publishing Domain Considerations](https://go.microsoft.com/fwlink/p/?LinkId=215244).
+Learn more at [AD RMS Trusted Publishing Domain Considerations](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772677(v=ws.10)).
 
 In addition to applying your on-premises AD RMS configuration to the Exchange Online organization, you must ensure that your AD RMS servers can be contacted by Outlook and ActiveSync clients outside of your on-premises network. You must do this if you want these clients to access rights-protected messages outside of your on-premises network.
 
@@ -109,13 +111,13 @@ If you use IRM in your on-premises Exchange organization and you want your Excha
 
 ### How do I configure on-premises AD RMS servers?
 
-To configure IRM in a hybrid deployment, you need to use Windows PowerShell to access your on-premises AD RMS server. Learn more at: [Using Windows PowerShell to Administer AD RMS](https://go.microsoft.com/fwlink/p/?LinkId=214938)
+To configure IRM in a hybrid deployment, you need to use Windows PowerShell to access your on-premises AD RMS server. Learn more at: [Using Windows PowerShell to Administer AD RMS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee221079(v=ws.10))
 
 Do the following to export trusted publishing domain (TPD) data from your on-premises AD RMS server and then configure access to the AD RMS server for external clients.
 
-1. Export TPD data from your on-premises organization. Learn more at: [Exporting a Trusted Publishing Domain](https://go.microsoft.com/fwlink/p/?LinkId=214942)
+1. Export TPD data from your on-premises organization. Learn more at: [Exporting a Trusted Publishing Domain](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee221062(v=ws.10))
 
-2. Configure access to AD RMS servers from external clients. Learn more at: [Adding an Extranet Cluster URL](https://go.microsoft.com/fwlink/p/?LinkId=214945)
+2. Configure access to AD RMS servers from external clients. Learn more at: [Adding an Extranet Cluster URL](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee221093(v=ws.10))
 
 ### How do I enable IRM in the Exchange Online organization?
 
@@ -123,13 +125,13 @@ After you export the TPD data from your on-premises AD RMS servers, you need to 
 
 1. In the Exchange Online organization, import the TPD data.
 
-   ```
+   ```PowerShell
    Import-RMSTrustedPublishingDomain -FileData $( [Byte[]] (Get-Content -Encoding Byte -Path "<Path to exported TPD file>" -ReadCount 0))
    ```
 
 2. Enable IRM in the Exchange Online organization.
 
-   ```
+   ```PowerShell
    Set-IRMConfiguration -InternalLicensingEnabled $True
    ```
 
@@ -149,13 +151,13 @@ After you've enabled IRM in the Exchange Online organization, you must distribut
 
 1. In the Exchange Online organization, retrieve a list of AD RMS templates.
 
-   ```
+   ```PowerShell
    Get-RMSTemplate -Type All
    ```
 
 2. Distribute the AD RMS templates to users and features in the Exchange Online organization.
 
-   ```
+   ```PowerShell
    Set-RMSTemplate <template name> -Type Distributed
    ```
 
@@ -170,8 +172,8 @@ Outlook on the web users should be able to apply AD RMS templates to new message
 
 Run the following command in the Exchange Online organization:
 
-```
+```PowerShell
 Get-RMSTemplate
 ```
 
-Learn more at: [Understanding Information Rights Management in Outlook Web App](https://technet.microsoft.com/library/60a49dab-17ac-4d2c-9b41-7d87250d6c00.aspx)
+Learn more at: [Information Rights Management in Outlook Web App](../ExchangeServer2013/information-rights-management-in-outlook-web-app-exchange-2013-help.md)

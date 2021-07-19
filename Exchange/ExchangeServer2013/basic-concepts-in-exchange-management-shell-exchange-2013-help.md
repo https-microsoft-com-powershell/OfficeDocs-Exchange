@@ -2,13 +2,14 @@
 title: 'Basic concepts in Exchange Management Shell: Exchange 2013 Help'
 TOCTitle: Basic concepts in Exchange Management Shell
 ms:assetid: 87289884-7526-4f12-bf36-b252f4eff97e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn659284(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn659284(v=EXCHG.150)
 ms:contentKeyID: 62222299
-ms.date: 03/23/2018
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,25 +17,25 @@ mtps_version: v=EXCHG.150
 
 ## Getting help
 
-[Getting help](https://technet.microsoft.com/en-us/library/aa997174\(v=exchg.150\))
+[Getting help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)
 
 ## Cmdlets and parameters
 
 [Cmdlets](cmdlets-exchange-2013-help.md)
 
-[Parameters](https://technet.microsoft.com/en-us/library/bb124388\(v=exchg.150\))
+[Parameters](/powershell/module/microsoft.powershell.core/about/about_parameters)
 
-[Structured data](https://technet.microsoft.com/en-us/library/aa996386\(v=exchg.150\))
+[Structured data](/powershell/module/microsoft.powershell.core/about/about_objects)
 
-[Syntax](https://technet.microsoft.com/en-us/library/bb123552\(v=exchg.150\))
+[Syntax](/powershell/exchange/exchange-cmdlet-syntax)
 
 ## Running commands
 
-[Aliases](https://technet.microsoft.com/en-us/library/bb123977\(v=exchg.150\))
+[Aliases](/powershell/module/microsoft.powershell.core/about/about_aliases)
 
-[Arrays](https://technet.microsoft.com/en-us/library/aa998267\(v=exchg.150\))
+[about_Arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
-[Comparison operators](https://technet.microsoft.com/en-us/library/bb125229\(v=exchg.150\))
+[Comparison operators](/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
 
 [Identity](identity-exchange-2013-help.md)
 
@@ -42,7 +43,7 @@ mtps_version: v=EXCHG.150
 
 [Modifying multivalued properties](modifying-multivalued-properties-exchange-2013-help.md)
 
-[Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\))
+[about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines)
 
 [WhatIf, Confirm, and ValidateOnly switches](whatif-confirm-and-validateonly-switches-exchange-2013-help.md)
 
@@ -50,10 +51,10 @@ mtps_version: v=EXCHG.150
 
 ## Running scripts
 
-[Scripting with the Exchange Management Shell](https://technet.microsoft.com/en-us/library/bb123798\(v=exchg.150\))
+[Scripting with the Exchange Management Shell](/powershell/module/microsoft.powershell.core/about/about_scripts)
 
-[Script security](https://technet.microsoft.com/en-us/library/bb125017\(v=exchg.150\))
+[Script security](/powershell/module/microsoft.powershell.core/about/about_signing)
 
-[Shell variables](https://technet.microsoft.com/en-us/library/bb124036\(v=exchg.150\))
+[Shell variables](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 
-[User-defined variables](https://technet.microsoft.com/en-us/library/bb123690\(v=exchg.150\))
+[about_Variables](/powershell/module/microsoft.powershell.core/about/about_variables)

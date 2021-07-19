@@ -2,13 +2,14 @@
 title: 'View effective permissions: Exchange 2013 Help'
 TOCTitle: View effective permissions
 ms:assetid: ae6cb7cf-f998-44a6-a69a-02ad736c8260
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638167(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638167(v=EXCHG.150)
 ms:contentKeyID: 49289376
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -40,7 +41,7 @@ Looking for other management tasks related to managing permissions? Check out [P
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to list all effective users
 
@@ -58,7 +59,7 @@ Get-ManagementRoleAssignment -Role "Mail Recipients" -GetEffectiveUsers
 
 If you want to change what properties are returned in the list or export the list to a comma-separated value (.csv) file, see Use the Shell to customize output and display it later in this topic.
 
-For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment).
 
 ## Use the Shell to find a specific user on a role
 
@@ -76,7 +77,7 @@ Get-ManagementRoleAssignment -Role Journaling -GetEffectiveUsers | Where {$_.Eff
 
 If you want to change what properties are returned in the list or export the list to a .csv file, see Use the Shell to customize output and display it later in this topic.
 
-For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment).
 
 ## Use the Shell to find a specific user on all roles
 
@@ -94,7 +95,7 @@ Get-ManagementRoleAssignment -GetEffectiveUsers | Where {$_.EffectiveUserName -E
 
 If you want to change what properties are returned in the list or export the list to a CSV file, see Use the Shell to customize output and display it later in this topic.
 
-For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment).
 
 ## Use the Shell to customize output and display it
 
@@ -152,7 +153,7 @@ This example finds the user David Strome on all roles, and displays the `Effecti
 Get-ManagementRoleAssignment -GetEffectiveUsers | Where {$_.EffectiveUserName -Eq "David Strome"} | Format-Table EffectiveUserName, Role, CustomRecipientWriteScope, CustomConfigWriteScope
 ```
 
-For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment).
 
 ## Output a customized list to a .csv file
 
@@ -182,4 +183,4 @@ Get-ManagementRoleAssignment -GetEffectiveUsers | Where {$_.EffectiveUserName -E
 
 You can now view the .csv file in a viewer of your choice.
 
-For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment).

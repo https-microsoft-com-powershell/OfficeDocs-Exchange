@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 29b67d58-eef9-4ad4-863f-562405ea8794
-ms.date: 7/8/2018
 ms.reviewer:
 title: Mailbox audit logging in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -28,11 +29,11 @@ When you enable audit logging for a mailbox, you can specify which user actions 
 
 Mailbox audit logs are generated for each mailbox that has mailbox audit logging enabled. Log entries are stored in the Recoverable Items folder in the audited mailbox, in the Audits subfolder. This ensures that all audit log entries are available from a single location, regardless of which client access method was used to access the mailbox or which server or computer an administrator uses to access the mailbox audit log. If you move a mailbox to another Mailbox server, the mailbox audit logs for that mailbox are also moved because they're located in the mailbox.
 
-By default, mailbox audit log entries are retained in the mailbox for 90 days and then deleted. You can modify this retention period by using the _AuditLogAgeLimit_ parameter with the [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet. If a mailbox is on In-Place Hold or Litigation Hold, audit log entries are only retained until the audit log retention period for the mailbox is reached. To retain audit log entries longer, you have to increase the retention period by changing the value for the _AuditLogAgeLimit_ parameter. You can also export audit log entries before the retention period is reached. For more information, see:
+By default, mailbox audit log entries are retained in the mailbox for 90 days and then deleted. You can modify this retention period by using the _AuditLogAgeLimit_ parameter with the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet. If a mailbox is on In-Place Hold or Litigation Hold, audit log entries are only retained until the audit log retention period for the mailbox is reached. To retain audit log entries longer, you have to increase the retention period by changing the value for the _AuditLogAgeLimit_ parameter. You can also export audit log entries before the retention period is reached. For more information, see:
 
-- [Export Mailbox Audit Logs](https://technet.microsoft.com/library/b458a95a-3321-4647-8884-cf97f8e7186a.aspx)
+- [Export Mailbox Audit Logs](../../../ExchangeServer2013/export-mailbox-audit-logs-exchange-2013-help.md)
 
-- [Create a Mailbox Audit Log Search](https://technet.microsoft.com/library/48ba22cf-b1f2-4dbc-98fc-fed22d97db14.aspx)
+- [Create a Mailbox Audit Log Search](../../../ExchangeServer2013/create-a-mailbox-audit-log-search-exchange-2013-help.md)
 
 ## Enabling mailbox audit logging
 <a name="Enable"> </a>
@@ -74,15 +75,15 @@ If you no longer require certain types of mailbox actions to be audited, you sho
 
 You can use the following methods to search mailbox audit log entries:
 
-- **Synchronously search a single mailbox**: You can use the [Search-MailboxAuditLog](https://technet.microsoft.com/library/2cc4598a-8a8c-45a0-901c-73e1079d193e.aspx) cmdlet to synchronously search mailbox audit log entries for a single mailbox. The cmdlet displays search results in the Exchange Management Shell window. For details, see [Search Mailbox Audit Log for a Mailbox](https://technet.microsoft.com/library/5b518a08-3b51-4ba3-bfbd-0e35cc5ff374.aspx).
+- **Synchronously search a single mailbox**: You can use the [Search-MailboxAuditLog](/powershell/module/exchange/search-mailboxauditlog) cmdlet to synchronously search mailbox audit log entries for a single mailbox. The cmdlet displays search results in the Exchange Management Shell window. For details, see [Search Mailbox Audit Log for a Mailbox](../../../ExchangeServer2013/search-the-mailbox-audit-log-for-a-mailbox-exchange-2013-help.md).
 
-- **Asynchronously search one or more mailboxes**: You can create a mailbox audit log search to asynchronously search mailbox audit logs for one or more mailboxes, and then have the search results sent to a specified email address. The search results are sent as an XML attachment. To create the search, use the [New-MailboxAuditLogSearch](https://technet.microsoft.com/library/95365cab-bbb2-4a64-8e8f-1c89fa9e0352.aspx) cmdlet. For details, see [Create a Mailbox Audit Log Search](https://technet.microsoft.com/library/48ba22cf-b1f2-4dbc-98fc-fed22d97db14.aspx).
+- **Asynchronously search one or more mailboxes**: You can create a mailbox audit log search to asynchronously search mailbox audit logs for one or more mailboxes, and then have the search results sent to a specified email address. The search results are sent as an XML attachment. To create the search, use the [New-MailboxAuditLogSearch](/powershell/module/exchange/new-mailboxauditlogsearch) cmdlet. For details, see [Create a Mailbox Audit Log Search](../../../ExchangeServer2013/create-a-mailbox-audit-log-search-exchange-2013-help.md).
 
 - **Use auditing reports in the Exchange admin center (EAC)**: You can use the **Auditing** tab in the EAC to run a non-owner mailbox access report (contains entries for admin and delete actions) or export non-owner entries from the mailbox audit log. For details, see:
 
   - [Run a non-owner mailbox access report](../../policy-and-compliance/non-owner-mailbox-access-reports.md)
 
-  - [Export Mailbox Audit Logs](https://technet.microsoft.com/library/b458a95a-3321-4647-8884-cf97f8e7186a.aspx)
+  - [Export Mailbox Audit Logs](../../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/export-mailbox-audit-logs.md)
 
 ## Mailbox audit log entries
 <a name="Mailbox"> </a>
@@ -129,10 +130,10 @@ The following table describes the fields logged in a mailbox audit log entry.
 
   - In-Place eDiscovery is used to search a mailbox.
 
-  - The [New-MailboxExportRequest](https://technet.microsoft.com/library/1625c25a-7cc9-459c-97ea-281ac421bbce.aspx) cmdlet is used to export a mailbox.
+  - The [New-MailboxExportRequest](/powershell/module/exchange/new-mailboxexportrequest) cmdlet is used to export a mailbox.
 
   - [Microsoft Exchange Server MAPI Client and Collaboration Data Objects](https://www.microsoft.com/download/details.aspx?id=39045) is used to access the mailbox.
 
-- **Bypassing mailbox auditing logging**: Mailbox access by authorized automated processes such as accounts used by third-party tools or accounts used for lawful monitoring can create a large number of mailbox audit log entries and may not be of interest to your organization. You can configure such accounts to bypass mailbox audit logging. For details, see [Bypass a User Account From Mailbox Audit Logging](https://technet.microsoft.com/library/98a87071-fe31-4b67-beb8-a73799e54df2.aspx).
+- **Bypassing mailbox auditing logging**: Mailbox access by authorized automated processes such as accounts used by third-party tools or accounts used for lawful monitoring can create a large number of mailbox audit log entries and may not be of interest to your organization. You can configure such accounts to bypass mailbox audit logging. For details, see [Bypass a User Account From Mailbox Audit Logging](../../../ExchangeServer2013/bypass-a-user-account-from-mailbox-audit-logging-exchange-2013-help.md).
 
 - **Logging mailbox owner actions**: For mailboxes such as the Discovery Search Mailbox, which may contain more sensitive information, consider enabling mailbox audit logging for mailbox owner actions such as message deletion.

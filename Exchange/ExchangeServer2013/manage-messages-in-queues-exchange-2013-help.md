@@ -2,13 +2,14 @@
 title: 'Manage messages in queues: Exchange 2013 Help'
 TOCTitle: Manage messages in queues
 ms:assetid: 83358884-6036-4e91-87a8-35200541874d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123535(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123535(v=EXCHG.150)
 ms:contentKeyID: 50646238
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,11 +28,11 @@ In Microsoft Exchange Server 2013, you can use the Queue Viewer in the Exchange 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Remove messages from queues
 
-A message that's being sent to multiple recipients might be located in more than one queue. To remove a message from more than one queue in a single operation, you need to use a filter. You can select whether to send a non-delivery report (NDR) when you remove messages from a queue. You can't remove a message from the Submission queue.
+A message that's being sent to multiple recipients might be located in more than one queue. To remove a message from more than one queue in a single operation, you need to use a filter. You can select whether to send a non-delivery report (NDR) when you remove messages from a queue.
 
 ## Use Queue Viewer in the Exchange Toolbox to remove messages
 
@@ -53,13 +54,13 @@ A message that's being sent to multiple recipients might be located in more than
 To remove messages from queues, use the following syntax.
 
 ```powershell
-Remove-Message <-Identity MessageIdentity | -Filter {MessageFilter}> -WithNDR <$true | $false>
+Remove-Message <-Identity MessageIdentity | -Filter "MessageFilter"> -WithNDR <$true | $false>
 ```
 
 This example removes messages in the queues that have a subject of "Win Big" without sending an NDR.
 
 ```powershell
-Remove-Message -Filter {Subject -eq "Win Big"} -WithNDR $false
+Remove-Message -Filter "Subject -eq 'Win Big'" -WithNDR $false
 ```
 
 This example removes the message with the message ID 3 from the unreachable queue on server named Mailbox01 and sends an NDR.
@@ -74,7 +75,7 @@ To verify that you have successfully removed messages from queues, do one of the
 
 - In Queue Viewer, select the queue or create a filter to verify the messages no longer exist.
 
-- Use the **Get-Message** cmdlet with the *Queue* or *Filter* parameters to verify the messages no longer exist. For more information, see [Get-Message](https://technet.microsoft.com/en-us/library/bb124738\(v=exchg.150\)).
+- Use the **Get-Message** cmdlet with the *Queue* or *Filter* parameters to verify the messages no longer exist. For more information, see [Get-Message](/powershell/module/exchange/Get-Message).
 
 ## Resume messages in queues
 
@@ -105,13 +106,13 @@ You can resume a message that currently has a status of Suspended. By resuming a
 To resume messages, use the following syntax:
 
 ```powershell
-Resume-Message <-Identity MessageIdentity | -Filter {MessageFilter}>
+Resume-Message <-Identity MessageIdentity | -Filter "MessageFilter">
 ```
 
 This example resumes all messages being sent from any sender in the Contoso.com domain.
 
 ```powershell
-Resume-Message -Filter {FromAddress -eq "*contoso.com"}
+Resume-Message -Filter "FromAddress -eq '*contoso.com'"
 ```
 
 This example resumes the message with the message ID 3 in the unreachable queue on server Hub01.
@@ -128,7 +129,7 @@ To verify that you have successfully resume messages in queues, do one of the fo
 
 - In Queue Viewer, select the queue or create a filter to verify the messages are no longer suspended.
 
-- Use the **Get-Message** cmdlet with the *Queue* or *Filter* parameters to verify the messages are no longer suspended. For more information, see [Get-Message](https://technet.microsoft.com/en-us/library/bb124738\(v=exchg.150\)).
+- Use the **Get-Message** cmdlet with the *Queue* or *Filter* parameters to verify the messages are no longer suspended. For more information, see [Get-Message](/powershell/module/exchange/Get-Message).
 
 Note that if you can't find the message in any queues on the server, that probably indicates the message was successfully delivered to the next hop.
 
@@ -153,13 +154,13 @@ A message being sent to multiple recipients might be located in multiple queues.
 To suspend messages, use the following syntax:
 
 ```powershell
-Suspend-Message <-Identity MessageIdentity | -Filter {MessageFilter}>
+Suspend-Message <-Identity MessageIdentity | -Filter "MessageFilter">
 ```
 
 This example suspends all messages in the queues that are from any sender in the domain contoso.com.
 
 ```powershell
-Suspend-Message -Filter {FromAddress -eq "*contoso.com"}
+Suspend-Message -Filter "FromAddress -eq '*contoso.com'"
 ```
 
 This example suspends the message with the message ID 3 in the unreachable queue on server named Mailbox01:
@@ -174,4 +175,4 @@ To verify that you have successfully suspended messages in queues, do one of the
 
 - In Queue Viewer, select the queue or create a filter to verify messages are suspended.
 
-- Use the **Get-Message** cmdlet with the *Queue* or *Filter* parameters to verify the messages are suspended. For more information, see [Get-Message](https://technet.microsoft.com/en-us/library/bb124738\(v=exchg.150\)).
+- Use the **Get-Message** cmdlet with the *Queue* or *Filter* parameters to verify the messages are suspended. For more information, see [Get-Message](/powershell/module/exchange/Get-Message).

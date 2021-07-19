@@ -4,9 +4,10 @@ TOCTitle: Test a transport rule
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 3d949e2a-8ba4-4261-8cfb-736fd2446ea1
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -21,7 +22,7 @@ Each time you create a transport rule, you should test it before turning it on. 
 
 ## Step 1: Create a rule in test mode
 
-You can evaluate the conditions for a rule without taking any actions that impact mail flow by choosing a test mode. You can set up a rule so that you get an email notification any time the rule is matched, or you can [look at the message trace](#look-at-the-message-trace) for messages that might match the rule. There are two test modes:
+You can evaluate the conditions for a rule without taking any actions that impact mail flow by choosing a test mode. You can set up a rule so that you get an email notification any time the rule is matched, or you can look at the message trace for messages that might match the rule. There are two test modes:
 
 - **Test without Policy Tips**: Use this mode together with an incident report action, and you can receive an email message each time an email matches the rule.
 
@@ -71,21 +72,7 @@ To test a rule, you can either send enough test messages to confirm that what yo
 
 One way to test is to sign in as both the sender and recipient of a test message.
 
-Because a web browser typically doesn't let you have simultaneous open sessions on the same computer signed in to multiple accounts, you can use [Internet Explorer InPrivate Browsing](https://go.microsoft.com/fwlink/p/?LinkId=402784), or a different computer, device, or web browser for each user.
-
-### Look at the message trace
-
-The message trace includes an entry for each rule that is matched for the message, and an entry for each action the rule takes. This is useful for tracking what happens to test messages, and also for tracking what happens to real messages going through your organization.
-
-![Message trace showing transport rule actions](images/TA_EX_Rule_Trace.png)
-
-1. In the EAC, go to **Mail flow** \> **Message trace**.
-
-2. Find the messages that you want to trace by using criteria such as the sender and the date sent. For help specifying criteria, see [Run a Message Trace and View Results](https://technet.microsoft.com/library/74a9fc59-7e0e-4832-baf9-2a86418b0079.aspx).
-
-3. After locating the message you want to trace, double-click it to view details about the message.
-
-4. Look in the **Event** column for **Transport rule**. The **Action** column shows the specific action taken.
+Because a web browser typically doesn't let you have simultaneous open sessions on the same computer signed in to multiple accounts, you can use [Internet Explorer InPrivate Browsing](https://support.microsoft.com/help/4026200), or a different computer, device, or web browser for each user.
 
 ## Step 3: When you're done testing, set the rule to enforce
 
@@ -126,4 +113,4 @@ Here are some common problems and resolutions:
 
 [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md)
 
-[Transport Rules](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx)
+[Transport rules in Exchange 2013](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md)

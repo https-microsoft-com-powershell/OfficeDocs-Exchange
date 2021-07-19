@@ -2,13 +2,14 @@
 title: 'Default settings for Exchange virtual directories: Exchange 2013 Help'
 TOCTitle: Default settings for Exchange virtual directories
 ms:assetid: d2d89ce6-4721-4737-a325-fba5ad9422e0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg247612(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Gg247612(v=EXCHG.150)
 ms:contentKeyID: 50934224
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

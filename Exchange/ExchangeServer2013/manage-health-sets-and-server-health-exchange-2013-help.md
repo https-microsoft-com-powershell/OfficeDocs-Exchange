@@ -2,13 +2,14 @@
 title: 'Manage health sets and server health: Exchange 2013 Help'
 TOCTitle: Manage health sets and server health
 ms:assetid: a4f84312-6cfa-4f17-9707-676aadab1143
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn482054(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn482054(v=EXCHG.150)
 ms:contentKeyID: 59888995
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ You can use the built-in health reporting cmdlets to perform a variety of tasks 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## View Server Health
 

@@ -2,13 +2,14 @@
 title: 'Manage administrator audit logging: Exchange 2013 Help'
 TOCTitle: Manage administrator audit logging
 ms:assetid: 15c284c0-b8e6-42ca-9913-7c59fdb6885d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335109(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335109(v=EXCHG.150)
 ms:contentKeyID: 50117640
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ Administrator audit logging in Microsoft Exchange Server 2013 enables you to cre
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Specify the cmdlets to be audited
 
@@ -61,7 +62,7 @@ This example audits the cmdlets specified in the preceding list.
 Set-AdminAuditLogConfig -AdminAuditLogCmdlets New-Mailbox, *TransportRule, *Management*, Set-Transport*
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/en-us/library/dd298169\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/Set-AdminAuditLogConfig).
 
 ## Specify the parameters to be audited
 
@@ -90,7 +91,7 @@ This example audits the parameters specified in the preceding list.
 Set-AdminAuditLogConfig -AdminAuditLogParameters Database, *Address*, Custom*, *Region
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/en-us/library/dd298169\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/Set-AdminAuditLogConfig).
 
 ## Specify the audit log age limit
 
@@ -115,7 +116,7 @@ This example specifies an age limit of two years and six months.
 Set-AdminAuditLogConfig -AdminAuditLogAgeLimit 913.00:00:00
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/en-us/library/dd298169\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/Set-AdminAuditLogConfig).
 
 ## Enable or disable logging of Test cmdlets
 
@@ -133,7 +134,7 @@ This command disables the logging of **Test** cmdlets.
 Set-AdminAuditLogConfig -TestCmdletLoggingEnabled $False
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/en-us/library/dd298169\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/Set-AdminAuditLogConfig).
 
 ## Disable administrator audit logging
 

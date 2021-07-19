@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 2cea59fb-69b7-4a2f-833f-de4d93cf1810
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Prepare mailboxes for cross-forest moves using the Exchange Management Shell
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,7 +28,7 @@ To run the **New-MoveRequest** and **New-MigrationBatch** cmdlets, a mail user m
 
 The sample Exchange PowerShell script described in this topic supports this task by synchronizing mailbox users from an Exchange source forest to Exchange target forests as mail users (also known as mail-enabled users). The script copies the Active Directory attributes of the mailbox users in the source forest to the target forest, and then uses the **Update-Recipient** cmdlet to turn the target objects into mail users.
 
-For more information about using and writing scripts, see [About Scripts](https://docs.microsoft.com//powershell/module/microsoft.powershell.core/about/about_scripts). For more information about preparing for cross-forest moves, see [Prepare mailboxes for cross-forest move requests](prep-mailboxes-for-cross-forest-moves.md).
+For more information about using and writing scripts, see [About Scripts](//powershell/module/microsoft.powershell.core/about/about_scripts). For more information about preparing for cross-forest moves, see [Prepare mailboxes for cross-forest move requests](prep-mailboxes-for-cross-forest-moves.md).
 
 Looking for other management tasks related to remote move requests? Check out [Manage on-premises mailbox moves in Exchange Server](manage-mailbox-moves.md).
 
@@ -46,30 +47,30 @@ Looking for other management tasks related to remote move requests? Check out [M
   - A target forest with Exchange 2016 or Exchange 2019 installed (where the mailbox will be moved to).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Prepare-MoveRequest.ps1 script to prepare mailboxes for cross-forest moves
 
 Run the script from the Exchange Management Shell on a Mailbox server in the target Exchange 2016 or Exchange 2019 forest. The script copies the mailbox attributes from the source forest.
 
-To assign a specific authentication credential for the remote forest domain controller, you must first run the Windows PowerShell **Get-Credential** cmdlet and store the user input in a temporary variable. When you run the **Get-Credential** cmdlet, the cmdlet asks for the user name and password of the account used during authentication with the remote forest domain controller. You can then use the temporary variable in the Prepare-MoveRequest.ps1 script. For more information about the **Get-Credential** cmdlet, see [Get-Credential](https://go.microsoft.com/fwlink/p/?LinkId=142122).
+To assign a specific authentication credential for the remote forest domain controller, you must first run the Windows PowerShell **Get-Credential** cmdlet and store the user input in a temporary variable. When you run the **Get-Credential** cmdlet, the cmdlet asks for the user name and password of the account used during authentication with the remote forest domain controller. You can then use the temporary variable in the Prepare-MoveRequest.ps1 script. For more information about the **Get-Credential** cmdlet, see [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential).
 
 > [!NOTE]
 > Make sure that you use two separate credentials for the local forest and the remote forest when calling this script.
 
 1. Run the following commands to get the local forest and remote forest credentials.
 
-   ```
+   ```PowerShell
    $LocalCredentials = Get-Credential
    ```
 
-   ```
+   ```PowerShell
    $RemoteCredentials = Get-Credential
    ```
 
 2. Run the following commands to pass the credential information to the _LocalForestCredential_ and _RemoteForestCredential_ parameters in the Prepare-MoveRequest.ps1 script.
 
-   ```
+   ```PowerShell
    Prepare-MoveRequest.ps1 -Identity JohnSmith@Fabrikan.com -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $RemoteCredentials -LocalForestDomainController DC001.Contoso.com -LocalForestCredential $LocalCredentials
    ```
 
@@ -101,17 +102,17 @@ This example provisions a single linked mail user in the local forest, when ther
 
 1. Run the following commands to get the local forest and remote forest credentials.
 
-   ```
+   ```PowerShell
    $LocalCredentials = Get-Credential
    ```
 
-   ```
+   ```PowerShell
    $RemoteCredentials = Get-Credential
    ```
 
 2. Run the following command to pass the credential information to the _LocalForestCredential_ and _RemoteForestCredential_ parameters in the Prepare-MoveRequest.ps1 script.
 
-   ```
+   ```PowerShell
    Prepare-MoveRequest.ps1 -Identity JamesAlvord@Contoso.com -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $RemoteCredentials -LocalForestDomainController DC001.Contoso.com -LocalForestCredential $LocalCredentials -LinkedMailUser
    ```
 
@@ -121,13 +122,13 @@ This example supports pipelining if you supply a list of mailbox identities.
 
 1. Run the following command.
 
-   ```
+   ```PowerShell
    $UserCredentials = Get-Credential
    ```
 
 2. Run the following command to pass the credential information to the _RemoteForestCredential_ parameter in the Prepare-MoveRequest.ps1 script.
 
-   ```
+   ```PowerShell
    "IanP@Contoso.com", "JoeAn@Contoso.com" | Prepare-MoveRequest.ps1 -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $UserCredentials
    ```
 
@@ -137,7 +138,7 @@ You can generate a .csv file containing a list of mailbox identities from the so
 
 For example, the content of the .csv file can be:
 
-```
+```PowerShell
 Identity
 Ian@contoso.com
 John@contoso.com
@@ -148,13 +149,13 @@ This example calls a .csv file to bulk create the target mail users.
 
 1. Run the following command to get the remote forest credentials.
 
-   ```
+   ```PowerShell
    $UserCredentials = Get-Credential
    ```
 
 2. Run the following command to pass the credential information to the _RemoteForestCredential_ parameter in the Prepare-MoveRequest.ps1 script.
 
-   ```
+   ```PowerShell
    Import-Csv Test.csv | Prepare-MoveRequest.ps1 -RemoteForestDomainController DC001.Fabrikam.com -RemoteForestCredential $UserCredentials
    ```
 

@@ -4,11 +4,12 @@ TOCTitle: Create a public folder
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.PublicFolders.NewPublicFolderWizardForm.NewPublicFolderWizardPage'
 ms.assetid: 6d252e60-c8d0-4efd-b9d7-ba5284a6f8ab
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ By default, a public folder inherits the settings of its parent folder, includin
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](https://technet.microsoft.com/library/b7fa4b7c-1266-45bd-a14b-f66be0459cc5.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](sharing-and-collaboration-permissions-exchange-2013-help.md) topic.
 
 - You can't create a public folder unless you've first created a public folder mailbox. For more information about how to create a public folder mailbox, see [Create a public folder mailbox](create-public-folder-mailbox-exchange-2013-help.md).
 
@@ -63,7 +64,7 @@ New-PublicFolder -Name Reports -Path \Marketing\2013
 > [!IMPORTANT]
 > Don't use a backslash (\) in the name when creating a public folder.
 
-For detailed syntax and parameter information, see [New-PublicFolder](https://technet.microsoft.com/library/18b837bf-9ef7-4edf-8728-7f6bd346e75d.aspx).
+For detailed syntax and parameter information, see [New-PublicFolder](/powershell/module/exchange/new-publicfolder).
 
 ## How do you know this worked?
 
@@ -86,4 +87,4 @@ To verify that you've successfully created a public folder, do the following:
   ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

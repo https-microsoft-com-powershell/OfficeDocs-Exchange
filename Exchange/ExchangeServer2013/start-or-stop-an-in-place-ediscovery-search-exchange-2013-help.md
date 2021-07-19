@@ -4,9 +4,10 @@ TOCTitle: Start or stop an In-Place eDiscovery search
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 0d546763-4bf5-4523-91f4-d181b7ee4ac2
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -23,12 +24,12 @@ You can stop or restart an In-Place eDiscovery search at any time. For example, 
 
 - Estimated time to complete: 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in [Messaging Policy and Compliance Permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to start or stop an In-Place eDiscovery search
 
@@ -40,6 +41,6 @@ You can stop or restart an In-Place eDiscovery search at any time. For example, 
 
 ## Use the Shell to start or stop an In-Place eDiscovery search
 
-For an example of how to start an In-Place eDiscovery search, see "Example 1" in [Start-MailboxSearch](https://technet.microsoft.com/library/f0c4e047-7eca-4310-bfad-1ecfe1420ceb.aspx).
+For an example of how to start an In-Place eDiscovery search, see "Example 1" in [Start-MailboxSearch](/powershell/module/exchange/start-mailboxsearch).
 
-For an example of how to stop an In-Place eDiscovery search, see "Example 1" in [Stop-MailboxSearch](https://technet.microsoft.com/library/b718688e-261e-45b5-947e-4d34abcb568c.aspx).
+For an example of how to stop an In-Place eDiscovery search, see "Example 1" in [Stop-MailboxSearch](/powershell/module/exchange/stop-mailboxsearch).

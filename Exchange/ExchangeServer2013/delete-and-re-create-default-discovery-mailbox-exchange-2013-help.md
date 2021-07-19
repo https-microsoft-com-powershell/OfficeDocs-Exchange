@@ -4,9 +4,10 @@ TOCTitle: Delete and re-create the default discovery mailbox in Exchange
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 
 ms.reviewer: 
 ms.assetid: 4bde0b00-bdf7-44b4-ba64-aa062bc10ca2
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ In Exchange Server 2013, the maximum size of the default discovery mailbox is 50
 
 - It's not supported.
 
-- It can't be migrated to Office 365.
+- It can't be migrated to Microsoft 365 or Office 365.
 
 - If it's the default discovery mailbox in Exchange Server 2010, it can't be upgraded to Exchange Server 2013.
 

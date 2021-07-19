@@ -2,13 +2,14 @@
 title: 'Receive connector permissions: Exchange 2013 Help'
 TOCTitle: Receive connector permissions
 ms:assetid: 31af7139-6823-411b-81b3-e42edd83ee6c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ673053(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ673053(v=EXCHG.150)
 ms:contentKeyID: 49289221
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

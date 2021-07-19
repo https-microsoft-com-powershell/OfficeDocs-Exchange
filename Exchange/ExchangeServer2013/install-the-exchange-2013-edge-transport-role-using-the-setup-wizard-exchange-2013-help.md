@@ -2,13 +2,14 @@
 title: 'Use the Setup wizard to install the Exchange 2013 Edge Transport role'
 TOCTitle: Install the Exchange 2013 Edge Transport role using the Setup wizard
 ms:assetid: b8e51b0b-201e-4c64-92c8-3ac0db04b6e2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn635117(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn635117(v=EXCHG.150)
 ms:contentKeyID: 61200304
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -93,6 +94,6 @@ For information about tasks to complete after installation, see [Exchange 2013 p
 
 To verify that you've successfully installed Exchange 2013, see [Verify an Exchange 2013 installation](verify-an-exchange-2013-installation-exchange-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

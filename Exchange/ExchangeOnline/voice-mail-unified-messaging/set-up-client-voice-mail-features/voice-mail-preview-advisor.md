@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Microsoft Exchange Unified Messaging (UM) includes a feature called Voice Mail Preview, which uses automatic speech recognition (ASR) to add a text version of the voice mail audio file to voice mail messages. ASR isn't entirely accurate, especially when it's used to record audio over a phone that contains unknown voices and noises. Some organizations require consistently error-free (or near-error-free) transcripts of voice messages. The Voice Mail Preview Partner program can help such organizations meet those requirements.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 0957dd54-df6d-4b50-9db5-4757f548b899
-ms.date: 7/12/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Voice Mail Preview advisor in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -25,7 +26,7 @@ By default, when you enable a user for UM in an on-premises or hybrid deployment
 
 There are Voice Mail Preview partners that offer enhanced transcription support and services for the Voice Mail Preview feature. These partners employ people to correct voice mail transcriptions that were created using ASR. Each Voice Mail Preview partner must meet a set of requirements to be certified to interoperate with Exchange UM.
 
-If you determine that the voice mail previews sent to your users aren't accurate enough, you can contact one of the certified Voice Mail Preview partners listed at [Microsoft Pinpoint](https://go.microsoft.com/fwlink/p/?LinkId=281966) and sign up with them at an additional cost.
+If you determine that the voice mail previews sent to your users aren't accurate enough, you can contact one of the certified Voice Mail Preview partners listed at the [Solutions provider portal](https://www.microsoft.com/solution-providers/home)) and sign up with them at an additional cost.
 
 ## Overview
 
@@ -48,7 +49,7 @@ Most customers who use Unified Messaging find that the voice mail previews are a
 When you've signed up with a Voice Mail Preview partner, the Exchange servers in your organization redirect voice messages with the audio file attached to the Voice Mail Preview partner instead of generating voice mail preview text for voice messages and submitting the voice messages to the user's mailbox. The email message with the voice mail preview text produced by the Voice Mail Preview partner is then submitted to the Exchange servers in your organization for delivery to the recipient's mailbox.
 
 > [!IMPORTANT]
-> We recommend that all customers who plan to deploy Unified Messaging obtain the assistance of a UM specialist. A UM specialist helps you ensure that there's a smooth transition to UM from a legacy voice mail system. Performing a new deployment or upgrading a legacy voice mail system requires significant knowledge about VoIP gateways, IP PBXs, PBXs, session border controllers (SBCs), and Unified Messaging. To contact a Unified Messaging specialist, see the [Microsoft solution providers](https://go.microsoft.com/fwlink/p/?LinkId=261951) page.
+> We recommend that all customers who plan to deploy Unified Messaging obtain the assistance of a UM specialist. A UM specialist helps you ensure that there's a smooth transition to UM from a legacy voice mail system. Performing a new deployment or upgrading a legacy voice mail system requires significant knowledge about VoIP gateways, IP PBXs, PBXs, session border controllers (SBCs), and Unified Messaging. To contact a Unified Messaging specialist, see the [Microsoft solution providers](https://www.microsoft.com/solution-providers/) page.
 
 ## Exchange Unified Messaging Voice Mail Partner program
 
@@ -56,7 +57,7 @@ To become certified as a Voice Mail Preview partner that interoperates with Exch
 
 ## Voice Mail Preview partners certified for Exchange Unified Messaging
 
-If you've already deployed Unified Messaging in your organization and you're looking for a certified Voice Mail Preview partner to provide transcription support services, see [Microsoft PinPoint](https://go.microsoft.com/fwlink/p/?LinkId=281966). These software vendors have been certified as interoperable with Exchange UM.
+If you've already deployed Unified Messaging in your organization and you're looking for a certified Voice Mail Preview partner to provide transcription support services, go to the [Solutions provider portal](https://www.microsoft.com/solution-providers/home). These software vendors have been certified as interoperable with Exchange UM.
 
 ## Configuring Voice Mail Preview partners
 
@@ -66,4 +67,4 @@ After UM has been configured, it forwards voice messages with the audio to a ded
 
 Configuring VoIP gateways and IP PBXs for your organization is a difficult deployment task that must be completed correctly to successfully deploy Unified Messaging with a Voice Mail Preview partner. For information that can help you configure your VoIP gateways and IP PBXs, and for the most up-to-date information about how to configure them, see [Telephony advisor for Exchange 2013](../../voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013.md) or [Configuration notes for supported VoIP gateways, IP PBXs, and PBXs](../../voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways.md).
 
-Testing interoperability of Exchange UM with VoIP gateways has been integrated with the Microsoft Unified Communications Open Interoperability Program. For more information, see [Microsoft Unified Communications Open Interoperability Program](https://go.microsoft.com/fwlink/p/?linkId=132071).
+Testing interoperability of Exchange UM with VoIP gateways has been integrated with the Microsoft Unified Communications Open Interoperability Program. For more information, see [Microsoft Unified Communications Open Interoperability Program](/SkypeForBusiness/lync-cert/qualified-lync-apps).

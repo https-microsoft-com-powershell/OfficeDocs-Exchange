@@ -2,13 +2,14 @@
 title: 'Organization Management: Exchange 2013 Help'
 TOCTitle: Organization Management
 ms:assetid: 0bfd21c1-86ac-4369-86b7-aeba386741c8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335087(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335087(v=EXCHG.150)
 ms:contentKeyID: 49289160
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

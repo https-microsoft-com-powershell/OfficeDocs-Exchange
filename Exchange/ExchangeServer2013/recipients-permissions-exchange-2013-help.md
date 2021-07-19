@@ -2,13 +2,14 @@
 title: 'Recipients Permissions: Exchange 2013 Help'
 TOCTitle: Recipients Permissions
 ms:assetid: 5b690bcb-c6df-4511-90e1-08ca91f43b37
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638132(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638132(v=EXCHG.150)
 ms:contentKeyID: 48385139
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

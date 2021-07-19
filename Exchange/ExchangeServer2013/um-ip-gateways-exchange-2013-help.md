@@ -4,9 +4,10 @@ TOCTitle: UM IP gateways
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/24/2018
 ms.reviewer: 
 ms.assetid: 991d77e0-3995-44ab-bedf-52ff7a0301ab
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

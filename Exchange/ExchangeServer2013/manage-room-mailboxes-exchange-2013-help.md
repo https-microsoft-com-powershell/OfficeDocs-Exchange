@@ -4,9 +4,10 @@ TOCTitle: Create and manage room mailboxes
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: f70752ad-fce0-4e14-8428-fc5ac63f6c54
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ _**Applies to:** Exchange Server 2013_
 
 Estimated time to complete: 5 minutes.
 
-A room mailbox is a resource mailbox that's assigned to a physical location, such as a conference room, an auditorium, or a training room. After an administrator creates room mailboxes, users can easily reserve rooms by including room mailboxes in meeting requests. For more details, check out [Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+A room mailbox is a resource mailbox that's assigned to a physical location, such as a conference room, an auditorium, or a training room. After an administrator creates room mailboxes, users can easily reserve rooms by including room mailboxes in meeting requests. For more details, check out [Recipients](recipients-exchange-2013-help.md).
 
 For info about another type of resource mailbox, check out [Manage equipment mailboxes](manage-equipment-mailboxes-exchange-2013-help.md).
 
@@ -25,12 +26,12 @@ For info about another type of resource mailbox, check out [Manage equipment mai
 
 ## What do you need to know before you begin?
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Mailbox Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a room mailbox
 
@@ -71,7 +72,7 @@ This example creates a room mailbox with the following configuration:
 New-Mailbox -Database "Mailbox Database 1" -Name ConfRoom1 - -DisplayName "Conference Room 1" -Room
 ```
 
-For detailed syntax and parameter information, see [New-Mailbox](https://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx).
+For detailed syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/new-mailbox).
 
 ### How do you know this worked?
 
@@ -234,17 +235,17 @@ Use the following sets of cmdlets to view and change room mailbox properties: **
 
 For information about these cmdlets, see the following topics:
 
-- [Get-User](https://technet.microsoft.com/library/2a33c9e6-33da-438c-912d-28ce3f4c9afb.aspx)
+- [Get-User](/powershell/module/exchange/get-user)
 
-- [Set-User](https://technet.microsoft.com/library/56d7fc86-2ac3-4e28-bc7a-761e91ac655a.aspx)
+- [Set-User](/powershell/module/exchange/set-user)
 
-- [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx)
+- [Get-Mailbox](/powershell/module/exchange/get-mailbox)
 
-- [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx)
+- [Set-Mailbox](/powershell/module/exchange/set-mailbox)
 
-- [Get-CalendarProcessing](https://technet.microsoft.com/library/8ffece5d-acc9-4061-822e-e452479c03e9.aspx)
+- [Get-CalendarProcessing](/powershell/module/exchange/get-calendarprocessing)
 
-- [Set-CalendarProcessing](https://technet.microsoft.com/library/000bc90f-1d00-4384-ab59-d6cf6f674825.aspx)
+- [Set-CalendarProcessing](/powershell/module/exchange/set-calendarprocessing)
 
 Here are some examples of using the Exchange Management Shell to change room mailbox properties.
 
@@ -257,13 +258,13 @@ Set-Mailbox "Conf Room 123" -DisplayName "Conf Room 31/123 (12)" -EmailAddresses
 This example configures room mailboxes to allow booking requests to be scheduled only during working hours and sets a maximum duration of 9 hours.
 
 ```powershell
-Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'RoomMailbox')} | Set-CalendarProcessing -ScheduleOnlyDuringWorkHours $true -MaximumDurationInMinutes 540
+Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'RoomMailbox'" | Set-CalendarProcessing -ScheduleOnlyDuringWorkHours $true -MaximumDurationInMinutes 540
 ```
 
 This example uses the **Get-User** cmdlet to find all room mailboxes that correspond to private conference rooms, and then uses the **Set-CalendarProcessing** cmdlet to send booking requests to a delegate named Robin Wood to accept or decline.
 
 ```powershell
-Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'RoomMailbox') -and (DisplayName -like 'Private*')} | Set-CalendarProcessing -AllBookInPolicy $false -AllRequestInPolicy $true -ResourceDelegates "Robin Wood"
+Get-User -ResultSize unlimited -Filter "(RecipientTypeDetails -eq 'RoomMailbox') -and (DisplayName -like 'Private*')" | Set-CalendarProcessing -AllBookInPolicy $false -AllRequestInPolicy $true -ResourceDelegates "Robin Wood"
 ```
 
 ### How do you know this worked?
@@ -275,5 +276,5 @@ To verify that you've successfully changed properties for a room mailbox, do the
 - In Exchange PowerShell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using Exchange PowerShell is that you can view multiple properties for multiple mailboxes. In the example above where booking requests could be scheduled only during working hours and have a maximum duration of 9 hours, run the following command to verify the new values.
 
   ```powershell
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'RoomMailbox')} | Get-CalendarProcessing | Format-List Identity,ScheduleOnlyDuringWorkHours,MaximumDurationInMinutes
+  Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'RoomMailbox'" | Get-CalendarProcessing | Format-List Identity,ScheduleOnlyDuringWorkHours,MaximumDurationInMinutes
   ```

@@ -1,25 +1,26 @@
 ---
 localization_priority: Normal
-description: 'Summary: This article covers the most common questions asked by customers and administrators about using Outlook for iOS and Android with Exchange Online and Office 365.'
+description: Learn about the most common questions asked by customers and administrators about using Outlook for iOS and Android with Exchange Online and Microsoft 365 or Office 365.
 ms.topic: conceptual
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 747d4875-4b81-4b10-a206-fc2cbab83314
-ms.date:
-title: Outlook Exchange Online FAQ, Outlook for iOS Exchange FAQ, Outlook for Android FAQ, Outlook for iOS security concerns, Outlook for Android security concerns, Outlook for iOS cloud architecture, Outlook for Android cloud architecture, Outlook app Office 365 architecture, Outlook app attachment faq, Outlook app contacts faq, Outlook app license faq
+title: "Outlook for iOS and Android in Exchange Online: FAQ"
 ms.collection:
 - exchange-online
 - M365-email-calendar
 ms.reviewer: smithre4
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
-
+ms.custom: seo-marvel-apr2020
 ---
 
 # Outlook for iOS and Android in Exchange Online: FAQ
 
- **Summary**: This article covers the most common questions asked by customers and administrators about using Outlook for iOS and Android with Exchange Online and Office 365.
+ **Summary**: This article covers the most common questions asked by customers and administrators about using Outlook for iOS and Android with Exchange Online and Microsoft 365 or Office 365.
 
 The Outlook for iOS and Android app is designed to enable users in your organization to do more from their mobile devices, by bringing together email, calendar, contacts, and other files. The following sections highlight the most common questions we receive, across three key areas:
 
@@ -33,41 +34,41 @@ The Outlook for iOS and Android app is designed to enable users in your organiza
 
 The following questions are about the overall architecture of Outlook for iOS and Android in Exchange Online, as well as user authentication and other security concerns.
 
-### Q: What cloud architecture is utilized by Outlook for iOS and Android for Office 365 accounts?
+### Q: What cloud architecture is utilized by Outlook for iOS and Android for Microsoft 365 or Office 365 accounts?
 
-For more information on the architecture, see [Outlook for iOS and Android in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android).
+For more information on the architecture, see [Outlook for iOS and Android in Exchange Online](./outlook-for-ios-and-android.md).
 
-### Q: Can I add two different Office 365 accounts from different Office 365 regions to Outlook for iOS and Android?
+### Q: Can I add two different Microsoft 365 or Office 365 accounts from different regions to Outlook for iOS and Android?
 
-Yes, provided both accounts do not have Intune App Protection Policies assigned. However, for Government Community Cloud customers, users may only add their own account and OneDrive for Business storage account to the app; adding personal or other commercial accounts is prevented to meet FedRAMP requirements. For more information on Government Community Cloud restrictions with Outlook for iOS and Android, please see [Using Outlook for iOS and Android in the Government Community Cloud](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-in-the-government-cloud).
+Yes, provided both accounts do not have Intune App Protection Policies assigned. However, for Government Community Cloud customers, users may only add their own account and OneDrive for Business storage account to the app; adding personal or other commercial accounts is prevented to meet FedRAMP requirements. For more information on Government Community Cloud restrictions with Outlook for iOS and Android, please see [Using Outlook for iOS and Android in the Government Community Cloud](./outlook-for-ios-and-android-in-the-government-cloud.md).
 
-### Q: What authentication mechanism is used for Outlook for iOS are Android? Are credentials stored in Office 365?
+### Q: What authentication mechanism is used for Outlook for iOS are Android? Are credentials stored in Microsoft 365 or Office 365?
 
-See [Account setup with modern authentication in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/setup-with-modern-authentication).
+See [Account setup with modern authentication in Exchange Online](./setup-with-modern-authentication.md).
 
 ### Q: Do Outlook for iOS and Android and other Microsoft Office mobile apps support single sign-on?
 
-See [Account setup with modern authentication in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/setup-with-modern-authentication).
+See [Account setup with modern authentication in Exchange Online](./setup-with-modern-authentication.md).
 
 ### Q: What is the lifetime of the tokens generated and used by the Active Directory Authentication Library (ADAL) in Outlook for iOS and Android?
 
-See [Account setup with modern authentication in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/setup-with-modern-authentication).
+See [Account setup with modern authentication in Exchange Online](./setup-with-modern-authentication.md).
 
 ### Q: What happens to the access token when a user's password is changed?
 
-See [Account setup with modern authentication in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/setup-with-modern-authentication).
+See [Account setup with modern authentication in Exchange Online](./setup-with-modern-authentication.md).
 
 ### Q: Does Outlook for iOS and Android support certificate-based authentication?
 
-Yes, Outlook for iOS and Android supports certificate-based authentication for modern authentication-enabled accounts (Office 365 accounts or [on-premises accounts leveraging hybrid modern authentication](https://aka.ms/hmaom)). For more information, see:
+Yes, Outlook for iOS and Android supports certificate-based authentication for modern authentication-enabled accounts (Microsoft 365 or Office 365 accounts or [on-premises accounts leveraging hybrid modern authentication](../../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md)). For more information, see:
 
-- [Configuring Active Directory Federation Services (ADFS) with Office 365](https://go.microsoft.com/fwlink/p/?linkid=849806)
+- [Configuring Active Directory Federation Services (ADFS)](/archive/blogs/samueld/adfs-certauth-aad-o365)
 
-- [Certificate-based authentication on iOS](https://go.microsoft.com/fwlink/p/?linkid=849807)
+- [Certificate-based authentication on iOS](/azure/active-directory/authentication/active-directory-certificate-based-authentication-ios)
 
-- [Certificate-based authentication on Android](https://go.microsoft.com/fwlink/p/?linkid=849808)
+- [Certificate-based authentication on Android](/azure/active-directory/authentication/active-directory-certificate-based-authentication-android)
 
-### Q: What does background synchronization enable? I notice that when I launch the app with it enabled, I still have to wait for messages to download, even after I've received new mail notifications for them; and sometimes, I get reminders for appointments that had been cancelled.
+### Q: What does background synchronization enable? I notice that when I launch the app with it enabled, I still have to wait for messages to download, even after I've received new mail notifications for them; and sometimes, I get reminders for appointments that had been canceled.
 
 Background synchronization enables new message notifications, calendar reminders, badge count updates, and background synchronization of mailbox and calendar information for Outlook for iOS and Android.
 
@@ -99,16 +100,16 @@ If the mobile operating system prevents background synchronization, users will e
 
 - New mail notifications will continue to be delivered, however, upon launching the app, the new messages will have to be downloaded.
 
-- Calendar reminders will fire for appointments that have been cancelled because the app was unable to download and process the meeting cancellation.
+- Calendar reminders will fire for appointments that have been canceled because the app was unable to download and process the meeting cancellation.
 
 > [!NOTE]
 > Apple allows its native Mail and Calendar apps to do background refreshes without any restrictions. Therefore, users may notice a difference in the background synchronization experience between the apps. However, this also results in improved battery life and less data consumption with Outlook for iOS.
 
-### Q: Does each user's instance of Outlook for iOS and Android have a unique device ID in the Office 365-based architecture? How is the device ID generated and is this same device ID used in Intune?
+### Q: Does each user's instance of Outlook for iOS and Android have a unique device ID in the Microsoft 365- or Office 365-based architecture? How is the device ID generated and is this same device ID used in Intune?
 
-Upon initial account login, Outlook for iOS and Android establishes a connection to the Office 365-based architecture. A unique device ID is generated, and this device ID is what appears in Active Directory device records (which can be retrieved with cmdlets such as `Get-MobileDevice` in Exchange Online Powershell) and which appears in HTTP request headers.
+Upon initial account login, Outlook for iOS and Android establishes a connection to the Microsoft 365- or Office 365-based architecture. A unique device ID is generated, and this device ID is what appears in Active Directory device records (which can be retrieved with cmdlets such as `Get-MobileDevice` in Exchange Online Powershell) and which appears in HTTP request headers.
 
-Intune uses a different device ID. The basic workflow for how Intune assigns a device ID is described in [App-based conditional access with Intune](https://docs.microsoft.com/intune/deploy-use/restrict-access-to-email-and-o365-services-with-microsoft-intune). In Intune, the device ID is assigned when the device workplace joins for all device-conditional access scenarios. This is an AAD-generated unique ID for the device. Intune uses that unique ID when sending compliance information, and ADAL uses that unique ID when authenticating to services.
+Intune uses a different device ID. The basic workflow for how Intune assigns a device ID is described in [App-based conditional access with Intune](/intune/deploy-use/restrict-access-to-email-and-o365-services-with-microsoft-intune). In Intune, the device ID is assigned when the device workplace joins for all device-conditional access scenarios. This is an AAD-generated unique ID for the device. Intune uses that unique ID when sending compliance information, and ADAL uses that unique ID when authenticating to services.
 
 ### Q: Does Outlook for iOS and Android support RMS?
 
@@ -121,7 +122,7 @@ In cases where Outlook for iOS and Android receives protected messages and promp
 
 ### Q: Does Outlook for iOS and Android support Teams meetings?
 
-Yes, Outlook for iOS and Android supports both Skype for Business and Teams meetings. The Teams coexistence mode at the Office 365 tenant level and the user level (the user setting takes precedence over the tenant setting) determines the meeting creation experience in Outlook for iOS and Android:
+Yes, Outlook for iOS and Android supports both Skype for Business and Teams meetings. The Teams coexistence mode at the Microsoft 365 or Office 365 organization level and the user level (the user setting takes precedence over the tenant setting) determines the meeting creation experience in Outlook for iOS and Android:
 
 <table>
 <thead>
@@ -156,11 +157,11 @@ Yes, Outlook for iOS and Android supports both Skype for Business and Teams meet
 
 In addition, for users leveraging the native Microsoft sync technology, a Teams Join button is available in calendar events. This makes it easy to Join a Teams meeting and will be available for all coexistence modes. Users who are not leveraging the native Microsoft sync technology will be able to join Teams Meetings using the weblink in the meeting description.
 
-For more information on the Teams coexistence modes, please see [Choose your upgrade journey from Skype from Business to Teams](https://docs.microsoft.com/microsoftteams/upgrade-and-coexistence-of-skypeforbusiness-and-teams).
+For more information on the Teams coexistence modes, please see [Choose your upgrade journey from Skype from Business to Teams](/microsoftteams/upgrade-and-coexistence-of-skypeforbusiness-and-teams).
 
 ### Q: What ports and end points does Outlook for iOS and Android use?
 
-Outlook for iOS and Android communicates via TCP port 443. The app accesses various end points, depending on the activities of the user. Complete information is available in [Office 365 URLs and IP address ranges](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges).
+Outlook for iOS and Android communicates via TCP port 443. The app accesses various end points, depending on the activities of the user. Complete information is available in [URLs and IP address ranges](/office365/enterprise/urls-and-ip-address-ranges).
 
 ### Q: Does Outlook for iOS and Android support proxy configurations?
 
@@ -170,17 +171,25 @@ Yes, Outlook for iOS and Android supports proxy configurations when the proxy in
 
 - **Does not perform authentication**.
 
-Outlook for iOS and Android will consume the proxy configuration as defined by the platform operating system. Typically, this configuration information is deployed via a PAC file. The PAC file must be configured to use hostnames instead of protocol; no additional custom settings are supported. For a list of hostnames that Outlook for iOS and Android accesses, please see [Office 365 URLs and IP address ranges](https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges).
+Outlook for iOS and Android will consume the proxy configuration as defined by the platform operating system. Typically, this configuration information is deployed via a PAC file. The PAC file must be configured to use hostnames instead of protocol; no additional custom settings are supported. For a list of hostnames that Outlook for iOS and Android accesses, please see [URLs and IP address ranges](/office365/enterprise/urls-and-ip-address-ranges).
 
 For tenants that have not been migrated to the native Microsoft sync technology, the following additional requirement applies:
 
-- **Supports and has SOCKS proxy capability enabled**. The Outlook for iOS and Android client utilizes TCP connections to our Office 365-based architecture. The IP ranges for the SOCKS connections are not restricted to a subset of Azure IP ranges, which means that customers cannot define a whitelist range. The PAC must be configured to use hostnames instead of protocol and return the SOCKS proxy information given the host URL; no additional custom settings are supported.
+- **Supports and has SOCKS proxy capability enabled**. The Outlook for iOS and Android client utilizes TCP connections to our Microsoft 365- or Office 365-based architecture. The IP ranges for the SOCKS connections are not restricted to a subset of Azure IP ranges, which means that customers cannot define a allow list range. The PAC must be configured to use hostnames instead of protocol and return the SOCKS proxy information given the host URL; no additional custom settings are supported.
 
 ### Q: Does Outlook for iOS and Android support shared mailboxes?
 
 Yes, Outlook for iOS and Android supports shared mailboxes when the user mailbox and shared mailbox are located in Exchange Online and using the native Microsoft sync technology.
 
-A shared mailbox is a special mailbox type that is created using the -Shared parameter. Access to the shared mailbox by a user is obtained via permissions and not through the use of alternate credentials. For more information, please see [Shared mailboxes in Exchange Online](https://docs.microsoft.com/exchange/collaboration-exo/shared-mailboxes).
+A shared mailbox is a special mailbox type that is created using the -Shared parameter. Access to the shared mailbox by a user is obtained via permissions and not through the use of alternate credentials. For more information, please see [Shared mailboxes in Exchange Online](../../collaboration-exo/shared-mailboxes.md).
+
+### Q: Does Outlook for iOS and Android support delegate mailboxes?
+
+Yes, Outlook for iOS and Android has extended the shared mailbox capability to now allow users to add another person's mailbox when the user has been granted FullAccess permissions to the other person's mailbox. Granting SendAs or Send on Behalf of permissions also allows the user to send messages as the other person's mailbox. For more information on permission assignment, please see [Manage permissions for recipients in Exchange Online](../../recipients-in-exchange-online/manage-permissions-for-recipients.md).
+
+### Q: How many accounts does Outlook for iOS and Android support?
+
+Outlook for iOS and Android supports a maximum of 25 accounts.
 
 ### Q: Does Outlook for iOS and Android support contact management functionality? What about integration with the operating system features?
 
@@ -243,9 +252,24 @@ By enabling contact synchronization between Outlook and the native contacts app,
 > In order to manage contacts (add/edit/delete) in Outlook for Android, contact sync must be enabled. This is because Outlook for Android delegates CRUD operations to the native Contacts app.
 
 Administrators have additional capabilities with respect to contact synchronization between Outlook and the native Contacts app:
-- Administrators can disable contact synchronization via an Intune App Protection Policy. For more information, see [iOS app protection policy settings](https://docs.microsoft.com/intune/app-protection-policy-settings-ios) and [Android app protection policy settings in Microsoft Intune](https://docs.microsoft.com/intune/app-protection-policy-settings-android).
-- Administrators can enable contact synchronization by default on enrolled devices. For more information, see [Deploying Outlook for iOS and Android app configuration settings](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
-- Administrators can reduce the amount of data that is exported to the native Contacts app via an Intune App Protection Policy with contact field export controls. For more information, see [Deploying Outlook for iOS and Android app configuration settings](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+- Administrators can disable contact synchronization via an Intune App Protection Policy. For more information, see [iOS app protection policy settings](/intune/app-protection-policy-settings-ios) and [Android app protection policy settings in Microsoft Intune](/intune/app-protection-policy-settings-android).
+- Administrators can enable contact synchronization by default on enrolled devices. For more information, see [Deploying Outlook for iOS and Android app configuration settings](./outlook-for-ios-and-android-configuration-with-microsoft-intune.md).
+- Administrators can reduce the amount of data that is exported to the native Contacts app via an Intune App Protection Policy with contact field export controls. For more information, see [Deploying Outlook for iOS and Android app configuration settings](./outlook-for-ios-and-android-configuration-with-microsoft-intune.md).
+
+### Q: Is Outlook for iOS and Android available in China?
+
+Yes, Outlook for iOS is available in Apple's App Store in China.
+
+The Google Play Store is not available in China. However, Microsoft has distributed the Outlook for Android app in the following third-party app stores that are available in China:
+
+- [Baidu](http://shouji.baidu.com/software/11483186.html)
+- [Xiaomi](http://app.mi.com/details?id=com.microsoft.office.outlook)
+- [Tencent (QQ)](http://android.app.qq.com/myapp/detail.htm?apkName=com.microsoft.office.outlook)
+- [Huawei](http://appstore.huawei.com/app/C10351487)
+- [Lenovo](http://www.lenovomm.com/app/21140763.html)
+- [Wandoujia](http://www.wandoujia.com/apps/com.microsoft.office.outlook)
+
+As Google's notification service, [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/), is not available in China, new mail push notifications do not function. Instead, Outlook for Android relies on polling notifications. For the native Microsoft sync technology, background polling occurs every 15 minutes while the app is in the background (assuming background synchronization is not disabled).
 
 ## Native Microsoft sync technology migration
 
@@ -261,7 +285,7 @@ Assuming the user is running a supported version of Outlook for iOS and Android,
 
 ### Q: As a tenant administrator, can I control which of my users will be migrated to the native Microsoft sync technology?
 
-No, the migration to the native Microsoft sync technology will be on a tenant-by-tenant basis and not a per-user basis. While the tenant selection order for migration is random, we are being deliberate about migrating Office 365 mailboxes first before we migrate on-premises mailbox accounts. If you are a customer operating in a hybrid configuration where a portion of your mailboxes remain on-premises, the on-premises users leveraging [hybrid modern authentication](https://docs.microsoft.com/Exchange/clients/outlook-for-ios-and-android/use-hybrid-modern-auth) will be migrated to the native Microsoft sync technology at a later date. This means that your Office 365 users will migrate to the native Microsoft sync technology, while the on-premises users continue to use the REST API to connect to Exchange Online.
+No, the migration to the native Microsoft sync technology will be on a tenant-by-tenant basis and not a per-user basis. While the tenant selection order for migration is random, we are being deliberate about migrating Microsoft 365 or Office 365 mailboxes first before we migrate on-premises mailbox accounts. If you are a customer operating in a hybrid configuration where a portion of your mailboxes remain on-premises, the on-premises users leveraging [hybrid modern authentication](../../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md) will be migrated to the native Microsoft sync technology at a later date. This means that your Microsoft 365 and Office 365 users will migrate to the native Microsoft sync technology, while the on-premises users continue to use the REST API to connect to Exchange Online.
 
 Once your tenant is migrated, a user will not switch to the native Microsoft sync technology, until after they launch/resume Outlook for iOS and Android.
 
@@ -275,13 +299,13 @@ No, both Intune App Protection Policies and Azure AD Conditional Access policies
 
 ### Q: Will I have to update my Exchange mobile device access policies (allow block quarantine (ABQ) rules)?
 
-No, the user agent string that Outlook for iOS and Android uses does not change. For more information on what that user agent is, see [Securing Outlook for iOS and Android in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/secure-outlook-for-ios-and-android).
+No, the user agent string that Outlook for iOS and Android uses does not change. For more information on what that user agent is, see [Securing Outlook for iOS and Android in Exchange Online](./secure-outlook-for-ios-and-android.md).
 
-### Q: As an Exchange administrator, is there a way for me to determine which data sync protocol Outlook for iOS and Android clients are utilizing in the Office 365-based architecture?
+### Q: As an Exchange administrator, is there a way for me to determine which data sync protocol Outlook for iOS and Android clients are utilizing in the Microsoft 365- or Office 365-based architecture?
 
 Yes, execute the following command from Exchange Online PowerShell:
 
-```
+```PowerShell
 Get-MobileDevice | where {$_.DeviceModel -eq "Outlook for iOS and Android"} | Format-List FriendlyName,DeviceID,DeviceOS,ClientType
 ```
 
@@ -321,13 +345,13 @@ Assuming authentication is not the issue, there are two areas you can check:
 
 For more information, see [Securing Outlook for iOS and Android in Exchange Online](secure-outlook-for-ios-and-android.md). If one of the above checks doesn't resolve the issue, please open an in-app support ticket.
 
-### Q: Will Outlook for iOS and Android support third-party EMM or MDM solutions?
+### Q: Will Outlook for iOS and Android support third-party unified endpoint management (MDM, EMM, or UEM) solutions?
 
-For more information, please see [Managing Outlook for iOS and Android in Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/manage-outlook-for-ios-and-android).
+For more information, please see [Managing Outlook for iOS and Android in Exchange Online](./manage-outlook-for-ios-and-android.md).
 
 ### Q: Is a license required to use Outlook for iOS and Android?
 
-Outlook for iOS and Android is free for consumer usage from the iOS App store and from Google Play. However, commercial users require an Office 365 subscription that includes the Office desktop applications: Business, Business Premium, Enterprise E3, E5, and ProPlus, or the corresponding versions of those plans for Government or Education. Commercial users with the following subscriptions are allowed to use the Outlook mobile app on devices with integrated screens 10.1" diagonally or less: Office 365 Enterprise E1, Office 365 F1, Office 365 Business Essentials, Office 365 A1, and if you only have an Exchange Online license (without Office). If you only have an Exchange on-premises (Exchange Server) license, you are not licensed to use the app.
+Outlook for iOS and Android is free for consumer usage from the iOS App store and from Google Play. However, commercial users require an Office 365 or Microsoft 365 subscription that includes the Office desktop applications: Microsoft 365 Apps for Business, Microsoft 365 Business Standard, Microsoft 365 Apps for enterprise, Office 365 Enterprise E3, Office 365 Enterprise E5, or the corresponding versions of those plans for Government or Education. Commercial users with the following subscriptions are allowed to use the Outlook mobile app on devices with integrated screens 10.1" diagonally or less: Office 365 Enterprise E1, Office 365 F1, Office 365 A1, Microsoft 365 Business Basic, and if you only have an Exchange Online license (without Office). If you only have an Exchange on-premises (Exchange Server) license, you are not licensed to use the app.
 
 ## Common questions from end-users
 
@@ -335,7 +359,18 @@ The following questions concern end-users in your organization who are using Out
 
 ### Q: My users enabled the "Save Contacts" advanced settings option. However, they are complaining that not all contacts have synchronized on their iOS devices. Are there limitations with synchronization?
 
-The initial export of contacts can only begin when Outlook is in the foreground. A user can switch between apps and the export will continue while Outlook is active in memory. There are iOS limitations when syncing with iCloud that may result in data inconsistency, but Outlook will automatically trigger a reconciliation to ensure that the contacts are always consistently exported (e.g., reconciliation will remove duplicates in the event that Outlook detects exported contacts from a previous export activity). In the event you are seeing an inconsistency and it has not been resolved after a short period of time, wait twenty-four hours and then restart the app to trigger the reconciliation process..
+The initial export of contacts can only begin when Outlook is in the foreground. A user can switch between apps and the export will continue while Outlook is active in memory. There are iOS limitations when syncing with iCloud that may result in data inconsistency, but Outlook will automatically trigger a reconciliation to ensure that the contacts are always consistently exported (e.g., reconciliation will remove duplicates in the event that Outlook detects exported contacts from a previous export activity). Reasons for missing/duplicate contacts might include:
+
+- Outlook for iOS being suspended during sync.
+- Enabling "Save Contacts" simultaneously on multiple devices (such as an iPad and an iPhone).
+- Accrued sync errors over time.
+
+In the event you are seeing an inconsistency and it has not been resolved after a short period of time, wait twenty four hours and then restart the app to trigger the reconciliation process. If that does not work, perform the following steps:
+
+1. Disable "Save Contacts" for the affected account.
+2. Check that all instances of the contacts are removed from the native iOS contacts app. If duplicates remain, go to Settings \> Help & Feedback \> Delete All Saved Contacts in order to remove any lingering duplicates.
+3. Re-enable "Save Contacts" for the affected account.
+4. Follow the on-screen prompts, which may instruct you to keep the phone open and plugged in during initial sync.
 
 ### Q: Why are the Office mobile apps required to be installed on Android in order to render attachments in Outlook, while iOS devices provide a preview of the attachments within Outlook?
 
@@ -369,11 +404,12 @@ If you do not have organization chart data exposed in the app, consult with your
 
 ### Q: How much of my mailbox data is synchronized with Outlook for iOS and Android?
 
-Outlook for iOS and Android synchronizes 500 items per folder, with up to 1000 items per folder if the user taps **Load more conversations**. The app periodically trims the items per folder down to 500, in order to ensure optimal app performance.
-
-> [!NOTE]
-Microsoft sync technology has recently been changed to sync 500 items by default. Outlook for Android supports this. Outlook for iOS will in a future update.
+For initial folder synchronization, Outlook for iOS and Android synchronizes 500 items per folder, with up to 1000 items per folder if the user taps **Load more conversations**. The app periodically trims the items per folder down to the default number, in order to ensure optimal app performance.
 
 ### Q: Why are tasks and notes not available with Outlook for iOS and Android?
 
-Microsoft's strategic direction for task management and note taking on mobile devices is the To-Do and OneNote apps, respectively. To-Do provides integration with the tasks stored in Exchange Online mailboxes.
+Microsoft's strategic direction for task management and note taking on mobile devices is the To-Do and OneNote apps, respectively. OneNote provides access to notes stored in an Exchange Online mailbox with Sticky Notes. To-Do provides integration with the tasks stored in Exchange Online mailboxes; however, Outlook for iOS and Android provides users the ability to create tasks from messages and exposes top tasks in the Zero Query search pane.
+
+### Q: Does Outlook for iOS and Android support moderator message approval or rejection scenarios?
+
+No, Outlook for iOS and Android does not support moderated message requests for approving or rejecting email. Outlook for iOS and Android does not provide an **approve/reject** button, so a moderator cannot approve or reject moderated messages when using Outlook for iOS and Android.

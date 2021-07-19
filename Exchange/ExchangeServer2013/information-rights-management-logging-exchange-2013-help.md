@@ -2,13 +2,14 @@
 title: 'Information Rights Management logging: Exchange 2013 Help'
 TOCTitle: Information Rights Management logging
 ms:assetid: e06f57f9-a9e2-43a2-b88c-288b324d71f0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff461940(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff461940(v=EXCHG.150)
 ms:contentKeyID: 49319937
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -222,8 +223,8 @@ On each server role that has IRM features enabled, IRM logging is enabled by def
 
 For detailed syntax and parameter information, see the following topics:
 
-- [Set-MailboxServer](https://technet.microsoft.com/en-us/library/aa998651\(v=exchg.150\))
+- [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer)
 
-- [Set-ClientAccessServer](https://technet.microsoft.com/en-us/library/bb125157\(v=exchg.150\))
+- [Set-ClientAccessServer](/powershell/module/exchange/Set-ClientAccessServer)
 
-- [Set-TransportService](https://technet.microsoft.com/en-us/library/jj215682\(v=exchg.150\))
+- [Set-TransportService](/powershell/module/exchange/Set-TransportService)

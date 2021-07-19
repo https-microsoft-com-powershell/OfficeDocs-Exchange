@@ -2,13 +2,14 @@
 title: 'Multi-tenancy in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Multi-tenancy in Exchange 2013
 ms:assetid: df09257d-dd98-4f59-b830-1818cedda15c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ862352(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ862352(v=EXCHG.150)
 ms:contentKeyID: 50182057
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,8 +31,8 @@ Exchange 2013 supports multi-tenancy by leveraging the following primary compone
 
   - **Address book policies (ABPs)**: Introduced in Exchange 2010 SP2, ABPs are used in Exchange 2013 to control user access to an address list, the global address list (GAL), and an offline address books (OABs) in the Exchange organization. ABPs group these different Active Directory objects into a single, virtual object that can be assigned to individual users and to create a logical grouping of these resources along a multi-tenant organizational structure. ABP functionality in Exchange 2013 is similar to what it was in Exchange 2010 SP2.
 
-    To learn more about ABPs in Exchange 2013, see [Address book policies](https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/address-book-policies).
+    To learn more about ABPs in Exchange 2013, see [Address book policies](../ExchangeOnline/address-books/address-book-policies/address-book-policies.md).
 
   - **Hosting management solutions**: Some administrators using Exchange 2013 to provide a hosted Exchange solution will benefit from using a customized hosting management approach. Due to some limitations of the Exchange admin center (EAC), Microsoft works with third-party vendors to assist them in the development of control panel and automation solutions that are in compliance with the guidelines and approved framework for hosted Exchange 2013 organizations. We recommend that organizations configuring a hosted Exchange solution leverage these tools to manage their hosted organizations where circumstances require it.
 
-    To learn more about hosted management solutions, including validated solution vendors, see [Exchange Server 2013 hosting and multi-tenancy solutions and guidance](https://www.microsoft.com/en-us/download/details.aspx?id=36790)
+    To learn more about hosted management solutions, including validated solution vendors, see [Exchange Server 2013 hosting and multi-tenancy solutions and guidance](https://www.microsoft.com/download/details.aspx?id=36790)

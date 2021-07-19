@@ -2,13 +2,14 @@
 title: 'Create certificates for UM: Exchange 2013 Help'
 TOCTitle: Create certificates for UM
 ms:assetid: 66807ee7-3d3f-482d-a3ac-d4e9baca3271
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn205141(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn205141(v=EXCHG.150)
 ms:contentKeyID: 53908379
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -34,7 +35,7 @@ For additional management tasks related to managing certificates for Unified Mes
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a certificate request for UM
 

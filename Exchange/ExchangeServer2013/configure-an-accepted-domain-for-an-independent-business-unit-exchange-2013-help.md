@@ -2,13 +2,14 @@
 title: 'Configure an accepted domain for an independent business unit'
 TOCTitle: Configure an accepted domain for an independent business unit
 ms:assetid: bc95dbdc-3669-4c06-ab94-90093bc0dbfd
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657491(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657491(v=EXCHG.150)
 ms:contentKeyID: 49289397
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ In some situations you may want to configure an accepted domain for an independe
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to configure the an accepted domain as an external relay domain
 

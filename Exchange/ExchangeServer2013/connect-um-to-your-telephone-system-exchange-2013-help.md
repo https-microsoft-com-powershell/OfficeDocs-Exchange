@@ -2,13 +2,14 @@
 title: 'Connect UM to your telephone system: Exchange 2013 Help'
 TOCTitle: Connect UM to your telephone system
 ms:assetid: 92c3e029-f732-4d6d-b147-2b3006d5f088
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ673544(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ673544(v=EXCHG.150)
 ms:contentKeyID: 49315464
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,6 +27,6 @@ The following information will help you set up and deploy UM and enable voice ma
 
   - [Connect a VoIP gateway, IP PBX, or session border controller to UM](connect-a-voip-gateway-ip-pbx-or-session-border-controller-to-um-exchange-2013-help.md)   Learn how to connect VoIP gateways or IP PBXs to UM.
 
-  - [Telephony advisor for Exchange 2013](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013)   Learn about supported VoIP gateways, IP PBXs, and PBXs.
+  - [Telephony advisor for Exchange 2013](../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013.md)   Learn about supported VoIP gateways, IP PBXs, and PBXs.
 
-  - [Configuration notes for supported VoIP gateways, IP PBXs, and PBXs](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways)  Learn how to set up your VoIP gateways, IP PBXs, and PBXs.
+  - [Configuration notes for supported VoIP gateways, IP PBXs, and PBXs](../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways.md)  Learn how to set up your VoIP gateways, IP PBXs, and PBXs.

@@ -2,13 +2,14 @@
 title: Troubleshooting SiteMailbox Health Set
 TOCTitle: Troubleshooting SiteMailbox Health Set
 ms:assetid: ac00985c-c9a5-44bf-b152-4b99d8ae24ed
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.sitemailbox(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.sitemailbox(v=EXCHG.150)
 ms:contentKeyID: 49720849
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,9 +31,9 @@ The SiteMailbox monitoring system receives passive sync results from the backgro
 
 - You open the Outlook Web App Options window, and then you click the **Start Sync** button on the **Sync Status** page for the selected site mailbox
 
-For more information about the Update-SiteMailbox cmdlet, see: [Update-SiteMailbox](https://technet.microsoft.com/en-us/library/jj218690\(v=exchg.150\))
+For more information about the Update-SiteMailbox cmdlet, see: [Update-SiteMailbox](/powershell/module/exchange/Update-SiteMailbox)
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## Common issues
 
@@ -48,15 +49,19 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
 2. The message details provide information about the exact cause of the alert. In most cases, the message details provide sufficient troubleshooting information to identify the root cause. If the message details are not clear, do the following:
 
-    1. Open the Exchange Management Shell, and then run the following command to retrieve the details of the health set that issued the alert:
+   1. Open the Exchange Management Shell, and then run the following command to retrieve the details of the health set that issued the alert:
 
-            Get-ServerHealth <server name> | ?{$_.HealthSetName -eq "<health set name>"}
+      ```powershell
+      Get-ServerHealth <server name> | ? {$_.HealthSetName -eq "<health set name>"}
+      ```
 
-        For example, to retrieve the SiteMailbox health set details about server1.contoso.com, run the following command:
+      For example, to retrieve the SiteMailbox health set details about server1.contoso.com, run the following command:
 
-            Get-ServerHealth server1.contoso.com | ?{$_.HealthSetName -eq "SiteMailbox"}
+      ```powershell
+      Get-ServerHealth server1.contoso.com | ? {$_.HealthSetName -eq "SiteMailbox"}
+      ```
 
-    2. Review the command output to determine which monitor reported the error. The **AlertValue** value for the monitor that issued the alert will be `Unhealthy`.
+   2. Review the command output to determine which monitor reported the error. The **AlertValue** value for the monitor that issued the alert will be `Unhealthy`.
 
 ## Troubleshooting steps
 
@@ -115,6 +120,6 @@ To resolve this issue, review the Windows Application event log on the server th
 
 ## For More Information
 
-[What's new in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150540\(v=exchg.150\))
+[What's new in Exchange 2013](../../what-s-new-in-exchange-2013-exchange-2013-help.md)
 
-[Exchange 2013 cmdlets](https://technet.microsoft.com/en-us/library/bb124413\(v=exchg.150\))
+[Exchange PowerShell](/powershell/exchange/)

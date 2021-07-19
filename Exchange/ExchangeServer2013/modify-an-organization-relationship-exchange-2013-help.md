@@ -2,13 +2,14 @@
 title: 'Modify an organization relationship: Exchange 2013 Help'
 TOCTitle: Modify an organization relationship
 ms:assetid: 3713ef83-f01a-41bb-b127-62ca242dd7a4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ673055(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ673055(v=EXCHG.150)
 ms:contentKeyID: 49289228
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-An organization relationship lets users in your Exchange organization share calendar free/busy information with an Office 365 organization or another on-premises Exchange organization. You may want to change the settings of an organization relationship, such as changing the name, temporarily disabling calendar sharing, changing the access level, or changing which security groups will share calendars.
+An organization relationship lets users in your Exchange organization share calendar free/busy information with a Microsoft 365 or Office 365 organization or another on-premises Exchange organization. You may want to change the settings of an organization relationship, such as changing the name, temporarily disabling calendar sharing, changing the access level, or changing which security groups will share calendars.
 
 Before you can share calendars with another organization, you have to set up an authentication relationship with the cloud (also known as "federation") and must meet minimum software requirements. To learn more about federated sharing, see [Sharing](sharing-exchange-2013-help.md).
 
@@ -100,7 +101,7 @@ For additional management tasks related to federation, see [Federation procedure
   Set-OrganizationRelationship -Identity Contoso -FreeBusyAccessEnabled $true -FreeBusyAccessLevel AvailabilityOnly
   ```
 
-For detailed syntax and parameter information, see [Get-OrganizationRelationship](https://technet.microsoft.com/en-us/library/ee332343\(v=exchg.150\)) and [Set-OrganizationRelationship](https://technet.microsoft.com/en-us/library/ee332326\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-OrganizationRelationship](/powershell/module/exchange/Get-OrganizationRelationship) and [Set-OrganizationRelationship](/powershell/module/exchange/Set-OrganizationRelationship).
 
 ## How do you know this worked?
 
@@ -111,4 +112,4 @@ Get-OrganizationRelationship | format-list
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

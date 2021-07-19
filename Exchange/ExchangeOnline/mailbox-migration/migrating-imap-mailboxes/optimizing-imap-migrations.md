@@ -2,11 +2,10 @@
 localization_priority: Normal
 ms.topic: conceptual
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: e6e4b0d0-4c3d-4826-a818-8aeab06b9b76
-ms.date: 8/15/2018
 ms.reviewer: 
-description: When you undertake an Internet Message Access Protocol (IMAP) migration from an on-premises Exchange Server to Office 365, you have a few choices for optimizing the migration performance.
+description: When you undertake an Internet Message Access Protocol (IMAP) migration from an on-premises Exchange Server to Microsoft 365 or Office 365, you have a few choices for optimizing the migration performance.
 title: Tips for optimizing IMAP migrations
 ms.collection: 
 - exchange-online
@@ -17,6 +16,8 @@ search.appverid:
 - MED150
 - BCS160
 audience: Admin
+f1.keywords:
+- CSH
 ms.custom: Adm_O365
 ms.service: exchange-online
 manager: serdars
@@ -25,7 +26,7 @@ manager: serdars
 
 # Tips for optimizing IMAP migrations
 
-When you undertake an Internet Message Access Protocol (IMAP) migration from an on-premises Exchange Server to Office 365, you have a few choices for optimizing the migration performance.
+When you undertake an Internet Message Access Protocol (IMAP) migration from an on-premises Exchange Server to Microsoft 365 or Office 365, you have a few choices for optimizing the migration performance.
 
 ## Optimize IMAP migrations
 
@@ -43,15 +44,15 @@ Here are some tips for optimizing an IMAP migration:
 
     For more information, see:
 
-  - Exchange 2013: [Set connection limits for IMAP4](https://go.microsoft.com/fwlink/p/?LinkId=623631)
+  - Exchange 2013: [Set connection limits for IMAP4](../../../ExchangeServer2013/set-connection-limits-for-imap4-exchange-2013-help.md)
 
-  - Exchange 2010: [View or Configure IMAP4 Properties](https://go.microsoft.com/fwlink/p/?LinkId=183037)
+  - Exchange 2010: [View or Configure IMAP4 Properties](/previous-versions/office/exchange-server-2010/bb691401(v=exchg.141))
 
-  - Exchange 2007: [How to Set Connection Limits for IMAP4](https://go.microsoft.com/fwlink/p/?LinkId=183038)
+  - Exchange 2007: [How to Set Connection Limits for IMAP4](/previous-versions/office/exchange-server-2007/bb123712(v=exchg.80))
 
-  - Exchange 2003: [How to Set Connection Limits](https://go.microsoft.com/fwlink/p/?LinkId=183039)
+  - Exchange 2003: [How to Set Connection Limits](/previous-versions/tn-archive/bb124303(v=exchg.65))
 
-- **Change the DNS Time-to-Live (TTL) setting on your MX record**: Before you start migrating mailboxes, change the Domain Name System (DNS) TTL setting on your current MX record to a shorter interval, such as 3,600 seconds (one hour). Then, when you change the MX record to point to your Office 365 email organization after all mailboxes are migrated, the updated MX record should propagate more quickly because of the shortened TTL interval.
+- **Change the DNS Time-to-Live (TTL) setting on your MX record**: Before you start migrating mailboxes, change the Domain Name System (DNS) TTL setting on your current MX record to a shorter interval, such as 3,600 seconds (one hour). Then, when you change the MX record to point to your Microsoft 365 or Office 365 email organization after all mailboxes are migrated, the updated MX record should propagate more quickly because of the shortened TTL interval.
 
 - **Run one or more test migration batches**: Run a few small IMAP migration batches before you migrate larger numbers of users. In a test migration, you can do the following:
 
@@ -63,7 +64,7 @@ Here are some tips for optimizing an IMAP migration:
 
   - Determine the optimal number of simultaneous connections to the IMAP server that minimize the impact on your internet bandwidth.
 
-  - Verify that folders you exclude aren't migrated to Office 365 mailboxes.
+  - Verify that folders you exclude aren't migrated to Microsoft 365 or Office 365 mailboxes.
 
   - Determine how long it takes to migrate a batch of users.
 
@@ -72,11 +73,11 @@ Here are some tips for optimizing an IMAP migration:
 - **Use administrator credentials in the CSV file to migrate email**: This method is the least disruptive and inconvenient for users, and it will help minimize synchronization errors caused when users change the password on their on-premises account. It also saves you from having to obtain or change user passwords. If you use this method, be sure to verify that the administrator account you use has the necessary permissions to access the mailboxes you're migrating.
 
     > [!NOTE]
-    > If you decide to use user credentials in the CSV file, consider globally changing users' passwords, and then preventing users from changing their password on their on-premises account before you migrate their mailboxes. If users change their password before their mailbox is migrated to the cloud-based mailbox, the migration will fail. If they change their password after the mailbox is migrated, new email sent to their mailbox on the IMAP server won't be migrated to their Office 365 mailbox.
+    > If you decide to use user credentials in the CSV file, consider globally changing users' passwords, and then preventing users from changing their password on their on-premises account before you migrate their mailboxes. If users change their password before their mailbox is migrated to the cloud-based mailbox, the migration will fail. If they change their password after the mailbox is migrated, new email sent to their mailbox on the IMAP server won't be migrated to their Microsoft 365 or Office 365 mailbox.
 
-- **Don't delete mailboxes or change their SMTP addresses during migration**: The migration system will report an error when it can't find a mailbox that's been migrated. Be sure to complete the migration and delete the migration batch before you delete or change the SMTP address of an Office 365 or on-premises mailbox that's been migrated.
+- **Don't delete mailboxes or change their SMTP addresses during migration**: The migration system will report an error when it can't find a mailbox that's been migrated. Be sure to complete the migration and delete the migration batch before you delete or change the SMTP address of a Microsoft 365, Office 365, or on-premises mailbox that's been migrated.
 
-- **Communicate with your users**: Let users know ahead of time that you'll be migrating the content of their on-premises mailboxes to your Office 365 organization. Consider the following:
+- **Communicate with your users**: Let users know ahead of time that you'll be migrating the content of their on-premises mailboxes to your Microsoft 365 or Office 365 organization. Consider the following:
 
   - Tell users that email messages larger than 35 MB won't be migrated. Ask users to save very large messages and attachments to their local computer or to a removable USB drive.
 

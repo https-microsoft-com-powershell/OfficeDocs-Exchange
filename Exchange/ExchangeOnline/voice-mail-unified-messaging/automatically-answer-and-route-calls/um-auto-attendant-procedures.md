@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Set up a UM auto attendant
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 9e59d68f-e11a-49b0-ac6b-88061761fd45
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: UM auto attendant procedures in Exchange Online
 ms.collection: exchange-online
 audience: ITPro

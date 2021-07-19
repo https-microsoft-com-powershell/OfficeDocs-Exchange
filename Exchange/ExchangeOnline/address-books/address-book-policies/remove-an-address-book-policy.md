@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Learn how to remove address book policies (ABPs) from Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: c20c6f82-2f75-4116-9be1-c5af10113f71
-ms.date: 6/24/2018
 ms.reviewer:
 title: Remove an address book policy in Exchange Online
 ms.collection:
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -29,10 +30,10 @@ You can only remove ABPs from your Exchange Online organization using Exchange O
 
 - By default, the Address List role isn't assigned to any role groups in Exchange Online. To use any cmdlets or features that require the Address List role, you need to add the role to a role group. For more information, see [Modify role groups](../../permissions-exo/role-groups.md#modify-role-groups).
 
-- To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to remove an ABP
 
@@ -40,39 +41,39 @@ You can only remove ABPs from your Exchange Online organization using Exchange O
 
 1. Replace \<ABPName\> with the name of the ABP, and run the following command to get the **DistinguishedName** (DN) value of the ABP that you want to remove:
 
-   ```
+   ```PowerShell
    Get-AddressBookPolicy -Identity "<ABPName>" | Format-List DistinguishedName
    ```
 
 2. To see if the ABP is assigned to an active mailbox, replace \<ABPDistinguishedName\> with the DN of the ABP and run the following command:
 
-   ```
-   Get-Mailbox -ResultSize unlimited -Filter {AddressBookPolicy -eq '<ABPDistinguishedName>'}
+   ```PowerShell
+   Get-Mailbox -ResultSize unlimited -Filter "AddressBookPolicy -eq '<ABPDistinguishedName>'"
    ```
 
    To remove the ABP assignment from any active mailboxes that you find, replace \<ABPDistinguishedName\> with the DN of the ABP and run the following commands:
 
-   ```
-   $a = Get-Mailbox -ResultSize unlimited -Filter {AddressBookPolicy -eq '<ABPDistinguishedName>'}
+   ```PowerShell
+   $a = Get-Mailbox -ResultSize unlimited -Filter "AddressBookPolicy -eq '<ABPDistinguishedName>'"
    ```
 
-   ```
+   ```PowerShell
    $a | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -AddressBookPolicy $null}
    ```
 
 3. To see if the ABP is assigned to a soft-deleted (recoverable) mailbox, replace \<ABPDistinguishedName\> with the DN of the ABP and run the following command:
 
-   ```
-   Get-Mailbox -SoftDeletedMailbox -ResultSize unlimited -Filter {AddressBookPolicy -eq '<ABPDistinguishedName>'}
+   ```PowerShell
+   Get-Mailbox -SoftDeletedMailbox -ResultSize unlimited -Filter "AddressBookPolicy -eq '<ABPDistinguishedName>'"
    ```
 
    To remove the ABP assignment from any soft-deleted mailboxes that you find, replace \<ABPDistinguishedName\> with the DN of the ABP and run the following commands:
 
-   ```
-   $s = Get-Mailbox -SoftDeletedMailbox -ResultSize unlimited -Filter {AddressBookPolicy -eq '<ABPDistinguishedName>'}
+   ```PowerShell
+   $s = Get-Mailbox -SoftDeletedMailbox -ResultSize unlimited -Filter "AddressBookPolicy -eq '<ABPDistinguishedName>'"
    ```
 
-   ```
+   ```PowerShell
    $s | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -AddressBookPolicy $null}
    ```
 
@@ -82,17 +83,17 @@ You can only remove ABPs from your Exchange Online organization using Exchange O
 
 To remove an ABP, use this syntax:
 
-```
+```PowerShell
 Remove-AddressBookPolicy -Identity <ABPIdentity>
 ```
 
 This example removes the ABP named ABP TailspinToys.
 
-```
+```PowerShell
 Remove-AddressBookPolicy -Identity "ABP TailspinToys"
 ```
 
-For detailed syntax and parameter information, see [Remove-AddressBookPolicy](https://technet.microsoft.com/library/57ff215a-cba5-46d1-a7f7-ab2512ce4b6f.aspx).
+For detailed syntax and parameter information, see [Remove-AddressBookPolicy](/powershell/module/exchange/remove-addressbookpolicy).
 
 ## How do you know this worked?
 
@@ -100,12 +101,12 @@ To verify that you've successfully removed an ABP, use either of these procedure
 
 - Run the following command to verify that the ABP isn't listed:
 
-  ```
+  ```PowerShell
   Get-AddressBookPolicy
   ```
 
 - Replace _\<ABPName\>_ with the name of the ABP, and run the following command to confirm that an error is returned:
 
-  ```
+  ```PowerShell
   Get-AddressBookPolicy -Identity "<ABPName>"
   ```

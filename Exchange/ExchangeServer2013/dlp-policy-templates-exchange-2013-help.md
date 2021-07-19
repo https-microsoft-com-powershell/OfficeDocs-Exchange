@@ -4,9 +4,10 @@ TOCTitle: DLP policy templates in Exchange
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: c7b1a8e4-30d9-4409-85c5-f85ae023737d
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,11 +17,11 @@ _**Applies to:** Exchange Server 2013_
 
 You can use data loss prevention (DLP) policy templates to get started with your DLP solution in Microsoft Exchange 2013. A DLP policy template is a model for a policy. You can select a template to begin the process of building your own customized DLP policy. Within your DLP policy, you can customize the rules to ensure that it meets your business needs for data loss prevention. Several policy templates are supplied by Microsoft, but these are not the only way to implement a data loss prevention solution in Exchange.
 
-Looking for management tasks related to DLP policy templates? See [DLP Procedures](https://technet.microsoft.com/library/e2f575aa-552e-4dcc-8d7b-1ffd697d67df.aspx).
+Looking for management tasks related to DLP policy templates? See [DLP procedures](dlp-procedures-exchange-2013-help.md).
 
 ## Extend the templates and information types to meet your needs
 
-You can incorporate sensitive-content definitions and policy templates from Microsoft Partners or from files that you develop yourself as an addition to the DLP policy templates, information types, and rules already provided in Exchange 2013. Presented here are several ways in which you can add your own unique DLP content and extend DLP functionality. The templates already provided by Microsoft are a convenient method to get started with a DLP solution. In order to extend the DLP features with your own unique DLP policy template files, you must understand the XML schema requirements for policy templates that are created independent of Exchange. To learn more about the Exchange Management Shell cmdlets associated with DLP policy templates, see cmdlets related to `Get-DlpPolicyTemplate` in [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx). Furthermore, you can define your own sensitive content types after you understand the format and procedure to incorporate them. To learn more about the Exchange Management Shell cmdlets associated with DLP policy templates, see cmdlets related to `Get-ClassificationRuleCollection` in [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx).
+You can incorporate sensitive-content definitions and policy templates from Microsoft Partners or from files that you develop yourself as an addition to the DLP policy templates, information types, and rules already provided in Exchange 2013. Presented here are several ways in which you can add your own unique DLP content and extend DLP functionality. The templates already provided by Microsoft are a convenient method to get started with a DLP solution. In order to extend the DLP features with your own unique DLP policy template files, you must understand the XML schema requirements for policy templates that are created independent of Exchange. To learn more about the Exchange Management Shell cmdlets associated with DLP policy templates, see [Get-DlpPolicyTemplate](/powershell/module/exchange/get-dlppolicytemplate). Furthermore, you can define your own sensitive content types after you understand the format and procedure to incorporate them. To learn more about the Exchange Management Shell cmdlets associated with DLP policy templates, see [Get-ClassificationRuleCollection](/powershell/module/exchange/get-classificationrulecollection).
 
 > [!CAUTION]
 > You should turn on your DLP policies in test mode before enforcing them in your production environment. During such tests, we recommended that you configure sample user mailboxes and send test messages that invoke your test policies in order to confirm the results.
@@ -37,13 +38,9 @@ You can create a DLP policy template file apart from Exchange that meets the spe
 
 You can incorporate DLP detection capabilities with traditional transport rules without creating a new DLP policy. If you have created a complex set of rules in a previous version of Exchange, and you want to duplicate them or add sensitive information detection in Exchange 2013, then you can use the transport rules editor in the Exchange admin center or the Exchange management shell to incorporate these two features. To get started with this, see the following information:
 
-- [Transport Rules](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx)
-
-- [Transport rules](https://technet.microsoft.com/library/743bd525-0ca2-426d-b76c-b4a052bc8886.aspx)
+- [Transport rules in Exchange 2013](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md)
 
 - [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md)
-
-- [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx)
 
 ### Use DLP policies created by Microsoft
 

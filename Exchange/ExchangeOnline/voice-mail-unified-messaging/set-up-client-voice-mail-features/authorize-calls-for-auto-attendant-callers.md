@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can enable dialing authorizations on a Unified Messaging (UM) auto attendant. Dialing authorizations on an auto attendant are used to prohibit users who call in to the auto attendant from making in-country/region or international telephone calls, or outdialing. Outdialing happens when Unified Messaging makes an outgoing call for a user after they've called into a phone number that is configured on a UM auto attendant.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: c6c94fad-64df-44aa-a198-980f017ef716
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Authorize calls for auto attendant callers in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -25,7 +26,7 @@ For additional management tasks related to outdialing, see [Allowing users to ma
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM auto attendants" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -36,7 +37,7 @@ For additional management tasks related to outdialing, see [Allowing users to ma
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to enable dialing authorizations on a UM auto attendant for in-country/region rule groups
 
@@ -62,6 +63,6 @@ For additional management tasks related to outdialing, see [Allowing users to ma
 
 This example enables the InCountry/RegionGroup1, InCountry/RegionGroup2. InternationalGroup1, and InternationalGroup2 dialing authorizations on a UM auto attendant named `MyUMAutoAttendant`.
 
-```
+```PowerShell
 Set-UMAutoAttendant -Identity MyUMAutoAttendant -AllowedInCountryOrRegionGroups InCountry/RegionGroup1,InCountry/RegionGroup2 -AllowedInternationalGroups InternationalGroup1,InternationalGroup2
 ```

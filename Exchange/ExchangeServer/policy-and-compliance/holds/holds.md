@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 71031c06-852d-44d8-b558-dff444eaef8c
-ms.date: 7/6/2018
 ms.reviewer:
 title: In-Place Hold and Litigation Hold in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -74,7 +75,7 @@ If you're upgrading from Exchange Server 2010, the notion of legal hold is to ho
 ## Placing a mailbox on hold
 <a name="MBX"> </a>
 
-The Legal Hold management role is required to place a mailbox on Litigation Hold or In-Place Hold. But to create a query-based In-Place Hold, you must also be assigned the Mailbox Search role. Users that have been added to the [Discovery Management](https://technet.microsoft.com/library/b8bc5922-a8c9-4707-906d-fa38bb87da8f.aspx) role-based access control (RBAC) role group (or assigned the Legal Hold and Mailbox Search roles) can place users hold and create a query-based In-Place Hold. To learn how to add members to the Discovery Management role group, see [Assign eDiscovery permissions in Exchange Server](../../policy-and-compliance/ediscovery/assign-permissions.md).
+The Legal Hold management role is required to place a mailbox on Litigation Hold or In-Place Hold. But to create a query-based In-Place Hold, you must also be assigned the Mailbox Search role. Users that have been added to the [Discovery Management](../../../ExchangeServer2013/discovery-management-exchange-2013-help.md) role-based access control (RBAC) role group (or assigned the Legal Hold and Mailbox Search roles) can place users hold and create a query-based In-Place Hold. To learn how to add members to the Discovery Management role group, see [Assign eDiscovery permissions in Exchange Server](../../policy-and-compliance/ediscovery/assign-permissions.md).
 
 You can place a mailbox Litigation Hold on the **Recipients** page in the Exchange admin center or by using the `Set-Mailbox -LitigationHoldEnabled $true` command in the Exchange Management Shell.
 
@@ -126,16 +127,16 @@ If a mailbox isn't placed on Litigation Hold or In-Place Hold, items in the Purg
 ## Holds and mailbox quotas
 <a name="quotas"> </a>
 
-Items in the Recoverable Items folder aren't calculated toward the user's mailbox quota. In Exchange, the Recoverable Items folder has its own quota. For Exchange, the default values for the _RecoverableItemsWarningQuota_ and _RecoverableItemsQuota_ mailbox properties are set to 20 GB and 30 GB respectively. To modify these values for a mailbox database for Exchange Server, use the [Set-MailboxDatabase](https://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet. To modify them for individual mailboxes, use the [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet.
+Items in the Recoverable Items folder aren't calculated toward the user's mailbox quota. In Exchange, the Recoverable Items folder has its own quota. For Exchange, the default values for the _RecoverableItemsWarningQuota_ and _RecoverableItemsQuota_ mailbox properties are set to 20 GB and 30 GB respectively. To modify these values for a mailbox database for Exchange Server, use the [Set-MailboxDatabase](/powershell/module/exchange/set-mailboxdatabase) cmdlet. To modify them for individual mailboxes, use the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet.
 
 When a user's Recoverable Items folder exceeds the warning quota for recoverable items (as specified by the _RecoverableItemsWarningQuota_ parameter), an event is logged in the Application event log of the Mailbox server. When the folder exceeds the quota for recoverable items (as specified by the _RecoverableItemsQuota_ parameter), users won't be able to empty the Deleted Items folder or permanently delete mailbox items. Also copy-on-write won't be able to create copies of modified items. Therefore, it's critical that you monitor Recoverable Items quotas for mailbox users placed on In-Place Hold.
 
 ## Holds and email forwarding
 <a name="emailforwarding"> </a>
 
-Users with mailboxes on Exchange Server can use Outlook and Outlook on the web to set up email forwarding for their mailbox. Email forwarding lets users configure their mailbox to forward email messages sent to their mailbox to another mailbox located in or outside of their organization. Administrators can also set up mail flow rules (also known as transport rules) to forward message to another mailbox. In both cases, email forwarding can be configured so that any message sent to the original mailbox isn't copied to that mailbox and is only sent to the forwarding address.
+Users with mailboxes on Exchange Server can use Outlook and Outlook on the web to set up email forwarding for their mailbox. Email forwarding lets users configure their mailbox to forward email messages sent to their mailbox to another mailbox located inside or outside of their organization. Administrators can also set up mail flow rules (also known as transport rules) to forward messages to another mailbox. In both cases, email forwarding can be configured so that any message sent to the original mailbox isn't copied to that mailbox and is only sent to the forwarding address.
 
-If email forwarding is set up for a mailbox and message aren't copied, what happens if the mailbox is on hold? During the delivery process, the hold settings for the mailbox are checked. If the message meets the hold criteria for the mailbox, a copy of the message is saved to the Recoverable Items folder. That means you can use In-Place eDiscovery to search the original mailbox to find messages that were forwarded to another mailbox.
+If a mailbox is on hold, additional steps are taken. During the delivery process, the hold settings for the mailbox are checked. If the message meets the hold criteria for the mailbox, a copy of the message is saved to the Inbox folder. That means you can use In-Place eDiscovery to search the original mailbox to find messages that were forwarded to another mailbox.
 
 ## Preserving archived Skype for Business content
 <a name="lync"> </a>
@@ -146,9 +147,9 @@ When you place an Exchange Server mailbox on In-Place Hold or Litigation Hold, S
 
 To enable archiving of Skype for Business content in Exchange Server mailboxes, you must configure Skype for Business Server 2015 integration with Exchange Server. For details, see the following topics:
 
-- [Planning for Archiving](https://technet.microsoft.com/library/jj205069%28v=ocs.15%29)
+- [Planning for Archiving](/lyncserver/lync-server-2013-planning-for-archiving)
 
-- [Deploying Archiving](https://technet.microsoft.com/library/jj205147%28v=ocs.15%29)
+- [Deploying Archiving](/lyncserver/lync-server-2013-deploying-archiving)
 
 ## Deleting a mailbox on hold
 <a name="deletehold"> </a>
@@ -161,10 +162,10 @@ If you delete a user account that has a mailbox, the Exchange Information store 
 
 3. Retain the mailbox until all data has been removed or until preserving the data is no longer required.
 
-## Migrating mailboxes on hold from Exchange Server to Office 365
+## Migrating mailboxes on hold from Exchange Server to Microsoft 365 or Office 365
 <a name="migration"> </a>
 
-If you have an Exchange hybrid deployment, the following conditions are true when you move (onboard) an on-premises Exchange Server mailbox to Exchange Online in Office 365:
+If you have an Exchange hybrid deployment, the following conditions are true when you move (onboard) an on-premises Exchange Server mailbox to Exchange Online in Microsoft 365 or Office 365:
 
 - If the on-premises mailbox is on Litigation Hold or In-Place Hold, the hold settings are preserved after the mailbox is moved to Exchange Online.
 
@@ -173,4 +174,4 @@ If you have an Exchange hybrid deployment, the following conditions are true whe
 Hold settings and content in the Recoverable Items folder are also preserved when you move (offboard) an Exchange Online mailbox to your on-premises Exchange Server organization.
 
 > [!TIP]
-> For Exchange Server, an Exchange hybrid deployment is the recommended way to migrate on-premises mailboxes to Office 365.
+> For Exchange Server, an Exchange hybrid deployment is the recommended way to migrate on-premises mailboxes to Microsoft 365 or Office 365.

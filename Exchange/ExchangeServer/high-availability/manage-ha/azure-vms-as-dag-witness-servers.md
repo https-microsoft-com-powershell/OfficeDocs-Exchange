@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 03d1e215-518b-4b48-bfcd-8d187ff8f5ef
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Using a Microsoft Azure VM as a DAG witness server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -29,7 +30,7 @@ This configuration requires three separate physical locations: two datacenters f
 
 This configuration requires a multi-site VPN. It has always been possible to connect your organization's network to Microsoft Azure using a site-to-site VPN connection. However, in the past, Azure supported only a single site-to-site VPN. Since configuring a DAG and its witness across three datacenters required multiple site-to-site VPNs, placement of the DAG witness on an Azure VM wasn't initially possible.
 
-In June 2014, Microsoft Azure introduced multi-site VPN support, which enabled organizations to connect multiple datacenters to the same Azure virtual network. This change also made it possible for organizations with two datacenters to leverage Microsoft Azure as a third location to place their DAG witness servers. To learn more about the multi-site VPN feature in Azure, see [Configure a Multi-Site VPN](https://go.microsoft.com/fwlink/p/?linkId=522621).
+In June 2014, Microsoft Azure introduced multi-site VPN support, which enabled organizations to connect multiple datacenters to the same Azure virtual network. This change also made it possible for organizations with two datacenters to leverage Microsoft Azure as a third location to place their DAG witness servers. To learn more about the multi-site VPN feature in Azure, see [Configure a Multi-Site VPN](/azure/vpn-gateway/vpn-gateway-multi-site).
 
 > [!NOTE]
 > This configuration leverages Azure virtual machines and a multi-site VPN for deploying the witness server and does not use the Azure Cloud Witness.
@@ -41,11 +42,11 @@ The following diagram is an overview of using a Microsoft Azure file server VM a
 > [!NOTE]
 > It is technically possible to use a single Azure VM for this purpose and place the file witness share on the domain controller. However, this will result in an unnecessary elevation of privileges. Therefore, it is not a recommended configuration.
 
-**DAG witness server on Microsoft Azure**
+### DAG witness server on Microsoft Azure
 
 ![Exchange DAG witness on Azure overview](../../media/7cbda882-bbae-4be7-b0ea-60947b8aa4ef.png)
 
-The first thing you need to do in order to use a Microsoft Azure VM for your DAG witness is to get a subscription. See [How to buy Azure](https://go.microsoft.com/fwlink/p/?linkId=398989) for the best way to acquire an Azure subscription.
+The first thing you need to do in order to use a Microsoft Azure VM for your DAG witness is to get a subscription. See [How to buy Azure](https://azure.microsoft.com/pricing/purchase-options/) for the best way to acquire an Azure subscription.
 
 After you have your Azure subscription, you need to do the following in order:
 
@@ -66,7 +67,7 @@ After you have your Azure subscription, you need to do the following in order:
 
 - A public IP address that is not behind NAT for the VPN gateways in each site.
 
-- A VPN device in each site that is compatible with Microsoft Azure. See [About VPN Devices for Virtual Network](https://go.microsoft.com/fwlink/p/?linkId=522619) for more information about compatible devices.
+- A VPN device in each site that is compatible with Microsoft Azure. See [About VPN Devices for Virtual Network](/azure/vpn-gateway/vpn-gateway-about-vpn-devices) for more information about compatible devices.
 
 - Familiarity with DAG concepts and management.
 
@@ -78,7 +79,7 @@ Configuring the Microsoft Azure network is the most crucial part of the deployme
 
 #### Register DNS servers
 
-Because this configuration requires name resolution between the on-premises servers and Azure VMs, you will need to configure Azure to use your own DNS servers. [Name resolution (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx) topic provides an overview of name resolution in Azure.
+Because this configuration requires name resolution between the on-premises servers and Azure VMs, you will need to configure Azure to use your own DNS servers. [Name resolution for resources in Azure virtual networks](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances) topic provides an overview of name resolution in Azure.
 
 Do the following to register your DNS servers:
 
@@ -150,26 +151,26 @@ The next step is to establish the VPN gateways to your on-premises sites. To do 
 
 6. Configure on-premises VPN devices.
 
-For more information about configuring a multi-site VPN, see [Configure a Multi-Site VPN](https://go.microsoft.com/fwlink/p/?linkId=522621).
+For more information about configuring a multi-site VPN, see [Configure a Multi-Site VPN](/azure/vpn-gateway/vpn-gateway-multi-site).
 
 #### Establish a VPN gateway to your first site
 
 When creating your virtual gateway, note that you already specified that it will be connected to your first on-premises site. When you go into the virtual network dashboard, you will see that the gateway has not been created.
 
-To establish the VPN gateway on the Azure side, follow the instructions in the [Start the virtual network gateway](https://msdn.microsoft.com/library/azure/jj156210.aspx#bkmk_StartGateway) section of [Configure a Virtual Network Gateway in the Management Portal](https://msdn.microsoft.com/library/azure/jj156210.aspx).
+To establish the VPN gateway on the Azure side, see [VPN Gateway](https://azure.microsoft.com/services/vpn-gateway/).
 
 > [!IMPORTANT]
 > Only perform the steps in the "Start the virtual network gateway" section of the article, and do not continue to the subsequent sections.
 
 #### Export virtual network configuration settings
 
-The Azure management portal doesn't currently allow you to configure a multi-site VPN. For this configuration, you need to export the virtual network configuration settings to an XML file and then modify that file. Follow the instructions at[Export Virtual Network Settings to a Network Configuration File](https://docs.microsoft.com/azure/virtual-network/virtual-networks-using-network-configuration-file) to export your settings.
+The Azure management portal doesn't currently allow you to configure a multi-site VPN. For this configuration, you need to export the virtual network configuration settings to an XML file and then modify that file. Follow the instructions at[Export Virtual Network Settings to a Network Configuration File](/azure/virtual-network/virtual-networks-using-network-configuration-file) to export your settings.
 
 #### Modify the network configuration settings for the multi-site VPN
 
 Open the file you exported in any XML editor. The gateway connections to your on-premises sites are listed in the "ConnectionsToLocalNetwork" section. Search for that term in the XML file to locate the section. This section in the configuration file will look like the following (assuming the site name you created for your local site is "Site A").
 
-```
+```xml
 <ConnectionsToLocalNetwork>
     <LocalNetworkSiteRef name="Site A">
         <Connection type="IPsec" />
@@ -178,7 +179,7 @@ Open the file you exported in any XML editor. The gateway connections to your on
 
 To configure your second site, add another "LocalNetworkSiteRef" section under the "ConnectionsToLocalNetwork" section. The section in the updated configuration file will look like the following (assuming the site name for your second local site is "Site B").
 
-```
+```xml
 <ConnectionsToLocalNetwork>
     <LocalNetworkSiteRef name="Site A">
         <Connection type="IPsec" />
@@ -191,7 +192,7 @@ Save the updated configuration settings file.
 
 #### Import virtual network configuration settings
 
-The second site reference you've added to the configuration file will trigger Microsoft Azure to create a new tunnel. Import the updated file using the instructions in [Import a Network Configuration File](https://msdn.microsoft.com/library/azure/jj156213.aspx). After you complete the import, the virtual network dashboard will show the gateway connections to both of your local sites.
+The second site reference you've added to the configuration file will trigger Microsoft Azure to create a new tunnel. Import the updated file using the instructions in [Create a virtual network (classic) by using the Azure portal](/azure/virtual-network/virtual-networks-create-vnet-classic-pportal). After you complete the import, the virtual network dashboard will show the gateway connections to both of your local sites.
 
 #### Record the Azure gateway IP address and pre-shared keys
 
@@ -199,11 +200,11 @@ After the new network configuration settings are imported, the virtual network d
 
 You also will need to get the pre-shared IPsec/IKE keys for each tunnel that was created. You will use these keys along with the Azure gateway IP address to configure your on-premises VPN devices.
 
-You need to use PowerShell to get the pre-shared keys. If you aren't familiar with using PowerShell to manage Azure, see [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx).
+You need to use PowerShell to get the pre-shared keys. If you aren't familiar with using PowerShell to manage Azure, see [Azure PowerShell](/powershell/azure/).
 
-Use the [Get-AzureVNetGatewayKey](https://msdn.microsoft.com/library/azure/dn495198.aspx) cmdlet to extract the pre-shared keys. Run this cmdlet once for each tunnel. The following example shows the commands you need to run to extract the keys for tunnels between the virtual network "Azure Site" and sites "Site A" and "Site B." In this example, the outputs are saved into separate files. Alternatively, you can pipeline these keys to other PowerShell cmdlets or use them in a script.
+Use the [Get-AzureVNetGatewayKey](/powershell/module/servicemanagement/azure/get-azurevnetgatewaykey) cmdlet to extract the pre-shared keys. Run this cmdlet once for each tunnel. The following example shows the commands you need to run to extract the keys for tunnels between the virtual network "Azure Site" and sites "Site A" and "Site B." In this example, the outputs are saved into separate files. Alternatively, you can pipeline these keys to other PowerShell cmdlets or use them in a script.
 
-```
+```powershell
 Get-AzureVNETGatewayKey -VNetName "Azure Site" -LocalNetworkSiteName "Site A" | Set-Content -Path C:\Keys\KeysForTunnelToSiteA.txt
 Get-AzureVNETGatewayKey -VNetName "Azure Site" -LocalNetworkSiteName "Site B" | Set-Content -Path C:\Keys\KeysForTunnelToSiteB.txt
 ```
@@ -222,33 +223,19 @@ For example, if you're using a Routing and Remote Access Service (RRAS) VPN devi
 
 3. Find the **Add-VpnS2SInterface** command in this section. Verify that the value for the _SharedSecret_ parameter matches the pre-shared key for the site for which you're configuring the VPN device.
 
-Other devices might require additional verifications. For example, the configuration scripts for Cisco devices set ACL rules by using the local IP address ranges. You need to review and verify all references to the local site in the configuration script before you use it. See the following topics for more information:
-
-[Routing and Remote Access Service (RRAS) templates](https://msdn.microsoft.com/library/azure/dn133801.aspx)
-
-[Cisco ASR templates](https://msdn.microsoft.com/library/azure/dn133802.aspx)
-
-[Cisco ISR templates](https://msdn.microsoft.com/library/azure/dn133800.aspx)
-
-[Juniper SRX templates](https://msdn.microsoft.com/library/azure/dn133794.aspx)
-
-[Juniper J-series templates](https://msdn.microsoft.com/library/azure/dn133799.aspx)
-
-[Juniper ISG templates](https://msdn.microsoft.com/library/azure/dn133797.aspx)
-
-[Juniper SSG templates](https://msdn.microsoft.com/library/azure/dn133796.aspx)
+Other devices might require additional verifications. For example, the configuration scripts for Cisco devices set ACL rules by using the local IP address ranges. You need to review and verify all references to the local site in the configuration script before you use it. 
 
 #### Checkpoint: Review the VPN status
 
 At this point, both of your sites are connected to your Azure virtual network through the VPN gateways. You can validate the status of the multi-site VPN by running the following command in PowerShell.
 
-```
+```powershell
 Get-AzureVnetConnection -VNetName "Azure Site" | Format-Table LocalNetworkSiteName, ConnectivityState
 ```
 
 If both tunnels are up and running, the output of this command will look like the following.
 
-```
+```console
 LocalNetworkSiteName    ConnectivityState
 --------------------    -----------------
 Site A                  Connected
@@ -268,22 +255,22 @@ You need to create a minimum of two virtual machines in Microsoft Azure for this
 
 2. Specify preferred IP addresses for both the domain controller and the file server using Azure PowerShell. When you specify a preferred IP address for a VM, it needs to be updated, which will require restarting the VM. The following example sets the IP addresses for Azure-DC and Azure-FSW to 10.0.0.10 and 10.0.0.11 respectively.
 
-   ```
+   ```powershell
    Get-AzureVM Azure-DC | Set-AzureStaticVNetIP -IPAddress 10.0.0.10 | Update-AzureVM
    ```
 
-   ```
+   ```powershell
    Get-AzureVM Azure-FSW | Set-AzureStaticVNetIP -IPAddress 10.0.0.11 | Update-AzureVM
    ```
 
    > [!NOTE]
-   > A VM with a preferred IP address will attempt to use that address. However, if that address has been assigned to a different VM, the VM with the preferred IP address configuration will not start. To avoid this situation, make sure that the IP address you use isn't assigned to another VM. See [Configure a Static Internal IP Address for a VM](https://msdn.microsoft.com/library/azure/dn630228.aspx) for more information.
+   > A VM with a preferred IP address will attempt to use that address. However, if that address has been assigned to a different VM, the VM with the preferred IP address configuration will not start. To avoid this situation, make sure that the IP address you use isn't assigned to another VM.
 
 3. Provision the domain controller VM on Azure using the standards used by your organization.
 
 4. Prepare the file server with the prerequisites for an Exchange DAG witness:
 
-   1. Add the File Server role using the Add Roles and Features Wizard or the [Add-WindowsFeature](https://technet.microsoft.com/library/ee662309.aspx) cmdlet.
+   1. Add the File Server role using the Add Roles and Features Wizard or the [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature) cmdlet.
 
    2. Add the Exchange Trusted Subsystems universal security group to the Local Administrators group.
 
@@ -305,7 +292,7 @@ Finally, you need to configure your DAG to use the new witness server. By defaul
 
 2. Run the following command to configure the witness server for your DAGs.
 
-   ```
+   ```powershell
    Set-DatabaseAvailabilityGroup -Identity DAG1 -WitnessServer Azure-FSW
    ```
 
@@ -313,7 +300,7 @@ See the following topics for more information:
 
 [Configure database availability group properties](configure-dag-properties.md)
 
-[Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/dd297934%28v=exchg.150%29.aspx)
+[Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup)
 
 #### Checkpoint: Validate the DAG file share witness
 
@@ -321,7 +308,7 @@ At this point, you have configured your DAG to use the file server on Azure as y
 
 1. Validate the DAG configuration by running the following command.
 
-   ```
+   ```powershell
    Get-DatabaseAvailabilityGroup -Identity DAG1 -Status | Format-List Name, WitnessServer, WitnessDirectory, WitnessShareInUse
    ```
 
@@ -329,13 +316,13 @@ At this point, you have configured your DAG to use the file server on Azure as y
 
 2. If the DAG has an even number of nodes, the file share witness will be configured. Validate the file share witness setting in cluster properties by running the following command. The value for the _SharePath_ parameter should point to the file server and display the correct path.
 
-   ```
+   ```powershell
    Get-ClusterResource -Cluster MBX1 | Get-ClusterParameter | Format-List
    ```
 
 3. Next, verify the status of the "File Share Witness" cluster resource by running the following command. The _State_ of the cluster resource should display **Online**.
 
-   ```
+   ```powershell
    Get-ClusterResource -Cluster MBX1
    ```
 

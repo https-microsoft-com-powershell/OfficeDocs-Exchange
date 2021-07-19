@@ -2,13 +2,14 @@
 title: 'Move a mailbox database using database portability: Exchange 2013 Help'
 TOCTitle: Move a mailbox database using database portability
 ms:assetid: a765ead1-43bc-4786-ae93-1835cacfc8fc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876926(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876926(v=EXCHG.150)
 ms:contentKeyID: 50873806
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ You can use database portability to move a Microsoft Exchange Server 2013 mailbo
 - You can't use the EAC to move user mailboxes to a recovered or dial tone database using database portability.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to move user mailboxes to a recovered or dial tone database using database portability
 
@@ -65,7 +66,7 @@ You can use database portability to move a Microsoft Exchange Server 2013 mailbo
     Mount-Database <DatabaseName>
     ```
 
-6. After the database is mounted, modify the user account settings with the [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)) cmdlet so that the account points to the mailbox on the new mailbox server. To move all of the users from the old database to the new database, use the following syntax.
+6. After the database is mounted, modify the user account settings with the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet so that the account points to the mailbox on the new mailbox server. To move all of the users from the old database to the new database, use the following syntax.
 
     ```powershell
     Get-Mailbox -Database <SourceDatabase> |where {$_.ObjectClass -NotMatch '(SystemAttendantMailbox|ExOleDbSystemMailbox)'}| Set-Mailbox -Database <TargetDatabase>

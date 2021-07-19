@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Unified Messaging (UM) call reports provide information about the calls forwarded to or placed by UM. Use these reports to monitor, troubleshoot, and report on UM for your organization. You can access Unified Messaging call statistic reports by using the Call Statistics tool and access call logs for UM-enabled users by using the User Call Logs tool.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 3a292d85-ce0f-4c15-b8f2-d1fc92965437
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Run reports for voice mail calls in Exchange Online
 ms.collection: exchange-online
 audience: ITPro

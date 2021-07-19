@@ -3,10 +3,11 @@ localization_priority: Normal
 description: 'Summary: The most recent supported Exchange topologies that allow users to access public folders with Outlook 2016 for Mac.'
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: bc9b8226-bd8b-4edc-882b-4f19cfe118eb
-ms.date: 5/19/2017
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Accessing public folders with Outlook 2016 for Mac
 ms.collection: 
 - exchange-online
@@ -38,17 +39,17 @@ The following table summarizes the supported topologies for users with Outlook 2
 > [!NOTE]
 > The scenarios shown in the following table assume that the April 2016 update for Outlook 2016 for Mac has been applied to all clients.
 
-|**Public folders are deployed on...**|**User mailbox is on Exchange 2010 SP3 or later**|**User mailbox is on Exchange 2013 CU13 or later**|**User mailbox is on Exchange 2016 CU2 or later**|**User mailbox is on Office 365/Exchange Online**|
+|**Public folders are deployed on...**|**User mailbox is on Exchange 2010 SP3 or later**|**User mailbox is on Exchange 2013 CU13 or later**|**User mailbox is on Exchange 2016 CU2 or later**|**User mailbox is in Microsoft 365, Office 365, or Exchange Online**|
 |:-----|:-----|:-----|:-----|:-----|
 |Exchange Server 2010 SP3 or later|Supported|Supported|Supported|Not supported|
 |Exchange Server 2013 CU13 or later|Not supported|Supported|Supported|Supported|
 |Exchange Server 2016 CU2 or later|Not supported|Supported|Supported|Supported|
-|Office 365 / Exchange Online|Not supported|Supported|Supported|Supported|
+|Microsoft 365, Office 365, or Exchange Online|Not supported|Supported|Supported|Supported|
 
 The following articles describe how to deploy public folders in your Exchange organization in a co-existence or hybrid topology. As long as your Outlook 2016 for Mac clients have installed the April 2016 update, they will be able to access public folders in the configurations detailed in these articles:
 
-- [Configure legacy public folders where user mailboxes are on Exchange 2013 servers](https://technet.microsoft.com/library/1d5ca19e-696e-4054-a634-15dd34d952b7.aspx)
+- [Configure legacy public folders where user mailboxes are on Exchange 2013 servers](../../../ExchangeServer2013/configure-legacy-public-folders-where-user-mailboxes-are-on-exchange-2013-servers-exchange-2013-help.md)
 
-- [Configure Exchange 2013 public folders for a hybrid deployment](set-up-modern-hybrid-public-folders.md)
+- [Configure Exchange 2013 public folders for a hybrid deployment](../../../ExchangeHybrid/hybrid-deployment/set-up-modern-hybrid-public-folders.md)
 
 - [Configure Exchange Online public folders for a hybrid deployment](set-up-exo-hybrid-public-folders.md)

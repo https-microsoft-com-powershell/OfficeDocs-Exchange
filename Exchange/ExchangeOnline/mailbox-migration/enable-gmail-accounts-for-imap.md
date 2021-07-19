@@ -2,11 +2,8 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-f1_keywords:
-- O365E_AdvSetupEnableGmailImap
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 16380df7-3911-4bc8-943b-cae9ace27827
-ms.date: 8/15/2018
 ms.reviewer: 
 description: Enable yor Gmail account for IMAP so you can view and edit your mail in Microsoft Outlook app.
 title: Enable your Gmail account for IMAP
@@ -22,7 +19,11 @@ search.appverid:
 - MBS150
 - BCS160
 audience: Admin
-ms.custom: Adm_O365
+f1.keywords:
+- CSH
+ms.custom: 
+- Adm_O365
+- O365E_AdvSetupEnableGmailImap
 ms.service: exchange-online
 manager: serdars
 

@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Exchange ActiveSync is a client protocol that lets you synchronize a mobile device with your mailbox.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: ff7f0d3d-1b9d-4c49-b7fe-1ab5d2805b00
-ms.date: 6/24/2018
 ms.reviewer: 
 title: Exchange ActiveSync in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -111,4 +112,4 @@ In addition to the ability to configure security options for communications betw
   - **Require encryption on storage cards**: Select this check box to require encryption on the mobile device's removable storage card. This increases security by encrypting all information on the storage cards for the mobile device.
 
 > [!IMPORTANT]
-> Although the Exchange ActiveSync protocol provides support for the different features listed above, it is up to the mobile device operating system and manufacturers (OEMs) to build support for these features in their mobile operating system and email apps (default or third party). Not all EAS features listed above are supported by 3rd party mobile devices like iOS, Android, etc. Microsoft has no control over which EAS features are supported by these 3rd party mobile device manufacturers. Contact the manufactures directly for help with EAS features on 3rd party mobile devices.
+> Although the Exchange ActiveSync protocol provides support for the different features listed above, it is up to the mobile device operating system and manufacturers (OEMs) to build support for these features in their mobile operating system and email apps (default or third-party). Not all EAS features listed above are supported by third-party mobile devices such as iOS and Android. Microsoft has no control over which EAS features are supported by these third-party mobile device manufacturers. Contact the manufactures directly for help with EAS features on third-party mobile devices.

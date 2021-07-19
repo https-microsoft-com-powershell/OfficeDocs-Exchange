@@ -4,9 +4,10 @@ TOCTitle: Create or remove an In-Place Hold
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 9d5d8d37-a053-4830-9cb1-6e1ede25e963
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,7 +21,7 @@ An In-Place Hold preserves all mailbox content, including deleted items and orig
 
 - Estimated time to complete: 5 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Hold" entry in the [Messaging Policy and Compliance Permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Hold" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 - Depending on your Active Directory topology and replication latency, it may take up to an hour for an In-Place Hold to take effect.
 
@@ -74,7 +75,7 @@ This example creates an In-Place Hold named Hold-CaseId012 and adds the mailbox 
 New-MailboxSearch "Hold-CaseId012"-SourceMailboxes "joe@contoso.com" -InPlaceHoldEnabled $true
 ```
 
-For detailed syntax and parameter information, see [New-MailboxSearch](https://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx).
+For detailed syntax and parameter information, see [New-MailboxSearch](/powershell/module/exchange/new-mailboxsearch).
 
 #### How do you know this worked?
 
@@ -82,7 +83,7 @@ To verify that you have successfully created the In-Place Hold, do one of the fo
 
 - Use the EAC to verify that the In-Place Hold is listed in the list view of the **In-place eDiscovery & hold** tab.
 
-- Use the **Get-MailboxSearch** cmdlet to retrieve the mailbox search and check the search parameters. For an example of how to retrieve a mailbox search, see the examples in [Get-MailboxSearch](https://technet.microsoft.com/library/a2f3ab70-6ec6-4c06-b862-f32d498c3ef8.aspx).
+- Use the **Get-MailboxSearch** cmdlet to retrieve the mailbox search and check the search parameters. For an example of how to retrieve a mailbox search, see the examples in [Get-MailboxSearch](/powershell/module/exchange/get-mailboxsearch).
 
 ## Remove an In-Place Hold
 
@@ -110,7 +111,7 @@ Set-MailboxSearch "Hold-CaseId012" -InPlaceHoldEnabled $false
 Remove-MailboxSearch "Hold-CaseId012"
 ```
 
-For detailed syntax and parameter information, see [Set-Mailboxsearch](https://technet.microsoft.com/library/23201ff0-e30a-4efd-9384-ab0af5815701.aspx).
+For detailed syntax and parameter information, see [Set-Mailboxsearch](/powershell/module/exchange/set-mailboxsearch).
 
 ### How do you know this worked?
 
@@ -118,4 +119,4 @@ To verify that you have successfully removed an In-Place Hold, do one of the fol
 
 - Use the EAC to verify that the In-Place Hold doesn't appear in the list view of the **In-place eDiscovery & hold** tab.
 
-- Use the **Get-MailboxSearch** cmdlet to retrieve all mailbox searches and check that the search you removed is no longer listed. For an example of how to retrieve a mailbox search, see the examples in [Get-MailboxSearch](https://technet.microsoft.com/library/a2f3ab70-6ec6-4c06-b862-f32d498c3ef8.aspx).
+- Use the **Get-MailboxSearch** cmdlet to retrieve all mailbox searches and check that the search you removed is no longer listed. For an example of how to retrieve a mailbox search, see the examples in [Get-MailboxSearch](/powershell/module/exchange/get-mailboxsearch).

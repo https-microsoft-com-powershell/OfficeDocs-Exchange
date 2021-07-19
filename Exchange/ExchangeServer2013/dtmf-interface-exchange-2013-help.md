@@ -4,9 +4,10 @@ TOCTitle: DTMF interface
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/24/2018
 ms.reviewer:
 ms.assetid: 2c7c9d8a-ed12-4dcf-a5b7-3cea0e785e49
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -88,7 +89,7 @@ Users, including mailbox-enabled users, aren't enabled for Unified Messaging by 
 
 If a user doesn't have DTMF map values defined for their account, callers won't be able to contact the user when they press a telephone key from a UM auto attendant menu or perform a directory search. Also, UM-enabled users won't be able to send messages or transfer calls to users who don't have a DTMF map unless they can use Automatic Speech Recognition (ASR). To enable callers to transfer calls or contact users who aren't UM-enabled by using the telephone keypad, you need to create the necessary values for the DTMF map for those users. You can use the **Set-User** cmdlet with the  _-CreateDtmfMap_ parameter to create and update a single user's DTMF map or update a DTMF map for a user if the name of the user was changed after a DTMF map was created. Optionally, you can create an Exchange Management Shell script by using this cmdlet to update the DTMF map values for multiple users.
 
-For more information about the **Set-User** cmdlet, see [Set-User](https://technet.microsoft.com/library/56d7fc86-2ac3-4e28-bc7a-761e91ac655a.aspx).
+For more information about the **Set-User** cmdlet, see [Set-User](/powershell/module/exchange/set-user).
 
 ## DTMF maps for users who are enabled for Unified Messaging
 <a name="dtmfmapusersenabled"> </a>
@@ -111,4 +112,4 @@ Sometimes a user's first name, last name, or email alias changes after the user 
 ## For more information
 <a name="fmi"> </a>
 
-[Adsiedit Overview](https://go.microsoft.com/fwlink/p/?linkId=73175)
+[Adsiedit Overview](/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10))

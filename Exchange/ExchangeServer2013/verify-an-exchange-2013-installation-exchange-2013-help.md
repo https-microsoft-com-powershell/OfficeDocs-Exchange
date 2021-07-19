@@ -2,13 +2,14 @@
 title: 'Verify an Exchange 2013 installation: Exchange 2013 Help'
 TOCTitle: Verify an Exchange 2013 installation
 ms:assetid: fdd20a2a-c8c1-4d17-b813-3c05d88a4411
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125254(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125254(v=EXCHG.150)
 ms:contentKeyID: 48289471
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 After you install Microsoft Exchange Server 2013, we recommend that you verify the installation by running the **Get-ExchangeServer** cmdlet and by reviewing the setup log file. If the setup process fails or errors occur during installation, you can use the setup log file to track down the source of the problem.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.
 
@@ -26,7 +27,7 @@ Did you find what you're looking for? Please take a minute to [send us feedback]
 
 To verify that Exchange 2013 installed successfully, run the **Get-ExchangeServer** cmdlet in the Exchange Management Shell. A list is displayed of all Exchange 2013 server roles that are installed on the specified server when this cmdlet is run.
 
-For detailed syntax and parameter information, see [Get-ExchangeServer](https://technet.microsoft.com/en-us/library/bb123873\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ExchangeServer](/powershell/module/exchange/Get-ExchangeServer).
 
 ## Review the setup log file
 

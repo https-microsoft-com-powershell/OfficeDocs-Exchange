@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can configure several dialing codes that Unified Messaging (UM) uses to dial internal and external calls for UM-enabled users. Frequently, you want to configure a dial plan together with the dialing or access codes, a national number prefix, or in-country/region or international number formats so that you can control outdialing for users in your organization. This topic discusses dial codes, number prefixes, and number formats and how you can use them to control outdialing for your organization.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 26d61e55-f8dd-4d25-81f1-78a87cf88bad
-ms.date: 6/24/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Dial codes, number prefixes, and number formats in Exchange Online
 ms.collection: exchange-online
 audience: ITPro

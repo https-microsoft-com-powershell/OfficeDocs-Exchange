@@ -2,13 +2,14 @@
 title: 'Restore a soft-deleted mailbox: Exchange 2013 Help'
 TOCTitle: Restore a soft-deleted mailbox
 ms:assetid: 4f3f5ce4-9d12-4ed8-9f70-d8a6aa8a1b2e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ863435(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ863435(v=EXCHG.150)
 ms:contentKeyID: 50387715
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -42,7 +43,7 @@ To learn more about soft-deleted mailboxes and perform other related management 
 
   ```powershell
   $dbs = Get-MailboxDatabase
-  dbs | foreach {Get-MailboxStatistics -Database $_.DistinguishedName} | where {$_.DisplayName -eq "<DisplayName>"} | Format-List DisplayName,DisconnectReason,DisconnectDate
+  $dbs | foreach {Get-MailboxStatistics -Database $_.DistinguishedName} | where {$_.DisplayName -eq "<DisplayName>"} | Format-List DisplayName,DisconnectReason,DisconnectDate
   ```
 
   The soft-deleted mailbox has to exist in the mailbox database and the value for the *DisconnectReason* property has to be `SoftDeleted`. If the mailbox has been purged from the database, the command won't return any results.
@@ -56,7 +57,7 @@ To learn more about soft-deleted mailboxes and perform other related management 
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-- Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+- Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to restore a soft-deleted mailbox
 
@@ -83,7 +84,7 @@ This example restores Pilar Pinilla's soft-deleted archive mailbox, which is ide
 New-MailboxRestoreRequest -SourceStoreMailbox dc35895a-a628-4bba-9aa9-650f5cdb9ae7 -SourceDatabase MBXDB02 -TargetMailbox pilarp@contoso.com -TargetIsArchive
 ```
 
-For detailed syntax and parameter information, see [New-MailboxRestoreRequest](https://technet.microsoft.com/en-us/library/ff829875\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MailboxRestoreRequest](/powershell/module/exchange/New-MailboxRestoreRequest).
 
 ## How do you know this worked?
 
@@ -93,6 +94,6 @@ For more information, see:
 
 - [Manage mailbox restore requests](manage-mailbox-restore-requests-exchange-2013-help.md)
 
-- [Get-MailboxRestoreRequest](https://technet.microsoft.com/en-us/library/ff829907\(v=exchg.150\))
+- [Get-MailboxRestoreRequest](/powershell/module/exchange/Get-MailboxRestoreRequest)
 
-- [Get-MailboxRestoreRequestStatistics](https://technet.microsoft.com/en-us/library/ff829912\(v=exchg.150\))
+- [Get-MailboxRestoreRequestStatistics](/powershell/module/exchange/Get-MailboxRestoreRequestStatistics)

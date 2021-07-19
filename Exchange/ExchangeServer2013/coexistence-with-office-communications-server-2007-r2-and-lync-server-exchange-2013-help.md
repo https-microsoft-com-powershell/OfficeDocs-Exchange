@@ -2,13 +2,14 @@
 title: 'Coexistence with Office Communications Server 2007 R2 and Lync Server'
 TOCTitle: Coexistence with Office Communications Server 2007 R2 and Lync Server
 ms:assetid: f12d65c7-0b2c-46a1-a14a-802a76296fa1
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ851069(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ851069(v=EXCHG.150)
 ms:contentKeyID: 50067637
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -4,9 +4,10 @@ TOCTitle: Define your own DLP templates and information types
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: f4622dba-3347-4758-b4a2-f01b043c908c
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -19,7 +20,7 @@ You can develop data loss prevention (DLP) policy templates as XML files indepen
 Looking for management tasks related to DLP policy templates? See [DLP procedures](dlp-procedures-exchange-2013-help.md).
 
 > [!NOTE]
-> Exchange 2013: DLP is a premium feature that requires an Exchange Enterprise Client Access License (CAL). For more information about CALs and server licensing, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
+> Exchange 2013: DLP is a premium feature that requires an Exchange Enterprise Client Access License (CAL). For more information about CALs and server licensing, see [Exchange licensing FAQs](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview).
 
 > [!IMPORTANT]
 > It's beyond the scope of this documentation to recommend a business model or information about file packaging or deployment guidelines for the sensitive information rules or to discuss how such rules would be distributed. Furthermore, this documentation does not discuss protection mechanisms, such as encryption, for custom developed rules, nor does it discuss how such mechanism would be employed.
@@ -44,7 +45,7 @@ Managing custom templates and their related policies is similar to managing the 
 
 4. Update your custom template by repeating steps 1 and 2.
 
-5. Remove your custom template. To learn more, see [Remove-DlpPolicyTemplate](https://technet.microsoft.com/library/b247f29c-868e-4a4e-a6ad-626715dbf2fc.aspx).
+5. Remove your custom template. To learn more, see [Remove-DlpPolicyTemplate](/powershell/module/exchange/remove-dlppolicytemplate).
 
 For more information about the XML schema definition and concepts related to developing your own templates, see [Developing DLP policy template files](developing-dlp-policy-template-files-exchange-2013-help.md).
 
@@ -54,13 +55,13 @@ You can write your own sensitive information definitions in a classification rul
 
 1. Create your own sensitive information types, a custom XML file. To learn more, see [Developing sensitive information rule packages](developing-sensitive-information-rule-packages-exchange-2013-help.md).
 
-2. Import your sensitive information type. To learn more, see [New-ClassificationRuleCollection](https://technet.microsoft.com/library/1e4fe132-1d80-4053-8db2-8dd6a3710fcf.aspx).
+2. Import your sensitive information type. To learn more, see [New-ClassificationRuleCollection](/powershell/module/exchange/new-classificationrulecollection).
 
 3. Create custom template based on your information types. To learn more, see [Developing sensitive information rule packages](developing-sensitive-information-rule-packages-exchange-2013-help.md)
 
 4. Update your custom template by repeating steps 1 and 2.
 
-5. Remove your custom template. To learn more, see [Remove-ClassificationRuleCollection](https://technet.microsoft.com/library/7e38396a-5d3d-424d-86e1-5d2f972d56a2.aspx)
+5. Remove your custom template. To learn more, see [Remove-ClassificationRuleCollection](/powershell/module/exchange/remove-classificationrulecollection)
 
 For more information about the rule packages, see [Developing sensitive information rule packages](developing-sensitive-information-rule-packages-exchange-2013-help.md) and [Matching methods and techniques for rule packages](matching-methods-and-techniques-for-rule-packages-exchange-2013-help.md).
 
@@ -78,8 +79,8 @@ Affinity rules are targeted toward a certain type of document such as a corporat
 
 [Import a custom DLP policy template from a file](import-a-custom-dlp-policy-template-from-a-file-exchange-2013-help.md)
 
-[New-ClassificationRuleCollection](https://technet.microsoft.com/library/1e4fe132-1d80-4053-8db2-8dd6a3710fcf.aspx)
+[New-ClassificationRuleCollection](/powershell/module/exchange/new-classificationrulecollection)
 
-[Transport Rules](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx) Exchange Server 2013
+[Transport rules in Exchange 2013](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md)
 
-[Sensitive Information Types Inventory](https://technet.microsoft.com/library/98b81f9c-87bb-4905-8e53-04621c3ae74d.aspx)
+[Sensitive information types in Exchange Server](../ExchangeServer/policy-and-compliance/data-loss-prevention/sensitive-information-types.md)

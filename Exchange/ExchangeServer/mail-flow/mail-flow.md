@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 14df5e1a-a5f7-4b0d-ba97-f53b76f0e7e0
-ms.date: 6/8/2018
 ms.reviewer: 
 title: Mail flow and the transport pipeline
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -87,11 +88,8 @@ The following diagram and list describe inbound mail flow with an Edge Transport
 SMTP messages from inside the organization enter the transport pipeline through the Transport service on a Mailbox server in one of the following ways:
 
 - Through a Receive connector.
-
 - From the Pickup directory or the Replay directory.
-
 - From the Mailbox Transport Submission service.
-
 - Through agent submission.
 
 The message is routed based on the routing destination or delivery group.
@@ -141,40 +139,26 @@ The Transport service on a Mailbox server consists of the following components a
 - **SMTP Receive**: When messages are received by the Transport service, message content inspection is performed and antispam inspection is performed if is enabled. The SMTP session has a series of events that work together in a specific order to validate the contents of a message before it's accepted. After a message has passed completely through SMTP Receive and isn't rejected by receive events, or by an antispam agent, it's put in the Submission queue.
 
 - **Submission**: Submission is the process of putting messages into the Submission queue. The categorizer picks up one message at a time for categorization. Submission happens in three ways:
-
   - From SMTP Receive through a Receive connector.
-
   - Through the Pickup directory or the Replay directory. These directories exist on Mailbox servers and Edge Transport servers. Correctly formatted message files that are copied into the Pickup directory or the Replay directory are put directly into the Submission queue.
-
   - Through a transport agent.
 
 - **Categorizer**: The categorizer picks up one message at a time from the Submission queue. The categorizer completes the following steps:
-
   - Recipient resolution, which includes top-level addressing, distribution group expansion, and message bifurcation.
-
   - Routing resolution.
-
   - Content conversion.
 
     Additionally, mail flow rules that the organization defined are applied. After messages have been categorized, they're put into a delivery queue that's based on the destination of the message. Messages are queued by the destination mailbox database, DAG, Active Directory site, Active Directory forest, or external domain.
 
 - **SMTP Send**: How messages are routed from the Transport service depends on the location of the message recipients relative to the Mailbox server where categorization occurred. The message could be routed to one of the following locations:
-
   - To the Mailbox Transport Delivery service on the same Mailbox server.
-
   - To the Mailbox Transport Delivery service on a different Mailbox server that's part of the same DAG.
-
   - To the Transport service on a Mailbox server in a different DAG, Active Directory site, or Active Directory forest.
-
   - For delivery to the Internet through:
-
-  - A Send connector on the same Mailbox server.
-
-  - The Transport service on a different Mailbox server.
-
-  - The Front End Transport service on the same Mailbox server or a different Mailbox server (if outbound proxy is configured).
-
-  - The Transport service on an Edge Transport server in the perimeter network.
+    - A Send connector on the same Mailbox server.
+    - The Transport service on a different Mailbox server.
+    - The Front End Transport service on the same Mailbox server or a different Mailbox server (if outbound proxy is configured).
+    - The Transport service on an Edge Transport server in the perimeter network.
 
 ## Understanding the Transport service on Edge Transport servers
 

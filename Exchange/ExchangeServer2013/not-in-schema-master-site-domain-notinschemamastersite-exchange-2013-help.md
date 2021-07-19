@@ -2,13 +2,14 @@
 title: 'Not in schema master site/domain_NotInSchemaMasterSite: Exchange 2013 Help'
 TOCTitle: Not in schema master site/domain_NotInSchemaMasterSite
 ms:assetid: 3aafd22a-d0f0-4120-a325-886fb2eb43ef
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.notinschemamastersite(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.notinschemamastersite(v=EXCHG.150)
 ms:contentKeyID: 46628868
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft® Exchange Server 2007 setup cannot continue because the computer that is running setup is not in the same Active Directory® directory service site or domain as the server that is assigned the domain schema master role, also known as flexible single master operations or FSMO.
 
@@ -28,7 +29,7 @@ The domain schema master controls all updates and modifications to the Active D
 
 To resolve this issue, run Exchange Server 2007 setup using the **/prepareschema** and **/prepareAD** switches from the same site and domain as the domain schema master.
 
-For more information about the **/prepareschema** and **/prepareAD** setup switches, see the Exchange 2007 product documentation topic "How to Prepare Active Directory and Domains" (<https://go.microsoft.com/fwlink/?linkid=78453>)
+For more information about the **/prepareschema** and **/prepareAD** setup switches, see the Exchange 2007 product documentation topic "How to Prepare Active Directory and Domains" (<https://docs.microsoft.com/previous-versions/office/exchange-server-2007/bb125224(v=exchg.80)>)
 
 You can use the Schema Master tool to identify the role. However, the Schmmgmt.dll DLL must be registered in order to make the Schema tool available as an MMC snap-in.
 

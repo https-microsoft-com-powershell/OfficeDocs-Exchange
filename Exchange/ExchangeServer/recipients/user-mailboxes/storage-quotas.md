@@ -5,16 +5,19 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 5f5fe292-c80e-4a0b-b3e6-e193ea5171d0
-ms.date: 7/5/2018
 ms.reviewer:
 title: Configure storage quotas for a mailbox
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
-
+appliesto:
+- Exchange Server 2013
+- Exchange Server 2016
 ---
 
 # Configure storage quotas for a mailbox
@@ -34,7 +37,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to set storage quotas for a mailbox
 
@@ -64,17 +67,17 @@ This example sets the issue warning, prohibit send, and prohibit send and receiv
 > [!NOTE]
 > To ensure that the custom settings for the mailbox are used rather than the mailbox database defaults, you must set the _UseDatabaseQuotaDefaults_ parameter to `$false`.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Joe Healy" -IssueWarningQuota 24.5gb -ProhibitSendQuota 24.75gb -ProhibitSendReceiveQuota 25gb -UseDatabaseQuotaDefaults $false
 ```
 
 This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Ayla Kol's mailbox to 900 megabytes (MB), 950 MB, and 1 GB respectively, and configures the mailbox to use custom settings.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Ayla Kol" -IssueWarningQuota 900mb -ProhibitSendQuota 950mb -ProhibitSendReceiveQuota 1gb -UseDatabaseQuotaDefaults $false
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ## How do you know this worked?
 
@@ -94,6 +97,6 @@ Or
 
 In the Exchange Management Shell, replace \<Identity\> with the name, email address or alias of the mailbox, and run the following command:
 
-```
+```PowerShell
 Get-Mailbox <Identity> | Format-List IssueWarningQuota,ProhibitSendQuota,ProhibitSendReceiveQuota,UseDatabaseQuotaDefaults
 ```

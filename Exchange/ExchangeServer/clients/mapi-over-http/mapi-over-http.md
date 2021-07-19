@@ -5,10 +5,11 @@ ms.topic: conceptual
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 4663b5db-5b30-4a5a-a302-be6fef7fe5da
-ms.date: 7/10/2018
 ms.reviewer: 
 title: MAPI over HTTP in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -24,6 +25,7 @@ Implementing MAPI over HTTP does not mean that it is the only protocol that can 
 In Exchange 2016 and Exchange 2019, MAPI over HTTP can be applied across your entire organization, or at the individual mailbox level.
 
 ## Benefits of MAPI over HTTP
+
 MAPI over HTTP offers the following benefits to the clients that support it:
 
 - Enables future innovation in authentication by using an HTTP based protocol.
@@ -37,22 +39,30 @@ MAPI over HTTP offers the following benefits to the clients that support it:
 - Offers a session context that is not dependent on the connection. The server maintains the session context for a configurable period of time, even if the user changes networks.
 
 ## MAPI over HTTP when upgrading Exchange
+
 In Exchange 2016 or later, MAPI over HTTP is enabled by default at the organization level, although you still need to configure the virtual directories as described in [Configure MAPI over HTTP](configure-mapi-over-http.md) for users to take advantage of it.
 
 The scenarios where MAPI over HTTP is enabled or disabled by default at the organization level are described in the following table:
 
-||**Exchange 2019**|**Exchange 2016**|
-|:-----|:-----|:-----|
+<br>
+
+****
+
+|Scenario|Exchange 2019|Exchange 2016|
+|---|---|---|
 |**Upgrading from an Exchange 2016 environment**|MAPI over HTTP is enabled by default|n/a|
 |**Upgrading from an environment that contains any Exchange 2013 servers**|MAPI over HTTP is disabled by default|MAPI over HTTP is disabled by default|
 |**Upgrading from an Exchange 2010 environment**|n/a|MAPI over HTTP is enabled by default|
+|
 
 During the upgrade from an organization that contains Exchange 2013 servers, administrators will receive the [MAPI over HTTP isn't enabled [WarnMapiHttpNotEnabled]](../../plan-and-deploy/deployment-ref/ms-exch-setupreadiness-warnmapihttpnotenabled.md) readiness check warning, and enabling MAPI over HTTP post-installation is recommended. In any organization that contains Exchange 2013 servers, MAPI over HTTP won't be enabled by default, and administrators will need to follow the steps in [Configure MAPI over HTTP](configure-mapi-over-http.md) to enable it.
 
 ## Supportability and Prerequisites
+
 Consider the following requirements to enable MAPI over HTTP.
 
 ### Supportability
+
 Use the following matrix to verify that your clients and servers support MAPI over HTTP.
 
 |**Product**|**Exchange 2019**|**Exchange 2016**|**Exchange 2013 SP1**|**Exchange 2013 RTM**|**Exchange 2010 SP3**|
@@ -68,4 +78,4 @@ The following conditions are required for clients and servers to support MAPI ov
 
 - Supported Outlook clients (see the table in the previous section).
 
-- .NET Framework 4.5.2 or later. Note that this is no longer an issue for Exchange 2016 CU5 or later. For more information about the .NET Framework requirements for Exchange 2016, see [Supported .NET Framework versions for Exchange 2016](https://docs.microsoft.com/Exchange/plan-and-deploy/system-requirements?view=exchserver-2016#supported-net-framework-versions-for-exchange-2016).
+- .NET Framework 4.5.2 or later. Note that this is no longer an issue for Exchange 2016 CU5 or later. For more information about the .NET Framework requirements for Exchange 2016, see [Supported .NET Framework versions for Exchange 2016](../../plan-and-deploy/system-requirements.md?preserve-view=true&view=exchserver-2016#supported-net-framework-versions-for-exchange-2016).

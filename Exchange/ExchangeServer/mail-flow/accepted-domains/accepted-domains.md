@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: c1839a5b-49f9-4c53-b247-f4e5d78efc45
-ms.date:
 ms.reviewer: 
 title: Accepted domains in Exchange, Exchange acceepted domains, exchange authoritative domain, Internal relay domain, Exchange external relay, Exchange external relay domain
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

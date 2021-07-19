@@ -2,13 +2,14 @@
 title: 'Performance counters for messaging records management: Exchange 2013 Help'
 TOCTitle: Performance counters for messaging records management
 ms:assetid: b59def6f-4249-4e0c-8057-8ae6eb7c5676
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb310790(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb310790(v=EXCHG.150)
 ms:contentKeyID: 50873808
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The performance counters in this topic monitor the Managed Folder Assistant as it implements messaging records management (MRM) for Microsoft Exchange Server 2010. Because running the Managed Folder Assistant is a resource-intensive process, you should run it only when your server can tolerate the additional load. You should also monitor server performance when the Managed Folder Assistant is running. In addition to the performance counters listed in this topic, you may also want to monitor additional performance counters that monitor items such as disk performance and CPU usage.
 
-For more information about monitoring computers running MRM, see [Monitoring messaging records management](monitoring-https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/messaging-records-management).
+For more information about monitoring computers running MRM, see [Monitoring messaging records management](monitoring-messaging-records-management-exchange-2013-help.md).
 
 ## Performance Counters for MRM
 

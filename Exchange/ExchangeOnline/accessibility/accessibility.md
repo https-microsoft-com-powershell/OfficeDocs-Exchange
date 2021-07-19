@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: conceptual
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 0f716f4a-7213-44f1-b2d4-b7fd0a1a336b
-ms.date: 
 ms.reviewer: 
 manager: serdars
 description: Links to topics for using screen readers to do admin tasks in Exchange Online.
@@ -13,6 +12,8 @@ ms.collection:
 - exchange-online
 - M365-email-calendar
 audience: ITPro
+f1.keywords:
+- CSH
 ms.custom: A11y_Features
 ms.service: exchange-online
 
@@ -26,7 +27,7 @@ These articles provide help that depends only on specified keyboard shortcuts an
 
 ## Technical support for people with disabilities
 
- Microsoft offers free technical support for people with disabilities in many locations around the world. If you have a disability or have questions related to accessibility, please contact the [Microsoft Disability Answer Desk](https://go.microsoft.com/fwlink/p/?LinkID=518252) for technical assistance.
+ Microsoft offers free technical support for people with disabilities in many locations around the world. If you have a disability or have questions related to accessibility, please contact the [Microsoft Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk) for technical assistance.
 
 The Disability Answer Desk support team is trained in using many popular assistive technologies and can offer assistance in English, Spanish, French, and American Sign Language. Please visit the Microsoft Disability Answer Desk site to find out the contact details for your region.
 

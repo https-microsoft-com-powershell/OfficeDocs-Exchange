@@ -2,13 +2,14 @@
 title: "What's new for Unified Messaging in Exchange 2013: Exchange 2013 Help"
 TOCTitle: What's new for Unified Messaging in Exchange 2013
 ms:assetid: a444ef2d-d893-408e-adf9-c9d8a8b07593
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150545(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150545(v=EXCHG.150)
 ms:contentKeyID: 47560068
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -63,11 +64,11 @@ Caller ID look-up is integrated with contact aggregation, so that it searches ac
 
 Exchange Server 2013 UM introduces some enhancements to the speech platform and speech recognition, including the following:
 
-  - Enhancements and improved accuracy for Voice Mail Preview.
+- Enhancements and improved accuracy for Voice Mail Preview.
 
-  - Support for the [Microsoft Speech Platform - Runtime (Version 11.0)](https://go.microsoft.com/fwlink/p/?linkid=253196).
+- Support for the [Microsoft Speech Platform - Runtime (Version 11.0)](https://www.microsoft.com/download/details.aspx?id=27225).
 
-  - Speech grammar generation using the system mailbox for an organization.
+- Speech grammar generation using the system mailbox for an organization.
 
 Exchange Unified Messaging uses static and dynamic speech grammars to recognize commands, names of contacts in the global address list, and names of personal contacts in the user's mailbox. Today, in Exchange Server 2013, every Mailbox server running the Microsoft Exchange Unified Messaging service generates grammars for all UM languages installed on it and stores them in directories. Every Mailbox server stores every possible grammar, which it generates based on the number of dial plans, auto attendants, and the UM languages that are installed.
 

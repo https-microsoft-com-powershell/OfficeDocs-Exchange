@@ -4,9 +4,10 @@ TOCTitle: Voice mail-enabled user procedures
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer: 
 ms.assetid: 57633cf1-9ed9-43ae-a2a8-965431b0a779
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

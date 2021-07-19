@@ -4,11 +4,12 @@ TOCTitle: Manage dynamic distribution groups
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Recipients.CreateDynamicGroupWizardForm.CreateDynamicGroupInformationWizardPage'
 ms.assetid: 8ef85d0a-41df-4b5c-b8e7-ca8d09c048ca
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,12 +28,12 @@ Unlike regular distribution groups that contain a defined set of members, the me
 
 - Estimated time to complete: 2 to 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Dynamic distribution groups" entry in the [Recipients Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Dynamic distribution groups" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a dynamic distribution group
 
@@ -110,17 +111,17 @@ New-DynamicDistributionGroup -IncludedRecipients MailboxUsers -Name "Mailbox Use
 This example creates a dynamic distribution group with a custom recipient filter. The dynamic distribution group contains all mailbox users on a server called Server1.
 
 ```powershell
-New-DynamicDistributionGroup -Name "Mailbox Users on Server1" -OrganizationalUnit Users -RecipientFilter {((RecipientTypeDetails -eq 'UserMailbox' -and ServerName -eq 'Server1'))}
+New-DynamicDistributionGroup -Name "Mailbox Users on Server1" -OrganizationalUnit Users -RecipientFilter "RecipientTypeDetails -eq 'UserMailbox' -and ServerName -eq 'Server1'"
 ```
 
 This example creates a dynamic distribution group with a custom recipient filter. The dynamic distribution group contains all mailbox users that have a value of "FullTimeEmployee" in the **CustomAttribute10** property.
 
 ```powershell
-New-DynamicDistributionGroup -Name "Full Time Employees" -RecipientFilter {(RecipientTypeDetails -eq 'UserMailbox') -and (CustomAttribute10 -eq 'FullTimeEmployee')}
+New-DynamicDistributionGroup -Name "Full Time Employees" -RecipientFilter "(RecipientTypeDetails -eq 'UserMailbox') -and (CustomAttribute10 -eq 'FullTimeEmployee')"
 
 ```
 
-For detailed syntax and parameter information, see [New-DynamicDistributionGroup](https://technet.microsoft.com/library/e9920bd1-06c1-4f75-992f-dd7fc98a5c2b.aspx).
+For detailed syntax and parameter information, see [New-DynamicDistributionGroup](/powershell/module/exchange/new-dynamicdistributiongroup).
 
 ### How do you know this worked?
 
@@ -247,9 +248,9 @@ To assign permissions to delegates, click **Add** under the appropriate permissi
 
 Use the **Get-DynamicDistributionGroup** and **Set-DynamicDistributionGroup** cmdlets to view and change properties for dynamic distribution groups. Advantages of using the Shell are the ability to change the properties that aren't available in the EAC and change properties for multiple groups. For information about what parameters correspond to distribution group properties, see the following topics:
 
-- [Get-DynamicDistributionGroup](https://technet.microsoft.com/library/d97ee738-dfa1-464b-855a-4242e8065473.aspx)
+- [Get-DynamicDistributionGroup](/powershell/module/exchange/get-dynamicdistributiongroup)
 
-- [Set-DynamicDistributionGroup](https://technet.microsoft.com/library/943626ad-8455-4867-ab9a-855bab62c9c3.aspx)
+- [Set-DynamicDistributionGroup](/powershell/module/exchange/set-dynamicdistributiongroup)
 
 Here are some examples of using the Shell to change dynamic distribution group properties.
 

@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d98623d3-e0b7-4cb9-93fb-6351b4a06137
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Delivery reports for administrators
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -34,8 +35,6 @@ After you create a delivery report search, the resulting delivery report will sh
 ## More about delivery reports
 
 - Here's how administrators in on-premises Exchange organizations create delivery reports: [Track messages with delivery reports](track-messages-with-delivery-reports.md).
-
-- Ordinary users can use a targeted version of delivery reports to track their own messages. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/p/?LinkId=279920).
 
 - A more powerful option for administrators in on-premises Exchange organizations is to use the Exchange Management Shell to query the message tracking logs directly. For more information, see [Search message tracking logs](search-message-tracking-logs.md).
 

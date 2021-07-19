@@ -2,13 +2,14 @@
 title: 'Get Recoverable Items folder statistics: Exchange 2013 Help'
 TOCTitle: Get Recoverable Items folder statistics
 ms:assetid: dee77958-ee87-4908-85e4-ad053bacd8b0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff714343(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff714343(v=EXCHG.150)
 ms:contentKeyID: 51439484
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,7 +27,7 @@ To learn more, see the following topics:
 
 - [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md)
 
-- [In-Place Hold and Litigation Hold](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-and-litigation-holds)
+- [In-Place Hold and Litigation Hold](../ExchangeOnline/security-and-compliance/in-place-and-litigation-holds.md)
 
 ## What do you need to know before you begin?
 
@@ -38,7 +39,7 @@ To learn more, see the following topics:
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Get Recoverable Items folder statistics for a mailbox
 
@@ -54,17 +55,17 @@ This example gets folder statistics for Soumya Singhi's Recoverable Items folder
 Get-MailboxFolderStatistics -Identity "Soumya Singhi" -FolderScope RecoverableItems | Format-Table Name,FolderPath,ItemsInFolder,FolderAndSubfolderSize
 ```
 
-For detailed syntax and parameter information, see [Get-MailboxFolderStatistics](https://technet.microsoft.com/en-us/library/aa996762\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-MailboxFolderStatistics](/powershell/module/exchange/Get-MailboxFolderStatistics).
 
 ## Get Recoverable Items folder statistics for all mailboxes on Litigation Hold
 
 This example retrieves a list of all mailboxes placed on Litigation Hold and retrieves mailbox folder statistics for the Recoverable Items folder and its subfolders for each mailbox. The **Identity** (mailbox folder identity) and the **FolderAndSubfolderSize** properties are displayed in a table format.
 
 ```powershell
-Get-Mailbox -ResultSize Unlimited -Filter {LitigationHoldEnabled -eq $true} | Get-MailboxFolderStatistics | Format-Table Identity,FolderAndSubfolderSize
+Get-Mailbox -ResultSize Unlimited -Filter "LitigationHoldEnabled -eq `$true" | Get-MailboxFolderStatistics -FolderScope RecoverableItems | Format-Table Identity,FolderAndSubfolderSize
 ```
 
-For detailed syntax and parameter information, see [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\)) and [Get-MailboxFolderStatistics](https://technet.microsoft.com/en-us/library/aa996762\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-Mailbox](/powershell/module/exchange/Get-Mailbox) and [Get-MailboxFolderStatistics](/powershell/module/exchange/Get-MailboxFolderStatistics).
 
 ## Get Recoverable Items quota for a mailbox
 
@@ -77,5 +78,5 @@ Get-Mailbox -Identity <identity of mailbox> | Format-List RecoverableItems*,Liti
 This example displays the quota and warning quota for the Recoverable Items folder for all user mailboxes in your organization. The example also retrieves hold information.
 
 ```powershell
-Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Format-List Name,RecoverableItems*,LitigationHoldEnabled,InPlaceHolds
+Get-Mailbox -ResultSize Unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Format-List Name,RecoverableItems*,LitigationHoldEnabled,InPlaceHolds
 ```

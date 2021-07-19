@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: a40dbe61-2a18-48a8-b2e0-4e81a6678d11
-ms.date: 7/10/2018
 ms.reviewer: 
 title: Shadow redundancy in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

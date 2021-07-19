@@ -2,13 +2,14 @@
 title: 'Prepare Active Directory and domains: Exchange 2013 Help'
 TOCTitle: Prepare Active Directory and domains
 ms:assetid: f895e1ce-d766-4352-ac46-ec959c9954a9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125224(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125224(v=EXCHG.150)
 ms:contentKeyID: 48385726
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Before you install Microsoft Exchange Server 2013, you need to prepare your Active Directory forest and its domains. Exchange needs to prepare Active Directory so that it can store information about your users' mailboxes and the configuration of Exchange servers in the organization. If you aren't familiar with Active Directory forests or domains, check out [Active Directory Domain Services Overview](https://go.microsoft.com/fwlink/p/?linkid=399226).
+Before you install Microsoft Exchange Server 2013, you need to prepare your Active Directory forest and its domains. Exchange needs to prepare Active Directory so that it can store information about your users' mailboxes and the configuration of Exchange servers in the organization. If you aren't familiar with Active Directory forests or domains, check out [Active Directory Domain Services Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11)).
 
 > [!NOTE]
 > Whether this is the first installation of Exchange in your environment, or you already have earlier versions of Exchange Server running, you need to prepare Active Directory for Exchange 2013. You can see <A href="exchange-2013-active-directory-schema-changes-exchange-2013-help.md">Exchange 2013 Active Directory schema changes</A> for details on new schema classes and attributes that Exchange 2013 adds to Active Directory, including those made by Service Packs (SPs) and Cumulative Updates (CUs).
@@ -50,7 +51,7 @@ Curious about what's happening when Active Directory is being prepared for Excha
   - Install the first Exchange server in an Active Directory site with a writeable global catalog server from every domain.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## 1\. Extend the Active Directory schema
 
@@ -81,7 +82,7 @@ When you're ready, do the following to extend your Active Directory schema. If y
     Setup.exe /PrepareSchema /IAcceptExchangeServerLicenseTerms
     ```
 
-After Setup finishes extending the schema, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the `repadmin` tool. `Repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2. For more information about how to use it, see [Repadmin](https://go.microsoft.com/fwlink/p/?linkid=257879).
+After Setup finishes extending the schema, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the `repadmin` tool. `Repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2. For more information about how to use it, see [Repadmin](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770963(v=ws.10)).
 
 ## 2\. Prepare Active Directory
 
@@ -122,7 +123,7 @@ When you're ready, do the following to prepare Active Directory for Exchange. If
 > [!IMPORTANT]
 > If you've configured a hybrid deployment between your on-premises organization and Exchange Online, you need to include the `/TenantOrganizationConfig` switch when you run the above command.
 
-After Setup finishes preparing Active Directory for Exchange, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the `repadmin` tool. `repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2. For more information about how to use the tool, see [Repadmin](https://go.microsoft.com/fwlink/p/?linkid=257879).
+After Setup finishes preparing Active Directory for Exchange, you'll need to wait while Active Directory replicates the changes to all of your domain controllers. If you want to check on how replication is going, you can use the `repadmin` tool. `repadmin` is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2. For more information about how to use the tool, see [Repadmin](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770963(v=ws.10)).
 
 ## 3\. Prepare Active Directory domains
 
@@ -182,7 +183,7 @@ When you're ready, do the following to prepare an individual domain in your Acti
 
 ## How do you know this worked?
 
-Once you've done all the steps above, you can check to make sure everything's gone smoothly. To do so, you'll use a tool called Active Directory Service Interfaces Editor (ADSI Edit). ADSI Edit is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2. If you want to know more about it, check out [ADSI Edit (adsiedit.msc)](https://go.microsoft.com/fwlink/p/?linkid=294644).
+Once you've done all the steps above, you can check to make sure everything's gone smoothly. To do so, you'll use a tool called Active Directory Service Interfaces Editor (ADSI Edit). ADSI Edit is included as part of the Active Directory Domain Services Tools feature in Windows Server 2012 R2, Windows Server 2012, and Windows Server 2008 R2. If you want to know more about it, check out [ADSI Edit (adsiedit.msc)](/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10).
 
 > [!WARNING]
 > Never change values in ADSI Edit unless you're told to do so by Microsoft support. Changing values in ADSI Edit can cause irreparable harm to your Exchange organization and Active Directory.
@@ -201,130 +202,28 @@ You can also check the Exchange setup log to verify that Active Directory prepar
 
 The following table shows you the Exchange 2013 objects in Active Directory that get updated each time you install a new version of Exchange 2013. You can compare the object versions you see with the values in the table below to verify that the version of Exchange 2013 you installed successfully updated Active Directory during installation.
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th> </th>
-<th>Exchange version</th>
-<th>rangeUpper</th>
-<th>objectVersion</th>
-<th>objectVersion</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Naming context</strong></p></td>
-<td><p> </p></td>
-<td><p>Schema</p></td>
-<td><p>Default</p></td>
-<td><p>Configuration</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Container</strong></p></td>
-<td><p> </p></td>
-<td><p>ms-Exch-Schema-Version-Pt</p></td>
-<td><p>Microsoft Exchange System Objects</p></td>
-<td><p>CN=&lt;<em>your organization</em>&gt;, CN=Microsoft Exchange, CN=Services, CN=Configuration, DC=&lt;<em>domain</em>&gt;</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p>Exchange 2013 CU23</p></td>
-<td><p>15312</p></td>
-<td><p>13237</p></td>
-<td><p>16133</p></td>
-</tr>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p>Exchange 2013 CU22</p></td>
-<td><p>15312</p></td>
-<td><p>13236</p></td>
-<td><p>16131</p></td>
-</tr>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p>Exchange 2013 CU10-CU21</p></td>
-<td><p>15312</p></td>
-<td><p>13236</p></td>
-<td><p>16130</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p>Exchange 2013 CU9</p></td>
-<td><p>15312</p></td>
-<td><p>13236</p></td>
-<td><p>15965</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p>Exchange 2013 CU8</p></td>
-<td><p>15312</p></td>
-<td><p>13236</p></td>
-<td><p>15965</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p>Exchange 2013 CU7</p></td>
-<td><p>15312</p></td>
-<td><p>13236</p></td>
-<td><p>15965</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p>Exchange 2013 CU6</p></td>
-<td><p>15303</p></td>
-<td><p>13236</p></td>
-<td><p>15965</p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>Exchange 2013 CU5</p></td>
-<td><p>15300</p></td>
-<td><p>13236</p></td>
-<td><p>15870</p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Exchange 2013 SP1</p></td>
-<td><p>15292</p></td>
-<td><p>13236</p></td>
-<td><p>15844</p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>Exchange 2013 CU3</p></td>
-<td><p>15283</p></td>
-<td><p>13236</p></td>
-<td><p>15763</p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Exchange 2013 CU2</p></td>
-<td><p>15281</p></td>
-<td><p>13236</p></td>
-<td><p>15688</p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>Exchange 2013 CU1</p></td>
-<td><p>15254</p></td>
-<td><p>13236</p></td>
-<td><p>15614</p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Exchange 2013 RTM</p></td>
-<td><p>15137</p></td>
-<td><p>13236</p></td>
-<td><p>15449</p></td>
-</tr>
-</tbody>
-</table>
+- **rangeUpper** is located in the **Schema** naming context in the properties of the **ms-Exch-Schema-Version-Pt** container.
+- **objectVersion (Default)** is the **objectVersion** attribute located in the **Default naming context** in the properties of the **Microsoft Exchange System Objects** container.
+- **objectVersion (Configuration)** is the **objectVersion** attribute located in the **Configuration** naming context in **Services** \> **Microsoft Exchange** in the properties of the **\<Your Exchange Organization Name\>** container.
+
+<br>
+
+****
+
+|Exchange 2013 version|rangeUpper|objectVersion<br>(Default)|objectVersion<br>(Configuration)|
+|---|:---:|:---:|:---:|
+|Exchange 2013 CU23 with KB5004778|15312|13237|16133|
+|Exchange 2013 CU23|15312|13237|16133|
+|Exchange 2013 CU22|15312|13236|16131|
+|Exchange 2013 CU10-CU21|15312|13236|16130|
+|Exchange 2013 CU9|15312|13236|15965|
+|Exchange 2013 CU8|15312|13236|15965|
+|Exchange 2013 CU7|15312|13236|15965|
+|Exchange 2013 CU6|15303|13236|15965|
+|Exchange 2013 CU5|15300|13236|15870|
+|Exchange 2013 SP1|15292|13236|15844|
+|Exchange 2013 CU3|15283|13236|15763|
+|Exchange 2013 CU2|15281|13236|15688|
+|Exchange 2013 CU1|15254|13236|15614|
+|Exchange 2013 RTM|15137|13236|15449|
+|

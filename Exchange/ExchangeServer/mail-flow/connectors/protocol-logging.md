@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 40da446b-bcc3-4a97-ace7-a54f6ddebd79
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Protocol logging
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

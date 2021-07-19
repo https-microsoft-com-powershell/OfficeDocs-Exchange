@@ -2,13 +2,14 @@
 localization_priority: Normal
 description: 'Summary: Learn about the Managed Store limits in Exchange Server 2016 and 2019 and how to change them.'
 ms.topic: overview
-author: chrisda
-ms.author: chrisda
+author: msdmaguire
+ms.author: dmaguire
 ms.assetid: bea9ec15-bfb5-4716-b14e-010e389c9f9e
-ms.date: 
 ms.reviewer: 
 title: Managed Store Limits  in Exchange 2016 and Exchange 2019
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: dansimp
@@ -22,7 +23,7 @@ The Managed Store in Exchange Server 2016 and Exchange Server 2019 is the name f
 For more information about the Managed Store, see [Managed Store in Exchange Server](managed-store.md).
 
 > [!NOTE]
-> Connections by administrator accounts have maximum session limits of 64000. <br/><br/> Exchange Online limits (including Managed Store limits) are described in the [Exchange Online Limits](https://docs.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits).
+> Connections by administrator accounts have maximum session limits of 64000. <br/><br/> Exchange Online limits (including Managed Store limits) are described in the [Exchange Online Limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits).
 
 ## Terminology
 
@@ -74,7 +75,7 @@ Use the following procedure to modify the default session limits.
 
 - When you modify a session limit, you need to modify that limit on all Mailbox servers within a database availability group (DAG). If you don't make the same changes on all servers, the results will be inconsistent.
 
-- To increase a session limit in the Client Access (frontend) services, you need to use the [Set-ThrottlingPolicy](https://docs.microsoft.com/powershell/module/exchange/server-health-and-performance/set-throttlingpolicy) cmdlet in the Exchange Management Shell.
+- To increase a session limit in the Client Access (frontend) services, you need to use the [Set-ThrottlingPolicy](/powershell/module/exchange/set-throttlingpolicy) cmdlet in the Exchange Management Shell.
 
 > [!WARNING]
 > Incorrectly editing the registry can cause serious problems that may require you to reinstall your operating system. Problems resulting from editing the registry incorrectly may not be able to be resolved. Before editing the registry, back up any valuable data.
@@ -158,13 +159,13 @@ You can limit the maximum number of resources that a MAPI client (for example, O
 
 9. Restart the Microsoft Exchange Information Store service by running the following command in Windows PowerShell or the Exchange Management Shell:
 
-   ```
+   ```PowerShell
    Restart-Service MSExchangeIS
    ```
 
 ## Item size limits
 
-Item size limits are the limits placed on items within a user's mailbox. You configure these limits by using the *MaxSendSize* and *MaxReceiveSize* parameters on the [Set-Mailbox](https://docs.microsoft.com/powershell/module/exchange/mailboxes/set-mailbox) cmdlet in the Exchange Management Shell.
+Item size limits are the limits placed on items within a user's mailbox. You configure these limits by using the *MaxSendSize* and *MaxReceiveSize* parameters on the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet in the Exchange Management Shell.
 
 |**Item type**|**Limit**|
 |:-----|:-----|

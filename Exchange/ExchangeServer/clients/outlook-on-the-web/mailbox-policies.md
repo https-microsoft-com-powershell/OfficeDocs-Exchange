@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: be012ffe-8fdb-4fb7-aebd-78b3a55593fa
-ms.date: 7/6/2018
 ms.reviewer:
 title: View or configure Outlook on the web mailbox policy properties
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,14 +24,14 @@ You can configure mailbox policies in Exchange Server for Outlook on the web thr
 
 - Estimated time to complete each procedure: 3 minutes.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to view or configure Outlook on the web mailbox policies
 
@@ -68,21 +69,21 @@ You can configure mailbox policies in Exchange Server for Outlook on the web thr
 
 This example retrieves the properties of the Outlook on the web mailbox policy `Executives` in the organization `Fabrikam`.
 
-```
+```powershell
 Get-OwaMailboxPolicy -Identity Fabrikam\Executives
 ```
 
-For more information about syntax and parameters, see [Get-OwaMailboxPolicy](https://technet.microsoft.com/library/bdd580d3-8812-4b4a-93e8-c6401b0d2f0f.aspx).
+For more information about syntax and parameters, see [Get-OwaMailboxPolicy](/powershell/module/exchange/get-owamailboxpolicy).
 
 ## Use the Exchange Management Shell to configure Outlook on the web mailbox policies
 
 This example enables calendar access in the default mailbox policy.
 
-```
+```powershell
 Set-OwaMailboxPolicy -Identity Default -CalendarEnabled $true
 ```
 
-For more information about syntax and parameters, see [Set-OwaMailboxPolicy](https://technet.microsoft.com/library/530166f7-ab42-4609-ba73-9b5a39b567be.aspx).
+For more information about syntax and parameters, see [Set-OwaMailboxPolicy](/powershell/module/exchange/set-owamailboxpolicy).
 
 ### How do you know this worked?
 
@@ -96,4 +97,4 @@ To verify that you've successfully edited an Outlook on the web mailbox policy:
 
 ## See also
 
-[Outlook on the web mailbox policies procedures](https://technet.microsoft.com/library/2f9fc960-6d0b-472a-a81a-6d8b629b4d5d.aspx)
+[Outlook Web App mailbox policy procedures in Exchange 2013](../../../ExchangeServer2013/outlook-web-app-mailbox-policy-procedures-exchange-2013-help.md)

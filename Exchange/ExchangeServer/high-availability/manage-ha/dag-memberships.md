@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: fb2ea15e-96d5-4045-b75b-b0aa5fc60479
-ms.date: 7/9/2018
 ms.reviewer:
 title: Manage database availability group membership
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,7 +26,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 
 - Estimated time to complete: 5 minutes per server
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - DAGs use Windows Failover Clustering (WFC) technologies. Each Mailbox server that's a member of a DAG is also a node in the underlying cluster used by the DAG. As a result, at any specific time, a Mailbox server can be a member of only one DAG. Because DAGs use WFC technology, all servers added to a DAG must be running the same operating system: either Windows Server 2008 R2 Enterprise or Datacenter Edition, or the Standard or Datacenter Edition of Windows Server 2012 or Windows Server 2012 R2.
 
@@ -40,7 +41,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to manage database availability group membership
 
@@ -60,19 +61,19 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 
 This example adds the Mailbox server MBX1 to the DAG DAG1.
 
-```
+```powershell
 Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer MBX1
 ```
 
 This example removes the Mailbox server MBX1 from the DAG DAG1. Before running this command, make sure that no replicated databases exist on the Mailbox server.
 
-```
+```powershell
 Remove-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer MBX1
 ```
 
 This example removes the configuration settings for the Mailbox server MBX4 from the DAG DAG2. MBX4 is expected to be offline for an extended period, so its configuration is being removed from the DAG while it's offline to establish quorum with the remaining online DAG members.
 
-```
+```powershell
 Remove-DatabaseAvailabilityGroupServer -Identity DAG2 -MailboxServer MBX4 -ConfigurationOnly
 ```
 
@@ -84,12 +85,12 @@ To verify that you've successfully managed DAG membership, do one of the followi
 
 - In the Exchange Management Shell, run the following command to display DAG membership information.
 
-  ```
+  ```powershell
   Get-DatabaseAvailabilityGroup <DAGName> | Format-List Servers
   ```
 
 ## For more information
 
-[Add-DatabaseAvailabilityGroupServer](https://technet.microsoft.com/library/6bd0a3fe-dec6-47c2-b9a3-8dffb60e4aad.aspx)
+[Add-DatabaseAvailabilityGroupServer](/powershell/module/exchange/add-databaseavailabilitygroupserver)
 
-[Remove-DatabaseAvailabilityGroupServer](https://technet.microsoft.com/library/49290be7-9d3d-4bc3-80ea-f1992fdd1d12.aspx)
+[Remove-DatabaseAvailabilityGroupServer](/powershell/module/exchange/remove-databaseavailabilitygroupserver)

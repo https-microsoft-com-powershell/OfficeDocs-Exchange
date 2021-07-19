@@ -4,9 +4,10 @@ TOCTitle: Matching methods and techniques for rule packages
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 
 ms.reviewer: 
 ms.assetid: 09fe9278-d077-452c-b7e5-729b3dc70b1b
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -48,7 +49,7 @@ The matching can be performed using either an exact match or word match based al
 > [!TIP]
 > Use the constant based match style over regex for better efficiency and performance. Use regex matching only in cases where constant based matches are not sufficient and flexibility of regular expressions is required.
 
-```powershell
+```xml
 <Keyword id="Word_Example">
     <Group matchStyle="word">
        <Term>card verification</Term>
@@ -77,8 +78,12 @@ Another common method of matching is based on regular expressions. The flexibili
 > [!TIP]
 > Use the constant based match style over regex for better efficiency and performance. Use regex matching only in cases where constant based matches are not sufficient and flexibility of regular expressions is required.
 
-|**Symbol**|**Meaning**|
-|:-----|:-----|
+<br>
+
+****
+
+|Symbol|Meaning|
+|---|---|
 |c|Match the literal character c once, unless it is one of the special characters.|
 |^|Match the beginning of a line.|
 |.|Match any character that isn't a new line.|
@@ -102,11 +107,12 @@ Another common method of matching is based on regular expressions. The flexibili
 |\n|New line.|
 |\r|Carriage return.|
 |\f|Form feed.|
-|\ *m*|Escape *m*, where *m* is one of the meta characters described above: ^, ., $, |, (), [], \*, +, ?, \, or /.|
+|\ *m*|Escape *m*, where *m* is one of the meta characters described above: ^, ., $, \|, (), [], \*, +, ?, \, or /.|
+|
 
 The Regex element has an "id" attribute that is used as a reference in the corresponding Entity or Affinity rules. A single Regex element can be referenced in multiple Entity and Affinity rules. The Regex expression is defined as the value of the Regex element.
 
-```powershell
+```xml
 <Regex id="CCRegex">
      \bcc\#\s|\bcc\#\:\s
 </Regex>
@@ -133,7 +139,7 @@ Optional minMatches attribute can be used (default = 1) to define the minimum nu
 
     Matching an exact subset of any children Match elements
 
-```powershell
+```xml
 <Any minMatches="3" maxMatches="3">
     <Match idRef="USDate" />
     <Match idRef="USAddress" />
@@ -141,16 +147,15 @@ Optional minMatches attribute can be used (default = 1) to define the minimum nu
 </Any>
 ```
 
-```powershell
+```xml
 <Any maxMatches="0">
     <Match idRef="USDate" />
     <Match idRef="USAddress" />
     <Match idRef="Name" />
 </Any>
-
 ```
 
-```powershell
+```xml
 <Any minMatches="1" maxMatches="1">
     <Match idRef="USDate" />
     <Match idRef="USAddress" />
@@ -163,12 +168,10 @@ Optional minMatches attribute can be used (default = 1) to define the minimum nu
 For entity base rules, another option of increasing confidence is to define multiple Pattern elements, each with increasing number of corroborative evidence. This is achieved by using minMatches and maxMatches for Any element to create independent patterns with increasing confidence level based on increasing number of corroborative evidence. For example:
 
 - if one piece of corroborative evidence is found: confidence level is 65%
-
 - if two pieces: confidence level is 75%
-
 - if three pieces: confidence level is 85%
 
-```powershell
+```xml
 <Entity id="..." patternsProximity="300" >
     <Pattern confidenceLevel="65">
         <IdMatch idRef="UnformattedSSN" />
@@ -202,20 +205,15 @@ For entity base rules, another option of increasing confidence is to define mult
 This section includes an introduction description for authoring of a rule matching a US Social Security number. First, start with a description of how we identify content that contains social security number. A Social Security Number is found if:
 
 1. Regex matches a formatted SSN (and it's in the valid SSN range)
-
 2. Corroborative Evidence one of the following must occur nearby:
-
-1. Keyword match {Social Security, Soc Sec, SSN, SSNS, SSN#, SS#, SSID}
-
-2. Text representing a US address
-
-3. Text representing a date
-
-4. Text representing a name
+   1. Keyword match {Social Security, Soc Sec, SSN, SSNS, SSN#, SS#, SSID}
+   2. Text representing a US address
+   3. Text representing a date
+   4. Text representing a name
 
 Next, translate the description into the Rule schema representation:
 
-```powershell
+```xml
 <Entity id="a44669fe-0d48-453d-a9b1-2cc83f2cba77"
          patternsProximity="300" RecommendedConfidence="85">
     <Pattern confidenceLevel="85">

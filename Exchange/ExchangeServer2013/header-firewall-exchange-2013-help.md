@@ -2,15 +2,16 @@
 title: 'Header firewall: Exchange 2013 Help'
 TOCTitle: Header firewall
 ms:assetid: 9b148f7b-47a9-4379-a55b-8d5310c1772f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232136(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232136(v=EXCHG.150)
 ms:contentKeyID: 50934222
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
-f1_keywords:
+ms.custom:
 - header firewall, organization X-headers
 - header firewall, forest X-headers
 - header firewall, header firewall permissions
@@ -204,9 +205,9 @@ For more information, see the following topics:
 
 - [Receive connectors](receive-connectors-exchange-2013-help.md)
 
-- [Add-ADPermission](https://technet.microsoft.com/en-us/library/bb124403\(v=exchg.150\))
+- [Add-ADPermission](/powershell/module/exchange/Add-ADPermission)
 
-- [Remove-ADPermission](https://technet.microsoft.com/en-us/library/aa996048\(v=exchg.150\))
+- [Remove-ADPermission](/powershell/module/exchange/Remove-ADPermission)
 
 ## Header firewall for outbound messages on Send connectors
 
@@ -291,9 +292,9 @@ For more information, see the following topics:
 
 - [Send connectors](send-connectors-exchange-2013-help.md)
 
-- [Add-ADPermission](https://technet.microsoft.com/en-us/library/bb124403\(v=exchg.150\))
+- [Add-ADPermission](/powershell/module/exchange/Add-ADPermission)
 
-- [Remove-ADPermission](https://technet.microsoft.com/en-us/library/aa996048\(v=exchg.150\))
+- [Remove-ADPermission](/powershell/module/exchange/Remove-ADPermission)
 
 ## Header firewall for other message sources
 

@@ -2,13 +2,14 @@
 title: 'Change user throttling settings for specific users: Exchange 2013 Help'
 TOCTitle: Change user throttling settings for specific users
 ms:assetid: c5f834d6-189d-485e-9800-5e0066815ecf
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ863577(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ863577(v=EXCHG.150)
 ms:contentKeyID: 50395404
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ To customize throttling settings to apply only to specific users in your organiz
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to change the way resources can be used by specific users in your entire organization
 
@@ -43,7 +44,7 @@ This example creates a non-default user throttling policy named ITStaffPolicy th
 New-ThrottlingPolicy -Name ITStaffPolicy -EwsMaxConcurrency 4 -ThrottlingPolicyScope Regular
 ```
 
-This example associates a user with the user name tonysmith with the throttling policy ITStaffPolicy (which has higher limits).
+This example associates a user with the username tonysmith with the throttling policy ITStaffPolicy (which has higher limits).
 
 ```powershell
 Set-ThrottlingPolicyAssociation -Identity tonysmith -ThrottlingPolicy ITStaffPolicy
@@ -59,7 +60,7 @@ $b = Get-ThrottlingPolicy ITStaffPolicy
 Set-Mailbox -Identity tonysmith -ThrottlingPolicy $b
 ```
 
-For more information about syntax and parameters, see [New-ThrottlingPolicy](https://technet.microsoft.com/en-us/library/dd351045\(v=exchg.150\)) and [Set-ThrottlingPolicyAssociation](https://technet.microsoft.com/en-us/library/ff459231\(v=exchg.150\)).
+For more information about syntax and parameters, see [New-ThrottlingPolicy](/powershell/module/exchange/New-ThrottlingPolicy) and [Set-ThrottlingPolicyAssociation](/powershell/module/exchange/Set-ThrottlingPolicyAssociation).
 
 ## How do you know this worked?
 

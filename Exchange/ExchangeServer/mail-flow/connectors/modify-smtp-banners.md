@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d667704e-fd69-4aca-9c35-eef7006944b2
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Modify the SMTP banner on Receive connectors
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -35,7 +36,7 @@ Here are some reasons that you might want to modify the default SMTP banner:
 
 - Estimated time to complete: 5 minutes
 
-- You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - The replacement SMTP banner text string must always start with `220` (the default "Service ready" SMTP response code is 220).
 
@@ -44,25 +45,25 @@ Here are some reasons that you might want to modify the default SMTP banner:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to modify the SMTP banner on a Receive connector
 
 Use the following syntax:
 
-```
+```PowerShell
 Set-ReceiveConnector -Identity <ConnectorIdentity> -Banner "220 <Banner Text>"
 ```
 
 This example changes the SMTP banner on the Receive connector named Default Frontend Mailbox01 to the value 220 contoso.com.
 
-```
+```PowerShell
 Set-ReceiveConnector -Identity "Default Frontend Mailbox01" -Banner "220 consoso.com"
 ```
 
 This example removes the custom SMTP banner, which returns the SMTP banner to the default value.
 
-```
+```PowerShell
 Set-ReceiveConnector -Identity "Default Frontend Mailbox01" -Banner $null
 ```
 

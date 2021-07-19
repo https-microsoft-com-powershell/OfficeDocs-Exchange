@@ -2,13 +2,14 @@
 title: 'Sender filtering: Exchange 2013 Help'
 TOCTitle: Sender filtering
 ms:assetid: b833f864-ff10-46a0-a653-28fb9ba30896
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124354(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124354(v=EXCHG.150)
 ms:contentKeyID: 49248686
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

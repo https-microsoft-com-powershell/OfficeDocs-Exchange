@@ -5,12 +5,13 @@ ms.topic: get-started-article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 928a4a0b-0082-4d50-a696-bfaf2782f42d
-ms.date:
 ms.reviewer: 
 title: Upgrade Exchange to the latest Cumulative Update
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -19,7 +20,7 @@ manager: serdars
 
 # Upgrade Exchange to the latest Cumulative Update
 
-If you have Exchange Server 2016 or Exchange Server 2019 installed, you can upgrade the Exchange servers to the latest Cumulative Update (CU). Because each CU is a full installation of Exchange that includes updates and changes from all previous CU's, you don't need to install any previous CU's or Exchange 2016 RTM or Exchange 2019 RTM first. For more information about the latest available Exchange CUs, see [Updates for Exchange Server](../new-features/updates.md).
+If you have Exchange Server 2016 or Exchange Server 2019 installed, you can upgrade the Exchange servers to the latest Cumulative Update (CU). Because each CU is a full installation of Exchange that includes updates and changes from all previous CUs, you don't need to install any previous CUs or Exchange 2016 RTM or Exchange 2019 RTM first. For more information about the latest available Exchange CUs, see [Updates for Exchange Server](../new-features/updates.md).
 
 > [!CAUTION]
 > After you upgrade Exchange to a newer CU, you can't uninstall the new version to revert to the previous version. Uninstalling the new version completely removes Exchange from the server.
@@ -40,7 +41,7 @@ If you have Exchange Server 2016 or Exchange Server 2019 installed, you can upgr
 - After you install an Exchange CU, you need to restart the computer so that changes can be made to the registry and operating system.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Best Practices
 
@@ -76,7 +77,7 @@ If you have Exchange Server 2016 or Exchange Server 2019 installed, you can upgr
 
    - **Don't check for updates right now**
 
-   ![Exchange Setup, Check for Updates page](../media/f0ca225e-b88f-45e9-a8cb-21adaabe984e.png)
+   ![Exchange Setup, Check for Updates page](../media/exchange-install-checkupdates-no.jpg)
 
 4. The **Copying Files** page shows the progress of copying files to the local hard drive. Typically, the files are copied to `%WinDir%\Temp\ExchangeSetup`, but you can confirm the location in the Exchange Setup log at `C:\ExchangeSetupLogs\ExchangeSetup.log`.
 
@@ -110,7 +111,7 @@ If you have Exchange Server 2016 or Exchange Server 2019 installed, you can upgr
 
 To install an Exchange CU from the command line, use the following syntax:
 
-```
+```console
 <Virtual DVD drive letter>:\Setup.exe /IAcceptExchangeServerLicenseTerms /Mode:Upgrade [/DomainController:<ServerFQDN>] [/EnableErrorReporting]
 ```
 
@@ -122,7 +123,7 @@ To install an Exchange CU from the command line, use the following syntax:
 
 This example uses the Exchange CU files on drive E: to install the CU on the local server, and uses the domain controller dc01.contoso.com to read from and write to Active Directory.
 
-```
+```console
 E:\Setup.exe /IAcceptExchangeServerLicenseTerms /Mode:Upgrade /DomainController:dc01.contoso.com
 ```
 

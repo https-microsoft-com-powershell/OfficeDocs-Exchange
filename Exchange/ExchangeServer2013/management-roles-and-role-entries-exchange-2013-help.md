@@ -2,13 +2,14 @@
 title: 'Management roles and role entries: Exchange 2013 Help'
 TOCTitle: Management roles and role entries
 ms:assetid: 243be502-b3d7-4bb3-8f9b-063ab7a85c02
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638097(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638097(v=EXCHG.150)
 ms:contentKeyID: 49289196
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

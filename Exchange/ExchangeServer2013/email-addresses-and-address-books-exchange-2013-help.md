@@ -2,13 +2,14 @@
 title: 'Email addresses and address books: Exchange 2013 Help'
 TOCTitle: Email addresses and address books
 ms:assetid: b97d0f68-691a-42af-9a6c-4dcc37b28a42
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657488(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657488(v=EXCHG.150)
 ms:contentKeyID: 49289386
-ms.date: 06/04/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -59,11 +60,11 @@ The following table contains links to topics that will help you learn about and 
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/address-books/address-lists/address-lists">Address lists</a></p></td>
+<td><p><a href="/exchange/address-books/address-lists/address-lists">Address lists</a></p></td>
 <td><p>Learn more about address lists and GALs as methods for organizing your recipients for easy end user access.</p></td>
 </tr>
 <tr class="even">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/address-book-policies">Address book policies</a></p></td>
+<td><p><a href="/exchange/address-books/address-book-policies/address-book-policies">Address book policies</a></p></td>
 <td><p>Learn more about how to separate your address lists and GALs into separate virtual organizations.</p></td>
 </tr>
 <tr class="odd">
@@ -75,7 +76,7 @@ The following table contains links to topics that will help you learn about and 
 <td><p>Learn more about proxy email addresses to make recipients more discoverable.</p></td>
 </tr>
 <tr class="odd">
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/address-books/hierarchical-address-books/hierarchical-address-books">Hierarchical address books</a></p></td>
+<td><p><a href="/exchange/address-books/hierarchical-address-books/hierarchical-address-books">Hierarchical address books</a></p></td>
 <td><p>Learn more about how to customize the GAL and address lists to meet your organization's unique business structure.</p></td>
 </tr>
 <tr class="even">

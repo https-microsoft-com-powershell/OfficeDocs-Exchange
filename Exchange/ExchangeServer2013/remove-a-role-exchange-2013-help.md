@@ -2,13 +2,14 @@
 title: 'Remove a role: Exchange 2013 Help'
 TOCTitle: Remove a role
 ms:assetid: 2fb6f453-f37a-4636-8353-3f9927f81298
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335178(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335178(v=EXCHG.150)
 ms:contentKeyID: 49289213
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Remove a management role with no child roles
 
@@ -49,7 +50,7 @@ This example removes the Seattle Server Administrators role.
 Remove-ManagementRole "Seattle Server Administrators"
 ```
 
-For detailed syntax and parameter information, see [Remove-ManagementRole](https://technet.microsoft.com/en-us/library/dd351170\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-ManagementRole](/powershell/module/exchange/Remove-ManagementRole).
 
 ## Remove a management role with child roles
 
@@ -72,7 +73,7 @@ After you confirm that only the roles you want to remove will be removed, run th
 Remove-ManagementRole "London Administrators" -Recurse
 ```
 
-For detailed syntax and parameter information, see [Remove-ManagementRole](https://technet.microsoft.com/en-us/library/dd351170\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-ManagementRole](/powershell/module/exchange/Remove-ManagementRole).
 
 ## Remove an unscoped management role
 
@@ -84,4 +85,4 @@ Remove-ManagementRole "Custom IT Scripts" -Recurse -UnScopedTopLevel
 
 As with removing other roles, you should use the *WhatIf* switch to verify that you're removing the correct roles.
 
-For detailed syntax and parameter information, see [Remove-ManagementRole](https://technet.microsoft.com/en-us/library/dd351170\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-ManagementRole](/powershell/module/exchange/Remove-ManagementRole).

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 6eaa753a-523a-4ae7-b174-a639b819e729
-ms.date: 7/6/2018
 ms.reviewer:
 title: Configure Send connectors to proxy outbound mail
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,7 +28,7 @@ However, you can configure a Send connector to relay or *proxy* outbound mail th
 
 By default, all inbound mail enters your Exchange organization through the Front End Transport service, and the Front End Transport service proxies inbound mail to the Transport service. For more information, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md).
 
-When you configure a Send connector to proxy outbound mail through the Front End Transport service, the Receive connector named "Outbound Proxy Frontend _\<Mailbox server name\>_" in the Front End Transport service listens for these outbound messages from the Transport service, and then the Front End Transport service sends the messages to the Internet. This configuration can consolidate and simplify mail flow by having inbound and outbound mail enter and leave your organization from the same place.
+When you configure a Send connector to proxy outbound mail through the Front End Transport service, the Receive connector named "Outbound Proxy Frontend _\<Mailbox server name\>_" in the Front End Transport service listens for these outbound messages from the Transport service, and then the Front End Transport service sends the messages to the internet.
 
 ## What do you need to know before you begin?
 
@@ -38,7 +39,7 @@ When you configure a Send connector to proxy outbound mail through the Front End
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Configure Send connectors to proxy outbound mail through the Front End Transport service
 
@@ -54,19 +55,19 @@ In the Exchange admin center (EAC), you can only configure existing Send connect
 
 In the Exchange Management Shell, you can configure new or existing Send connectors to proxy outbound mail.
 
-For information about how to open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+For information about how to open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - To configure a new Send connector to proxy outbound mail, add `-FrontEndProxyEnabled $true` to the **New-SendConnector** command.
 
 - To configure an existing Send connector to proxy outbound mail, run the following command:
 
-  ```
+  ```PowerShell
   Set-SendConnector <Send connector identity>  -FrontEndProxyEnabled $true
   ```
 
     This example configures the existing Send connector named "Contoso.com Outbound" to proxy outbound mail.
 
-  ```
+  ```PowerShell
   Set-SendConnector "Contoso.com Outbound" -FrontendProxyEnabled $true
   ```
 
@@ -78,7 +79,7 @@ To verify that a Send connector is configured for outbound proxy, perform either
 
 - In the Exchange Management Shell, run the following command:
 
-  ```
+  ```PowerShell
   Get-SendConnector | Format-Table -Auto Name,FrontEndProxyEnabled
   ```
 

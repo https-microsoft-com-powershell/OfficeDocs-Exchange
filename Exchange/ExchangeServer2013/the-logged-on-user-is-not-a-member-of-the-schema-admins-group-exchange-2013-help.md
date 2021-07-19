@@ -2,13 +2,14 @@
 title: 'Logged-on user is not a member of the Schema Admins group'
 TOCTitle: The logged-on user is not a member of the Schema Admins group
 ms:assetid: a4a3f293-afb9-4c00-aa07-c438238b6a98
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.schemaupdaterequired(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.schemaupdaterequired(v=EXCHG.150)
 ms:contentKeyID: 46629064
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,6 +26,6 @@ To resolve this issue, grant the logged-on user the appropriate permissions, or 
 > [!IMPORTANT]
 > Cross-forest installation of Exchange 2013 isn't supported. Use an account that is a member of the Active Directory forest where you're installing Exchange 2013.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

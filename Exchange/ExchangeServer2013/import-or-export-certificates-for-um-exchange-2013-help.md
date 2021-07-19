@@ -2,13 +2,14 @@
 title: 'Import or export certificates for UM: Exchange 2013 Help'
 TOCTitle: Import or export certificates for UM
 ms:assetid: ee688c33-2e08-47e7-95fc-04ba10238341
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn205143(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn205143(v=EXCHG.150)
 ms:contentKeyID: 53908380
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -47,7 +48,7 @@ For additional management tasks related to managing certificates for Unified Mes
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to export a certificate
 
@@ -59,7 +60,7 @@ For additional management tasks related to managing certificates for Unified Mes
 
 ## Use the Shell to export a certificate
 
-This example exports the certificate with the Thumbprint A36DE2B9B62980A717EBD0C3052F5F0B08FBFFCC to a file after it prompts you for a user name and password.
+This example exports the certificate with the Thumbprint A36DE2B9B62980A717EBD0C3052F5F0B08FBFFCC to a file after it prompts you for a username and password.
 
 ```powershell
 $file = Export-ExchangeCertificate -Thumbprint A36DE2B9B62980A717EBD0C3052F5F0B08FBFFCC -BinaryEncoded:$true -Password (Get-Credential).password
@@ -71,7 +72,7 @@ This example does the following:
 
 2. Uses the **Export-ExchangeCertificate** cmdlet to set the password for the certificate.
 
-3. Outputs the certificate to a file after you input the user name and password.
+3. Outputs the certificate to a file after you input the username and password.
 
    ```powershell
    $file = Get-ExchangeCertificate -DomainName umcorp.northwindtraders.com | Export-ExchangeCertificate -BinaryEncoded:$true -Password (Get-Credential).password
@@ -91,7 +92,7 @@ This example does the following:
 
 ## Use the Shell to import a certificate
 
-This example imports a certificate from the d:\\certificates\\exchange\\SelfSignedUMCert.pfx certificate file after you enter a user name and password.
+This example imports a certificate from the d:\\certificates\\exchange\\SelfSignedUMCert.pfx certificate file after you enter a username and password.
 
 ```powershell
 Import-ExchangeCertificate -FileData ([Byte[]]$(Get-Content -Path d:\certificates\exchange\SelfSignedUMCert.pfx -Encoding Byte -ReadCount 0)) -Password:(Get-Credential).password

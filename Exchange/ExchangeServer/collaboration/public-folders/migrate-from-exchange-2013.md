@@ -9,6 +9,8 @@ ms.assetid: 0f98801d-ad5c-4109-a021-63645e9c9ca2
 ms.reviewer: 
 ms.collection: exchange-server
 description: Learn how to migrate on-premises public folders from Exchange 2013 to Exchange 2016 or Exchange 2019.
+f1.keywords:
+- NOCSH
 audience: ITPro
 title: Migrate public folders from Exchange 2013 to Exchange 2016 or Exchange 2019
 
@@ -34,24 +36,24 @@ The good news is that your public folders will remain available during the publi
 
 ## What do you need to know before you begin?
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to move public folder mailboxes from Exchange 2013 to Exchange 2016 or Exchange 2019
 
 1. Run the following command to get a list of all Exchange 2013 public folder mailboxes:
 
-    ```
+    ```PowerShell
     Get-ExchangeServer | Where {($_.AdminDisplayVersion -Like 'Version 15.0*') -And ($_.ServerRole -Like '*Mailbox*')} | Get-Mailbox -PublicFolder | Get-MailboxStatistics | Format-Table -Auto ServerName,DisplayName,TotalItemSize
     ```
 
 2. Use the following syntax to list all mailbox databases on all Exchange 2016 or Exchange 2019 Mailbox servers:
 
-    ```
+    ```PowerShell
     Get-ExchangeServer | Where {($_.AdminDisplayVersion -like '<Version>') -and ($_.ServerRole -Like "*Mailbox*")} | Get-MailboxDatabase | Format-List Server,Name,EdbFilePath
     ```
 
@@ -59,19 +61,19 @@ The good news is that your public folders will remain available during the publi
 
     This example returns the locations of all mailbox databases on all Exchange 2016 Mailbox servers.
 
-    ```
+    ```PowerShell
     Get-ExchangeServer | where {($_.AdminDisplayVersion -like 'Version 15.1*') -and ($_.ServerRole -Like '*Mailbox*')} | Get-MailboxDatabase | Format-List Server,Name,EdbFilePath
     ```
 
     This example returns the locations of all mailbox databases on all Exchange 2019 Mailbox servers.
 
-    ```
+    ```PowerShell
     Get-ExchangeServer | where {($_.AdminDisplayVersion -like 'Version 15.2*') -and ($_.ServerRole -Like '*Mailbox*')} | Get-MailboxDatabase | Format-List Server,Name,EdbFilePath
     ```
 
     This example returns the locations of all mailbox databases on all Exchange 2016 and Exchange 2019 Mailbox servers.
 
-    ```
+    ```PowerShell
     Get-ExchangeServer | where {(($_.AdminDisplayVersion -like 'Version 15.1*') -or ($_.AdminDisplayVersion -like 'Version 15.2*')) -and ($_.ServerRole -Like '*Mailbox*')} | Get-MailboxDatabase | Format-List Server,Name,EdbFilePath
     ```
 
@@ -83,25 +85,25 @@ The good news is that your public folders will remain available during the publi
 
     - Move all Exchange 2013 public folder mailboxes at once.
 
-      ```
+      ```PowerShell
       Get-ExchangeServer | Where {($_.AdminDisplayVersion -Like "Version 15.0*") -And ($_.ServerRole -Like "*Mailbox*")} | Get-Mailbox -PublicFolder | New-MoveRequest -TargetDatabase Ex2016MbxDatabase
       ```
 
     - Move all public folder mailboxes on a specific Exchange 2013 server at once.
 
-      ```
+      ```PowerShell
       Get-Mailbox -PublicFolder -Server Ex2013Mbx | New-MoveRequest -TargetDatabase Ex2016MbxDatabase
       ```
 
     - Move a specific Exchange 2013 public folder mailbox.
 
-      ```
+      ```PowerShell
       New-MoveRequest "Sales Public Folder Mailbox" -TargetDatabase Ex2016MbxDatabase
       ```
 
 4. To see the status of the move requests you created, run the following command:
 
-    ```
+    ```PowerShell
     Get-MoveRequest
     ```
 
@@ -115,7 +117,7 @@ To verify that you've successfully migrated all of your Exchange 2013 public fol
 
 - Check the status of the move requests you created by running the following command in the Exchange Management Shell on an Exchange 2016 or Exchange 2019 Mailbox server:
 
-  ```
+  ```PowerShell
   Get-MoveRequest
   ```
 
@@ -143,7 +145,7 @@ To verify that you've successfully migrated all of your Exchange 2013 public fol
 
 - View the location of your public folder mailboxes after their move request has completed by running the following command on an Exchange 2016 or Exchange 2019 server:
 
-  ```
+  ```PowerShell
   Get-Mailbox -PublicFolder | Get-MailboxStatistics | Format-Table ServerName,DisplayName,TotalItemSize
   ```
 

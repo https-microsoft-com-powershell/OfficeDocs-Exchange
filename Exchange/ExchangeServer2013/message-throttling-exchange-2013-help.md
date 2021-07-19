@@ -2,13 +2,14 @@
 title: 'Message throttling: Exchange 2013 Help'
 TOCTitle: Message throttling
 ms:assetid: fba87902-2a79-42ac-b394-46a9016f667e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232205(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232205(v=EXCHG.150)
 ms:contentKeyID: 49318513
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

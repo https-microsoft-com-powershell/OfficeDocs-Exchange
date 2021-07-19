@@ -2,13 +2,14 @@
 title: 'Install a UM language pack: Exchange 2013 Help'
 TOCTitle: Install a UM language pack
 ms:assetid: ed14ffa5-c9b0-4367-b5da-564024b360ff
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876951(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876951(v=EXCHG.150)
 ms:contentKeyID: 49315543
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
-To make a language available in the list of available Unified Messaging languages on a UM dial plan or UM auto attendant, you must first install the appropriate UM language pack. You install the language pack on a Mailbox server running the Microsoft Exchange Unified Messaging service by using the language-specific self-extracting executable file or the **setup.exe /AddUmLanguagePack** command. Before you can install a UM language pack, you must first download it to a local folder on the Mailbox server. You can download UM language packs from [Exchange Server 2013 UM Language Packs](https://go.microsoft.com/fwlink/p/?linkid=266542). There's a separate executable file for each language.
+To make a language available in the list of available Unified Messaging languages on a UM dial plan or UM auto attendant, you must first install the appropriate UM language pack. You install the language pack on a Mailbox server running the Microsoft Exchange Unified Messaging service by using the language-specific self-extracting executable file or the **setup.exe /AddUmLanguagePack** command. Before you can install a UM language pack, you must first download it to a local folder on the Mailbox server. You can download UM language packs from [Exchange Server 2013 UM Language Packs](https://www.microsoft.com/download/details.aspx?id=35368). There's a separate executable file for each language.
 
 After you install the appropriate UM language pack, you can view the list of installed UM language packs by viewing the drop-down list on the **Settings** page of a UM dial plan or the **Language for automated voice interface** drop-down list on the **General** page of a UM auto attendant. You can also configure the default language to be a language other than English (en-US) on UM dial plans and auto attendants.
 
@@ -36,11 +37,11 @@ For additional tasks related to UM languages, see [UM languages, prompts, and gr
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the UM Language Pack Installation (.exe) file to install a UM language pack
 
-1. From the [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?linkid=266542), download the language-specific UM language pack (.exe) file into a local folder on the Mailbox server.
+1. From the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=35368), download the language-specific UM language pack (.exe) file into a local folder on the Mailbox server.
 
 2. Double-click the UMLanguagePack.*\<CultureCode\>.exe* file. For example, for the German UM language pack, you would download the file named UMLanguagePack.de-DE.exe.
 
@@ -65,6 +66,6 @@ setup.exe /AddUmLanguagePack:es-MX,de-DE /s:d:\Exchange\UMLanguagePacks /IAccept
 ```
 
 > [!WARNING]
-> If you don't use the /IAcceptExchangeServerLicenseTerms parameter, you'll see the following error: Welcome to Microsoft Exchange Server 2013 Unattended Setup. You need to accept the license terms to install Microsoft Exchange Server 2013. To read the license agreement, visit http://go.microsoft.com/fwlink/p/?LinkId=150127. To accept the license agreement, add the /IAcceptExchangeServerLicenseTerms parameter to the command you're running. For more information, run setup /?.
+> If you don't use the /IAcceptExchangeServerLicenseTerms parameter, you'll see the following error: Welcome to Microsoft Exchange Server 2013 Unattended Setup. You need to accept the license terms to install Microsoft Exchange Server 2013. To read the license agreement, visit https://go.microsoft.com/fwlink/p/?LinkId=150127. To accept the license agreement, add the /IAcceptExchangeServerLicenseTerms parameter to the command you're running. For more information, run setup /?.
 
 For more information about available UM languages and the culture codes, see [UM languages, prompts, and greetings](um-languages-prompts-and-greetings-exchange-2013-help.md).

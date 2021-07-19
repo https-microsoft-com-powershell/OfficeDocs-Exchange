@@ -2,13 +2,14 @@
 title: 'WhatIf, Confirm, and ValidateOnly switches: Exchange 2013 Help'
 TOCTitle: WhatIf, Confirm, and ValidateOnly switches
 ms:assetid: a850eea7-431e-49c5-b877-1ebde2a2b48f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124088(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124088(v=EXCHG.150)
 ms:contentKeyID: 49289365
-ms.date: 03/23/2018
-ms.reviewer: 
+ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,7 +25,7 @@ The *WhatIf*, *Confirm*, and *ValidateOnly* switches are especially useful when 
 > If you want to use the <EM>WhatIf</EM>, <EM>Confirm</EM>, and <EM>ValidateOnly</EM> switches with commands in a script, you must add the appropriate switch to each command in the script, and not on the command line that calls the script.
 
 > [!NOTE]
-> <EM>WhatIf</EM>, <EM>Confirm</EM>, and <EM>ValidateOnly</EM> are called switch parameters. For more information about switch parameters, see <A href="https://technet.microsoft.com/en-us/library/bb124388(v=exchg.150)">Parameters</A>.
+> <EM>WhatIf</EM>, <EM>Confirm</EM>, and <EM>ValidateOnly</EM> are called switch parameters. For more information about switch parameters, see <A href="/powershell/module/microsoft.powershell.core/about/about_parameters">Parameters</A>.
 
 ## WhatIf switch
 
@@ -38,7 +39,7 @@ New-AcceptedDomain -Name "Contoso Domain" -DomainName "contoso.com" -WhatIf
 
 When you run this example command, the following text is returned by the Shell:
 
-```txt
+```powershell
 What if: Creating Accepted Domain "Contoso Domain" with domain name "contoso.com".
 ```
 
@@ -74,7 +75,7 @@ Get-JournalRule | Enable-JournalRule -Confirm
 
 When you run this example command, the following confirmation prompt is returned by the Shell:
 
-```txt
+```console
 Confirm
 Are you sure you want to perform this action?
 Enabling journal rule "Litigation Journal Rule".

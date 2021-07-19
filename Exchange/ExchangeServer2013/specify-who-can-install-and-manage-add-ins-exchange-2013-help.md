@@ -4,9 +4,10 @@ TOCTitle: Specify the administrators and users who can install and manage add-in
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 7ee4302d-b8bb-40a0-9810-10d3a0271bcb
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -34,7 +35,7 @@ User roles
 
 By default, all administrators who have the **Organization Management** role group have both of the above administrative roles enabled. Also by default, end users have the above user roles enabled.
 
-For information about each of these roles, see [Org Marketplace Apps role](https://technet.microsoft.com/library/137ee328-0bad-4911-a7bf-82da7678f246.aspx), [Org Custom Apps role](https://technet.microsoft.com/library/ab2aac13-f783-43e6-a369-75cce1d4943f.aspx), [My Marketplace Apps role](https://technet.microsoft.com/library/5c208d2d-8f76-46a7-9d2e-7c616f21ee67.aspx), [My Custom Apps role](https://technet.microsoft.com/library/aa0321b3-2ec0-4694-875b-7a93d3d99089.aspx), and [My ReadWriteMailbox Apps role](https://technet.microsoft.com/library/febb73fb-3a0b-4c67-b53b-9566d7c32cd2.aspx).
+For information about each of these roles, see [Org Marketplace Apps role](org-marketplace-apps-role-exchange-2013-help.md), [Org Custom Apps role](org-custom-apps-role-exchange-2013-help.md), [My Marketplace Apps role](my-marketplace-apps-role-exchange-2013-help.md), [My Custom Apps role](my-custom-apps-role-exchange-2013-help.md), and [My ReadWriteMailbox Apps role](my-readwritemailbox-apps-role-exchange-2013-help.md).
 
 For information about add-ins, see [Add-ins for Outlook](add-ins-for-outlook-exchange-2013-help.md).
 
@@ -42,26 +43,26 @@ For information about add-ins, see [Add-ins for Outlook](add-ins-for-outlook-exc
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can run this cmdlet. Although all parameters for this cmdlet are listed in this topic, you may not have access to some parameters if they're not included in the permissions assigned to you. To see what permissions you need, see the "Role assignments" entry in the [Role management permissions](https://technet.microsoft.com/library/cb9591c4-fbb3-4199-8007-6bbfdfd5a2e9.aspx) topic.
+- You need to be assigned permissions before you can run this cmdlet. Although all parameters for this cmdlet are listed in this topic, you may not have access to some parameters if they're not included in the permissions assigned to you. To see what permissions you need, see the "Role assignments" entry in the [Role management permissions](role-management-permissions-exchange-2013-help.md) topic.
 
 - Access to the Office Store isn't supported for mailboxes or organizations in specific regions. If you don't see **Add from the Office Store** as an option in the **Exchange admin center** under **Organization** \> **Add-ins** \> ![Add Icon](images/ITPro_EAC_AddIcon.gif), you may be able to install an add-in for Outlook from a URL or file location. For more information, contact your service provider.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Assign administrators the permissions required to install and manage add-ins for your organization
 
 ### Use the EAC to assign permissions to administrators
 
-You can use the EAC to assign administrators the permissions required to install and manage add-ins that available from the Office Store for your organization. For detailed information about how to do this, see [Manage role groups](https://technet.microsoft.com/library/ab9b7a3b-bf67-4ba1-bde5-8e6ac174b82c.aspx).
+You can use the EAC to assign administrators the permissions required to install and manage add-ins that available from the Office Store for your organization. For detailed information about how to do this, see [Manage role groups](manage-role-groups-exchange-2013-help.md).
 
 ## Assign users the permissions required to install and manage add-ins for their own use
 
 ### Use the EAC to assign permissions to users
 
-You can use the EAC to assign users the permissions required to view and modify custom add-ins for their own use. For detailed information about how to do this, see [Manage role groups](https://technet.microsoft.com/library/ab9b7a3b-bf67-4ba1-bde5-8e6ac174b82c.aspx).
+You can use the EAC to assign users the permissions required to view and modify custom add-ins for their own use. For detailed information about how to do this, see [Manage role groups](manage-role-groups-exchange-2013-help.md).
 
 ## How do you know this worked?
 
@@ -73,4 +74,4 @@ This example shows you how to verify whom you've assigned permissions to install
 
 2. In the results, review the entries in the **Effective Users** column.
 
-For more information about syntax and parameters, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/library/a3a6ee46-061b-444a-8639-43a416309445.aspx).
+For more information about syntax and parameters, see [Get-ManagementRoleAssignment](/powershell/module/exchange/get-managementroleassignment).

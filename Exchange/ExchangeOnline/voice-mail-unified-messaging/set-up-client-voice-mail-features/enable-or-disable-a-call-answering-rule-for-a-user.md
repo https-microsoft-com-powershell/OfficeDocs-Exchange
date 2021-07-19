@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can use Exchange Online PowerShell to enable or disable one or more call answering rules for a user. You can also use the Enable-UMCallAnsweringRule or Disable-UMCallAnsweringRule cmdlets in a PowerShell script to enable or disable one or more call answering rules for multiple users.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: f9e40ac3-117f-44f6-9ab1-dc9f4c72e8ac
-ms.date: 4/8/2015
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Enable or disable a call answering rule for a user in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -27,7 +28,7 @@ For additional management tasks related to call answering rules, see [Forwarding
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM call answering rules" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform this procedure, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -35,12 +36,12 @@ For additional management tasks related to call answering rules, see [Forwarding
 
 - Before you perform this procedure, confirm that the user's mailbox has been UM-enabled. For detailed steps, see [Enable a user for voice mail](../../voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail.md).
 
-- To learn how to connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://go.microsoft.com/fwlink/p/?linkid=396554)..
+- To learn how to connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell)..
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to enable a call answering rule
 
@@ -48,19 +49,19 @@ When a call answering rule is created, it's enabled. You can use Exchange Online
 
 This example enables the call answering rule `MyUMCallAnsweringRule` in the mailbox for Tony Smith.
 
-```
+```PowerShell
 Enable-UMCallAnsweringRule -Identity MyUMCallAnsweringRule -Mailbox tonysmith
 ```
 
 The example uses the _WhatIf_ switch to test whether the call answering rule `MyUMCallAnsweringRule` in the mailbox for Tony Smith is ready to be enabled and if there are any errors within the command.
 
-```
+```PowerShell
 Enable-UMCallAnsweringRule -Identity MyUMCallAnsweringRule -Mailbox tonysmith -WhatIf
 ```
 
 This example enables the call answering rule `MyUMCallAnsweringRule` in the mailbox for Tony Smith and prompts the signed-in user to confirm that the call answering rule is to be enabled.
 
-```
+```PowerShell
 Enable-UMCallAnsweringRule -Identity MyUMCallAnsweringRule -Mailbox tonysmith -Confirm
 ```
 
@@ -70,18 +71,18 @@ Disabling a call answering rule prevents it from being retrieved and processed w
 
 This example disables the call answering rule `MyUMCallAnsweringRule` in the mailbox for Tony Smith.
 
-```
+```PowerShell
 Disable -UMCallAnsweringRule -Identity MyUMCallAnsweringRule -Mailbox tonysmith
 ```
 
 This example uses the _WhatIf_ switch to test whether the call answering rule `MyUMCallAnsweringRule` in the mailbox for Tony Smith is ready to be disabled and if there are any errors within the command.
 
-```
+```PowerShell
 Disable -UMCallAnsweringRule -Identity MyUMCallAnsweringRule -Mailbox tonysmith -WhatIf
 ```
 
 This example disables the call answering rule `MyUMCallAnsweringRule` in the mailbox for Tony Smith and prompts the signed-in user to confirm that they're disabling the call answering rule.
 
-```
+```PowerShell
 Disable-UMCallAnsweringRule -Identity MyUMCallAnsweringRule -Mailbox tonysmith -Confirm
 ```

@@ -4,11 +4,12 @@ TOCTitle: Manage mail users
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Recipients.NewMailUserWizardForm.NewMailUserIntroductionWizardPage'
 ms.assetid: bb8b8804-f730-4ad7-9173-896a4965b90f
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,18 +17,18 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Mail users are similar to mail contacts. Both have external email addresses and both contain information about people outside your Exchange organization that can be displayed in the shared address book and other address lists. However, unlike a mail contact, a mail user has logon credentials in your Exchange organization and can access resources. For more information, see [Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+Mail users are similar to mail contacts. Both have external email addresses and both contain information about people outside your Exchange organization that can be displayed in the shared address book and other address lists. However, unlike a mail contact, a mail user has logon credentials in your Exchange organization and can access resources. For more information, see [Recipients](recipients-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Mailbox Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a mail user
 
@@ -72,7 +73,7 @@ Mail users are similar to mail contacts. Both have external email addresses and 
 
     To select a different OU, click **Browse**. The dialog box displays all OUs in the forest that are within the specified scope. Select the OU you want, and then click **OK**.
 
-   - **\* User logon name**: Use this box to type the name that the mail user will use to log on to the domain. The user logon name consists of a user name on the left side of the at (@) symbol and a suffix on the right side. Typically, the suffix is the domain name the user account resides in.
+   - **\* User logon name**: Use this box to type the name that the mail user will use to log on to the domain. The user logon name consists of a username on the left side of the at (@) symbol and a suffix on the right side. Typically, the suffix is the domain name the user account resides in.
 
    - **\* New Password**: Use this box to type the password that the mail user must use to log on to the domain.
 
@@ -240,13 +241,13 @@ Properties for a mail user are stored in both Active Directory and Exchange. In 
 
 Use the **Get-MailUser** and **Set-MailUser** cmdlets to view and change properties for mail users. For information, see the following topics:
 
-- [Get-User](https://technet.microsoft.com/library/2a33c9e6-33da-438c-912d-28ce3f4c9afb.aspx)
+- [Get-User](/powershell/module/exchange/get-user)
 
-- [Set-User](https://technet.microsoft.com/library/56d7fc86-2ac3-4e28-bc7a-761e91ac655a.aspx)
+- [Set-User](/powershell/module/exchange/set-user)
 
-- [Get-MailUser](https://technet.microsoft.com/library/37b36f1c-95ec-4896-a08a-985ef4aa23b7.aspx)
+- [Get-MailUser](/powershell/module/exchange/get-mailuser)
 
-- [Set-MailUser](https://technet.microsoft.com/library/087a55a2-ee8d-41a8-9c8f-d86e32ce8448.aspx)
+- [Set-MailUser](/powershell/module/exchange/set-mailuser)
 
 Here are some examples of using the Shell to change mail user properties.
 
@@ -265,13 +266,13 @@ Get-MailUser | Set-MailUser -HiddenFromAddressListsEnabled $true
 This example sets the Company property for all mail users to Contoso.
 
 ```powershell
-Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'mailuser')} | Set-User -Company Contoso
+Get-User -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'mailuser'" | Set-User -Company Contoso
 ```
 
 This example sets the CustomAttribute1 property to a value of ContosoEmployee for all mail users that have a value of Contoso in the Company property.
 
 ```powershell
-Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'mailuser') -and (Company -eq 'Contoso')}| Set-MailUser -CustomAttribute1 ContosoEmployee
+Get-User -ResultSize unlimited -Filter "(RecipientTypeDetails -eq 'mailuser') -and (Company -eq 'Contoso')" | Set-MailUser -CustomAttribute1 ContosoEmployee
 ```
 
 ### How do you know this worked?
@@ -289,7 +290,7 @@ To verify that you've successfully changed properties for mail users, do the fol
     In the example above where the Company property was set to Contoso for all mail contacts, run the following command to verify the changes:
 
   ```powershell
-  Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'mailuser')} | Format-List Name,Company
+  Get-User -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'mailuser'" | Format-List Name,Company
   ```
 
     In the example above where all mail users had the CustomAttribute1 property set to ContosoEmployee, run the following command to verify the changes.
@@ -330,5 +331,5 @@ To verify that you've successfully bulk edited mail users, do one of the followi
 - In the Shell, use the **Get-User** cmdlet to verify the changes. For example, say you used the bulk edit feature in the EAC to change the manager and the office for all mail users from a vendor company named A. Datum Corporation. To verify these changes, you could run the following command in the Shell:
 
   ```powershell
-  Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'mailuser') -and (Company -eq 'Adatum')} | Format-List Name,Office,Manager
+  Get-User -ResultSize unlimited -Filter "(RecipientTypeDetails -eq 'mailuser') -and (Company -eq 'Adatum')" | Format-List Name,Office,Manager
   ```

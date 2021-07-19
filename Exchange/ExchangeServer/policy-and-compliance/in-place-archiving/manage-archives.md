@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 49ef4a3e-d209-4fb2-80a3-6132b0f69bd0
-ms.date: 7/6/2018
 ms.reviewer:
 title: Manage In-Place Archives in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,9 +24,9 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Archive" entry in the [Messaging policy and compliance permissions in Exchange Server](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
 
-- The procedures in this topic apply to on-premises archive mailboxes. For information about archive mailboxes in Exchange Online, see [Archive mailboxes in Exchange Online](https://go.microsoft.com/fwlink/p/?LinkID=404421).
+- The procedures in this topic apply to on-premises archive mailboxes. For information about archive mailboxes in Exchange Online, see [Enable archive mailboxes in the Security & Compliance Center](/microsoft-365/compliance/enable-archive-mailboxes).
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - It's not supported to have a user's primary mailbox reside on a version of Exchange that's older than the user's archive. If the user's primary mailbox is still on Exchange 2010 or Exchange 2013, you need to move it to Exchange 2016 or Exchange 2019 at the same time you move the archive mailbox to Exchange 2016 or Exchange 2019.
 
@@ -49,14 +50,14 @@ You can use the Exchange admin center or the Exchange Management Shell to enable
 
 This example enables the archive mailbox for Tony Smith.
 
-```
+```PowerShell
 Enable-Mailbox "Tony Smith" -Archive
 ```
 
 This example retrieves mailboxes in database DB01 that don't have an on-premises or cloud-based archive enabled and don't have a name starting with DiscoverySearchMailbox. It pipes the results to the **Enable-Mailbox** cmdlet to enable the archive for all mailboxes on mailbox database DB01.
 
-```
-Get-Mailbox -Database DB01 -Filter {ArchiveGuid -Eq $null -AND ArchiveDomain -eq $null -AND Name -NotLike "DiscoverySearchMailbox*"} | Enable-Mailbox -Archive
+```PowerShell
+Get-Mailbox -Database DB01 -Filter "ArchiveGuid -Eq `$null -AND ArchiveDomain -eq `$null -AND Name -NotLike 'DiscoverySearchMailbox*'" | Enable-Mailbox -Archive
 ```
 
 ### How do you know this worked?
@@ -67,11 +68,11 @@ To verify that you've successfully enabled an on-premises archive for an existin
 
 - In the Exchange Management Shell, run the following command to display information about the new archive.
 
-  ```
+  ```PowerShell
   Get-Mailbox <MailboxIdentity> | Format-List Name,*Archive*
   ```
 
-- In the Exchange Management Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in the topic, [Test-ArchiveConnectivity](https://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx).
+- In the Exchange Management Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in the topic, [Test-ArchiveConnectivity](/powershell/module/exchange/test-archiveconnectivity).
 
 ## Enable an archive mailbox when you create a new mailbox
 
@@ -107,11 +108,11 @@ You can also enable an archive mailbox when you first create a new mailbox for a
 
 This example creates the user named Chris Ashton in Active Directory, creates the mailbox on mailbox database DB01, and enables and creates an archive mailbox on DB01. To set the initial value of the password, this example creates a variable ($password), prompts you to enter a password, and assigns that password to the variable as a SecureString object.
 
-```
+```PowerShell
 $password = Read-Host "Enter password" -AsSecureString
 ```
 
-```
+```PowerShell
 New-Mailbox -UserPrincipalName cashton@contoso.com -Alias cashton -Database "DB01" -Archive -Name "Chris Ashton" -OrganizationalUnit Users -Password $password -FirstName Chris -LastName Ashton
 ```
 
@@ -123,11 +124,11 @@ To verify that you've successfully created a user mailbox with an on-premises ar
 
 - In the Exchange Management Shell, run the following command to display information about the new user mailbox and archive.
 
-  ```
+  ```PowerShell
   Get-Mailbox <Name> | Format-List Name,RecipientTypeDetails,PrimarySmtpAddress,*Archive*
   ```
 
-- In the Exchange Management Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in [Test-ArchiveConnectivity](https://technet.microsoft.com/library/0db98a12-8cbb-4e9a-add4-c1847b057a44.aspx).
+- In the Exchange Management Shell, use the **Test-ArchiveConnectivity** cmdlet to test connectivity to the archive. For an example of how to test archive connectivity, see the Examples section in [Test-ArchiveConnectivity](/powershell/module/exchange/test-archiveconnectivity).
 
 ## Disable an archive mailbox
 
@@ -147,7 +148,7 @@ You may want to disable a user's archive for troubleshooting purposes or complia
 
 This example disables the archive mailbox for Chris Ashton's mailbox. It doesn't disable the user's primary mailbox.
 
-```
+```PowerShell
 Disable-Mailbox "Chris Ashton" -Archive
 ```
 
@@ -159,7 +160,7 @@ To verify that you have successfully disabled an archive mailbox, do the followi
 
 - In the Exchange Management Shell, run the following command to check the archive properties for the mailbox user.
 
-  ```
+  ```PowerShell
   Get-Mailbox "Chris Ashton" | Format-List *Archive*
   ```
 
@@ -192,7 +193,7 @@ When you disable an archive mailbox, it becomes disconnected. A disconnected arc
 
 Use the **Enable-Mailbox -Archive** command to re-enable an archive mailbox. For example:
 
-```
+```PowerShell
 Enable-Mailbox "Chris Ashton" -Archive
 ```
 
@@ -200,7 +201,7 @@ Enable-Mailbox "Chris Ashton" -Archive
 
 To verify that you have successfully connected a disabled archive mailbox to the user's primary mailbox, run the following command to retrieve the mailbox user's archive properties, and verify the values returned for the _ArchiveGuid_ and _ArchiveDatabase_ properties.
 
-```
+```PowerShell
 Get-Mailbox "Chris Ashton" | Format-List *Archive*
 ```
 

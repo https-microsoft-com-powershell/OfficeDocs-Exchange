@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: ed0438ea-f396-480e-b661-9f704b0a04e6
-ms.date: 7/5/2018
 ms.reviewer:
 title: Manage mail contacts
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,14 +24,14 @@ Mail contacts are essentially contacts for people outside your Exchange or organ
 
 - Estimated time to complete: 2 minutes.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Create a mail contact
 
@@ -66,13 +67,13 @@ Mail contacts are essentially contacts for people outside your Exchange or organ
 
 This example creates a mail contact for Debra Garcia in Exchange Server 2016.
 
-```
+```PowerShell
 New-MailContact -Name "Debra Garcia" -ExternalEmailAddress dgarcia@tailspintoys.com -OrganizationalUnit Users
 ```
 
 This example mail-enables an existing contact named Karen Toh in Exchange Server 2016.
 
-```
+```PowerShell
 Enable-MailContact -Identity "Karen Toh" -ExternalEmailAddress ktoh@tailspintoys.com
 ```
 
@@ -84,7 +85,7 @@ To verify that you've successfully created a mail contact, do one of the followi
 
 - In the Exchange Management Shell, run the following command to display information about the new mail contact.
 
-  ```
+  ```PowerShell
   Get-MailContact <Name> | Format-List Name,RecipientTypeDetails,ExternalEmailAddress
   ```
 
@@ -159,31 +160,31 @@ Properties for a mail contact are stored in both Active Directory and Exchange. 
 
 For more information, see the following topics:
 
-- [Get-Contact](https://technet.microsoft.com/library/59315afb-fab5-4984-b3a1-ba1f82df8a10.aspx)
+- [Get-Contact](/powershell/module/exchange/get-contact)
 
-- [Set-Contact](https://technet.microsoft.com/library/c86ca5af-bb1d-4619-8af8-9f04c83d84c5.aspx)
+- [Set-Contact](/powershell/module/exchange/set-contact)
 
-- [Get-MailContact](https://technet.microsoft.com/library/d254bdd5-d497-424c-97ad-d7e8f7e73c27.aspx)
+- [Get-MailContact](/powershell/module/exchange/get-mailcontact)
 
-- [Set-MailContact](https://technet.microsoft.com/library/04c4e889-8546-4395-9d26-31af08264e45.aspx)
+- [Set-MailContact](/powershell/module/exchange/set-mailcontact)
 
 Here are some examples of using the Exchange Management Shell to change mail contact properties.
 
 This example configures the Title, Department, Company, and Manager properties for the mail contact Kai Axford.
 
-```
+```PowerShell
 Set-Contact "Kai Axford" -Title Consultant -Department "Public Relations" -Company Fabrikam -Manager "Karen Toh"
 ```
 
 This example sets the CustomAttribute1 property to a value of PartTime for all mail contacts and hides them from the organization's address book.
 
-```
+```PowerShell
 Get-MailContact | Set-MailContact -CustomAttribute1 PartTime -HiddenFromAddressListsEnabled $true
 ```
 
 This example sets the CustomAttribute15 property to a value of TemporaryEmployee for all mail contacts in the Public Relations department.
 
-```
+```PowerShell
 Get-Contact -Filter "Department -eq 'Public Relations'" | Set-MailContact -CustomAttribute15 TemporaryEmployee
 ```
 
@@ -195,13 +196,13 @@ To verify that you've successfully changed properties for a mail contact, do the
 
 - In the Exchange Management Shell, use the **Get-Contact** and **Get-MailContact** cmdlets to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mail contacts. In the example above where all mail contacts had the CustomAttribute1 property set to PartTime and were hidden from the address book, run the following command to verify the changes.
 
-  ```
+  ```PowerShell
   Get-MailContact | Format-List Name,CustomAttribute1,HiddenFromAddressListsEnabled
   ```
 
   In the example above where the CustomAttribute15 was set for all mail contacts in the Public Relations department, run the following command to verify the changes.
 
-  ```
+  ```PowerShell
   Get-Contact -Filter "Department -eq 'Public Relations'" | Get-MailContact | Format-List Name,CustomAttribute15
   ```
 
@@ -236,6 +237,6 @@ To verify that you've successfully bulk edited mail contacts, do one of the foll
 
 - In the Exchange Management Shell, use the **Get-Contact** cmdlet to verify the changes. For example, say you used the bulk edit feature in the EAC to change the manager and the office for all mail contacts from a vendor company named A. Datum Corporation. To verify these changes, you could run the following command in the Exchange Management Shell.
 
-  ```
-  Get-Contact -ResultSize unlimited -Filter {(Company -eq 'Adatum')} | Format-List Name,Office,Manager
+  ```PowerShell
+  Get-Contact -ResultSize unlimited -Filter "Company -eq 'Adatum'" | Format-List Name,Office,Manager
   ```

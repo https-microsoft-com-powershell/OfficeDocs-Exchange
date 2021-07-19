@@ -2,13 +2,14 @@
 title: 'Configure Get-QueueDigest: Exchange 2013 Help'
 TOCTitle: Configure Get-QueueDigest
 ms:assetid: f730c520-4ba5-4a15-8846-132bff500bb8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn505733(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn505733(v=EXCHG.150)
 ms:contentKeyID: 59603968
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -51,7 +52,7 @@ By default, delivery queues that have the status Active, Connecting, Ready, or R
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Configure Get-QueueDigest
 
@@ -63,14 +64,14 @@ By default, delivery queues that have the status Active, Connecting, Ready, or R
 
 2. Add one or both of the following keys in the `<appSettings>` section.
 
-    ```Command&nbsp;Line
+    ```xml
     <add key="QueueLoggingThreshold" value="<integer>" />
     <add key="QueueLoggingInterval" value="<hh:mm:ss>" />
     ```
 
     For example, to set the **QueueLoggingThreshold** value to 1 and the **QueueLoggingInterval** value to 30 seconds, use the following values:
 
-    ```Command&nbsp;Line
+    ```xml
     <add key="QueueLoggingThreshold" value="1" />
     <add key="QueueLoggingInterval" value="00:00:30" />
     ```

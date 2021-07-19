@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 7e1fa13c-3de3-45c2-b1fa-e74fc8487bda
-ms.date:
 ms.reviewer: 
 title: Create a theme for Outlook on the web in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -45,7 +46,7 @@ After you create a theme, you may also want to customize elements that are commo
 
 - The light version of Outlook on the web doesn't support themes.
 
-- To replace an existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values at [Color Table](https://go.microsoft.com/fwlink/p/?LinkId=280679). If you can't find the color there, you can use an image editing tool or an HTML color codes web site to determine its HTML RGB value.
+- To replace an existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values at [Color Table](https://developer.mozilla.org/docs/Web/CSS/color_value). If you can't find the color there, you can use an image editing tool or an HTML color codes web site to determine its HTML RGB value.
 
 - Don't delete the folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes\base`, or any files in it.
 
@@ -54,7 +55,7 @@ After you create a theme, you may also want to customize elements that are commo
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Use File Explorer to copy the folders and files of an existing theme, and rename the copied folders and files
 
@@ -146,13 +147,13 @@ Setting a new default theme only affects users who haven't manually selected the
 
 To set the default theme and prevent users from changing their theme in Outlook on the web, use the following syntax:
 
-```
+```powershell
 Set-OwaVirtualDirectory -Identity <VirtualDirectoryIdentity> -DefaultTheme <ThemeFolderName> -ThemeSelectionEnabled $false
 ```
 
 This example configures the theme folder named `fourthcoffee` as the default theme in Outlook on the web for the default website on the server named Mailbox01.
 
-```
+```powershell
 Set-OwaVirtualDirectory -Identity "Mailbox01\owa (Default Web Site)" -DefaultTheme fourthcoffee -ThemeSelectionEnabled $false
 ```
 
@@ -186,11 +187,11 @@ You need to restart Internet Information Services (IIS) for the changes to take 
 
 **Note**: To perform this procedure on the command line, open an elevated command prompt on the Exchange server (a Command Prompt window you open by selecting **Run as administrator**) and run the following command:
 
-```
-net stop was /y
+```console
+net stop w3svc /y
 ```
 
-```
+```console
 net start w3svc
 ```
 
@@ -198,7 +199,7 @@ net start w3svc
 
 To verify that you've successfully created an Outlook on the web theme, perform the following steps:
 
-1. Open a mailbox in Outlook on the web. On the Exchange server, you can test your theme by opening the URL https://localhost/owa or https://127.0.0.1/owa.
+1. Open a mailbox in Outlook on the web. On the Exchange server, you can test your theme by opening the URL <https://localhost/owa> or <https://127.0.0.1/owa>.
 
 2. Depending on the settings you configured, verify the new theme is used by default, or verify that you can see and select the new theme at **Settings** \> **Change theme**.
 
@@ -208,8 +209,12 @@ To verify that you've successfully created an Outlook on the web theme, perform 
 
 The built-in Outlook on the web themes are located in the folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes`, and are described in the following table.
 
-|**Folder name**|**Display name in Outlook on the web**|**Sort order in Outlook on the web (lower listed first)**|**Header image type**|
-|:-----|:-----|:-----|:-----|
+<br>
+
+****
+
+|Folder name|Display name in Outlook on the web|Sort order in Outlook on the web (lower listed first)|Header image type|
+|---|---|---|---|
 |angular|Angular 80's|110|Static|
 |balloons|Balloons|240|Static|
 |base|Default|0|None|
@@ -260,3 +265,4 @@ The built-in Outlook on the web themes are located in the folder `%ExchangeInsta
 |whimsical|Whimsical|220|Static|
 |wntrlnd|Winterland|260|Static|
 |wrld|One World|270|Static|
+|

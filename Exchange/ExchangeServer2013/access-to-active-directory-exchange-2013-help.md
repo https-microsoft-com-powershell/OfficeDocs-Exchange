@@ -2,13 +2,14 @@
 title: 'Access to Active Directory: Exchange 2013 Help'
 TOCTitle: Access to Active Directory
 ms:assetid: 61080b45-8bce-4c23-b744-ed264d5f0b7d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998561(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998561(v=EXCHG.150)
 ms:contentKeyID: 49289272
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -117,8 +118,8 @@ The following guidelines will help you minimize problems or issues when you reco
 
 ## For more information
 
-[Active Directory Recycle Bin Step-by-Step Guide](https://go.microsoft.com/fwlink/p/?linkid=178720)
+[Active Directory Recycle Bin Step-by-Step Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392261(v=ws.10))
 
-[Introduction to Active Directory Administrative Center Enhancements (Level 100)](https://go.microsoft.com/fwlink/p/?linkid=267641)
+[Introduction to Active Directory Administrative Center Enhancements (Level 100)](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-)
 
-[Advanced AD DS Management Using Active Directory Administrative Center (Level 200)](https://go.microsoft.com/fwlink/p/?linkid=267642)
+[Advanced AD DS Management Using Active Directory Administrative Center (Level 200)](/windows-server/identity/ad-ds/get-started/adac/advanced-ad-ds-management-using-active-directory-administrative-center--level-200-)

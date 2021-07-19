@@ -5,12 +5,13 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 0fac891a-5713-42b6-afd5-c91b2b88f966
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Using Windows Server Backup to back up and restore Exchange data
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -19,7 +20,7 @@ manager: serdars
 
 # Using Windows Server Backup to back up and restore Exchange data
 
-Microsoft's [preferred architecture](https://blogs.technet.com/b/exchange/archive/2014/04/21/the-preferred-architecture.aspx) for Exchange Server leverages a concept known as Exchange Native Data Protection. Exchange Native Data Protection relies on native Exchange features to protect your mailbox data, without the use of traditional backups. But if you want to create backups, Exchange includes a plug-in for Windows Server Backup (WSB) that enables you to create Exchange-aware Volume Shadow Copy Service (VSS)-based backups of Exchange data. To take Exchange-aware backups, you must have the WSB feature installed.
+Microsoft's [preferred architecture](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/The-Preferred-Architecture/ba-p/586755) for Exchange Server leverages a concept known as Exchange Native Data Protection. Exchange Native Data Protection relies on native Exchange features to protect your mailbox data, without the use of traditional backups. But if you want to create backups, Exchange includes a plug-in for Windows Server Backup (WSB) that enables you to create Exchange-aware Volume Shadow Copy Service (VSS)-based backups of Exchange data. To take Exchange-aware backups, you must have the WSB feature installed.
 
 The plug-in, WSBExchange.exe, runs as a service named Microsoft Exchange Server Extension for Windows Server Backup (the short name for this service is WSBExchange). This service is automatically installed and configured for manual startup on all Mailbox servers. The plug-in enables WSB to create Exchange-aware VSS backups.
 

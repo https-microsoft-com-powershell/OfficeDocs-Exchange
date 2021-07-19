@@ -2,13 +2,14 @@
 title: 'Set connection limits for IMAP4: Exchange 2013 Help'
 TOCTitle: Set connection limits for IMAP4
 ms:assetid: 8e3aa366-e77c-4c70-b78d-ddbb178cb521
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123712(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123712(v=EXCHG.150)
 ms:contentKeyID: 50395402
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ For additional information related to IMAP4, see [POP3 and IMAP4 in Exchange Ser
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to set IMAP4 connection limits for a server, an IP address, or a user
 
@@ -62,13 +63,13 @@ After you set connection limits, you must restart the IMAP4 services. For inform
 This example sets the connection limit for a server.
 
 ```powershell
-Set-ImapSettings -Identity CAS01 -MaxConnections Value
+Set-ImapSettings -Server CAS01 -MaxConnections Value
 ```
 
 This example sets the connection limit for an IP address.
 
 ```powershell
-Set-ImapSettings -Identity CAS01 -MaxConnectionsFromSingleIP Value
+Set-ImapSettings -Server CAS01 -MaxConnectionsFromSingleIP Value
 ```
 
 This example sets the connection limit for a user.
@@ -85,7 +86,7 @@ Set-ImapSettings -MaxCommandSize Value
 
 After you set connection limits, you must restart the IMAP4 services. For information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings).
 
 ## How do you know this worked?
 

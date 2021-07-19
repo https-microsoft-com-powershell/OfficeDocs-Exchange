@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 4de33fbd-00e8-4071-8d2c-2c1a696a8454
-ms.date: 
 ms.reviewer: 
 manager: serdars
 description: Admins can learn how to use a screen reader to create distribution groups in the Exchange admin center (EAC) in Exchange Online.
@@ -13,6 +12,8 @@ ms.collection:
 - exchange-online
 - M365-email-calendar
 audience: ITPro
+f1.keywords:
+- CSH
 ms.custom: A11y_UseSR
 ms.service: exchange-online
 
@@ -24,7 +25,7 @@ Using a screen reader and keyboard shortcuts, you can create a new distribution 
 
 ## Get started
 
-Navigate with Internet Explorer and keyboard shortcuts, and make sure that you have the appropriate Office 365 subscription and admin role to work in the EAC. Then, open the EAC and get started.
+Navigate with Internet Explorer and keyboard shortcuts, and make sure that you have the appropriate Microsoft 365 or Office 365 subscription plan and admin role to work in the EAC. Then, open the EAC and get started.
 
 **Notes**:
 
@@ -42,19 +43,19 @@ Navigate with Internet Explorer and keyboard shortcuts, and make sure that you h
 
 Exchange Online, which includes the EAC, is a web-based application, so the keyboard shortcuts and navigation may be different from those in Exchange 2016. [Accessibility in the Exchange admin center](accessibility-in-exchange-admin-center.md).
 
-For best results when working in the EAC in Exchange Online, use Internet Explorer as your browser. [Learn more about Internet Explorer keyboard shortcuts](https://go.microsoft.com/fwlink/p/?LinkID=787614).
+For best results when working in the EAC in Exchange Online, use Internet Explorer as your browser. [Learn more about Internet Explorer keyboard shortcuts](https://support.microsoft.com/help/17456/).
 
-Many tasks in the EAC require the use of pop-up windows so, in your browser, be sure to [enable pop-up windows for Office 365](https://go.microsoft.com/fwlink/p/?LinkID=317550).
+Many tasks in the EAC require the use of pop-up windows. In your browser, be sure to [enable pop-up windows](https://support.microsoft.com/help/17479) for Microsoft 365 or Office 365.
 
-### Confirm your Office 365 subscription plan
+### Confirm your Office 365 or Microsoft 365 subscription plan
 
-Exchange Online is included in Office 365 business and enterprise subscription plans. But capabilities may differ by plan. If your EAC doesn't include a function described in this article, your plan might not include it.
+Exchange Online is included in several different subscription plans. But capabilities may differ by plan. If your EAC doesn't include a function described in this article, your plan might not include it.
 
-For more information about the Exchange Online capabilities in your subscription plan, go to [What Office 365 business product or license do I have?](https://go.microsoft.com/fwlink/p/?LinkID=797552) and [Exchange Online Service Description.](https://go.microsoft.com/fwlink/p/?LinkID=797553).
+For more information about the Exchange Online capabilities in your subscription plan, go to [What Microsoft 365 Apps for business product or license do I have?](https://support.microsoft.com/office/f8ab5e25-bf3f-4a47-b264-174b1ee925fd) and [Exchange Online Service Description.](/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description).
 
 ### Open the EAC, and confirm your admin role
 
-To complete the tasks covered in this topic, [Use a screen reader to open the Exchange admin center](use-screen-reader-to-open-exchange-admin-center.md) and check that your Office 365 global administrator has assigned you to the [Organization Management](https://go.microsoft.com/fwlink/p/?LinkId=797868) and [Records Management](https://go.microsoft.com/fwlink/p/?LinkId=798797) admin role groups. [Use a screen reader to identify your admin role in the Exchange admin center](use-screen-reader-to-identify-admin-role-in-exchange-admin-center.md).
+To complete the tasks covered in this topic, [Use a screen reader to open the Exchange admin center](use-screen-reader-to-open-exchange-admin-center.md) and check that your global administrator has assigned you to the Organization Management and Records Management admin role groups. [Use a screen reader to identify your admin role in the Exchange admin center](use-screen-reader-to-identify-admin-role-in-exchange-admin-center.md).
 
 ## Use the EAC to create a distribution group
 
@@ -143,6 +144,6 @@ In the **new distribution group** window, the **Add** button for the \* **Owners
 
 ## Technical support for customers with disabilities
 
-Microsoft wants to provide the best possible experience for all our customers. If you have a disability or have questions related to accessibility, please contact the [Microsoft Disability Answer Desk](https://go.microsoft.com/fwlink/p/?LinkID=518252) for technical assistance.
+Microsoft wants to provide the best possible experience for all our customers. If you have a disability or have questions related to accessibility, please contact the [Microsoft Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk) for technical assistance.
 
-The Disability Answer Desk support team is trained in using many popular assistive technologies and can offer assistance in English, Spanish, French, and American Sign Language. Please visit the [Microsoft Disability Answer Desk](https://go.microsoft.com/fwlink/p/?LinkID=518252) site to find the contact details for your region.
+The Disability Answer Desk support team is trained in using many popular assistive technologies and can offer assistance in English, Spanish, French, and American Sign Language. Please visit the [Microsoft Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk) site to find the contact details for your region.

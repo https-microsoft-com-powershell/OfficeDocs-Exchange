@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Policy Tips are informative notices that are displayed to email senders while they're composing a message. The purpose of the Policy Tip is to educate users that they might be violating the business practices or policies that you are enforcing with the data loss prevention (DLP) policies that you have established. The following procedures will help you begin using Policy Tips. Watch this video to learn more.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: cec50a35-1d00-47b3-b72f-ac1bb0fd630e
-ms.date: 7/20/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Manage policy tips
 ms.collection: 
 - exchange-online
@@ -27,7 +28,7 @@ Policy Tips are informative notices that are displayed to email senders while th
 
 - Estimated time to complete each procedure: 30 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Policy Tips will only show up for email senders when the following conditions are met:
 
@@ -42,7 +43,7 @@ Policy Tips are informative notices that are displayed to email senders while th
    - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Create or modify a notify-only Policy Tip
 <a name="NotifyOnly"> </a>
@@ -212,7 +213,7 @@ The following example creates a new English-language Policy Tip that will block 
 New-PolicyTipConfig -Name en\Reject -Value "This message appears to contain restricted content and will not be delivered."
 ```
 
-For more information about DLP cmdlets, see [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx).
+For detailed syntax and parameter information, see [New-PolicyTipConfig](/powershell/module/exchange/new-policytipconfig).
 
 ### Use Exchange Online PowerShell to modify custom Policy Tip notification text
 
@@ -222,7 +223,7 @@ The following example modifies an existing English-language, notify-only Policy 
 Set-PolicyTipConfig en\NotifyOnly "Sending bank account numbers in email is not recommended."
 ```
 
-For more information about DLP cmdlets, see [Messaging Policy and Compliance Cmdlets](https://technet.microsoft.com/library/78ed4e33-f031-40fe-b632-9b15e3234e77.aspx).
+For detailed syntax and parameter information, see [Set-PolicyTipConfig](/powershell/module/exchange/set-policytipconfig).
 
 ### How do you know this worked?
 
@@ -242,8 +243,6 @@ To verify that you have successfully created custom Policy Tip text, do the foll
 
 [Policy Tips](policy-tips.md)
 
-[Mail flow rules in Exchange Server](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx)
-
 [Mail flow rules (transport rules) in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rules.md)
 
-[Exchange 2010 MailTips](https://go.microsoft.com/fwlink/p/?LinkId=265179)
+[Exchange 2010 MailTips](/previous-versions/office/exchange-server-2010/dd297974(v=exchg.141))

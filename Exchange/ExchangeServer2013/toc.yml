@@ -97,7 +97,7 @@
       - name: 'Exchange 2013: editions and versions'
         href: exchange-2013-editions-and-versions-exchange-2013-help.md
       - name: Exchange Server Supportability Matrix
-        href: exchange-server-supportability-matrix-exchange-2013-help.md
+        href: ../ExchangeServer/plan-and-deploy/supportability-matrix.md
       - name: Exchange 2013 deployment permissions reference
         href: exchange-2013-deployment-permissions-reference-exchange-2013-help.md
       - name: Deployment security checklist
@@ -194,13 +194,13 @@
         - name: The local computer is responsible for expanding group membership_ServerIsGroupExpansionServer
           href: the-local-computer-is-responsible-for-expanding-group-membership-serverisgroupexpansionserver-exchange-2013-help.md
         - name: The local computer is responsible for expanding group membership_ServerIsDynamicGroupExpansionServer
-          href: the-local-computer-is-responsible-for-expanding-group-membership-serverisdynamicgroupexpansionserver-exchange-2013-help.md
+          href: ./serverisdynamicgroupexpansionserver-exchange-2013-help.md
         - name: The fully-qualified domain name of the computer matches a recipient policy_ServerFQDNMatchesSMTPPolicy
-          href: the-fully-qualified-domain-name-of-the-computer-matches-a-recipient-policy-serverfqdnmatchessmtppolicy-exchange-2013-help.md
+          href: ./serverfqdnmatchessmtppolicy-exchange-2013-help.md
         - name: Older database files present_SecondSGFilesExist
           href: older-database-files-present-secondsgfilesexist-exchange-2013-help.md
         - name: The schema master is not running Windows Server 2003 Service Pack 1 or later_SchemaFSMONotWin2003SPn
-          href: the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-schemafsmonotwin2003spn-exchange-2013-help.md
+          href: ./schemafsmonotwin2003spn-exchange-2013-help.md
         - name: Cannot find a recipient update service_RUSMissing
           href: cannot-find-a-recipient-update-service-rusmissing-exchange-2013-help.md
         - name: Active Directory domain is mixed mode_RootDomainModeMixed
@@ -220,9 +220,9 @@
         - name: Not in schema master site/domain_NotInSchemaMasterDomain
           href: not-in-schema-master-site-domain-notinschemamasterdomain-exchange-2013-help.md
         - name: Cannot install Exchange 2007 roles after you prepare Active Directory for Exchange 2010_NoE12ServerWarning
-          href: cannot-install-exchange-2007-roles-after-you-prepare-active-directory-for-exchange-2010-noe12serverwarning-exchange-2013-help.md
+          href: ./noe12serverwarning-exchange-2013-help.md
         - name: The Distributed Transaction Coordinator Service must be started before setup can continue_MSDTCStopped
-          href: the-distributed-transaction-coordinator-service-must-be-started-before-setup-can-continue-msdtcstopped-exchange-2013-help.md
+          href: ./msdtcstopped-exchange-2013-help.md
         - name: Messages currently exist in one or more queues_MessagesInQueue
           href: messages-currently-exist-in-one-or-more-queues-messagesinqueue-exchange-2013-help.md
         - name: Storage group drive specification is missing_MailboxLogDriveDoesNotExist
@@ -230,7 +230,7 @@
         - name: Mailbox database drive specification is missing_MailboxEDBDriveDoesNotExist
           href: mailbox-database-drive-specification-is-missing-mailboxedbdrivedoesnotexist-exchange-2013-help.md
         - name: The Windows Process Activation Service - Process Model component is required_LonghornWASProcessModelInstalled
-          href: the-windows-process-activation-service-process-model-component-is-required-longhornwasprocessmodelinstalled-exchange-2013-help.md
+          href: ./longhornwasprocessmodelinstalled-exchange-2013-help.md
         - name: IIS 7 component not installed_LonghornIIS7WindowsAuthNotInstalled
           href: iis-7-component-not-installed-longhorniis7windowsauthnotinstalled-exchange-2013-help.md
         - name: IIS 7 .NET Extensibility component is required_LonghornIIS7NetExt
@@ -260,7 +260,7 @@
         - name: One or more Active Directory Connector servers were found_ADCFound
           href: one-or-more-active-directory-connector-servers-were-found-adcfound-exchange-2013-help.md
         - name: The schema master is not running Windows Server 2003 Service Pack 1 or later_DomainControllerIsOutOfSite
-          href: the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-domaincontrollerisoutofsite-exchange-2013-help.md
+          href: ./domaincontrollerisoutofsite-exchange-2013-help.md
         - name: Domain preparation required_DomainPrepRequired
           href: domain-preparation-required-domainpreprequired-exchange-2013-help.md
         - name: The COM+ Event System Service must be started before setup can continue_EventSystemStopped
@@ -665,7 +665,7 @@
       - name: Manage In-Place Archives in Exchange 2013
         href: manage-in-place-archives-in-exchange-2013-exchange-2013-help.md
       - name: Modify archive policies
-        href: https://docs.microsoft.com/exchange/security-and-compliance/modify-archive-policies
+        href: ../ExchangeOnline/security-and-compliance/modify-archive-policies.md
       - name: Configure archive quotas for an In-Place Archive in Exchange 2013
         href: configure-archive-quotas-for-an-in-place-archive-in-exchange-2013-exchange-2013-help.md
       - name: Archive Lync conversations and meeting content to Exchange
@@ -695,7 +695,7 @@
       - name: Export eDiscovery search results to a PST file
         href: export-search-results-exchange-2013-help.md
       - name: Message properties and search operators for In-Place eDiscovery
-        href: https://docs.microsoft.com/exchange/security-and-compliance/in-place-ediscovery/message-properties-and-search-operators
+        href: ../ExchangeOnline/security-and-compliance/in-place-ediscovery/message-properties-and-search-operators.md
       - name: Create a discovery mailbox
         href: create-a-discovery-mailbox-exchange-2013-help.md
       - name: Start or stop an In-Place eDiscovery search
@@ -787,7 +787,7 @@
       - name: Common attachment blocking scenarios for transport rules
         href: common-attachment-blocking-scenarios-exchange-2013-help.md
       - name: Organization-wide disclaimers, signatures, footers, or headers
-        href: organization-wide-disclaimers-signatures-footers-or-headers-exchange-online-help.md
+        href: organization-wide-disclaimers-signatures-footers-or-headers-exchange-2013-help.md
       - name: Transport rule procedures
         href: mail-flow-or-transport-rule-procedures-exchange-2013-help.md
         items:
@@ -814,7 +814,7 @@
       - name: Integrating sensitive information rules with transport rules
         href: integrate-sensitive-information-rules-exchange-2013-help.md
       - name: What the sensitive information types look for
-        href: what-the-sensitive-information-types-in-exchange-look-for-exchange-online-help.md
+        href: what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md
       - name: DLP policy templates
         href: dlp-policy-templates-exchange-2013-help.md
         items:
@@ -1102,7 +1102,7 @@
         - name: Configure an accepted domain for an independent business unit
           href: configure-an-accepted-domain-for-an-independent-business-unit-exchange-2013-help.md
         - name: Configure an accepted domain for a business unit with mailboxes outside your Exchange organization
-          href: configure-an-accepted-domain-for-a-business-unit-with-mailboxes-outside-your-exchange-organization-exchange-2013-help.md
+          href: ./config-accepted-domain-business-unit-outside-org-exchange-2013-help.md
         - name: Configure Exchange to accept mail for multiple authoritative domains
           href: configure-exchange-to-accept-mail-for-multiple-authoritative-domains-exchange-2013-help.md
       - name: Remote domains
@@ -1352,35 +1352,35 @@
       - name: Considerations when deploying public folders
         href: considerations-when-deploying-public-folders-exchange-2013-help.md
       - name: Accessing public folders with Outlook 2016 for Mac
-        href: https://docs.microsoft.com/exchange/collaboration-exo/public-folders/access-public-folders-with-outlook-2016-for-mac
-      - name: Migrate your public folders to Office 365 Groups
-        href: https://docs.microsoft.com/exchange/collaboration-exo/public-folders/migrate-your-public-folders-to-office-365-groups
+        href: ../ExchangeOnline/collaboration-exo/public-folders/access-public-folders-with-outlook-2016-for-mac.md
+      - name: Migrate your public folders to Microsoft 365 Groups
+        href: ../ExchangeOnline/collaboration-exo/public-folders/migrate-your-public-folders-to-microsoft-365-groups.md
       - name: Public folder procedures
         href: public-folder-procedures-exchange-2013-help.md
         items:
         - name: Set up public folders in a new organization
           href: set-up-public-folders-exchange-2013-help.md
         - name: Configure legacy on-premises public folders for a hybrid deployment
-          href: https://docs.microsoft.com/exchange/collaboration-exo/public-folders/set-up-legacy-hybrid-public-folders
+          href: ../ExchangeOnline/collaboration-exo/public-folders/set-up-legacy-hybrid-public-folders.md
         - name: Configure Exchange 2013 public folders for a hybrid deployment
-          href: https://docs.microsoft.com/exchange/collaboration-exo/public-folders/set-up-modern-hybrid-public-folders
+          href: /exchange/collaboration-exo/public-folders/set-up-modern-hybrid-public-folders
         - name: Configure Exchange Online public folders for a hybrid deployment
-          href: https://docs.microsoft.com/exchange/collaboration-exo/public-folders/set-up-exo-hybrid-public-folders
+          href: ../ExchangeOnline/collaboration-exo/public-folders/set-up-exo-hybrid-public-folders.md
         - name: Configure legacy public folders where user mailboxes are on Exchange 2013 servers
           href: configure-legacy-public-folders-where-user-mailboxes-are-on-exchange-2013-servers-exchange-2013-help.md
         - name: Use batch migration to migrate public folders to Exchange 2013 from previous versions
           href: use-batch-migration-to-migrate-public-folders-to-exchange-2013-from-previous-versions-exchange-2013-help.md
         - name: Use batch migration to migrate legacy public folders to Office 365 and Exchange Online
-          href: https://docs.microsoft.com/exchange/collaboration-exo/public-folders/batch-migration-of-legacy-public-folders
+          href: ../ExchangeOnline/collaboration-exo/public-folders/batch-migration-of-legacy-public-folders.md
         - name: Use batch migration to migrate Exchange 2013 public folders to Exchange Online
-          href: https://docs.microsoft.com/exchange/collaboration/public-folders/migrate-to-exchange-online
+          href: ../ExchangeServer/collaboration/public-folders/migrate-to-exchange-online.md
           items:
           - name: Roll back a public folder migration from Exchange 2013 to Exchange Online
-            href: https://docs.microsoft.com/exchange/collaboration/public-folders/roll-back-exchange-online-migration
-        - name: Use batch migration to migrate Exchange 2010 public folders to Office 365 Groups
-          href: use-batch-migration-to-migrate-exchange-2010-public-folders-to-office-365-groups-exchange-2013-help.md
-        - name: Use batch migration to migrate Exchange 2013 public folders to Office 365 Groups
-          href: use-batch-migration-to-migrate-exchange-2013-public-folders-to-office-365-groups-exchange-2013-help.md
+            href: ../ExchangeServer/collaboration/public-folders/roll-back-exchange-online-migration.md
+        - name: Use batch migration to migrate Exchange 2010 public folders to Microsoft 365 Groups
+          href: use-batch-migration-to-migrate-exchange-2010-public-folders-to-microsoft-365-groups-exchange-2013-help.md
+        - name: Use batch migration to migrate Exchange 2013 public folders to Microsoft 365 Groups
+          href: use-batch-migration-to-migrate-exchange-2013-public-folders-to-microsoft-365-groups-exchange-2013-help.md
         - name: Create a public folder mailbox
           href: create-public-folder-mailbox-exchange-2013-help.md
         - name: Create a public folder
@@ -1572,8 +1572,6 @@
           href: add-or-remove-users-from-a-mobile-mailbox-policy-exchange-2013-help.md
         - name: Create or modify a mobile device mailbox policy
           href: create-or-modify-a-mobile-device-mailbox-policy-exchange-2013-help.md
-        - name: Supported mobile device mailbox policies for Windows Phones and devices
-          href: supported-mobile-device-mailbox-policies-for-windows-phones-and-devices-exchange-2013-help.md
       - name: Mobile devices
         href: mobile-devices-exchange-2013-help.md
         items:
@@ -1626,7 +1624,7 @@
         - name: Configure protocol logging for POP3 and IMAP4
           href: configure-protocol-logging-for-pop3-and-imap4-exchange-2013-help.md
     - name: Outlook for iOS and Android
-      href: outlook-for-ios-and-android-exchange-2013-help.md
+      href: ../ExchangeServer/clients/outlook-for-ios-and-android/outlook-for-ios-and-android.md?view=exchserver-2019
     - name: Client protocol management
       href: client-protocol-management-exchange-2013-help.md
       items:
@@ -1680,10 +1678,10 @@
       - name: Configure custom MailTips for recipients
         href: configure-custom-mailtips-exchange-2013-help.md
       - name: MailTips over organization relationships
-        href: https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships
+        href: ../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships.md
         items:
         - name: Manage MailTips for organization relationships
-          href: https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships
+          href: ../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships.md
       - name: Group metrics and MailTips
         href: group-metrics-and-mailtips-exchange-2013-help.md
         items:
@@ -1795,7 +1793,7 @@
         - name: Connect a VoIP gateway to communicate with a PBX
           href: connect-a-voip-gateway-to-communicate-with-a-pbx-exchange-2013-help.md
         - name: Configuration notes for supported session border controllers
-          href: https://docs.microsoft.com/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-session-border-controllers
+          href: ../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-session-border-controllers.md
     - name: Connect your voice mail system to your telephone network
       href: connect-voice-mail-system-exchange-2013-help.md
       items:
@@ -2567,11 +2565,11 @@
       - name: Change user throttling settings for all users in your organization
         href: change-user-throttling-settings-for-all-users-in-your-organization-exchange-2013-help.md
   - name: Exchange Server 2013 Management Pack Guide
-    href: management/index.md
+    href: /Exchange/Exchange/ExchangeServer2013/exchange-server-2013-management-pack-guide
   - name: Exchange Server 2013 Management Pack Health Sets
-    href: management/health/index.md
+    href: /Exchange/Exchange/ExchangeServer2013/exchange-2013-management-pack-health-sets
   - name: Exchange Server 2013 Technical Articles
-    href: technical-articles/index.md
+    href: /Exchange/Exchange/ExchangeServer2013/exchange-server-2013-technical-articles
   - name: About Exchange documentation
     href: about-exchange-documentation-exchange-2013-help.md
     items:

@@ -2,13 +2,14 @@
 title: 'Create user mailboxes: Exchange 2013 Help'
 TOCTitle: Create user mailboxes
 ms:assetid: 51a8b4c6-a53e-41c5-8bb1-ea4c0eaa0174
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ991919(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ991919(v=EXCHG.150)
 ms:contentKeyID: 51588093
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a user mailbox
 
@@ -44,7 +45,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 3. On the **New user mailbox** page, in the **Alias** box, type the user's alias, which specifies the email alias for the user. The user's alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
     > [!NOTE]
-    > If you leave this box blank, the value from the user name portion of the <STRONG>User logon name</STRONG> is used for the email alias.
+    > If you leave this box blank, the value from the username portion of the <STRONG>User logon name</STRONG> is used for the email alias.
 
 4. Select one of the following options:
 
@@ -73,10 +74,10 @@ You can also create user mailboxes for existing users that have an Active Direct
 
         To select a different OU, click **Browse**. The dialog box displays all OUs in the forest that are within the specified scope. Select the desired OU, and then click **OK**.
 
-   - **\* User logon name**    Use this box to type the name that the user will use to sign in to the mailbox and to log on to the domain. The user logon name consists of a user name on the left side of the at (@) symbol and a suffix on the right side. Typically, the suffix is the domain name in which the user account resides. Note that you can't use an apostrophe (') or a quotation mark (") in the user logon name because these characters aren't supported.
+   - **\* User logon name**    Use this box to type the name that the user will use to sign in to the mailbox and to log on to the domain. The user logon name consists of a username on the left side of the at (@) symbol and a suffix on the right side. Typically, the suffix is the domain name in which the user account resides. Note that you can't use an apostrophe (') or a quotation mark (") in the user logon name because these characters aren't supported.
 
         > [!NOTE]
-        > If the value for the user name is different than the value used in the <STRONG>Alias</STRONG> box, then the user's email address and the user logon name will be different.
+        > If the value for the username is different than the value used in the <STRONG>Alias</STRONG> box, then the user's email address and the user logon name will be different.
 
    - **\* New Password**: Use this box to type the password that the user must use to sign in to his or her mailbox.
 
@@ -99,7 +100,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 
         To learn more, see [In-Place Archiving in Exchange 2013](in-place-archiving-in-exchange-2013-exchange-2013-help.md).
 
-   - **Address book policy**: Use this option to specify an address book policy (ABP) for the mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. When assigned to mailbox users, an ABP provides them with access to a customized GAL in Outlook and Outlook Web App. To learn more, see [Address book policies](https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/address-book-policies).
+   - **Address book policy**: Use this option to specify an address book policy (ABP) for the mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. When assigned to mailbox users, an ABP provides them with access to a customized GAL in Outlook and Outlook Web App. To learn more, see [Address book policies](../ExchangeOnline/address-books/address-book-policies/address-book-policies.md).
 
         In the drop-down list, select the policy that you want associated with this mailbox.
 
@@ -125,7 +126,7 @@ This example creates a new user account and mailbox for Pilar Pinilla with the f
 New-Mailbox -Alias pilarp -Name "Pilar Pinilla" -FirstName Pilar -LastName Pinilla -DisplayName "Pilar Pinilla" -UserPrincipalName pilarp@contoso.com -Password (ConvertTo-SecureString -String 'Pa$$word1' -AsPlainText -Force)
 ```
 
-For syntax and parameter information, see [New-Mailbox](https://technet.microsoft.com/en-us/library/aa997663\(v=exchg.150\)).
+For syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/New-Mailbox).
 
 ## How do you know this worked?
 
@@ -152,7 +153,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 3. On the **New user mailbox** page, in the **Alias** box, type the user's alias, which specifies the email alias for the user. The user's alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
     > [!NOTE]
-    > If you leave this box blank, the value from the user name portion of the <STRONG>User logon name</STRONG> is used for the email alias.
+    > If you leave this box blank, the value from the username portion of the <STRONG>User logon name</STRONG> is used for the email alias.
 
 4. Click **Existing user**.
 
@@ -173,7 +174,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 
         To learn more, see [In-Place Archiving in Exchange 2013](in-place-archiving-in-exchange-2013-exchange-2013-help.md).
 
-   - **Address book policy**: Use this option to specify an address book policy (ABP) for the mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. When assigned to mailbox users, an ABP provides them with access to a customized GAL in Outlook and Outlook Web App. To learn more, see [Address book policies](https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/address-book-policies).
+   - **Address book policy**: Use this option to specify an address book policy (ABP) for the mailbox. ABPs contain a global address list (GAL), an offline address book (OAB), a room list, and a set of address lists. When assigned to mailbox users, an ABP provides them with access to a customized GAL in Outlook and Outlook Web App. To learn more, see [Address book policies](../ExchangeOnline/address-books/address-book-policies/address-book-policies.md).
 
         In the drop-down list, select the policy that you want associated with this mailbox.
 
@@ -192,12 +193,12 @@ You can also use the **Enable-Mailbox** cmdlet to mail-enable multiple users. Yo
 For example, the following command mailbox-enables users who aren't already mail-enabled and that have a value in the **UserPrincipalName** property, which helps ensure that you don't inadvertently convert a system account to a mailbox.
 
 ```powershell
-Get-User -RecipientTypeDetails User -Filter { UserPrincipalName -ne $Null } | Enable-Mailbox
+Get-User -RecipientTypeDetails User -Filter "UserPrincipalName -ne `$Null" | Enable-Mailbox
 ```
 
-For syntax and parameter information, see [Enable-Mailbox](https://technet.microsoft.com/en-us/library/aa998251\(v=exchg.150\)) and [Get-User](https://technet.microsoft.com/en-us/library/aa996896\(v=exchg.150\)).
+For syntax and parameter information, see [Enable-Mailbox](/powershell/module/exchange/Enable-Mailbox) and [Get-User](/powershell/module/exchange/Get-User).
 
-For more information about pipelining, see [Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\)).
+For more information about pipelining, see [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines).
 
 ## How do you know this worked?
 

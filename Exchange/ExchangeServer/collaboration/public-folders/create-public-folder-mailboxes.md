@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 64437ffd-231b-4c10-84df-232ccbe9538f
-ms.date: 7/12/2018
 ms.reviewer:
 title: Create a public folder mailbox in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -32,18 +33,18 @@ For additional management tasks related to public folders in Exchange Server, se
 
 - Public folders on Exchange 2010 servers can't exist in the same organization with Exchange 2016 or later public folders. If you try to create a public folder mailbox when you still have legacy public folders, you'll receive the error **An existing Public Folder deployment has been detected. To migrate existing Public Folder data, create new Public Folder mailbox using -HoldForMigration switch.**
 
-    Before you can create public folders in Exchange Server 2016 or later, you need to migrate your Exchange 2010 public folders by following the steps in [Use batch migration to migrate public folders from Exchange 2010 to Exchange 2016](batch-migration-from-previous-versions.md).
+  Before you can create public folders in Exchange Server 2016 or later, you need to migrate your Exchange 2010 public folders by following the steps in [Use batch migration to migrate public folders from Exchange 2010 to Exchange 2016](batch-migration-from-previous-versions.md).
 
 - To move your public folder mailboxes from Exchange 2013 to Exchange 2016 or Exchange 2019, see [Migrate public folders from Exchange 2013 to Exchange 2016 or Exchange 2019](migrate-from-exchange-2013.md).
 
-- For more information about the Exchange admin center, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- For more information about the Exchange admin center, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](../../permissions/feature-permissions/sharing-and-collaboration-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create a public folder mailbox
 
@@ -51,59 +52,58 @@ For additional management tasks related to public folders in Exchange Server, se
 
 2. In the **New public folder mailbox** page that opens, enter the following information:
 
-    - **Name**: Enter the name for the public folder mailbox.
+   - **Name**: Enter the name for the public folder mailbox.
 
-    - **Organizational unit**: Click **Browse** to select the location in Active Directory where the mailbox object is created.
+   - **Organizational unit**: Click **Browse** to select the location in Active Directory where the mailbox object is created.
 
-    - **Mailbox database**: Click **Browse** to select the mailbox database where the mailbox is created.
+   - **Mailbox database**: Click **Browse** to select the mailbox database where the mailbox is created.
 
-    When you're finished, click **Save**.
-
+   When you're finished, click **Save**.
 
 ## Use the Exchange Management Shell to create a public folder mailbox
 
 To create a public folder mailbox, use the following syntax:
 
-```
+```PowerShell
 New-Mailbox -PublicFolder -Name <Name>
 ```
 
 This example creates the primary hierarchy public folder mailbox named Master Hierarchy, because this is the first public folder mailbox in the organization (the value of the _Name_ parameter doesn't determine whether the mailbox is the primary hierarchy public folder mailbox).
 
-```
+```PowerShell
 New-Mailbox -PublicFolder -Name "Master Hierarchy"
 ```
 
-This example creates a secondary hierarcy public folder mailbox named Istanbul, because this isn't the first public folder mailbox in the organization (the value of the _Name_ parameter doesn't determine whether the mailbox is a secondary hierarchy public folder mailbox).
+This example creates a secondary hierarchy public folder mailbox named Istanbul, because this isn't the first public folder mailbox in the organization (the value of the _Name_ parameter doesn't determine whether the mailbox is a secondary hierarchy public folder mailbox).
 
-```
+```PowerShell
 New-Mailbox -PublicFolder -Name Istanbul
 ```
 
-For detailed syntax and parameter information, see [New-Mailbox](https://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx).
+For detailed syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/new-mailbox).
 
 ## How do you know this worked?
 
 To verify that you've successfully created the a public folder mailbox, do any of these steps:
 
-- In the EAC, go to **Public folders** \> **Public folder mailboxes** and verify the public folder mailbox is listed. The primary hierarcy public folder mailbox has the value **Primary Hierarchy** for the **Contains** property. All other public folder mailboxes have the value **Secondary Hierarchy** for the **Contains** property.
+- In the EAC, go to **Public folders** \> **Public folder mailboxes** and verify the public folder mailbox is listed. The primary hierarchy public folder mailbox has the value **Primary Hierarchy** for the **Contains** property. All other public folder mailboxes have the value **Secondary Hierarchy** for the **Contains** property.
 
 - In the Exchange Management Shell, run the following command to verify the mailbox is listed, and check the value of the **IsRootPublicFolderMailbox** property to see if the mailbox is the primary hierarchy public folder mailbox (`True`) or a secondary hierarchy public folder mailbox (`False`):
 
-    ```
-    Get-Mailbox -PublicFolder | Format-Table -Auto Name,ServerName,Database,IsRootPublicFolderMailbox
-    ```
+  ```PowerShell
+  Get-Mailbox -PublicFolder | Format-Table -Auto Name,ServerName,Database,IsRootPublicFolderMailbox
+  ```
 
 - In the Exchange Management Shell, run the following commands to verify the primary hierarchy public folder mailbox:
 
-    1. Run the following command:
+  1. Run the following command:
 
-      ```
-      Get-OrganizationConfig | Format-List RootPublicFolderMailbox
-      ```
+     ```PowerShell
+     Get-OrganizationConfig | Format-List RootPublicFolderMailbox
+     ```
 
-    2. Use the GUID value returned by the first command with **Get-Mailbox** to confirm the mailbox name. You can copy the GUID value by right-clicking in the Exchange Management Shell window, selecting **Mark**, highlighting the GUID value, and then pressing ENTER.
+  2. Use the GUID value returned by the first command with **Get-Mailbox** to confirm the mailbox name. You can copy the GUID value by right-clicking in the Exchange Management Shell window, selecting **Mark**, highlighting the GUID value, and then pressing ENTER.
 
-      ```
-      Get-Mailbox -PublicFolder -Identity <GUID>
-      ```
+     ```PowerShell
+     Get-Mailbox -PublicFolder -Identity <GUID>
+     ```

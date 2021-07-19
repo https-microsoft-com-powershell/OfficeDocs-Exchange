@@ -2,13 +2,14 @@
 title: 'Manage cmdlet extension agents: Exchange 2013 Help'
 TOCTitle: Manage cmdlet extension agents
 ms:assetid: 9141b3cb-ad13-4415-be2f-aa89f91445f5
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298143(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298143(v=EXCHG.150)
 ms:contentKeyID: 50117645
-ms.date: 03/23/2018
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ This topic shows you how to enable, disable, view, and change the priority of cm
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Enable a cmdlet extension agent
 
@@ -46,7 +47,7 @@ This example enables a cmdlet extension agent by using the **Enable-CmdletExtens
 Enable-CmdletExtensionAgent "Scripting Agent"
 ```
 
-For detailed syntax and parameter information, see [Enable-CmdletExtensionAgent](https://technet.microsoft.com/en-us/library/dd335192\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Enable-CmdletExtensionAgent](/powershell/module/exchange/Enable-CmdletExtensionAgent).
 
 ## Disable a cmdlet extension agent
 
@@ -61,13 +62,13 @@ To disable a cmdlet extension agent, use the **Disable-CmdletExtensionAgent** cm
 Disable-CmdletExtensionAgent "Scripting Agent"
 ```
 
-For detailed syntax and parameter information, see [Disable-CmdletExtensionAgent](https://technet.microsoft.com/en-us/library/dd298132\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Disable-CmdletExtensionAgent](/powershell/module/exchange/Disable-CmdletExtensionAgent).
 
 ## View existing cmdlet extension agents
 
 Viewing cmdlet extension agents enables you to see which agents are run first and which agents are enabled in an Exchange 2013 organization. For more information about pipelining and the **Format-Table** cmdlet, see the following topics:
 
-- [Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\))
+- [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines)
 
 - [Working with command output](working-with-command-output-exchange-2013-help.md)
 
@@ -83,7 +84,7 @@ This example gets multiple cmdlet extension agents by using the **Get-CmdletExte
 Get-CmdletExtensionAgent | Format-Table Name, Enabled, Priority
 ```
 
-For detailed syntax and parameter information, see [Get-CmdletExtensionAgent](https://technet.microsoft.com/en-us/library/dd297946\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-CmdletExtensionAgent](/powershell/module/exchange/Get-CmdletExtensionAgent).
 
 ## Change the priority of a cmdlet extension agent
 
@@ -100,4 +101,4 @@ This example changes the priority of a cmdlet extension agent by using the **Set
 Set-CmdletExtensionAgent "Scripting Agent" -Priority 3
 ```
 
-For detailed syntax and parameter information, see [Set-CmdletExtensionAgent](https://technet.microsoft.com/en-us/library/dd335175\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-CmdletExtensionAgent](/powershell/module/exchange/Set-CmdletExtensionAgent).

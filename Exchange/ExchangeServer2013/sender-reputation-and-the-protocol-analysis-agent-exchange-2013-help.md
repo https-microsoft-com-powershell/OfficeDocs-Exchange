@@ -2,13 +2,14 @@
 title: 'Sender reputation and the Protocol Analysis agent: Exchange 2013 Help'
 TOCTitle: Sender reputation and the Protocol Analysis agent
 ms:assetid: c4c34235-d545-41e7-ac2f-1dd43aaa3708
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124512(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124512(v=EXCHG.150)
 ms:contentKeyID: 49248689
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

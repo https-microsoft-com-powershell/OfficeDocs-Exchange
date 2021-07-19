@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 85ff95d4-0aa4-4964-ac4b-5b07a5a1039f
-ms.date: 7/5/2018
 ms.reviewer:
 title: Disconnected mailboxes
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -34,7 +35,7 @@ A *disconnected mailbox* is a mailbox object in the mailbox database that isn't 
 
   To identify the disabled mailboxes in your organization, run the following commands in the Exchange Management Shell:
 
-  ```
+  ```PowerShell
   $dbs = Get-MailboxDatabase
   $dbs | foreach {Get-MailboxStatistics -Database $_.DistinguishedName} | where {$_.DisconnectReason -eq "Disabled"} | Format-Table DisplayName,Database,DisconnectDate
   ```
@@ -43,7 +44,7 @@ A *disconnected mailbox* is a mailbox object in the mailbox database that isn't 
 
   Run the following commands to identify soft-deleted mailboxes in your organization.
 
-  ```
+  ```PowerShell
   $dbs = Get-MailboxDatabase
   $dbs | foreach {Get-MailboxStatistics -Database $_.DistinguishedName} | where {$_.DisconnectReason -eq "SoftDeleted"} | Format-Table DisplayName,Database,DisconnectDate
   ```
@@ -66,7 +67,7 @@ Here are scenarios in which you may want to connect or restore a disabled mailbo
 
 - You disabled a mailbox and now want to reconnect the mailbox to the same Active Directory user account.
 
-- You deleted a mailbox by using the EAC or the [Remove-Mailbox](https://technet.microsoft.com/library/0477708c-768c-4040-bad2-8f980606fcf4.aspx) cmdlet and now want to reconnect the mailbox to a different Active Directory user account.
+- You deleted a mailbox by using the EAC or the [Remove-Mailbox](/powershell/module/exchange/remove-mailbox) cmdlet and now want to reconnect the mailbox to a different Active Directory user account.
 
 - You deleted a mailbox and now want to restore the mailbox to an existing mailbox. For example, if a user whose mailbox was deleted has a new mailbox, you can restore the user's disabled mailbox to their new mailbox.
 
@@ -115,7 +116,7 @@ You can perform two operations on a soft-deleted mailbox:
 
 The procedures for restoring and permanently deleting a soft-deleted mailbox are similar to those for a disabled mailbox. For more information, see the following topics:
 
-- [Restore a Soft-Deleted Mailbox](https://technet.microsoft.com/library/4f3f5ce4-9d12-4ed8-9f70-d8a6aa8a1b2e.aspx)
+- [Connect or restore a deleted mailbox](restore-deleted-mailboxes.md)
 
 - [Permanently delete a mailbox](permanently-delete-mailboxes.md)
 
@@ -140,6 +141,5 @@ The following table contains links to topics that will help you manage disconnec
 |[Disable or delete a mailbox in Exchange Server](disable-or-delete-mailboxes.md)|Learn how to disable or delete mailboxes.|
 |[Connect a disabled mailbox](connect-disabled-mailboxes.md)|Learn how to connect a disabled mailbox to an existing user account.|
 |[Connect or restore a deleted mailbox](restore-deleted-mailboxes.md)|Learn how to connect a deleted mailbox to a user account or restore the contents of a deleted mailbox to an existing mailbox.|
-|[Connect or Restore a Soft-Deleted Mailbox](https://technet.microsoft.com/library/4f3f5ce4-9d12-4ed8-9f70-d8a6aa8a1b2e.aspx)|Learn how to connect a soft-deleted mailbox to a user account or restore a soft-deleted mailbox to an existing mailbox.|
-|[Manage Mailbox Restore Requests](https://technet.microsoft.com/library/8e668a52-c601-4d96-a51c-ab60267e1321.aspx)|Learn how to manage mailbox restore requests using the Exchange Management Shell.|
+|[Manage Mailbox Restore Requests](../../../ExchangeServer2013/manage-mailbox-restore-requests-exchange-2013-help.md)|Learn how to manage mailbox restore requests using the Exchange Management Shell.|
 |[Permanently delete a mailbox](permanently-delete-mailboxes.md)|Learn how to permanently delete a mailbox.|

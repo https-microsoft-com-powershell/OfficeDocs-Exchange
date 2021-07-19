@@ -2,13 +2,14 @@
 title: "Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers"
 TOCTitle: Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers.
 ms:assetid: a115b182-cbd2-4d31-aa0e-375240939301
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.exchange2000or2003presentinorg(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.exchange2000or2003presentinorg(v=EXCHG.150)
 ms:contentKeyID: 49090987
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -44,7 +45,7 @@ The path you need to follow to install Exchange 2013 in your organization depend
 <li><p>Migrate Exchange 2007 mailboxes, public folders, and other components to Exchange 2013.</p></li>
 <li><p>Decommission and remove all Exchange 2007 servers.</p></li>
 </ol>
-<p>For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=103281">Upgrading to Exchange 2007</a> and <a href="upgrade-from-exchange-2007-to-exchange-2013-exchange-2013-help.md">Upgrade from Exchange 2007 to Exchange 2013</a>.</p></td>
+<p>For more information, see <a href="/previous-versions/office/exchange-server-2007/bb124008(v=exchg.80)">Upgrading to Exchange 2007</a> and <a href="upgrade-from-exchange-2007-to-exchange-2013-exchange-2013-help.md">Upgrade from Exchange 2007 to Exchange 2013</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>Exchange 2003</p></td>
@@ -58,17 +59,13 @@ The path you need to follow to install Exchange 2013 in your organization depend
 <li><p>Migrate Exchange 2010 mailboxes, public folders, and other components to Exchange 2013.</p></li>
 <li><p>Decommission and remove all Exchange 2010 servers.</p></li>
 </ol>
-<p>For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=268414">Exchange 2003 - Planning Roadmap for Upgrade and Coexistence</a> and <a href="upgrade-from-exchange-2010-to-exchange-2013-exchange-2013-help.md">Upgrade from Exchange 2010 to Exchange 2013</a>.</p></td>
+<p>For more information, see <a href="/previous-versions/office/exchange-server-2010/aa998186(v=exchg.141)">Exchange 2003 - Planning Roadmap for Upgrade and Coexistence</a> and <a href="upgrade-from-exchange-2010-to-exchange-2013-exchange-2013-help.md">Upgrade from Exchange 2010 to Exchange 2013</a>.</p></td>
 </tr>
 </tbody>
 </table>
 
-When upgrading to Exchange 2010 or Exchange 2013, you can use the Exchange Deployment Assistant to help you complete your deployment. For more information, see the following links:
+When upgrading to Exchange 2013 or later, you can use the Exchange Deployment Assistant to help complete your deployment. For more information, see [Exchange Deployment Assistant](https://assistants.microsoft.com/).
 
-  - [Exchange 2010 Deployment Assistant](https://go.microsoft.com/fwlink/p/?linkid=171086)
-
-  - [Exchange 2013 Deployment Assistant](https://go.microsoft.com/fwlink/p/?linkid=277105)
-
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

@@ -4,9 +4,10 @@ TOCTitle: Allow users to make calls
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/24/2018
 ms.reviewer: 
 ms.assetid: b6e696ce-c848-475b-a598-9035677497e2
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

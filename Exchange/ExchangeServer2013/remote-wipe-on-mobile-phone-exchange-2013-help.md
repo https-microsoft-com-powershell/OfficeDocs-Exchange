@@ -4,8 +4,9 @@ TOCTitle: Perform a remote wipe on a mobile phone
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
+f1.keywords:
+- CSH
 ms.custom: SaRA
 ms.assetid: 67ba838e-031d-4a98-b277-170683b6f520
 mtps_version: v=EXCHG.150
@@ -20,18 +21,24 @@ Your users carry sensitive corporate information in their pockets every day. If 
 > [!NOTE]
 > This topic also provides instructions for how to use Microsoft Outlook Web App to perform a remote wipe on a phone. The user must be signed in to Outlook Web App to perform a remote wipe.
 
+> [!CAUTION]
+>
+> The commands in this article are designed to destroy data. Exercise caution when using them.
+>
+> The remote wipe procedures described below will completely wipe all data from the user's device, including photos, personal files, and so on. If you wish to wipe only the user's Outlook data, you must use Exchange ActiveSync v16.1 or later, which is not supported on Exchange Server 2013. See [Managing devices for Outlook for iOS and Android for Exchange Server](../ExchangeServer/clients/outlook-for-ios-and-android/manage-devices.md) for more information on how this works in Exchange Server 2016 and later.
+
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mobile devices" entry in the [Clients and mobile devices permissions](https://technet.microsoft.com/library/57eca42a-5a7f-4c65-89f0-7a84f2dbea19.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mobile devices" entry in the [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md) topic.
 
 - This procedure will clear all data on the mobile phone, including installed applications, photos, and personal information.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to wipe a user's phone
 

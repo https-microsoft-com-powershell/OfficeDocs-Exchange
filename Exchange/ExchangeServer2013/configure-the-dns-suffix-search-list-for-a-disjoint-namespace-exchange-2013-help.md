@@ -2,13 +2,14 @@
 title: 'Configure the DNS suffix search list for a disjoint namespace'
 TOCTitle: Configure the DNS suffix search list for a disjoint namespace
 ms:assetid: cfa715ac-7b69-47c3-b206-933ec2cf677b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb847901(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb847901(v=EXCHG.150)
 ms:contentKeyID: 49289414
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -32,11 +33,11 @@ This topic explains how to use the Group Policy Management console (GPMC) to con
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the GPMC to configure the DNS suffix search list
 
-1. On a 32-bit computer in your domain, install GPMC with Service Pack 1 (SP1). For download information, see [Group Policy Management Console with Service Pack 1](https://go.microsoft.com/fwlink/p/?linkid=100126).
+1. On a 32-bit computer in your domain, install GPMC with Service Pack 1 (SP1). For download information, see [Group Policy Management Console with Service Pack 1](https://www.microsoft.com/download/details.aspx?id=21895).
 
     > [!NOTE]
     > If you have a computer in your domain running Windows Server 2008 or Windows Vista, you can skip this step.
@@ -63,8 +64,6 @@ After you install Exchange 2013, verify that you can send email messages inside 
 
 ## For more information
 
-[Windows Server Group Policy](https://go.microsoft.com/fwlink/p/?linkid=100128)
-
-[Group Policy](https://go.microsoft.com/fwlink/?linkid=268043)
+[Windows Server Group Policy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))
 
 [Disjoint namespace scenarios](disjoint-namespace-scenarios-exchange-2013-help.md)

@@ -2,13 +2,14 @@
 title: 'Manage safelist aggregation: Exchange 2013 Help'
 TOCTitle: Manage safelist aggregation
 ms:assetid: 5ac17168-f411-4cb7-ae98-ebefb865b210
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998280(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998280(v=EXCHG.150)
 ms:contentKeyID: 49248682
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ _**Applies to:** Exchange Server 2013_
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure the mailbox safelist collection limits
 
@@ -73,7 +74,7 @@ This example writes the safe senders list for the mailbox john@contoso.com to Ac
 Update-Safelist john@contoso.com -Type SafeSenders
 ```
 
-For detailed syntax and parameter information, see [Update-SafeList](https://technet.microsoft.com/en-us/library/bb125034\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Update-SafeList](/powershell/module/exchange/Update-SafeList).
 
 ## How do you know this worked?
 

@@ -3,12 +3,13 @@ localization_priority: Normal
 description: When a Unified Messaging (UM)-enabled voice mail user is locked out of their mailbox using Outlook Voice Access because they tried to sign in using an incorrect PIN multiple times or they forgot their PIN, you can use one of the following procedures to reset the user's PIN. When you reset a user's Outlook Voice Access PIN, you can configure UM to automatically generate a PIN or you can manually specify the PIN. The new PIN is sent to the user in email. You can specify additional PIN options such as requiring the user to reset their PIN when they first sign in. Users can also reset their UM PIN using Outlook or Outlook Web App.
 ms.topic: article
 author: msdmaguire
-f1_keywords:
-- Microsoft.Exchange.Management.SnapIn.Esm.Recipients.ResetUnifiedMessagingPinPropertyControl
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: bf07e6e7-01d2-4933-bff5-c615cc21a480
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- CSH
+ms.custom:
+- Microsoft.Exchange.Management.SnapIn.Esm.Recipients.ResetUnifiedMessagingPinPropertyControl
 title: Reset a voice mail PIN in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -30,12 +31,12 @@ For additional tasks related to Outlook Voice Access PIN security, see [PIN secu
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailboxes" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to reset a Unified Messaging PIN
 
@@ -67,6 +68,6 @@ For additional tasks related to Outlook Voice Access PIN security, see [PIN secu
 
 This example resets the voice mail PIN for Tony Smith to 1985848. However, this PIN must be changed when the user first signs in to Outlook Voice Access.
 
-```
+```PowerShell
 Set-UMMailboxPIN -Identity tonysmith@contoso.com -PIN 1985848 -PinExpired $true
 ```

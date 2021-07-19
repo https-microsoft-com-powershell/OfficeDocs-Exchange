@@ -2,13 +2,14 @@
 title: 'Mailbox moves in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Mailbox moves in Exchange 2013
 ms:assetid: 9c0a0bc9-2a39-4cf0-aa6e-6e5ef3fd38b5
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150543(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150543(v=EXCHG.150)
 ms:contentKeyID: 47560063
-ms.date: 06/04/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -72,7 +73,7 @@ The following list shows the types of moves that support migration endpoints:
 
   - **Cross-forest move**: Move mailboxes between two different on-premises Exchange forests. Cross-forest moves require the use of a Exchange RemoteMove endpoint.
 
-  - **Remote move**: In a hybrid deployment, a remote move involves *onboarding* or *offboarding* migrations. Remote moves require the use of a RemoteMove endpoint. Onboarding moves mailboxes from an on-premises Exchange organization to Exchange Online in Microsoft Office 365, and uses a RemoteMove endpoint as the source endpoint of the migration batch. Offboarding moves mailboxes from Exchange Online in Office 365 to an on-premises Exchange organization and uses a Exchange RemoteMove endpoint as the target endpoint of the migration batch.
+  - **Remote move**: In a hybrid deployment, a remote move involves *onboarding* or *offboarding* migrations. Remote moves require the use of a RemoteMove endpoint. Onboarding moves mailboxes from an on-premises Exchange organization to Exchange Online in Microsoft 365 or Office 365, and uses a RemoteMove endpoint as the source endpoint of the migration batch. Offboarding moves mailboxes from Exchange Online in Microsoft 365 or Office 365 to an on-premises Exchange organization and uses a Exchange RemoteMove endpoint as the target endpoint of the migration batch.
 
 The following table shows the migration endpoint types and values that you can manage in Exchange 2013.
 
@@ -133,6 +134,6 @@ The following table shows the migration endpoint types and values that you can m
 </tbody>
 </table>
 
-For more information about migration endpoints, see the **Migration** user interface in the EAC and [New-MigrationEndpoint](https://technet.microsoft.com/en-us/library/jj218611\(v=exchg.150\)).
+For more information about migration endpoints, see the **Migration** user interface in the EAC and [New-MigrationEndpoint](/powershell/module/exchange/New-MigrationEndpoint).
 
 For more information about managing new and existing moves, see [Manage on-premises moves](manage-on-premises-moves-exchange-2013-help.md).

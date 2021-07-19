@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 6ac3c87d-161f-447b-afb2-149ae7e3f1dc
-ms.date:
 ms.reviewer:
 title: Scenario Deploying address book policies in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -95,7 +96,7 @@ The GAL, OAB, room list, and address lists that are required in the ABPs for thi
 
 These are the important issues to consider when you use ABPs in your organization:
 
-- You can't use hierarchical address books (HABs) and ABPs simultaneously. To learn more, see [Understanding Hierarchical Address Books](https://technet.microsoft.com/library/a1d277a0-5437-40af-aade-e4730a0d1308.aspx).
+- You can't use hierarchical address books (HABs) and ABPs simultaneously. To learn more, see [Understanding Hierarchical Address Books](../../../ExchangeOnline/address-books/hierarchical-address-books/hierarchical-address-books.md).
 
 - A user that's assigned an ABP needs to exist in the GAL that's specified for the ABP.
 
@@ -113,7 +114,7 @@ These are the important issues to consider when you use ABPs in your organizatio
 
     For more information about recipient filtering, see [Recipient filtering on Edge Transport servers](../../antispam-and-antimalware/antispam-protection/recipient-filtering.md).
 
-- Client applications that access Active Directory directly through LDAP will bypass the logic that's built into ABPs. Because Entourage and Outlook for Mac use direct LDAP queries to access Active Directory, those client applications won't function properly with ABPs if a domain controller or global catalog server is specified or provided to them by the Autodiscover service. Entourage and Outlook for Mac can use Exchange Web Services (EWS) or a local OAB to access directory information, but if they can directly access an LDAP service, they will attempt to do so.
+- Client applications that access Active Directory directly through LDAP will bypass the logic that's built into ABPs.
 
 - At a minimum, the GAL that's specified in an ABP must contain all address lists (including the room address list) that are specified in the ABP (it's OK if the ABP contains additional address lists). Don't create a GAL that contains fewer recipients than the address lists in the same ABP.
 
@@ -135,7 +136,7 @@ These are the important issues to consider when you use ABPs in your organizatio
 
 - Deploying ABPs doesn't prevent users in one virtual organization from sending email to users in another virtual organization. If you want to prevent users from sending email across virtual organizations, we recommend that you create a mail flow rule (also known as a transport rule) that looks for messages sent between the recipients. For example, to prevent Contoso users from receiving messages from Fabrikam users and vice-versa, but still allow Fabrikam's senior leadership team to send messages to Contoso users, you can create the following mail flow rule in the Exchange Management Shell:
 
-  ```
+  ```PowerShell
   New-TransportRule -Name "Ethical Wall: Contoso-Fabrikam" -BetweenMemberOf1 "AllFabrikamEmployees" -BetweenMemberOf2 "AllContosoEmployees" -DeleteMessage -ExceptIfFrom seniorleadership@fabrikam.com
   ```
 
@@ -143,13 +144,13 @@ These are the important issues to consider when you use ABPs in your organizatio
 
 
 
-- To configure a feature that's similar to address book policies in the Skype for Business or Lync client, you can set the **msRTCSIP-GroupingID** attribute for specific users. For details, see [PartitionByOU Replaced with msRTCSIP-GroupingID](https://go.microsoft.com/fwlink/p/?LinkId=232306).
+- To configure a feature that's similar to address book policies in the Skype for Business or Lync client, you can set the **msRTCSIP-GroupingID** attribute for specific users. For details, see [PartitionByOU Replaced with msRTCSIP-GroupingID](/previous-versions/office/skype-server-2010/gg429725(v=ocs.14)).
 
 ## Detailed deployment steps for Scenario 2: Two companies sharing a CEO in one Exchange organization
 
 This section walks you through the deployment steps for [Scenario 2: Two companies sharing a CEO in one Exchange organization](#scenario-2-two-companies-sharing-a-ceo-in-one-exchange-organization). If you recall, Fabrikam and Tailspin Toys are separate companies that share the same CEO.
 
-To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 ### Step 1: Install and configure the Address Book Policy Routing Agent
 
@@ -161,7 +162,7 @@ In this scenario, the **CustomAttribute15** attribute defines the virtual organi
 
 To set the **CustomAttribute15** attribute value for the Fabrikam and Tailspin Toys mailboxes, distribution groups, dynamic distribution groups, mail contacts, and mail users, use the following syntax:
 
-```
+```PowerShell
 $<VariableName> = Get-<RecipientType> -ResultSize Unlimited | where PrimarySMTPAddress -match <fabrikam.com | tailspintoys.com>
 $<VariableName> | foreach {Set-<RecipientType> -Identity ($_.GUID).ToString() -CustomAttribute15 <FAB | TAIL>
 ```
@@ -174,7 +175,7 @@ $<VariableName> | foreach {Set-<RecipientType> -Identity ($_.GUID).ToString() -C
 
 This example sets the value `FAB` for the **CustomAttribute15** attribute on all Fabrikam mailboxes.
 
-```
+```PowerShell
 $FAB_MBX = Get-Mailbox -ResultSize Unlimited | where PrimarySMTPAddress -match fabrikam.com
 $FAB_MBX | foreach {Set-Mailbox -Identity ($_.GUID).ToString() -CustomAttribute15 FAB}
 ```
@@ -195,26 +196,26 @@ This organization requires four custom address lists:
 
 This example creates the address list named AL_FAB_Users_DGs that contains all Fabrikam users, distribution groups, and dynamic distribution groups _and_ the CEO.
 
-```
-New-AddressList -Name "AL_FAB_Users_DGs" -RecipientFilter {((RecipientType -eq 'UserMailbox') -or (RecipientType -eq 'MailUniversalDistributionGroup') -or (RecipientType -eq 'DynamicDistributionGroup')) -and (CustomAttribute15 -eq 'FAB') -or (CustomAttribute15 -eq 'CEO')}
+```PowerShell
+New-AddressList -Name "AL_FAB_Users_DGs" -RecipientFilter "((RecipientType -eq 'UserMailbox') -or (RecipientType -eq 'MailUniversalDistributionGroup') -or (RecipientType -eq 'DynamicDistributionGroup')) -and (CustomAttribute15 -eq 'FAB') -or (CustomAttribute15 -eq 'CEO')"
 ```
 
 This example creates the address list named AL_FAB_Contacts that contains all Fabrikam mail contacts.
 
-```
-New-AddressList -Name "AL_FAB_Contacts" -RecipientFilter {(RecipientType -eq 'MailContact') -and (CustomAttribute15 -eq 'FAB')}
+```PowerShell
+New-AddressList -Name "AL_FAB_Contacts" -RecipientFilter "(RecipientType -eq 'MailContact') -and (CustomAttribute15 -eq 'FAB')"
 ```
 
 This example creates the address list named AL_TAIL_Users_DGs that contains all Tailspin Toys users, distribution groups, and dynamic distribution groups _and_ the CEO.
 
-```
-New-AddressList -Name "AL_TAIL_Users_DGs" -RecipientFilter {((RecipientType -eq 'UserMailbox') -or (RecipientType -eq 'MailUniversalDistributionGroup') -or (RecipientType -eq 'DynamicDistributionGroup')) -and (CustomAttribute15 -eq 'TAIL') -or (CustomAttribute15 -eq 'CEO')}
+```PowerShell
+New-AddressList -Name "AL_TAIL_Users_DGs" -RecipientFilter "((RecipientType -eq 'UserMailbox') -or (RecipientType -eq 'MailUniversalDistributionGroup') -or (RecipientType -eq 'DynamicDistributionGroup')) -and (CustomAttribute15 -eq 'TAIL') -or (CustomAttribute15 -eq 'CEO')"
 ```
 
 This example creates the address list named AL_TAIL_Contacts that contains all Tailspin Toys mail contacts.
 
-```
-New-AddressList -Name "AL_TAIL_Contacts" -RecipientFilter {(RecipientType -eq 'MailContact') -and (CustomAttribute15 -eq 'TAIL')}
+```PowerShell
+New-AddressList -Name "AL_TAIL_Contacts" -RecipientFilter "(RecipientType -eq 'MailContact') -and (CustomAttribute15 -eq 'TAIL')"
 ```
 
 For more information, see [Create address lists](../address-lists/address-list-procedures.md#create-address-lists).
@@ -229,19 +230,19 @@ This organization requires two custom room lists:
 
 This example creates the room list named AL_FAB_Rooms for Fabrikam room mailboxes.
 
-```
-New-AddressList -Name AL_FAB_Rooms -RecipientFilter {(Alias -ne $null) -and (CustomAttribute15 -eq 'FAB') -and (RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')}
+```PowerShell
+New-AddressList -Name AL_FAB_Rooms -RecipientFilter "(Alias -ne $null) -and (CustomAttribute15 -eq 'FAB') -and (RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')"
 ```
 
 This example creates a room list named AL_TAIL_Rooms for Tailspin Toys room mailboxes.
 
-```
-New-AddressList -Name AL_TAIL_Rooms -RecipientFilter {(Alias -ne $null) -and (CustomAttribute15 -eq 'TAIL') -and (RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')}
+```PowerShell
+New-AddressList -Name AL_TAIL_Rooms -RecipientFilter "(Alias -ne $null) -and (CustomAttribute15 -eq 'TAIL') -and (RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')"
 ```
 
  **Note**: This example creates a blank room list named AL_BlankRoom if the organization doesn't have any room mailboxes (an ABP requires a room list, even if it's empty):
 
- `New-AddressList -Name AL_BlankRoom -RecipientFilter {(Alias -ne $null) -and ((RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox'))}`
+ `New-AddressList -Name AL_BlankRoom -RecipientFilter "(Alias -ne $null) -and ((RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox'))"`
 
 For more information about creating address lists, see [Create address lists](../address-lists/address-list-procedures.md#create-address-lists).
 
@@ -255,14 +256,14 @@ This organization requires two custom GALs:
 
 This example creates the GAL named GAL_FAB for Fabrikam that includes all Fabrikam recipients _and_ allows the Fabrikam users to see the CEO.
 
-```
-New-GlobalAddressList -Name "GAL_FAB" -RecipientFilter {(CustomAttribute15 -eq 'FAB') -or (CustomAttribute15 -eq 'CEO')}
+```PowerShell
+New-GlobalAddressList -Name "GAL_FAB" -RecipientFilter "(CustomAttribute15 -eq 'FAB') -or (CustomAttribute15 -eq 'CEO')"
 ```
 
 This example creates the GAL named GAL_TAIL for Tailspin Toys that includes all Tailspin Toys recipients _and_ allows the Tailspin Toys users to see the CEO.
 
-```
-New-GlobalAddressList -Name "GAL_TAIL" -RecipientFilter {(CustomAttribute15 -eq 'TAIL') -or (CustomAttribute15 -eq 'CEO')}
+```PowerShell
+New-GlobalAddressList -Name "GAL_TAIL" -RecipientFilter "(CustomAttribute15 -eq 'TAIL') -or (CustomAttribute15 -eq 'CEO')"
 ```
 
  **Note**: Don't use a GAL in an ABP that contains recipients that are missing from address lists in the ABP. The combination of all address lists must match the recipients in the GAL.
@@ -279,13 +280,13 @@ This organization requires two custom GALs:
 
 This example creates the OAB named OAB_FAB for Fabrikam that includes the Fabrikam GAL.
 
-```
+```PowerShell
 New-OfflineAddressBook -Name "OAB_FAB" -AddressLists "GAL_FAB"
 ```
 
 This example creates the OAB named OAB_TAIL for Tailspin Toys that includes the Tailspin Toys GAL.
 
-```
+```PowerShell
 New-OfflineAddressBook -Name "OAB_TAIL" -AddressLists "GAL_TAIL"
 ```
 
@@ -307,19 +308,19 @@ This organization requires three ABPs:
 
 This example creates the ABP named ABP_FAB that contains the GAL, OAB, room list and address lists for Fabrikam.
 
-```
+```PowerShell
 New-AddressBookPolicy -Name "ABP_FAB" -AddressLists "AL_FAB_Users_DGs","AL_FAB_Contacts" -OfflineAddressBook "\OAB_FAB" -GlobalAddressList "\GAL_FAB" -RoomList "\AL_FAB_Rooms"
 ```
 
 This example creates the ABP named ABP_TAIL that contains the GAL, OAB, room list and address lists for Tailspin Toys.
 
-```
+```PowerShell
 New-AddressBookPolicy -Name "ABP_TAIL" -AddressLists "AL_TAIL_Users_DGs","AL_TAIL_Contacts" -OfflineAddressBook "\OAB_TAIL" -GlobalAddressList "\GAL_TAIL" -RoomList "\AL_TAIL_Rooms"
 ```
 
 This example creates the ABP named ABP_CEO that contains the GAL, OAB, room list and address lists for the CEO.
 
-```
+```PowerShell
 New-AddressBookPolicy -Name "ABP_CEO" -AddressLists "AL_FAB_Users_DGs","AL_FAB_Contacts","AL_TAIL_Users_DGs","AL_TAIL_Contacts" -OfflineAddressBook "\Default Offline Address Book" -GlobalAddressList "\Default Global Address List" -RoomList "\All Rooms"
 ```
 
@@ -329,19 +330,19 @@ For more information, see [Procedures for address book policies in Exchange Serv
 
 This example assigns the ABP named ABP_FAB to all Fabrikam mailboxes.
 
-```
-$Fab = Get-Mailbox -ResultSize unlimited -Filter {CustomAttribute15 -eq 'FAB'}; $Fab | foreach {Set-Mailbox -Identity $_.Identity -AddressBookPolicy 'ABP_FAB'}
+```PowerShell
+$Fab = Get-Mailbox -ResultSize unlimited -Filter "CustomAttribute15 -eq 'FAB'"; $Fab | foreach {Set-Mailbox -Identity $_.Identity -AddressBookPolicy 'ABP_FAB'}
 ```
 
 This example assigns the ABP named ABP_TAIL to all Tailspin Toys mailboxes.
 
-```
-$Tail = Get-Mailbox -ResultSize unlimited -Filter {CustomAttribute15 -eq 'TAIL'}; $Tail | foreach {Set-Mailbox -Identity $_.Identity -AddressBookPolicy 'ABP_TAIL'}
+```PowerShell
+$Tail = Get-Mailbox -ResultSize unlimited -Filter "CustomAttribute15 -eq 'TAIL'"; $Tail | foreach {Set-Mailbox -Identity $_.Identity -AddressBookPolicy 'ABP_TAIL'}
 ```
 
 This example assigns the ABP named ABP_CEO to the CEO named Gabriela Laureano.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Gabriela Laureano" -AddressBookPolicy "ABP_CEO"
 ```
 

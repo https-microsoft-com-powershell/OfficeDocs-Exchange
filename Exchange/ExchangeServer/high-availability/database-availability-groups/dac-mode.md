@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 57e4bf22-eeae-42a5-beb3-d68d06489592
-ms.date: 7/9/2018
 ms.reviewer:
 title: Datacenter Activation Coordination mode
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -42,28 +43,28 @@ DAGs with two members have inherent limitations that prevent the DACP bit alone 
 - If the time that the DACP bit was set is more recent than the boot time of the witness server, the system assumes that the DAG member was rebooted for some other reason (perhaps a scheduled outage in which maintenance was performed or perhaps a system crash or power loss isolated to the DAG member), and the DAG member is permitted to mount databases.
 
 > [!IMPORTANT]
-> Because the witness server's boot time is used to determine whether a DAG member can mount its active databases on startup, you should never restart the witness server and the sole DAG member at the same time. Doing so may leave the DAG member in a state where it can't mount databases on startup. If this happens, you must run the [Restore-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/d65394ad-9680-423d-9a93-0b46906123e5.aspx) cmdlet on the DAG. This resets the DACP bit and permits the DAG member to mount databases.
+> Because the witness server's boot time is used to determine whether a DAG member can mount its active databases on startup, you should never restart the witness server and the sole DAG member at the same time. Doing so may leave the DAG member in a state where it can't mount databases on startup. If this happens, you must run the [Restore-DatabaseAvailabilityGroup](/powershell/module/exchange/restore-databaseavailabilitygroup) cmdlet on the DAG. This resets the DACP bit and permits the DAG member to mount databases.
 
 ## Other benefits of DAC mode
 
 In addition to preventing split brain syndrome at the application level, DAC mode also enables the use of the built-in site resilience cmdlets used to perform datacenter switchovers. These include the following:
 
-- [Stop-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/1e167fe5-b1c5-48d9-b3d8-4cf823d1c43c.aspx)
+- [Stop-DatabaseAvailabilityGroup](/powershell/module/exchange/stop-databaseavailabilitygroup)
 
-- [Restore-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/d65394ad-9680-423d-9a93-0b46906123e5.aspx)
+- [Restore-DatabaseAvailabilityGroup](/powershell/module/exchange/restore-databaseavailabilitygroup)
 
-- [Start-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/0a0fdf34-d657-4875-9a97-b48014f93ed7.aspx)
+- [Start-DatabaseAvailabilityGroup](/powershell/module/exchange/start-databaseavailabilitygroup)
 
 Performing a datacenter switchover for DAGs that aren't in DAC mode involves using a combination of Exchange tools and cluster management tools. For more information, see [Datacenter switchovers](../../high-availability/manage-ha/datacenter-switchovers.md).
 
 ## Enabling DAC mode
 
-DAC mode can be enabled only by using the Exchange Management Shell. Specifically, you can use the [Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) cmdlet to enable DAC mode, as illustrated in the following example.
+DAC mode can be enabled only by using the Exchange Management Shell. Specifically, you can use the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup) cmdlet to enable DAC mode, as illustrated in the following example.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG2 -DatacenterActivationMode DagOnly
 ```
 
 In the preceding example, DAG2 is enabled for DAC mode.
 
-For more information about enabling DAC mode, see [Configure database availability group properties](../../high-availability/manage-ha/configure-dag-properties.md) and [Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx).
+For more information about enabling DAC mode, see [Configure database availability group properties](../../high-availability/manage-ha/configure-dag-properties.md) and [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup).

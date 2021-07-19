@@ -2,13 +2,14 @@
 title: 'Test UM connectivity to VoIP gateways and PBXs: Exchange 2013 Help'
 TOCTitle: Test UM connectivity to VoIP gateways and PBXs
 ms:assetid: 2aca8631-a99a-4e29-aff0-e462385f03b2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996906(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996906(v=EXCHG.150)
 ms:contentKeyID: 55129209
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ For additional management tasks related to troubleshooting UM, see [UM services 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to test the operation of the Unified Messaging and telephony components
 

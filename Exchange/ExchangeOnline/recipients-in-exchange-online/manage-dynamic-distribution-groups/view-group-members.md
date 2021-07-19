@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Dynamic distribution groups are distribution groups whose membership is based on specific recipient filters rather than a defined set of recipients. Microsoft Exchange provides precanned filters to make it easier to create recipient filters for dynamic distribution groups. A precanned filter is a commonly used filter that you can use to meet a variety of recipient-filtering criteria. You can specify the recipient types you want to include in a dynamic distribution group. Additionally, you can also specify a list of conditions that the recipients must meet. You can use Exchange Online PowerShell to preview the list of recipients for a dynamic distribution group that uses precanned filters.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 40b100c6-864e-4c82-9f98-08dd5c83e378
-ms.date: 3/2/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: View members of a dynamic distribution group
 ms.collection: 
 - exchange-online
@@ -25,32 +26,32 @@ Dynamic distribution groups are distribution groups whose membership is based on
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Dynamic distribution groups" entry in the [Recipients Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipients" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to preview the list of members of a dynamic distribution group
 <a name="Shell"> </a>
 
 This example returns the list of members for the dynamic distribution group named Full Time Employees. The first command stores the dynamic distribution group object in the variable `$FTE`. The second command uses the **Get-Recipient** cmdlet to list the recipients that match the criteria defined for the dynamic distribution group.
 
-```
+```PowerShell
 $FTE = Get-DynamicDistributionGroup "Full Time Employees"
 ```
 
-```
+```PowerShell
 Get-Recipient -RecipientPreviewFilter $FTE.RecipientFilter -OrganizationalUnit $FTE.RecipientContainer
 ```
 
 This example displays the list of users and email addresses (more than 1000 mailboxes).
 
-```
+```PowerShell
 Get-Recipient -ResultSize Unlimited -RecipientPreviewFilter $FTE.RecipientFilter -OrganizationalUnit $FTE.RecipientContainer | Format-Table Name,Primary*
 ```
-For detailed syntax and parameter information, see [Get-DynamicDistributionGroup](https://technet.microsoft.com/library/d97ee738-dfa1-464b-855a-4242e8065473.aspx) and [Get-Recipient](https://technet.microsoft.com/library/2ce6250f-0ad3-4b29-870c-e1d6e1e154bc.aspx).
+For detailed syntax and parameter information, see [Get-DynamicDistributionGroup](/powershell/module/exchange/get-dynamicdistributiongroup) and [Get-Recipient](/powershell/module/exchange/get-recipient).
 
 > [!NOTE]
 > You can't view members of a dynamic distribution group by using the EAC.

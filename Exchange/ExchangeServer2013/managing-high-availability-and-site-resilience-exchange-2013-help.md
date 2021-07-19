@@ -2,13 +2,14 @@
 title: 'Managing high availability and site resilience: Exchange 2013 Help'
 TOCTitle: Managing high availability and site resilience
 ms:assetid: f9677392-88d2-457f-a488-245771a8c1f2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638215(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638215(v=EXCHG.150)
 ms:contentKeyID: 48385734
-ms.date: 06/06/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -40,9 +41,9 @@ The operational management tasks associated with DAGs include:
 
   - **Alternate witness server and alternate witness directory**: The alternate witness server and alternate witness directory are values that you can preconfigure as part of the planning process for a datacenter switchover. These refer to the witness server and witness directory that will be used when a datacenter switchover has been performed.
 
-  - **Replication port**: By default, all DAGs use TCP port 64327 for continuous replication. You can modify the DAG to use a different TCP port for replication by using the *ReplicationPort* parameter of the [Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/en-us/library/dd297934\(v=exchg.150\)) cmdlet.
+  - **Replication port**: By default, all DAGs use TCP port 64327 for continuous replication. You can modify the DAG to use a different TCP port for replication by using the *ReplicationPort* parameter of the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup) cmdlet.
 
-  - **Network discovery**: You can force the DAG to rediscover networks and network interfaces. This operation is used when you add or remove networks or introduce new subnets. Rediscovery of all DAG networks can be forced by using the *DiscoverNetworks* parameter of the [Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/en-us/library/dd297934\(v=exchg.150\)) cmdlet.
+  - **Network discovery**: You can force the DAG to rediscover networks and network interfaces. This operation is used when you add or remove networks or introduce new subnets. Rediscovery of all DAG networks can be forced by using the *DiscoverNetworks* parameter of the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup) cmdlet.
 
   - **Network compression**: By default, DAGs use compression only between DAG networks on different subnets. You can enable compression for all DAG networks or for seeding operations only, or you can disable compression for all DAG networks.
 
@@ -74,9 +75,9 @@ For detailed steps about how to add a mailbox database copy, see [Add a mailbox 
 
 Making sure that your servers are operating reliably and that your database copies are healthy are key objectives for daily messaging operations. Exchange 2013 includes a number of features that can be used to perform a variety of health monitoring tasks for DAGs and mailbox database copies, including:
 
-- [Get-MailboxDatabaseCopyStatus](https://technet.microsoft.com/en-us/library/dd298044\(v=exchg.150\))
+- [Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/Get-MailboxDatabaseCopyStatus)
 
-- [Test-ReplicationHealth](https://technet.microsoft.com/en-us/library/bb691314\(v=exchg.150\))
+- [Test-ReplicationHealth](/powershell/module/exchange/Test-ReplicationHealth)
 
 - Crimson channel event logging
 

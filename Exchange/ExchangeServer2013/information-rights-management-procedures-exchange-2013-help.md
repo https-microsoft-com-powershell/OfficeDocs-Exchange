@@ -2,13 +2,14 @@
 title: 'Information Rights Management procedures: Exchange 2013 Help'
 TOCTitle: Information Rights Management procedures
 ms:assetid: e5b3c7d1-31d6-481f-82e7-a3766da9a510
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351212(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351212(v=EXCHG.150)
 ms:contentKeyID: 49319936
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,7 +29,7 @@ _**Applies to:** Exchange Server 2013_
 
 [Enable or Disable Transport Decryption](enable-or-disable-transport-decryption-exchange-2013-help.md)
 
-[Configure IRM for Exchange Search and In-Place eDiscovery](configure-irm-for-exchange-search-and-https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery)
+[Configure IRM for Exchange Search and In-Place eDiscovery](configure-irm-for-exchange-search-and-in-place-ediscovery-exchange-2013-help.md)
 
 [Enable or Disable Journal Report Decryption](enable-or-disable-journal-report-decryption-exchange-2013-help.md)
 

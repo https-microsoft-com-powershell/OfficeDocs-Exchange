@@ -3,16 +3,17 @@ localization_priority: Normal
 description: Admins can learn how to create offline address books (OABs) in Exchange Online.
 ms.topic: article
 author: msdmaguire
-f1_keywords:
-- Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.Mailbox.NewOabWizardForm.OabIntroductionWizardPage
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: b57bb4ce-5b6e-4702-a2f8-04bf3898a861
-ms.date: 
 ms.reviewer: 
 title: Create an offline address book
 ms.collection: exchange-online
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- CSH
+ms.custom:
+- Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.Mailbox.NewOabWizardForm.OabIntroductionWizardPage
 manager: serdars
 
 ---
@@ -29,17 +30,17 @@ For additional management tasks related to OABs, see [Offline address book proce
 
 - By default, the Address List role isn't assigned to any role groups in Exchange Online. To use any cmdlets that require the Address List role, you need to add the role to a role group. For more information, see [Modify role groups](../../permissions-exo/role-groups.md#modify-role-groups).
 
-- You can only use Exchange Online PowerShell to perform the procedures in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- You can only use Exchange Online PowerShell to perform the procedures in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to create an OAB with web-based distribution
 
 This example creates an OAB named OAB_Contoso that contains the default global address list.
 
-```
+```PowerShell
 New-OfflineAddressBook -Name "OAB_Contoso" -AddressLists "\Default Global Address List"
 ```
 
-For detailed syntax and parameter information, see [New-OfflineAddressBook](https://technet.microsoft.com/library/8b9a3931-90c3-4b36-9dcb-5e2e65cd7e5e.aspx).
+For detailed syntax and parameter information, see [New-OfflineAddressBook](/powershell/module/exchange/new-offlineaddressbook).

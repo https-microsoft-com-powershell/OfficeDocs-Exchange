@@ -2,15 +2,16 @@
 title: 'Create an Email Address Policy: Exchange 2013 Help'
 TOCTitle: Create an Email Address Policy
 ms:assetid: eb2bf42e-2058-4e17-85d5-97546433b40a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125137(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125137(v=EXCHG.150)
 ms:contentKeyID: 49289449
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
-f1_keywords:
+ms.custom:
 - Microsoft.Exchange.Management.SnapIn.Esm.OrganizationConfiguration.NewEmailAddressPolicyWizardForm.EmailAddressPolicyIntroductionPage
 ---
 
@@ -109,7 +110,7 @@ For detailed instructions about how to create an email address policy, see the f
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!WARNING]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create an email address policy
 
@@ -142,4 +143,4 @@ This example creates an email address policy that includes mailbox users in the 
 New-EmailAddressPolicy -Name "southeast offices" -IncludedRecipients MailboxUsers -ConditionalStateorProvince "Georgia","Alabama","Louisiana" -EnabledEmailAddressTemplates "SMTP:%s%2g@southeast.contoso.com"
 ```
 
-For detailed syntax and parameter information, see [New-EmailAddressPolicy](https://technet.microsoft.com/en-us/library/aa996800\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-EmailAddressPolicy](/powershell/module/exchange/New-EmailAddressPolicy).

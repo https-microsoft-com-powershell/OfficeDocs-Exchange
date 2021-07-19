@@ -2,13 +2,14 @@
 title: 'Configure Exchange 2013 for split permissions: Exchange 2013 Help'
 TOCTitle: Configure Exchange 2013 for split permissions
 ms:assetid: 8c74f893-a6f3-4869-8571-3bc0f662cc87
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638155(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638155(v=EXCHG.150)
 ms:contentKeyID: 49289342
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -56,7 +57,7 @@ Looking for other management tasks related to permissions? Check out [Advanced p
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Switch to RBAC split permissions
 
@@ -170,17 +171,17 @@ To configure RBAC split permissions, do the following:
 
 For detailed syntax and parameter information, see the following topics:
 
-- [New-RoleGroup](https://technet.microsoft.com/en-us/library/dd638181\(v=exchg.150\))
+- [New-RoleGroup](/powershell/module/exchange/New-RoleGroup)
 
-- [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\))
+- [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment)
 
-- [Add-RoleGroupMember](https://technet.microsoft.com/en-us/library/dd638207\(v=exchg.150\))
+- [Add-RoleGroupMember](/powershell/module/exchange/Add-RoleGroupMember)
 
-- [Set-RoleGroup](https://technet.microsoft.com/en-us/library/dd638182\(v=exchg.150\))
+- [Set-RoleGroup](/powershell/module/exchange/Set-RoleGroup)
 
-- [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\))
+- [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment)
 
-- [Remove-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351205\(v=exchg.150\))
+- [Remove-ManagementRoleAssignment](/powershell/module/exchange/Remove-ManagementRoleAssignment)
 
 ## Switch to Active Directory split permissions
 

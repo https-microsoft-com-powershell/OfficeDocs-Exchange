@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can enable non-business hours key mappings for a Unified Messaging (UM) auto attendant. After you create a UM auto attendant, a default system prompt will be used for the non-business hours main menu prompt greeting that callers hear after the non-business hours welcome greeting is played. The default non-business hours main menu prompt says,Welcome to the Microsoft Exchange after hours auto attendant.Because no key mappings are defined by default, no menu options are available to callers and they hear only the default non-business hours main menu prompt.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: bfe81ed6-9648-4882-8baf-ac93ea30a8ca
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Create non-business hours navigation menus in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -27,7 +28,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM auto attendants" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -36,7 +37,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to enable non-business hours key mappings on a UM auto attendant
 
@@ -82,6 +83,6 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 
 This example configures a UM auto attendant named `MyAutoAttendant` and enables non-business hours key mappings so that when callers say "After Hours" they will be forwarded to extension number 12345, and if they say "Directions" they will be forwarded to extension number 23456.
 
-```
+```PowerShell
 Set-UMAutoAttendant -Identity MyUMAutoAttendant -AfterHoursKeyMappingEnabled $true -AfterHoursKeyMapping "AfterhoursOperator,12345","Directions,23456"
 ```

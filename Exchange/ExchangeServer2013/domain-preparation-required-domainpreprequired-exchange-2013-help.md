@@ -2,13 +2,14 @@
 title: 'Domain preparation required_DomainPrepRequired: Exchange 2013 Help'
 TOCTitle: Domain preparation required_DomainPrepRequired
 ms:assetid: f6feae6f-7404-4b1f-887f-ed63c26a6bcd
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.domainpreprequired(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.domainpreprequired(v=EXCHG.150)
 ms:contentKeyID: 46629205
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft Exchange Server 2007 setup cannot continue because the attempt to install the server role failed.
 
@@ -36,4 +37,4 @@ Preparation of the domain for Exchange Server 2007 consists of the following ta
 
 To resolve this issue, run **setup /PrepareDomain** to prepare the local domain and retry the server role installation.
 
-For more information about how to perform the PrepareDomain process, see "How to Prepare Active Directory and Domains" ([https://go.microsoft.com/fwlink/?LinkId=78453](https://go.microsoft.com/fwlink/?linkid=78453)).
+For more information about how to perform the PrepareDomain process, see "How to Prepare Active Directory and Domains" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/bb125224(v=exchg.80)](/previous-versions/office/exchange-server-2007/bb125224(v=exchg.80))).

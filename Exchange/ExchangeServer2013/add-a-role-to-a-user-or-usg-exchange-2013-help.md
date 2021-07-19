@@ -2,13 +2,14 @@
 title: 'Add a role to a user or USG: Exchange 2013 Help'
 TOCTitle: Add a role to a user or USG
 ms:assetid: ae5608de-a141-4714-8876-bce7d2a22cb5
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351056(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351056(v=EXCHG.150)
 ms:contentKeyID: 49289370
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -55,7 +56,7 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a role assignment with no scope
 
@@ -73,7 +74,7 @@ This example assigns the Exchange Servers role to the SeattleAdmins USG.
 New-ManagementRoleAssignment -Name "Exchange Servers_SeattleAdmins" -SecurityGroup SeattleAdmins -Role "Exchange Servers"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).
 
 ## Create a role assignment with a predefined relative scope
 
@@ -91,7 +92,7 @@ This example assigns the Exchange Servers role to the SeattleAdmins USG and appl
 New-ManagementRoleAssignment -Name "Exchange Servers_SeattleAdmins" -SecurityGroup SeattleAdmins -Role "Exchange Servers" -RecipientRelativeWriteScope Organization
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).
 
 ## Create a role assignment with a recipient filter-based scope
 
@@ -111,7 +112,7 @@ This example assigns the Mail Recipients role to the Seattle Recipient Admins US
 New-ManagementRoleAssignment -Name "Mail Recipients_Seattle Recipient Admins" -SecurityGroup "Seattle Recipient Admins" -Role "Mail Recipients" -CustomRecipientWriteScope "Seattle Recipients"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).
 
 ## Create a role assignment with a server or database filter or list-based configuration scope
 
@@ -133,7 +134,7 @@ New-ManagementRoleAssignment -Name "Exchange Servers_MailboxAdmins" -SecurityGro
 
 The preceding example shows how to add a role assignment with a server configuration scope. The syntax to add a database configuration scope is the same. You specify the name of a database scope instead of a server scope.
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).
 
 ## Create a role assignment with an OU scope
 
@@ -151,7 +152,7 @@ This example assigns the Mail Recipients role to the SalesRecipientAdmins USG an
 New-ManagementRoleAssignment -Name "Mail Recipients_SalesRecipientAdmins" -SecurityGroup SalesRecipientAdmins -Role "Mail Recipients" -RecipientOrganizationalUnitScope contoso.com/sales/users
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).
 
 ## Create a role assignment with an exclusive recipient or configuration scope
 
@@ -171,4 +172,4 @@ This example assigns the Mail Recipients role to the Protected User Admins USG a
 New-ManagementRoleAssignment -Name "Mail Recipients_Protected User Admins" -SecurityGroup "Protected User Admins" -Role "Mail Recipients" -ExclusiveRecipientWriteScope "Protected Users"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).

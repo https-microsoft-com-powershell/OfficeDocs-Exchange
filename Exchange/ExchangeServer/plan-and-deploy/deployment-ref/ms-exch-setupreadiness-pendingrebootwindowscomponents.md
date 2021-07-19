@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Exchange Server 2016 or Exchange 2019 Setup can't continue because the local computer needs to be restarted to complete the installation of other programs or Windows updates.
 ms.topic: reference
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - ms.exch.setupreadiness.PendingRebootWindowsComponents
 ms.author: dmaguire
 ms.assetid: f2d8e504-18c1-4b86-9b97-7654d0391b19
-ms.date: 8/3/2018
 ms.reviewer: 
 title: The computer needs to be restarted before Setup can continue [PendingRebootWindowsComponents]
 ms.collection: exchange-server
+f1.keywords:
+- CSH
 audience: Developer
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -33,9 +34,9 @@ Typically, you only need to restart the server to get past this error, but you m
 
 If you see this error after you've restarted the server more than two or three times, try reinstalling any programs or Windows updates that you've installed recently. This might allow a failed installation to complete successfully.
 
-If you *still* receive this error after multiple restarts and reinstalling recent programs or Windows updates, we recommend that you contact Microsoft Customer Serive and Support. They'll help you find the reason why Windows and other programs think your computer needs to be restarted. To contact Microsoft support, go to [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?LinkId=525940).
+If you *still* receive this error after multiple restarts and reinstalling recent programs or Windows updates, we recommend that you contact Microsoft Customer Service and Support. They'll help you find the reason why Windows and other programs think your computer needs to be restarted. To contact Microsoft support, go to [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and select **Servers** \> **Exchange Server**.
 
 > [!CAUTION]
 > Although it's tempting, we strongly recommend that you don't attempt to work around this issue by manually deleting or changing registry keys or values. Although you might fix this issue now, manually modifying the registry might cause issues later on. This is especially important if the failed installation was a Windows update.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

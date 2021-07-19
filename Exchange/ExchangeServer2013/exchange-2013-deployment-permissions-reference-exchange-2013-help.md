@@ -2,13 +2,14 @@
 title: 'Exchange 2013 deployment permissions reference: Exchange 2013 Help'
 TOCTitle: Exchange 2013 deployment permissions reference
 ms:assetid: b13412d0-0cc4-4c1d-bf31-cae3d3e211a9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee681663(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee681663(v=EXCHG.150)
 ms:contentKeyID: 56348434
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -165,7 +166,7 @@ The following table shows the relationships between these values.
 
 Extended rights are custom rights specified by individual applications. They are specified in the ACL. However, they are meaningless to Active Directory. The specific application enforces any extended rights. Examples of Exchange extended rights are "Create public folder" or "Create named properties in the information store."
 
-For information about permissions that are set during a Microsoft Exchange Server 2010 installation, see [Exchange 2010 Deployment Permissions Reference](https://go.microsoft.com/fwlink/p/?linkid=402924).
+For information about permissions that are set during a Microsoft Exchange Server 2010 installation, see [Exchange 2010 Deployment Permissions Reference](/previous-versions/office/exchange-server-2010/ee681663(v=exchg.141)).
 
 ## Prepare Active Directory Permissions
 

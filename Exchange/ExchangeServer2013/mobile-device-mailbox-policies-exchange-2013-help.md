@@ -2,13 +2,14 @@
 title: 'Mobile device mailbox policies: Exchange 2013 Help'
 TOCTitle: Mobile device mailbox policies
 ms:assetid: 9317b3bc-44a1-4e54-bc51-4f0b194b6a55
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123783(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123783(v=EXCHG.150)
 ms:contentKeyID: 49318582
-ms.date: 06/16/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,59 +19,25 @@ _**Applies to:** Exchange Server 2013_
 
 In Microsoft Exchange Server 2013, you can create mobile device mailbox policies to apply a common set of policies or security settings to a collection of users. After you deploy Exchange ActiveSync in your Exchange 2013 organization, you can create new mobile device mailbox policies or modify existing policies. When you install Exchange 2013, a default mobile device mailbox policy is created. All users are automatically assigned this default mobile device mailbox policy.
 
-> [!IMPORTANT]
-> Windows Phone 7 mobile phones only support a subset of all Exchange ActiveSync mailbox policy settings. For a complete list, see Windows Phone 7 Synchronization.
-
-> [!WARNING]
-> The iOS7 fingerprint reader is not supported as a device password. If you enable the fingerprint reader to secure your iOS7 device, you will still need to create and enter a password if your mobile device mailbox policies require a password.
-
 ## Overview of mobile device mailbox policies
 
 You can use mobile device mailbox policies to manage many different settings. These include the following:
 
-  - Require a password
+  - Require a password.
 
-  - Specify the minimum password length
+  - Specify the minimum password length.
 
-  - Require a number or special character in the password
+  - Require a number or special character in the password.
 
-  - Designate how long a device can be inactive before requiring the user to re-enter a password
+  - Designate how long a device can be inactive before requiring the user to re-enter a password.
 
-  - Wipe a device after a specific number of failed password attempts
+  - Wipe a device after a specific number of failed password attempts.
 
 For more information about all the settings you can configure, see Mobile device policy settings.
 
 ## Managing Exchange ActiveSync mailbox policies
 
 Mobile device mailbox policies can be created in the Exchange admin center (EAC) or the Exchange Management Shell. If you create a policy in the EAC, you can configure only a subset of the available settings. You can configure the rest of the settings using the Shell.
-
-## Windows Phone 7 synchronization
-
-If you have Windows Phone 7 mobile phones in your organization, these phones will experience synchronization problems if certain Exchange ActiveSync mailbox policy properties are configured. To allow Windows Phone 7 mobile phones to synchronize with an Exchange mailbox, either set the **AllowNonProvisionableDevices** property to True or only configure the following Exchange ActiveSync mailbox policy properties:
-
-  - AllowSimplePassword
-
-  - BlockInternetSharing
-
-  - BlockRemoteDesktop
-
-  - DisableDesktopSync
-
-  - DisableIrDA
-
-  - DisableRemovableStorage
-
-  - DeviceWipeThreshold
-
-  - MinPasswordLength
-
-  - IdleTimeoutFrequencyValue
-
-  - PasswordExpiration
-
-  - PasswordHistory
-
-  - PasswordRequired
 
 ## Mobile device mailbox policy settings
 
@@ -252,14 +219,7 @@ The following table summarizes the settings you can specify using mobile device 
 <li><p>Special characters (for example, exclamation marks).</p></li>
 </ul>
 <p>You can enter any number from 1 through 4. The default value is 1.</p>
-<p>For Windows Phone 8 devices, this setting specifies the number of character sets that are required in the password. For example, the value 3 requires at least one character from any three of the character sets.</p>
-<p>For Windows Phone 10 devices, this setting specifies the following password complexity requirements:</p>
-<ol>
-<li><p>Digits only.</p></li>
-<li><p>Digits and lower case letters.</p></li>
-<li><p>Digits, lower case letters, and upper case letters.</p></li>
-<li><p>Digits, lower case letters, upper case letters, and special characters.</p></li>
-</ol></td>
+</td>
 </tr>
 <tr class="even">
 <td><p>Min password length</p></td>

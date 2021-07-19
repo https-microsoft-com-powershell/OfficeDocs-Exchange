@@ -2,13 +2,14 @@
 title: 'Create a regular or exclusive scope: Exchange 2013 Help'
 TOCTitle: Create a regular or exclusive scope
 ms:assetid: b97a5be3-15cc-4954-ba30-a824a95e21be
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351083(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351083(v=EXCHG.150)
 ms:contentKeyID: 49289387
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -42,7 +43,7 @@ Looking for other management tasks related to scopes? Check out [Advanced permis
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Create a custom scope
 
@@ -63,13 +64,13 @@ New-ManagementScope -Name <scope name> -RecipientRestrictionFilter <filter query
 This example creates a scope that includes all mailboxes within the contoso.com/Sales OU.
 
 ```powershell
-New-ManagementScope -Name "Mailboxes in Sales OU" -RecipientRestrictionFilter { RecipientType -eq 'UserMailbox' } -RecipientRoot "contoso.com/Sales OU"
+New-ManagementScope -Name "Mailboxes in Sales OU" -RecipientRestrictionFilter "RecipientType -eq 'UserMailbox'" -RecipientRoot "contoso.com/Sales OU"
 ```
 
 > [!NOTE]
 > You can omit the <EM>RecipientRoot</EM> parameter if you want the filter to apply to the entire implicit read scope of the management role and not just within a specific OU.
 
-For detailed syntax and parameter information, see [New-ManagementScope](https://technet.microsoft.com/en-us/library/dd335137\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementScope](/powershell/module/exchange/New-ManagementScope).
 
 ### Server filter configuration scope
 
@@ -86,10 +87,10 @@ New-ManagementScope -Name <scope name> -ServerRestrictionFilter <filter query>
 This example creates a scope that includes all the servers within the 'CN=Redmond,CN=Sites,CN=Configuration,DC=contoso,DC=com' AD (Active Directory) site.
 
 ```powershell
-New-ManagementScope -Name "Servers in Seattle AD site" -ServerRestrictionFilter { ServerSite -eq 'CN=Redmond,CN=Sites,CN=Configuration,DC=contoso,DC=com' }
+New-ManagementScope -Name "Servers in Seattle AD site" -ServerRestrictionFilter "ServerSite -eq 'CN=Redmond,CN=Sites,CN=Configuration,DC=contoso,DC=com'"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementScope](https://technet.microsoft.com/en-us/library/dd335137\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementScope](/powershell/module/exchange/New-ManagementScope).
 
 ### Server list configuration scope
 
@@ -107,7 +108,7 @@ This example creates a scope that applies only to MBX1, MBX3, and MBX5.
 New-ManagementScope -Name "Mailbox servers" -ServerList MBX1,MBX3,MBX5
 ```
 
-For detailed syntax and parameter information, see [New-ManagementScope](https://technet.microsoft.com/en-us/library/dd335137\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementScope](/powershell/module/exchange/New-ManagementScope).
 
 ### Database filter configuration scope
 
@@ -127,10 +128,10 @@ New-ManagementScope -Name <scope name> -DatabaseRestrictionFilter <filter query>
 This example creates a scope that includes all the databases that contain the string "Executive" in the **Name** property of the database.
 
 ```powershell
-New-ManagementScope -Name "Executive Databases" -DatabaseRestrictionFilter { Name -Like '*Executive*' }
+New-ManagementScope -Name "Executive Databases" -DatabaseRestrictionFilter "Name -Like '*Executive*'"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementScope](https://technet.microsoft.com/en-us/library/dd335137\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementScope](/powershell/module/exchange/New-ManagementScope).
 
 ### Database list configuration scope
 
@@ -151,7 +152,7 @@ This example creates a scope that applies only to the databases Database 1, Data
 New-ManagementScope -Name "Primary databases" -DatabaseList "Database 1", "Database 2", "Database 3"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementScope](https://technet.microsoft.com/en-us/library/dd335137\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementScope](/powershell/module/exchange/New-ManagementScope).
 
 ### Exclusive scope
 
@@ -163,16 +164,16 @@ Any scope that you create with the **New-ManagementScope** cmdlet can be designa
 This example creates an exclusive recipient filter-based scope that matches any user in the Executives department.
 
 ```powershell
-New-ManagementScope "Executive Users Exclusive Scope" -RecipientRestrictionFilter { Department -Eq "Executives" } -Exclusive
+New-ManagementScope "Executive Users Exclusive Scope" -RecipientRestrictionFilter "Department -Eq 'Executives'" -Exclusive
 ```
 
 By default, when an exclusive scope is created, you're required to acknowledge that you created an exclusive scope and that you're aware of the impact that an exclusive scope has on existing role assignments that aren't exclusive. If you want to suppress the warning, you can use the *Force* switch. This example creates the same scope as the previous example, but without a warning.
 
 ```powershell
-New-ManagementScope "Executive Users Exclusive Scope" -RecipientRestrictionFilter { Department -Eq "Executives" } -Exclusive -Force
+New-ManagementScope "Executive Users Exclusive Scope" -RecipientRestrictionFilter "Department -Eq 'Executives'" -Exclusive -Force
 ```
 
-For detailed syntax and parameter information, see [New-ManagementScope](https://technet.microsoft.com/en-us/library/dd335137\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementScope](/powershell/module/exchange/New-ManagementScope).
 
 ## Step 2: Add or change a management role assignment
 

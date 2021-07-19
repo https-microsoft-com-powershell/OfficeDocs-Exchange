@@ -2,13 +2,14 @@
 title: 'Disable or delete a mailbox: Exchange 2013 Help'
 TOCTitle: Disable or delete a mailbox
 ms:assetid: 31ad25d6-2942-4fd9-aecb-cdf9654163d2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ863434(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ863434(v=EXCHG.150)
 ms:contentKeyID: 50387714
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013 SP1_
 
 You can use the EAC or the Shell to disable or delete a mailbox in Exchange 2013. When a mailbox is disabled or deleted, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. Disabled and deleted mailboxes are retained in the mailbox database until the deleted mailbox retention period expires, which is 30 days by default. After the retention period expires, the mailbox is permanently deleted or *purged*.
 
-If you need to delete a mailbox in Exchange Online, see [Delete or restore user mailboxes in Exchange Online](https://technet.microsoft.com/en-us/library/dn186233\(v=exchg.150\)).
+If you need to delete a mailbox in Exchange Online, see [Delete or restore user mailboxes in Exchange Online](../ExchangeOnline/recipients-in-exchange-online/delete-or-restore-mailboxes.md).
 
 > [!NOTE]
 > Disabled or deleted mailboxes are referred to as <EM>disconnected mailboxes</EM>.
@@ -98,7 +99,7 @@ For additional management tasks related to disconnected mailboxes, see the follo
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Disable a mailbox
 

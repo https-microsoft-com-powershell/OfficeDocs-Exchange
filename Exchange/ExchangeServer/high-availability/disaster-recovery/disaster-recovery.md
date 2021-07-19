@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 34351f2f-ab6c-4267-91be-4f9649338275
-ms.date:
 ms.reviewer:
 title: Exchange Server data protection, Exchange disaster recovery, Exchange backup, Exchange VSS Writer, VSS Backup Exchange, Exchange Server data recovery, Exchange data recovery
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -34,7 +35,7 @@ Because there are native Exchange Server features that meet each of these scenar
 ## Exchange Native Data Protection
 <a name="ENDP"> </a>
 
-Microsoft's [preferred architecture](https://blogs.technet.microsoft.com/exchange/2015/10/12/the-exchange-2016-preferred-architecture/) for Exchange Server 2016 and Exchange Server 2019 leverages a concept known as Exchange Native Data Protection. Exchange Native Data Protection relies on built-in Exchange features to protect your mailbox data, without the use of backups (although you can still use those features and make backups). Exchange 2016 and Exchange 2019 include several features that, when deployed and configured correctly, can provide native data protection that eliminates the need to make traditional backups of your data. Using the high availability features built into Exchange Server to minimize downtime and data loss in the event of a disaster can also reduce the total cost of ownership of the messaging system. By combining these features with other built-in features, such as Legal Hold, you can reduce or eliminate your use of traditional point-in-time backups and reduce the associated costs.
+Microsoft's [preferred architecture](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/The-Exchange-2016-Preferred-Architecture/ba-p/604024) for Exchange Server 2016 and Exchange Server 2019 leverages a concept known as Exchange Native Data Protection. Exchange Native Data Protection relies on built-in Exchange features to protect your mailbox data, without the use of backups (although you can still use those features and make backups). Exchange 2016 and Exchange 2019 include several features that, when deployed and configured correctly, can provide native data protection that eliminates the need to make traditional backups of your data. Using the high availability features built into Exchange Server to minimize downtime and data loss in the event of a disaster can also reduce the total cost of ownership of the messaging system. By combining these features with other built-in features, such as Legal Hold, you can reduce or eliminate your use of traditional point-in-time backups and reduce the associated costs.
 
 In addition to determining whether Exchange Server enables you to move away from traditional point-in-time backups, we recommend that you evaluate the cost of your current backup infrastructure. Consider the cost of end-user downtime and data loss when attempting to recover from a disaster using your existing backup infrastructure. Also, include hardware, installation, and license costs, as well as the management cost associated with recovering data and maintaining the backups. Depending on the requirements of your organization, it's quite likely that a pure Exchange 2016 or Exchange 2019 environment with at least three mailbox database copies will provide lower total cost of ownership than one with backups.
 
@@ -103,7 +104,7 @@ When Microsoft Lync Server 2013 or Skype for Business Server 2015 is used in an 
 ## Recovery Database
 <a name="RecDat"> </a>
 
-A recovery database is a special kind of mailbox database that allows you to mount a restored mailbox database and extract data from the restored database as part of a recovery operation. You can use the [New-MailboxRestoreRequest](https://technet.microsoft.com/library/0b67defd-3c6c-4470-acfa-7f22a6c1d2bd.aspx) cmdlet to extract data from a recovery database. After extraction, the data can be exported to a folder or merged into an existing mailbox. Recovery databases enable you to recover data from a backup or copy of a database without disturbing user access to current data.
+A recovery database is a special kind of mailbox database that allows you to mount a restored mailbox database and extract data from the restored database as part of a recovery operation. You can use the [New-MailboxRestoreRequest](/powershell/module/exchange/new-mailboxrestorerequest) cmdlet to extract data from a recovery database. After extraction, the data can be exported to a folder or merged into an existing mailbox. Recovery databases enable you to recover data from a backup or copy of a database without disturbing user access to current data.
 
 Using a recovery database for a Mailbox database from any previous version of Exchange isn't supported. In addition, the target mailbox used for data merges and extraction must be in the same Active Directory forest as the database mounted in the recovery database.
 
@@ -114,7 +115,7 @@ For more information, see [Recovery databases](recovery-databases.md). For detai
 
 Database portability is a feature that enables an Exchange mailbox database to be moved to and mounted on any other Exchange Mailbox server in the same organization. By using database portability, reliability is improved by removing several error-prone, manual steps from the recovery processes. In addition, database portability reduces the overall recovery times for various failure scenarios.
 
-For more information, see [Database Portability](https://technet.microsoft.com/library/387b727a-ce51-4910-b5c4-613c693fa5bd.aspx). For detailed steps to use database portability, see [Move a mailbox database using database portability](database-portability.md).
+For detailed steps to use database portability, see [Move a mailbox database using database portability](database-portability.md).
 
 ## Dial Tone Portability
 <a name="DTPort"> </a>

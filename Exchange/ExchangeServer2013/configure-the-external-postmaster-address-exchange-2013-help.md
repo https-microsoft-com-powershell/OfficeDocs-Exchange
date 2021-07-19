@@ -2,13 +2,14 @@
 title: 'Configure the external postmaster address: Exchange 2013 Help'
 TOCTitle: Configure the external postmaster address
 ms:assetid: 6b0c8675-3238-462d-8973-b52305fb90d2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb430765(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb430765(v=EXCHG.150)
 ms:contentKeyID: 49318579
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -32,7 +33,7 @@ By default, the value of the external postmaster address setting is blank. This 
 
 - When you configure a custom external postmaster address, that value applies to all Exchange 2013 Mailbox servers and Exchange 2010 Hub Transport servers in your Exchange organization. However, that value isn't replicated to Edge Transport servers. If you specify a custom value for the external postmaster address, you need to manually configure the external postmaster address value on any Edge Transport servers.
 
-- If you have any Exchange 2007 Hub Transport servers or Edge Transport servers in your organization, you need to configure the custom external postmaster address on each one of those servers using the **Set-TransportServer** cmdlet. For more information, see [Managing the External Postmaster Address](https://go.microsoft.com/fwlink/?linkid=279922).
+- If you have any Exchange 2007 Hub Transport servers or Edge Transport servers in your organization, you need to configure the custom external postmaster address on each one of those servers using the **Set-TransportServer** cmdlet. For more information, see [Managing the External Postmaster Address](/previous-versions/office/exchange-server-2007/bb430765(v=exchg.80)).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
@@ -76,4 +77,4 @@ To verify that you have successfully configured the external postmaster address,
 
 2. From an external email account, send a message to your Exchange organization that will generate a delivery status notification (DSN). For example, you can configure a transport rule to send a non-delivery report (NDR) for a message from that sender that contains specific keywords. Verify the sender's email address in the DSN matches the value you specified.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

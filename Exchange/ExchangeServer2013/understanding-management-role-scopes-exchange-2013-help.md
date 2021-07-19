@@ -2,13 +2,14 @@
 title: 'Understanding management role scopes: Exchange 2013 Help'
 TOCTitle: Understanding management role scopes
 ms:assetid: 24ed4a38-438a-4223-9f9c-5d4dea4b046b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335146(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335146(v=EXCHG.150)
 ms:contentKeyID: 49289199
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

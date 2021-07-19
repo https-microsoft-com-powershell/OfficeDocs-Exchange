@@ -4,9 +4,10 @@ TOCTitle: Manage transport rules
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: e7a81372-b6d7-4d1f-bc9e-a845a7facac2
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ Interested in scenarios where these procedures are used? See the following topic
 
 - **Use transport rules to aggressively filter bulk email messages**
 
-- [Define rules to encrypt or decrypt messages](https://go.microsoft.com/fwlink/p/?Linkid=402846)
+- [Define rules to encrypt email messages](/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email)
 
 - **Create a Domain or User-Based Safe Sender or Blocked Sender List Using Transport Rules**
 
@@ -43,14 +44,14 @@ Interested in scenarios where these procedures are used? See the following topic
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport rules" entry in [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx).
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Transport rules" entry in [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md).
 
 - When a rule is listed as **version 14**, this means that the rule is based on an Exchange Server 2010 transport rule format. All options are available for these rules.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a transport rule
 
@@ -63,7 +64,7 @@ You can create a transport rule by setting up a Data Loss Prevention (DLP) polic
 
 Each DLP policy is a collection of transport rules. After you create the DLP policy, you can fine-tune the rules using the procedures below.
 
-1. Create a DLP policy. For instructions, see [Exchange Server 2013 DLP Procedures](https://technet.microsoft.com/library/e2f575aa-552e-4dcc-8d7b-1ffd697d67df%28Office.14%29.aspx).
+1. Create a DLP policy. For instructions, see [DLP procedures](dlp-procedures-exchange-2013-help.md)).
 
 2. Modify the transport rules created by the DLP policy. See [View or modify a transport rule](manage-transport-rules-exchange-2013-help.md#view-or-modify-a-transport-rule).
 
@@ -97,7 +98,7 @@ The EAC allows you to create transport rules by using a template, copying an exi
 
       - If the condition you want isn't listed, select **More options**. Additional conditions will be listed.
 
-   3. Specify how rule match data for this rule is displayed in the [Data Loss Prevention (DLP) reports](https://go.microsoft.com/fwlink/p/?LinkId=402768) and the [transport rule reports](https://go.microsoft.com/fwlink/p/?LinkId=402769).
+   3. Specify how rule match data for this rule is displayed in the [Data Loss Prevention (DLP) reports](view-dlp-policy-detection-reports-exchange-2013-help.md).
 
       Under **Audit this rule with severity level**, select a level to specify the severity level for this rule. Severity level is just a filter to make the reports easier to use. The severity level has no impact on the priority in which the rule is processed.
 
@@ -142,7 +143,7 @@ The EAC allows you to create transport rules by using a template, copying an exi
 
 ### Use the Exchange Management Shell to create a transport rule
 
-This example uses the [New-TransportRule](https://technet.microsoft.com/library/eb3546bf-ca37-474e-9c22-962fe95af276.aspx) cmdlet to create a new transport rule that prepends " `External message to Sales DG:`" to messages sent from outside the organization to the Sales Department distribution group.
+This example uses the [New-TransportRule](/powershell/module/exchange/new-transportrule) cmdlet to create a new transport rule that prepends " `External message to Sales DG:`" to messages sent from outside the organization to the Sales Department distribution group.
 
 ```powershell
 New-TransportRule -Name "Mark messages from the Internet to Sales DG" -FromScope NotInOrganization -SentTo "Sales Department" -PrependSubject "External message to Sales DG:"
@@ -187,7 +188,7 @@ To view the properties of a specific transport rule, you provide the name of tha
 Get-TransportRule "Sender is a member of marketing" | Format-List
 ```
 
-To modify the properties of an existing rule, use the [Set-TransportRule](https://technet.microsoft.com/library/8328125b-e166-436f-95e6-1afafdbdb89a.aspx) cmdlet. This cmdlet allows you to change any property, condition, action or exception associated with a rule. The following example adds an exception to the rule "Sender is a member of marketing" so that it won't apply to messages sent by the user Kelly Rollin:
+To modify the properties of an existing rule, use the [Set-TransportRule](/powershell/module/exchange/set-transportrule) cmdlet. This cmdlet allows you to change any property, condition, action or exception associated with a rule. The following example adds an exception to the rule "Sender is a member of marketing" so that it won't apply to messages sent by the user Kelly Rollin:
 
 ```powershell
 Set-TransportRule "Sender is a member of marketing" -ExceptIfFrom "Kelly Rollin"
@@ -207,7 +208,7 @@ To verify that you have successfully modified a transport rule, do the following
 
 ## Transport rule properties
 
-You can also use the **Set-TransportRule** cmdlet to modify existing transport rules in your organization. Below is a list properties not available in the EAC that you can change. For more information on using the **Set-TransportRule** cmdlet to make these changes see [Set-TransportRule](https://technet.microsoft.com/library/8328125b-e166-436f-95e6-1afafdbdb89a.aspx)
+You can also use the **Set-TransportRule** cmdlet to modify existing transport rules in your organization. Below is a list properties not available in the EAC that you can change. For more information on using the **Set-TransportRule** cmdlet to make these changes see [Set-TransportRule](/powershell/module/exchange/set-transportrule)
 
 |**Condition Name in the EAC**|**Condition name in Exchange Management Shell**|**Properties**|**Description**|
 |:-----|:-----|:-----|:-----|
@@ -314,12 +315,12 @@ To verify that you have successfully removed the transport rule, do the followin
 
 ## Import or export a transport rule collection
 
-You must use the Exchange Management Shell to import or export a transport rule collection. For information about how to import a transport rule collection from an XML file, see [Import-TransportRuleCollection](https://technet.microsoft.com/library/880b3124-76c5-4212-a8b9-8f4523f8cbe6.aspx). For information about how to export a transport rule collection to an XML file, see [Export-TransportRuleCollection](https://technet.microsoft.com/library/bfdb6ced-cd81-49f1-a929-4d76dbaf5590.aspx).
+You must use the Exchange Management Shell to import or export a transport rule collection. For information about how to import a transport rule collection from an XML file, see [Import-TransportRuleCollection](/powershell/module/exchange/import-transportrulecollection). For information about how to export a transport rule collection to an XML file, see [Export-TransportRuleCollection](/powershell/module/exchange/export-transportrulecollection).
 
 ## Need more help?
 
-[Transport Rules](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx)
+[Transport rules in Exchange 2013](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md)
 
-[Transport Rule Conditions](https://technet.microsoft.com/library/c918ea00-1e68-4b8b-8d51-6966b4432e2d.aspx)
+[Transport rule conditions and exceptions (predicates) in Exchange 2013](mail-flow-rule-conditions-and-exceptions-predicates-in-exchange-2013-exchange-2013-help.md)
 
-[Transport Rule Actions](https://technet.microsoft.com/library/5d11a955-b1cc-4150-a0b9-a8cc48ba9bde.aspx)
+[Transport rule actions in Exchange 2013](mail-flow-rule-actions-in-exchange-2013-exchange-2013-help.md)

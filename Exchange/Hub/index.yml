@@ -1,0 +1,63 @@
+### YamlMime:Hub
+
+title: Exchange documentation # < 60 chars
+summary: Find resources for admins and IT Professionals who manage Exchange and Exchange Online # < 160 chars
+# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
+brand: m365
+
+metadata:
+  title: Exchange documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Exchange documentation for IT professionals and admins # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: exchange-online #Required; service per approved list. service slug assigned to your service by ACOM.
+  ms.topic: hub-page # Required
+  audience: ITPro
+  author: samanro #Required; your GitHub user alias, with correct capitalization.
+  ms.author: samanro #Required; microsoft alias of author; optional team alias.
+  ms.date: 07/03/2019 #Required; mm/dd/yyyy format.
+  localization_priority: Priority
+
+# additionalContent section (optional)
+# Card with summary style
+additionalContent:
+  # Supports up to 3 sections
+  sections:
+    - title: For IT Professionals # < 60 chars (optional)
+      items:
+        # Card
+        - title: Exchange Server 2016 and Exchange Server 2019
+          summary: Deploy and manage Exchange 2016 and Exchange 2019 for your organization.
+          url: ../ExchangeServer/exchange-server.yml
+        # Card
+        - title: Exchange Server 2013
+          summary: Deploy and manage Exchange 2013 for your organization.
+          url: ../ExchangeServer2013/exchange-server-2013-exchange-2013-help.md
+        # Card
+        - title: Exchange Online
+          summary: Find resources for managing Exchange Online in your Office 365 environment.
+          url: ../ExchangeOnline/exchange-online.md
+        # Card
+        - title: Hybrid deployments
+          summary: Learn about solutions for Exchange hybrid environments, and how to connect Exchange Server and Office 365.
+          url: ../ExchangeHybrid/exchange-hybrid.md
+        # Card
+        - title: PowerShell Reference for Exchange
+          summary: Learn about the PowerShell cmdlets you need to manage Exchange Server, Exchange Online, Office 365 Security &amp; Compliance Center, and Exchange Online Protection.
+          url: /powershell/exchange
+        # Card
+        - title: Exchange Online Protection
+          summary: Help protect your organization against spam &amp; malware, and use safeguard features that protect your organization from messaging-policy violations.
+          url: /microsoft-365/security/office-365-security/exchange-online-protection-overview
+        # Card
+        - title: Troubleshoot
+          summary: Find troubleshooting and support resources for IT Professionals and admins.
+          url: /office/troubleshoot
+    - title: For other audiences # < 60 chars (optional)
+      items:
+        # Card
+        - title: End users
+          summary: Go to help, training, and what's new content for end users.
+          url: https://go.microsoft.com/fwlink/?linkid=787131
+        # Card
+        - title: Developers
+          summary: Guidance for developing solutions for Exchange.
+          url: /Exchange/client-developer/exchange-server-development

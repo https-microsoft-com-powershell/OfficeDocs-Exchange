@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: efb00de7-070b-46bf-a2fc-00d07ae085c1
-ms.date: 6/7/2018
 ms.reviewer:
 title: Create an Exchange Server certificate request for a certification authority
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -29,18 +30,18 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
 
 - You need to plan carefully to choose the type of certificate that you want, and the host names that are required in the certificate. For more information, see [Digital certificates and encryption in Exchange Server](certificates.md).
 
-- Verify the certificate request requirements of the CA. Exchange generates a PKCS #10 request (.req) file that uses Base64 (default) or Distinguished Encoding Rules (DER) encoding, with an RSA public key that's 1024, 2048 (default), or 4096 bits. Note that encoding and public key options are only available in the Exchange Management Shell.
+- Verify the certificate request requirements of the CA. Exchange generates a PKCS #10 request (.req) file that uses Base64 (default) or Distinguished Encoding Rules (DER) encoding, with an RSA public key that's 1024, 2048 (default), or 4096 bits. Note that encoding and public key options are only available in the Exchange Management Shell. For more information, see [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
 
 - In the EAC, you need to store the certificate request file on a UNC path (`\\<Server>\<Share>\` or `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create a new certificate request
 
@@ -124,7 +125,7 @@ The certificate request appears in the list of Exchange certificates with a stat
 
 To create a new certificate request for a wildcard certificate, a SAN certificate, or a certificate for a single host, use the following syntax:
 
-```
+```PowerShell
 New-ExchangeCertificate -GenerateRequest -RequestFile <FilePathOrUNCPath>\<FileName>.req [-FriendlyName <DescriptiveName>] -SubjectName [C=<CountryOrRegion>,S=<StateOrProvince>,L=<LocalityOrCity>,O=<Organization>,OU=<Department>],CN=<HostNameOrFQDN> [-DomainName <Host1>,<Host2>...] [-BinaryEncoded <$true | $false>] [-KeySize <1024 | 2048 | 4096>] [-Server <ServerIdentity>]
 ```
 
@@ -136,7 +137,7 @@ This example creates a certificate request on the local Exchange server for a wi
 
 - **FriendlyName**: Contoso.com Wildcard Cert
 
-```
+```PowerShell
 New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso Wildcard Cert.req" -FriendlyName "Contoso.com Wildcard Cert" -SubjectName "C=US,CN=*.contoso.com"
 ```
 
@@ -160,8 +161,10 @@ This example creates a certificate request on the local Exchange server for a SA
 
 - **FriendlyName**: Contoso.com SAN Cert
 
-```
-New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso SAN Cert.req" -FriendlyName "Contoso.com SAN Cert" -SubjectName "C=US,CN=mail.contoso.com -DomainName autodiscover.contoso.com,legacy.contoso.com,mail.contoso.net,autodiscover.contoso.net,legacy.contoso.net"
+- **DomainName**: Unquoted comma-separated list of domains
+
+```PowerShell
+New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso SAN Cert.req" -FriendlyName "Contoso.com SAN Cert" -SubjectName "C=US,CN=mail.contoso.com" -DomainName autodiscover.contoso.com,legacy.contoso.com,mail.contoso.net,autodiscover.contoso.net,legacy.contoso.net
 ```
 
 This example creates a request for a single subject certificate with the following properties:
@@ -172,7 +175,7 @@ This example creates a request for a single subject certificate with the followi
 
 - **FriendlyName**: Mail.contoso.com Cert
 
-```
+```PowerShell
 New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Mail.contoso.com Cert.req" -FriendlyName "Mail.contoso.com Cert" -SubjectName "C=US,CN=mail.contoso.com"
 ```
 
@@ -186,7 +189,7 @@ New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Mail.
 
 - We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key.
 
-- For more information, see [New-ExchangeCertificate](https://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
+- For more information, see [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
 
 ## How do you know this worked?
 
@@ -196,7 +199,7 @@ To verify that you have successfully created a new certificate request, perform 
 
 - In the Exchange Management Shell on the server where you stored the certificate request, run the following command:
 
-  ```
+  ```PowerShell
   Get-ExchangeCertificate | where {$_.Status -eq "PendingRequest" -and $_.IsSelfSigned -eq $false} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint
   ```
 

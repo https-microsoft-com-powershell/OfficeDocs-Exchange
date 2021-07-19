@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: f8cf635d-60c2-4aa3-9c06-244c29942cba
-ms.date: 7/6/2018
 ms.reviewer:
 title: Transport logs in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,9 +26,9 @@ The transport logs in Exchange Server are described in the following sections.
 
 Agent logging records the actions that are performed on messages by specific antispam transport agents on the Exchange server. For more information, see these topics:
 
-- [Antispam Agent Logging](https://technet.microsoft.com/library/dbd478d2-7993-4931-80db-5b2f7d4269bd.aspx)
+- [Antispam Agent Logging](../../../ExchangeServer2013/anti-spam-agent-logging-exchange-2013-help.md)
 
-- [Configure Antispam Agent Logging](https://technet.microsoft.com/library/df157ca3-ad8e-4302-acbc-5fbb8570c21d.aspx)
+- [Configure Antispam Agent Logging](../../../ExchangeServer2013/configure-anti-spam-agent-logging-exchange-2013-help.md)
 
 - [Enable antispam functionality on Mailbox servers](../../antispam-and-antimalware/antispam-protection/antispam-on-mailbox-servers.md)
 
@@ -101,9 +102,9 @@ Delivery reports for administrators is a targeted search of the message tracking
 
 Pipeline tracing records snapshots of messages before and after the message is affected by transport agents in the transport pipeline. For more information, see these topics:
 
-- [Pipeline Tracing](https://technet.microsoft.com/library/e7780499-9a6f-48b1-aea8-df88ecd8b18a.aspx)
+- [Pipeline Tracing](/pipeline-tracing/pipeline-tracing.md)
 
-- [Configure Pipeline Tracing](https://technet.microsoft.com/library/10293c83-2157-474e-840d-942e064a4672.aspx)
+- [Configure Pipeline Tracing](/pipeline-tracing/configure-pipeline-tracing.md)
 
  **Enabled by default?**: No
 
@@ -169,9 +170,9 @@ For more information about these connectors, see [Default Receive connectors cre
 
 Routing table logging periodically records snapshots of the routing table that Exchange servers uses to deliver messages. For more information, see these topics:
 
-- [Routing Table Logging](https://technet.microsoft.com/library/ecdd6ce8-85f2-4647-b5b2-b4f2d5ed1f54.aspx)
+- [Understanding Routing Table Logging](/previous-versions/office/exchange-server-2010/bb125148(v=exchg.141))
 
-- [Configure Routing Table Logging](https://technet.microsoft.com/library/7184f8f7-4eb8-468a-aafe-b2d72868f820.aspx)
+- [Configure Routing Table Logging](../../../ExchangeServer2013/configure-routing-table-logging-exchange-2013-help.md)
 
  **Enabled by default?**: Yes
 

@@ -2,13 +2,14 @@
 title: 'Disable or re-enable federated sharing for your Exchange organization'
 TOCTitle: Disable or Re-enable federated sharing for your Exchange organization
 ms:assetid: d36490d8-0268-47b9-a6d4-e56427f1b02e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657497(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657497(v=EXCHG.150)
 ms:contentKeyID: 49289421
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -19,14 +20,14 @@ _**Applies to:** Exchange Server 2013_
 There may be situations when you need to temporarily disable federated sharing for your organization. Instead of deleting the existing federation trust or deleting organization relationships and sharing policies that you may need in the future, you can simply disable the organization identifier (OrgID) for the federation trust.
 
 > [!WARNING]
-> For hybrid deployments with Office&nbsp;365, disabling the federation trust for your on-premises servers will also disable hybrid features such as shared calendar free/busy information, MailTips, and message tracking. However, secure mail transport won't be disabled in the hybrid deployment if the federation trust for the on-premises organization is disabled.
+> For hybrid deployments with Microsoft 365 or Office 365, disabling the federation trust for your on-premises servers will also disable hybrid features such as shared calendar free/busy information, MailTips, and message tracking. However, secure mail transport won't be disabled in the hybrid deployment if the federation trust for the on-premises organization is disabled.
 
 To learn more about federation trusts, see [Federation](federation-exchange-2013-help.md). To learn more about federated sharing, see [Sharing](sharing-exchange-2013-help.md).
 
 For additional management tasks related to federated sharing, see [Federation procedures](federation-procedures-exchange-2013-help.md).
 
 > [!IMPORTANT]
-> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="https://go.microsoft.com/fwlink/?linkid=313640">Learn about Office 365 operated by 21Vianet</A>.
+> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see [Office 365 operated by 21Vianet](/microsoft-365/admin/services-in-china/services-in-china).
 
 ## What do you need to know before you begin?
 
@@ -52,7 +53,7 @@ This example enables the OrgID and re-enables federation and federated sharing f
 Set-FederatedOrganizationIdentifier -Enabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-FederatedOrganizationIdentifier](https://technet.microsoft.com/en-us/library/dd351037\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-FederatedOrganizationIdentifier](/powershell/module/exchange/Set-FederatedOrganizationIdentifier).
 
 ## How do you know this worked?
 
@@ -65,4 +66,4 @@ Get-FederatedOrganizationIdentifier
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

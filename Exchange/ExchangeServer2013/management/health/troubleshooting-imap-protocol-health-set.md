@@ -2,13 +2,14 @@
 title: Troubleshooting IMAP.Protocol Health Set
 TOCTitle: Troubleshooting IMAP.Protocol Health Set
 ms:assetid: ab0df2c9-5a85-4061-ba67-750962d14c1b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.imap.protocol(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.imap.protocol(v=EXCHG.150)
 ms:contentKeyID: 49720845
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,8 +29,8 @@ For more information about the IMAP health set, see [Troubleshooting IMAP Health
 
 ## For More Information
 
-[POP3 and IMAP4](https://technet.microsoft.com/en-us/library/jj657728\(v=exchg.150\))
+[POP3 and IMAP4](../../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md)
 
-[Enable IMAP4 in Exchange 2013](https://technet.microsoft.com/en-us/library/bb124489\(v=exchg.150\))
+[Enable IMAP4 in Exchange 2013](../../enable-imap4-in-exchange-2013-exchange-2013-help.md)
 
-[Test-ImapConnectivity](https://technet.microsoft.com/en-us/library/bb738126\(v=exchg.150\))
+[Test-ImapConnectivity](/powershell/module/exchange/Test-ImapConnectivity)

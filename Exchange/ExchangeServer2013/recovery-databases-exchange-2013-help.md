@@ -2,13 +2,14 @@
 title: 'Recovery databases: Exchange 2013 Help'
 TOCTitle: Recovery databases
 ms:assetid: f3c6fd0b-2e25-442e-a0fc-46f663130c3e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876954(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876954(v=EXCHG.150)
 ms:contentKeyID: 48385711
-ms.date: 06/06/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-A recovery database (RDB) is a special kind of mailbox database that allows you to mount a restored mailbox database and extract data from the restored database as part of a recovery operation. You can use the [New-MailboxRestoreRequest](https://technet.microsoft.com/en-us/library/ff829875\(v=exchg.150\)) cmdlet to extract data from an RDB. After extraction, the data can be exported to a folder or merged into an existing mailbox. RDBs enable you to recover data from a backup or copy of a database without disturbing user access to current data.
+A recovery database (RDB) is a special kind of mailbox database that allows you to mount a restored mailbox database and extract data from the restored database as part of a recovery operation. You can use the [New-MailboxRestoreRequest](/powershell/module/exchange/New-MailboxRestoreRequest) cmdlet to extract data from an RDB. After extraction, the data can be exported to a folder or merged into an existing mailbox. RDBs enable you to recover data from a backup or copy of a database without disturbing user access to current data.
 
 Microsoft Exchange Server 2013 supports the ability to restore data directly to a recovery database. Mounting the recovered data as a recovery database allows the administrator to restore individual mailboxes or individual items in a mailbox. Restoring to a recovery database can be accomplished in two ways:
 

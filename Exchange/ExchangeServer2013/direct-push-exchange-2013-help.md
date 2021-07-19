@@ -2,13 +2,14 @@
 title: 'Direct Push: Exchange 2013 Help'
 TOCTitle: Direct Push
 ms:assetid: 373c1629-3d4b-4828-b014-9e103de4ef25
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997252(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997252(v=EXCHG.150)
 ms:contentKeyID: 48384981
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,11 +21,7 @@ Direct Push is a feature that's built into Microsoft Exchange Server 2013. Direc
 
 ## Overview
 
-For Direct Push to work, the mobile device must be Direct Push capable. These devices include the following:
-
-- All versions of Windows Phone
-
-- Mobile phones that are produced by Microsoft Exchange ActiveSync licensees and are designed specifically to be Direct Push compatible
+For Direct Push to work, the mobile device must be Direct Push capable. These devices include mobile phones that are produced by Microsoft Exchange ActiveSync licensees and that are designed specifically to be Direct Push compatible
 
 By default, Direct Push is enabled in Exchange 2013. Mobile devices that support Direct Push issue a long-lived HTTPS request to the server running Microsoft Exchange. The Exchange server monitors activity on the user's mailbox and sends a response to the mobile device if there are any changes, such as new or changed email, calendar, contact, or task items. If changes occur within the lifespan of the HTTPS request, the Exchange server issues a response to the device that states that changes have occurred and the device should initiate synchronization with the Exchange server. The device then issues this request to the server. When synchronization is complete, a new long-lived HTTPS request is generated to start the process again. This guarantees that email, calendar, contact, and task items are delivered quickly to the mobile device, and that it is always synchronized with the Exchange server.
 

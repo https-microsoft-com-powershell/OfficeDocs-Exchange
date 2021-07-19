@@ -2,13 +2,14 @@
 title: Troubleshooting POP.Protocol Health Set
 TOCTitle: Troubleshooting POP.Protocol Health Set
 ms:assetid: 4a205a83-153a-4e93-a7af-43d2ab815809
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.pop.protocol(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.pop.protocol(v=EXCHG.150)
 ms:contentKeyID: 49720774
-ms.date: 10/08/2015
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,6 +25,6 @@ The POP.Protocol health set works in conjunction with the POP health set. For de
 
 ## For More Information
 
-[Test-PopConnectivity](https://technet.microsoft.com/en-us/library/bb738143\(v=exchg.150\))
+[Test-PopConnectivity](/powershell/module/exchange/Test-PopConnectivity)
 
-[POP3 and IMAP4](https://technet.microsoft.com/en-us/library/jj657728\(v=exchg.150\))
+[POP3 and IMAP4](../../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md)

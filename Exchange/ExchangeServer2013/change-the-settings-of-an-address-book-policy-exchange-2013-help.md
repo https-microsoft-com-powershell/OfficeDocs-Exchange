@@ -4,9 +4,10 @@ TOCTitle: Change the settings of an address book policy
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: ba1ca350-71c2-4c60-a612-33bfa9320b5e
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,21 +17,21 @@ _**Applies to:** Exchange Server 2013_
 
 After you create an address book policy (ABP), you can view or modify the name and the assigned global address list (GAL), offline address book (OAB), room list, and address lists.
 
-For additional management tasks related to ABPs, see [Managing Address Book Policies](https://technet.microsoft.com/library/1204db89-ee4b-459a-8c14-e8d60dd6c4a4.aspx).
+For additional management tasks related to ABPs, see [Address book policy procedures](address-book-policy-procedures-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estmated time to complete: Less than 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email Address and Address Book Permissions](https://technet.microsoft.com/library/1c1de09d-16ef-4424-9bfb-eb7edffbc8c2.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email address and address book permissions](email-address-and-address-book-permissions-exchange-2013-help.md) topic.
 
-- Creating an ABP for an organization is a multi-step process that requires planning. For more information, see [Scenario: Deploying Address Book Policies](https://technet.microsoft.com/library/6ac3c87d-161f-447b-afb2-149ae7e3f1dc.aspx)
+- Creating an ABP for an organization is a multi-step process that requires planning. For more information, see [Scenario: Deploying address book policies](scenario-deploying-address-book-policies-exchange-2013-help.md).
 
 - You can't use the Exchange admin center (EAC) to configure ABPs. You must use the Shell.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-- Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+- Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Change the OAB, room list, and GAL for an ABP
 <a name="UseShell"> </a>
@@ -76,4 +77,4 @@ Set-AddressBookPolicy -Identity "ABP Fabrikam" -AddressLists Fabrikam-Finance
 
 ## For more information
 
-For detailed syntax and parameter information, see [Set-AddressBookPolicy](https://technet.microsoft.com/library/c0dc5fff-af06-4008-9173-629d1f901c69.aspx).
+For detailed syntax and parameter information, see [Set-AddressBookPolicy](/powershell/module/exchange/set-addressbookpolicy).

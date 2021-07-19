@@ -3,9 +3,10 @@ title: 'Use transport rules to route email based on a list of words, phrases, or
 TOCTitle: Use transport rules to route email based on a list of words, phrases, or patterns
 ms.author: dmaguire
 author: msdmaguire
-ms.date: 
 ms.reviewer: 
 ms.assetid: 4c5bee1b-58b5-4152-baef-86fa103050ae
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -34,20 +35,21 @@ If your list of words, phrases, or patterns is long, you can put them in a text 
 ```powershell
 $keywords=Import-Content  .\misspelled_companyname.txt
 New-TransportRule -Name "Block messages with unacceptable words" -SubjectOrBodyContainsWords $keywords -SentToScope "NotInOrganization" -RejectMessageReasonText "Do not use internal acronyms, product names, or misspellings in external communications."
-
 ```
 
 ### Using phrases and patterns in the text file
 
 The text file can contain regular expressions for patterns. These expressions are not case-sensitive. Common regular expressions include:
 
-|||
-|:-----|:-----|
-|**Expression**|**Matches**|
+****
+
+|Expression|Matches|
+|---|---|
 |**.**|Any single character|
 |**\***|Any additional characters|
 |**\d**|Any decimal digit|
 |[*character_group* ]|Any single character in *character_group*.|
+|
 
 For example, this text file contains common misspellings of Microsoft.
 
@@ -56,7 +58,6 @@ For example, this text file contains common misspellings of Microsoft.
 [mn]icrosft
 [mn]icro soft
 [mn].crosoft
-
 ```
 
-To learn how to specify patterns using regular expressions, see [Regular Expression Reference](https://go.microsoft.com/fwlink/p/?LinkId=532394).
+To learn how to specify patterns using regular expressions, see [Regular Expression Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).

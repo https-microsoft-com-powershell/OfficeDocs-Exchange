@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: abad5939-8826-4df1-94bf-2d734f07e929
-ms.date: 6/8/2018
 ms.reviewer:
 title: Recipients
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -48,9 +49,9 @@ The following table lists the available recipient types. All these recipient typ
 |Microsoft Exchange recipient|A special recipient object that provides a unified and well-known message sender that differentiates system-generated messages from other messages. It replaces the System Administrator sender used for system-generated messages in earlier versions of Exchange.|
 |Room mailbox|A resource mailbox that's assigned to a meeting location, such as a conference room, auditorium, or training room. Room mailboxes can be included as resources in meeting requests, providing a simple and efficient way of organizing meetings for your users.|
 |Shared mailbox|A mailbox that's not primarily associated with a single user and is generally configured to allow access for multiple users.|
-|Site mailbox|A mailbox comprised of an Exchange mailbox to store email messages and a SharePoint site to store documents. Users can access both email messages and documents using the same client interface. For more information, see [Site mailboxes](../collaboration/site-mailboxes.md).|
+|Site mailbox|A mailbox comprised of an Exchange mailbox to store email messages and a SharePoint site to store documents. Users can access both email messages and documents using the same client interface. For more information, see [Site mailboxes](../collaboration/site-mailboxes.md). <br/> **Note**: The site mailboxes are being retired and will be out of service and/or removed. For more information see, [Retirement of site mailboxes](/sharepoint/deprecation-of-site-mailboxes).|
 |User mailbox|A mailbox that's assigned to an individual user in your Exchange organization. It typically contains messages, calendar items, contacts, tasks, documents, and other important business data.|
-|Office 365 mailbox|In hybrid deployments, an Office 365 mailbox consists of a mail user that exists in Active Directory on-premises and an associated cloud mailbox that exists in Exchange Online.|
+|Microsoft 365 or Office 365 mailbox|In hybrid deployments, a Microsoft 365 or Office 365 mailbox consists of a mail user that exists in Active Directory on-premises and an associated cloud mailbox that exists in Exchange Online.|
 |Linked user|A linked user is a user whose mailbox resides in a different forest than the forest in which the user resides.|
 
 ### Mailboxes
@@ -85,7 +86,7 @@ Exchange supports the following mailbox types:
 
     ![Complex Exchange organization with resource forest](../media/ExPlanningArchitect_ComplexOrg_01.gif)
 
-- **Office 365 mailboxes**: When you create an Office 365 mailbox in Exchange Online in a hybrid deployment, the mail user is created in Active Directory on-premises. Directory synchronization, if it's configured, automatically synchronizes this new user object to Office 365, where it's converted to a cloud mailbox in Exchange Online. You can create Office 365 mailboxes as regular user mailboxes, resource mailboxes for meeting rooms and equipment, and shared mailboxes.
+- **Microsoft 365 or Office 365 mailboxes**: When you create a Microsoft 365 or Office 365 mailbox in Exchange Online in a hybrid deployment, the mail user is created in Active Directory on-premises. Directory synchronization, if it's configured, automatically synchronizes this new user object to Microsoft 365 or Office 365, where it's converted to a cloud mailbox in Exchange Online. You can create Microsoft 365 or Office 365 mailboxes as regular user mailboxes, resource mailboxes for meeting rooms and equipment, and shared mailboxes.
 
 - **Shared mailboxes**: Shared mailboxes aren't primarily associated with individual users and are generally configured to allow access by multiple users.
 
@@ -115,7 +116,7 @@ System mailboxes are created by Exchange in the root domain of the Active Direct
 |Federated email|FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042|
 |Migration|Migration.8f3e7716-2011-43e4-96b1-aba62d229136|
 
-If you want to decommission the last Mailbox server in your Exchange organization, you should first disable these system mailboxes by using the [Disable-Mailbox](https://technet.microsoft.com/library/33be55a3-1880-437d-a631-c1cca1736421.aspx) cmdlet. When you decommission a Mailbox server that contains these system mailboxes, you should move the system mailboxes to another Mailbox server to make sure that you don't lose functionality.
+If you want to decommission the last Mailbox server in your Exchange organization, you should first disable these system mailboxes by using the [Disable-Mailbox](/powershell/module/exchange/disable-mailbox) cmdlet. When you decommission a Mailbox server that contains these system mailboxes, you should move the system mailboxes to another Mailbox server to make sure that you don't lose functionality.
 
 #### Planning for mailboxes
 
@@ -137,7 +138,7 @@ Exchange supports the following types of distribution groups:
 - **Mail-enabled non-universal groups**: These are Active Directory global or local group objects that are mail-enabled. You can create or mail-enable only universal distribution groups. You may have mail-enabled groups that were migrated from previous versions of Exchange that aren't universal groups. These groups can still be managed by using the EAC or the Exchange Management Shell.
 
     > [!NOTE]
-  > To convert a domain-local or a global group to a universal group, you can use the [Set-Group](https://technet.microsoft.com/library/924e6eb5-bb06-4e15-b122-cab414291cef.aspx) cmdlet in the Exchange Management Shell.
+  > To convert a domain-local or a global group to a universal group, you can use the [Set-Group](/powershell/module/exchange/set-group) cmdlet in the Exchange Management Shell.
 
 ### Dynamic distribution groups
 
@@ -192,10 +193,10 @@ You can manage public folders by using either the EAC or the Exchange Management
 
 The Microsoft Exchange recipient is a special recipient object that provides a unified and well-known message sender that differentiates system-generated messages from other messages. It replaces the System Administrator sender that was used for system-generated messages in earlier versions of Exchange.
 
-The Microsoft Exchange recipient isn't a typical recipient object, such as a mailbox, mail user, or mail contact, and it isn't managed by using the typical recipient tools. However, you can use the [Set-OrganizationConfig](https://technet.microsoft.com/library/3b6df0fe-27c8-415f-ad0c-8b265f234c1a.aspx) cmdlet in the Exchange Management Shell to configure the Microsoft Exchange recipient.
+The Microsoft Exchange recipient isn't a typical recipient object, such as a mailbox, mail user, or mail contact, and it isn't managed by using the typical recipient tools. However, you can use the [Set-OrganizationConfig](/powershell/module/exchange/set-organizationconfig) cmdlet in the Exchange Management Shell to configure the Microsoft Exchange recipient.
 
 > [!NOTE]
-> When system-generated messages are sent to an external sender, the Microsoft Exchange recipient isn't used as the sender of the message. Instead, the email address specified by the _ExternalPostmasterAddress_ parameter in the [Set-TransportConfig](https://technet.microsoft.com/library/ad3910a5-2227-47a2-8ccc-a208ce6210bb.aspx) cmdlet is used.
+> When system-generated messages are sent to an external sender, the Microsoft Exchange recipient isn't used as the sender of the message. Instead, the email address specified by the _ExternalPostmasterAddress_ parameter in the [Set-TransportConfig](/powershell/module/exchange/set-transportconfig) cmdlet is used.
 
 ## Recipients documentation
 
@@ -213,6 +214,6 @@ The following table contains links to topics that will help you learn about and 
 |[Manage equipment mailboxes](equipment-mailboxes.md)|Learn how to create equipment mailboxes, configure booking and scheduling options, and manage other mailbox properties.|
 |[Disconnected mailboxes](disconnected-mailboxes/disconnected-mailboxes.md)|Learn about the two types of disconnected mailboxes and how to work with them.|
 |[Custom attributes](mailbox-custom-attributes.md)|Learn how to add information about a recipient by using custom attributes.|
-|[Filters in recipient Shell commands](https://technet.microsoft.com/library/fb4b1396-9aae-4037-be1a-b09e336b890e.aspx)|Learn how to use precanned or custom filters with commands to filter a set of recipients.|
+|[Filters in recipient Shell commands](/powershell/exchange/recipient-filters)|Learn how to use precanned or custom filters with commands to filter a set of recipients.|
 |[Manage permissions for recipients](mailbox-permissions.md)|Learn how to use the EAC or the Exchange Management Shell to assign permissions to users and groups.|
-|[Automatic Mailbox Distribution](https://technet.microsoft.com/library/f4db4636-948c-466b-839c-300c1a3a9544.aspx)|Learn about how automatic mailbox distribution works and how to control which mailbox databases are selected for new and moved mailboxes.|
+|[Automatic Mailbox Distribution](../../ExchangeServer2013/automatic-mailbox-distribution-exchange-2013-help.md)|Learn about how automatic mailbox distribution works and how to control which mailbox databases are selected for new and moved mailboxes.|

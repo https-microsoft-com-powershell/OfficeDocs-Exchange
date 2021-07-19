@@ -2,13 +2,14 @@
 title: 'Update a global address list: Exchange 2013 Help'
 TOCTitle: Update a global address list
 ms:assetid: 236e8530-62dd-4c43-8a5d-8465623252e6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb266966(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb266966(v=EXCHG.150)
 ms:contentKeyID: 49289195
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ For additional management tasks related to address lists, see [Address list proc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to update a GAL
 
@@ -46,4 +47,4 @@ This example updates a GAL for the Fourth Coffee company.
 Update-GlobalAddressList -Identity "Fourth Coffee"
 ```
 
-For detailed syntax and parameter information, see [Update-GlobalAddressList](https://technet.microsoft.com/en-us/library/aa998806\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Update-GlobalAddressList](/powershell/module/exchange/Update-GlobalAddressList).

@@ -2,13 +2,14 @@
 title: 'Distributed Transaction Coordinator Service must start before setup can continue'
 TOCTitle: The Distributed Transaction Coordinator Service must be started before setup can continue_MSDTCStopped
 ms:assetid: 96e33c94-348e-4a0b-9585-9bee81be4355
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.msdtcstopped(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.msdtcstopped(v=EXCHG.150)
 ms:contentKeyID: 46629047
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft Exchange Server 2007 setup cannot continue because its attempt to install the Client Access Server or Unified Messaging server roles failed because the Distributed Transaction Coordinator service is not started on the target computer.
 

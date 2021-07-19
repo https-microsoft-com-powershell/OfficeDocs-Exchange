@@ -2,13 +2,14 @@
 title: 'Message encoding options: Exchange 2013 Help'
 TOCTitle: Message encoding options
 ms:assetid: c1d9edbb-d87c-41e5-881b-cd612d83d7e4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb310794(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb310794(v=EXCHG.150)
 ms:contentKeyID: 49318586
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -106,17 +107,17 @@ When you configure message encoding options for a mail contact or a mail user, t
 
 You need to use these parameters in the Exchange Management Shell to set the message encoding options for mail users and mail contacts. For more information, see the following topics:
 
-  - [Enable-MailContact](https://technet.microsoft.com/en-us/library/aa996001\(v=exchg.150\))
+  - [Enable-MailContact](/powershell/module/exchange/Enable-MailContact)
 
-  - [New-MailContact](https://technet.microsoft.com/en-us/library/bb124519\(v=exchg.150\))
+  - [New-MailContact](/powershell/module/exchange/New-MailContact)
 
-  - [Set-MailContact](https://technet.microsoft.com/en-us/library/aa995950\(v=exchg.150\))
+  - [Set-MailContact](/powershell/module/exchange/Set-MailContact)
 
-  - [Enable-MailUser](https://technet.microsoft.com/en-us/library/aa996549\(v=exchg.150\))
+  - [Enable-MailUser](/powershell/module/exchange/Enable-MailUser)
 
-  - [New-MailUser](https://technet.microsoft.com/en-us/library/aa996335\(v=exchg.150\))
+  - [New-MailUser](/powershell/module/exchange/New-MailUser)
 
-  - [Set-MailUser](https://technet.microsoft.com/en-us/library/aa995971\(v=exchg.150\))
+  - [Set-MailUser](/powershell/module/exchange/Set-MailUser)
 
 ## Message encoding options available in Outlook
 
@@ -381,10 +382,10 @@ The following table describes the order of precedence from lowest priority to hi
 
 [Remote domains](remote-domains-exchange-2013-help.md)
 
-[Remote domains in Exchange Online](https://technet.microsoft.com/en-us/library/jj966211\(v=exchg.150\))
+[Remote domains in Exchange Online](../ExchangeOnline/mail-flow-best-practices/remote-domains/remote-domains.md)
 
-[Manage mail users](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-users)
+[Manage mail users](../ExchangeOnline/recipients-in-exchange-online/manage-mail-users.md)
 
-[Manage mail contacts](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-contacts)
+[Manage mail contacts](../ExchangeOnline/recipients-in-exchange-online/manage-mail-contacts.md)
 
-[Change the message format in Outlook](https://go.microsoft.com/fwlink/p/?linkid=397890)
+[Change the message format in Outlook](https://support.microsoft.com/office/338a389d-11da-47fe-b693-cf41f792fefa)

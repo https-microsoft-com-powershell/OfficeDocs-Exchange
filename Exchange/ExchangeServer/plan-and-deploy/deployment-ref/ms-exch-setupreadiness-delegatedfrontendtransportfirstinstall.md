@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Exchange Server 2016 or Exchange Server 2019 Setup can't continue because the account doesn't have permission to install the first Exchange server in the organization.
 ms.topic: reference
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - ms.exch.setupreadiness.DelegatedFrontendTransportFirstInstall
 ms.author: dmaguire
 ms.assetid: 0f4c5b2f-85ae-4160-9a53-f4b890d8ccdb
-ms.date: 8/2/2018
 ms.reviewer: 
 title: Installation of the first Exchange server in the organization can't be delegated [DelegatedFrontendTransportFirstInstall]
 ms.collection: exchange-server
+f1.keywords:
+- CSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -29,4 +30,4 @@ Exchange Setup can't continue because this is the first Exchange server in the o
 
 To resolve this issue, run Exchange setup again using an account that's a member of the Enterprise Admins security group (add the current account or use a different account).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

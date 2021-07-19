@@ -2,13 +2,14 @@
 title: 'Configure a cross-forest Send connector: Exchange 2013 Help'
 TOCTitle: Configure a cross-forest Send connector
 ms:assetid: 7840d172-071e-4f13-9379-2fe1eee1a7cc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ945053(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ945053(v=EXCHG.150)
 ms:contentKeyID: 51423387
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ Interested in scenarios where this procedure is used? See the following topics:
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a user account in each forest
 
@@ -51,7 +52,7 @@ Establish cross-forest mail flow using Basic authentication.
 
 3. Choose **Route mail through smart hosts**, and then click **Add** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon"). In the **add smart host** window, specify the IP address of the target server in the second forest, such as 64.4.6.100. Click **save** and then **next**.
 
-    For **Smart host authentication**, choose **Basic authentication** and provide a user name and password. Here you can choose **Offer basic authentication only after starting TLS** for secure communication over TLS.
+    For **Smart host authentication**, choose **Basic authentication** and provide a username and password. Here you can choose **Offer basic authentication only after starting TLS** for secure communication over TLS.
 
     > [!NOTE]
     > If you use Basic authentication over TLS, the target server must be configured to use an X.509 certificate.

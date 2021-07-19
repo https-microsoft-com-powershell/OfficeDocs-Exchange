@@ -2,13 +2,14 @@
 title: 'Planning for Unified Messaging: Exchange 2013 Help'
 TOCTitle: Planning for Unified Messaging
 ms:assetid: 942788b1-b19d-40b3-a52e-2e1fef8df3f9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ674306(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ674306(v=EXCHG.150)
 ms:contentKeyID: 49319925
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -76,10 +77,10 @@ Unified Messaging requires that you integrate your Exchange Server deployment wi
 
 - Continuity of the user experience across multiple devices.
 
-For more information about Microsoft Lync Server, see [Microsoft Lync Server](https://go.microsoft.com/fwlink/p/?linkid=265752).
+For more information about Microsoft Lync Server, see [Microsoft Lync Server](/lyncserver/microsoft-lync-server-2013).
 
 > [!NOTE]
-> Planning and deploying Unified Messaging can pose certain challenges. Depending on your technical experience with Exchange and voice mail systems, you might want to obtain the assistance of a Unified Messaging specialist. An Exchange Unified Messaging specialist will help make sure that there's a smooth transition from a legacy or third-party voice mail system to Exchange Unified Messaging. Performing a new deployment or upgrading a legacy voice mail system requires significant knowledge about VoIP gateways, PBXs, and Unified Messaging. To contact a Unified Messaging specialist, see the [Microsoft solution providers](https://go.microsoft.com/fwlink/p/?LinkId=261951) page.
+> Planning and deploying Unified Messaging can pose certain challenges. Depending on your technical experience with Exchange and voice mail systems, you might want to obtain the assistance of a Unified Messaging specialist. An Exchange Unified Messaging specialist will help make sure that there's a smooth transition from a legacy or third-party voice mail system to Exchange Unified Messaging. Performing a new deployment or upgrading a legacy voice mail system requires significant knowledge about VoIP gateways, PBXs, and Unified Messaging. To contact a Unified Messaging specialist, see the [Microsoft solution providers](https://www.microsoft.com/solution-providers/) page.
 
 ## Deployment steps
 

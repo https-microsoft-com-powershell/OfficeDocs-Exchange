@@ -2,13 +2,14 @@
 title: 'Add a role entry to a role: Exchange 2013 Help'
 TOCTitle: Add a role entry to a role
 ms:assetid: 30cd37bc-b3e8-4f39-a8ba-a4c20b1b27b7
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335180(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335180(v=EXCHG.150)
 ms:contentKeyID: 49289216
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,12 +36,12 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 
 - A role entry that you want to add to a management role must exist in that role's immediate parent management role.
 
-- This topic makes use of pipelining. For more information about pipelining, see [Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\)).
+- This topic makes use of pipelining. For more information about pipelining, see [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Add a single role entry from a parent role
 
@@ -58,7 +59,7 @@ Add-ManagementRoleEntry "Recipient Administrators\Set-Mailbox"
 
 This command checks the parent role, and if the role entry exists, adds it to the child role. If the role entry already exists on the child role, you can include the *Overwrite* parameter to overwrite the existing role entry.
 
-For detailed syntax and parameter information, see [Add-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351236\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Add-ManagementRoleEntry](/powershell/module/exchange/Add-ManagementRoleEntry).
 
 ## Add a single role entry from a parent role and include only specific parameters
 
@@ -76,7 +77,7 @@ Add-ManagementRoleEntry "Help Desk\Set-Mailbox" -Parameters DisplayName, EmailAd
 
 This command checks the parent role, and if the role entry exists, adds it to the child role. If the role entry already exists on the child role, you can include the *Overwrite* parameter to overwrite the existing role entry.
 
-For detailed syntax and parameter information, see [Add-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351236\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Add-ManagementRoleEntry](/powershell/module/exchange/Add-ManagementRoleEntry).
 
 ## Add multiple role entries from a parent role
 
@@ -98,4 +99,4 @@ If the role entries already exist on the child role, you can include the *Overwr
 
 For more information about retrieving a list of management role entries, see [View role entries](view-role-entries-exchange-2013-help.md).
 
-For detailed syntax and parameter information, see [Get-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd335210\(v=exchg.150\)) and [Add-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351236\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleEntry](/powershell/module/exchange/Get-ManagementRoleEntry) and [Add-ManagementRoleEntry](/powershell/module/exchange/Add-ManagementRoleEntry).

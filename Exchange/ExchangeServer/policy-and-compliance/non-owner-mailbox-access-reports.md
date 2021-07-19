@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: dbbef170-e726-4735-abf1-2857db9bb52d
-ms.date: 7/8/2018
 ms.reviewer:
 title: Run a non-owner mailbox access report
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,14 +28,14 @@ You enable mailbox audit logging in the Exchange Management Shell.
 
 - Estimated time to complete: 5 minutes.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox audit logging" entry in the [Messaging policy and compliance permissions in Exchange Server](../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox audit logging" entry in the [Messaging policy and compliance permissions in Exchange Server](../permissions/feature-permissions/policy-and-compliance-permissions.md) article.
 
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
+- For information about keyboard shortcuts that may apply to the procedures in this article, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Step 1: Use the Exchange Management Shell to enable mailbox audit logging
 
@@ -42,23 +43,23 @@ You have to enable mailbox audit logging for each mailbox that you want to inclu
 
 To enable mailbox audit logging for a single mailbox, run the following command in the Exchange Management Shell:
 
-```
+```PowerShell
 Set-Mailbox <Identity> -AuditEnabled $true
 ```
 
 For example, to enable mailbox auditing for a user named Florence Flipo, run the following command.
 
-```
+```PowerShell
 Set-Mailbox "Florence Flipo" -AuditEnabled $true
 ```
 
 To enable mailbox auditing for all user mailboxes in your organization, run the following commands:
 
-```
-$UserMailboxes = Get-mailbox -Filter {(RecipientTypeDetails -eq 'UserMailbox')}
+```PowerShell
+$UserMailboxes = Get-mailbox -Filter "RecipientTypeDetails -eq 'UserMailbox'"
 ```
 
-```
+```PowerShell
 $UserMailboxes | ForEach {Set-Mailbox $_.Identity -AuditEnabled $true}
 ```
 
@@ -66,7 +67,7 @@ $UserMailboxes | ForEach {Set-Mailbox $_.Identity -AuditEnabled $true}
 
 Run the following command to verify that you've successfully configured mailbox audit logging.
 
-```
+```PowerShell
 Get-Mailbox | Format-List Name,AuditEnabled
 ```
 
@@ -85,7 +86,7 @@ A value of `True` for the _AuditEnabled_ property verifies that audit logging is
 
  **Notes**:
 
-- Want to narrow the search results? Select the start date, end date, or both, and select specific mailboxes to search. Click **Search** to re-run the report.
+- Want to narrow the search results? Select the start date, end date, or both, and select specific mailboxes to search. Click **Search** to rerun the report.
 
 - You can also specify that you want to search for the non-owner access type, also called the logon type. Here are your options:
 
@@ -104,7 +105,7 @@ To verify that you've successfully run a non-owner mailbox access report, check 
 ## What gets logged in the mailbox audit log?
 <a name="whatislogged"> </a>
 
-When you run a non-owner mailbox access report, the EAC search results displays entries from the mailbox audit log. Each report entry contains this information:
+When you run a non-owner mailbox access report, the EAC search results display entries from the mailbox audit log. Each report entry contains this information:
 
 - Who accessed the mailbox and when.
 

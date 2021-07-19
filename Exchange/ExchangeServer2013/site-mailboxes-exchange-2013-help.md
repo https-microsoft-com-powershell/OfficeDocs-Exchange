@@ -2,13 +2,14 @@
 title: 'Site mailboxes: Exchange 2013 Help'
 TOCTitle: Site mailboxes
 ms:assetid: 2c4393f4-d274-4e6c-bd09-9577e68c5a33
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150499(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150499(v=EXCHG.150)
 ms:contentKeyID: 47559965
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ The *site mailbox* is a new concept in Microsoft Exchange 2013 that attempts to 
 
 Site mailboxes require Exchange 2013 and SharePoint Server 2013 integration and configuration. For more information about how to configure your Exchange 2013 organization to work with your SharePoint Server 2013 organization, see the following topics:
 
-- [Configure site mailboxes in SharePoint Server 2013](https://go.microsoft.com/fwlink/p/?linkid=258264).
+- [Configure site mailboxes in SharePoint Server 2013](/SharePoint/administration/configure-site-mailboxes-in-sharepoint).
 
 - [Integration with SharePoint and Lync](integration-with-sharepoint-and-lync-exchange-2013-help.md)
 
@@ -88,10 +89,10 @@ Site mailboxes don't support retention at the item-level. Retention works on a p
 
 ## Compliance
 
-Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In-Place eDiscovery scope as you can do keyword searches against user mailboxes or site mailboxes. In addition, you can put a site mailbox on legal hold. For more info, see [In-Place eDiscovery](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery).
+Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In-Place eDiscovery scope as you can do keyword searches against user mailboxes or site mailboxes. In addition, you can put a site mailbox on legal hold. For more info, see [In-Place eDiscovery](../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md).
 
 > [!NOTE]
-> To place a site mailbox on legal hold in Office 365, it must be assigned an Exchange Online (Plan 2) license. If a site mailbox is assigned an Exchange Online (Plan 1) license, you would have to assign it a separate Exchange Online Archiving license to place it on hold.
+> To place a site mailbox on legal hold in Microsoft 365 or Office 365, it must be assigned an Exchange Online (Plan 2) license. If a site mailbox is assigned an Exchange Online (Plan 1) license, you would have to assign it a separate Exchange Online Archiving license to place it on hold.
 
 ## Backup and restore
 

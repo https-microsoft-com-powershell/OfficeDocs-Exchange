@@ -2,13 +2,14 @@
 title: 'Managed Store: Exchange 2013 Help'
 TOCTitle: Managed Store
 ms:assetid: efdaf80b-335c-491c-8eb5-1fafd297e8a2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn792020(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn792020(v=EXCHG.150)
 ms:contentKeyID: 62613984
-ms.date: 06/04/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

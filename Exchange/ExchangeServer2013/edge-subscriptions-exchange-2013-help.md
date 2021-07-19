@@ -2,13 +2,14 @@
 title: 'Edge Subscriptions: Exchange 2013 Help'
 TOCTitle: Edge Subscriptions
 ms:assetid: 3addd71a-4165-401f-a009-002bcd8baba6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997438(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997438(v=EXCHG.150)
 ms:contentKeyID: 61200285
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -124,7 +125,7 @@ New-EdgeSubscription -FileName "C:\EdgeSubscriptionInfo.xml"
 > [!NOTE]
 > When the <STRONG>New-EdgeSubscription</STRONG> cmdlet is run on the Edge Transport server, you receive a prompt to acknowledge the commands that will be disabled and the configuration that will be overwritten on the Edge Transport server. To bypass this confirmation, you must use the <EM>Force</EM> parameter. This parameter is useful when you script the <STRONG>New-EdgeSubscription</STRONG> cmdlet. The <EM>Force</EM> parameter is also used to overwrite an existing file with the same name as the file that you're creating when you resubscribe an Edge Transport server.
 
-For detailed syntax and parameter information, see [New-EdgeSubscription](https://technet.microsoft.com/en-us/library/bb123800\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-EdgeSubscription](/powershell/module/exchange/New-EdgeSubscription).
 
 ## Send connectors created during the Edge Subscription process
 

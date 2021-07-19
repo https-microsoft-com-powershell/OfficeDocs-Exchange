@@ -2,13 +2,14 @@
 title: 'Transport logs: Exchange 2013 Help'
 TOCTitle: Transport logs
 ms:assetid: f8cf635d-60c2-4aa3-9c06-244c29942cba
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd302434(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd302434(v=EXCHG.150)
 ms:contentKeyID: 49287006
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

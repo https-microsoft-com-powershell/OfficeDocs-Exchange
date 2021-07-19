@@ -4,9 +4,10 @@ TOCTitle: Enable or disable Outlook Web App for a mailbox
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: abc19646-6211-4f18-a060-e347452dcc53
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -23,20 +24,20 @@ For additional management tasks related to managing email client access to a mai
 
 - [Enable or disable MAPI for a mailbox](enable-or-disable-mapi-exchange-2013-help.md)
 
-- [Enable or Disable IMAP4 Access for a User](https://technet.microsoft.com/library/a685fae4-b6f1-42fe-8bdc-5f99f9617799.aspx)
+- [Enable or disable IMAP4 access for a user](enable-or-disable-imap4-access-for-a-user-exchange-2013-help.md)
 
-- [Enable or Disable POP3 Access for a User](https://technet.microsoft.com/library/57e12f07-3b14-45bd-9a82-e6032d14214f.aspx)
+- [Enable or disable POP3 access for a user](enable-or-disable-pop3-access-for-a-user-exchange-2013-help.md)
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access user settings" entry in the [Clients and Mobile Devices Permissions](https://technet.microsoft.com/library/57eca42a-5a7f-4c65-89f0-7a84f2dbea19.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access user settings" entry in the [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to enable or disable Outlook Web App
 
@@ -73,7 +74,7 @@ This example enables Outlook Web App for the mailbox of Elly Nkya.
 Set-CASMailbox -Identity Ellyn@contoso.com -OWAEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-CASMailbox](https://technet.microsoft.com/library/ff7d4dc5-755e-4005-a0a3-631eed3f9b3b.aspx).
+For detailed syntax and parameter information, see [Set-CASMailbox](/powershell/module/exchange/set-casmailbox).
 
 ## How do you know this worked?
 

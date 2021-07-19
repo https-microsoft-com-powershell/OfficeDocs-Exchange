@@ -2,13 +2,14 @@
 title: 'Voice architecture changes: Exchange 2013 Help'
 TOCTitle: Voice architecture changes
 ms:assetid: 55d5ca4a-b0cd-45f1-9f47-e745ef208698
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150516(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150516(v=EXCHG.150)
 ms:contentKeyID: 47560002
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

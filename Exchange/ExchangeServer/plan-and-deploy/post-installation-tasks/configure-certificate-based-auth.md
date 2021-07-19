@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 158fb77e-e238-4c22-9d85-a8c3109f78ec
-ms.date:
 ms.reviewer:
 title: Configure certificate based authentication in Exchange 2016
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -19,9 +20,9 @@ manager: serdars
 
 # Configure certificate based authentication in Exchange 2016
 
-Certificate based authentication (CBA) in Exchange allows Outlook on the web (formerly known as Outlook Web App) and Exchange ActiveSync clients to be authenticated by client certificates instead of entering a user name and password.
+Certificate based authentication (CBA) in Exchange allows Outlook on the web (formerly known as Outlook Web App) and Exchange ActiveSync clients to be authenticated by client certificates instead of entering a username and password.
 
-Before you configure Exchange, you need to issue a client certificate to each user. Because of the sheer number of certificates involved, you should use an automated internal public key infrastructure (PKI) to issue and manage the client certificates. An example of an automated internal PKI is Active Directory Certificate Services (AD CS). For more information about AD CS, see [Active Directory Certificate Services Overview](https://go.microsoft.com/fwlink/p/?LinkID=392697). Here's more information about the certificate requirements:
+Before you configure Exchange, you need to issue a client certificate to each user. Because of the sheer number of certificates involved, you should use an automated internal public key infrastructure (PKI) to issue and manage the client certificates. An example of an automated internal PKI is Active Directory Certificate Services (AD CS). For more information about AD CS, see [Active Directory Certificate Services Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)). Here's more information about the certificate requirements:
 
 - The client certificate must be issued for client authentication (for example, the default **User** certificate template in AD CS).
 
@@ -31,7 +32,7 @@ Before you configure Exchange, you need to issue a client certificate to each us
 
 - All servers and devices that are involved in access to Outlook on the web and ActiveSync (including proxy servers and client devices) must trust the entire chain of trust for the client certificates (the root certificate of the certification authority, and any intermediate CAs that were used to issue certificates).
 
-For CBA in Outlook on the web, the client certificate needs to be installed on the local computer, device, or on a smart card. For CBA in ActiveSync, the client certificate needs to be installed on the local device. You can automate the installation of certificates on devices by using a mobile device management (MDM) solution like Intune. For more information about Intune, see [Overview of Microsoft Intune](https://go.microsoft.com/fwlink/p/?linkid=817224).
+For CBA in Outlook on the web, the client certificate needs to be installed on the local computer, device, or on a smart card. For CBA in ActiveSync, the client certificate needs to be installed on the local device. You can automate the installation of certificates on devices by using a mobile device management (MDM) solution like Intune. For more information about Intune, see [Overview of Microsoft Intune](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/microsoft-intune).
 
 ## What do you need to know before you begin?
 
@@ -39,12 +40,12 @@ For CBA in Outlook on the web, the client certificate needs to be installed on t
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "IIS Manager" entry in the Outlook on the web permissions section of the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Step 1: Use the Exchange Management Shell to install the Client Certificate Mapping Authentication feature on all of your Exchange servers
 
@@ -52,11 +53,11 @@ All Exchange servers that share the same namespace and URLs need to use the same
 
 In the Exchange Management Shell, run the following command:
 
-```
+```powershell
 Install-WindowsFeature Web-Client-Auth
 ```
 
-For detailed syntax and parameter information, see [Install-WindowsFeature](https://go.microsoft.com/fwlink/p/?linkid=323998).
+For detailed syntax and parameter information, see [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature).
 
 ## Step 2: Use IIS Manager to enable Active Directory Client Certificate Authentication for the Exchange server
 
@@ -76,7 +77,7 @@ For detailed syntax and parameter information, see [Install-WindowsFeature](http
 
 ## Step 3: Use IIS Manager to configure the Outlook on the web, Exchange admin center, and ActiveSync virtual directories to require client certificates
 
- **Note**: You need to *require* client certificates, because *accepting* client certificates (to support both CBA and regular user name and password authentication) doesn't work consistently across all types of ActiveSync devices.
+ **Note**: You need to *require* client certificates, because *accepting* client certificates (to support both CBA and regular username and password authentication) doesn't work consistently across all types of ActiveSync devices.
 
 1. In IIS Manager, expand the server, expand **Sites**, and then expand **Default Web Site**.
 
@@ -102,15 +103,15 @@ For detailed syntax and parameter information, see [Install-WindowsFeature](http
 
  To perform these procedures on the command line, open an elevated command prompt on the Exchange server (a Command Prompt window you open by selecting **Run as administrator**) and run the following commands:
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/owa/" -section:system.webserver/security/access /sslFlags:"Ssl, SslRequireCert" /commit:apphost
 ```
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/ecp/" -section:system.webserver/security/access /sslFlags:"Ssl, SslRequireCert" /commit:apphost
 ```
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/Microsoft-Server-ActiveSync/" -section:system.webserver/security/access /sslFlags:"Ssl, SslRequireCert" /commit:apphost
 ```
 
@@ -120,27 +121,27 @@ After you require client certificates for authentication, you need to disable al
 
 1. In the Exchange Management Shell, replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the Outlook on the web virtual directory:
 
-    ```
+    ```powershell
     Set-OwaVirtualDirectory "<ServerName>\owa (Default Web Site)" -BasicAuthentication $false -WindowsAuthentication $false -DigestAuthentication $false -FormsAuthentication $false -AdfsAuthentication $false -OAuthAuthentication $false
     ```
 
-    For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](https://technet.microsoft.com/library/7fadcc2e-6339-48b1-b15c-c89e45d4e430.aspx).
+    For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](/powershell/module/exchange/set-owavirtualdirectory).
 
 2. In the Exchange Management Shell, replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the EAC virtual directory:
 
-    ```
+    ```powershell
     Set-EcpVirtualDirectory "<ServerName>\ecp (Default Web Site)" -BasicAuthentication $false -WindowsAuthentication $false -DigestAuthentication $false -FormsAuthentication $false -AdfsAuthentication $false
     ```
 
-    For detailed syntax and parameter information, see [Set-EcpVirtualDirectory](https://docs.microsoft.com/powershell/module/exchange/client-access-servers/set-ecpvirtualdirectory).
+    For detailed syntax and parameter information, see [Set-EcpVirtualDirectory](/powershell/module/exchange/set-ecpvirtualdirectory).
 
 3. Replace _\<ServerName\>_ with the name of your Exchange server, and run the following command to disable all other authentication methods on the ActiveSync virtual directory:
 
-    ```
+    ```powershell
     Set-ActiveSyncVirtualDirectory "<ServerName>\Microsoft-Server-ActiveSync (Default Web Site)" -BasicAuthEnabled $false -WindowsAuthEnabled $false
     ```
 
-    For detailed syntax and parameter information, see [Set-ActiveSyncVirtualDirectory](https://technet.microsoft.com/library/899fa80c-41e9-4fc0-b28e-5ca2f55e6369.aspx).
+    For detailed syntax and parameter information, see [Set-ActiveSyncVirtualDirectory](/powershell/module/exchange/set-activesyncvirtualdirectory).
 
 ## Step 5: Use IIS Manager to enable client certificate mapping for the Outlook on the web, Exchange admin center, and ActiveSync virtual directories
 
@@ -179,15 +180,15 @@ After you require client certificates for authentication, you need to disable al
 
  **Note**: To perform these procedures on the command line, open an elevated command prompt on the Exchange server and run the following commands:
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/owa/" -section:system.webserver/security/authentication/clientCertificateMappingAuthentication /enabled:"True" /commit:apphost
 ```
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/ecp/" -section:system.webserver/security/authentication/clientCertificateMappingAuthentication /enabled:"True" /commit:apphost
 ```
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/Microsoft-Server-ActiveSync/" -section:system.webserver/security/authentication/clientCertificateMappingAuthentication /enabled:"True" /commit:apphost
 ```
 
@@ -199,7 +200,7 @@ You only need to perform this step if you aren't using AD CS to issue the client
 
 2. On any domain member server (for example, a domain controller or an Exchange server), open an elevated command prompt run the following command:
 
-    ```
+    ```console
     %windir%\system32\certutil.exe -enterprise -addstore NTAuth "C:\Data\CARoot.cer"
     ```
 
@@ -241,14 +242,14 @@ If your clients receive errors, you might need to increase the **uploadReadAhead
 
  **Note**: To perform these procedures on the command line, open an elevated command prompt on the Exchange server and run the following commands:
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/owa/" -section:system.webserver/serverRuntime /uploadReadAheadSize:49152
 ```
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/ecp/" -section:system.webserver/serverRuntime /uploadReadAheadSize:49152
 ```
 
-```
+```console
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/Microsoft-Server-ActiveSync/" -section:system.webserver/serverRuntime /uploadReadAheadSize:49152
 ```

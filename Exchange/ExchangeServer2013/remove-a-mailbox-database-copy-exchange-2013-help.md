@@ -2,13 +2,14 @@
 title: 'Remove a mailbox database copy: Exchange 2013 Help'
 TOCTitle: Remove a mailbox database copy
 ms:assetid: 99fecdde-b158-4dfc-9ca7-ff7c0ada7819
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298164(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298164(v=EXCHG.150)
 ms:contentKeyID: 48385387
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-These procedures show you how to remove a copy of a mailbox database. You can't use these procedures to remove the last copy of a mailbox database. For detailed steps about how to remove the last copy of a mailbox database, see [Remove a mailbox database](manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md) or [Remove-MailboxDatabase](https://technet.microsoft.com/en-us/library/aa997931\(v=exchg.150\)).
+These procedures show you how to remove a copy of a mailbox database. You can't use these procedures to remove the last copy of a mailbox database. For detailed steps about how to remove the last copy of a mailbox database, see [Remove a mailbox database](manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md) or [Remove-MailboxDatabase](/powershell/module/exchange/Remove-MailboxDatabase).
 
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](managing-mailbox-database-copies-exchange-2013-help.md).
 
@@ -35,7 +36,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to remove a mailbox database copy
 

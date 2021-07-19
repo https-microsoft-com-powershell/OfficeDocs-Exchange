@@ -4,9 +4,10 @@ TOCTitle: Export eDiscovery search results to a PST file
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: bc47f5f9-d056-4b69-b669-ae65fad541c8
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,7 +21,7 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
 
 - Estimated time to complete: Time will vary based on the amount and size of the search results that will be exported.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 - The computer you use to export search results to a PST file must meet the following system requirements:
 
@@ -51,7 +52,7 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Exchange admin center to export In-Place eDiscovery search results to a PST
 
@@ -94,9 +95,9 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
 
   - [Estimate, preview, and copy search results](in-place-ediscovery-exchange-2013-help.md#estimate-preview-and-copy-search-results)
 
-  - [Unsearchable Items in Exchange eDiscovery](https://technet.microsoft.com/library/32550081-9af9-474b-ae7b-28f1e68cad41.aspx)
+  - [Unsearchable items in Exchange eDiscovery](unsearchable-items-in-exchange-ediscovery-exchange-2013-help.md)
 
-- To export eDiscovery search results from the eDiscovery Center in SharePoint, see [Export eDiscovery content and create reports](https://go.microsoft.com/fwlink/p/?LinkId=324757).
+- To export eDiscovery search results from the eDiscovery Center in SharePoint, see [Export eDiscovery content and create reports](/SharePoint/governance/export-content-and-create-reports-in-the-ediscovery-center).
 
 ## Troubleshooting
 

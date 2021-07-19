@@ -4,11 +4,12 @@ TOCTitle: Configure offline address book distribution properties
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Servers.ClientAccess.OabDistributionGeneralPage'
 ms.assetid: 8df985e9-75ba-47ea-9cc3-aa98a5d8acf4
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,14 +25,14 @@ For additional management tasks related to OABs, see [Offline address book proce
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Email Address and Address Book Permissions](https://technet.microsoft.com/library/1c1de09d-16ef-4424-9bfb-eb7edffbc8c2.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Email address and address book permissions](email-address-and-address-book-permissions-exchange-2013-help.md) topic.
 
 - You can't use the Exchange admin center (EAC) to perform this procedure. You must use the Shell.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure OAB distribution properties
 <a name="UseShell"> </a>
@@ -48,9 +49,9 @@ This example sets the external distribution point to https://contoso.com/OAB for
 Set-OABVirtualDirectory "OAB (Default Web Site)" -ExternalUrl https://contoso.com/OAB
 ```
 
-For detailed syntax and parameter information, see [Set-OabVirtualDirectory](https://technet.microsoft.com/library/d1184716-920c-47cf-9e03-638434c16462.aspx).
+For detailed syntax and parameter information, see [Set-OabVirtualDirectory](/powershell/module/exchange/set-oabvirtualdirectory).
 
 ## For More Information
 <a name="UseShell"> </a>
 
-[Understanding Offline Address Books](https://technet.microsoft.com/library/a6bcb072-4ab9-400e-a5d0-c05264629097.aspx)
+[Offline address books](offline-address-books-exchange-2013-help.md)

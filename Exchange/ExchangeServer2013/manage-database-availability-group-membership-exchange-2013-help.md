@@ -2,13 +2,14 @@
 title: 'Manage database availability group membership: Exchange 2013 Help'
 TOCTitle: Manage database availability group membership
 ms:assetid: fb2ea15e-96d5-4045-b75b-b0aa5fc60479
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351278(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351278(v=EXCHG.150)
 ms:contentKeyID: 48385730
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to manage database availability group membership
 
@@ -87,6 +88,6 @@ To verify that you've successfully managed DAG membership, do one of the followi
 
 ## For more information
 
-[Add-DatabaseAvailabilityGroupServer](https://technet.microsoft.com/en-us/library/dd298049\(v=exchg.150\))
+[Add-DatabaseAvailabilityGroupServer](/powershell/module/exchange/Add-DatabaseAvailabilityGroupServer)
 
-[Remove-DatabaseAvailabilityGroupServer](https://technet.microsoft.com/en-us/library/dd297956\(v=exchg.150\))
+[Remove-DatabaseAvailabilityGroupServer](/powershell/module/exchange/Remove-DatabaseAvailabilityGroupServer)

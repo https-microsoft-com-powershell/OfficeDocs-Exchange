@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 2cb9cae4-3eee-4da1-8a01-3d37d4b6b8b2
-ms.date: 
 ms.reviewer: 
 manager: serdars
 description: Admins can learn how to use a screen reader to configure different methods of collaboration in the Exchange admin center (EAC) in Exchange Online.
@@ -13,6 +12,8 @@ ms.collection:
 - exchange-online
 - M365-email-calendar
 audience: ITPro
+f1.keywords:
+- CSH
 ms.custom: A11y_UseSR
 ms.service: exchange-online
 
@@ -24,25 +25,25 @@ You can use your screen reader in the Exchange admin center (EAC) in Exchange On
 
 ## Get started
 
-Navigate with Internet Explorer and keyboard shortcuts, and make sure that you have the appropriate Office 365 subscription and admin role to work in the EAC. Then, open the EAC and get started.
+Navigate with Internet Explorer and keyboard shortcuts, and make sure that you have the appropriate Microsoft 365 or Office 365 subscription plan and admin role to work in the EAC. Then, open the EAC and get started.
 
 ### Use your browser and keyboard to navigate in the EAC
 
 Exchange Online, which includes the EAC, is a web-based application, so the keyboard shortcuts and navigation may be different from those in Exchange 2016. [Accessibility in the Exchange admin center](accessibility-in-exchange-admin-center.md).
 
-For best results when working in the EAC in Exchange Online, use Internet Explorer as your browser. [Learn more about Internet Explorer keyboard shortcuts](https://go.microsoft.com/fwlink/p/?LinkID=787614).
+For best results when working in the EAC in Exchange Online, use Internet Explorer as your browser. [Learn more about Internet Explorer keyboard shortcuts](https://support.microsoft.com/help/17456/).
 
-Many tasks in the EAC require the use of pop-up windows so, in your browser, be sure to [enable pop-up windows for Office 365](https://go.microsoft.com/fwlink/p/?LinkID=317550).
+Many tasks in the EAC require the use of pop-up windows. In your browser, be sure to [enable pop-up windows](https://support.microsoft.com/help/17479) for Microsoft 365 or Office 365.
 
-### Confirm your Office 365 subscription plan
+### Confirm your Office 365 or Microsoft 365 subscription plan
 
-Exchange Online is included in Office 365 business and enterprise subscription plans, but capabilities may differ by plan. If your EAC doesn't include a function described in this article, your plan might not include it.
+Exchange Online is included in several different subscription plans, but capabilities may differ by plan. If your EAC doesn't include a function described in this article, your plan might not include it.
 
-For more information about the Exchange Online capabilities in your subscription plan, go to [What Office 36 business product or license do I have?](https://go.microsoft.com/fwlink/p/?LinkID=797552) and [Exchange Online Service Description](https://go.microsoft.com/fwlink/p/?LinkID=797553).
+For more information about the Exchange Online capabilities in your subscription plan, go to [What Office 365 business product or license do I have?](https://support.microsoft.com/office/f8ab5e25-bf3f-4a47-b264-174b1ee925fd) and [Exchange Online Service Description](/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description).
 
 ### Open the EAC, and confirm your admin role
 
-To complete the tasks covered in this topic, [Use a screen reader to open the Exchange admin center](use-screen-reader-to-open-exchange-admin-center.md) and check that your Office 365 global administrator has assigned you to the [Organization Management](https://go.microsoft.com/fwlink/p/?LinkId=797868) and [Records Management](https://go.microsoft.com/fwlink/p/?LinkId=798797) admin role groups. [Use a screen reader to identify your admin role in the Exchange admin center](use-screen-reader-to-identify-admin-role-in-exchange-admin-center.md).
+To complete the tasks covered in this topic, [Use a screen reader to open the Exchange admin center](use-screen-reader-to-open-exchange-admin-center.md) and check that your global administrator has assigned you to the Organization Management and Records Management admin role groups. [Use a screen reader to identify your admin role in the Exchange admin center](use-screen-reader-to-identify-admin-role-in-exchange-admin-center.md).
 
 ## Set up public folders
 
@@ -73,7 +74,7 @@ To use public folders, you need to set up at least one public folder mailbox.
 
 8. With the focus on the **OK** button, press Enter. The new public folder mailbox is added to the public folder mailboxes list view.
 
-[Learn more about creating public folders](https://go.microsoft.com/fwlink/p/?LinkId=799146).
+[Learn more about creating public folders](../collaboration-exo/public-folders/create-public-folder.md).
 
 ### Create a public folder
 
@@ -127,22 +128,22 @@ After you create a public folder, specify the users who can access it. Also spec
 12. When you finish adding users, in the **Public Folder Permissions** dialog box, tab to the **Save** button and press Enter. Wait several seconds for the information to be saved. An alert specifies that the save operation is complete, and you hear "Close button." To close the alert, press Enter. The **public folders** main page view has the focus again.
 
    > [!NOTE]
-   > Public folders have size limits, and subfolders inherit permission settings from parent folders in specific ways. In addition, you can enable mail settings for a public folder. [Learn more about creating public folders](https://go.microsoft.com/fwlink/p/?LinkId=799146).
+   > Public folders have size limits, and subfolders inherit permission settings from parent folders in specific ways. In addition, you can enable mail settings for a public folder. [Learn more about creating public folders](../collaboration-exo/public-folders/create-public-folder.md).
 
 ## Create a distribution group
 
-Another method for facilitating and configuring collaboration in Exchange Online is a distribution group: a collection of two or more recipients that appears in the shared address book. When an email message is sent to a distribution group, it's received by all members of the group. Distribution groups can be organized by a particular discussion subject (such as "Resource Management Best Practices") or by users who share a common work structure (as in, a workgroup or project team) that requires them to communicate frequently. [Use a screen reader to create a new distribution group in the Exchange admin center](use-screen-reader-to-create-distribution-group-in-exchange-admin-center.md). [Learn more about managing distribution groups](https://go.microsoft.com/fwlink/p/?LinkId=613635).
+Another method for facilitating and configuring collaboration in Exchange Online is a distribution group: a collection of two or more recipients that appears in the shared address book. When an email message is sent to a distribution group, it's received by all members of the group. Distribution groups can be organized by a particular discussion subject (such as "Resource Management Best Practices") or by users who share a common work structure (as in, a workgroup or project team) that requires them to communicate frequently. [Use a screen reader to create a new distribution group in the Exchange admin center](use-screen-reader-to-create-distribution-group-in-exchange-admin-center.md). [Learn more about managing distribution groups](../recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups.md).
 
 ## Work with a shared mailbox
 
-Shared mailboxes make it easy for a group of people to monitor and send email from a common account, such as info@contoso.com or support@contoso.com. When a group member replies to a message sent to the shared mailbox, the email looks like it was sent by the shared mailbox, not by the group member. [Use a screen reader to add a new shared mailbox in the Exchange admin center 2016](use-screen-reader-to-add-shared-mailbox-in-exchange-admin-center-2016.md). [Learn more about shared mailboxes](https://go.microsoft.com/fwlink/p/?LinkId=798937).
+Shared mailboxes make it easy for a group of people to monitor and send email from a common account, such as info@contoso.com or support@contoso.com. When a group member replies to a message sent to the shared mailbox, the email looks like it was sent by the shared mailbox, not by the group member. [Use a screen reader to add a new shared mailbox in the Exchange admin center 2016](use-screen-reader-to-add-shared-mailbox-in-exchange-admin-center-2016.md). [Learn more about shared mailboxes](../collaboration-exo/shared-mailboxes.md).
 
 ## Accessibility Information
 
-The [Microsoft Accessibility](https://go.microsoft.com/fwlink/p/?LinkID=21487) website provides more information about assistive technology. A free monthly electronic newsletter is available to help you stay current with accessibility topics about Microsoft products. To subscribe, visit the [Microsoft Accessibility Update Newsletter Subscription](https://go.microsoft.com/fwlink/p/?LinkID=14920) page.
+The [Microsoft Accessibility](https://www.microsoft.com/accessibility/) website provides more information about assistive technology.
 
 ### Technical support for customers with disabilities
 
-Microsoft wants to provide the best possible experience for all our customers. If you have a disability or have questions related to accessibility, please contact the [Microsoft Disability Answer Desk](https://go.microsoft.com/fwlink/p/?LinkID=518252) for technical assistance.
+Microsoft wants to provide the best possible experience for all our customers. If you have a disability or have questions related to accessibility, please contact the [Microsoft Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk) for technical assistance.
 
-The Disability Answer Desk support team is trained in using many popular assistive technologies and can offer assistance in English, Spanish, French, and American Sign Language. Please visit the [Microsoft Disability Answer Desk](https://go.microsoft.com/fwlink/p/?LinkID=518252) site to find the contact details for your region.
+The Disability Answer Desk support team is trained in using many popular assistive technologies and can offer assistance in English, Spanish, French, and American Sign Language. Please visit the [Microsoft Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk) site to find the contact details for your region.

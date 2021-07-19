@@ -1,3 +1,2 @@
-
   
-# [Outlook for iOS and Android](resources.md)
+# [Outlook for iOS and Android](https://adoption.microsoft.com/outlook-mobile/)

@@ -2,13 +2,14 @@
 title: Procedures related to deployment
 TOCTitle: Procedures related to deployment
 ms:assetid: 6b7682bd-fe3d-43b9-a7db-66c0ac17656f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn195909(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn195909(v=EXCHG.150)
 ms:contentKeyID: 53181784
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,7 +27,7 @@ Your user account needs to be a member of the Operations Manager Administrators 
 
 1. Log on to your SCOM server and open the SCOM console.
 
-2. Click **Monitoring** and then click **Windows Computers**.
+2. Click **Monitoring** and then click on **Windows Computers**.
 
 3. Make sure that all of your Exchange servers show **Healthy**.
 

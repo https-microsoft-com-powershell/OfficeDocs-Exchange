@@ -2,13 +2,14 @@
 title: 'Set connection time-out limits for IMAP4: Exchange 2013 Help'
 TOCTitle: Set connection time-out limits for IMAP4
 ms:assetid: 6b6a5bd1-a878-4a70-8e21-14d5042a58f1
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998665(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998665(v=EXCHG.150)
 ms:contentKeyID: 50395405
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ For additional information related to IMAP4, see [POP3 and IMAP4 in Exchange Ser
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to set connection time-out limits for IMAP4
 
@@ -67,7 +68,7 @@ Set -ImapSettings -Identity CAS01 -PreAuthenticatedConnectionTimeout TimeValue
 
 After you've set the connection time-out limits for IMAP4, you must restart the IMAP4 services for the settings to take effect. For information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings).
 
 ## How do you know this worked?
 

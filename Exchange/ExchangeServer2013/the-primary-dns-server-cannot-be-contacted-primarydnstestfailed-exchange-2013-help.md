@@ -2,13 +2,14 @@
 title: 'The primary DNS server cannot be contacted'
 TOCTitle: The primary DNS server cannot be contacted_PrimaryDNSTestFailed
 ms:assetid: 5b39cb64-c8f1-4fd3-843b-ecd23f99fe3a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.primarydnstestfailed(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.primarydnstestfailed(v=EXCHG.150)
 ms:contentKeyID: 46628919
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft® Exchange Server 2007 setup cannot continue because communication with the primary Domain Name System (DNS) server cannot be established.
 
@@ -36,7 +37,7 @@ To resolve this issue, verify that the local TCP/IP configuration points to the 
 
 ## To verify the local TCP/IP configuration
 
-1. Review the local TCP/IP configuration. For more information, see [Configure TCP/IP to use DNS](https://go.microsoft.com/fwlink/p/?linkid=68094).
+1. Review the local TCP/IP configuration. For more information, see [Configure TCP/IP to use DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10)).
 
 2. Verify that the DNS server is running and can be contacted.
 
@@ -46,6 +47,6 @@ Verify that the DNS server is running by doing one or more of the following chec
 
 - Look at the DNS server status from the DNS Administration program on the DNS server.
 
-- Restart the DNS server. For more information, see [Start, stop, pause, or restart a DNS server](https://go.microsoft.com/fwlink/p/?linkid=62999).
+- Restart the DNS server. For more information, see [Start, stop, pause, or restart a DNS server](/previous-versions/windows/it-pro/windows-server-2003/cc776431(v=ws.10)).
 
-- Verify the DNS server responsiveness by using the **nslookup** command. For more information, see the instructions in [Verify DNS server responsiveness using the nslookup command](https://go.microsoft.com/fwlink/p/?linkid=63000).
+- Verify the DNS server responsiveness by using the **nslookup** command. For more information, see the instructions in [Verify DNS server responsiveness using the nslookup command](/previous-versions/windows/it-pro/windows-server-2003/cc740171(v=ws.10)).

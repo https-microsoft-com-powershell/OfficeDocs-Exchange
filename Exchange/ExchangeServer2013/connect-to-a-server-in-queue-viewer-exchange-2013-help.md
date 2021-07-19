@@ -2,13 +2,14 @@
 title: 'Connect to a server in Queue Viewer: Exchange 2013 Help'
 TOCTitle: Connect to a server in Queue Viewer
 ms:assetid: 6c1ad574-9ab5-4dcc-9398-ec10eca4fd11
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998669(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998669(v=EXCHG.150)
 ms:contentKeyID: 49286846
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 When you use Queue Viewer in the Exchange Toolbox on a Microsoft Exchange Server 2013 server that's located inside the Exchange organization, you can connect to other Mailbox servers. By default, when you open Queue View on a Mailbox server, Queue Viewer connects to the queue database on the local server. However, you can start more than one instance of Queue Viewer so that each instance focuses on a different server. You can also tile Queue Viewer windows so you can easily monitor more than one Mailbox server at a time.
 
-You can also specify the server that Remote PowerShell uses to perform the specified tasks in Queue Viewer. This server doesn't need to match the remote server you're managing in Queue Viewer.
+You can also specify the server that remote PowerShell uses to perform the specified tasks in Queue Viewer. This server doesn't need to match the remote server you're managing in Queue Viewer.
 
 ## What do you need to know before you begin?
 
@@ -31,7 +32,7 @@ You can also specify the server that Remote PowerShell uses to perform the speci
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Exchange Toolbox to specify the server you want to manage in Queue Viewer
 
@@ -55,7 +56,7 @@ You can also specify the server that Remote PowerShell uses to perform the speci
 
 8. In the **Connect to server** window, click **Connect**.
 
-## Use the Exchange Toolbox to specify the server that Queue Viewer uses to run Remote PowerShell
+## Use the Exchange Toolbox to specify the server that Queue Viewer uses to run remote PowerShell
 
 1. Click **Start** \> **All Programs** \> **Microsoft Exchange Server 2013** \> **Exchange Toolbox**.
 
@@ -65,9 +66,9 @@ You can also specify the server that Remote PowerShell uses to perform the speci
 
 4. In the **Queue Viewer - \<server name\> Properties** dialog box, select one of the following options:
 
-   - **Connect to the automatically selected server**: Select this option to automatically connect to the server where you're managing queues to run Remote PowerShell.
+   - **Connect to the automatically selected server**: Select this option to automatically connect to the server where you're managing queues to run remote PowerShell.
 
-   - **Specify a server to connect to**: Select this option to specify a server to run Remote PowerShell. If you select this option, click **Browse** to open the **Select Exchange Server** dialog box. Select the server where you want to run Remote PowerShell, and then click **OK**.
+   - **Specify a server to connect to**: Select this option to specify a server to run remote PowerShell. If you select this option, click **Browse** to open the **Select Exchange Server** dialog box. Select the server where you want to run remote PowerShell, and then click **OK**.
 
 ## How do you know this worked?
 

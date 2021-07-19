@@ -2,13 +2,14 @@
 title: 'Priority queuing: Exchange 2013 Help'
 TOCTitle: Priority queuing
 ms:assetid: 6edbd826-fe55-435b-9c63-48e6365c3d09
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb691107(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb691107(v=EXCHG.150)
 ms:contentKeyID: 50646236
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can specify the text that will be sent to a user when they receive a protected voice message but their email client doesn't support Information Rights Management (IRM) or Windows Rights Management.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: a9b2238a-b534-469c-a0c3-2768bc3d005b
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Specify the text to display for email clients that don't support Windows Rights Management in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -37,7 +38,7 @@ For additional management tasks related to Protected Voice Mail procedures, see 
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -46,7 +47,7 @@ For additional management tasks related to Protected Voice Mail procedures, see 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use EAC to specify the text to display for email clients that don't support Windows Rights Management
 
@@ -62,6 +63,6 @@ For additional management tasks related to Protected Voice Mail procedures, see 
 
 This example specifies the text to display to users associated with the UM mailbox policy named `MyUMMailboxPolicy` who have email clients that don't support Windows Rights Management.
 
-```
+```PowerShell
 Set-UMMailboxPolicy -identity MyUMMailboxPolicy -ProtectedVoiceMailText "Your email client software does not support Protected Voice Mail. Please contact the Help Desk."
 ```

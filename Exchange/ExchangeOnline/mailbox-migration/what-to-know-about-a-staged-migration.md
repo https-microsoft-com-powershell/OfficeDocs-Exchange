@@ -2,12 +2,11 @@
 localization_priority: Normal
 ms.topic: conceptual
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 7e2c82be-5f3d-4e36-bc6b-e5b4d411e207
-ms.date: 8/15/2018
 ms.reviewer: 
-description: "As part of an Office 365 deployment, you can migrate the contents of user mailboxes from a source email system to Office 365. When you do this over time, it's called a staged migration. A staged migration is recommended when:"
-title: What you need to know about a staged email migration to Office 365
+description: "As part of a Microsoft 365 or Office 365 deployment, you can migrate the contents of user mailboxes from a source email system to Microsoft 365 or Office 365. When you do this over time, it's called a staged migration. A staged migration is recommended when:"
+title: What you need to know about a staged email migration
 ms.collection: 
 - exchange-online
 - M365-email-calendar
@@ -18,33 +17,37 @@ search.appverid:
 - MBS150
 - BCS160
 audience: Admin
+f1.keywords:
+- CSH
 ms.custom: Adm_O365
 ms.service: exchange-online
 manager: serdars
 ---
 
-# What you need to know about a staged email migration to Office 365
+# What you need to know about a staged email migration
 
-As part of an Office 365 deployment, you can migrate the contents of user mailboxes from a source email system to Office 365. When you do this over time, it's called a staged migration. A staged migration is recommended when:
+As part of a Microsoft 365 or Office 365 deployment, you can migrate the contents of user mailboxes from a source email system to Microsoft 365 or Office 365. When you do this over time, it's called a staged migration. A staged migration is recommended when:
 
 - Your source email system is Microsoft Exchange Server 2003 or Microsoft Exchange Server 2007.
 
   > [!NOTE]
-  > Microsoft Exchange Server 2003 and Microsoft Exchange Server 2007 are out of support. Support for Exchange 2003 ended on April 8, 2014. Support for Exchange 2007 ended on April 11, 2017. <br/><br/> You can't use a staged migration to migrate Exchange 2013 or Exchange 2010 mailboxes to Office 365. Consider using a cutover migration or a hybrid email migration instead.
+  > - Microsoft Exchange Server 2003 and Microsoft Exchange Server 2007 are out of support. Support for Exchange 2003 ended on April 8, 2014. Support for Exchange 2007 ended on April 11, 2017.
+  >
+  > - You can't use a staged migration to migrate Exchange 2013 or Exchange 2010 mailboxes to Microsoft 365 or Office 365. Consider using a cutover migration or a hybrid email migration instead.
 
 - You have more than 2,000 mailboxes.
 
-If a staged email migration won't work for you, see [Ways to migrate email to Office 365](mailbox-migration.md) for other options.
+If a staged email migration won't work for you, see [Ways to migrate email](mailbox-migration.md) for other options.
 
 ## Things to consider
 
 Here are a few items to be aware of:
 
-- You must synchronize accounts between your on-premises Active Directory domain and Office 365 by using Azure Active Directory sync for a staged migration to work.
+- You must synchronize accounts between your on-premises Active Directory domain and Microsoft 365 or Office 365 by using Azure Active Directory sync for a staged migration to work.
 
-- The primary domain name used for your on-premises Exchange organization must be a domain verified to your Office 365 organization.
+- The primary domain name used for your on-premises Exchange organization must be a domain verified to your Microsoft 365 or Office 365 organization.
 
-- You can migrate only user mailboxes and resource mailboxes. Other recipient types, such as distribution groups, contacts, and mail-enabled users are migrated to Office 365 through the process of directory synchronization.
+- You can migrate only user mailboxes and resource mailboxes. Other recipient types, such as distribution groups, contacts, and mail-enabled users are migrated to Microsoft 365 or Office 365 through the process of directory synchronization.
 
 - Out of Office messages aren't migrated with user mailboxes. If a user turns on the Out of Office feature before the migration, the feature will remain enabled on the migrated mailbox, but the Out of Office message is blank. People who send messages to the mailbox won't receive an Out of Office notification. To allow Out of Office notifications to be sent, the user needs to recreate the Out of Office message after the mailbox is migrated.
 
@@ -54,17 +57,17 @@ Here are a few items to be aware of:
 
 - **Administrators can access email**: To migrate email, you need access to the user mailboxes in your source email system.
 
-- **Users must create new Outlook profiles**: After the mailboxes are migrated and the on-premises accounts are converted to mail-enabled accounts, the users must create a new Office 365 profile in Outlook, and then Outlook automatically connects to Office 365.
+- **Users must create new Outlook profiles**: After the mailboxes are migrated and the on-premises accounts are converted to mail-enabled accounts, the users must create a new Microsoft 365 or Office 365 profile in Outlook, and then Outlook automatically connects to Microsoft 365 or Office 365.
 
 ## How does staged migration work?
 
 The main steps you perform for a staged migration, and the results for your users, are shown in the following illustration.
 
-![Process for performing a staged email migration from Exchange to Office 365](media/fcf22570-1d36-49d4-bfed-6ccddec7205f.png)
+![Process for performing a staged email migration](media/fcf22570-1d36-49d4-bfed-6ccddec7205f.png)
 
 Here's a description of the staged migration shown in the illustration.
 
-1. The administrator synchronizes the list of users between their on-premises environment and Office 365.
+1. The administrator synchronizes the list of users between their on-premises environment and Microsoft 365 or Office 365.
 
     See how-to steps in [Prepare for a staged migration](perform-a-staged-migration/perform-a-staged-migration.md#prepare-for-a-staged-migration).
 
@@ -74,15 +77,15 @@ Here's a description of the staged migration shown in the illustration.
 
 3. The administrator creates and runs a staged migration batch by using the migration dashboard in the Exchange admin center.
 
-   See how-to steps in [Connect Office 365 to your email system](perform-a-staged-migration/perform-a-staged-migration.md#connect-office-365-to-your-email-system), [Migrate your mailboxes](perform-a-staged-migration/perform-a-staged-migration.md#migrate-your-mailboxes), and [Start the staged migration batch](perform-a-staged-migration/perform-a-staged-migration.md#start-the-staged-migration-batch).
+   See how-to steps in [Connect Office 365 to your email system](perform-a-staged-migration/perform-a-staged-migration.md#connect-microsoft-365-or-office-365-to-your-email-system), [Migrate your mailboxes](perform-a-staged-migration/perform-a-staged-migration.md#migrate-your-mailboxes), and [Start the staged migration batch](perform-a-staged-migration/perform-a-staged-migration.md#start-the-staged-migration-batch).
 
     After the administrator starts the migration batch, Exchange Online does the following:
 
    - Verifies that directory synchronization is enabled.
 
-   - Checks that a mail-enabled user exists in the Office 365 organization for each user listed in the CSV file. Mail-enabled users are created in Office 365 as a result of the directory synchronization process.
+   - Checks that a mail-enabled user exists in the Microsoft 365 or Office 365 organization for each user listed in the CSV file. Mail-enabled users are created in Microsoft 365 or Office 365 as a result of the directory synchronization process.
 
-   - Converts the Office 365 mail-enabled user to an Exchange Online mailbox for each user in the migration batch.
+   - Converts the Microsoft 365 or Office 365 mail-enabled user to an Exchange Online mailbox for each user in the migration batch.
 
    - Begins initial synchronization. Exchange Online processes up to *N* migration requests at one time. *N* represents the maximum number of concurrent migrations that the administrator specified when creating the migration endpoint used for the migration batch. By default, initial synchronization is performed on 20 mailboxes at a time until all mailboxes in the migration batch are migrated.
 
@@ -108,15 +111,15 @@ Here's a description of the staged migration shown in the illustration.
 
 11. Users can use their Exchange Online mailboxes.
 
-12. The administrator, to complete the transition to Exchange Online and Office 365, performs post-configuration tasks such as:
+12. The administrator, to complete the transition to Exchange Online and Microsoft 365 or Office 365, performs post-configuration tasks such as:
 
-    - Assign licenses to Office 365 users.
+    - Assign licenses to Microsoft 365 or Office 365 users.
 
-    - Configure the MX record to point to your Office 365 organization so that email is delivered directly to Exchange Online mailboxes.
+    - Configure the MX record to point to your Microsoft 365 or Office 365 organization so that email is delivered directly to Exchange Online mailboxes.
 
-    - Create an Autodiscover Domain Name System (DNS) record for your Office 365 organization.
+    - Create an Autodiscover Domain Name System (DNS) record for your Microsoft 365 or Office 365 organization.
 
-    See how-to steps in [Route your email directly to Office 365](perform-a-staged-migration/perform-a-staged-migration.md#route-your-email-directly-to-office-365) and [Complete post migration tasks](perform-a-staged-migration/perform-a-staged-migration.md#complete-post-migration-tasks).
+    See how-to steps in [Route your email directly to Microsoft 365 or Office 365](perform-a-staged-migration/perform-a-staged-migration.md#route-your-email-directly-to-microsoft-365-or-office-365) and [Complete post migration tasks](perform-a-staged-migration/perform-a-staged-migration.md#complete-post-migration-tasks).
 
     The administrator can decommission the on-premises Exchange Servers (optional).
 
@@ -125,13 +128,13 @@ Here's a description of the staged migration shown in the illustration.
 
 ## Ready to start?
 
-If you're comfortable setting up a migration to Office 365, here are the tasks that need to be done.
+If you're comfortable setting up a migration to Microsoft 365 or Office 365, here are the tasks that need to be done.
 
-- Using either Microsoft Azure Active Directory Synchronization Tool or Microsoft Azure Active Directory Sync Services (AAD Sync) to synchronize and create your on-premises users in Office 365.
+- Using either Microsoft Azure Active Directory Synchronization Tool or Microsoft Azure Active Directory Sync Services (AAD Sync) to synchronize and create your on-premises users in Microsoft 365 or Office 365.
 
 - Configuring Exchange Server by using the Exchange admin center.
 
-- Changing your organization's MX record to point to Office 365 when the migration is complete. Your MX record is how other mail systems find the location of your email system. Changing your MX record allows other mail systems to begin to send email directly to the new mailboxes in Office 365.
+- Changing your organization's MX record to point to Microsoft 365 or Office 365 when the migration is complete. Your MX record is how other mail systems find the location of your email system. Changing your MX record allows other mail systems to begin to send email directly to the new mailboxes in Microsoft 365 or Office 365.
 
 To finish a staged email migration successfully, it's a good idea to be comfortable doing these tasks:
 
@@ -141,16 +144,16 @@ To finish a staged email migration successfully, it's a good idea to be comforta
 
 - You create one or more lists of mailboxes to migrate in Excel.
 
-- You use step-by-step wizards in Office 365 to configure and start the migration process.
+- You use step-by-step wizards in Microsoft 365 or Office 365 to configure and start the migration process.
 
 - You add or change your organization's DNS records, such as the Autodiscover and MX records.
 
 - You mail-enable on-premises mailboxes.
 
-If you're ready to begin a staged email migration, you can use the steps given in [Perform a staged migration email to Office 365](perform-a-staged-migration/perform-a-staged-migration.md).
+If you're ready to begin a staged email migration, you can use the steps given in [Perform a staged migration email](perform-a-staged-migration/perform-a-staged-migration.md).
 
 ## See also
 
-[Ways to migrate email to Office 365](mailbox-migration.md)
+[Ways to migrate email to Microsoft 365 or Office 365](mailbox-migration.md)
 
-[Use PowerShell to perform a staged migration to Office 365](https://go.microsoft.com/fwlink/p/?LinkId=615255)
+[Use PowerShell to perform a staged migration to Microsoft 365 or Office 365](/office365/enterprise/powershell/use-powershell-to-perform-a-staged-migration-to-office-365)

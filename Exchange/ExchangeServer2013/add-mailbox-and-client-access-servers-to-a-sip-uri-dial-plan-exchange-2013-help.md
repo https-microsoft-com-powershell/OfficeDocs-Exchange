@@ -2,13 +2,14 @@
 title: 'Add Mailbox and Client Access servers to a SIP URI dial plan: Exchange 2013 Help'
 TOCTitle: Add Mailbox and Client Access servers to a SIP URI dial plan
 ms:assetid: 17fed308-ff0d-4e61-b9f9-e6680b6eccaa
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996399(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996399(v=EXCHG.150)
 ms:contentKeyID: 51439477
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ For additional management tasks related to UM dial plans, see [UM dial plan proc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to add a Mailbox server to a SIP URI dial plan
 

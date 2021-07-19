@@ -2,13 +2,14 @@
 title: 'Exchange 2013 Performance Counters: Exchange 2013 Help'
 TOCTitle: Exchange 2013 Performance Counters
 ms:assetid: 9143dd77-7c30-4769-8de1-28c717cfa9e9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn904093(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn904093(v=EXCHG.150)
 ms:contentKeyID: 63917938
-ms.date: 02/06/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -158,7 +159,7 @@ The following tables displays acceptable thresholds and information about .NET F
 <td><p>Should be below 10% on average.</p></td>
 </tr>
 <tr class="odd">
-<td><p>.NET CLR Exceptions(*)\# of Excepts Thrown / sec</p></td>
+<td><p>.NET CLR Exceptions(*)\# of Exceps Thrown / sec</p></td>
 <td><p>Displays the number of exceptions thrown per second. These include both .NET Framework exceptions and unmanaged exceptions that get converted into .NET Framework exceptions. For example, the null pointer reference exception in unmanaged code would get thrown again in managed code as a .NET Framework System.NullReferenceException. This counter includes both handled and unhandled exceptions.</p></td>
 <td><p>Should be less than 5% of total requests per second (RPS) (Web Server(_Total)\Connection Attempts/sec * .05).</p></td>
 </tr>
@@ -193,25 +194,25 @@ The following tables displays acceptable thresholds and information about common
 </tr>
 <tr class="odd">
 <td><p>TCPv6\Connection Failures</p></td>
-<td><p>Shows the number of TCP connections for which the current state is either ESTABLISHED or CLOSE-WAIT. The number of TCP connections that can be established is constrained by the size of the nonpaged pool. When the nonpaged pool is depleted, no new connections can be established.</p></td>
-<td><p>Not applicable</p></td>
+<td><p>Shows the number of times TCP connections have made a direct transition to the CLOSED state from the SYN-SENT state or the SYN-RCVD state, plus the number of times TCP connections have made a direct transition to the LISTEN state from the SYN-RCVD state.</p></td>
+<td><p>An increasing number of failures, or a consistently increasing rate of failures, can indicate a bandwidth shortage.</p></td>
 </tr>
 <tr class="even">
 <td><p>TCPv4\Connections Reset</p></td>
 <td><p>Shows the number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state.</p></td>
-<td><p>An increasing number of resets or a consistently increasing rate of resets can indicate a bandwidth shortage.</p></td>
+<td><p>An increasing number of resets, or a consistently increasing rate of resets, can indicate a bandwidth shortage.</p></td>
 </tr>
 <tr class="odd">
 <td><p>TCPv6\Connections Reset</p></td>
 <td><p>Shows the number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state.</p></td>
-<td><p>An increasing number of resets or a consistently increasing rate of resets can indicate a bandwidth shortage.</p></td>
+<td><p>An increasing number of resets, or a consistently increasing rate of resets, can indicate a bandwidth shortage.</p></td>
 </tr>
 </tbody>
 </table>
 
 ## Netlogon Counters
 
-The following tables displays acceptable thresholds and information about common counters for monitoring NTLM authentication issues and MaxConcurrentAPI issues. See Microsoft Knowledge Base article 2688798 [How to do performance tuning for NTLM authentication by using the MaxConcurrentAPI setting](https://go.microsoft.com/fwlink/p/?linkid=389728) for more information.
+The following tables displays acceptable thresholds and information about common counters for monitoring NTLM authentication issues and MaxConcurrentAPI issues. See the Microsoft Knowledge Base article [KB2688798](https://support.microsoft.com/help/2688798) for more information.
 
 <table>
 <colgroup>
@@ -228,7 +229,7 @@ The following tables displays acceptable thresholds and information about common
 <tr class="even">
 <td><p>\Netlogon\Semaphore Waiters</p></td>
 <td><p>The number of the thread that is waiting to obtain the semaphore.</p></td>
-<td><p>See Microsoft Knowledge Base article 2688798 <a href="https://go.microsoft.com/fwlink/p/?linkid=389728">How to do performance tuning for NTLM authentication by using the MaxConcurrentAPI setting</a></p></td>
+<td><p>See the Microsoft Knowledge Base article <a href="https://support.microsoft.com/help/2688798">KB2688798</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>\Netlogon\Semaphore Holders</p></td>
@@ -258,7 +259,7 @@ The following tables displays acceptable thresholds and information about common
 The following table shows active log I/O latency requirements counters and their acceptable thresholds. When thresholds are exceeded, the client experience degrades. For example, users may experience message delivery delays or slow system performance.
 
 > [!NOTE]
-> Normal storage latency guidance in Exchange 2013 is very similar to the guidance from Exchange 2010. Additional database counters can be found in <A href="https://go.microsoft.com/fwlink/p/?linkid=525622">Mailbox Server Counters</A>.
+> Normal storage latency guidance in Exchange 2013 is very similar to the guidance from Exchange 2010. Additional database counters can be found in <A href="/previous-versions/office/exchange-server-2010/ff367871(v=exchg.141)">Mailbox Server Counters</A>.
 
 <table>
 <colgroup>
@@ -449,7 +450,7 @@ The following tables displays information about HTTP Proxy counters.
 <td><p>Shows the percentage of connectivity related failures between this Client Access Server and MBX servers over the last 200 samples.</p></td>
 </tr>
 <tr class="even">
-<td><p>MSExchange HttpProxy(*)\Outsanding Proxy Requests</p></td>
+<td><p>MSExchange HttpProxy(*)\Outstanding Proxy Requests</p></td>
 <td><p>Shows the number of concurrent outstanding proxy requests.</p></td>
 </tr>
 <tr class="odd">
@@ -468,7 +469,7 @@ The following tables displays information about HTTP Proxy counters.
 The following tables displays acceptable thresholds and information about Information Store counters.
 
 > [!NOTE]
-> Normal storage latency guidance in Exchange 2013 is very similar to the guidance from Exchange 2010. Additional Information Store counters can be found in <A href="https://go.microsoft.com/fwlink/p/?linkid=525622">Mailbox Server Counters</A>.
+> Normal storage latency guidance in Exchange 2013 is very similar to the guidance from Exchange 2010. Additional Information Store counters can be found in <A href="/previous-versions/office/exchange-server-2010/ff367871(v=exchg.141)">Mailbox Server Counters</A>.
 
 <table>
 <colgroup>

@@ -2,13 +2,14 @@
 title: 'Allow POP3, IMAP4, and SMTP server settings to be viewed by end users in Outlook Web App'
 TOCTitle: Allow POP3, IMAP4, and SMTP server settings to be viewed by end users in Outlook Web App
 ms:assetid: bd22bf7e-3bf7-45e6-8790-919b780166f6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg298947(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Gg298947(v=EXCHG.150)
 ms:contentKeyID: 49300683
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to allow POP3 and IMAP4 users to view their incoming POP3 and IMAP4 settings in Outlook Web App
 
@@ -47,7 +48,7 @@ This example allows external POP3 server settings to be viewed by end users.
 Set-PopSettings -ExternalConnectionSettings {Dublin01.Contoso.com:995:SSL}
 ```
 
-For detailed syntax and parameter information, see [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 This example allows external IMAP4 server settings to be viewed by end users.
 
@@ -55,7 +56,7 @@ This example allows external IMAP4 server settings to be viewed by end users.
 Set-ImapSettings -ExternalConnectionSettings {Dublin01.Contoso.com:993:SSL}
 ```
 
-For detailed syntax and parameter information, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings).
 
 To apply these changes, you must restart IIS. You don't need to restart the POP3 services. To restart IIS, from a command prompt, enter the following:
 
@@ -95,7 +96,7 @@ This example allows internal and external SMTP server settings to be viewed by e
 Get-ReceiveConnector "*Client Frontend*" | Set-ReceiveConnector -Fqdn Server.Contoso.com -AdvertiseClientSettings $true
 ```
 
-For detailed syntax and parameter information, see [Set-ReceiveConnector](https://technet.microsoft.com/en-us/library/bb125140\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ReceiveConnector](/powershell/module/exchange/Set-ReceiveConnector).
 
 ## How do you know this worked?
 

@@ -2,13 +2,14 @@
 title: 'Planning for high availability and site resilience: Exchange 2013 Help'
 TOCTitle: Planning for high availability and site resilience
 ms:assetid: 29bb0358-fc8e-4437-8feb-d2959ed0f102
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638104(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638104(v=EXCHG.150)
 ms:contentKeyID: 48384921
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -119,7 +120,7 @@ At any specific time, the cluster for the DAG will use only one of the assigned 
 
 ## Network adapter configuration for DAGs
 
-Each network adapter must be configured properly based on its intended use. A network adapter that's used for a MAPI network is configured differently from a network adapter that's used for a Replication network. In addition to configuring each network adapter correctly, you must also configure the network connection order in Windows so that the MAPI network is at the top of the connection order. For detailed steps about how to modify the network connection order, see [Modify the protocol bindings and network provider order](https://go.microsoft.com/fwlink/p/?linkid=179138).
+Each network adapter must be configured properly based on its intended use. A network adapter that's used for a MAPI network is configured differently from a network adapter that's used for a Replication network. In addition to configuring each network adapter correctly, you must also configure the network connection order in Windows so that the MAPI network is at the top of the connection order. For detailed steps about how to modify the network connection order, see [Modify the protocol bindings and network provider order](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732472(v=ws.10)).
 
 ## MAPI network adapter configuration
 

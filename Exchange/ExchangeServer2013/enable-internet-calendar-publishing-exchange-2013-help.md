@@ -2,13 +2,14 @@
 title: 'Enable Internet calendar publishing: Exchange 2013 Help'
 TOCTitle: Enable Internet calendar publishing
 ms:assetid: b4c71696-52bb-492c-8259-0e419acd0bbc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ853046(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ853046(v=EXCHG.150)
 ms:contentKeyID: 50390855
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -48,7 +49,7 @@ For additional management tasks related to sharing policies, see [Sharing polici
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Use the Shell to configure the Web proxy URL
 
@@ -61,7 +62,7 @@ This example configures a Web proxy URL on Mailbox server MAIL01.
 Set-ExchangeServer -Identity "MAIL01" -InternetWebProxy "<Webproxy URL>"
 ```
 
-For detailed syntax and parameter information, see [Set-ExchangeServer](https://technet.microsoft.com/en-us/library/bb123716\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ExchangeServer](/powershell/module/exchange/Set-ExchangeServer).
 
 ### How do you know this step worked?
 
@@ -84,7 +85,7 @@ Set-OwaVirtualDirectory -Identity "CAS01\owa (Default Web Site)" -ExternalUrl "<
 
 Where the identity `CAS01\owa (Default Web Site)` is both the server name and the Outlook Web App virtual directory.
 
-For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/bb123515\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory).
 
 ### How do you know this step worked?
 
@@ -149,7 +150,7 @@ This example adds the sharing policy Internet to an organizational unit (OU).
 Set-Mailbox -OrganizationalUnit <OU name> -SharingPolicy "Internet"
 ```
 
-For detailed syntax and parameter information, see [New-SharingPolicy](https://technet.microsoft.com/en-us/library/dd298186\(v=exchg.150\)) and [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-SharingPolicy](/powershell/module/exchange/New-SharingPolicy) and [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).
 
 ### How do you know this step worked?
 
@@ -193,7 +194,7 @@ This example updates the Default Sharing Policy and configures the policy to sha
 Set-SharingPolicy -Name "Default Sharing Policy" -Domains 'Anonymous: CalendarSharingFreeBusySimple' -Enabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).
 
 ### How do you know this step worked?
 

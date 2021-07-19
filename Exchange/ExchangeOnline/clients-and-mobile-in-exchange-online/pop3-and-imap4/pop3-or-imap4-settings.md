@@ -3,9 +3,8 @@ localization_priority: Normal
 description: You use the Set-CASMailbox cmdlet to configure the PO3 and IMAP4 options for each user. The configuration options are described in the following table.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: bf4ca453-e79c-4b87-a9a5-3ae1b21181e2
-ms.date: 4/29/2016
 ms.reviewer: 
 title: Set POP3 or IMAP4 settings for a user
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -34,24 +35,24 @@ For additional information related to POP3 and IMAP4, see [POP3 and IMAP4](pop3-
 
 - Estimated time to finish each procedure: five minutes.
 
-- You can only use Exchange Online PowerShell to perform this procedure. To learn how to use Windows PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](https://go.microsoft.com/fwlink/p/?linkid=396554).
+- You can only use Exchange Online PowerShell to perform this procedure. To learn how to use Windows PowerShell to connect to Exchange Online, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "POP3 and IMAP4 settings" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to set the meeting request format for a POP3 or IMAP4 user
 
 The following example sets all meeting requests in incoming mail to USER01 to iCal format for a POP3 user.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -PopUseProtocolDefaults $false -PopForceICalForCalendarRetrievalOption $true
 ```
 
 The following example sets all meeting requests in incoming mail to USER01 to iCal format for an IMAP4 user.
 
-```
+```PowerShell
 Set-CASMailbox USER01-ImapUseProtocolDefaults $false -ImapForceICalForCalendarRetrievalOption $true
 ```
 
@@ -59,7 +60,7 @@ Set-CASMailbox USER01-ImapUseProtocolDefaults $false -ImapForceICalForCalendarRe
 
 To verify that you successfully set the meeting request format for a POP3 or an IMAP4 user, run the following command in Exchange Online PowerShell and verify that the values displayed are the values that you configured:
 
-```
+```PowerShell
 Get-CASMailbox USER01 | format-list *ForceIcal*,*UseProtocolDefaults
 ```
 
@@ -67,13 +68,13 @@ Get-CASMailbox USER01 | format-list *ForceIcal*,*UseProtocolDefaults
 
 The following example sets it up so that the POP3 sender receives a read receipt only when the message is opened.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -PopUseProtocolDefaults $false -PopSuppressReadReceipt $true
 ```
 
 The following example sets it up so that the IMAP4 sender receives a read receipt only when the message is opened.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -ImapUseProtocolDefaults $false -ImapSuppressReadReceipt $true
 ```
 
@@ -81,7 +82,7 @@ Set-CASMailbox USER01 -ImapUseProtocolDefaults $false -ImapSuppressReadReceipt $
 
 To verify that you successfully set the read receipt option for a POP3 or an IMAP4 user, run the following command in Exchange Online PowerShell and verify that the values displayed are the values that you configured:
 
-```
+```PowerShell
 Get-CASMailbox USER01 | format-list *SuppressReadReceipt,*UseProtocolDefaults
 ```
 
@@ -89,13 +90,13 @@ Get-CASMailbox USER01 | format-list *SuppressReadReceipt,*UseProtocolDefaults
 
 The following example sets the message retrieval format to text only for POP3 access for `USER01`.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -PopUseProtocolDefaults $false -PopMessagesRetrievalMimeFormat TextOnly
 ```
 
 The following example sets the message retrieval format to text only for IMAP4 access for `USER01`.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -ImapUseProtocolDefaults $false -ImapMessagesRetrievalMimeFormat TextOnly
 ```
 
@@ -103,7 +104,7 @@ Set-CASMailbox USER01 -ImapUseProtocolDefaults $false -ImapMessagesRetrievalMime
 
 To verify that you successfully set the message retrieval format for a POP3 or an IMAP4 user, run the following command in Exchange Online PowerShell and verify that the values displayed are the values that you configured:
 
-```
+```PowerShell
 Get-CASMailbox USER01 | format-list *MessagesRetrievalMimeFormat,*UseProtocolDefaults
 ```
 
@@ -114,7 +115,7 @@ This example calculates the exact size of POP messages for USER01.
 > [!IMPORTANT]
 > Set the _PopEnableExactRFC822Size_ parameter to `$true` only if the POP client doesn't work for this user.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -PopUseProtocolDefaults $false -PopEnableExactRFC822Size $true
 ```
 
@@ -123,7 +124,7 @@ This example calculates the exact size of IMAP messages for USER01.
 > [!IMPORTANT]
 > Set the _ImapEnableExactRFC822Size_ parameter to `$true` only if the IMAP client doesn't work for this user.
 
-```
+```PowerShell
 Set-CASMailbox USER01 -ImapUseProtocolDefaults $false -ImapEnableExactRFC822Size $true
 ```
 
@@ -131,16 +132,16 @@ Set-CASMailbox USER01 -ImapUseProtocolDefaults $false -ImapEnableExactRFC822Size
 
 To verify that you successfully set the message size calculation for a POP3 or IMAP4 user, run the following command in Exchange Online PowerShell and verify that the values displayed are the values that you configured::
 
-```
+```PowerShell
 Get-CASMailbox USER01 | format-list *EnableExact*,*UseProtocolDefaults
 ```
 
 ## For more information
 
-[Connect to Exchange Online Using Remote PowerShell](https://technet.microsoft.com/library/c8bea338-6c1a-4bdf-8de0-7895d427ee5b.aspx)
+[Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell)
 
 [POP3 and IMAP4](pop3-and-imap4.md)
 
 [Enable or Disable POP3 or IMAP4 access for a user](enable-or-disable-pop3-or-imap4-access.md)
 
-[Set-CASMailbox](https://technet.microsoft.com/library/ff7d4dc5-755e-4005-a0a3-631eed3f9b3b.aspx)
+[Set-CASMailbox](/powershell/module/exchange/set-casmailbox)

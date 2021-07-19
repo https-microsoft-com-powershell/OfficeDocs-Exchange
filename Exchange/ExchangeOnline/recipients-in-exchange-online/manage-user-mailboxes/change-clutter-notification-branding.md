@@ -3,10 +3,11 @@ localization_priority: Normal
 description: The Clutter feature uses Inbox notifications to invite users and to send status messages. The default branding used for these notifications is Outlook, but you can modify the branding for your organization.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 34bb5558-be1b-4ed2-a6c1-cb5031a33317
-ms.date: 6/24/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Change the branding of Clutter notifications
 ms.collection: 
 - exchange-online
@@ -19,24 +20,59 @@ manager: serdars
 
 # Change the branding of Clutter notifications
 
+> [!TIP]
+> [Focused Inbox](https://github.com/MicrosoftDocs/microsoft-365-docs/blob/public/microsoft-365/admin/setup/configure-focused-inbox.md) is going to replace Clutter. Learn more: [Update on Focused Inbox and our plans for Clutter](https://techcommunity.microsoft.com/t5/Outlook-Blog/Update-on-Focused-Inbox-and-our-plans-for-Clutter/ba-p/136448).
+
 The Clutter feature uses Inbox notifications to invite users and to send status messages. The default branding used for these notifications is Outlook, but you can modify the branding for your organization.
 
-## Change the branding of Clutter notifications
+## Change the branding of Clutter notifications (new EAC)
 
 This article describes how to change the branding of Clutter notifications to match that of your school, business, or organization.
 
 > [!NOTE]
 > For more information about the types of Clutter notifications that end users in your organization receive, see [Clutter notifications in Outlook](clutter-notifications-in-outlook.md).
 
-To begin, you will need to sign in to Office 365 with your work or school account.
+To begin, you will need to sign in to Microsoft 365 or Office 365 with your work or school account.
 
-1. Once signed in to Office 365, go to the Microsoft 365 admin center.
+1. Once signed in to Microsoft 365 or Office 365, go to the Microsoft 365 admin center.
 
 2. Click to expand **Users**, then select **Active Users**.
 
 3. Select **Add** ![Add](../../media/ITPro_EAC_AddIcon.png) to add a user. The **Create a new user account** dialog will open.
 
-4. In the **Create a new user account** dialog, enter a **Display name** and a **username**. The display name will appear in the Sender field for all Clutter notifications sent to your users. Office 365 generates a new temporary password for the new user account. Click **Create** to create the account.
+4. In the **Create a new user account** dialog, enter a **Display name** and a **username**. The display name will appear in the Sender field for all Clutter notifications sent to your users. A new temporary password is generated for the new user account. Click **Create** to create the account.
+
+5. Go to the new Exchange admin center (EAC).
+
+6. Click **Recipients**, and then click **Mailboxes**.
+
+7. Select the user you just created. A details pane will be shown.
+
+8. Under **Mailbox** settings \> **Email addresses**, click **Manage email address types**. 
+
+9. In the **Manage email address types** display pane, click ![Add](../../media/ITPro_EAC_AddIcon.png) **Add email address type**  to add an email address to the new user account.
+
+10. In the **new email address** dialog, select SMTP as the email address type, and then, in the **Email address:\*** box, type the following: **7a694ec2-b7c9-41eb-b562-08fd2b277ae0@[your default domain]**, where [your default domain] is the domain that your organization uses. For most organizations, this would be **[your domain name].onmicrosoft.com**. When finished, click **OK**.
+
+11. Back in the **Manage email address types** dialog, click **Save** to associate the new email address with the user account. All Clutter notifications sent to end users in your organization will now originate from this account.
+
+
+## Change the branding of Clutter notifications (Classic EAC)
+
+This article describes how to change the branding of Clutter notifications to match that of your school, business, or organization.
+
+> [!NOTE]
+> For more information about the types of Clutter notifications that end users in your organization receive, see [Clutter notifications in Outlook](clutter-notifications-in-outlook.md).
+
+To begin, you will need to sign in to Microsoft 365 or Office 365 with your work or school account.
+
+1. Once signed in to Microsoft 365 or Office 365, go to the Microsoft 365 admin center.
+
+2. Click to expand **Users**, then select **Active Users**.
+
+3. Select **Add** ![Add](../../media/ITPro_EAC_AddIcon.png) to add a user. The **Create a new user account** dialog will open.
+
+4. In the **Create a new user account** dialog, enter a **Display name** and a **username**. The display name will appear in the Sender field for all Clutter notifications sent to your users. A new temporary password is generated for the new user account. Click **Create** to create the account.
 
 5. Go the Exchange admin center.
 
@@ -62,11 +98,11 @@ To begin, you will need to sign in to Office 365 with your work or school accoun
 
 You can also create a new shared mailbox as the branding mailbox using PowerShell. Follow these steps.
 
-1. [Connect to Exchange Online Using Remote PowerShell](https://technet.microsoft.com/library/c8bea338-6c1a-4bdf-8de0-7895d427ee5b.aspx).
+1. [Connect to Exchange PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 2. Type the following commands:
 
-   ```
+   ```PowerShell
    New-Mailbox -Shared -Name branding@contoso.com -DisplayName "Branding Clutter Mailbox" -Alias branding
    Set-Mailbox "IT Admin" -EmailAddresses SMTP: branding@contoso
    ```

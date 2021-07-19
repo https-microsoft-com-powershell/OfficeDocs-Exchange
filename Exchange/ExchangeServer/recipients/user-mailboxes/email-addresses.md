@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 93e2d9a4-7558-4509-8641-8381a7eb674f
-ms.date: 7/5/2018
 ms.reviewer:
 title: Add or remove email addresses for a mailbox
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -32,14 +33,14 @@ For additional management tasks related to managing recipients, see the "Recipie
 
 - Estimated time to complete each procedure: 2 minutes.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Add an email address to a user mailbox
 
@@ -71,25 +72,25 @@ The email addresses associated with a mailbox are contained in the _EmailAddress
 
 This example shows how to add an SMTP address to the mailbox of Dan Jump.
 
-```
+```PowerShell
 Set-Mailbox "Dan Jump" -EmailAddresses @{add="dan.jump@northamerica.contoso.com"}
 ```
 
 This example shows how to add multiple SMTP addresses to a mailbox.
 
-```
+```PowerShell
 Set-Mailbox "Dan Jump" -EmailAddresses @{add="dan.jump@northamerica.contoso.com","danj@tailspintoys.com"}
 ```
 
-For more information about how to use this method of adding and removing values for multivalued properties, see [Modifying Multivalued Properties](https://technet.microsoft.com/library/dc2c1062-ad79-404b-8da3-5b5798dbb73b.aspx).
+For more information about how to use this method of adding and removing values for multivalued properties, see [Modifying Multivalued Properties](../../../ExchangeServer2013/modifying-multivalued-properties-exchange-2013-help.md).
 
 This example shows another way to add email addresses to a mailbox by specifying all addresses associated with the mailbox. In this example, danj@tailspintoys.com is the new email address that you want to add. The other two email addresses are existing addresses. The address with the case-sensitive qualifier `SMTP` is the primary SMTP address. You have to include all email addresses for the mailbox when you use this command syntax. If you don't, the addresses specified in the command will overwrite the existing addresses.
 
-```
+```PowerShell
 Set-Mailbox "Dan Jump" -EmailAddresses "SMTP:dan.jump@contoso.com","dan.jump@northamerica.contoso.com","danj@tailspintoys.com"
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ### How do you know this worked?
 
@@ -105,7 +106,7 @@ Or
 
 - Run the following command in the Exchange Management Shell.
 
-  ```
+  ```PowerShell
   Get-Mailbox <identity> | Format-List EmailAddresses
   ```
 
@@ -129,27 +130,27 @@ Or
 
 This example shows how to remove an email address from the mailbox of Janet Schorr.
 
-```
+```PowerShell
 Set-Mailbox "Janet Schorr" -EmailAddresses @{remove="janets@corp.contoso.com"}
 ```
 
 This example shows how to remove multiple addresses from a mailbox.
 
-```
+```PowerShell
 Set-Mailbox "Janet Schorr" -EmailAddresses @{remove="janet.schorr@corp.contoso.com","janets@tailspintoys.com"}
 ```
 
-For more information about how to use this method of adding and removing values for multivalued properties, see [Modifying Multivalued Properties](https://technet.microsoft.com/library/dc2c1062-ad79-404b-8da3-5b5798dbb73b.aspx).
+For more information about how to use this method of adding and removing values for multivalued properties, see [Modifying Multivalued Properties](../../../ExchangeServer2013/modifying-multivalued-properties-exchange-2013-help.md).
 
 You can also remove an email address by omitting it from the command to set email addresses for a mailbox. For example, let's say Janet Schorr's mailbox has three email addresses: janets@contoso.com (the primary SMTP address), janets@corp.contoso.com, and janets@tailspintoys.com. To remove the address janets@corp.contoso.com, you would run the following command.
 
-```
+```PowerShell
 Set-Mailbox "Janet Schorr" -EmailAddresses "SMTP:janets@contoso.com","janets@tailspintoys.com"
 ```
 
 Because janets@corp.contoso.com was omitted in the previous command, it's removed from the mailbox.
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ### How do you know this worked?
 
@@ -165,7 +166,7 @@ Or
 
 - Run the following command in the Exchange Management Shell.
 
-  ```
+  ```PowerShell
   Get-Mailbox <identity> | Format-List EmailAddresses
   ```
 
@@ -177,7 +178,7 @@ You can add a new email address to multiple mailboxes at one time by using the E
 
 This example imports data from C:\Users\Administrator\Desktop\AddEmailAddress.csv, which has the following format.
 
-```
+```CSV
 Mailbox,NewEmailAddress
 Dan Jump,danj@northamerica.contoso.com
 David Pelton,davidp@northamerica.contoso.com
@@ -191,7 +192,7 @@ Toni Poe,tonip@northamerica.contoso.com
 
 Run the following command to use the data in the CSV file to add the email address to each mailbox specified in the CSV file.
 
-```
+```PowerShell
 Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | foreach {Set-Mailbox $_.Mailbox -EmailAddresses @{add=$_.NewEmailAddress}}
 ```
 
@@ -212,7 +213,7 @@ Or
 
 - Run the following command in the Exchange Management Shell, using the same CSV file that you used to add the new email address.
 
-  ```
+  ```PowerShell
   Import-CSV "C:\Users\Administrator\Desktop\AddEmailAddress.csv" | foreach {Get-Mailbox $_.Mailbox | Format-List Name,EmailAddresses}
   ```
 

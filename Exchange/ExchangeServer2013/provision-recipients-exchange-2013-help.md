@@ -4,9 +4,10 @@ TOCTitle: Provision recipients for offline address book downloads
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 141751ac-16d3-4e3c-b70c-004aeedcb5a0
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,11 +36,11 @@ For additional management tasks related to OABs, see [Offline address book proce
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to provision recipients for OAB downloads by linking their mailbox database to a public folder database or to a default OAB
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox databases" entry in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox databases" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 This example sets up the web-based distribution of My OAB for the default mailbox database.
 
@@ -47,11 +48,11 @@ This example sets up the web-based distribution of My OAB for the default mailbo
 Set-MailboxDatabase -Identity "Mailbox Database" -OfflineAddressBook "My OAB"
 ```
 
-For detailed syntax and parameter information, see [Set-MailboxDatabase](https://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx).
+For detailed syntax and parameter information, see [Set-MailboxDatabase](/powershell/module/exchange/set-mailboxdatabase).
 
 ## Use the Shell to specify which OAB will be downloaded by linking the OAB directly to a recipient's mailbox
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 To specify which OAB is downloaded by linking the OAB directly to a recipient's mailbox, use the following syntax.
 
@@ -68,16 +69,16 @@ This example specifies that the user Kim will download the OAB My OAB.
 Set-Mailbox -Identity Kim -OfflineAddressBook "My OAB"
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ## Use the Shell to specify the OAB that multiple recipients will download
 
-You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 This example specifies that all user mailboxes in the United States for Contoso will download the OAB Contoso United States.
 
 ```powershell
-Get-User -ResultSize Unlimited -Filter { Company -eq "Contoso" -and RecipientType -eq "UserMailbox" } | Where { $_.CountryOrRegion -eq "United States"} | Set-Mailbox -OfflineAddressBook "Contoso United States"
+Get-User -ResultSize Unlimited -Filter "Company -eq 'Contoso' -and RecipientType -eq 'UserMailbox'" | Where { $_.CountryOrRegion -eq "United States"} | Set-Mailbox -OfflineAddressBook "Contoso United States"
 ```
 
-For detailed syntax and parameter information, see [Get-User](https://technet.microsoft.com/library/2a33c9e6-33da-438c-912d-28ce3f4c9afb.aspx) and [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Get-User](/powershell/module/exchange/get-user) and [Set-Mailbox](/powershell/module/exchange/set-mailbox).

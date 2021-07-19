@@ -2,13 +2,14 @@
 title: 'UM services procedures: Exchange 2013 Help'
 TOCTitle: UM services procedures
 ms:assetid: 3efa389a-9130-4c02-ab9e-fd4ad5933412
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ851062(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ851062(v=EXCHG.150)
 ms:contentKeyID: 50067621
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

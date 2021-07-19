@@ -4,9 +4,10 @@ TOCTitle: Change the default offline address book
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 61abf78e-2543-4431-acc8-839e3c7a4548
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,14 +23,14 @@ For additional management tasks related to OABs, see [Offline address book proce
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Mailbox Permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Offline address books" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - You can't use the Exchange admin center (EAC) to perform this procedure. You must use the Shell.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to change the default OAB
 
@@ -39,4 +40,4 @@ This example sets the OAB named My OAB as the default OAB.
 Set-OfflineAddressBook -Identity "My OAB" -IsDefault $true
 ```
 
-For detailed syntax and parameter information, see [Set-OfflineAddressBook](https://technet.microsoft.com/library/1221dda7-1923-4fec-a756-7540e18ae9f9.aspx).
+For detailed syntax and parameter information, see [Set-OfflineAddressBook](/powershell/module/exchange/set-offlineaddressbook).

@@ -5,10 +5,11 @@ ms.topic: reference
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 934686fb-53a2-4b13-aaf0-498e4011d61a
-ms.date: 7/31/2018
 ms.reviewer: 
 title: Exchange Server language support
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

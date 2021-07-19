@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 356ca7cd-b9d4-487d-aa21-3b38e91bde58
-ms.date: 6/7/2018
 ms.reviewer:
 title: Renew an Exchange Server certificate
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,7 +26,7 @@ Every certificate has a built-in expiration date. In Exchange Server, the defaul
 
 - Estimated time to complete: 5 minutes
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For certificates that were issued by a CA, verify the certificate request requirements of the CA. Exchange generates a PKCS #10 request (.req) file that uses Base64 encoding (default) or Distinguished Encoding Rules (DER), with an RSA public key that's 1024, 2048 (default), or 4096 bits. Note that encoding and public key options are only available in the Exchange Management Shell.
 
@@ -38,7 +39,7 @@ Every certificate has a built-in expiration date. In Exchange Server, the defaul
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Renew a certificate that was issued by a certification authority
 
@@ -62,13 +63,13 @@ The certificate request appears in the list of Exchange certificates with a stat
 
 To create a certificate renewal request for a certification authority on the local Exchange server, use the following syntax:
 
-```
+```PowerShell
 Get-ExchangeCertificate -Thumbprint <Thumbprint> | New-ExchangeCertificate -GenerateRequest -RequestFile <FilePathOrUNCPath>\<FileName>.req
 ```
 
 To find the thumbprint value of the certificate that you want to renew, run the following command:
 
-```
+```PowerShell
 Get-ExchangeCertificate | where {$_.Status -eq "Valid" -and $_.IsSelfSigned -eq $false} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter
 ```
 
@@ -78,7 +79,7 @@ This example creates a certificate renewal request with the following properties
 
 - **RequestFile**: `\\FileServer01\Data\ContosoCertRenewal.req`
 
-```
+```PowerShell
 Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | New-ExchangeCertificate -GenerateRequest -RequestFile \\FileServer01\Data\ContosoCertRenewal.req
 ```
 
@@ -90,7 +91,7 @@ Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | N
 
 - We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key.
 
-- For more information, see [Get-ExchangeCertificate](https://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx) and [New-ExchangeCertificate](https://technet.microsoft.com/library/5e0b61b0-ece6-4d9b-949a-f6a032dd0fb9.aspx).
+- For more information, see [Get-ExchangeCertificate](/powershell/module/exchange/get-exchangecertificate) and [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
 
 ### How do you know this worked?
 
@@ -100,7 +101,7 @@ To verify that you have successfully created a certificate renewal request for a
 
 - In the Exchange Management Shell on the server where you stored the certificate request, run the following command:
 
-  ```
+  ```PowerShell
   Get-ExchangeCertificate | where {$_.Status -eq "PendingRequest" -and $_.IsSelfSigned -eq $false} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint
   ```
 
@@ -122,13 +123,13 @@ When you renew an Exchange self-signed certificate, you're basically making a ne
 
 To renew a self-signed certificate, use the following syntax:
 
-```
+```PowerShell
 Get-ExchangeCertificate -Thumbprint <Thumbprint> | New-ExchangeCertificate [-Force] [-PrivateKeyExportable <$true | $false>]
 ```
 
 To find the thumbprint value of the certificate that you want to renew, run the following command:
 
-```
+```PowerShell
 Get-ExchangeCertificate | where {$_.IsSelfSigned -eq $true} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter
 ```
 
@@ -140,7 +141,7 @@ This example renews a self-signed certificate on the local Exchange server, and 
 
 - The private key is exportable. This allows you to export the certificate and import it on other servers.
 
-```
+```PowerShell
 Get-ExchangeCertificate -Thumbprint BC37CBE2E59566BFF7D01FEAC9B6517841475F2D | New-ExchangeCertificate -Force -PrivateKeyExportable $true
 ```
 
@@ -152,6 +153,6 @@ To verify that you have successfully renewed an Exchange self-signed certificate
 
 - In the Exchange Management Shell on the server where you renewed the self-signed certificate, run the following command to verify the property values:
 
-```
+```PowerShell
 Get-ExchangeCertificate | where {$_.Status -eq "Valid" -and $_.IsSelfSigned -eq $true} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter
 ```

@@ -3,10 +3,11 @@ localization_priority: Normal
 description: "You can view or set the Unified Messaging (UM) and voice mail features and configuration settings for a user that's been enabled for UM and voice mail. For example, you can do the following:"
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 73957938-048a-4f9c-bd0f-a3c2c3dcd638
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Manage voice mail settings for a user in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -40,7 +41,7 @@ For additional management tasks related to users who are enabled for voice mail,
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailboxes" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -51,7 +52,7 @@ For additional management tasks related to users who are enabled for voice mail,
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to view or configure a UM-enabled user's properties
 
@@ -86,25 +87,25 @@ This example disables Play on Phone and missed call notifications, but enables t
 > [!NOTE]
 > For on-premises and hybrid deployments, when you're integrating Unified Messaging and Lync Server, missed call notifications aren't available to users who have a mailbox located on an Exchange 2007 or Exchange 2010 Mailbox server. A missed call notification is generated when a user disconnects before the call is sent to a Mailbox server.
 
-```
+```PowerShell
 Set-UMMailbox -Identity tony@contoso.com -UMEnabled $true -UMMailboxPolicy AdminPolicy -MissedCallNotificationEnabled $false -PlayonPhoneEnabled $false -SMSMessageWaitingNotificationEnabled $true
 ```
 
 This example prevents a user from accessing the calendar, but enables access to email when the user is using Outlook Voice Access.
 
-```
+```PowerShell
 Set-UMMailbox -Identity tony@contoso.com -UMEnabled $true -UMMailboxPolicy AdminPolicy -Extension 523456 -FAXEnabled $true -TUIAccessToCal $false -TUIAccessToEmail True
 ```
 
 This example prevents a user from accessing the calendar and email when the user is using Outlook Voice Access.
 
-```
+```PowerShell
 Set-UMMailbox -Identity tony@contoso.com -TUIAccessToCalendarEnabled $false -TUIAccessToEmailEnabled $false
 ```
 
 This example prevents a user from creating call answering rules, receiving incoming faxes, and using Outlook Voice Access, but enables Automatic Speech Recognition (ASR).
 
-```
+```PowerShell
 Set-UMMailbox -Identity tony@contoso.com -AutomaticSpeechRecognitionEnabled $true -CallAnsweringRulesEnabled $false -FaxEnabled $false -SubscriberAccessEnabled $false
 ```
 
@@ -112,13 +113,13 @@ Set-UMMailbox -Identity tony@contoso.com -AutomaticSpeechRecognitionEnabled $tru
 
 This example displays a list of all the UM-enabled mailboxes in the forest in a formatted list.
 
-```
+```PowerShell
 Get-UMMailbox | Format-List
 ```
 
 This example displays the UM mailbox properties for tonysmith@contoso.com.
 
-```
+```PowerShell
 Get-UMMailbox -Identity tonysmith@contoso.com
 ```
 

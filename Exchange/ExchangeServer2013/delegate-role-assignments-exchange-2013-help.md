@@ -2,13 +2,14 @@
 title: 'Delegate role assignments: Exchange 2013 Help'
 TOCTitle: Delegate role assignments
 ms:assetid: ed2d00d9-90c9-49dc-ab8a-cd791569aeed
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351237(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351237(v=EXCHG.150)
 ms:contentKeyID: 49289453
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -41,7 +42,7 @@ Looking for other management tasks related to managing permissions? Check out [A
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to delegate a management role
 
@@ -66,4 +67,4 @@ This example creates a delegating role assignment to enable members of the Senio
 New-ManagementRoleAssignment -Role "Mail Recipients" -SecurityGroup "Senior Admins" -Name "Mail Recipients_Senior Admins - Delegate" -RecipientOrganizationalUnitScope contoso.com/sales/users -Delegating
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).

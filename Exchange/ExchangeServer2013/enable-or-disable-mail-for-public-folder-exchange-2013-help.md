@@ -4,9 +4,10 @@ TOCTitle: Mail-enable or mail-disable a public folder
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 3d69f76d-ff3c-46c1-b962-6a1baa425d8a
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ Public folders are designed for shared access and provide an easy and effective 
 
 If you want users on the Internet to send mail to a mail-enabled public folder, you need to set addition permissions using the **Add-PublicFolderClientPermission** cmdlet.
 
-For additional management tasks related to managing public folders, see [Public Folder Procedures](https://technet.microsoft.com/library/afa54c8e-f3ab-4f5f-85ad-fb2a905ecfa9.aspx).
+For additional management tasks related to managing public folders, see [Public folder procedures](public-folder-procedures-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
@@ -26,12 +27,12 @@ For additional management tasks related to managing public folders, see [Public 
 
 - To ensure that users on the Internet can send e-mail messages to a mail-enabled public folder, the public folder needs to have at least the _CreateItems_ access right granted to the Anonymous account. If you want to learn how to do this, check out the [Allow anonymous users to send email to a mail-enabled public folder](#allow-anonymous-users-to-send-email-to-a-mail-enabled-public-folder) section later in this topic.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](https://technet.microsoft.com/library/b7fa4b7c-1266-45bd-a14b-f66be0459cc5.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](sharing-and-collaboration-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to mail-enable or mail-disable a public folder
 
@@ -61,7 +62,7 @@ Enable-MailPublicFolder -Identity "\Marketing\Reports" -HiddenFromAddressListsEn
 
 If you want external users to send mail to this public folder, make sure you follow the steps in the [Allow anonymous users to send email to a mail-enabled public folder](#allow-anonymous-users-to-send-email-to-a-mail-enabled-public-folder) section later in this topic.
 
-For detailed syntax and parameter information, see [Enable-MailPublicFolder](https://technet.microsoft.com/library/6fc7ba9a-62a8-4f41-811f-608363aa1397.aspx).
+For detailed syntax and parameter information, see [Enable-MailPublicFolder](/powershell/module/exchange/enable-mailpublicfolder).
 
 ## Use the Shell to mail-disable a public folder
 
@@ -71,7 +72,7 @@ This example mail-disables the public folder Marketing\Reports.
 Disable-MailPublicFolder -Identity "\Marketing\Reports"
 ```
 
-For detailed syntax and parameter information, see [Disable-MailPublicFolder](https://technet.microsoft.com/library/92d6c890-a96a-469a-b864-99d9656b12e0.aspx).
+For detailed syntax and parameter information, see [Disable-MailPublicFolder](/powershell/module/exchange/disable-mailpublicfolder).
 
 ## Allow anonymous users to send email to a mail-enabled public folder
 
@@ -98,4 +99,4 @@ Add-PublicFolderClientPermission "\Customer Feedback" -AccessRights CreateItems 
 
 ```
 
-For detailed syntax and parameter information, see [Add-PublicFolderClientPermission](https://technet.microsoft.com/library/d68ad7a9-daa0-4e6d-b819-5cca891c8fd9.aspx).
+For detailed syntax and parameter information, see [Add-PublicFolderClientPermission](/powershell/module/exchange/add-publicfolderclientpermission).

@@ -1,12 +1,13 @@
 ---
 localization_priority: Normal
-description: An organization relationship lets users in your Office 365 organization share calendar free/busy information with other Office 365 or on-premises Exchange organizations. You may want to change the settings of an organization relationship, such as changing the name, temporarily disabling calendar sharing, changing the access level, or changing which security groups will share calendars.
+description: An organization relationship lets users in your Microsoft 365 or Office 365 organization share calendar free/busy information with other Microsoft 365, Office 365, or on-premises Exchange organizations. You may want to change the settings of an organization relationship, such as changing the name, temporarily disabling calendar sharing, changing the access level, or changing which security groups will share calendars.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 6875cd79-41d4-422c-80a7-549ded9a1ea7
-ms.date: 4/29/2016
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Modify an organization relationship in Exchange Online
 ms.collection: 
 - exchange-online
@@ -19,7 +20,7 @@ manager: serdars
 
 # Modify an organization relationship in Exchange Online
 
-An organization relationship lets users in your Office 365 organization share calendar free/busy information with other Office 365 or on-premises Exchange organizations. You may want to change the settings of an organization relationship, such as changing the name, temporarily disabling calendar sharing, changing the access level, or changing which security groups will share calendars.
+An organization relationship lets users in your Microsoft 365 or Office 365 organization share calendar free/busy information with other Microsoft 365, Office 365, or on-premises Exchange organizations. You may want to change the settings of an organization relationship, such as changing the name, temporarily disabling calendar sharing, changing the access level, or changing which security groups will share calendars.
 
 To learn more about organization relationships, see [Organization relationships in Exchange Online](organization-relationships.md).
 
@@ -89,7 +90,7 @@ To learn more about organization relationships, see [Organization relationships 
 
 - This example adds the domain name service.contoso.com to the organization relationship Contoso.
 
-  ```
+  ```PowerShell
   $domains = (Get-OrganizationRelationship Contoso).DomainNames
   $domains += 'service.contoso.com'
   Set-OrganizationRelationship -Identity Contoso -DomainNames $domains
@@ -97,26 +98,26 @@ To learn more about organization relationships, see [Organization relationships 
 
 - This example disables the organization relationship Contoso.
 
-  ```
+  ```PowerShell
   Set-OrganizationRelationship -Identity Contoso -Enabled $false
   ```
 
 - This example enables calendar availability information access for the organization relationship WoodgroveBank and sets the access level to `AvailabilityOnly` (calendar free/busy information with time only).
 
-  ```
+  ```PowerShell
   Set-OrganizationRelationship -Identity Contoso -FreeBusyAccessEnabled $true -FreeBusyAccessLevel AvailabilityOnly
 
   ```
 
-For detailed syntax and parameter information, see [Get-OrganizationRelationship](https://technet.microsoft.com/library/b689bf46-437b-4ac4-89ce-dcffc3a388f5.aspx) and [Set-OrganizationRelationship](https://technet.microsoft.com/library/4e3b9d1d-cf41-4fd0-97e3-a0bbc816cf87.aspx).
+For detailed syntax and parameter information, see [Get-OrganizationRelationship](/powershell/module/exchange/get-organizationrelationship) and [Set-OrganizationRelationship](/powershell/module/exchange/set-organizationrelationship).
 
 ## How do you know this worked?
 
 To verify that you have successfully updated the organization relationship, run the following command and verify the organization relationship information.
 
-```
+```PowerShell
 Get-OrganizationRelationship | format-list
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).

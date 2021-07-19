@@ -4,9 +4,10 @@ TOCTitle: Manage user access to add-ins for Outlook
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: e5833dec-a23a-439e-ac03-92671817bff8
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,16 +27,16 @@ For additional management tasks, see [Add-ins for Outlook](add-ins-for-outlook-e
 
 - Estimated time to complete: 5 minutes.
 
-- For more information about the EAC, see [Exchange admin center in Exchange 2013](https://technet.microsoft.com/library/a9aea11a-6ba3-4f4a-a76e-79072e7cfc7d.aspx).
+- For more information about the EAC, see [Exchange admin center in Exchange 2013](exchange-admin-center-in-exchange-2013-exchange-2013-help.md).
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Add-ins for Outlook" entry in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Add-ins for Outlook" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Specify whether an add-in is available, enabled, or disabled
 
@@ -91,7 +92,7 @@ If you want the add-in to be required for your users, replace _\<AppId\>_ with t
 Set-App -Identity <AppId> -OrganizationApp -Enabled $true -DefaultStateForUser AlwaysEnabled
 ```
 
-For detailed syntax and parameters, see [Set-app](https://technet.microsoft.com/library/3506b2b9-dc23-4ed9-84f5-8839c4c3c974.aspx).
+For detailed syntax and parameters, see [Set-app](/powershell/module/exchange/set-app).
 
 ### How do you know this worked?
 
@@ -119,7 +120,7 @@ $a = Get-DistributionGroupMember Marketing
 Set-App -Identity ac83a9d5-5af2-446f-956a-c583adc94d5e -OrganizationApp -ProvidedTo SpecificUsers -UserList $a.Identity -DefaultStateForUser Enabled
 ```
 
-For detailed syntax and parameters, see [Set-app](https://technet.microsoft.com/library/3506b2b9-dc23-4ed9-84f5-8839c4c3c974.aspx).
+For detailed syntax and parameters, see [Set-app](/powershell/module/exchange/set-app).
 
 ### How do you know this worked?
 

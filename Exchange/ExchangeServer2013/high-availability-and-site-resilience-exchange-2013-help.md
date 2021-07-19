@@ -2,13 +2,14 @@
 title: 'High availability and site resilience: Exchange 2013 Help'
 TOCTitle: High availability and site resilience
 ms:assetid: 6628285e-d07c-443d-866b-be784ad1ed1e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638137(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638137(v=EXCHG.150)
 ms:contentKeyID: 48385176
-ms.date: 12/15/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -120,7 +121,7 @@ For details about planning and deploying site resilience, see [Planning for high
 
 Exchange 2013 also includes a third-party replication API that enables organizations to use third-party synchronous replication solutions instead of the built-in continuous replication feature. Microsoft supports third-party solutions that use this API, provided that the solution provides the necessary functionality to replace all native continuous replication functionality that's disabled as a result of using the API. Solutions are supported only when the API is used within a DAG to manage and activate mailbox database copies. Use of the API outside of these boundaries isn't supported. In addition, the solution must meet the applicable Windows hardware support requirements. (Test validation isn't required for support.)
 
-When deploying a solution that uses the built-in third-party replication API, be aware that the solution vendor is responsible for primary support of the solution. Microsoft supports Exchange data for both replicated and non-replicated solutions. Solutions that use data replication must adhere to the Microsoft support policy for data replication, as described in Microsoft Knowledge Base article 895847, [Multi-site data replication support for Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=895847). In addition, solutions that utilize the Windows Failover Cluster resource model must meet Windows cluster supportability requirements as described in Microsoft Knowledge Base article 943984, [The Microsoft Support Policy for Windows Server 2008 or Windows Server 2008 R2 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=943984) or [The Microsoft Support Policy for Windows Server 2012 Failover Clusters](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=2775067).
+When deploying a solution that uses the built-in third-party replication API, be aware that the solution vendor is responsible for primary support of the solution. Microsoft supports Exchange data for both replicated and non-replicated solutions. Solutions that use data replication must adhere to the Microsoft support policy for data replication. In addition, solutions that utilize the Windows Failover Cluster resource model must meet Windows cluster supportability requirements as described in Microsoft Knowledge Base article 943984, [The Microsoft Support Policy for Windows Server 2008 or Windows Server 2008 R2 Failover Clusters](https://support.microsoft.com/help/943984) or [The Microsoft Support Policy for Windows Server 2012 Failover Clusters](https://support.microsoft.com/help/2775067).
 
 Microsoft's backup and restore support policy for deployments that use third-party replication API-based solutions is the same as for native continuous replication deployments.
 

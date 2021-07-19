@@ -2,13 +2,14 @@
 title: 'Enable or disable Information Rights Management on Client Access servers'
 TOCTitle: Enable or Disable Information Rights Management on Client Access Servers
 ms:assetid: c7ce069b-a572-4755-90a3-7105472e4c83
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876938(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876938(v=EXCHG.150)
 ms:contentKeyID: 49319932
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ Enabling Information Rights Management (IRM) on Client Access servers enables th
 
 - IRM in Microsoft Exchange ActiveSync
 
-When IRM is enabled on Client Access servers, Outlook Web App users can IRM-protect messages by applying an [Active Directory Rights Management Services (AD RMS)](https://technet.microsoft.com/en-us/library/hh831364.aspx) template created on your AD RMS cluster. Outlook Web App users can also view IRM-protected messages and supported attachments. Before you enable IRM on Client Access servers, you must add the Federation mailbox to the super users group on the AD RMS cluster.
+When IRM is enabled on Client Access servers, Outlook Web App users can IRM-protect messages by applying an [Active Directory Rights Management Services (AD RMS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831364(v=ws.11)) template created on your AD RMS cluster. Outlook Web App users can also view IRM-protected messages and supported attachments. Before you enable IRM on Client Access servers, you must add the Federation mailbox to the super users group on the AD RMS cluster.
 
 > [!IMPORTANT]
 > Members of the super users group are granted an owner use license when they request a license from the AD&nbsp;RMS cluster. This allows them to decrypt all RMS-protected content by that cluster.
@@ -61,7 +62,7 @@ This example enables IRM on a Client Access server for an Exchange organization.
 Set-IRMConfiguration -ClientAccessServerEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## Use the Shell to disable IRM on Client Access servers
 
@@ -71,7 +72,7 @@ This example disables IRM on a Client Access server for an Exchange organization
 Set-IRMConfiguration -ClientAccessServerEnabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## How do you know this worked?
 
@@ -79,6 +80,6 @@ To verify that you have successfully enabled or disabled IRM on Client Access se
 
 - Run the **Get-IRMConfiguration** cmdlet and check the value of the *ClientAccessServerEnabled* property.
 
-    For an example of how to retrieve the IRM configuration, see [Examples](https://technet.microsoft.com/en-us/e1821219-fe18-4642-a9c2-58eb0aadd61a\(exchg.150\)#examples) in **Get-IRMConfiguration**.
+    For an example of how to retrieve the IRM configuration, see [Examples](/powershell/module/exchange/get-irmconfiguration#examples) in **Get-IRMConfiguration**.
 
 - Use Outlook Web App to create or read an IRM-protected message.

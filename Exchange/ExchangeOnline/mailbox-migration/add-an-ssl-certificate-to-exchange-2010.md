@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 8c1b16e6-475d-406d-a80c-1956fa781789
-ms.date: 8/16/2018
 ms.reviewer: 
 description: Steps to add an SSL certificate to Exchange 2010.
 title: Add an SSL certificate to Exchange 2010
@@ -18,6 +17,8 @@ search.appverid:
 - MBS150
 - BCS160
 audience: Admin
+f1.keywords:
+- CSH
 ms.custom: Adm_O365
 ms.service: exchange-online
 manager: serdars
@@ -26,11 +27,11 @@ manager: serdars
 
 # Add an SSL certificate to Exchange 2010
 
-Some services, such as Outlook Anywhere, Cutover migration to Office 365, and Exchange ActiveSync, require certificates to be configured on your Exchange 2010 server. This article shows you how to configure an SSL certificate from a third-party certificate authority (CA).
+Some services, such as Outlook Anywhere, Cutover migration to Microsoft 365 or Office 365, and Exchange ActiveSync, require certificates to be configured on your Exchange 2010 server. This article shows you how to configure an SSL certificate from a third-party certificate authority (CA).
 
 ## What permissions do you need?
 
-In order to add certificates, you need to be assigned the [Organization Management]( https://go.microsoft.com/fwlink/p/?LinkId=615558) role group on the Exchange 2010.
+In order to add certificates, you need to be assigned the [Organization Management](/previous-versions/office/exchange-server-2010/dd335087(v=exchg.141)) role group on the Exchange 2010.
 
 ## Tasks for adding an SSL certificate
 

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d1220685-14c0-4c4f-abb2-3920f3046212
-ms.date: 7/5/2018
 ms.reviewer:
 title: Configure message size limits for a mailbox
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -19,7 +20,7 @@ manager: serdars
 
 Message size limits control the size of messages that a user can send and receive. By default, when a mailbox is created, there isn't a size limit for sent and received messages.
 
-Keep in mind that there are other settings in an Exchange organization that determine the maximum message size a mailbox can send and receive (for example, the maximum message size configured on a Mailbox server). To learn more about the message size restrictions in Exchange, including the types of message size limits, their scope, and the order of precedence, see [Message size limits in Exchange Server](../../mail-flow/message-size-limits.md).
+Keep in mind that there are other settings in an Exchange organization that determine the maximum message size a mailbox can send and receive (for example, the maximum message size configured on a Mailbox server). To learn more about the message size restrictions in Exchange, including the types of message size limits, their scope, and the order of precedence, see [Message size and recipient limits in Exchange Server](../../mail-flow/message-size-limits.md).
 
 For additional management tasks related to user mailboxes, see [Manage user mailboxes](user-mailboxes.md).
 
@@ -30,14 +31,14 @@ For additional management tasks related to user mailboxes, see [Manage user mail
 
 - Estimated time to complete: 2 minutes.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to set message size limits
 
@@ -59,11 +60,11 @@ For additional management tasks related to user mailboxes, see [Manage user mail
 
 This example sets the maximum size for sent messages to 25 MB and the maximum size for received messages to 35 MB for the mailbox of Debra Garcia.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Debra Garcia" -MaxSendSize 25mb -MaxReceiveSize 35mb
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ## How do you know this worked?
 
@@ -77,10 +78,10 @@ To verify that you've successfully set up message size limits for a mailbox, do 
 
 4. Under **Message Size Restrictions**, click **View details** to verify the message size limits for the mailbox.
 
-Or
+   Or
 
-Run the following command in the Exchange Management Shell.
+   Run the following command in the Exchange Management Shell.
 
-```
-Get-Mailbox -Identity <Identity> | Format-List MaxSendSize,MaxReceiveSize
-```
+   ```PowerShell
+   Get-Mailbox -Identity <Identity> | Format-List MaxSendSize,MaxReceiveSize
+   ```

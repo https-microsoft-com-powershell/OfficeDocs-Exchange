@@ -2,13 +2,14 @@
 title: 'Enable IMAP4 in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Enable IMAP4
 ms:assetid: c1ae10dd-14da-4400-b38d-2aeafde8abe6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124489(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124489(v=EXCHG.150)
 ms:contentKeyID: 49315255
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ For more information about how to set up POP3 and IMAP4, see [POP3 and IMAP4 in 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Microsoft Management Console (MMC) to enable IMAP4
 

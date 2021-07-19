@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 276740c4-bdb7-49f1-9470-ae6f2bfd65aa
-ms.date: 7/9/2018
 ms.reviewer:
 title: User workload management in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -35,9 +36,9 @@ By default, the user workload settings allow users to increase their resource co
 
 You manage user workload settings with these cmdlets in the Exchange Management Shell:
 
-- **View, create, remove, and modify user workload settings**: [Get-ThrottlingPolicy](https://technet.microsoft.com/library/f7490b98-20e0-46ee-b369-6f77538da689.aspx), [New-ThrottlingPolicy](https://technet.microsoft.com/library/aa6afac5-12bf-41b5-829c-a39e1d276e8b.aspx), [Remove-ThrottlingPolicy](https://technet.microsoft.com/library/d98b709b-672e-42ad-afc4-c6e860d33bc9.aspx) and [Set-ThrottlingPolicy](https://technet.microsoft.com/library/80984ddd-0628-4115-92ed-6b3cef34c833.aspx).
+- **View, create, remove, and modify user workload settings**: [Get-ThrottlingPolicy](/powershell/module/exchange/get-throttlingpolicy), [New-ThrottlingPolicy](/powershell/module/exchange/new-throttlingpolicy), [Remove-ThrottlingPolicy](/powershell/module/exchange/remove-throttlingpolicy) and [Set-ThrottlingPolicy](/powershell/module/exchange/set-throttlingpolicy).
 
-- **Assign user workload settings to users or computers**: [Get-ThrottlingPolicyAssociation](https://technet.microsoft.com/library/45e1248f-89c2-467c-8d5d-de1367111e08.aspx) and [Set-ThrottlingPolicyAssociation](https://technet.microsoft.com/library/1d007408-e00d-48da-89aa-5994f490fbae.aspx)
+- **Assign user workload settings to users or computers**: [Get-ThrottlingPolicyAssociation](/powershell/module/exchange/get-throttlingpolicyassociation) and [Set-ThrottlingPolicyAssociation](/powershell/module/exchange/set-throttlingpolicyassociation)
 
 ## Scopes in user workload settings
 

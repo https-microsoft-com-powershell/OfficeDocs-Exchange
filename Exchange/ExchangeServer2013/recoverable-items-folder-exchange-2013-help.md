@@ -2,13 +2,14 @@
 title: 'Recoverable Items folder: Exchange 2013 Help'
 TOCTitle: Recoverable Items folder
 ms:assetid: efc48fb4-2ed8-4d05-93af-f3505fbc389d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee364755(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee364755(v=EXCHG.150)
 ms:contentKeyID: 49289452
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -90,19 +91,23 @@ An item is considered to be permanently deleted in the following cases:
 
 Permanently deleted items are moved to the Deletions subfolder of the Recoverable Items folder. This provides an additional layer of protection so users can recover permanently deleted items without requiring Help desk intervention. Users can use the Recover Deleted Items feature in Outlook or Outlook Web App to recover a deleted item. Users can also use this feature to permanently delete an item. For more information, see:
 
-- [Restore deleted items in Outlook](https://go.microsoft.com/fwlink/p/?linkid=524923)
+- [Restore deleted items in Outlook](https://support.microsoft.com/office/49e81f3c-c8f4-4426-a0b9-c0fd751d48ce)
 
-- [Recover deleted items or email in Outlook Web App](https://go.microsoft.com/fwlink/p/?linkid=524924)
+- [Recover deleted items or email in Outlook Web App](https://support.microsoft.com/office/c3d8fc15-eeef-4f1c-81df-e27964b7edd4)
 
 Items remain in the Deletions subfolder until the deleted item retention period is reached. The default deleted item retention period for a mailbox database is 14 days. You can modify this period for a mailbox database or for a specific mailbox. In addition to a deleted item retention period, the Recoverable Items folder is also subject to quotas. To learn more, see Recoverable Items Mailbox Quotas later in this topic.
 
-After the deleted item retention period elapses, the item is moved to the Purges folder and is no longer visible to the user. When the Managed Folder Assistant processes the mailbox, items in the Purges subfolder are purged from the mailbox database and can't be recovered.
+When the deleted item retention period expires, the item is completely removed from Exchange 2013.
+
+The _Don't permanently delete items until the database is backed up_ setting can affect this behavior. If this setting is not enabled (default), only the deleted item retention period is considered to remove items from the Deletions subfolder. If this setting is enabled and the deleted item retention period is reached, items are not deleted until after the mailbox database on which the mailbox is located has been backed up.
+
+For more information about these settings and how to modify them, see [Configure Deleted Item retention and Recoverable Items quotas](configure-deleted-item-retention-and-recoverable-items-quotas-exchange-2013-help.md).
 
 ## Single item recovery
 
-If an item is removed from the Deletions subfolder, either by a user purging the item by using the Recover Deleted Items feature or by an automated process such as the Managed Folder Assistant, the item can't be recovered by the user. In previous versions of Exchange, recovering these items required the administrator to restore the mailbox database or a mailbox from backup copies. This process generally delayed recovery by minutes or hours, depending on the backup mechanism used.
+If an item is removed from the Deletions subfolder, either by a user purging the item by using the Recover Deleted Items feature or by an automated process such as the Managed Folder Assistant (retention tag set to permanently delete for example), the item can't be recovered by the user. In previous versions of Exchange, recovering these items required the administrator to restore the mailbox database or a mailbox from backup copies. This process generally delayed recovery by minutes or hours, depending on the backup mechanism used.
 
-In Exchange 2013, you can use *single item recovery* to recover items without having to restore the mailbox databases using backup media. This results in considerably shorter recovery periods. When the Managed Folder Assistant processes the Recoverable Items folder for a mailbox that has single item recovery enabled, any item in the Purges subfolder isn't purged if the deleted item retention period hasn't expired for that item.
+In Exchange 2013, you can use *single item recovery* to recover items without using backup media to restore the mailbox databases. This results in considerably shorter recovery periods. If single item recovery is enabled for a mailbox, any item removed from the Deletions subfolder before the deleted item retention period is moved to the Purges subfolder. When the Managed Folder Assistant processes the Recoverable Items folder for a mailbox that has single item recovery enabled, any item in the Purges subfolder isn't purged if the deleted item retention period hasn't expired for that item.
 
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if single item recovery is enabled.
 
@@ -143,13 +148,13 @@ The following table lists the contents of and actions that can be performed in t
 </tbody>
 </table>
 
-In Exchange 2013, single item recovery isn't enabled by default for new mailboxes or mailboxes moved from a previous version of Exchange. You must use the Exchange Management Shell to enable single item recovery for a mailbox, and then configure or modify the deleted item retention period. For details about how to perform a single item recovery, see [Recover deleted messages in a user's mailbox](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages).
+In Exchange 2013, single item recovery isn't enabled by default for new mailboxes or mailboxes moved from a previous version of Exchange. You must use the Exchange Management Shell to enable single item recovery for a mailbox, and then configure or modify the deleted item retention period. For details about how to perform a single item recovery, see [Recover deleted messages in a user's mailbox](../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages.md).
 
 ## In-Place Hold and Litigation Hold
 
 In Exchange 2013 and Exchange Online, discovery managers can use In-Place eDiscovery with delegated [Discovery Management](discovery-management-exchange-2013-help.md) permissions to perform eDiscovery searches of mailbox content. Exchange 2013 and Exchange Online also introduced In-Place Hold, which you can use to preserve mailbox items that match query parameters and protect the items from deletion by users or automated processes. You can also use Litigation Hold to preserve all items in user mailboxes and protect the items from deletion by users or automated processes.
 
-Placing a mailbox on In-Place Hold or Litigation Hold stops the Managed Folder Assistant from automatically purging messages from the DiscoveryHolds and Purges subfolders. Additionally, copy-on-write page protection is also enabled for the mailbox. Copy-on-write page protection creates a copy of the original item before any modifications are written to the Exchange store. After mailbox is removed from hold, the Managed Folder Assistant resumes automated purging.
+Placing a mailbox on In-Place Hold or Litigation Hold stops the Managed Folder Assistant from automatically purging messages from the DiscoveryHolds, Deletions, and Purges subfolders. Additionally, copy-on-write page protection is also enabled for the mailbox. Copy-on-write page protection creates a copy of the original item before any modifications are written to the Exchange store. After the mailbox is removed from hold, the Managed Folder Assistant resumes automated purging.
 
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if Litigation Hold is enabled.
 
@@ -192,9 +197,9 @@ The following table lists the contents of and actions that can be performed in t
 
 To learn more about In-Place eDiscovery, In-Place Hold, and Litigation Hold, see the following topics:
 
-- [In-Place eDiscovery](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery)
+- [In-Place eDiscovery](../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md)
 
-- [In-Place Hold and Litigation Hold](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-and-litigation-holds)
+- [In-Place Hold and Litigation Hold](../ExchangeOnline/security-and-compliance/in-place-and-litigation-holds.md)
 
 ## Copy-on-write page protection and modified items
 
@@ -309,7 +314,7 @@ The following table lists the events logged when the Recoverable Items folder re
 </tbody>
 </table>
 
-If the mailbox is placed on In-Place Hold or Litigation Hold, copy-on-write page protection can't maintain versions of modified items. To maintain versions of modified items, you must reduce the size of the Recoverable Items folder. You can use the [Search-Mailbox](https://technet.microsoft.com/en-us/library/dd298173\(v=exchg.150\)) cmdlet to copy messages from the Recoverable Items folder of a mailbox to a discovery mailbox, and then delete the items from the mailbox. Alternatively, you can also raise the Recoverable Items quota for the mailbox. For details, see [Clean up the Recoverable Items folder](clean-up-the-recoverable-items-folder-exchange-2013-help.md).
+If the mailbox is placed on In-Place Hold or Litigation Hold, copy-on-write page protection can't maintain versions of modified items. To maintain versions of modified items, you must reduce the size of the Recoverable Items folder. You can use the [Search-Mailbox](/powershell/module/exchange/Search-Mailbox) cmdlet to copy messages from the Recoverable Items folder of a mailbox to a discovery mailbox, and then delete the items from the mailbox. Alternatively, you can also raise the Recoverable Items quota for the mailbox. For details, see [Clean up the Recoverable Items folder](clean-up-the-recoverable-items-folder-exchange-2013-help.md).
 
 ## More information
 
@@ -317,6 +322,6 @@ If the mailbox is placed on In-Place Hold or Litigation Hold, copy-on-write page
 
 - If users need to recover deleted items from the Recoverable Items folder, point them to the following topics:
 
-  - [Restore deleted items in Outlook](https://go.microsoft.com/fwlink/p/?linkid=524923)
+  - [Restore deleted items in Outlook](https://support.microsoft.com/office/49e81f3c-c8f4-4426-a0b9-c0fd751d48ce)
 
-  - [Recover deleted items or email in Outlook Web App](https://go.microsoft.com/fwlink/p/?linkid=524924)
+  - [Recover deleted items or email in Outlook Web App](https://support.microsoft.com/office/c3d8fc15-eeef-4f1c-81df-e27964b7edd4)

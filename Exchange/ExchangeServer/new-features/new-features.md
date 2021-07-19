@@ -8,8 +8,9 @@ ms.assetid: 97501135-2149-4590-8373-98e638ac8eb1
 monikerRange: exchserver-2016 || exchserver-2019
 title: What's new in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
-ms.date: 9/20/2018
 ms.reviewer:
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -33,6 +34,8 @@ For more information about deploying Exchange 2019, see [Planning and deployment
 
 - **Block external access to Exchange admin center (EAC) and the Exchange Management Shell**: You can use Client Access Rules to only allow administration of Exchange from the internal network instead of using complex network and firewall rules.
 
+- **TLS 1.2 is the only version that's enabled by default**: Exchange Server 2019 includes important changes to improve the security of client and server connections. The default configuration for encryption will enable TLS 1.2 only and disable support for older algorithms (namely, DES, 3DES, RC2, RC4 and MD5). It will also configure elliptic curve key exchange algorithms with priority over non-elliptic curve algorithms. In Exchange Server 2016 and later, all cryptography settings are inherited from the configuration specified in the operating system. For additional information, see [Exchange Server TLS Guidance](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Exchange-Server-TLS-guidance-part-1-Getting-Ready-for-TLS-1-2/ba-p/607649).
+
 ### Performance
 
 - **Improved search infrastructure**: The completely rebuilt search infrastructure for cloud scale and reliability in Exchange Online is now available in Exchange 2019. This new search infrastructure allows for indexing of bigger files, simpler management, and better search performance.
@@ -52,8 +55,6 @@ For more information about deploying Exchange 2019, see [Planning and deployment
 - **Calendar - Better Out of Office**: Additional options when you won't be in the office. Key options include: add an event to your calendar that shows you as Away/Out of Office, and a quick option to cancel/decline meetings that will happen while you're away.
 
 - **Calendar - Remove-CalendarEvents cmdlet**: Enables administrators to cancel meetings that were organized by a user that has left the company. Previously, conference rooms or meeting attendees would have these defunct meetings permanently on their calendars.
-
-- **Assign delegate permission via PowerShell**: Updates to the Add-FolderPermissions cmdlet so administrators can assign delegate permissions.
 
 - **Email address internationalization (EAI)**: Email addresses that contain non-English characters can now be routed and delivered natively.
 
@@ -128,9 +129,9 @@ For more information, see [MAPI over HTTP in Exchange Server](../clients/mapi-ov
 
 #### Document collaboration
 
-Exchange 2019, along with SharePoint Server 2019, enables Outlook on the web users to link to and share documents that are stored in OneDrive for Business in an on-premises SharePoint server instead of attaching files to messages. Users in an on-premises environment can collaborate on files in the same manner that's used in Office 365.
+Exchange 2019, along with SharePoint Server 2019, enables Outlook on the web users to link to and share documents that are stored in OneDrive for Business in an on-premises SharePoint server instead of attaching files to messages. Users in an on-premises environment can collaborate on files in the same manner.
 
-For more information about SharePoint Server 2019, see [New and improved features in SharePoint Server 2019](https://docs.microsoft.com/SharePoint/what-s-new/new-and-improved-features-in-sharepoint-server-2019).
+For more information about SharePoint Server 2019, see [New and improved features in SharePoint Server 2019](/SharePoint/what-s-new/new-and-improved-features-in-sharepoint-server-2019).
 
 When an Exchange 2019 user receives a Word, Excel, or PowerPoint file in an email attachment, and the file is stored in OneDrive for Business or on-premises SharePoint, the user will now have the option of viewing and editing that file in Outlook on the web alongside the message. To do this, you'll need a separate computer in your on-premises organization that's running Office Online Server. For more information, see [Install Office Online Server in an Exchange organization](../plan-and-deploy/install-office-online-server.md).
 
@@ -142,11 +143,11 @@ Exchange 2019 also brings the following improvements to document collaboration:
 
 - Most Recently Used lists populated with both local and online files.
 
-### Office 365 hybrid
+### Microsoft 365 or Office 365 hybrid
 
 The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is moving to become a cloud-based application. When you choose to configure a hybrid deployment in Exchange 2019, you'll be prompted to download and install the wizard as a small app. The wizard will function the same in previous versions of Exchange, with a few new benefits:
 
-- The wizard can be updated quickly to support changes in the Office 365 service.
+- The wizard can be updated quickly to support changes in the Microsoft 365 or Office 365 service.
 
 - The wizard can be updated to account for issues detected when customers try to configure a hybrid deployment.
 
@@ -154,9 +155,9 @@ The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is mo
 
 - The same wizard will be used by everyone configuring a hybrid deployment who's running Exchange 2013 or later.
 
-In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Office 365 tenant. For more information about AADConnect, see [Integrating your on-premises identities with Azure Active Directory](https://go.microsoft.com/fwlink/p/?LinkID=527969).
+In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Microsoft 365 or Office 365 organization. For more information about AADConnect, see [What is hybrid identity with Azure Active Directory?](/azure/active-directory/hybrid/whatis-hybrid-identity).
 
-Exchange ActiveSync clients will be seamlessly redirected to Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
+Exchange ActiveSync clients will be seamlessly redirected to Microsoft 365 or Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
 
 ### Messaging policy and compliance
 
@@ -182,22 +183,22 @@ Exchange 2019 includes the following improvements to In-Place Archiving, retenti
 
 - **Compliance Search**: Compliance Search is a new eDiscovery search tool in Exchange 2019 with new and improved scaling and performance capabilities. You can use it to search very large numbers of mailboxes in a single search. In fact, there's no limit on the number of mailboxes that can be included in a single search, so you can search all mailboxes in your organization at once. There's also no limit on the number of searches that can run at the same time. For In-Place eDiscovery in Exchange 2019, the limits are the same as in Exchange 2013: you can search up to 10,000 mailboxes in a single search and your organization can run a maximum of two In-Place eDiscovery searches at the same time.
 
-    In Exchange 2019, Compliance Search is only available by using the Exchange Management Shell. For information about using the Compliance Search cmdlets, see the following topics:
+  In Exchange 2019, Compliance Search is only available by using the Exchange Management Shell. For information about using the Compliance Search cmdlets, see the following topics:
 
-  - [Get-ComplianceSearch](https://technet.microsoft.com/library/3bf7edeb-7674-464e-abad-4b1b8858114d.aspx)
+  - [Get-ComplianceSearch](/powershell/module/exchange/get-compliancesearch)
 
-  - [New-ComplianceSearch](https://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx)
+  - [New-ComplianceSearch](/powershell/module/exchange/new-compliancesearch)
 
-  - [Remove-ComplianceSearch](https://technet.microsoft.com/library/6f952437-7ddd-42f8-b10b-5ab4e5562141.aspx)
+  - [Remove-ComplianceSearch](/powershell/module/exchange/remove-compliancesearch)
 
-  - [Set-ComplianceSearch](https://technet.microsoft.com/library/49464588-9e57-442f-97ec-ab9d9927983a.aspx)
+  - [Set-ComplianceSearch](/powershell/module/exchange/set-compliancesearch)
 
-  - [Start-ComplianceSearch](https://technet.microsoft.com/library/17ef8cc9-d716-446c-a8b9-b9109a6cab5a.aspx)
+  - [Start-ComplianceSearch](/powershell/module/exchange/start-compliancesearch)
 
-  - [Stop-ComplianceSearch](https://technet.microsoft.com/library/675934e6-8a55-4615-8c46-a20bc656afdc.aspx)
+  - [Stop-ComplianceSearch](/powershell/module/exchange/stop-compliancesearch)
 
-    > [!NOTE]
-    > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group.
+  > [!NOTE]
+  > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group.
 
 For more information, see [Messaging policy and compliance in Exchange Server](../policy-and-compliance/policy-and-compliance.md).
 
@@ -237,7 +238,7 @@ When you update to Exchange 2016 Cumulative Update 1 (CU1) from Exchange 2016 RT
 
 [Document collaboration](new-features.md#DocCollab2013)
 
-[Office 365 hybrid](new-features.md#O3652013)
+[Microsoft 365 or Office 365 hybrid](new-features.md#O3652013)
 
 [Messaging policy and compliance](new-features.md#Compliance2013)
 
@@ -319,9 +320,9 @@ For more information, see [MAPI over HTTP in Exchange 2016](../clients/mapi-over
 #### Document collaboration
 <a name="DocCollab2013"> </a>
 
-Exchange 2016, along with SharePoint Server 2016, enables Outlook on the web users to link to and share documents that are stored in OneDrive for Business in an on-premises SharePoint server instead of attaching files to messages. Users in an on-premises environment can collaborate on files in the same manner that's used in Office 365.
+Exchange 2016, along with SharePoint Server 2016, enables Outlook on the web users to link to and share documents that are stored in OneDrive for Business in an on-premises SharePoint server instead of attaching files to messages. Users in an on-premises environment can collaborate on files in the same manner that's used in Microsoft 365 and Office 365.
 
-For more information about SharePoint Server 2016, see [New and improved features in SharePoint Server 2016](https://go.microsoft.com/fwlink/p/?LinkId=627299).
+For more information about SharePoint Server 2016, see [New and improved features in SharePoint Server 2016](/SharePoint/what-s-new/new-and-improved-features-in-sharepoint-server-2016).
 
 When an Exchange 2016 user receives a Word, Excel, or PowerPoint file in an email attachment, and the file is stored in OneDrive for Business or on-premises SharePoint, the user will now have the option of viewing and editing that file in Outlook on the web alongside the message. To do this, you'll need a separate computer in your on-premises organization that's running Office Online Server. For more information, see [Install Office Online Server in an Exchange 2016 organization](../plan-and-deploy/install-office-online-server.md).
 
@@ -333,12 +334,12 @@ Exchange 2016 also brings the following improvements to document collaboration:
 
 - Most Recently Used lists populated with both local and online files.
 
-### Office 365 hybrid
+### Microsoft 365 or Office 365 hybrid
 <a name="O3652013"> </a>
 
 The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is moving to become a cloud-based application. When you choose to configure a hybrid deployment in Exchange 2016, you'll be prompted to download and install the wizard as a small app. The wizard will function the same in previous versions of Exchange, with a few new benefits:
 
-- The wizard can be updated quickly to support changes in the Office 365 service.
+- The wizard can be updated quickly to support changes in the Microsoft 365 or Office 365 service.
 
 - The wizard can be updated to account for issues detected when customers try to configure a hybrid deployment.
 
@@ -346,9 +347,9 @@ The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is mo
 
 - The same wizard will be used by everyone configuring a hybrid deployment who's running Exchange 2013 or Exchange 2016.
 
-In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Office 365 tenant. For more information about AADConnect, see [Integrating your on-premises identities with Azure Active Directory](https://go.microsoft.com/fwlink/p/?LinkID=527969).
+In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Microsoft 365 or Office 365 organization. For more information about AADConnect, see [Integrating your on-premises identities with Azure Active Directory](/azure/active-directory/hybrid/whatis-hybrid-identity).
 
-Exchange ActiveSync clients will be seamlessly redirected to Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
+Exchange ActiveSync clients will be seamlessly redirected to Microsoft 365 or Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
 
 ### Messaging policy and compliance
 <a name="Compliance2013"> </a>
@@ -379,17 +380,17 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
 
     In Exchange 2016, Compliance Search is only available by using the Exchange Management Shell. For information about using the Compliance Search cmdlets, see the following topics:
 
-  - [Get-ComplianceSearch](https://technet.microsoft.com/library/3bf7edeb-7674-464e-abad-4b1b8858114d.aspx)
+  - [Get-ComplianceSearch](/powershell/module/exchange/get-compliancesearch)
 
-  - [New-ComplianceSearch](https://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx)
+  - [New-ComplianceSearch](/powershell/module/exchange/new-compliancesearch)
 
-  - [Remove-ComplianceSearch](https://technet.microsoft.com/library/6f952437-7ddd-42f8-b10b-5ab4e5562141.aspx)
+  - [Remove-ComplianceSearch](/powershell/module/exchange/remove-compliancesearch)
 
-  - [Set-ComplianceSearch](https://technet.microsoft.com/library/49464588-9e57-442f-97ec-ab9d9927983a.aspx)
+  - [Set-ComplianceSearch](/powershell/module/exchange/set-compliancesearch)
 
-  - [Start-ComplianceSearch](https://technet.microsoft.com/library/17ef8cc9-d716-446c-a8b9-b9109a6cab5a.aspx)
+  - [Start-ComplianceSearch](/powershell/module/exchange/start-compliancesearch)
 
-  - [Stop-ComplianceSearch](https://technet.microsoft.com/library/675934e6-8a55-4615-8c46-a20bc656afdc.aspx)
+  - [Stop-ComplianceSearch](/powershell/module/exchange/stop-compliancesearch)
 
     > [!NOTE]
     > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group.
@@ -412,7 +413,7 @@ Another advantage of the new architecture is that search scalability is improved
 
 [Setup](new-features.md#Setup2010)
 
-[Office 365 hybrid](new-features.md#O3652010)
+[Microsoft 365 or Office 365 hybrid](new-features.md#O3652010)
 
 [Messaging policy and compliance](new-features.md#Compliance2010)
 
@@ -513,12 +514,12 @@ Setup has been completely rewritten so that installing Exchange 2016 and making 
 
 For more information, see [Planning and deployment](../plan-and-deploy/plan-and-deploy.md).
 
-### Office 365 hybrid
+### Microsoft 365 or Office 365 hybrid
 <a name="O3652010"> </a>
 
 The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is moving to become a cloud-based application. When you choose to configure a hybrid deployment in Exchange 2016, you'll be prompted to download and install the wizard as a small app. The wizard will function the same in previous versions of Exchange, with a few new benefits:
 
-- The wizard can be updated quickly to support changes in the Office 365 service.
+- The wizard can be updated quickly to support changes in the Microsoft 365 or Office 365 service.
 
 - The wizard can be updated to account for issues that are encountered when customers try to configure a hybrid deployment.
 
@@ -526,9 +527,9 @@ The Hybrid Configuration Wizard (HCW) that was included with Exchange 2013 is mo
 
 - The same wizard will be used by everyone who's configuring a hybrid deployment with Exchange 2013 or Exchange 2016.
 
-In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Office 365 tenant.
+In addition to Hybrid Configuration Wizard improvements, multi-forest hybrid deployments are being simplified with Azure Active Directory Connect (AADConnect). AADConnect introduces management agents that will make it significantly easier to synchronize multiple on-premises Active Directory forests with a single Microsoft 365 or Office 365 organization.
 
-Exchange ActiveSync clients will be seamlessly redirected to Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
+Exchange ActiveSync clients will be seamlessly redirected to Microsoft 365 or Office 365 when a user's mailbox is moved to Exchange Online. To support this, ActiveSync clients need to support HTTP 451 redirect. When a client is redirected, the profile on the device is updated with the URL of the Exchange Online service. This means the client will no longer attempt to contact the on-premises Exchange server when trying to find the mailbox.
 
 ### Messaging policy and compliance
 <a name="Compliance2010"> </a>
@@ -565,7 +566,7 @@ For more information, see [Mail flow rules in Exchange 2016](../policy-and-compl
 
 The Azure Rights Management connector (also known as the Microsoft Rights Management connector or RMS connector) is an optional application that helps you enhance data protection for your Exchange 2016 server by connecting to the cloud-based Azure Rights Management service (also known as Microsoft Rights Management or Azure RMS). Once you install the RMS connector, it provides continuous data protection throughout the life span of the information and because these services are customizable, you can define the level of protection you need. For example, you can limit email message access to specific users or set view-only rights for certain messages.
 
-For more information, see [Deploying the Azure Rights Management connector](https://go.microsoft.com/fwlink/p/?LinkId=330432).
+For more information, see [Deploying the Azure Rights Management connector](/azure/information-protection/deploy-rms-connector).
 
 #### In-place Archiving, retention, and eDiscovery
 <a name="Archiving2010"> </a>
@@ -605,17 +606,17 @@ Exchange 2016 includes the following improvements to In-Place Archiving, retenti
 
     In Exchange 2016, Compliance Search is only available by using the Exchange Management Shell. For information about using the Compliance Search cmdlets, see the following topics:
 
-  - [Get-ComplianceSearch](https://technet.microsoft.com/library/3bf7edeb-7674-464e-abad-4b1b8858114d.aspx)
+  - [Get-ComplianceSearch](/powershell/module/exchange/get-compliancesearch)
 
-  - [New-ComplianceSearch](https://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx)
+  - [New-ComplianceSearch](/powershell/module/exchange/new-compliancesearch)
 
-  - [Remove-ComplianceSearch](https://technet.microsoft.com/library/6f952437-7ddd-42f8-b10b-5ab4e5562141.aspx)
+  - [Remove-ComplianceSearch](/powershell/module/exchange/remove-compliancesearch)
 
-  - [Set-ComplianceSearch](https://technet.microsoft.com/library/49464588-9e57-442f-97ec-ab9d9927983a.aspx)
+  - [Set-ComplianceSearch](/powershell/module/exchange/set-compliancesearch)
 
-  - [Start-ComplianceSearch](https://technet.microsoft.com/library/17ef8cc9-d716-446c-a8b9-b9109a6cab5a.aspx)
+  - [Start-ComplianceSearch](/powershell/module/exchange/start-compliancesearch)
 
-  - [Stop-ComplianceSearch](https://technet.microsoft.com/library/675934e6-8a55-4615-8c46-a20bc656afdc.aspx)
+  - [Stop-ComplianceSearch](/powershell/module/exchange/stop-compliancesearch)
 
     > [!NOTE]
     > To have access to the Compliance Search cmdlets, an administrator or eDiscovery manager must be assigned the Mailbox Search management role or be a member of the Discovery Management role group.
@@ -631,13 +632,13 @@ For more information, see [Messaging policy and compliance in Exchange 2016](../
 
 Exchange 2016 includes the following improvements to auditing:
 
-- **Auditing reports**: The EAC includes auditing functionality so that you can run reports or export entries from the mailbox audit log and the administrator audit log. The mailbox audit log records whenever a mailbox is accessed by someone other than the person who owns the mailbox. This can help you determine who has accessed a mailbox and what they have done. The administrator audit log records any action, based on an Exchange Management Shell cmdlet, performed by an administrator. This can help you troubleshoot configuration issues or identify the cause of problems related to security or compliance. For more information, see [Use Auditing Reports](https://technet.microsoft.com/library/2b3e1529-1677-4564-be0b-ce22757ddc0d.aspx).
+- **Auditing reports**: The EAC includes auditing functionality so that you can run reports or export entries from the mailbox audit log and the administrator audit log. The mailbox audit log records whenever a mailbox is accessed by someone other than the person who owns the mailbox. This can help you determine who has accessed a mailbox and what they have done. The administrator audit log records any action, based on an Exchange Management Shell cmdlet, performed by an administrator. This can help you troubleshoot configuration issues or identify the cause of problems related to security or compliance. For more information, see [Exchange Auditing Reports](../../ExchangeServer2013/exchange-auditing-reports-exchange-2013-help.md).
 
 - **Viewing the administrator audit log**: Instead of exporting the administrator audit log, which can take up to 24 hours to receive in an email message, you can view administrator audit log entries in the EAC. To do this, go to **Compliance Management** \> **Auditing** and click **View the administrator audit log**. Up to 1000 entries will be displayed on multiple pages. To narrow the search, you can specify a date range.
 
     As an additional improvement, you can also export the audit log data in a format that's common to both Exchange 2016 and SharePoint Server 2016. This makes it easier to integrate with third-party tools to view the data and create richer reports.
 
-    For more information, see [View the Administrator Audit Log](https://technet.microsoft.com/library/5c62072a-556d-4fea-9973-d668c6b9fd57.aspx).
+    For more information, see [View the Administrator Audit Log](../../ExchangeServer2013/view-administrator-audit-log-exchange-2013-help.md).
 
 ### Antimalware protection
 <a name="Malware2010"> </a>
@@ -662,7 +663,7 @@ How messages flow through an organization and what happens to them has changed s
 ### Recipients
 <a name="Recipients2010"> </a>
 
-Administrators can now use the EAC to create a *group naming policy*, which lets you standardize and manage the names of distribution groups that are created by users in your organization. You can automatically add a prefix or suffix to the name of the distribution group when it's created, and you can block specific words from being used in group names. For more information, see [Create a Distribution Group Naming Policy](https://technet.microsoft.com/library/b2ffb654-345d-4be1-be8e-83d28901373e.aspx).
+Administrators can now use the EAC to create a *group naming policy*, which lets you standardize and manage the names of distribution groups that are created by users in your organization. You can automatically add a prefix or suffix to the name of the distribution group when it's created, and you can block specific words from being used in group names. For more information, see [Create a Distribution Group Naming Policy](../../ExchangeServer2013/create-group-naming-policy-exchange-2013-help.md).
 
 For more information about recipients in Exchange 2016, see [Recipients](../recipients/recipients.md).
 
@@ -671,9 +672,9 @@ For more information about recipients in Exchange 2016, see [Recipients](../reci
 
 Exchange 2016 includes the following enhancements for sharing and collaboration:
 
-- **Public folders**: Public folders now take advantage of the existing high availability and storage technologies of the mailbox store. The public folder architecture uses specially designed mailboxes to store both the hierarchy and the public folder content. This new design also means that there is no longer a public folder database. Public folder replication now uses the continuous replication model. High availability for the hierarchy and content mailboxes is provided by the database availability group (DAG). With this design, we're moving away from a multi-master replication model to a single-master replication model. For more information, see [Public Folders](https://technet.microsoft.com/library/94c4fb69-9234-4b34-8c1c-da2a0a11da65.aspx).
+- **Public folders**: Public folders now take advantage of the existing high availability and storage technologies of the mailbox store. The public folder architecture uses specially designed mailboxes to store both the hierarchy and the public folder content. This new design also means that there is no longer a public folder database. Public folder replication now uses the continuous replication model. High availability for the hierarchy and content mailboxes is provided by the database availability group (DAG). With this design, we're moving away from a multi-master replication model to a single-master replication model. For more information, see [Public folders](../collaboration/public-folders/public-folders.md).
 
-- **Shared mailboxes**: In previous versions of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to set the delegate permissions. Now you can create a shared mailbox in one step via the Exchange admin center (EAC). In the EAC, go to **Recipients** \> **Shared** to create a shared mailbox. Shared mailboxes are a recipient type so you can easily search for your shared mailboxes in either the EAC or by using the Exchange Management Shell. For more information, see [Shared Mailboxes](https://technet.microsoft.com/library/1d71c01b-e261-408e-a633-1d1c9d00032a.aspx).
+- **Shared mailboxes**: In previous versions of Exchange, creating a shared mailbox was a multi-step process in which you had to use the Exchange Management Shell to set the delegate permissions. Now you can create a shared mailbox in one step via the Exchange admin center (EAC). In the EAC, go to **Recipients** \> **Shared** to create a shared mailbox. Shared mailboxes are a recipient type so you can easily search for your shared mailboxes in either the EAC or by using the Exchange Management Shell. For more information, see [Shared mailboxes](../collaboration/shared-mailboxes/shared-mailboxes.md).
 
 ### Integration with SharePoint and Skype for Business
 <a name="Integrate2010"> </a>
@@ -762,9 +763,9 @@ For more information, see [MAPI over HTTP in Exchange 2016](../clients/mapi-over
 #### Document collaboration
 <a name="DocCollab2010"> </a>
 
-Exchange 2016, along with SharePoint Server 2016, enables Outlook on the web users to link to and share documents that are stored in OneDrive for Business in an on-premises SharePoint server instead of attaching files to messages. Users in an on-premises environment can collaborate on files in the same manner that's used in Office 365.
+Exchange 2016, along with SharePoint Server 2016, enables Outlook on the web users to link to and share documents that are stored in OneDrive for Business in an on-premises SharePoint server instead of attaching files to messages. Users in an on-premises environment can collaborate on files in the same manner that's used in Microsoft 365 or Office 365.
 
-For more information about SharePoint Server 2016, see [New and improved features in SharePoint Server 2016](https://go.microsoft.com/fwlink/p/?LinkId=627299).
+For more information about SharePoint Server 2016, see [New and improved features in SharePoint Server 2016](/SharePoint/what-s-new/new-and-improved-features-in-sharepoint-server-2016).
 
 When an Exchange 2016 user receives a Word, Excel, or PowerPoint file in an email attachment, and the file is stored in OneDrive for Business or on-premises SharePoint, the user will now have the option of viewing and editing that file in Outlook on the web alongside the message. To do this, you'll need a separate computer in your on-premises organization that's running Office Online Server. For more information, see [Install Office Online Server in an Exchange 2016 organization](../plan-and-deploy/install-office-online-server.md).
 
@@ -818,7 +819,7 @@ Exchange 2016 uses DAGs and mailbox database copies, along with other features s
 
 - **DAG network auto-configuration**: DAGs networks can be automatically configured by the system based on configuration settings. In addition to manual configuration options, DAGs can also distinguish between MAPI and Replication networks and configure DAG networks automatically.
 
-For more information about these features, see [High Availability and Site Resilience](https://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx) and [Changes to high availability and site resilience over previous versions](../high-availability/ha-changes.md).
+For more information about these features, see [High availability and site resilience](../high-availability/high-availability.md) and [Changes to high availability and site resilience over previous versions](../high-availability/ha-changes.md).
 
 #### Managed Store
 <a name="ManagedStore"> </a>
@@ -829,7 +830,7 @@ The Managed Store works with the Microsoft Exchange Replication service to manag
 
 The Managed Store uses the same search platform as SharePoint Server 2016 to provide more robust indexing and searching when compared to Microsoft Search engine that was used in previous versions of Exchange.
 
-For more information, see [High Availability and Site Resilience](https://technet.microsoft.com/library/6628285e-d07c-443d-866b-be784ad1ed1e.aspx).
+For more information, see [High availability and site resilience](../high-availability/high-availability.md).
 
 ### Exchange workload management
 <a name="WLM2010"> </a>

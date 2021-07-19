@@ -2,13 +2,14 @@
 title: 'Create a recovery database: Exchange 2013 Help'
 TOCTitle: Create a recovery database
 ms:assetid: 34d87491-b7b7-44a9-8d69-e1a9c1fe5852
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee332321(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee332321(v=EXCHG.150)
 ms:contentKeyID: 48384961
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can use the Shell to create a recovery database, a special kind of mailbox database that's used to mount and extract data from the restored database as part of a recovery operation. After you create a recovery database, you can move a recovered or restored mailbox database into the recovery database, and then use the [New-MailboxRestoreRequest](https://technet.microsoft.com/en-us/library/ff829875\(v=exchg.150\)) cmdlet to extract data from the recovered database. After extraction, the data can then be exported to a folder or merged into an existing mailbox. Using recovery databases, you can recover data from a backup or copy of a database without disrupting user access to current data.
+You can use the Shell to create a recovery database, a special kind of mailbox database that's used to mount and extract data from the restored database as part of a recovery operation. After you create a recovery database, you can move a recovered or restored mailbox database into the recovery database, and then use the [New-MailboxRestoreRequest](/powershell/module/exchange/New-MailboxRestoreRequest) cmdlet to extract data from the recovered database. After extraction, the data can then be exported to a folder or merged into an existing mailbox. Using recovery databases, you can recover data from a backup or copy of a database without disrupting user access to current data.
 
 Looking for other management tasks related to recovery databases? Check out [Recovery databases](recovery-databases-exchange-2013-help.md).
 
@@ -29,7 +30,7 @@ Looking for other management tasks related to recovery databases? Check out [Rec
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to create a recovery database
 
@@ -45,7 +46,7 @@ This example creates the recovery database RDB2 on the Mailbox server MBX1 using
 New-MailboxDatabase -Recovery -Name RDB2 -Server MBX1 -EdbFilePath "C:\Recovery\RDB2\RDB2.EDB" -LogFolderPath "C:\Recovery\RDB2"
 ```
 
-For detailed syntax and parameter information, see [New-MailboxDatabase](https://technet.microsoft.com/en-us/library/aa997976\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MailboxDatabase](/powershell/module/exchange/New-MailboxDatabase).
 
 ## How do you know this worked?
 

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: a4f84312-6cfa-4f17-9707-676aadab1143
-ms.date: 6/8/2018
 ms.reviewer:
 title: Manage health sets and server health
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -33,12 +34,12 @@ For more information about health reporting and managed availability, see [Manag
 
 - Estimated time to complete each procedure: 2 minutes
 
-- The procedures in this topic require the Exchange Management Shell. For more information, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- The procedures in this topic require the Exchange Management Shell. For more information, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to view server health
 
@@ -46,29 +47,29 @@ You can use the Exchange Management Shell to get a summary of the health of an E
 
 Run either of the following commands to view the health sets and health information on an Exchange server:
 
-```
+```powershell
 Get-HealthReport -Identity <ServerName>
 ```
 
-```
+```powershell
 Get-ServerHealth -Identity <ServerName> | Format-Table Server,CurrentHealthSetState,Name,HealthSetName,AlertValue,HealthGroupName -Auto
 ```
 
 Run any of the following commands to view the health sets on an Exchange server or database availability group:
 
-```
+```powershell
 Get-ExchangeServer | Get-HealthReport -RollupGroup
 ```
 
-```
+```powershell
 Get-ExchangeServer | Get-HealthReport -RollupGroup -HealthSetName <HealthSet>
 ```
 
-```
+```powershell
 (Get-DatabaseAvailabilityGroup <DAGName>).Servers | Get-HealthReport -RollupGroup
 ```
 
-For detailed syntax and parameter information, see [Get-HealthReport](https://technet.microsoft.com/library/f33fbed5-0e01-4d7e-a252-121b2afb6864.aspx).
+For detailed syntax and parameter information, see [Get-HealthReport](/powershell/module/exchange/get-healthreport).
 
 ## Use the Exchange Management Shell to view a list of health sets
 
@@ -76,11 +77,11 @@ A *health set* is a group of monitors, probes and responders for a component tha
 
 Run the following command to view the health sets on an Exchange server:
 
-```
+```powershell
 Get-HealthReport -Server <ServerName>
 ```
 
-For detailed syntax and parameter information, see [Get-HealthReport](https://technet.microsoft.com/library/f33fbed5-0e01-4d7e-a252-121b2afb6864.aspx).
+For detailed syntax and parameter information, see [Get-HealthReport](/powershell/module/exchange/get-healthreport).
 
 ## Use the Exchange Management Shell to view the probes, monitors and responders for a health set
 
@@ -88,11 +89,11 @@ You can use the Exchange Management Shell to view the list of probes, monitors, 
 
 Run the following command to view the probes, monitors and responders associated with a health set on an Exchange server:
 
-```
+```powershell
 Get-MonitoringItemIdentity -Server <ServerName> -Identity <HealthSetName> | Format-Table Identity,ItemType,Name -Auto
 ```
 
-For detailed syntax and parameter information, see [Get-MonitoringItemIdentity](https://technet.microsoft.com/library/7a4da080-0fe6-4dd7-85a2-cceeb68f95e0.aspx).
+For detailed syntax and parameter information, see [Get-MonitoringItemIdentity](/powershell/module/exchange/get-monitoringitemidentity).
 
 ## Use the Exchange Management Shell to View a List of Monitors and Their Current Health
 
@@ -100,8 +101,8 @@ The health of a monitor is reported by using the "worst of" monitors in the heal
 
 Run the following command to view a list of the monitors and their current health on an Exchange server:
 
-```
+```powershell
 Get-ServerHealth -HealthSet <HealthSetName> -Server <ServerName> | Format-Table Name, AlertValue -Auto
 ```
 
-For detailed syntax and parameter information, see [Get-ServerHealth](https://technet.microsoft.com/library/ca9cff3a-ecda-422d-abd7-b7d8da71a6c7.aspx).
+For detailed syntax and parameter information, see [Get-ServerHealth](/powershell/module/exchange/get-serverhealth).

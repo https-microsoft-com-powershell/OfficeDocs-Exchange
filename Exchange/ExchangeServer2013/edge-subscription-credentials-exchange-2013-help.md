@@ -2,13 +2,14 @@
 title: 'Edge Subscription credentials: Exchange 2013 Help'
 TOCTitle: Edge Subscription credentials
 ms:assetid: 1d291bc1-9c00-4d1b-8da0-cb81f63d8305
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb266959(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb266959(v=EXCHG.150)
 ms:contentKeyID: 61200277
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -137,7 +138,7 @@ Each EdgeSync replication account is assigned the properties shown in the follow
 <tr class="odd">
 <td><p><strong>UserName</strong></p></td>
 <td><p>String</p></td>
-<td><p>The user name used to authenticate.</p></td>
+<td><p>The username used to authenticate.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Password</strong></p></td>

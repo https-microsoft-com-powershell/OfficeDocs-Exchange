@@ -2,13 +2,14 @@
 title: 'Records Management: Exchange 2013 Help'
 TOCTitle: Records Management
 ms:assetid: 0e0c95ce-6109-4591-b86d-c6cfd44d21f5
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd633492(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd633492(v=EXCHG.150)
 ms:contentKeyID: 49289166
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

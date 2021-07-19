@@ -2,13 +2,14 @@
 title: 'Integration with SharePoint and Lync: Exchange 2013 Help'
 TOCTitle: Integration with SharePoint and Lync
 ms:assetid: 056b29f6-e0e9-4974-b763-002518857a93
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150480(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150480(v=EXCHG.150)
 ms:contentKeyID: 47559934
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,9 +27,9 @@ Archiving of email and documents, preserving them for the duration required to m
 
 With Lync Server 2013 deployed in an organization with Exchange 2013, you can configure Lync to archive instant messaging and on-line meeting content such as shared presentations or documents in the user's Exchange 2013 mailbox. Archiving Lync data in Exchange 2013 allows you to apply retention policies to it. Archived Lync content also surfaces in any eDiscovery searches. For more details about Lync Archiving and how to deploy it, see the following topics:
 
-  - [Planning for Archiving](https://go.microsoft.com/fwlink/p/?linkid=265005)
+- [Planning for Archiving](/lyncserver/lync-server-2013-planning-for-archiving)
 
-  - [Deploying Archiving](https://go.microsoft.com/fwlink/p/?linkid=265006)
+- [Deploying Archiving](/lyncserver/lync-server-2013-deploying-archiving)
 
 ## Search Exchange, SharePoint and Lync data using the SharePoint 2013 eDiscovery Center
 
@@ -36,15 +37,15 @@ Exchange 2013 allows SharePoint 2013 to search Exchange mailbox content using Fe
 
 For more details, see the following topics:
 
-  - [In-Place eDiscovery](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery)
+- [In-Place eDiscovery](../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md)
 
-  - [In-Place Hold and Litigation Hold](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-and-litigation-holds)
+- [In-Place Hold and Litigation Hold](../ExchangeOnline/security-and-compliance/in-place-and-litigation-holds.md)
 
-  - [Configure eDiscovery in SharePoint 2013](https://go.microsoft.com/fwlink/p/?linkid=257727)
+- [Configure eDiscovery in SharePoint 2013](/SharePoint/governance/configure-ediscovery-0)
 
-  - [What's new in eDiscovery in SharePoint Server 2013](https://go.microsoft.com/fwlink/?linkid=275091)
+- [What's new in eDiscovery in SharePoint Server 2013](https://support.microsoft.com/office/2229681c-8a19-4efb-a59a-fc9ece9e9557)
 
-  - [Configure Exchange for SharePoint eDiscovery Center](configure-exchange-for-sharepoint-ediscovery-center-exchange-2013-help.md)
+- [Configure Exchange for SharePoint eDiscovery Center](configure-exchange-for-sharepoint-ediscovery-center-exchange-2013-help.md)
 
 ## Site mailboxes
 
@@ -54,19 +55,19 @@ Under the covers of a site mailbox, the content is kept where it belongs. Exchan
 
 Site mailboxes are provisioned and managed from SharePoint 2013. For more details, see the following topics:.
 
-  - [Site mailboxes](site-mailboxes-exchange-2013-help.md)
+- [Site mailboxes](site-mailboxes-exchange-2013-help.md)
 
-  - [Configure site mailboxes in SharePoint Server 2013](https://go.microsoft.com/fwlink/p/?linkid=258264)
+- [Configure site mailboxes in SharePoint Server 2013](/SharePoint/administration/configure-site-mailboxes-in-sharepoint)
 
 ## Unified contact store
 
 Unified contact store (UCS) is a feature that provides a consistent contact experience across Microsoft Office products. This feature enables users to store all contact information in their Exchange 2013 mailbox so that the same contact information is available globally across Lync, Exchange, Outlook and Outlook Web App.
 
-After Lync Server 2013 is installed in an environment with Exchange 2013 and you have configured server-to-server authentication between the two, users can initiate the migration of existing contacts from Lync Server 2013 to Exchange 2013. For details, see [Planning and Deploying Unified Contact Store](https://go.microsoft.com/fwlink/p/?linkid=275092).
+After Lync Server 2013 is installed in an environment with Exchange 2013 and you have configured server-to-server authentication between the two, users can initiate the migration of existing contacts from Lync Server 2013 to Exchange 2013. For details, see [Planning and Deploying Unified Contact Store](/lyncserver/lync-server-2013-planning-and-deploying-unified-contact-store).
 
 ## User photos
 
-User photos is a feature that allows you to store high resolution user photos in Exchange 2013 that can be accessed by client applications, including Outlook, Outlook Web App, SharePoint 2013, Lync 2013, and mobile email clients. A low-resolution photo is also stored in Active Directory. As with Unified contact stores, user photos allow your organization to maintain a consistent user profile photo that can be consumed by client applications without requiring each application to have its own user photos and different ways to add and manage them. Users can manage their own photos using Outlook Web App, SharePoint 2013 or Lync 2013. For detail about managing photos on Outlook Web App, see [My account](https://go.microsoft.com/fwlink/p/?linkid=269646).
+User photos is a feature that allows you to store high resolution user photos in Exchange 2013 that can be accessed by client applications, including Outlook, Outlook Web App, SharePoint 2013, Lync 2013, and mobile email clients. A low-resolution photo is also stored in Active Directory. As with Unified contact stores, user photos allow your organization to maintain a consistent user profile photo that can be consumed by client applications without requiring each application to have its own user photos and different ways to add and manage them. Users can manage their own photos using Outlook Web App, SharePoint 2013 or Lync 2013. For detail about managing photos on Outlook Web App, see [Update your photo and account information in Outlook Web App](https://support.office.microsoft.com/client/82a97f4b-f87a-4ea0-bab1-d67592924392).
 
 ## Lync presence in Outlook Web App
 
@@ -76,7 +77,7 @@ In Exchange 2013 environments with Lync Server 2013 installed, you can configure
 
 Exchange 2013, SharePoint 2013 and Lync Server 2013 provide the rich cross-product functionality described above using OAuth authorization protocol for server-to-server authentication. Using the same authentication protocol allows these applications to seamlessly and securely authenticate to each other. The authentication mechanism supports authentication as an application using the context of a linked account and user impersonation where the access request is made in the user context.
 
-OAuth is a standard authorization protocol used by many web sites and web services. It allows clients to access resources provided by a resource server without having to provide a username and password. Authentication is performed by an authorization server trusted by the resource owner, which provides the client with an access token. The token grants access to a specific set of resources for a specified period. For more details about Exchange 2013's implementation of OAuth, see [\[MS-XOAUTH\]: OAuth 2.0 Authorization Protocol Extensions](https://go.microsoft.com/fwlink/p/?linkid=275093).
+OAuth is a standard authorization protocol used by many web sites and web services. It allows clients to access resources provided by a resource server without having to provide a username and password. Authentication is performed by an authorization server trusted by the resource owner, which provides the client with an access token. The token grants access to a specific set of resources for a specified period. For more details about Exchange 2013's implementation of OAuth, see [\[MS-XOAUTH\]: OAuth 2.0 Authorization Protocol Extensions](/openspecs/exchange_server_protocols/ms-xoauth/0b717658-4ceb-4401-9da9-7860c9ca2f2f).
 
 **OAuth in on-premises deployments**
 

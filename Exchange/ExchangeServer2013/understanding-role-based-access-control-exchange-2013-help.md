@@ -2,13 +2,14 @@
 title: 'Understanding Role Based Access Control: Exchange 2013 Help'
 TOCTitle: Understanding Role Based Access Control
 ms:assetid: fd268867-2ae5-441b-8103-7a7583eb2bbe
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298183(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298183(v=EXCHG.150)
 ms:contentKeyID: 49289479
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

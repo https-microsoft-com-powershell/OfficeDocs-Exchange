@@ -3,12 +3,13 @@ localization_priority: Normal
 description: After you create a Unified Messaging (UM) dial plan, you can view and configure a variety of settings. For example, you can configure the level of Voice over IP (VoIP) security, the audio codec, and dialing restrictions. The settings that you configure on the UM dial plan affect all users who are linked with the dial plan through a UM mailbox policy.
 ms.topic: article
 author: msdmaguire
-f1_keywords:
-- Microsoft.Exchange.Management.SnapIn.Esm.Servers.UnifiedMessaging.DialPlanGeneralPropertyPage
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: a89735e4-36ec-49fb-ad0f-192fad37e801
-ms.date: 4/26/2018
 ms.reviewer: 
+f1.keywords:
+- CSH
+ms.custom:
+- Microsoft.Exchange.Management.SnapIn.Esm.Servers.UnifiedMessaging.DialPlanGeneralPropertyPage
 title: Manage a UM dial plan in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -21,20 +22,20 @@ manager: serdars
 
 After you create a Unified Messaging (UM) dial plan, you can view and configure a variety of settings. For example, you can configure the level of Voice over IP (VoIP) security, the audio codec, and dialing restrictions. The settings that you configure on the UM dial plan affect all users who are linked with the dial plan through a UM mailbox policy.
 
-For additional management tasks related to UM dial plans, see [UM Dial Plan Procedures](https://technet.microsoft.com/library/1bda77c8-c4e2-4ae0-a001-76ae029bf843.aspx).
+For additional management tasks related to UM dial plans, see [UM dial plan procedures in Exchange Online](um-dial-plan-procedures.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md)) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to view or configure UM dial plan settings
 
@@ -260,7 +261,7 @@ For additional management tasks related to UM dial plans, see [UM Dial Plan Proc
    - **Allow calls to any extension**: When this setting is disabled, users who call in to an Outlook Voice Access number on the dial plan can't place calls to users who aren't UM-enabled or to other extension numbers not associated with a UM-enabled user. However, they can place a call or transfer a call to extension numbers associated with UM-enabled users. This is because the **Calls in the same UM dial plan** setting is enabled by default. The **Allow calls to any extension** setting is disabled by default.
 
      > [!NOTE]
-     > To avoid attempted fraud and other potential threats to your UM environment, follow the guidance in the blog post [Is your Exchange Unified Messaging protected against telecommunication fraud?](https://blogs.msdn.microsoft.com/mahmoud_badran/2017/02/15/is-your-exchange-unified-messaging-protected-against-telecommunication-fraud/)
+     > To avoid attempted fraud and other potential threats to your UM environment, follow the guidance in the blog post [Is your Exchange Unified Messaging protected against telecommunication fraud?](/archive/blogs/mahmoud_badran/is-your-exchange-unified-messaging-protected-against-telecommunication-fraud)
 
      When this setting is enabled, users who call in to an Outlook Voice Access number configured on the dial plan can place calls to users who aren't UM-enabled, to other extension numbers not associated with a UM-enabled user, and to UM-enabled users. This is because the **Calls in the same UM dial plan** setting is enabled by default.
 
@@ -343,19 +344,19 @@ For additional management tasks related to UM dial plans, see [UM Dial Plan Proc
 
 This example configures a UM dial plan named `MyDialPlan` to use 9 for the outside line access code.
 
-```
+```PowerShell
 Set-UMDialplan -Identity MyDialPlan -OutsideLineAccessCode 9
 ```
 
 This example configures a UM dial plan named `MyDialPlan` to use a welcome greeting.
 
-```
+```PowerShell
 Set-UMDialplan -Identity MyDialPlan -WelcomeGreetingEnabled $true -WelcomeGreetingFilename welcome.wav
 ```
 
 This example configures a UM dial plan named `MyDialPlan` with dialing rules.
 
-```
+```PowerShell
 $csv=import-csv "C:\MyInCountryGroups.csv"
 Set-UMDialPlan -Identity MyDialPlan -ConfiguredInCountryGroups $csv
 Set-UMDialPlan -Identity MyDialPlan -AllowedInCountryGroups "local, long distance"
@@ -365,12 +366,12 @@ Set-UMDialPlan -Identity MyDialPlan -AllowedInCountryGroups "local, long distanc
 
 This example displays a list of all the UM dial plans.
 
-```
+```PowerShell
 Get-UMDialplan
 ```
 
 This example displays a formatted list of all of the settings on a UM dial plan named `MyUMDialPlan`.
 
-```
+```PowerShell
 Get-UMDialplan -Identity MyUMDialPlan | Format-List
 ```

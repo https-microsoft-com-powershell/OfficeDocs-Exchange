@@ -2,13 +2,14 @@
 title: 'Journaling: Exchange 2013 Help'
 TOCTitle: Journaling
 ms:assetid: 6a20f207-4485-44ef-b010-ec760eb5165b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998649(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998649(v=EXCHG.150)
 ms:contentKeyID: 49354855
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -63,7 +64,7 @@ Exchange 2013 provides the following journaling options:
 
 - **Premium journaling**: Premium journaling enables the Journaling agent to perform more granular journaling by using journal rules. Instead of journaling all mailboxes residing on a mailbox database, you can configure journal rules to match your organization's needs by journaling individual recipients or members of distribution groups. You must have an Exchange Enterprise client access license (CAL) to use premium journaling.
 
-When you enable standard journaling on a mailbox database, this information is saved in Active Directory and is read by the Journaling agent. Similarly, journal rules configured with premium journaling are also saved in Active Directory and applied by the Journaling agent. For more information about how to configure standard and premium journaling, see [Manage journaling](https://docs.microsoft.com/en-us/exchange/security-and-compliance/journaling/manage-journaling).
+When you enable standard journaling on a mailbox database, this information is saved in Active Directory and is read by the Journaling agent. Similarly, journal rules configured with premium journaling are also saved in Active Directory and applied by the Journaling agent. For more information about how to configure standard and premium journaling, see [Manage journaling](../ExchangeOnline/security-and-compliance/journaling/manage-journaling.md).
 
 ## Journal rules
 
@@ -105,7 +106,7 @@ For more information about how to enable or disable voice mail and missed call n
 The journaling mailbox is used to collect journal reports. How you configure the journaling mailbox depends on your organization's policies, regulatory requirements, and legal requirements. You can specify one journaling mailbox to collect messages for all the journal rules configured in the organization, or you can use different journaling mailboxes for different journal rules or sets of journal rules.
 
 > [!IMPORTANT]
-> You can't designate an Office 365 mailbox as a journaling mailbox. You can deliver journal reports to an on-premises archiving system or a third-party archiving service. If you're running a hybrid deployment with your mailboxes split between on-premises servers and Office 365, you can designate an on-premises mailbox as the journaling mailbox for your Office 365 and on-premises mailboxes.
+> You can't designate a Microsoft 365 or Office 365 mailbox as a journaling mailbox. You can deliver journal reports to an on-premises archiving system or a third-party archiving service. If you're running a hybrid deployment with your mailboxes split between on-premises servers and Microsoft 365 or Office 365, you can designate an on-premises mailbox as the journaling mailbox for your Microsoft 365 or Office 365 and on-premises mailboxes.
 
 > [!IMPORTANT]
 > Journaling mailboxes contain very sensitive information. You must secure journaling mailboxes because they collect messages that are sent to and from recipients in your organization. These messages may be part of legal proceedings or may be subject to regulatory requirements. Various laws require that messages remain tamper-free before they're submitted to an investigatory authority. We recommend that you create policies that govern who can access the journaling mailboxes in your organization, limiting access to only those individuals who have a direct need to access them. Speak with your legal representatives to make sure that your journaling solution complies with all the laws and regulations that apply to your organization.
@@ -138,7 +139,7 @@ Journal rules are stored in Active Directory and applied by all Mailbox servers 
 By replicating all the journal rules across the organization, Exchange 2013 enables you to provide a consistent set of journal rules across the organization. All messages that pass through your Exchange 2013 organization are subject to the same journal rules.
 
 > [!IMPORTANT]
-> Replication of journal rules across an organization is dependant on Active Directory replication. Replication time between Active Directory domain controllers varies depending on the number of sites in the organization and the speed of links and other factors outside the control of Microsoft Exchange. Consider replication delays when you implement journal rules in your organization. For more information about Active Directory replication, see <A href="https://go.microsoft.com/fwlink/?linkid=274904">Introduction to Active Directory Replication and Topology Management Using Windows PowerShell</A>.
+> Replication of journal rules across an organization is dependant on Active Directory replication. Replication time between Active Directory domain controllers varies depending on the number of sites in the organization and the speed of links and other factors outside the control of Microsoft Exchange. Consider replication delays when you implement journal rules in your organization. For more information about Active Directory replication, see <A href="/windows-server/identity/ad-ds/manage/powershell/introduction-to-active-directory-replication-and-topology-management-using-windows-powershell--level-100-">Introduction to Active Directory Replication and Topology Management Using Windows PowerShell</A>.
 
 > [!IMPORTANT]
 > Each Mailbox server caches distribution group membership to avoid repeated round trips to Active Directory. The expanded groups cache reduces the number of requests that each Mailbox server must make to an Active Directory domain controller. By default, entries in the expanded groups cache expire in four hours. Therefore, if you specify a distribution group as the journal recipient, changes to distribution group membership may not be applied to journal rules until the expanded groups cache is updated. To force an immediate update of the recipient cache, you must stop and start the Microsoft Exchange Transport service. You must do this for each Mailbox server where you want to forcibly update the recipient cache.
@@ -159,4 +160,4 @@ After Setup, if you change the journal rule configuration on Exchange 2010 (or l
 
 ## Troubleshooting
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612). If you're having trouble with the **JournalingReportDNRTo** mailbox, see [Transport and Mailbox Rules in Exchange Online don't work as expected](https://go.microsoft.com/fwlink/p/?linkid=331674).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver). If you're having trouble with the **JournalingReportDNRTo** mailbox, see [Transport and Mailbox Rules in Exchange Online don't work as expected](https://support.microsoft.com/help/2829319).

@@ -2,13 +2,14 @@
 title: 'IPv6 support in Exchange 2013: Exchange 2013 Help'
 TOCTitle: IPv6 support in Exchange 2013
 ms:assetid: 33543023-eb9a-4102-b990-84a818a52814
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg144561(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Gg144561(v=EXCHG.150)
 ms:contentKeyID: 48384951
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,7 +21,7 @@ Internet Protocol version 6 (IPv6) is the most recent version of the Internet Pr
 
 In Microsoft Exchange Server 2013, IPv6 is supported only when IPv4 is also installed and enabled. If Exchange 2013 is deployed in this configuration, and the network supports IPv4 and IPv6, all Exchange servers can send data to and receive data from devices, servers, and clients that use IPv6 addresses.
 
-This topic discusses IPv6 addressing in Exchange 2013. For additional background information about IPv6, see [IPv6](https://go.microsoft.com/fwlink/p/?linkid=92582).
+This topic discusses IPv6 addressing in Exchange 2013. For additional background information about IPv6, see [Internet Protocol Version 6 (IPv6) Overview](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379473(v=ws.10)).
 
 ## IPv6 support in Exchange 2013 components
 
@@ -114,7 +115,7 @@ Exchange 2013 servers fully support IPv6 networks. Therefore, even if you aren't
 
 IPv6 support in Exchange 2013 requires IPv4 to be installed and enabled on all Exchange 2013 servers. Uninstalling IPv4 from your Exchange 2013 servers isn't supported.
 
-To learn more about IPv6 support in Microsoft Windows, see [IPv6 for Microsoft Windows: Frequently Asked Questions](https://go.microsoft.com/fwlink/p/?linkid=147465).
+To learn more about IPv6 support in Microsoft Windows, see [Internet Protocol Version 6 (IPv6) Overview](/previous-versions/windows/it-pro/windows-8.1-and-8/hh831730(v=ws.11)).
 
 ## IPv6 address basics
 
@@ -232,7 +233,7 @@ The following table provides a comparison of IPv4 elements and IPv6 elements.
 </tbody>
 </table>
 
-For more information about IPv6 addressing, see [IPv6 Address Types](https://go.microsoft.com/fwlink/p/?linkid=98357).
+For more information about IPv6 addressing, see [IPv6 Address Types](/previous-versions/windows/it-pro/windows-server-2003/cc757359(v=ws.10)).
 
 ## Supported IPv6 Address Input Formats
 

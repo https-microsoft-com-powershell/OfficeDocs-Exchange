@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: ffcefd56-b0a0-4229-9011-fff4197b7c74
-ms.date: 7/9/2018
 ms.reviewer:
 title: Perform a server switchover
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -26,7 +27,7 @@ A server switchover is part of preparing for a scheduled outage for the current 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to perform a server switchover
 
@@ -50,14 +51,14 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 This example performs a server switchover for the server MBX1. The system automatically selects the best Mailbox server for each active database on MBX1.
 
-```
+```powershell
 Move-ActiveMailboxDatabase -Server MBX1
 ```
 
 This example performs a server switchover of the Mailbox server MBX4. When the command completes, MBX5 hosts the active copy of the databases that were previously active on MBX4.
 
-```
+```powershell
 Move-ActiveMailboxDatabase -Server MBX4 -ActivateOnServer MBX5
 ```
 
-For detailed syntax and parameter information, see [Move-ActiveMailboxDatabase](https://technet.microsoft.com/library/755d1ecb-95d1-45e3-9a21-56df9f196f37.aspx).
+For detailed syntax and parameter information, see [Move-ActiveMailboxDatabase](/powershell/module/exchange/move-activemailboxdatabase).

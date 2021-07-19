@@ -2,13 +2,14 @@
 title: 'Update a mailbox database copy: Exchange 2013 Help'
 TOCTitle: Update a mailbox database copy
 ms:assetid: bead3cc5-7d50-446f-95b7-e432bcb7968e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351100(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351100(v=EXCHG.150)
 ms:contentKeyID: 48385503
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -32,7 +33,7 @@ You can perform seeding by using the following methods:
 
 - **Automatic seeding**: An automatic seed produces a passive copy of the active database on the target Mailbox server. Automatic seeding occurs during the creation of a database.
 
-- **Seeding using the Update-MailboxDatabaseCopy cmdlet**: You can use the [Update-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335201\(v=exchg.150\)) cmdlet in the Shell to seed a database copy at any time.
+- **Seeding using the Update-MailboxDatabaseCopy cmdlet**: You can use the [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy) cmdlet in the Shell to seed a database copy at any time.
 
 - **Seeding using the Update Mailbox Database Copy wizard**: You can use the Update Mailbox Database Copy wizard in the EAC to seed a database copy at any time.
 
@@ -46,7 +47,7 @@ A database copy can be seeded using either the active copy or an up-to-date pass
 
 - If the database fails over to another copy.
 
-Multiple database copies can be seeded simultaneously. However, when seeding multiple copies simultaneously, you must seed only the database file, and omit the content index catalog. You can do this by using the *DatabaseOnly* parameter with the [Update-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335201\(v=exchg.150\)) cmdlet.
+Multiple database copies can be seeded simultaneously. However, when seeding multiple copies simultaneously, you must seed only the database file, and omit the content index catalog. You can do this by using the *DatabaseOnly* parameter with the [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy) cmdlet.
 
 > [!NOTE]
 > If you don't use the <EM>DatabaseOnly</EM> parameter when seeding multiple targets from the same source, the task will fail with SeedInProgressException error FE1C6491.
@@ -66,7 +67,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to update a mailbox database copy
 
@@ -110,13 +111,13 @@ Update-MailboxDatabaseCopy -Identity DB1\MBX1 -CatalogOnly
 
 ## Manually copy an offline database
 
-1. If circular logging is enabled for the database, it must be disabled before proceeding. You can disable circular logging for a mailbox database by using the [Set-MailboxDatabase](https://technet.microsoft.com/en-us/library/bb123971\(v=exchg.150\)) cmdlet, as shown in this example.
+1. If circular logging is enabled for the database, it must be disabled before proceeding. You can disable circular logging for a mailbox database by using the [Set-MailboxDatabase](/powershell/module/exchange/Set-MailboxDatabase) cmdlet, as shown in this example.
 
     ```powershell
     Set-MailboxDatabase DB1 -CircularLoggingEnabled $false
     ```
 
-2. Dismount the database. You can use the [Dismount-Database](https://technet.microsoft.com/en-us/library/bb124936\(v=exchg.150\)) cmdlet, as shown in this example.
+2. Dismount the database. You can use the [Dismount-Database](/powershell/module/exchange/Dismount-Database) cmdlet, as shown in this example.
 
     ```powershell
     Dismount-Database DB1 -Confirm $false
@@ -124,7 +125,7 @@ Update-MailboxDatabaseCopy -Identity DB1\MBX1 -CatalogOnly
 
 3. Manually copy the database files (the database file and all log files) to a second location, such as an external disk drive or a network share.
 
-4. Mount the database. You can use the [Mount-Database](https://technet.microsoft.com/en-us/library/aa998871\(v=exchg.150\)) cmdlet, as shown in this example.
+4. Mount the database. You can use the [Mount-Database](/powershell/module/exchange/Mount-Database) cmdlet, as shown in this example.
 
     ```powershell
     Mount-Database DB1
@@ -132,13 +133,13 @@ Update-MailboxDatabaseCopy -Identity DB1\MBX1 -CatalogOnly
 
 5. On the server that will host the copy, copy the database files from the external drive or network share to the same path as the active database copy. For example, if the active copy database path is D:\\DB1\\DB1.edb and log file path is D:\\DB1, you would copy the database files to D:\\DB1 on the server that will host the copy.
 
-6. Add the mailbox database copy by using the [Add-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd298105\(v=exchg.150\)) cmdlet with the *SeedingPostponed* parameter, as shown in this example.
+6. Add the mailbox database copy by using the [Add-MailboxDatabaseCopy](/powershell/module/exchange/Add-MailboxDatabaseCopy) cmdlet with the *SeedingPostponed* parameter, as shown in this example.
 
     ```powershell
     Add-MailboxDatabaseCopy -Identity DB1 -MailboxServer MBX3 -SeedingPostponed
     ```
 
-7. If circular logging is enabled for the database, enable it again by using the [Set-MailboxDatabase](https://technet.microsoft.com/en-us/library/bb123971\(v=exchg.150\)) cmdlet, as shown in this example.
+7. If circular logging is enabled for the database, enable it again by using the [Set-MailboxDatabase](/powershell/module/exchange/Set-MailboxDatabase) cmdlet, as shown in this example.
 
     ```powershell
     Set-MailboxDatabase DB1 -CircularLoggingEnabled $true

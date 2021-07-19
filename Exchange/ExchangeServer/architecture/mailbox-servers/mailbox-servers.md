@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: b6403e43-d263-46b6-bfeb-f70f13c32ff1
-ms.date: 7/3/2018
 ms.reviewer: 
 title: Mailbox servers
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

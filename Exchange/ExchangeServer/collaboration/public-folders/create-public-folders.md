@@ -3,14 +3,15 @@ localization_priority: Normal
 description: 'Summary: Learn how to create a public folder with the Exchange admin center (EAC) or with the Exchange Management Shell.'
 ms.topic: article
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - Microsoft.Exchange.Management.PublicFolders.NewPublicFolderWizardForm.NewPublicFolderWizardPage
 ms.author: dmaguire
 ms.assetid: 6d252e60-c8d0-4efd-b9d7-ba5284a6f8ab
-ms.date: 4/19/2018
 ms.reviewer:
 title: Create a public folder
 ms.collection: exchange-server
+f1.keywords:
+- CSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -60,14 +61,14 @@ When using the EAC to create a public folder, you'll only be able to set the nam
 
 This example creates a public folder named Reports in the path Marketing\2016.
 
-```
+```PowerShell
 New-PublicFolder -Name Reports -Path \Marketing\2016
 ```
 
 > [!IMPORTANT]
 > Don't use a backslash (\) in the name when creating a public folder.
 
-For detailed syntax and parameter information, see [New-PublicFolder](https://technet.microsoft.com/library/18b837bf-9ef7-4edf-8728-7f6bd346e75d.aspx).
+For detailed syntax and parameter information, see [New-PublicFolder](/powershell/module/exchange/new-publicfolder).
 
 ## How do you know this worked?
 <a name="BKMK_Shell"> </a>
@@ -78,17 +79,17 @@ To verify that you've successfully created a public folder, do the following:
 
 - In the Exchange Management Shell, run any of the following commands:
 
-  ```
+  ```PowerShell
   Get-PublicFolder -Identity \Marketing\2016\Reports | Format-List
   ```
 
-  ```
+  ```PowerShell
   Get-PublicFolder -Identity \Marketing\2016 -GetChildren
   ```
 
-  ```
+  ```PowerShell
   Get-PublicFolder -Recurse
   ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).

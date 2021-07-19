@@ -3,8 +3,9 @@ title: "Organization Configuration Transfer Attributes"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/25/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-it-pro

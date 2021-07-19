@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: b03c0f21-cbc2-4be8-ad03-73a7dac16ffc
-ms.date: 7/3/2018
 ms.reviewer:
 title: Autodiscover service in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,10 +28,10 @@ Exchange 2016 introduced changes to services that were previously handled by the
 
 - Client Access services on Mailbox servers provide authentication and proxy services for internal and external client connections.
 
-- Outlook configures services with only the user name and password.
+- Outlook configures services with only the username and password.
 
 > [!NOTE]
-> If you are a user looking for help with connecting your Outlook client to your Exchange server, see [Outlook email setup](https://go.microsoft.com/fwlink/p/?linkId=843935).
+> If you are a user looking for help with connecting your Outlook client to your Exchange server, see [Outlook email setup](https://support.microsoft.com/office/6e27792a-9267-4aa4-8bb6-c84ef146101b).
 
 ## Autodiscover services and Active Directory
 
@@ -42,10 +43,10 @@ Exchange automatically creates at installation the virtual directory `autodiscov
 
 The SCP object is also created in Active Directory at the same time as the Autodiscover service virtual directory. The SCP stores and provides authoritative URLs of the Autodiscover service for domain-joined computers.
 
- You need to update the SCP object to point to the Exchange server. This is necessary because Exchange servers provide additional Autodiscover information to clients to improve the discovery process. You can use the **Set-ClientAccessService** cmdlet to update the SCP object. For more information, see [Set-ClientAccessService](https://technet.microsoft.com/library/59440ef8-8ea4-4168-9b75-8f4d7aa6652d.aspx).
+ You need to update the SCP object to point to the Exchange server. This is necessary because Exchange servers provide additional Autodiscover information to clients to improve the discovery process. You can use the **Set-ClientAccessService** cmdlet to update the SCP object. For more information, see [Set-ClientAccessService](/powershell/module/exchange/set-clientaccessservice).
 
 > [!IMPORTANT]
-> You need to be assigned permissions before you can run the **Set-ClientAccessService** cmdlet. To find the permissions required to run any cmdlet or parameter in your organization, see [Find the permissions required to run any Exchange cmdlet](https://technet.microsoft.com/library/5bcc46d3-8a07-4e9f-b1b0-e4cb0b0afc12.aspx).
+> You need to be assigned permissions before you can run the **Set-ClientAccessService** cmdlet. To find the permissions required to run any cmdlet or parameter in your organization, see [Find the permissions required to run any Exchange cmdlet](/powershell/exchange/find-exchange-cmdlet-permissions).
 
 Autodiscover makes it easy to retrieve the information that you need to connect to mailboxes on Exchange servers. SCP objects locate those Autodiscover servers or endpoints appropriate for the user you're retrieving settings for. And SCP objects in AD DS provide an easy way for domain-joined clients to look up Autodiscover servers.
 
@@ -55,9 +56,9 @@ Exchange publishes two types of SCP objects for the Autodiscover service:
 
 - **SCP URLs**: Contains URLs for Autodiscover endpoints. SCP URLs are stamped with the following GUID: 77378F46-2C66-4aa9-A6A6-3E7A48B19596
 
-The SCP object contains the authoritative list of Autodiscover service URLs for the forest. To learn more about locating Autodiscover service endpoints, see [Generate a list of Autodiscover endpoints](https://go.microsoft.com/fwlink/p/?linkId=843957).
+The SCP object contains the authoritative list of Autodiscover service URLs for the forest. To learn more about locating Autodiscover service endpoints, see [Generate a list of Autodiscover endpoints](/exchange/client-developer/exchange-web-services/how-to-generate-a-list-of-autodiscover-endpoints).
 
-Client connectivity in Exchange 2016 and Exchange 2019 is like Exchange 2013 and differs from Exchange 2010. In Exchange 2016 and 2019, MAPI over HTTP is enabled by default, when previously Outlook clients used Outlook Anywhere (RPC over HTTP). Exchange 2016 and 2019 require fewer name spaces for site-resilient solutions than Exchange 2010, reducing to two from the previously required seven namespaces. To read more about namespace and Exchange Server, see the blog [Namespace Planning in Exchange 2016](https://go.microsoft.com/fwlink/p/?linkId=843937).
+Client connectivity in Exchange 2016 and Exchange 2019 is like Exchange 2013 and differs from Exchange 2010. In Exchange 2016 and 2019, MAPI over HTTP is enabled by default, when previously Outlook clients used Outlook Anywhere (RPC over HTTP). Exchange 2016 and 2019 require fewer name spaces for site-resilient solutions than Exchange 2010, reducing to two from the previously required seven namespaces. To read more about namespace and Exchange Server, see the blog [Namespace Planning in Exchange 2016](https://techcommunity.microsoft.com/t5/exchange-team-blog/namespace-planning-in-exchange-2016/ba-p/604072).
 
 Depending on whether you configured the Autodiscover service on a separate site, the Autodiscover service URL will be either of the following values, where `//<SMTP-address-domain>` is the primary SMTP domain address:
 
@@ -73,13 +74,13 @@ Client applications use the Autodiscover service when the application starts for
 
 |**Endpoint**|**Generated by**|
 |:-----|:-----|
-|https://longview.econtoso.com/autodiscover/autodiscover.xml|SCP results|
+|https://longview.contoso.com/autodiscover/autodiscover.xml|SCP results|
 |https://email.contoso.com/autodiscover/autodiscover.xml|SCP results|
-|https://newark.contoso.com/autodiscover/autodiscovfer.xml|SCP results|
+|https://newark.contoso.com/autodiscover/autodiscover.xml|SCP results|
 |https://contoso.com/autodiscover/autodiscover.exc|Derived from email address|
 |https://autodiscover.contoso.com/autodiscover/autodiscover|Derived from email address|
 
-For more information about SCP objects, see [Publishing Services in Active Directory](https://go.microsoft.com/fwlink/p/?linkId=845325)
+For more information about SCP objects, see [Publishing with Service Connection Points](/windows/win32/ad/publishing-with-service-connection-points).
 
 ## Autodiscover in DNS
 
@@ -139,7 +140,7 @@ A typical SRV record looks like this:
 
 In this example, the Outlook server namespace is mail.contoso.com.
 
-Read more about CNAME and SRV records in the Outlook team blog, [Namespace planning in Exchange 2016](https://go.microsoft.com/fwlink/p/?linkId=843937).
+Read more about CNAME and SRV records in the Exchange team blog, [Namespace planning in Exchange 2016](https://techcommunity.microsoft.com/t5/exchange-team-blog/namespace-planning-in-exchange-2016/ba-p/604072).
 
 ## Autodiscover services in Outlook
 
@@ -152,11 +153,11 @@ You need to set up a special DNS record for your domain name that points to the 
 
 The Autodiscover service uses one of these four methods to configure the email client. The first two work for small, single SMTP namespace organizations. The last two serve multiple-SMTP namespaces.
 
-- Connect to: https://contoso.com/AutoDiscover/AutoDiscover.xml
+- Connect to: <https://contoso.com/AutoDiscover/AutoDiscover.xml>
 
-- Connect to: https://autodiscover.contoso.com/AutoDiscover/AutoDiscover.xml
+- Connect to: <https://autodiscover.contoso.com/AutoDiscover/AutoDiscover.xml>
 
-- Autodiscover redirect URL for redirection: http://autodiscover.contoso.com/autodiscover/autodiscover.xml
+- Autodiscover redirect URL for redirection: <http://autodiscover.contoso.com/autodiscover/autodiscover.xml>
 
 - Search for DNS SRV record
 
@@ -174,14 +175,14 @@ Through the Autodiscover service, Outlook finds a new connection point made up o
 
 - Outlook Anywhere server settings
 
-You'll need to make sure that you have configured the correct external URLs for the virtual directories of the following services. The examples in the table that follows show values required for the contoso.com email domain. In addition, you may need to set IIS Authentication Methods. You can learn more about that in [Setting Up Standard Authentication Methods for Outlook Web App](https://technet.microsoft.com/library/f4ae771b-de25-47e4-963f-4b1e43f8b3d4.aspx).
+You'll need to make sure that you have configured the correct external URLs for the virtual directories of the following services. The examples in the table that follows show values required for the contoso.com email domain.
 
 |**Service**|**Exchange Management Shell**|**Modifies**|
 |:-----|:-----|:-----|
-|[Offline Address Book](https://docs.microsoft.com/powershell/module/exchange/email-addresses-and-address-books/Set-OabVirtualDirectory)|`Get-OabVirtualDirectory | Set-OabVirtualDirectory -ExternalURL https://mail.companycontoso.com/oab`|OAB virtual directories used in IIS|
-|[Exchange Web Sevices](https://docs.microsoft.com/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory)|`Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalURL https://mail.companycontoso.com/ews/exchange.asmx`|Exchange Web Services virtual directories in IIS|
-|[Outlook Anywhere (RPC over HTTP)](https://docs.microsoft.com/powershell/module/exchange/client-access-servers/Set-OutlookAnywhere)|`Get-OutlookAnywhere | Set-OutlookAnywhere -ExternalHostname mail.contoso.com -ExternalClientsRequireSsl $true`|Outlook Anywhere virtual directories in IIS|
-|[Messaging Application Programming Interface (MAPI) over HTTP](https://docs.microsoft.com/powershell/module/exchange/client-access-servers/Set-MapiVirtualDirectory) (Exchange 2013 SP1 or later)|`Get-MapiVirtualDirectory | Set-MapiVirtualDirectory -ExternalURL https://mail.companycontoso.com/mapi` <br/><br/> `Set-OrganizationConfig -MapiHttpEnabled $true`|MAPI virtual directories in IIS|
+|[Offline Address Book](/powershell/module/exchange/Set-OabVirtualDirectory)|`Get-OabVirtualDirectory | Set-OabVirtualDirectory -ExternalURL https://mail.companycontoso.com/oab`|OAB virtual directories used in IIS|
+|[Exchange Web Sevices](/powershell/module/exchange/Set-WebServicesVirtualDirectory)|`Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -ExternalURL https://mail.companycontoso.com/ews/exchange.asmx`|Exchange Web Services virtual directories in IIS|
+|[Outlook Anywhere (RPC over HTTP)](/powershell/module/exchange/Set-OutlookAnywhere)|`Get-OutlookAnywhere | Set-OutlookAnywhere -ExternalHostname mail.contoso.com -ExternalClientsRequireSsl $true`|Outlook Anywhere virtual directories in IIS|
+|[Messaging Application Programming Interface (MAPI) over HTTP](/powershell/module/exchange/Set-MapiVirtualDirectory) (Exchange 2013 SP1 or later)|`Get-MapiVirtualDirectory | Set-MapiVirtualDirectory -ExternalURL https://mail.companycontoso.com/mapi` <p> `Set-OrganizationConfig -MapiHttpEnabled $true`|MAPI virtual directories in IIS|
 
 
 Click the Service name in the preceding table for more information about how to obtain or reconfigure these URLs.

@@ -2,13 +2,14 @@
 title: 'Reseed the search catalog: Exchange 2013 Help'
 TOCTitle: Reseed the search catalog
 ms:assetid: 9d873bd4-0422-4975-b5e2-82a347479115
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee633475(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee633475(v=EXCHG.150)
 ms:contentKeyID: 51407270
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -57,7 +58,7 @@ For other management tasks related to Exchange Search, see [Exchange Search proc
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Reseed the content index catalog if the mailbox database is part of a DAG
 
@@ -71,7 +72,7 @@ This example reseeds the content index catalog for the database copy DB1 on Mail
 Update-MailboxDatabaseCopy -Identity DB1\MBX1 -CatalogOnly
 ```
 
-For detailed syntax and parameter information, see [Update-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335201\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy).
 
 ## Reseed the content index catalog from a specific source
 
@@ -81,7 +82,7 @@ This example reseeds the content index catalog for the database copy DB1 on Mail
 Update-MailboxDatabaseCopy -Identity DB1\MBX1 -SourceServer MBX2 -CatalogOnly
 ```
 
-For detailed syntax and parameter information, see [Update-MailboxDatabaseCopy](https://technet.microsoft.com/en-us/library/dd335201\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy).
 
 ## Reseed the content index catalog if there is only one copy of the mailbox database
 

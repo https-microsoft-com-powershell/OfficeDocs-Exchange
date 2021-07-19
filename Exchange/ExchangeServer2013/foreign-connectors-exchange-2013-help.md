@@ -2,13 +2,14 @@
 title: 'Foreign connectors: Exchange 2013 Help'
 TOCTitle: Foreign connectors
 ms:assetid: 21c6a7a9-f4d2-4359-9ac9-930701b63a4e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996779(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996779(v=EXCHG.150)
 ms:contentKeyID: 49300447
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,6 +30,6 @@ Foreign gateway servers can send messages into the Exchange 2013 organization by
 
 [Delivery agents and Delivery Agent connectors](delivery-agents-and-delivery-agent-connectors-exchange-2013-help.md)
 
-[New-ForeignConnector](https://technet.microsoft.com/en-us/library/aa996310\(v=exchg.150\))
+[New-ForeignConnector](/powershell/module/exchange/New-ForeignConnector)
 
-[Set-ForeignConnector](https://technet.microsoft.com/en-us/library/bb123789\(v=exchg.150\))
+[Set-ForeignConnector](/powershell/module/exchange/Set-ForeignConnector)

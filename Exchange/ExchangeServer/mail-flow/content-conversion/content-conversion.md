@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: bc367eb3-0306-4da9-9a84-4341caef77af
-ms.date: 7/6/2018
 ms.reviewer:
 title: Content conversion
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -21,7 +22,7 @@ manager: serdars
 
 - **Message conversion for external recipients**: This type of content conversion includes the Transport Neutral Encapsulation Format (TNEF) conversion options and message encoding options for external recipients. Messages sent to recipients inside the Exchange organization don't require this type of content conversion. This type of content conversion is handled by the categorizer in the Transport service on a Mailbox server. Categorization on each message happens after a newly arrived message is put in the Submission queue. In addition to recipient resolution and routing resolution, content conversion is performed on the message before the message is put in a delivery queue. If a single message contains multiple recipients, the categorizer determines the appropriate encoding for each message recipient. Content conversion tracing doesn't capture any content conversion failures that the categorizer encounters as it converts messages sent to external recipients.
 
-- **MAPI conversion for internal recipients**: his type of content conversion is handled by the Mailbox Transport service. The Mailbox Transport service exists on Mailbox servers to transmit messages between mailbox databases on the local server, and the Transport service on Mailbox servers. Specifically, the Mailbox Transport Submission service transmits messages from the sender's Outbox to the Transport service on a Mailbox server. The Mailbox Transport Delivery service transmits messages from the Transport service on a Mailbox server to the recipient's Inbox. The Mailbox Transport Submission service converts all outgoing messages from MAPI and the Mailbox Transport Delivery service converts all incoming messages to MAPI. Content conversion tracing captures these MAPI conversion failures. For more information, see [Managing Content Conversion Tracing](https://technet.microsoft.com/library/eb9c7df2-9093-49f9-aa4f-044909bd2225.aspx).
+- **MAPI conversion for internal recipients**: This type of content conversion is handled by the Mailbox Transport service. The Mailbox Transport service exists on Mailbox servers to transmit messages between mailbox databases on the local server, and the Transport service on Mailbox servers. Specifically, the Mailbox Transport Submission service transmits messages from the sender's Outbox to the Transport service on a Mailbox server. The Mailbox Transport Delivery service transmits messages from the Transport service on a Mailbox server to the recipient's Inbox. The Mailbox Transport Submission service converts all outgoing messages from MAPI and the Mailbox Transport Delivery service converts all incoming messages to MAPI. Content conversion tracing captures these MAPI conversion failures. For more information, see [Managing Content Conversion Tracing](../../../ExchangeServer2013/content-conversion-tracing-exchange-2013-help.md).
 
 ## Exchange and Outlook message formats
 <a name="Exchange"> </a>
@@ -39,32 +40,25 @@ The following list describes the basic message formats available in Exchange and
 - **Rich text format (RTF)**: RTF supports text formatting and other graphical elements. RTF is synonymous with TNEF (TNEF and RTF can be used interchangeably). The rich text message format is completely different from the rich text document format that's available in Word.
 
 - **TNEF**: The Transport Neutral Encapsulation Format is a Microsoft-specific format for encapsulating MAPI message properties. A TNEF message contains a plain text version of the message and an attachment that packages the original formatted version of the message. Typically, this attachment is named Winmail.dat. The Winmail.dat attachment includes the following information:
-
   - Original formatted version of the message (for example, fonts, text sizes, and text colors)
-
   - OLE objects (for example, embedded pictures or embedded Office documents)
-
   - Special Outlook features (for example, custom forms, voting buttons, or meeting requests)
-
   - Regular message attachments that were in the original message
 
-    The resulting plain text message can be represented in the following formats:
+  The resulting plain text message can be represented in the following formats:
 
   - RFC 5322-compliant message composed of only US-ASCII text with a Winmail.dat attachment encoded in Uuencode
-
   - Multipart MIME-encoded message that has a Winmail.dat attachment
 
-    Outlook and other email clients that fully understand TNEF process the Winmail.dat attachment and display the original message content without ever displaying the Winmail.dat attachment. Email clients that don't understand TNEF may present TNEF messages in any of the following ways:
+  Outlook and other email clients that fully understand TNEF process the Winmail.dat attachment and display the original message content without ever displaying the Winmail.dat attachment. Email clients that don't understand TNEF may present TNEF messages in any of the following ways:
 
   - The plain text version of the message is displayed, and the message contains an attachment named Winmail.dat, Win.dat, or some other generic name such as Att _nnnnn_.dat or Att _nnnnn_.eml where the _nnnnn_ placeholder represents a random number.
-
   - The plain text version of the message is displayed. The TNEF attachment is ignored or removed. The result is a plain text message.
-
   - Messaging servers that understand TNEF can be configured to remove TNEF attachments from incoming messages. The result is a plain text message. Moreover, some email clients may not understand TNEF, but recognize and ignore TNEF attachments. The result is a plain text message.
 
-    There are third-party utilities that can help convert Winmail.dat attachments.
+  There are third-party utilities that can help convert Winmail.dat attachments.
 
-    TNEF is understood by all versions of Exchange since Exchange Server version 5.5.
+  TNEF is understood by all versions of Exchange since Exchange Server version 5.5.
 
 - **Summary Transport Neutral Encapsulation Format (STNEF)**: STNEF is equivalent to TNEF. However, STNEF messages are encoded differently than TNEF messages. Specifically, STNEF messages are always MIME-encoded, and always have the **Content-Transfer-Encoding** value `Binary`. Therefore, there's no plain text representation of the message, and there's no distinct Winmail.dat attachment contained in the body of the message. The whole message is represented by using only binary data. Messages that have a **Content-Transfer-Encoding** value of **Binary** can only be transferred between messaging servers that support and advertise the **BINARYMIME** and **CHUNKING** SMTP extensions as defined in RFC 3030. The messages are always transferred between messaging servers by using the **BDAT** command, instead of the standard **DATA** command.
 
@@ -78,30 +72,24 @@ The following list describes the basic message formats available in Exchange and
 The content conversion options that you can set in an Exchange organization for external recipients can be described in the following categories:
 
 - **TNEF conversion options**: These conversion options specify whether TNEF should be preserved or removed from messages that leave the Exchange organization.
-
 - **Message encoding options**: These options specify message encoding options, such as MIME and non-MIME character sets, message encoding, and attachment formats.
 
 These conversion and encoding options are independent of one another. For example, whether TNEF messages can leave the Exchange organization isn't related to the MIME encoding settings or plain text encoding settings of those messages.
 
 You can specify the content conversion at various levels of the Exchange organization as described in the following list:
 
-- **Remote domain settings**: Remote domains define the settings for outgoing message transfers between the Exchange organization and external domains.. Even if you don't create remote domain entries for specific domains, there's a predefined remote domain named Default that applies to all remote address spaces (\*). For more information about remote domains, see [Remote Domains](https://technet.microsoft.com/library/10fb7d62-4d78-40a3-82db-d62bcd27ba42.aspx).
+- **Remote domain settings**: Remote domains define the settings for outgoing message transfers between the Exchange organization and external domains.. Even if you don't create remote domain entries for specific domains, there's a predefined remote domain named Default that applies to all remote address spaces (\*). For more information about remote domains, see [Remote Domains](../../../ExchangeServer2013/remote-domains-exchange-2013-help.md).
 
 - **Mail user and mail contact settings**: Mail users and mail contacts are similar because both have external email addresses and contain information about people outside the Exchange organization. The main difference is mail users have accounts that they can use to log on to Active Directory and access resources in the organization. For more information, see [Recipients](../../recipients/recipients.md).
 
 - **Outlook settings**: You can set these message formatting and encoding options in Outlook:
-
   - **Message format**: You can set the default message format for all messages. You can override the default message format as you compose a specific message.
-
   - **Internet message format**: You can control whether TNEF messages are sent to remote recipients or whether they are first converted to a more compatible format. You can also specify various message encoding options for messages sent to remote recipients. These settings don't apply to messages sent to recipients in the Exchange organization.
-
   - **Internet recipient message format (Outlook 2010 or earlier)**: You can control whether TNEF messages are sent to specific contacts in your Contacts folder. These conversion options aren't available for recipients in the Exchange organization.
-
   - **Internet recipient message encoding options (Outlook 2010 or earlier)**: You can control the MIME or plain text encoding options for specific contacts in your Contacts folder. These conversion options aren't available for recipients in the Exchange organization.
-
   - **International options**: You can control the character sets used in messages.
 
-    For more information about these settings, see [TNEF conversion options](tnef-conversion.md) and [Message encoding options in Exchange Server](message-encoding.md).
+  For more information about these settings, see [TNEF conversion options](tnef-conversion.md) and [Message encoding options in Exchange Server](message-encoding.md).
 
 ## Understanding the structure of email messages
 <a name="Understanding"> </a>
@@ -151,7 +139,6 @@ This header field identifies the media type of the message content as described 
 This header field can describe the following information about a message:
 
 - The encoding algorithm used to transform any non-US-ASCII text or binary data that exists in the message body.
-
 - An indicator that describes the current condition of the message body.
 
 There can be multiple values of the **Content-Transfer-Encoding** header field in a MIME message. When the **Content-Transfer-Encoding** header field appears in the message header, it applies to the whole body of the message. When the **Content-Transfer-Encoding** header field appears in one of the parts of a multipart message, it applies only to that part of the message.
@@ -167,11 +154,8 @@ Typically, you won't see multiple encoding algorithms used in the same message.
 When no encoding algorithm has been used on the message body, the **Content-Transfer-Encoding** header field merely identifies the current condition of the message body data. The **Content-Transfer-Encoding** header field values that indicate that no encoding algorithms were used on the message body are:
 
 - `7bit`: Indicates that the message body data is already in the RFC 5322 format. Specifically, this means that the following conditions must be true:
-
   - All lines of text must be less than 998 characters long.
-
   - All characters must be US-ASCII text that have character values from 1 through 127.
-
   - The CR and LF characters can only be used together to indicate the end of a line of text.
 
     The whole message body may be 7-bit, or part of the message body in a multipart message may be 7-bit. If the multipart message contains other parts that have any binary data or non-US-ASCII text, that part of the message must be encoded using the Quoted-printable or Base64 encoding algorithms.
@@ -179,11 +163,8 @@ When no encoding algorithm has been used on the message body, the **Content-Tran
     Messages that have 7-bit bodies can travel between messaging servers by using the standard DATA command.
 
 - `8bit`: Indicates that the message body data contains non-US-ASCII characters. Specifically, this means that the following conditions must be true:
-
   - All lines of text must be less than 998 characters long.
-
   - One or more characters in the message body have values larger than 127.
-
   - The CR and LF characters can only be used together to indicate the end of a line of text.
 
     The whole message body may be 8-bit, or part of the message body in a multipart message may be 8-bit. If the multipart message contains other parts that have binary data, that part of the message must be encoded using the Quoted-printable or Base64 encoding algorithms.
@@ -191,25 +172,18 @@ When no encoding algorithm has been used on the message body, the **Content-Tran
     Messages that have 8-bit bodies can only travel between messaging servers that support the **8BITMIME** SMTP extension as defined in RFC 6152, such as Exchange 2000 Server or later. Specifically, this means that the following conditions must be true:
 
   - The **8BITMIME** keyword must be advertised in the server's EHLO response.
-
   - Messages are still transferred by using the SMTP standard **DATA** command. However, the `BODY=8BITMIME` parameter must be added to the end of the **MAIL FROM** command.
 
 - `Binary`: Indicates that the message body contains non-US-ASCII text or binary data. Specifically, this means that the following conditions are true:
-
   - Any sequence of characters is allowed.
-
   - There is no line length limitation.
-
   - Binary message elements don't require encoding.
 
     Messages that have binary bodies can only travel between messaging servers that support the **BINARYMIME** SMTP extension as defined in RFC 3030, such as Exchange 2000 Server or later. Specifically, this means that the following conditions must be true:
 
   - The **BINARYMIME** keyword must be advertised in the server's EHLO response.
-
   - The **BINARYMIME** SMTP extension can only be used with the **CHUNKING** SMTP extension. *Chunking* enables large message bodies to be sent in multiple, smaller chunks. Chunking is also defined in RFC 3030. The **CHUNKING** keyword must also be advertised in the server's EHLO response.
-
   - Messages are transferred using the **BDAT** command instead of the standard **DATA** command.
-
   - The `BODY=BINARYMIME` parameter must be added to the end of the **MAIL FROM** command when the message has a message body.
 
 The values `7bit`, `8bit`, and `Binary` never exist together in the same multipart message (the values are mutually exclusive). The `Quoted-printable` or `Base64` values may appear in a 7-bit or 8-bit multipart message body, but never in a binary message body. If a multipart message body contains different parts composed of 7-bit and 8-bit content, the whole message is classified as 8-bit. If a multipart message body contains different parts composed of 7-bit, 8-bit, and binary content, the whole message is classified as binary.

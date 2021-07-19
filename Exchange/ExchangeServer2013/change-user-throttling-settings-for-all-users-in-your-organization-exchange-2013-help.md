@@ -2,13 +2,14 @@
 title: 'Change user throttling settings for all users in your organization'
 TOCTitle: Change user throttling settings for all users in your organization
 ms:assetid: c45cacfc-768d-4605-9bb0-53e30273fe4d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ863578(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ863578(v=EXCHG.150)
 ms:contentKeyID: 50395406
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ To customize throttling settings that apply to all users in your organization, c
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to change the way resources can be used by all users in your entire organization
 
@@ -43,7 +44,7 @@ This example creates a throttling policy that applies to all users in your organ
 New-ThrottlingPolicy -Name AllUsersEWSPolicy EwsMaxConcurrency 4 -ThrottlingPolicyScope Organization
 ```
 
-For more information about syntax and parameters, see [New-ThrottlingPolicy](https://technet.microsoft.com/en-us/library/dd351045\(v=exchg.150\)).
+For more information about syntax and parameters, see [New-ThrottlingPolicy](/powershell/module/exchange/New-ThrottlingPolicy).
 
 ## How do you know this worked?
 

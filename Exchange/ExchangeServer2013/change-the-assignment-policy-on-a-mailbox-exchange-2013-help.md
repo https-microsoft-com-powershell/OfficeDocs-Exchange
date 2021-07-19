@@ -2,13 +2,14 @@
 title: 'Change the assignment policy on a mailbox: Exchange 2013 Help'
 TOCTitle: Change the assignment policy on a mailbox
 ms:assetid: 011690a5-233a-4c03-8842-92276f899a89
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638076(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638076(v=EXCHG.150)
 ms:contentKeyID: 49289145
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ Looking for other management tasks related to permissions? Check out [Permission
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to change the assignment policy on a mailbox
 
@@ -62,7 +63,7 @@ Set-Mailbox Brian -RoleAssignmentPolicy "Unified Messaging Users"
 
 This procedure makes use of pipelining, the **Where** cmdlet, and the *WhatIf* parameter. For more information about these concepts, see the following topics:
 
-- [Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\))
+- [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines)
 
 - [Working with command output](working-with-command-output-exchange-2013-help.md)
 
@@ -86,4 +87,4 @@ This example includes the *WhatIf* parameter so that you can see all the mailbox
 Get-Mailbox | Where {$_.RoleAssignmentPolicy -Eq "Redmond Users - No Voicemail"} | Set-Mailbox -RoleAssignmentPolicy "Redmond Users - Voicemail Enabled" -WhatIf
 ```
 
-For detailed syntax and parameter information, see [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\)) or [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-Mailbox](/powershell/module/exchange/Get-Mailbox) or [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).

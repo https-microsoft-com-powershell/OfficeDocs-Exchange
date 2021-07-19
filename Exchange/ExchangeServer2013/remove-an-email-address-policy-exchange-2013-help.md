@@ -2,13 +2,14 @@
 title: 'Remove an email address policy: Exchange 2013 Help'
 TOCTitle: Remove an email address policy
 ms:assetid: f1d05223-7d41-406d-8fae-f4227be1c1c2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125181(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125181(v=EXCHG.150)
 ms:contentKeyID: 49289454
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ For additional management tasks related to e-mail address policies, see [Email a
   - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!WARNING]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to remove an email address policy
 
@@ -55,4 +56,4 @@ Remove-EmailAddressPolicy -Identity "South East Offices"
 
 Type **Y** to confirm that you want to remove the policy, and then press ENTER.
 
-For detailed syntax and parameter information, see [Remove-EmailAddressPolicy](https://technet.microsoft.com/en-us/library/bb124504\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-EmailAddressPolicy](/powershell/module/exchange/Remove-EmailAddressPolicy).

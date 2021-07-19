@@ -2,13 +2,14 @@
 title: 'Computer needs to be restarted before Setup can continue'
 TOCTitle: The computer needs to be restarted before Setup can continue
 ms:assetid: f2d8e504-18c1-4b86-9b97-7654d0391b19
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.pendingrebootwindowscomponents(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.pendingrebootwindowscomponents(v=EXCHG.150)
 ms:contentKeyID: 47560133
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,7 +31,7 @@ In most cases, you just need to restart the computer to get past this error. The
 
 If you've restarted the computer more than two or three times, and you're still seeing this error, try and reinstall any programs or Windows updates you've installed recently. This might allow a failed installation to complete successfully.
 
-If, after restarting your computer and reinstalling any recent programs or Windows updates, you *still* receive this error, we recommend that you contact Microsoft support. They'll help you find the reason why Windows and other programs think your computer needs to be restarted. To contact Microsoft support, go to [Support for Microsoft Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=525940).
+If you *still* receive this error after multiple restarts and reinstalling recent programs or Windows updates, we recommend that you contact Microsoft Customer Service and Support. They'll help you find the reason why Windows and other programs think your computer needs to be restarted. To contact Microsoft support, go to [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and select **Servers** \> **Exchange Server**.
 
 > [!WARNING]
 > Even though it can be tempting to do so, we strongly recommend that you don't attempt to work around this issue by manually deleting or changing keys or values in the Windows Registry. While doing so might fix this issue now, it might cause issues later on. This is especially important if the failed installation was a Windows update.

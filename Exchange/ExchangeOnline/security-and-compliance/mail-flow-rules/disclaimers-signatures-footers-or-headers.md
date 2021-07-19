@@ -3,10 +3,11 @@ localization_priority: Normal
 description: 'Summary: Admins can learn how to apply text to the top or bottom of outbound messages in Exchange Online'
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 29ac61c2-77f1-4071-b14e-8cc64e3e76ba
-ms.date: 
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Organization-wide message disclaimers, signatures, footers, or headers in Exchange Online
 ms.collection: 
 - exchange-online
@@ -19,32 +20,30 @@ manager: serdars
 
 # Organization-wide message disclaimers, signatures, footers, or headers in Exchange Online
 
-You can add an HTML or plain text legal disclaimer, disclosure statement, signature, or other information to the top or bottom of email messages that enter or leave your organization. To do this, you create a mail flow rule (also known as a transport rule) that adds the required information to messages.
+In Exchange Online organizations or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, you can add an HTML or plain text legal disclaimer, disclosure statement, signature, or other information to the top or bottom of email messages that enter or leave your organization. To do this, you create a mail flow rule (also known as a transport rule) that adds the required information to messages.
 
 **Notes**:
 
-- Users can apply signatures to their own outgoing messages in Outlook or Outlook on the web (formerly known as Outlook Web App). For more information, see [Create and add an email signature in Outlook on the web](https://support.office.com/article/0F230564-11B9-4239-83DE-F10CBE4DFDFC).
+- Users can apply signatures to their own outgoing messages in Outlook or Outlook on the web (formerly known as Outlook Web App). For more information, see [Create and add an email signature in Outlook on the web](https://support.microsoft.com/office/0F230564-11B9-4239-83DE-F10CBE4DFDFC).
 
 - If you want the information to be added only to outgoing messages, you need to add a corresponding condition (for example, recipients located outside the organization). By default, mail flow rules are applied to incoming and outgoing messages.
 
 - To avoid multiple disclaimers being added in an email conversation, add an exception that looks for unique text in your disclaimer. This ensures that the disclaimer is only added to the original message.
 
-- Test the disclaimer. When you create the mail flow rule, you have the option to start using it immediately ( **Enforce**), or to test it first and view the results in the messaging log. We recommend testing all mail flow rules prior to setting them to **Enforce**.
-
-For examples and information about how to scope and format disclaimers, signatures, and other additions to email messages, see [Organization-wide disclaimers, signatures, footers, or headers in Exchange 2016](https://technet.microsoft.com/library/e45e33c9-e53b-427c-ada5-70901bc399b8.aspx).
+- Test the disclaimer. When you create the mail flow rule, you have the option to start using it immediately (**Enforce**), or to test it first and view the results in the messaging log. We recommend testing all mail flow rules prior to setting them to **Enforce**.
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: 7 minutes.
 
-- For information about how to access the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://go.microsoft.com/fwlink/p/?linkid=396554).
+- For information about how to access the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell). To connect to standalone EOP PowerShell, see [Connect to standalone Exchange Online Protection PowerShell](/powershell/exchange/connect-to-exchange-online-protection-powershell).
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) article.
 
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
+- For information about keyboard shortcuts that may apply to the procedures in this article, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/articles/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to add a disclaimer or other email header or footer
 
@@ -58,9 +57,9 @@ For examples and information about how to scope and format disclaimers, signatur
 
 4. In the **Apply this rule if** box, select the conditions for displaying the disclaimer. For example, select **The recipient is located** condition, and then select **Outside the organization**. If you want this rule to apply to every message that enters or leaves your organization, select **[Apply to all messages]**.
 
-5. Next to the **Do the following** box, select **Enter text** to enter the text of your disclaimer. For information about what can be added, see [Formatting your disclaimer](https://technet.microsoft.com/library/e45e33c9-e53b-427c-ada5-70901bc399b8.aspx#FormatDisclaimer).
+5. Next to the **Do the following** box, select **Enter text** to enter the text of your disclaimer.
 
-6. Click **Select one**, and select one of the [Fallback options if the disclaimer can't be added](https://technet.microsoft.com/library/e45e33c9-e53b-427c-ada5-70901bc399b8.aspx#FallbackOptions).
+6. Click **Select one**, and select one of the [Fallback options if the disclaimer can't be added](../../../ExchangeServer/policy-and-compliance/mail-flow-rules/signatures.md#fallback-options-for-disclaimer-rules).
 
 7. Specify the audit severity level to assign the severity level that appears in the message log.
 
@@ -70,34 +69,28 @@ For examples and information about how to scope and format disclaimers, signatur
 
 10. When you're finished, click **Save**.
 
-For more examples of how to scope your disclaimer, see [Scoping your disclaimer](https://technet.microsoft.com/library/e45e33c9-e53b-427c-ada5-70901bc399b8.aspx#Scoping).
-
 ## Use Exchange Online PowerShell to add a disclaimer or other email header or footer
 
-Use the [New-TransportRule](https://technet.microsoft.com/library/eb3546bf-ca37-474e-9c22-962fe95af276.aspx) cmdlet to create the disclaimer rule. For detailed parameter information, see [Mail flow rule conditions and exceptions (predicates) in Exchange Online](conditions-and-exceptions.md) or [Mail flow rule conditions and exceptions (predicates) in Exchange Online Protection](https://technet.microsoft.com/library/04edeaba-afd4-4207-b2cb-51bcc44e483c.aspx).
+Use the [New-TransportRule](/powershell/module/exchange/new-transportrule) cmdlet to create the disclaimer rule. For detailed parameter information, see [Mail flow rule conditions and exceptions (predicates) in Exchange Online](conditions-and-exceptions.md).
 
 This example creates a new mail flow rule that adds a disclaimer with an image to the end of all email messages that are sent outside the organization.
 
-```
+```PowerShell
 New-TransportRule -Name "External Disclaimer" -SentToScope NotInOrganization -ApplyHtmlDisclaimerText "<h3>Disclaimer Title</h3><p>This is the disclaimer text.</p><img alt='Contoso logo' src='http://www.contoso.com/images/logo.gif'>"
 ```
 
 This example creates a new mail flow rule that adds an advertisement for one month to the beginning of all outgoing messages.
 
-```
+```PowerShell
 New-TransportRule -Name "March Special" -Enabled $true -SentToScope NotInOrganization -ApplyHtmlDisclaimerLocation Prepend -ActivationDate '03/1/2017' -ExpiryDate '03/31/2017'-ApplyHtmlDisclaimerText "<table align=center width=200 border=1 bordercolor=blue bgcolor=green cellpadding=10 cellspacing=0><tr><td nowrap><a href=http://www.contoso.com/marchspecials.htm>Click to see March specials</a></td></tr></table>"
 ```
-
-For more examples of how to scope your disclaimer, see [Scoping your disclaimer](https://technet.microsoft.com/library/e45e33c9-e53b-427c-ada5-70901bc399b8.aspx#Scoping).
 
 ## How do you know this worked?
 
 To verify that you've successfully created a disclaimer, and that the disclaimer works as expected, do the following steps:
 
 - Send yourself both a plain text email and an HTML email that match the conditions and exceptions you defined, and verify that the text appears as you intended.
-
 - If you added an exception to avoid adding the disclaimer to successive messages in a conversation, forward your test messages to yourself to make sure that they don't get an extra copy of the disclaimer.
-
 - Send yourself some messages that should not get the disclaimer and verify that the disclaimer is not included.
 
 ## For more information

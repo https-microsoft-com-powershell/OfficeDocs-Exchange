@@ -2,13 +2,14 @@
 title: 'Exchange ActiveSync: Exchange 2013 Help'
 TOCTitle: Exchange ActiveSync
 ms:assetid: 5fafaff3-eb37-4fdb-95f0-e56c45ea5884
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998357(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998357(v=EXCHG.150)
 ms:contentKeyID: 48385136
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,17 +17,14 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Learn about the Exchange ActiveSync client protocol for Exchange Server 2013. You'll learn about the features of Exchange ActiveSync including security features, the things you can manage, how to make it secure, and how to avoid problems synching to Windows Phone 7.
+Learn about the Exchange ActiveSync client protocol for Exchange Server 2013. You'll learn about the features of Exchange ActiveSync including security features, the things you can manage, and how to make it secure.
 
 > [!TIP]
-> This topic is for admins. Want to set up your Windows Phone, iOS, or Android device to access your Office 365 or Exchange Server mailbox? Check out the following topics.
-> <UL>
-> <LI>
-> <P><A href="https://go.microsoft.com/fwlink/p/?linkid=615415">Set up email on Windows Phone</A></P>
-> <LI>
-> <P><A href="https://go.microsoft.com/fwlink/p/?linkid=615414">Set up email on iPhone, iPad, or iPod Touch</A></P>
-> <LI>
-> <P><A href="https://go.microsoft.com/fwlink/?linkid=615417">Set up email on an Android phone or tablet</A></P></LI></UL>
+> This topic is for admins. Want to set up your iOS or Android device to access your Microsoft 365, Office 365, or Exchange Server mailbox? Check out the following topics:
+>
+> - [Set up email in Outlook for iOS mobile app](https://support.microsoft.com/office/set-up-email-in-outlook-for-ios-mobile-app-b2de2161-cc1d-49ef-9ef9-81acd1c8e234)
+>
+> - [Set up email in the Outlook for Android app](https://support.microsoft.com/office/set-up-email-in-the-outlook-for-android-app-886db551-8dfa-4fd5-b835-f8e532091872)
 
 Exchange ActiveSync is a client protocol that lets you synchronize a mobile device with your Exchange mailbox. Exchange ActiveSync is enabled by default when you install Microsoft Exchange 2013.
 
@@ -36,9 +34,6 @@ Exchange ActiveSync is a Microsoft Exchange synchronization protocol that's opti
 
 > [!NOTE]
 > Exchange ActiveSync does not support shared mailboxes or delegate access.
-
-> [!IMPORTANT]
-> Windows Phone 7 mobile phones support only a subset of all Exchange ActiveSync mailbox policy settings. For a complete list, see Windows Phone 7 Synchronization.
 
 ## Features in Exchange ActiveSync
 
@@ -106,12 +101,7 @@ In addition to the ability to configure security options for communications betw
 
 - **Remote wipe**: If a mobile device is lost, stolen, or otherwise compromised, you can issue a remote wipe command from the Exchange Server computer or from any Web browser by using Outlook Web App. This command erases all data from the mobile device.
 
-- **Device password policies**: Exchange ActiveSync lets you configure several options for device passwords.
-
-    > [!WARNING]
-    > The iOS7 fingerprint reader technology cannot be used as a device password. If you choose to use the iOS7 fingerprint reader, you'll still need to create and enter a device password if the mobile device mailbox policy for your organization requires a device password.
-
-    The device password options include the following:
+- **Device password policies**: Exchange ActiveSync lets you configure several options for device passwords. The device password options include the following:
 
   - **Minimum password length (characters)**: This option specifies the length of the password for the mobile device. The default length is 4 characters, but as many as 18 can be included.
 
@@ -132,31 +122,3 @@ In addition to the ability to configure security options for communications betw
   - **Require encryption on device**: Select this check box to require encryption on the mobile device. This increases security by encrypting all information on the mobile device.
 
   - **Require encryption on storage cards**: Select this check box to require encryption on the mobile device's removable storage card. This increases security by encrypting all information on the storage cards for the mobile device.
-
-## Windows Phone 7 synchronization
-
-If you have Windows Phone 7 mobile devices in your organization, these devices will experience synchronization problems if certain Mobile Device mailbox policy properties are configured. To allow Windows Phone 7 mobile phones to synchronize with an Exchange mailbox, either set the **AllowNonProvisionableDevices** property to true or configure only the following Mobile Device mailbox policy properties:
-
-- PasswordRequired
-
-- MinPasswordLength
-
-- IdleTimeoutFrequencyValue
-
-- DeviceWipeThreshold
-
-- AllowSimplePassword
-
-- PasswordExpiration
-
-- PasswordHistory
-
-- DisableRemovableStorage
-
-- DisableIrDA
-
-- DisableDesktopSync
-
-- BlockRemoteDesktop
-
-- BlockInternetSharing

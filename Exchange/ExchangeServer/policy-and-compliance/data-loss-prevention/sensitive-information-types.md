@@ -5,10 +5,11 @@ ms.topic: reference
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 98b81f9c-87bb-4905-8e53-04621c3ae74d
-ms.date: 7/8/2018
 ms.reviewer: 
 title: Sensitive information types in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 keywords:
 - data loss prevention in office 365,Data loss prevetion in Exchange,DLP,sensitive information types
@@ -23,7 +24,7 @@ manager: serdars
 
 ## ABA Routing Number
 
- **Format**: 9 digits which may be in a formatted or unformatted pattern.
+ **Format**: Nine digits that may be in a formatted or unformatted pattern.
 
  **Pattern**:
 
@@ -39,7 +40,7 @@ Formatted:
 
 - A digit
 
-Unformatted: 9 consecutive digits beginning with 0, 1, 2, 3, 6, 7, or 8
+Unformatted: Nine consecutive digits beginning with 0, 1, 2, 3, 6, 7, or 8
 
  **Checksum**: No
 
@@ -65,7 +66,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_ABA_Routing**|
 |:-----|
-|aba  <br/> aba #  <br/> aba routing #  <br/> aba routing number  <br/> aba#  <br/> abarouting#  <br/> aba number  <br/> abaroutingnumber  <br/> american bank association routing #  <br/> american bank association routing number  <br/> americanbankassociationrouting#  <br/> americanbankassociationroutingnumber  <br/> bank routing number  <br/> bankrouting#  <br/> bankroutingnumber  <br/> routing transit number  <br/> RTN|
+|aba  <br/> aba #  <br/> aba routing #  <br/> aba routing number  <br/> aba#  <br/> abarouting#  <br/> aba number  <br/> abaroutingnumber  <br/> american bank association routing #  <br/> american bank association routing number  <br/> americanbankassociationrouting#  <br/> americanbankassociationroutingnumber  <br/> bank routing number  <br/> bank routing#  <br/> bank routing number  <br/> routing transit number  <br/> RTN|
 
 ## Argentina National Identity (DNI) Number
 
@@ -158,7 +159,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_australia_bank_account_number**|
 |:-----|
-|swift bank code  <br/> correspondent bank  <br/> base currency  <br/> usa account  <br/> holder address  <br/> bank address  <br/> information account  <br/> fund transfers  <br/> bank charges  <br/> bank details  <br/> banking information  <br/> full names  <br/> iaea|
+|swift bank code  <br/> correspondent bank  <br/> base currency  <br/> usa account  <br/> holder address  <br/> bank address  <br/> information account  <br/> fund transfers  <br/> bank charges  <br/> bank details  <br/> banking information  <br/> full names  <br/> idea|
 
 ## Australia Driver's License Number
 
@@ -211,7 +212,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_australia_drivers_license_number**|**Keyword_australia_drivers_license_number_exclusions**|
 |:-----|:-----|
-|international driving permits  <br/> australian automobile association  <br/> sydney nsw  <br/> international driving permit  <br/> DriverLicence  <br/> DriverLicences  <br/> Driver Lic  <br/> Driver Licence  <br/> Driver Licences  <br/> DriversLic  <br/> DriversLicence  <br/> DriversLicences  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'Licence  <br/> Driver'Licences  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' Licence  <br/> Driver' Licences  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicence  <br/> Driver'sLicences  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's Licence  <br/> Driver's Licences  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicence#  <br/> DriverLicences#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver Licence#  <br/> Driver Licences#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicence#  <br/> DriversLicences#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers Licence#  <br/> Drivers Licences#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'Licence#  <br/> Driver'Licences#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' Licence#  <br/> Driver' Licences#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicence#  <br/> Driver'sLicences#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's Licence#  <br/> Driver's Licences#|aaa  <br/> DriverLicense  <br/> DriverLicenses  <br/> Driver License  <br/> Driver Licenses  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers License  <br/> Drivers Licenses  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver's License  <br/> Driver's Licenses  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> Driver License#  <br/> Driver Licenses#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver's License#  <br/> Driver's Licenses#|
+|international driving permits  <br/> australian automobile association  <br/> Sydney nsw  <br/> international driving permit  <br/> DriverLicence  <br/> DriverLicences  <br/> Driver Lic  <br/> Driver Licence  <br/> Driver Licences  <br/> DriversLic  <br/> DriversLicence  <br/> DriversLicences  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'Licence  <br/> Driver'Licences  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' Licence  <br/> Driver' Licences  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicence  <br/> Driver'sLicences  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's Licence  <br/> Driver's Licences  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicence#  <br/> DriverLicences#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver Licence#  <br/> Driver Licences#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicence#  <br/> DriversLicences#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers Licence#  <br/> Drivers Licences#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'Licence#  <br/> Driver'Licences#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' Licence#  <br/> Driver' Licences#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicence#  <br/> Driver'sLicences#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's Licence#  <br/> Driver's Licences#|aaa  <br/> DriverLicense  <br/> DriverLicenses  <br/> Driver License  <br/> Driver Licenses  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers License  <br/> Drivers Licenses  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver's License  <br/> Driver's Licenses  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> Driver License#  <br/> Driver Licenses#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver's License#  <br/> Driver's Licenses#|
 
 ## Australia Medical Account Number
 
@@ -436,7 +437,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 - A hyphen
 
-- Two digits which are check digits
+- Two digits that are check digits
 
  **Checksum**: Yes
 
@@ -742,7 +743,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_[province_name]_drivers_license_name**|**Keyword_canada_drivers_license**|
 |:-----|:-----|
-|The province abbreviation, for example AB  <br/> The province name, for example Alberta|DL  <br/> DLS  <br/> CDL  <br/> CDLS  <br/> DriverLic  <br/> DriverLics  <br/> DriverLicense  <br/> DriverLicenses  <br/> DriverLicence  <br/> DriverLicences  <br/> Driver Lic  <br/> Driver Lics  <br/> Driver License  <br/> Driver Licenses  <br/> Driver Licence  <br/> Driver Licences  <br/> DriversLic  <br/> DriversLics  <br/> DriversLicence  <br/> DriversLicences  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers License  <br/> Drivers Licenses  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver'Licence  <br/> Driver'Licences  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver' Licence  <br/> Driver' Licences  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver'sLicence  <br/> Driver'sLicences  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's License  <br/> Driver's Licenses  <br/> Driver's Licence  <br/> Driver's Licences  <br/> Permis de Conduire  <br/> id  <br/> ids  <br/> idcard number  <br/> idcard numbers  <br/> idcard #  <br/> idcard #s  <br/> idcard card  <br/> idcard cards  <br/> idcard  <br/> identification number  <br/> identification numbers  <br/> identification #  <br/> identification #s  <br/> identification card  <br/> identification cards  <br/> identification  <br/> DL#  <br/> DLS#  <br/> CDL#  <br/> CDLS#  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> DriverLicence#  <br/> DriverLicences#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver License#  <br/> Driver Licenses#  <br/> Driver License#  <br/> Driver Licences#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> DriversLicence#  <br/> DriversLicences#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Drivers Licence#  <br/> Drivers Licences#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver'Licence#  <br/> Driver'Licences#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver' Licence#  <br/> Driver' Licences#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver'sLicence#  <br/> Driver'sLicences#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's License#  <br/> Driver's Licenses#  <br/> Driver's Licence#  <br/> Driver's Licences#  <br/> Permis de Conduire#  <br/> id#  <br/> ids#  <br/> idcard card#  <br/> idcard cards#  <br/> idcard#  <br/> identification card#  <br/> identification cards#  <br/> identification#|
+|The province abbreviation, for example AB  <br/> The province name, for example Alberta|DL  <br/> DLS  <br/> CDL  <br/> CDLS  <br/> DriverLic  <br/> DriverLics  <br/> DriverLicense  <br/> DriverLicenses  <br/> DriverLicence  <br/> DriverLicences  <br/> Driver Lic  <br/> Driver Lics  <br/> Driver License  <br/> Driver Licenses  <br/> Driver Licence  <br/> Driver Licences  <br/> DriversLic  <br/> DriversLics  <br/> DriversLicence  <br/> DriversLicences  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers License  <br/> Drivers Licenses  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver'Licence  <br/> Driver'Licences  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver' Licence  <br/> Driver' Licences  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver'sLicence  <br/> Driver'sLicences  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's License  <br/> Driver's Licenses  <br/> Driver's Licence  <br/> Driver's Licences  <br/> Permis de Conduire  <br/> id  <br/> ids  <br/> idcard number  <br/> idcard numbers  <br/> idcard #  <br/> idcard #s  <br/> idcard card  <br/> idcard cards  <br/> idcard  <br/> identification number  <br/> identification numbers  <br/> identification #  <br/> identification #s  <br/> identification card  <br/> identification cards  <br/> identification  <br/> DL#  <br/> DLS#  <br/> CDL#  <br/> CDLS#  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> DriverLicence#  <br/> DriverLicences#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver License#  <br/> Driver Licenses#  <br/> Driver License#  <br/> Driver Licences#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> DriversLicence#  <br/> DriversLicences#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Drivers Licence#  <br/> Drivers Licences#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver'Licence#  <br/> Driver'Licences#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver' Licence#  <br/> Driver' Licences#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver'sLicence#  <br/> Driver'sLicences#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's License#  <br/> Driver's Licenses#  <br/> Driver's Licence#  <br/> Driver's Licences#  <br/> Permis de Conduire#  <br/> ID#  <br/> IDs#  <br/> idcard card#  <br/> idcard cards#  <br/> idcard#  <br/> identification card#  <br/> identification cards#  <br/> identification#|
 
 ## Canada Health Service Number
 
@@ -876,7 +877,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
 - The function `Func_canadian_sin` finds content that matches the pattern.
 
-- At least two of any combination of the following:
+- At least two of any combinations of the following:
 
   - A keyword from `Keyword_sin` is found.
 
@@ -983,11 +984,11 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 - Six digits which are an address code
 
-- Eight digits in the form YYYYMMDD which are the date of birth
+- Eight digits in the form YYYYMMDD, which are the date of birth
 
-- Three digits which are an order code
+- Three digits that are an order code
 
-- One digit which is a check digit
+- One digit that is a check digit
 
  **Checksum**: Yes
 
@@ -1028,7 +1029,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 ## Credit Card Number
 
- **Format**: 14 digits which can be formatted or unformatted (dddddddddddddd) and must pass the Luhn test.
+ **Format**: 14 digits that can be formatted or unformatted (dddddddddddddd) and must pass the Luhn test.
 
  **Pattern**: Very complex and robust pattern that detects cards from all major brands worldwide, including Visa, MasterCard, Discover Card, JCB, American Express, gift cards, and diner cards.
 
@@ -1117,7 +1118,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Pattern**: 10 digits:
 
-- Six digits in the form DDMMYY which are the date of birth
+- Six digits in the form DDMMYY, which are the date of birth
 
 - Four digits where the final digit is a check digit
 
@@ -1164,7 +1165,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Pattern**: 10 digits:
 
-- Six digits which are the date of birth
+- Six digits that are the date of birth
 
 - A forward slash
 
@@ -1204,7 +1205,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Pattern**: 10 digits:
 
-- Six digits in the format DDMMYY which are the date of birth
+- Six digits in the format DDMMYY, which are the date of birth
 
 - A hyphen
 
@@ -1332,7 +1333,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Pattern**: Pattern must include all of the following:
 
-- Six digits in the format DDMMYY which are a date of birth
+- Six digits in the format DDMMYY, which are a date of birth
 
 - Century marker (either '-', '+' or 'a')
 
@@ -1502,7 +1503,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_passport**|
 |:-----|
-|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passportnumber  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート ＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
+|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート ＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## France Social Security Number (INSEE)
 
@@ -1833,7 +1834,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
 - Four digits
 
-- A letter which is an alphabetic check digit
+- A letter, which is an alphabetic check digit
 
  **Checksum**: Yes
 
@@ -1877,7 +1878,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
 - An optional space or dash
 
-- The final digit which is the check digit
+- The final digit, which is the check digit
 
  **Checksum**: Yes
 
@@ -1932,7 +1933,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 - A period (optional)
 
-- Six digits in the format DDMMYY which are the date of birth
+- Six digits in the format DDMMYY, which are the date of birth
 
 - A period (optional)
 
@@ -2013,9 +2014,9 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Pattern**:
 
-- IPv4: Complex pattern which accounts for formatted (periods) and unformatted (no periods) versions of the IPv4 addresses.
+- IPv4: Complex pattern that accounts for formatted (periods) and unformatted (no periods) versions of the IPv4 addresses.
 
-- IPv6: Complex pattern which accounts for formatted IPv6 numbers (which include colons).
+- IPv6: Complex pattern that accounts for formatted IPv6 numbers (which include colons).
 
  **Checksum**: No
 
@@ -2084,13 +2085,13 @@ For IPv6, a DLP policy is 85% confident that it's detected this type of sensitiv
 
  **Format**:
 
-- New format (1 Jan 2013 and later): Seven digits followed by two letters
+- New format (1 January 2013 and later): Seven digits followed by two letters
 
-- Old format (31 Dec 2012 and earlier): Seven digits followed by 1-2 letters
+- Old format (31 December 2012 and earlier): Seven digits followed by 1-2 letters
 
  **Pattern**:
 
-New format (1 Jan 2013 and later)
+New format (1 January 2013 and later)
 
 - Seven digits
 
@@ -2098,7 +2099,7 @@ New format (1 Jan 2013 and later)
 
 - The letter "A" or "H" (not case sensitive)
 
-Old format (31 Dec 2012 and earlier)
+Old format (31 December 2012 and earlier)
 
 - Seven digits
 
@@ -2492,7 +2493,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Pattern**: 12 digits:
 
-- Six digits in the format YYMMDD which are the date of birth
+- Six digits in the format YYMMDD, which are the date of birth
 
 - A dash (optional)
 
@@ -2629,7 +2630,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Pattern**: 11 digits:
 
-- Six digits in the format DDMMYY which are the date of birth
+- Six digits in the format DDMMYY that are the date of birth
 
 - Three-digit individual number
 
@@ -2938,7 +2939,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Pattern**: 13 digits:
 
-- Six digits in the format YYMMDD which are the date of birth
+- Six digits in the format YYMMDD, which are the date of birth
 
 - Four digits
 
@@ -2946,7 +2947,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 - The digit "8" or "9"
 
-- One digit which is a checksum digit
+- One digit that is a checksum digit
 
  **Checksum**: Yes
 
@@ -2982,7 +2983,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Pattern**: 13 digits:
 
-- Six digits in the format YYMMDD which are the date of birth
+- Six digits in the format YYMMDD that are the date of birth
 
 - A hyphen
 
@@ -3140,7 +3141,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_sweden_passport**|**Keyword_passport**|
 |:-----|:-----|
-|visa requirements  <br/> Alien Registration Card  <br/> Schengen visas  <br/> Schengen visa  <br/> Visa Processing  <br/> Visa Type  <br/> Single Entry  <br/> Multiple Entry  <br/> G3 Processing Fees|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passportnumber  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
+|visa requirements  <br/> Alien Registration Card  <br/> Schengen visas  <br/> Schengen visa  <br/> Visa Processing  <br/> Visa Type  <br/> Single Entry  <br/> Multiple Entry  <br/> G3 Processing Fees|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## SWIFT Code
 
@@ -3181,7 +3182,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_swift**|
 |:-----|
-|international organization for standardization 9362  <br/> iso 9362  <br/> iso9362  <br/> swift#  <br/> swiftcode  <br/> swiftnumber  <br/> swiftroutingnumber  <br/> swift code  <br/> swift number #  <br/> swift routing number  <br/> bic number  <br/> bic code  <br/> bic #  <br/> bic#  <br/> bank identifier code  <br/> 標準化9362  <br/> 迅速＃  <br/> SWIFTコード  <br/> SWIFT番号  <br/> 迅速なルーティング番号  <br/> BIC番号  <br/> BICコード  <br/> 銀行識別コードのための国際組織  <br/> Organisation internationale de normalisation 9362  <br/> rapide #  <br/> code SWIFT  <br/> le numéro de swift  <br/> swift numéro d'acheminement  <br/> le numéro BIC  <br/> # BIC  <br/> code identificateur de banque|
+|international organization for standardization 9362  <br/> iso 9362  <br/> iso9362  <br/> swift#  <br/> swift code  <br/> swift number  <br/> swiftroutingnumber  <br/> swift code  <br/> swift number #  <br/> swift routing number  <br/> bic number  <br/> bic code  <br/> bic #  <br/> bic#  <br/> bank identifier code  <br/> 標準化9362  <br/> 迅速＃  <br/> SWIFTコード  <br/> SWIFT番号  <br/> 迅速なルーティング番号  <br/> BIC番号  <br/> BICコード  <br/> 銀行識別コードのための国際組織  <br/> Organisation internationale de normalisation 9362  <br/> rapide #  <br/> code SWIFT  <br/> le numéro de swift  <br/> swift numéro d'acheminement  <br/> le numéro BIC  <br/> # BIC  <br/> code identificateur de banque|
 
 ## Taiwan National ID
 
@@ -3345,7 +3346,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_uk_drivers_license**|
 |:-----|
-|DVLA  <br/> light vans  <br/> quadbikes  <br/> motor cars  <br/> 125cc  <br/> sidecar  <br/> tricycles  <br/> motorcycles  <br/> photocard licence  <br/> learner drivers  <br/> licence holder  <br/> licence holders  <br/> driving licences  <br/> driving licence  <br/> dual control car|
+|DVLA  <br/> light vans  <br/> quad bikes  <br/> motor cars  <br/> 125cc  <br/> sidecar  <br/> tricycles  <br/> motorcycles  <br/> photo card licence  <br/> learner drivers  <br/> licence holder  <br/> licence holders  <br/> driving licences  <br/> driving licence  <br/> dual control car|
 
 ## U.K. Electoral Roll Number
 
@@ -3433,7 +3434,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
 |**Keyword_uk_nhs_number**|**Keyword_uk_nhs_number1**|**Keyword_uk_nhs_number_dob**|
 |:-----|:-----|:-----|
-|national health service  <br/> nhs  <br/> health services authority  <br/> health authority|patient id  <br/> patient identification  <br/> patient no  <br/> patient number|GP  <br/> DOB  <br/> D.O.B  <br/> Date of Birth  <br/> Birth Date|
+|national health service  <br/> nhs  <br/> health services authority  <br/> health authority|patient ID  <br/> patient identification  <br/> patient no  <br/> patient number|GP  <br/> DOB  <br/> D.O.B  <br/> Date of Birth  <br/> Birth Date|
 
 ## U.K. National Insurance Number (NINO)
 
@@ -3528,7 +3529,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_passport**|
 |:-----|
-|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passportnumber  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
+|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## U.S. Bank Account Number
 
@@ -3614,7 +3615,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
 |**Keyword_us_drivers_license_abbreviations**|**Keyword_us_drivers_license**|**Keyword_[state_name]_drivers_license_name**|
 |:-----|:-----|:-----|
-|DL  <br/> DLS  <br/> CDL  <br/> CDLS  <br/> ID  <br/> IDs  <br/> DL#  <br/> DLS#  <br/> CDL#  <br/> CDLS#  <br/> ID#  <br/> IDs#  <br/> ID number  <br/> ID numbers  <br/> LIC  <br/> LIC#|DriverLic  <br/> DriverLics  <br/> DriverLicense  <br/> DriverLicenses  <br/> Driver Lic  <br/> Driver Lics  <br/> Driver License  <br/> Driver Licenses  <br/> DriversLic  <br/> DriversLics  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers License  <br/> Drivers Licenses  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's License  <br/> Driver's Licenses  <br/> identification number  <br/> identification numbers  <br/> identification #  <br/> id card  <br/> id cards  <br/> identification card  <br/> identification cards  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver License#  <br/> Driver Licenses#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's License#  <br/> Driver's Licenses#  <br/> id card#  <br/> id cards#  <br/> identification card#  <br/> identification cards#|State abbreviation (for example, "NY")  <br/> State name (for example, "New York")|
+|DL  <br/> DLS  <br/> CDL  <br/> CDLS  <br/> ID  <br/> IDs  <br/> DL#  <br/> DLS#  <br/> CDL#  <br/> CDLS#  <br/> ID#  <br/> IDs#  <br/> ID number  <br/> ID numbers  <br/> LIC  <br/> LIC#|DriverLic  <br/> DriverLics  <br/> DriverLicense  <br/> DriverLicenses  <br/> Driver Lic  <br/> Driver Lics  <br/> Driver License  <br/> Driver Licenses  <br/> DriversLic  <br/> DriversLics  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers License  <br/> Drivers Licenses  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's License  <br/> Driver's Licenses  <br/> identification number  <br/> identification numbers  <br/> identification #  <br/> ID card  <br/> ID cards  <br/> identification card  <br/> identification cards  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver License#  <br/> Driver Licenses#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's License#  <br/> Driver's Licenses#  <br/> ID card#  <br/> ID cards#  <br/> identification card#  <br/> identification cards#|State abbreviation (for example, "NY")  <br/> State name (for example, "New York")|
 
 ## U.S. Individual Taxpayer Identification Number (ITIN)
 
@@ -3706,11 +3707,11 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 |**Keyword_itin**|**Keyword_itin_collaborative**|
 |:-----|:-----|
-|taxpayer  <br/> tax id  <br/> tax identification  <br/> itin  <br/> ssn  <br/> tin  <br/> social security  <br/> tax payer  <br/> itins  <br/> taxid  <br/> individual taxpayer|License  <br/> DL  <br/> DOB  <br/> Birthdate  <br/> Birthday  <br/> Date of Birth|
+|taxpayer  <br/> tax ID  <br/> tax identification  <br/> itin  <br/> ssn  <br/> tin  <br/> social security  <br/> tax payer  <br/> itins  <br/> taxid  <br/> individual taxpayer|License  <br/> DL  <br/> DOB  <br/> Birthdate  <br/> Birthday  <br/> Date of Birth|
 
 ## U.S. Social Security Number (SSN)
 
- **Format**: 9 digits, which may be in a formatted or unformatted pattern
+ **Format**: Nine digits, which may be in a formatted or unformatted pattern
 
 > [!NOTE]
 > If issued before mid-2011, an SSN has strong formatting where certain parts of the number must fall within certain ranges to be valid (but there's no checksum).

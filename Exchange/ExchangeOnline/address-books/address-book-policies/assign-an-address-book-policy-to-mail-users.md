@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Admins can learn how to assign address book policies (ABPs) to users in Exchange Online
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: bdfe6575-24c0-47d0-9cfb-ece910db248b
-ms.date: 
 ms.reviewer: 
 title: Assign an address book policy to users in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -21,9 +22,9 @@ manager: serdars
 
 Address book policies (ABPs) allow you to segment users into specific groups to give them customized global address lists (GALs) in Outlook and Outlook on the web (formerly known as Outlook Web App). For more information about ABPs, see [Address book policies in Exchange Online](address-book-policies.md).
 
-Users aren't automatically assigned an ABP when you create mailboxes. If you don't assign an ABP to a mailbox, the GAL for your entire organization is visible to the user in Outlook and Outlook on the web.
+Users aren't automatically assigned an ABP when you create mailboxes. If you don't assign an ABP to a mailbox, the GAL for your entire organization is visible to the user in Outlook and Outlook on the web. Furthermore, a user that's assigned an ABP needs to exist in the GAL that's specified for the ABP. For more information, see [Considerations and best practices for address book policies](../../../ExchangeServer/email-addresses-and-address-books/address-book-policies/abp-scenarios.md#considerations-and-best-practices-for-address-book-policies).
 
-To identify your virtual organizations for ABPs, we recommend that you use the **CustomAttribute1** to **CustomAttribute15** attributes on mailboxes, contacts, and groups, because these attributes are the most widely available and manageable for all recipient types. For more information, see [Scenario: Deploying Address Book Policies](https://technet.microsoft.com/library/6ac3c87d-161f-447b-afb2-149ae7e3f1dc.aspx).
+To identify your virtual organizations for ABPs, we recommend that you use the **CustomAttribute1** to **CustomAttribute15** attributes on mailboxes, contacts, and groups, because these attributes are the most widely available and manageable for all recipient types.
 
 To assign ABPs to mailboxes, you select the ABP in Exchange admin center (EAC), or specify the ABP in Exchange Online PowerShell.
 
@@ -33,12 +34,12 @@ To assign ABPs to mailboxes, you select the ABP in Exchange admin center (EAC), 
 
 - By default, the Address List role isn't assigned to any role groups in Exchange Online. To use any cmdlets or features that require the Address List role, you need to add the role to a role group. For more information, see [Modify role groups](../../permissions-exo/role-groups.md#modify-role-groups).
 
-- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to assign an ABP to a mailbox
 
@@ -100,13 +101,13 @@ There are three basic methods you can use to apply an ABP to mailboxes:
 
 - **Individual mailboxes**: Use the following syntax:
 
-  ```
+  ```PowerShell
   Set-Mailbox -Identity <MailboxIdentity> -AddressBookPolicy <ABPIdentity>
   ```
 
   This example assigns the ABP named All Fabrikam to the mailbox joe@fabrikam.com.
 
-  ```
+  ```PowerShell
   Set-Mailbox -Identity joe@fabrikam.com -AddressBookPolicy "All Fabrikam"
   ```
 
@@ -114,21 +115,21 @@ There are three basic methods you can use to apply an ABP to mailboxes:
 
   The syntax uses the following two commands (one to identify the mailboxes, and the other to apply the ABP to the mailboxes):
 
-  ```
+  ```PowerShell
   $<VariableName> = Get-Mailbox -ResultSize unlimited -Filter <Filter>
   ```
 
-  ```
+  ```PowerShell
   $<VariableName> | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -AddressBookPolicy <ABPIdentity>}
   ```
 
   This example assigns the ABP named All Fabrikam to all mailbox users whose **CustomAttribute15** value is `FAB`.
 
-  ```
-  $Fabrikam = Get-Mailbox -Filter {(CustomAttribute15 -eq 'FAB')}
+  ```PowerShell
+  $Fabrikam = Get-Mailbox -Filter "CustomAttribute15 -eq 'FAB'"
   ```
 
-  ```
+  ```PowerShell
   $Fabrikam | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -AddressBookPolicy "All Fabrikam"}
   ```
 
@@ -138,25 +139,25 @@ There are three basic methods you can use to apply an ABP to mailboxes:
 
   The syntax uses the following two commands (one to identify the user accounts, and the other to apply the policy to those users):
 
-  ```
+  ```PowerShell
   $<VariableName> = Get-Content "<text file>"
   ```
 
-  ```
+  ```PowerShell
   $<VariableName> | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -AddressBookPolicy <ABPIdentity>}
   ```
 
   This example assigns the ABP policy named All Fabrikam to the mailboxes specified in the file C:\My Documents\Fabrikam.txt.
 
-  ```
+  ```PowerShell
   $Fab = Get-Content "C:\My Documents\Fabrikam.txt"
   ```
 
-  ```
+  ```PowerShell
   $Fab | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -AddressBookPolicy "All Fabrikam"}
   ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) and [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox) and [Get-Mailbox](/powershell/module/exchange/get-mailbox).
 
 ### How do you know this worked?
 
@@ -166,13 +167,13 @@ To verify that you've successfully applied an ABP to a mailbox, use any of the f
 
 - In Exchange Online PowerShell, replace \<MailboxIdentity\> with the name, alias, email address, or account name of the mailbox, and run the following command to verify the value of the **AddressBookPolicy** property:
 
-  ```
+  ```PowerShell
   Get-Mailbox -Identity "<MailboxIdentity>" | Format-List AddressBookPolicy
   ```
 
 - In Exchange Online PowerShell, run the following command to verify the value of the **AddressBookPolicy** property:
 
-  ```
+  ```PowerShell
   Get-Mailbox -ResultSize unlimited | Format-Table Name,AddressBookPolicy -Auto
   ```
 

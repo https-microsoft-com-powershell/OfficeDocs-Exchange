@@ -2,13 +2,14 @@
 title: 'Managed Store Limits: Exchange 2013 Help'
 TOCTitle: Managed Store Limits
 ms:assetid: bea9ec15-bfb5-4716-b14e-010e389c9f9e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Mt741981(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Mt741981(v=EXCHG.150)
 ms:contentKeyID: 73225999
-ms.date: 09/16/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -163,7 +164,7 @@ The following section, "Configure Session Limits," describes how to modify these
 You can modify the default session limits.
 
 > [!NOTE]
-> If you want to modify the session limits, you need to modify them on all Mailbox servers within any database availability groups (DAGs). If you don't make the same changes on all servers, the results will be inconsistent. To increase the session limit on Client Access server, the <CODE>RCAMaxConcurrency</CODE> value must be increased on the throttling policy. For more information, see <A href="https://technet.microsoft.com/en-us/library/dd298094(v=exchg.150)">Set-ThrottlingPolicy</A>.
+> If you want to modify the session limits, you need to modify them on all Mailbox servers within any database availability groups (DAGs). If you don't make the same changes on all servers, the results will be inconsistent. To increase the session limit on Client Access server, the <CODE>RCAMaxConcurrency</CODE> value must be increased on the throttling policy. For more information, see <A href="/powershell/module/exchange/Set-ThrottlingPolicy">Set-ThrottlingPolicy</A>.
 
 > [!WARNING]
 > Incorrectly editing the registry can cause serious problems that may require you to reinstall your operating system. Problems resulting from editing the registry incorrectly may not be able to be resolved. Before editing the registry, back up any valuable data.
@@ -314,7 +315,7 @@ You can limit the maximum number of resources that a MAPI client can use simulta
 
 ## Item Size Limits
 
-Item size limits are the limits placed on items within a user's mailbox. They are configurable by using the *MaxSendSize* and *MaxReceiveSize* parameters on the [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)) cmdlet.
+Item size limits are the limits placed on items within a user's mailbox. They are configurable by using the *MaxSendSize* and *MaxReceiveSize* parameters on the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet.
 
 <table>
 <colgroup>

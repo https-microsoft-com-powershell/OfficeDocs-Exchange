@@ -4,14 +4,15 @@ monikerRange: exchserver-2016 || exchserver-2019
 description: Setup can't continue because the organization contains one or more Exchange servers that are too old.
 ms.topic: reference
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - ms.exch.setupreadiness.Exchange2000or2003PresentInOrg
 ms.author: dmaguire
 ms.assetid: a115b182-cbd2-4d31-aa0e-375240939301
-ms.date: 8/3/2018
 ms.reviewer: 
 title: Can't install Exchange 2016 in a forest that contains Exchange 2000 or Exchange 2003 servers. [Exchange2000or2003PresentInOrg]
 ms.collection: exchange-server
+f1.keywords:
+- CSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,7 +28,7 @@ The installation of Exchange Server 2016 or later can't continue because Setup f
 The upgrade path that you need to follow depends on your current version of Exchange. The upgrade paths are described in the following table:
 
 >[!NOTE]
->When you need to upgrade to an interim version of Exchange, you need to migrate all mailboxes, public folders and other components onto the interim version of Exchange before you decomission and remove the earlier Exchange servers.
+>When you need to upgrade to an interim version of Exchange, you need to migrate all mailboxes, public folders and other components onto the interim version of Exchange before you decommission and remove the earlier Exchange servers.
 
 ::: moniker range="exchserver-2019"
 |**Current Exchange version**|**Latest Exchange version for coexistence**|**Upgrade path summary**|
@@ -41,16 +42,12 @@ The upgrade path that you need to follow depends on your current version of Exch
 ::: moniker range="exchserver-2016"
 |**Current Exchange version**|**Latest Exchange version for coexistence**|**Upgrade path summary**|
 |:-----|:-----|:-----|
-|Exchange 2000|Exchange 2007|• Exchange 2000 \> Exchange 2007 \> Exchange 2013 \> Exchange 2016.|
-|Exchange 2003|Exchange 2010|• Exchange 2003 \> Exchange 2010 \> Exchange 2016.|
-|Exchange 2007|Exchange 2013|• Exchange 2007 \> Exchange 2013 \> Exchange 2016.|
-|Exchange 2010|Exchange 2016|• Exchange 2010 \> Exchange 2016.|
+|Exchange 2000|Exchange 2007|Exchange 2000 \> Exchange 2007 \> Exchange 2013 \> Exchange 2016.|
+|Exchange 2003|Exchange 2010|Exchange 2003 \> Exchange 2010 \> Exchange 2016.|
+|Exchange 2007|Exchange 2013|Exchange 2007 \> Exchange 2013 \> Exchange 2016.|
+|Exchange 2010|Exchange 2016|Exchange 2010 \> Exchange 2016.|
 ::: moniker-end
 
-When upgrading to Exchange 2010 or later, you can use the Exchange Deployment Assistant to help complete your deployment. For more information, see the following links:
+When upgrading to Exchange 2013 or later, you can use the Exchange Deployment Assistant to help complete your deployment. For more information, see [Exchange Deployment Assistant](https://assistants.microsoft.com/).
 
-- [Exchange 2010 Deployment Assistant](https://go.microsoft.com/fwlink/p/?LinkId=171086)
-
-- [Exchange 2013 Deployment Assistant](https://go.microsoft.com/fwlink/p/?LinkId=277105)
-
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

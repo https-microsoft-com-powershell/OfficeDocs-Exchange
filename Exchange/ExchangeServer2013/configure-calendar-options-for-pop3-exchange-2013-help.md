@@ -2,13 +2,14 @@
 title: 'Configure calendar options for POP3: Exchange 2013 Help'
 TOCTitle: Configure calendar options for POP3
 ms:assetid: ac3d60a0-8697-4c06-9e93-f8d2c4b157b6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124133(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124133(v=EXCHG.150)
 ms:contentKeyID: 50395403
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,20 +30,20 @@ For additional information related to POP3, see [POP3 and IMAP4 in Exchange Serv
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to set the calendar options for POP3
 
-This example enables POP3 users to use the iCalendar standard, a standard for exchanging calendar information.
+This example enables POP3 users who connect to a server named CAS01 to use the iCalendar standard, a standard for exchanging calendar information.
 
 ```powershell
-Set-PopSettings -Identity CAS01 -CalendarItemRetrievalOption iCalendar
+Set-PopSettings -Server CAS01 -CalendarItemRetrievalOption iCalendar
 ```
 
 This example enables POP3 users to access calendar information from an internal server.
 
 ```powershell
-Set-PopSettings -Identity CAS01 -CalendarItemRetrievalOption IntranetUrl
+Set-PopSettings -Server CAS01 -CalendarItemRetrievalOption IntranetUrl
 ```
 
 This example enables POP3 users to access calendar information from the Internet on an external server.
@@ -59,7 +60,7 @@ Set-PopSettings -CalendarItemRetrievalOption Custom -OwaServerUrl "https://OwaSe
 
 After you've specified the calendar options for POP3, you must restart the POP3 services. For information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 ## How do you know this worked?
 

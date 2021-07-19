@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Learn how to test mail flow rules in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 3d949e2a-8ba4-4261-8cfb-736fd2446ea1
-ms.date: 
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Test a mail flow rule in Exchange Online
 ms.collection: 
 - exchange-online
@@ -17,14 +18,17 @@ manager: serdars
 
 ---
 
-# Test a mail flow rule in Exchange Online
+# Test mail flow rules in Exchange Online
 
-Each time you create a mail flow rule (also known as a transport rule) you should test it before turning it on. This way, if you accidentally create a condition that doesn't do exactly what you want or interacts with other rules in unexpected ways, you won't have any unintended consequences.
+In Exchange Online organizations or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, you should test new mail flow rules (also known as transport rules) before you turn them on. This way, if you accidentally create a condition that doesn't do exactly what you want or interacts with other rules in unexpected ways, you won't have any unintended consequences.
 
 > [!IMPORTANT]
-> Wait 30 minutes after creating a rule before you test it. If you test immediately after you create the rule, you may get inconsistent behavior. If you're using Exchange Server and have multiple Exchange servers, it may take even longer for all the servers to receive the rule.
+> Wait at least 30 minutes after creating a rule before you test it. If you test immediately after you create the rule, you may get inconsistent behavior.
 
 ## Step 1: Create a rule in test mode
+
+> [!NOTE]
+> DLP and policy tips are not available in standalone EOP.
 
 You can evaluate the conditions for a rule without taking any actions that impact mail flow by choosing a test mode. You can set up a rule so that you get an email notification any time the rule is matched, or you can look at the [Look at the message trace](#look-at-the-message-trace) for messages that might match the rule. There are two test modes:
 
@@ -61,24 +65,19 @@ Here's what you'll see when a rule is matched if you include the incident report
 To test a rule, you can either send enough test messages to confirm that what you expect happens, or look at the message trace for messages that people in your organization send. Be sure to evaluate the following types of messages:
 
 - Messages that you expect to match the rule
-
 - Messages that you don't expect to match the rule
-
 - Messages sent to and from people in your organization
-
 - Messages sent to and from people outside your organization
-
 - Replies to messages that match the rule
-
 - Messages that might cause interactions between multiple rules
 
 ### Tips for sending test messages
 
 One way to test is to sign in as both the sender and recipient of a test message.
 
-- If you don't have access to multiple accounts in your organization, you can test in an [Office 365 trial account](https://go.microsoft.com/fwlink/p/?LinkId=402791) or create a few temporary fake users in your organization.
+- If you don't have access to multiple accounts in your organization, you can test in a [trial account](https://www.microsoft.com/microsoft-365/compare-all-microsoft-365-products) or create a few temporary fake users in your organization.
 
-- Because a web browser typically doesn't let you have simultaneous open sessions on the same computer signed in to multiple accounts, you can use [Internet Explorer InPrivate Browsing](https://go.microsoft.com/fwlink/p/?LinkId=402784), or a different computer, device, or web browser for each user.
+- Because a web browser typically doesn't let you have simultaneous open sessions on the same computer signed in to multiple accounts, you can use [Internet Explorer InPrivate Browsing](https://support.microsoft.com/help/4026200), or a different computer, device, or web browser for each user.
 
 ### Look at the message trace
 
@@ -140,14 +139,10 @@ To view a rules report, in the Microsoft 365 admin center, select **Reports**.
 
 ![Report showing rule usage](../../media/TA_EX_RuleReport.png)
 
-To learn more, see [View mail protection reports](https://go.microsoft.com/fwlink/p/?LinkId=402958).
+To learn more, see [View mail protection reports](../../monitoring/use-mail-protection-reports.md).
 
 ## Need more help?
 
 [Manage mail flow rules](manage-mail-flow-rules.md)
 
 [Mail flow rules (transport rules) in Exchange Online](mail-flow-rules.md)
-
-[Mail flow rules (transport rules) in Exchange Online Protection](https://technet.microsoft.com/library/9c2cf227-eff7-48ef-87fb-487186e47363.aspx)
-
-[Mail flow rules (transport rules) in Exchange Server](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx)

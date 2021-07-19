@@ -2,13 +2,14 @@
 title: 'Transport rule conditions and exceptions (predicates) in Exchange 2013'
 TOCTitle: Transport rule conditions and exceptions (predicates)
 ms:assetid: c918ea00-1e68-4b8b-8d51-6966b4432e2d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638183(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638183(v=EXCHG.150)
 ms:contentKeyID: 49361079
-ms.date: 01/02/2018
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ Most conditions and exceptions have one property that requires one or more value
 
 For more information about transport rules in Exchange Server 2013, see [Transport rules in Exchange 2013](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md).
 
-For more information about conditions and exceptions in transport rules in Exchange Online Protection or Exchange Online, see [Transport rule conditions and exceptions (predicates) in Exchange Online](https://technet.microsoft.com/en-us/library/jj919235\(v=exchg.150\)) or [Transport rule conditions and exceptions (predicates) in Exchange Online Protection](https://technet.microsoft.com/en-us/library/jj919234\(v=exchg.150\)).
+For more information about conditions and exceptions in transport rules in Exchange Online Protection or Exchange Online, see [Mail flow rule conditions and exceptions (predicates) in Exchange Online](../ExchangeOnline/security-and-compliance/mail-flow-rules/conditions-and-exceptions.md).
 
 ## Conditions and exceptions for transport rules on Mailbox servers
 
@@ -166,7 +167,7 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 <td><p><em>HasSenderOverride</em></p>
 <p><em>ExceptIfHasSenderOverride</em></p></td>
 <td><p>n/a</p></td>
-<td><p>Messages where the sender has chosen to override a data loss prevention (DLP) policy. For more information about DLP policies, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention">Data loss prevention</a>.</p></td>
+<td><p>Messages where the sender has chosen to override a data loss prevention (DLP) policy. For more information about DLP policies, see <a href="/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention">Data loss prevention</a>.</p></td>
 <td><p>Exchange 2013 or later</p></td>
 </tr>
 <tr class="odd">
@@ -185,7 +186,7 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 <p><em>ExceptIfSenderDomainIs</em></p></td>
 <td><p><code>DomainName</code></p></td>
 <td><p>Messages where the domain of the sender's email address matches the specified value.</p>
-<p>If you need to find sender domains that <em>contain</em> the specified domain (for example, any subdomain of a domain), use <strong>The sender address matches</strong> (<em>FromAddressMatchesPatterns</em>) condition and specify the domain by using the syntax: <code>'@domain\.com$'</code>.</p></td>
+<p>If you need to find sender domains that <em>contain</em> the specified domain (for example, any subdomain of a domain), use <strong>The sender address matches</strong> (<em>FromAddressMatchesPatterns</em>) condition and specify the domain by using the syntax: <code>'\.domain\.com$'</code>.</p></td>
 <td><p>Exchange 2013 or later</p></td>
 </tr>
 </tbody>
@@ -287,7 +288,7 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 <p><em>ExceptIfRecipientDomainIs</em></p></td>
 <td><p><code>DomainName</code></p></td>
 <td><p>Messages where the domain of a recipient's email address matches the specified value.</p>
-<p>If you need to find recipient domains that <em>contain</em> the specified domain (for example, any subdomain of a domain), use <strong>The recipient address matches</strong> (<em>RecipientAddressMatchesPatterns</em>) condition, and specify the domain by using the syntax <code>'@domain\.com$'</code>.</p></td>
+<p>If you need to find recipient domains that <em>contain</em> the specified domain (for example, any subdomain of a domain), use <strong>The recipient address matches</strong> (<em>RecipientAddressMatchesPatterns</em>) condition, and specify the domain by using the syntax <code>'\.domain\.com$'</code>.</p></td>
 <td><p>Exchange 2013 or later</p></td>
 </tr>
 </tbody>
@@ -457,7 +458,7 @@ For more information about how transport rules inspect message attachments, see 
 <td><p><em>AttachmentIsPasswordProtected</em></p>
 <p><em>ExceptIfAttachmentIsPasswordProtected</em></p></td>
 <td><p>n/a</p></td>
-<td><p>Messages where an attachment is password protected (and therefore can't be scanned). Password detection only works for Office documents and .zip files.</p></td>
+<td><p>Messages where an attachment is password protected (and therefore can't be scanned). Password detection only works for Office documents, .zip files, and .7z files.</p></td>
 <td><p>Exchange 2013 or later</p></td>
 </tr>
 </tbody>
@@ -961,7 +962,7 @@ The property types that are used in conditions and exceptions are described in t
 <p>In the Exchange Management Shell, use the syntax <code>&quot;AttributeName1:Value1,Value 2 with spaces,Value3...&quot;,&quot;AttributeName2:Word4,Value 5 with spaces,Value6...&quot;</code>, where <code>Value</code> is the word or text pattern that you want to match.</p>
 <p>For example, <code>&quot;City:San Francisco,Palo Alto&quot;</code> or <code>&quot;City:San Francisco,Palo Alto&quot;</code>,<code>&quot;Department:Sales,Finance&quot;</code>.</p>
 <p>When you specify multiple attributes, or multiple values for the same attribute, the <strong>or</strong> operator is used. Don't use values with leading or trailing spaces.</p>
-<p>Note that the <strong>Country</strong> attribute requires the two-letter ISO 3166-1 country code value (for example, DE for Germany). To search for values, see <a href="https://go.microsoft.com/fwlink/p/?linkid=331680">https://go.microsoft.com/fwlink/p/?LinkId=331680</a>.</p></td>
+<p>Note that the <strong>Country</strong> attribute requires the ISO 3166-1 two-letter country code value (for example, DE for Germany). For more information, see <a href="https://www.iso.org/iso-3166-country-codes.html">Country Codes - ISO 316</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p><code>Addresses</code></p></td>
@@ -1071,7 +1072,7 @@ The property types that are used in conditions and exceptions are described in t
 <tr class="odd">
 <td><p><code>Patterns</code></p></td>
 <td><p>Array of regular expressions</p></td>
-<td><p>Specifies one or more regular expressions that are used to identify text patterns in values. For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=180327">Regular Expression Syntax</a>.</p>
+<td><p>Specifies one or more regular expressions that are used to identify text patterns in values. For more information, see <a href="/visualstudio/ide/using-regular-expressions-in-visual-studio">Regular Expression Syntax</a>.</p>
 <p>In the Exchange Management Shell, you specify multiple regular expressions separated by commas, and you enclose each regular expression in quotation marks (&quot;).</p></td>
 </tr>
 <tr class="even">
@@ -1086,7 +1087,7 @@ The property types that are used in conditions and exceptions are described in t
 <tr class="odd">
 <td><p><code>SensitiveInformationTypes</code></p></td>
 <td><p>Array of sensitive information types</p></td>
-<td><p>Specifies one or more sensitive information types that are defined in your organization. For a list of built-in sensitive information types, see <a href="what-the-sensitive-information-types-in-exchange-look-for-exchange-online-help.md">What the sensitive information types in Exchange look for</a>.</p>
+<td><p>Specifies one or more sensitive information types that are defined in your organization. For a list of built-in sensitive information types, see <a href="what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md">What the sensitive information types in Exchange 2013 look for</a>.</p>
 <p>In the Exchange Management Shell, use the syntax <code>@{&lt;SensitiveInformationType1&gt;},@{&lt;SensitiveInformationType2&gt;},...</code>. For example, to look for content that contains at least two credit card numbers, and at least one ABA routing number, use the value <code>@{Name=&quot;Credit Card Number&quot;; minCount=&quot;2&quot;},@{Name=&quot;ABA Routing Number&quot;; minCount=&quot;1&quot;}</code>.</p></td>
 </tr>
 <tr class="even">
@@ -1168,6 +1169,4 @@ The property types that are used in conditions and exceptions are described in t
 
 [Transport rule procedures in Exchange 2013](mail-flow-or-transport-rule-procedures-exchange-2013-help.md)
 
-[Transport rule conditions and exceptions (predicates) in Exchange Online](https://technet.microsoft.com/en-us/library/jj919235\(v=exchg.150\)) for Exchange Online
-
-[Transport rule conditions and exceptions (predicates) in Exchange Online Protection](https://technet.microsoft.com/en-us/library/jj919234\(v=exchg.150\)) for Exchange Online Protection
+[Mail flow rule conditions and exceptions (predicates) in Exchange Online](../ExchangeOnline/security-and-compliance/mail-flow-rules/conditions-and-exceptions.md)

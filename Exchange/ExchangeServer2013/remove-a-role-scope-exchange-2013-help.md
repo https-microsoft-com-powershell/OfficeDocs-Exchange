@@ -2,13 +2,14 @@
 title: 'Remove a role scope: Exchange 2013 Help'
 TOCTitle: Remove a role scope
 ms:assetid: ad17cba0-a8d3-4f40-b3c9-c37e6e5c3f36
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351051(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351051(v=EXCHG.150)
 ms:contentKeyID: 49289375
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ Management role scopes determine what objects are made available to a user who c
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to remove a scope
 

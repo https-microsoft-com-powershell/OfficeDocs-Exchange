@@ -2,13 +2,14 @@
 title: Troubleshooting HubTransport Health Set
 TOCTitle: Troubleshooting HubTransport Health Set
 ms:assetid: e3932ce3-836c-4230-9f64-63af1b704d79
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.hubtransport(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.hubtransport(v=EXCHG.150)
 ms:contentKeyID: 49720900
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The **HubTransport** health set monitors the overall health of the transport pipeline on Mailbox servers that's responsible for routing mail in your organization. For more information, see [Mail flow](https://technet.microsoft.com/en-us/library/aa996349\(v=exchg.150\)).
+The **HubTransport** health set monitors the overall health of the transport pipeline on Mailbox servers that's responsible for routing mail in your organization. For more information, see [Mail flow](../../mail-flow-exchange-2013-help.md).
 
 If you receive an alert that indicates that the **HubTransport** health set is unhealthy, this indicates an issue that may prevent mail from being routed and delivered.
 
@@ -526,7 +527,7 @@ The **HubTransport** service is monitored using the following probes and monitor
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## User Action
 

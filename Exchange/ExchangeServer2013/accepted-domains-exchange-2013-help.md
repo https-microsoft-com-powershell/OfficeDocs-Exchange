@@ -2,13 +2,14 @@
 title: 'Accepted domains: Exchange 2013 Help'
 TOCTitle: Accepted domains
 ms:assetid: c1839a5b-49f9-4c53-b247-f4e5d78efc45
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124423(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124423(v=EXCHG.150)
 ms:contentKeyID: 49289400
-ms.date: 06/17/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -55,7 +56,7 @@ To support these scenarios, you need to create an accepted domain that's configu
 
 If an organization contains more than one forest and has configured global address list (GAL) synchronization, the SMTP domain for one forest may be configured as an internal relay domain in a second forest. Messages from the Internet that are addressed to recipients in internal relay domains are relayed to the Mailbox servers in the same organization. The receiving Mailbox servers then route the messages to the Mailbox servers in the recipient forest. You configure the SMTP domain as an internal relay domain to make sure that email that's addressed to that domain is accepted by the Exchange organization. The connector configuration of your organization determines how messages are routed.
 
-To learn more, see [Configure an accepted domain for a business unit with mailboxes outside your Exchange organization](configure-an-accepted-domain-for-a-business-unit-with-mailboxes-outside-your-exchange-organization-exchange-2013-help.md).
+To learn more, see [Configure an accepted domain for a business unit with mailboxes outside your Exchange organization](config-accepted-domain-business-unit-outside-org-exchange-2013-help.md).
 
 ## External relay domain
 

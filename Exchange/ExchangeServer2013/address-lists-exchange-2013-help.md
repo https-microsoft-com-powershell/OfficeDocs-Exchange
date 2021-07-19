@@ -4,9 +4,10 @@ TOCTitle: Address lists
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 8ee2672a-3a45-4897-8cc0-fa23c374dbf9
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,19 +19,19 @@ An address list is a collection of recipient and other Active Directory objects.
 
 As shown in the following figure, client applications, such as Microsoft Outlook, display the available address lists that Exchange provides.
 
-Address lists reside in Active Directory. Therefore, mobile users who are disconnected from the network are also disconnected from these server-side address lists. However, you can create offline address books (OABs) for users who are disconnected from the network. These OABs can be downloaded to a user's hard disk. Frequently, to conserve resources, OABs are subsets of the information in the actual address lists that reside on your servers. For more information, see [Understanding Offline Address Books](https://technet.microsoft.com/library/a6bcb072-4ab9-400e-a5d0-c05264629097.aspx).
+Address lists reside in Active Directory. Therefore, mobile users who are disconnected from the network are also disconnected from these server-side address lists. However, you can create offline address books (OABs) for users who are disconnected from the network. These OABs can be downloaded to a user's hard disk. Frequently, to conserve resources, OABs are subsets of the information in the actual address lists that reside on your servers. For more information, see [Offline address books in Exchange Online](../ExchangeOnline/address-books/offline-address-books/offline-address-books.md).
 
 ## Default address lists
 
 When users want to use their client application to find recipient information, they can select from available address lists. Several address lists, such as the global address list (GAL), are created by default. Exchange contains the following default address lists, which are then automatically populated with new users, contacts, groups, or rooms as they're added to your organization:
 
-- **All Contacts**: This address list contains all mail-enabled contacts in your organization. Mail-enabled contacts are those recipients who have an external email address. If you want mail-enabled contact information to be available to all users in your organization, you must include the contact in the GAL. To learn more about mail contacts, see [Understanding Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+- **All Contacts**: This address list contains all mail-enabled contacts in your organization. Mail-enabled contacts are those recipients who have an external email address. If you want mail-enabled contact information to be available to all users in your organization, you must include the contact in the GAL. To learn more about mail contacts, see [Recipients](recipients-exchange-2013-help.md).
 
-- **All Distribution Lists**: This address list contains all distribution groups and mail-enabled security groups in your organization. Mail-enabled groups are lists of recipients that are created to expedite the mass sending of email messages and other information. When an email message is sent to a mail-enabled group, all members of that list receive a copy of the message. To learn more about mail-enabled groups, see [Understanding Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+- **All Distribution Lists**: This address list contains all distribution groups and mail-enabled security groups in your organization. Mail-enabled groups are lists of recipients that are created to expedite the mass sending of email messages and other information. When an email message is sent to a mail-enabled group, all members of that list receive a copy of the message. To learn more about mail-enabled groups, see [Recipients](recipients-exchange-2013-help.md).
 
-- **All Rooms**: This address list contains all resources that have been designated as a room in your organization. Rooms are resources in your organization that can be scheduled by sending a meeting request from a client application. The user account that's associated with a room is disabled. To learn more about resource mailboxes, see [Understanding Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+- **All Rooms**: This address list contains all resources that have been designated as a room in your organization. Rooms are resources in your organization that can be scheduled by sending a meeting request from a client application. The user account that's associated with a room is disabled. To learn more about resource mailboxes, see [Recipients](recipients-exchange-2013-help.md).
 
-- **All Users**: This address list contains all mail-enabled users in your organization. A mail-enabled user represents a user outside your Exchange organization. Each mail-enabled user has an external email address. All messages sent to mail-enabled users are routed to this external email address. A mail-enabled user is similar to a mail contact, except that a mail-enabled user has Active Directory logon credentials and can access resources. To learn more about mail-enabled users, see [Understanding Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+- **All Users**: This address list contains all mail-enabled users in your organization. A mail-enabled user represents a user outside your Exchange organization. Each mail-enabled user has an external email address. All messages sent to mail-enabled users are routed to this external email address. A mail-enabled user is similar to a mail contact, except that a mail-enabled user has Active Directory logon credentials and can access resources. To learn more about mail-enabled users, see [Recipients](recipients-exchange-2013-help.md).
 
 - **Default Global Address List**: This address list contains all mail-enabled users, contacts, groups, or rooms in the organization. During setup, Exchange creates various default address lists. The most familiar address list is the GAL. By default, the GAL contains all recipients in an Exchange organization. In other words, any mailbox-enabled or mail-enabled object in an Active Directory forest that has Exchange installed is listed in the GAL. For ease of use, the GAL is organized by name, not by email address. For more information, see [Create a global address list](create-global-address-list-exchange-2013-help.md).
 
@@ -54,4 +55,4 @@ Although address lists are useful tools for users, poorly planned address lists 
 
 - Name your address lists in such a way that, when users glance at them, they will know immediately which recipient types are contained in the list. If you have difficulty naming your address lists, create fewer lists and remind users that they can find anyone in your organization by using the GAL.
 
-For detailed instructions about creating an address list in Exchange Server, see [Create an Address List](https://technet.microsoft.com/library/e86ba1b7-c41c-4050-bc29-13996cf53c59.aspx).
+For detailed instructions about creating an address list in Exchange Server, see [Create an address list](create-an-address-list-exchange-2013-help.md).

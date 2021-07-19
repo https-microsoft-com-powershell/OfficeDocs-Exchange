@@ -7,9 +7,10 @@ author: msdmaguire
 ms.prod: exchange-server-it-pro
 ms.assetid: a6bcb072-4ab9-400e-a5d0-c05264629097
 ms.collection: exchange-server
-ms.date: 7/6/2018
 ms.reviewer: 
 manager: serdars
+f1.keywords:
+- NOCSH
 audience: ITPro
 title: Offline address books in Exchange Server
 

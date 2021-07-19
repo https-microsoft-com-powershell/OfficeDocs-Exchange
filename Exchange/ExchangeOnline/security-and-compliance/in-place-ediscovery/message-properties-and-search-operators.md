@@ -3,15 +3,17 @@ localization_priority: Normal
 description: This topic describes the properties of Exchange email messages that you can search by using In-Place eDiscovery & Hold in Exchange Server and Exchange Online. The topic also describes Boolean search operators and other search query techniques that you can use to refine eDiscovery search results.
 ms.topic: overview
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 402b74e4-8853-4c51-9737-1a9c19f8e3dd
-ms.date: 7/11/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Message properties and search operators for In-Place eDiscovery
 ms.collection: 
 - exchange-online
 - M365-email-calendar
 audience: Admin
+search.appverid: MET150
 ms.service: exchange-online
 manager: serdars
 
@@ -21,7 +23,7 @@ manager: serdars
 
 This topic describes the properties of Exchange email messages that you can search by using In-Place eDiscovery & Hold in Exchange Server and Exchange Online. The topic also describes Boolean search operators and other search query techniques that you can use to refine eDiscovery search results.
 
-In-Place eDiscovery uses Keyword Query Language (KQL). For more details, see [Keyword Query Language syntax reference](https://go.microsoft.com/fwlink/p/?LinkId=269603).
+In-Place eDiscovery uses Keyword Query Language (KQL). For more details, see [Keyword Query Language syntax reference](/sharepoint/dev/general-development/keyword-query-language-kql-syntax-reference).
 
 ## Searchable properties in Exchange
 
@@ -89,7 +91,7 @@ Here's a list of the unsupported characters for an In-Place eDiscovery search qu
 
 - **Lowercase Boolean operators**: As previous explained, you have to use uppercase Boolean operators, such as **AND** and **OR**, in a search query. Note that the query syntax will often indicate that a Boolean operator is being used even though lowercase operators might be used; for example, `(WordA or WordB) and (WordC or WordD)`.
 
- **How to prevent unsupported characters in your search queries?**The best way to prevent unsupported characters is to just type the query in the keyword box. Alternatively, you can copy a query from Word or Excel and then paste it to file in a plain text editor, such as Microsoft Notepad. Then save the text file and select **ANSI** in the **Encoding** drop-down list. This will remove any formatting and unsupported characters. Then you can copy and paste the query from the text file to the keyword query box.
+ **How to prevent unsupported characters in your search queries?** The best way to prevent unsupported characters is to just type the query in the keyword box. Alternatively, you can copy a query from Word or Excel and then paste it to file in a plain text editor, such as Microsoft Notepad. Then save the text file and select **ANSI** in the **Encoding** drop-down list. This will remove any formatting and unsupported characters. Then you can copy and paste the query from the text file to the keyword query box.
 
 ## Search tips and tricks
 

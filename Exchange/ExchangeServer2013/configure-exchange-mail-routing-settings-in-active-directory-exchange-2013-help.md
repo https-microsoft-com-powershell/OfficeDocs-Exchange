@@ -2,13 +2,14 @@
 title: 'Configure Exchange mail routing settings in Active Directory'
 TOCTitle: Configure Exchange mail routing settings in Active Directory
 ms:assetid: d01f8545-c201-4a96-be39-ed4c7008afcf
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ674705(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ674705(v=EXCHG.150)
 ms:contentKeyID: 49351085
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ By default Microsoft Exchange Server 2013 references the IP site link objects in
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure an Exchange-specific cost on an Active Directory IP site link
 

@@ -5,12 +5,13 @@ ms.topic: get-started-article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: b8e51b0b-201e-4c64-92c8-3ac0db04b6e2
-ms.date: 7/24/2018
 ms.reviewer: 
 title: Install Exchange Edge Transport servers using the Setup wizard
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -59,7 +60,7 @@ To install the Mailbox role on a computer, see [Install Exchange Mailbox servers
 
    - **Don't check for updates right now**
 
-   ![Exchange Setup, Check for Updates page](../../media/f0ca225e-b88f-45e9-a8cb-21adaabe984e.png)
+   ![Exchange Setup, Check for Updates page](../../media/exchange-install-checkupdates-no.jpg)
 
 4. The **Copying Files** page shows the progress of copying files to the local hard drive. Typically, the files are copied to `%WinDir%\Temp\ExchangeSetup`, but you can confirm the location in the Exchange Setup log at `C:\ExchangeSetupLogs\ExchangeSetup.log`.
 
@@ -121,4 +122,4 @@ To install the Mailbox role on a computer, see [Install Exchange Mailbox servers
 
 - Complete your deployment by performing the tasks provided in [Exchange post-installation tasks](../../plan-and-deploy/post-installation-tasks/post-installation-tasks.md).
 
-- Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+- Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

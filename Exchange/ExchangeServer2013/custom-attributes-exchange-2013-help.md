@@ -2,13 +2,14 @@
 title: 'Custom attributes: Exchange 2013 Help'
 TOCTitle: Custom attributes
 ms:assetid: 2b043878-0b34-4563-a9c2-28a9efa7447e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee423541(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee423541(v=EXCHG.150)
 ms:contentKeyID: 49352787
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,17 +37,17 @@ Some of the advantages of using custom attributes include:
 
 In Exchange 2010 Service Pack 2 (SP2), five multivalued custom attributes were added to Exchange to allow you to store additional information for mail recipients if the traditional custom attributes didn't meet your needs. The *ExtensionCustomAttribute1* to *ExtensionCustomAttribute5* parameters can hold up to 1,300 values each. You can specify multiple values as a comma-delimited list. The following cmdlets support these new parameters:
 
-- [Set-DistributionGroup](https://technet.microsoft.com/en-us/library/bb124955\(v=exchg.150\))
+- [Set-DistributionGroup](/powershell/module/exchange/Set-DistributionGroup)
 
-- [Set-DynamicDistributionGroup](https://technet.microsoft.com/en-us/library/bb123796\(v=exchg.150\))
+- [Set-DynamicDistributionGroup](/powershell/module/exchange/Set-DynamicDistributionGroup)
 
-- [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\))
+- [Set-Mailbox](/powershell/module/exchange/Set-Mailbox)
 
-- [Set-MailContact](https://technet.microsoft.com/en-us/library/aa995950\(v=exchg.150\))
+- [Set-MailContact](/powershell/module/exchange/Set-MailContact)
 
-- [Set-MailPublicFolder](https://technet.microsoft.com/en-us/library/bb123707\(v=exchg.150\))
+- [Set-MailPublicFolder](/powershell/module/exchange/Set-MailPublicFolder)
 
-- [Set-RemoteMailbox](https://technet.microsoft.com/en-us/library/ff607302\(v=exchg.150\))
+- [Set-RemoteMailbox](/powershell/module/exchange/Set-RemoteMailbox)
 
 For more information about multivalued properties, see [Modifying multivalued properties](modifying-multivalued-properties-exchange-2013-help.md).
 
@@ -66,7 +67,7 @@ Get-Mailbox -OrganizationalUnit Sales | Set-Mailbox CustomAttribute1 "SalesOU"
 Now you can create an e-mail address policy for all recipients that have the *CustomAttribute1* property that equals SalesOU, as shown in this example.
 
 ```powershell
-New-EmailAddressPolicy -Name "Sales" -RecipientFilter { CustomAttribute1 -eq "SalesOU"} -EnabledEmailAddressTemplates "SMTP:%s%2g@sales.contoso.com"
+New-EmailAddressPolicy -Name "Sales" -RecipientFilter "CustomAttribute1 -eq 'SalesOU'" -EnabledEmailAddressTemplates "SMTP:%s%2g@sales.contoso.com"
 ```
 
 ## Custom attribute example using the ConditionalCustomAttributes parameter
@@ -93,7 +94,7 @@ Set-Mailbox -Identity Kweku -ExtensionCustomAttribute1 MATH307,ECON202,ENGL300
 Next, a dynamic distribution group for all students enrolled MATH307 is created by using the *RecipientFilter* parameter where *ExtensionCustomAttribute1* is equal to MATH307. When using the *ExtentionCustomAttributes* parameters, you can use the `-eq` operator instead of the `-like` operator.
 
 ```powershell
-New-DynamicDistributionGroup -Name Students_MATH307 -RecipientFilter {ExtensionCustomAttribute1 -eq "MATH307"}
+New-DynamicDistributionGroup -Name Students_MATH307 -RecipientFilter "ExtensionCustomAttribute1 -eq 'MATH307'"
 ```
 
 In this example, Kweku's *ExtensionCustomAttribute1* values are updated to reflect that he's added the class ENGL210 and removed the class ECON202.

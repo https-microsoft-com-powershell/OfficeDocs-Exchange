@@ -4,11 +4,12 @@ TOCTitle: Manage user access to add-ins for Outlook
 ms:assetid: e5833dec-a23a-439e-ac03-92671817bff8
 ms:mtpsurl:
 ms:contentKeyID:
-ms.date:
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,14 +31,14 @@ For additional management tasks, see [Add-ins for Outlook](add-ins-for-outlook-2
 
 - For more information about the EAC, see [Exchange admin center in Exchange 2013](exchange-admin-center-in-exchange-2013-exchange-2013-help.md).
 
-- To learn how to connect to the Exchange Management Shell, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to connect to the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Add-ins for Outlook" entry in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Add-ins for Outlook" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Specify whether an add-in is available, enabled, or disabled
 
@@ -63,7 +64,7 @@ For additional management tasks, see [Add-ins for Outlook](add-ins-for-outlook-2
 
 First, run the following command to find the display names and add-in IDs for all the add-ins for Outlook installed for your organization.
 
-```
+```powershell
 Get-App -OrganizationApp | Format-List DisplayName,AppId
 ```
 
@@ -71,29 +72,29 @@ The **AppId** value is a GUID that uniquely identifies the add-in (for example, 
 
 To disable and hide an add-in from all your users, replace _\<AppId\>_ with the real **AppId** value and run the following command:
 
-```
+```powershell
 Set-App -Identity <AppId> -OrganizationApp -Enabled $false
 ```
 
 To enable an add-in by default, but allow your users to turn it off, replace _\<AppId\>_ with the real **AppId** value and run the following command:
 
-```
+```powershell
 Set-App -Identity <AppId> -OrganizationApp -Enabled $true -DefaultStateForUser Enabled
 ```
 
 To disable an add-in by default, but allow your users to turn it on, replace _\<AppId\>_ with the real **AppId** value and run the following command:
 
-```
+```powershell
 Set-App -Identity <AppId> -OrganizationApp -Enabled $true -DefaultStateForUser Disabled
 ```
 
 If you want the add-in to be required for your users, replace _\<AppId\>_ with the real **AppId** value and run the following command:
 
-```
+```powershell
 Set-App -Identity <AppId> -OrganizationApp -Enabled $true -DefaultStateForUser AlwaysEnabled
 ```
 
-For detailed syntax and parameters, see [Set-App](https://technet.microsoft.com/library/3506b2b9-dc23-4ed9-84f5-8839c4c3c974.aspx).
+For detailed syntax and parameters, see [Set-App](/powershell/module/exchange/set-app).
 
 ### How do you know this worked?
 
@@ -103,7 +104,7 @@ To verify that you've successfully configured an add-in, use either of the follo
 
 - In the Exchange Management Shell, run the following command and verify the values of the **DefaultStateForUser** and **Enabled** properties:
 
-  ```
+  ```powershell
   Get-App -OrganizationApp | Format-List DisplayName,AppId,Enabled,DefaultStateForUser
   ```
 
@@ -113,20 +114,20 @@ To limit the availability of an add-in to specific users, you can't use the EAC.
 
 This example limits the LinkedIn add-in with the hypothetical **AppId** value `ac83a9d5-5af2-446f-956a-c583adc94d5e` to the members of the distribution group named Marketing.
 
-```
+```powershell
 $a = Get-DistributionGroupMember Marketing
 ```
 
-```
+```powershell
 Set-App -Identity ac83a9d5-5af2-446f-956a-c583adc94d5e -OrganizationApp -ProvidedTo SpecificUsers -UserList $a.Identity -DefaultStateForUser Enabled
 ```
 
-For detailed syntax and parameters, see [Set-App](https://technet.microsoft.com/library/3506b2b9-dc23-4ed9-84f5-8839c4c3c974.aspx).
+For detailed syntax and parameters, see [Set-App](/powershell/module/exchange/set-app).
 
 ### How do you know this worked?
 
 To verify that you've successfully limited add-in availability to specific users, run the following command in the Exchange Management Shell and verify the value of the **ProvidedTo** and **UserList** properties:
 
-```
+```powershell
 Get-App -OrganizationApp | Format-List DisplayName,AppId,Enabled,DefaultStateForUser,ProvidedTo,UserList
 ```

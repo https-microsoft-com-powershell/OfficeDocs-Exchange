@@ -2,13 +2,14 @@
 title: Troubleshooting UM.Protocol Health Set
 TOCTitle: Troubleshooting UM.Protocol Health Set
 ms:assetid: 8dd9a16f-77a1-4a8d-aea4-5e96ab922dd4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.um.protocol(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.um.protocol(v=EXCHG.150)
 ms:contentKeyID: 49720834
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -53,7 +54,7 @@ The UM.Protocol service is monitored by using the following probes and monitors.
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## User Action
 
@@ -88,7 +89,7 @@ It's possible that the service recovered after it issued the alert. Therefore, w
       For example, assume that the failing monitor is **UMSelfTestMonitor**. The probe associated with that monitor is **UMSelfTestProbe**. To run that probe on server1.contoso.com, run the following command:
 
       ```powershell
-      Invoke-MonitoringProbe UM.Protocol\UMSelfTestMonitor -Server server1.contoso.com | Format-List
+      Invoke-MonitoringProbe UM.Protocol\UMSelfTestProbe -Server server1.contoso.com | Format-List
       ```
 
    4. In the command output, review the **Result** value of the probe. If the value is **Succeeded**, the issue was a transient error, and it no longer exists. Otherwise, refer to the recovery steps outlined in the following sections.
@@ -111,6 +112,6 @@ For more information about troubleshooting UJM alert messages, see [Troubleshoot
 
 ## For More Information
 
-[What's new in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150540\(v=exchg.150\))
+[What's new in Exchange 2013](../../what-s-new-in-exchange-2013-exchange-2013-help.md)
 
-[Exchange 2013 cmdlets](https://technet.microsoft.com/en-us/library/bb124413\(v=exchg.150\))
+[Exchange PowerShell](/powershell/exchange/)

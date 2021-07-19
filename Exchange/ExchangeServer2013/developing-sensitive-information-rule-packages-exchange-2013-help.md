@@ -4,9 +4,10 @@ TOCTitle: Developing sensitive information rule packages
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 
 ms.reviewer: 
 ms.assetid: c4ab8707-0839-4855-9390-3dbcb43475a7
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

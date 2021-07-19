@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 6caec7be-788a-4058-87a7-f31c575b870c
-ms.date: 4/19/2018
 ms.reviewer:
 title: Create a database availability group network
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -34,7 +35,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create a database availability group network
 
@@ -56,7 +57,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 
 This example creates the network ReplicationDagNetwork02 with a subnet of 10.0.0.0 and a bitmask of 8 in the DAG DAG1. Replication is enabled for the network, and an optional description of the network is also being added.
 
-```
+```powershell
 New-DatabaseAvailabilityGroupNetwork -DatabaseAvailabilityGroup DAG1 -Name ReplicationDagNetwork02 -Description "Replication network 2" -Subnets 10.0.0.0/8 -ReplicationEnabled:$True
 ```
 
@@ -68,16 +69,16 @@ To verify that you've successfully created a DAG network, do one of the followin
 
 - In the Exchange Management Shell, run the following command to verify the DAG network was created and to display DAG network configuration information.
 
-  ```
+  ```powershell
   Get-DatabaseAvailabilityGroupNetwork <DAGNetworkName> | Format-List
   ```
 
 ## For more information
 
-[Set-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/5c6add57-eef9-4af5-9cf3-54fd910dfe93.aspx)
+[Set-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/set-databaseavailabilitygroupnetwork)
 
-[Get-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/43f57126-a685-4208-ac63-4e3aba4a3e00.aspx)
+[Get-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/get-databaseavailabilitygroupnetwork)
 
-[New-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/3ef8d42f-9da0-456a-b4e8-6f7d99a1fa0f.aspx)
+[New-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/new-databaseavailabilitygroupnetwork)
 
-[Remove-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/8da3ddc3-72e0-4c1b-8d3f-848c3ab5584e.aspx)
+[Remove-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/remove-databaseavailabilitygroupnetwork)

@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can set the default language for a Unified Messaging (UM) dial plan. Each dial plan you create will initially use English (en-US) as the default language.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 7a1d2e7e-4053-40af-9ec1-ec714df12ad4
-ms.date: 7/12/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Set the default language on a dial plan in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -33,18 +34,18 @@ manager: serdars
 
 This example sets the default language on a UM dial plan named `MyUMDialPlan` to German.
 
-```
+```PowerShell
 Set-UMDialPlan -Identity MyUMDialPlan -DefaultLanguage de-DE
 ```
 
 This example sets the default language on a UM dial plan named `MyUMDialPlan` to Japanese.
 
-```
+```PowerShell
 Set-UMDialPlan -Identity MyUMDialPlan -DefaultLanguage ja-JP
 ```
 
 This example sets the default language on a UM dial plan named `MyUMDialPlan` to Australian English.
 
-```
+```PowerShell
 Set-UMDialPlan -Identity MyUMDialPlan -DefaultLanguage en-AU
 ```

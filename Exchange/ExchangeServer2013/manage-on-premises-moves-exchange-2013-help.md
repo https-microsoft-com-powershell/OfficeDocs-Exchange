@@ -2,13 +2,14 @@
 title: 'Manage on-premises moves: Exchange 2013 Help'
 TOCTitle: Manage on-premises moves
 ms:assetid: 1691b658-f5af-49c6-9170-5c3cb66c7306
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150487(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150487(v=EXCHG.150)
 ms:contentKeyID: 47559947
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,7 +27,7 @@ When you use move request to move mailboxes, the move requests are processed by 
 
 - Microsoft Exchange Mailbox Replication Proxy
 
-For more information about the Mailbox replication server and proxy, see [Learn more about MRS Proxy](https://technet.microsoft.com/en-us/library/jj156451\(v=exchg.150\)).
+For more information about the Mailbox replication server and proxy, see [Learn more about MRS Proxy](/previous-versions/exchange-server/exchange-150/jj156451(v=exchg.150)).
 
 For more information about mailbox moves, see [Mailbox moves in Exchange 2013](mailbox-moves-in-exchange-2013-exchange-2013-help.md).
 
@@ -39,7 +40,7 @@ For more information about mailbox moves, see [Mailbox moves in Exchange 2013](m
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Test whether a mailbox is ready to move
 
@@ -49,7 +50,7 @@ This example uses the *WhatIf* switch to test whether Tony Smith's mailbox is re
 New-MoveRequest -Identity 'tony@alpineskihouse.com' -TargetDatabase DB01 -WhatIf
 ```
 
-For detailed syntax and parameter information, see [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\)) and [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch) and [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## Create a local move request
 
@@ -65,7 +66,7 @@ To create a local move request, log in to the EAC and perform the following step
 
 ## Use the Shell to create a local move request
 
-For an example of how to create a local move request, see Example 2 in [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For an example of how to create a local move request, see Example 2 in [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## How do you know this worked?
 
@@ -81,13 +82,13 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).
 
 ## Create a batch move request
 
 ## Use the EAC to create a batch move request
 
-log in to the EAC and perform the following steps:
+Log in to the EAC and perform the following steps:
 
 1. In the EAC, navigate to **Recipients** \> **Migration**, and then click **Add** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon").
 
@@ -110,7 +111,10 @@ New-MigrationBatch -Local -Name LocalMove1 -CSVData ([System.IO.File]::ReadAllBy
 Start-MigrationBatch -Identity LocalMove1
 ```
 
-For detailed syntax and parameter information, see [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\)) and [Start-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219165\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch) and [Start-MigrationBatch](/powershell/module/exchange/Start-MigrationBatch).
+
+> [!NOTE]
+> All mailboxes that are specified in the CSV file will be migrated, even if they are outside of the RBAC scope (for example, an OU) that gives the admin permissions to migrate mailboxes.
 
 ## How do you know this worked?
 
@@ -124,11 +128,11 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).
 
 ## Display migration batches
 
-For an example of how to use the Shell to display a migration batch, see Example 2 in [Get-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219164\(v=exchg.150\)).
+For an example of how to use the Shell to display a migration batch, see Example 2 in [Get-MigrationBatch](/powershell/module/exchange/Get-MigrationBatch).
 
 ## Move only a user's primary mailbox
 
@@ -148,7 +152,7 @@ This example moves only Tony Smith's primary mailbox to DB01. The archive isn't 
 New-MoveRequest -Identity 'tony@alpineskihouse.com' -PrimaryOnly -TargetDatabase "DB01"
 ```
 
-For detailed syntax and parameter information, see [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## How do you know this worked?
 
@@ -162,7 +166,7 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).
 
 ## Create a cross-forest move using a .csv batch file
 
@@ -183,7 +187,7 @@ For more information about preparing your forest for cross-forest moves, see the
 
 - [Prepare mailboxes for cross-forest moves using the Prepare-MoveRequest.ps1 script in the Shell](prepare-mailboxes-for-cross-forest-moves-using-the-prepare-moverequest-ps1-script-in-the-shell-exchange-2013-help.md)
 
-For detailed syntax and parameter information, see [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\)) and [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch) and [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## How do you know this worked?
 
@@ -195,7 +199,7 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).
 
 ## Move only an archive mailbox
 
@@ -215,7 +219,7 @@ This example moves only Tony Smith's archive mailbox to DB03. The primary mailbo
 New-MoveRequest -Identity 'tony@alpineskihouse.com' -ArchiveOnly -ArchiveTargetDatabase "DB03"
 ```
 
-For detailed syntax and parameter information, see [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\)) and [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch) and [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## How do you know this worked?
 
@@ -227,7 +231,7 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).
 
 ## Move a user's primary mailbox and archive mailbox to separate databases
 
@@ -237,7 +241,7 @@ This example moves Ayla's primary mailbox and archive mailbox to separate databa
 New-MoveRequest -Identity 'ayla@humongousinsurance.com' -TargetDatabase DB01 -ArchiveTargetDatabase -DB03
 ```
 
-For detailed syntax and parameter information, see [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\)) and [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch) and [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## How do you know this worked?
 
@@ -249,7 +253,7 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).
 
 ## Move a user's primary mailbox and allow a large bad item limit
 
@@ -271,7 +275,7 @@ This example moves Lisa's primary mailbox to mailbox database DB01 and sets the 
 New-MoveRequest -Identity 'Lisa' -PrimaryOnly -TargetDatabase "DB01" -BadItemLimit 100 -AcceptLargeDataLoss
 ```
 
-For detailed syntax and parameter information, see [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\)) and [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch) and [New-MoveRequest](/powershell/module/exchange/New-MoveRequest).
 
 ## How do you know this worked?
 
@@ -283,4 +287,4 @@ To verify that you have successfully completed your migration, do the following:
   Get-MigrationUserStatistics -Identity BatchName -Status | Format-List
   ```
 
-For more information, see [Get-MigrationUserStatistics](https://technet.microsoft.com/en-us/library/jj218695\(v=exchg.150\)).
+For more information, see [Get-MigrationUserStatistics](/powershell/module/exchange/Get-MigrationUserStatistics).

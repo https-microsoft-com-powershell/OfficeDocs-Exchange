@@ -2,13 +2,14 @@
 title: 'Configure content transfer encoding: Exchange 2013 Help'
 TOCTitle: Configure content transfer encoding
 ms:assetid: c4922362-18d4-42f7-9189-9076720eb1d8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg144562(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Gg144562(v=EXCHG.150)
 ms:contentKeyID: 49318587
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -93,7 +94,7 @@ For more information about remote domains, see [Remote domains](remote-domains-e
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure the content transfer encoding method for the organization
 

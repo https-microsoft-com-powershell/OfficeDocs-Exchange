@@ -2,13 +2,14 @@
 title: Troubleshooting DataProtection Health Set
 TOCTitle: Troubleshooting DataProtection Health Set
 ms:assetid: cde3cc34-2076-4e30-8d3c-265b66d00ae8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.dataprotection(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.dataprotection(v=EXCHG.150)
 ms:contentKeyID: 49720873
-ms.date:
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -109,7 +110,7 @@ The DataProtection Health service is monitored by using the following probes and
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## User Action
 
@@ -313,10 +314,10 @@ If all components display **Passed** in the **Result** column, try to rerun the 
 
 If the issue still exists, restart the server. After the server restarts, rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
-If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## For More Information
 
-[What's new in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150540\(v=exchg.150\))
+[What's new in Exchange 2013](../../what-s-new-in-exchange-2013-exchange-2013-help.md)
 
-[Exchange 2013 cmdlets](https://technet.microsoft.com/en-us/library/bb124413\(v=exchg.150\))
+[Exchange PowerShell](/powershell/exchange/)

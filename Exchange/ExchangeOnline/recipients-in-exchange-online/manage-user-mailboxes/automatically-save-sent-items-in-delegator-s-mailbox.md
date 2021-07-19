@@ -3,9 +3,11 @@ localization_priority: Normal
 description: Set up mailboxes so messages sent by a delegate are stored in both the delegate and delegator's Sent Items.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: f15297f3-32c3-44b6-87b5-dd64dc2bcf7e
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Automatically save sent items in delegator's mailbox
 ms.collection: 
 - exchange-online
@@ -21,7 +23,7 @@ manager: serdars
 
 # Automatically save sent items in delegator's mailbox
 
-Mailboxes in Office 365 can be set up so that someone (such as an executive assistant) can access the mailbox of another person (such as a manager) and send mail as them. These people are often called the delegate and the delegator, respectively. We'll call them "assistant" and "manager" for simplicity's sake. When an assistant is granted access to a manager's mailbox, it's called delegated access.
+Mailboxes in Microsoft 365 or Office 365 can be set up so that someone (such as an executive assistant) can access the mailbox of another person (such as a manager) and send mail as them. These people are often called the delegate and the delegator, respectively. We'll call them "assistant" and "manager" for simplicity's sake. When an assistant is granted access to a manager's mailbox, it's called delegated access.
 
 People often set up delegated access and send permissions to allow an assistant to manage a manager's calendar where they need to send and respond to meeting requests. By default, when an assistant sends mail as, or on behalf of, a manager, the sent message is stored in the assistant's Sent Items folder. You can use this article to change this behavior so that the sent message is stored in both the assistant and manager's Sent Items folders.
 
@@ -43,28 +45,43 @@ When you set up someone as a delegate on a manager's mailbox, you can choose whe
 
 - **Send on behalf** When someone has "Send on behalf" permissions on a mailbox, messages they send from the owner's mailbox will show that the message was sent by someone on behalf of the mailbox owner. In the example above, if Rob has "Send on behalf" permissions on Mary's mailbox, messages he sends from her mailbox will show **From: Rob on behalf of Mary** to recipients.
 
-The send permissions that someone has on another user's mailbox are important when thinking about how sent items should be handled. This is because you can decide, for each level of permissions, whether messages should be stored in just the assistant's Sent Items folder or in both the assistant and manager's Sent Items folders. Office 365 defaults to storing sent items for messages sent with "Send as" and "Send on behalf" permissions in the assistant's Sent Items only. You can change that default behavior using the steps below.
+The send permissions that someone has on another user's mailbox are important when thinking about how sent items should be handled. This is because you can decide, for each level of permissions, whether messages should be stored in just the assistant's Sent Items folder or in both the assistant and manager's Sent Items folders. Microsoft 365 and Office 365 default to storing sent items for messages sent with "Send as" and "Send on behalf" permissions in the assistant's Sent Items only. You can change that default behavior using the steps below.
 
 > [!TIP]
 > Managers might have multiple assistants with different levels of permissions. In the example above, while Rob may be able to send messages on behalf of Mary, she could have another assistant that can Send as Mary. If this was the case, Mary's IT department could do the steps for both "Send as" and "Send on behalf" permissions.
 
+## Use the new EAC to automatically save sent items in the delegator's mailbox
+
+1. In the new EAC, navigate to **Recipients > Mailboxes**.
+   
+2. In the list of user mailboxes, click the mailbox that you want to configure the sent items to be saved for the delegator. A display pane is shown for the selected user mailbox.
+   
+3. Under **Mailbox settings**, click **Manage mailbox delegation**.
+
+4. In the **Manage mailbox delegation** settings, do the following.
+    1. In the **Send on behalf** row, click **Edit**.
+    1. Click **Add permissions**.
+    1. Check the checkbox of the person whom you want to configure as the delegate.
+  
+ 5. Click **Save** to save your change. A message Manage mailbox delegation settings updated successfully is displayed. Click **Close** to exit.
+
 ## How do I set up a mailbox to save messages "Sent as" a manager when they're sent by an assistant?
 
-When you do these steps, any messages **sent as** the manager whose mailbox you're configuring, will be saved to the manager's Sent Items folder. To set this up, just follow the steps below. You'll need to use Windows PowerShell to complete the steps; if you haven't used it before, go to [Using PowerShell with Exchange Online](https://go.microsoft.com/fwlink/?linkid=282266) for instructions on how to get connected. There's a great video too!
+When you do these steps, any messages **sent as** the manager whose mailbox you're configuring, will be saved to the manager's Sent Items folder. To set this up, just follow the steps below. You'll need to use Windows PowerShell to complete the steps; if you haven't used it before, go to [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell) for instructions on how to get connected. There's a great video too!
 
-1. Open Windows PowerShell and, using the instructions at [Using PowerShell with Exchange Online](https://go.microsoft.com/fwlink/?linkid=282266), connect to Exchange Online PowerShell.
+1. [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell).
 
 2. Get the email address of the manager.
 
 3. Use the following syntax in Exchange Online PowerShell window:
 
-   ```
+   ```PowerShell
    Set-Mailbox <manager's email address> -MessageCopyForSentAsEnabled $true
    ```
 
 For example, if Mary's email address is mary@contoso.com, her IT department would run the following command:
 
-```
+```PowerShell
 Set-Mailbox mary@contoso.com -MessageCopyForSentAsEnabled $true
 ```
 
@@ -75,21 +92,21 @@ That's it! The manager will now automatically get a copy of any messages sent by
 
 ## How do I set up a mailbox to save messages "Sent on behalf" of a manager when they're sent by an assistant?
 
-When you do these steps, any messages **sent on behalf** the manager whose mailbox you're configuring, will be saved to the manager's Sent Items folder. To set this up, just follow the steps below. You'll need to use Windows PowerShell to complete the steps; if you haven't used it before, go to [Using PowerShell with Exchange Online](https://go.microsoft.com/fwlink/?linkid=282266) for instructions on how to get connected. There's a great video too!
+When you do these steps, any messages **sent on behalf** the manager whose mailbox you're configuring, will be saved to the manager's Sent Items folder. To set this up, just follow the steps below. You'll need to use Windows PowerShell to complete the steps; if you haven't used it before, go to [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell) for instructions on how to get connected. There's a great video too!
 
-1. Open Windows PowerShell and, using the instructions at [Using PowerShell with Exchange Online](https://go.microsoft.com/fwlink/?linkid=282266), connect to Exchange Online PowerShell.
+1. [Connect to Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell).
 
 2. Get the email address of the manager.
 
 3. Use the following syntax in the Exchange Online PowerShell:
 
-   ```
+   ```PowerShell
    Set-Mailbox <manager's email address> -MessageCopyForSendOnBehalfEnabled $true
    ```
 
 For example, if Mary's email address is mary@contoso.com, her IT department would run the following command
 
-```
+```PowerShell
 Set-Mailbox mary@contoso.com -MessageCopyForSendOnBehalfEnabled $true
 ```
 

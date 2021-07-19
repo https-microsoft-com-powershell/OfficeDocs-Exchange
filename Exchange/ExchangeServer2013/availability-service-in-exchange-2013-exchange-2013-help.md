@@ -2,13 +2,14 @@
 title: 'Availability service in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Availability service in Exchange 2013
 ms:assetid: 9722dea2-2bf8-437c-85c0-3ab65b8a07b9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232134(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232134(v=EXCHG.150)
 ms:contentKeyID: 51492808
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -55,7 +56,7 @@ Using Network Load Balancing (NLB) on your Client Access servers that are runnin
 The internal URL is used from the intranet, and the external URL is used from the Internet. If you want to use the same URL for both internal and external traffic, make sure that DNS is correctly configured to route internal traffic directly to the internal URL. Also, make sure that the URL can be accessed both internally and externally. For the Autodiscover and Availability services to work, DNS must be configured so that mail.\<*domain name*\>.com and autodiscover.mail.\<*domain name*\>.com point to the virtual IP (VIP) of your load-balancing solution, where \<*domain name*\> is the name of your domain.
 
 > [!NOTE]
-> For more information, see <A href="https://go.microsoft.com/fwlink/p/?linkid=45959">Network Load Balancing Technical Reference</A> and <A href="https://go.microsoft.com/fwlink/p/?linkid=49315">Network Load Balancing Clusters</A>. You can also search for third-party load-balancing software websites.
+> For more information, see <A href="/previous-versions/windows/it-pro/windows-server-2003/cc739506(v=ws.10)">Network Load Balancing Technical Reference</A> and <A href="/previous-versions/windows/it-pro/windows-server-2003/cc759510(v=ws.10)">Network Load Balancing Clusters</A>. You can also search for third-party load-balancing software websites.
 
 ## Methods used to retrieve free/busy information
 

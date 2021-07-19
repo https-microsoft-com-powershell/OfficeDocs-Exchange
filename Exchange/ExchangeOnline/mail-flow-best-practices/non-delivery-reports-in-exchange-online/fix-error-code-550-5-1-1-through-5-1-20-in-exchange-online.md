@@ -1,41 +1,46 @@
 ---
 title: "Fix email delivery issues for error code 550 5.1.1 through 5.1.20 in Exchange Online"
-ms.author: dmaguire
+ms.author: jhendr
 author: msdmaguire
 manager: serdars
-ms.date: 
 ms.reviewer: 
 audience: Admin
 ms.topic: troubleshooting
 ms.service: o365-administration
 localization_priority: Priority
+f1.keywords:
+- CSH
 ms.custom: MiniMaven
 search.appverid:
 - BCS160
 - MOE150
+- MET150
 ms.assetid: 79e91ade-5c83-405b-a37d-d99c7d069b13
 description: "Learn how to fix email issues for error code 5.1.1 through 5.1.20 in Exchange Online (the recipient doesn't exist or your Auto-Complete list entry for the recipient is bad)."
 ---
 
 # Fix email delivery issues for error code 550 5.1.1 through 5.1.20 in Exchange Online
 
-It's frustrating when you get an error after sending an email message. This topic describes what you can do if you see error codes 550 5.1.1 through 5.1.20 in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN).
+> [!IMPORTANT]
+> Mail flow rules are now available in the new Exchange Admin Center. [Try it now](https://admin.exchange.microsoft.com/#/transportrules)!
+
+It's frustrating when you get an error after sending an email message. This article describes what you can do if you see error codes 550 5.1.1 through 5.1.20 in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN).
 
 |||||
-|:-----|:-----|:-----|:-----|
+|---|---|---|---|
 |![Email user icon](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. What can I do to fix this?](#im-an-email-admin-what-can-i-do-to-fix-this)|
 
 ## I got this bounce message. How do I fix it?
 
 Here are some steps that you can try to fix the problem yourself.
 
-If the steps in this section don't fix the problem for you, contact your email admin and refer them to the information in this topic so they can try to resolve the issue for you.
+If the steps in this section don't fix the problem for you, contact your email admin and refer them to the information in this article so they can try to resolve the issue for you.
 
 ### Solution 1: Confirm the recipient's email address
 
 It sounds too simple, but the wrong email address is the most common issue that causes 5.1.x errors. Check for correct spelling and send the message again if you find an error in the email address.
 
-To resend the message in Outlook, see [Resend an email message](https://support.office.com/article/acd16ac4-c881-477d-b4aa-36168fa96088.aspx).
+To resend the message in Outlook, see [Resend an email message](https://support.microsoft.com/office/acd16ac4-c881-477d-b4aa-36168fa96088).
 
 ### Solution 2: Remove the recipient's email address from your Auto-Complete list
 
@@ -43,7 +48,7 @@ You might have an invalid entry in your Auto-Complete list (also known as the _n
 
 #### Fix your Auto-Complete list entries in Outlook
 
-To remove invalid recipients or all recipients from your Auto-Complete list in Outlook 2010 later, see [Manage suggested recipients in the To, Cc, and Bcc boxes with Auto-Complete](https://support.office.com/article/dbe46e31-c098-4881-8cf7-66b037bce23e).
+To remove invalid recipients or all recipients from your Auto-Complete list in Outlook 2010 later, see [Manage suggested recipients in the To, Cc, and Bcc boxes with Auto-Complete](https://support.microsoft.com/office/dbe46e31-c098-4881-8cf7-66b037bce23e).
 
 #### Fix your Auto-Complete list entries in Outlook on the web
 
@@ -85,7 +90,7 @@ After you open your mailbox in the light version of Outlook on the web, do the f
 
 4. Log off and close your web browser. The next time you open your mailbox in a supported web browser, you'll use the full version of Outlook on the web.
 
-To remove invalid recipients or all recipients from your Auto-Complete list in Outlook 2010 later, see [Manage suggested recipients in the To, Cc, and Bcc boxes with Auto-Complete](https://support.office.com/article/dbe46e31-c098-4881-8cf7-66b037bce23e).
+To remove invalid recipients or all recipients from your Auto-Complete list in Outlook 2010 later, see [Manage suggested recipients in the To, Cc, and Bcc boxes with Auto-Complete](https://support.microsoft.com/office/dbe46e31-c098-4881-8cf7-66b037bce23e).
 
 ### Solution 3: Confirm that the recipient isn't auto-forwarding messages from you to another (and likely, invalid) email address
 
@@ -101,7 +106,7 @@ Check your recent messages in the **Sent Items** folder for strange or unknown m
 
 If you believe that your account has been compromised, follow these steps:
 
-- Reset your password and scan your devices for malware. However, the hacker might have configured other settings on your mailbox (for example, created Inbox rules to auto-forward email messages or added additional mailbox delegates). So, follow the additional steps in [How to determine whether your Office 365 account has been compromised](https://go.microsoft.com/fwlink/p/?linkid=861995).
+- Reset your password and scan your devices for malware. However, the hacker might have configured other settings on your mailbox (for example, created Inbox rules to auto-forward email messages or added additional mailbox delegates). So, follow the additional steps in [How to determine whether your account has been compromised](/office365/troubleshoot/sign-In/determine-account-is-compromised).
 
 - Notify your email admin. Your admin will need to unblock your account before you can send email again.
 
@@ -113,33 +118,23 @@ Typically, if a message can't be delivered, the recipient's email system will us
 
 Check your recent messages in the **Sent Items** folder for strange or unknown messages (messages that you didn't send). If you don't see any suspicious messages, it's likely that the NDR you received is backscatter. If you've already changed your password and run an anti-malware scan, you can ignore these backscatter NDRs.
 
-To learn more, see [Backscatter messages and EOP](https://technet.microsoft.com/library/dn499795.aspx).
+To learn more, see [Backscatter in EOP](/microsoft-365/security/office-365-security/backscatter-messages-and-eop).
 
 ## I'm an email admin. What can I do to fix this?
 
-If the steps in the previous section don't solve the issue for the sender, the solution might be related to the way the user's Office 365 account is set up. If you have a hybrid topology, the solution might also be related to the on-premises mail transfer agent. It might also be a problem with the recipient's domain configuration. Here are 4 solutions you can try. You might not need to try all of them to get the message sent successfully.
+If the steps in the previous section don't solve the issue for the sender, the solution might be related to the way the user's Microsoft 365 or Office 365 account is set up. If you have a hybrid topology, the solution might also be related to the on-premises mail transfer agent. It might also be a problem with the recipient's domain configuration. Here are four solutions you can try. You might not need to try all of them to get the message sent successfully.
 
-### Solution 1: Check the Office 365 Message Center for configuration problems or service-wide issues
+### Solution 1: Check the Microsoft 365 admin center for configuration problems or service-wide issues
 
-For Office 365 accounts, the Office 365 portal provides a central source for a variety of tools, notifications, and information that you can use to troubleshoot this and other issues.
+For Microsoft 365 or Office 365 accounts, the Microsoft 365 admin center provides a central source for various tools, notifications, and information that you can use to troubleshoot this and other issues.
 
-Log in to an administrator account on the Office 365 portal at [https://portal.office.com](https://portal.office.com), and from the **Dashboard**, do the following:
+Open the [Microsoft 365 admin center](https://admin.microsoft.com), and from the **Home** page, do the following items:
 
 1. Check the **Message Center** to see if your organization has a known configuration issue.
 
-   1. Choose **Message center**.
+2. Go to **Health** \> **Service health** to see if there's a current service issue in Microsoft 365 or Office 365 affecting the user's account.
 
-   2. Select **View all**.
-
-   3. Select **Prevent or fix issues**, and perform any relevant suggested actions.
-
-2. Check if there's a current service issue in Office 365 affecting the user's account.
-
-   1. Choose **Service health** to see an overview of any issues.
-
-   2. Select **View all** to get more details about all known issues.
-
-3. Check the sender and recipient domains for incorrect or stale mail exchange (MX) resource records by running the [Mailflow Troubleshooter](https://docs.microsoft.com/exchange/mail-flow-best-practices/troubleshoot-mail-flow) tool that is within Office 365.
+3. Check the sender and recipient domains for incorrect or stale mail exchange (MX) resource records by running the [Mailflow Troubleshooter](../troubleshoot-mail-flow.md) tool that is available within Microsoft 365 and Office 365.
 
 If there's a problem with the recipient's domain, contact the recipient or the recipient's email administrator to let them know about the problem. They'll have to resolve the issue in order to prevent NDR 5.1.x errors.
 
@@ -158,7 +153,7 @@ If external senders (senders outside your organization) receive this NDR when th
 
 - Test your MX record and your ability to send email from your Exchange Online organization by using the **Verify MX Record and Outbound Connector Test** at **Office 365** \> **Mail Flow Configuration** in the Microsoft Remote Connectivity Analyzer.
 
-For more information, see [Create DNS records at any DNS hosting provider for Office 365](https://docs.microsoft.com/office365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider) and [Set up SPF in Office 365 to help prevent spoofing](https://docs.microsoft.com/office365/SecurityCompliance/set-up-spf-in-office-365-to-help-prevent-spoofing).
+For more information, see [Add DNS records to connect your domain](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider) and [Set up SPF to help prevent spoofing](/microsoft-365/security/office-365-security/set-up-spf-in-office-365-to-help-prevent-spoofing).
 
 ### Solution 3: Update forwarding rules to remove incorrect email addresses
 
@@ -168,15 +163,15 @@ This NDR might be caused by a forwarded (unintended) recipient that's configured
 
 - A mail flow rule (also known as a transport rule) configured by an email admin that copies or forwards messages sent to the recipient to another invalid recipient.
 
-For more information, see [Configure email forwarding for a mailbox](https://technet.microsoft.com/library/dd351134.aspx).
+For more information, see [Configure email forwarding for a mailbox](../../recipients-in-exchange-online/manage-user-mailboxes/configure-email-forwarding.md).
 
 ## Still need help with error code 5.1.1 to 5.1.20?
 
-[![Get help from the Office 365 community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://go.microsoft.com/fwlink/p/?LinkId=518605)
+[![Get help from the community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://answers.microsoft.com/)
 
-[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://go.microsoft.com/fwlink/p/?LinkId=519124)
+[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://admin.microsoft.com/AdminPortal/Home#/support)
 
-[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](https://go.microsoft.com/fwlink/p/?LinkID=518322)
+[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](/microsoft-365/Admin/contact-support-for-business-products)
 
 ## See also
 

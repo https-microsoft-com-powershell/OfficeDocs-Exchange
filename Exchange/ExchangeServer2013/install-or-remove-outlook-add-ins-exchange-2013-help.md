@@ -4,9 +4,10 @@ TOCTitle: Install or remove add-ins for Outlook for your organization
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 112f3ef7-9943-4a1e-8a42-e08e8e9f67f4
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,7 +26,7 @@ For additional management tasks, see [Add-ins for Outlook](add-ins-for-outlook-e
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Apps for Outlook" entry in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Apps for Outlook" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - You can assign administrators permission to install and manage add-ins for your organization. You can also assign users permission to install and manage add-ins for their own use. For more information, see [Specify the administrators and users who can install and manage add-ins for Outlook](specify-who-can-install-and-manage-add-ins-exchange-2013-help.md).
 
@@ -34,7 +35,7 @@ For additional management tasks, see [Add-ins for Outlook](add-ins-for-outlook-e
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Install an add-in for Outlook
 
@@ -72,7 +73,7 @@ New-App -OrganizationApp -FileData <File location for add-in manifest file>
 > [!TIP]
 > When you use the Shell to install an add-in for your organization, you can install the add-in and configure settings for it at the same time.
 
-For syntax and parameters, see [New-App](https://technet.microsoft.com/library/f05951d8-1e49-42b6-a341-66eb67b2870f.aspx).
+For syntax and parameters, see [New-App](/powershell/module/exchange/new-app).
 
 ## Remove an add-in for Outlook
 
@@ -99,7 +100,7 @@ Run the following command to remove the custom add-in Finance Test Add-in from t
 Remove-App -OrganizationApp -Identity <GUID for Finance Test Add-in>
 ```
 
-For syntax and parameters, see [Remove-App](https://technet.microsoft.com/library/cfd1245f-dcd2-48c1-b753-a7ebedd2803f.aspx).
+For syntax and parameters, see [Remove-App](/powershell/module/exchange/remove-app).
 
 ## How do you know this worked?
 

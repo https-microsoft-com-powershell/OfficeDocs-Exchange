@@ -2,13 +2,14 @@
 title: 'Transport rules in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Transport rules
 ms:assetid: c3d2031c-fb7b-4866-8ae1-32928d0138ef
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd351127(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd351127(v=EXCHG.150)
 ms:contentKeyID: 49289403
-ms.date: 04/28/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,21 +23,21 @@ This article explains the components of transport rules, and how they work.
 
 You can use the Exchange admin center (EAC) or the Exchange Management Shell to manage transport rules. For instructions on how to manage transport rules, see [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md).
 
-For each rule, you have the option of enforcing it, testing it, or testing it and notifying the sender. To learn more about the testing options, see [Test a transport rule](https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/test-mail-flow-rules) and [Policy Tips](https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/policy-tips).
+For each rule, you have the option of enforcing it, testing it, or testing it and notifying the sender. To learn more about the testing options, see [Test a transport rule](../ExchangeOnline/security-and-compliance/mail-flow-rules/test-mail-flow-rules.md) and [Policy Tips](../ExchangeOnline/security-and-compliance/data-loss-prevention/policy-tips.md).
 
 To implement specific messaging policies by using transport rules, see these topics:
 
 - [Use transport rules to inspect message attachments in Exchange 2013](use-transport-rules-to-inspect-message-attachments-exchange-2013-help.md)
 
-- [Common attachment blocking scenarios for transport rules](https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/common-attachment-blocking-scenarios)
+- [Common attachment blocking scenarios for transport rules](../ExchangeOnline/security-and-compliance/mail-flow-rules/common-attachment-blocking-scenarios.md)
 
-- [Organization-wide disclaimers, signatures, footers, or headers in Exchange 2013](organization-wide-disclaimers-signatures-footers-or-headers-exchange-online-help.md)
+- [Organization-wide disclaimers, signatures, footers, or headers in Exchange 2013](organization-wide-disclaimers-signatures-footers-or-headers-exchange-2013-help.md)
 
-- [Use transport rules so messages can bypass Clutter](https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/use-rules-to-bypass-clutter)
+- [Use transport rules so messages can bypass Clutter](../ExchangeOnline/security-and-compliance/mail-flow-rules/use-rules-to-bypass-clutter.md)
 
-- [Use transport rules to route email based on a list of words, phrases, or patterns](https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/use-rules-to-route-email)
+- [Use transport rules to route email based on a list of words, phrases, or patterns](../ExchangeOnline/security-and-compliance/mail-flow-rules/use-rules-to-route-email.md)
 
-- [Common message approval scenarios](https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/common-message-approval-scenarios)
+- [Common message approval scenarios](../ExchangeOnline/security-and-compliance/mail-flow-rules/common-message-approval-scenarios.md)
 
 ## Transport rule components
 
@@ -129,8 +130,8 @@ The following table describes the rule properties that are available in transpor
 <td><p><strong>Mode</strong></p></td>
 <td><p><em>Mode</em></p></td>
 <td><p>You can specify whether you want the rule to start processing messages immediately, or whether you want to test rules without affecting the delivery of the message (with or without Data Loss Prevention or DLP Policy Tips).</p>
-<p>Policy Tips present a brief note in Outlook or Outlook on the web that provides information about possible policy violations to the person that's creating the message. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/policy-tips">Policy Tips</a>.</p>
-<p>For more information about the modes, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/test-mail-flow-rules">Test a transport rule</a>.</p></td>
+<p>Policy Tips present a brief note in Outlook or Outlook on the web that provides information about possible policy violations to the person that's creating the message. For more information, see <a href="/exchange/security-and-compliance/data-loss-prevention/policy-tips">Policy Tips</a>.</p>
+<p>For more information about the modes, see <a href="/exchange/security-and-compliance/mail-flow-rules/test-mail-flow-rules">Test a transport rule</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Activate this rule on the following date</strong></p>
@@ -194,10 +195,10 @@ There are several types of messages that pass through an organization. The follo
 <td><p>Yes</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Office 365 Message Encryption</strong>    Messages encrypted by Office 365 Message Encryption in Office 365. For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=392525">Office 365 Message Encryption</a>.</p></td>
+<td><p><strong>Microsoft 365 or Office 365 Message Encryption</strong>    Messages encrypted by Microsoft 365 or Office 365. For more information, see <a href="/microsoft-365/compliance/encryption">Encryption</a>.</p></td>
 <td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
-<p>For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=848060">Enable or disable transport decryption</a>.</p>
-<p>You can also create a rule that automatically decrypts encrypted messages. For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=402846">Define rules to encrypt or decrypt email messages</a>.</p></td>
+<p>For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p>
+<p>You can also create a rule that automatically decrypts encrypted messages. For more information, see <a href="/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email">Define mail flow rules to encrypt email messages</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>S/MIME encrypted messages</strong></p></td>
@@ -207,7 +208,7 @@ There are several types of messages that pass through an organization. The follo
 <tr class="even">
 <td><p><strong>RMS protected messages</strong>   Messages that had an Active Directory Rights Management Services (AD RMS) or Azure Rights Management (RMS) policy applied.</p></td>
 <td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
-<p>For a rule to inspect or modify the contents of an RMS protected message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=848060">Enable or disable transport decryption</a>.</p></td>
+<p>For a rule to inspect or modify the contents of an RMS protected message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Clear-signed messages</strong>   Messages that have been signed but not encrypted.</p></td>
@@ -240,7 +241,7 @@ Transport rules that you create and configure on Mailbox servers are stored in A
 
 **Notes**:
 
-- Replication between domain controllers depends on factors that aren't controlled by Exchange (for example, the number of Active Directory sites, and the speed of network links). Therefore, you need to consider replication delays when you implement transport rules in your organization. For more information about Active Directory replication, see [Introduction to Active Directory Replication and Topology Management Using Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=274904).
+- Replication between domain controllers depends on factors that aren't controlled by Exchange (for example, the number of Active Directory sites, and the speed of network links). Therefore, you need to consider replication delays when you implement transport rules in your organization. For more information about Active Directory replication, see [Introduction to Active Directory Replication and Topology Management Using Windows PowerShell](/windows-server/identity/ad-ds/manage/powershell/introduction-to-active-directory-replication-and-topology-management-using-windows-powershell--level-100-).
 
 - Each Mailbox server caches expanded distribution groups to avoid repeated Active Directory queries to determine a group's membership. By default, entries in the expanded groups cache expire every four hours. Therefore, changes to the group's membership aren't detected by transport rules until the expanded groups cache is updated. To force an immediate update of the cache on a Mailbox server, restart the Microsoft Exchange Transport service. You need to restart the service on each Mailbox server where you want to forcibly update the cache.
 
@@ -252,12 +253,12 @@ Whenever the Transport service on a Mailbox server or Edge Transport server dete
 
 There are two mixed environment scenarios that are common in Exchange 2013:
 
-- **Hybrid deployments where part of your organization resides in Office 365**
+- **Hybrid deployments where part of your organization resides in Microsoft 365 or Office 365**
 
-  In a hybrid environment, there's no replication of rules between your on-premises Exchange organization and Office 365. Therefore, when you create a rule in Exchange, you need to create a matching rule in Office 365. Rules you create in Office 365 are stored in the cloud, whereas the rules you create in your on-premises organization are stored locally in Active Directory. When you manage rules in a hybrid environment, you need to keep the two sets of rules synchronized by making the change in both places, or making the change in one environment and then exporting the rules and importing them in the other environment.
+  In a hybrid environment, there's no replication of rules between your on-premises Exchange organization and Microsoft 365 or Office 365. Therefore, when you create a rule in Exchange, you need to create a matching rule in Microsoft 365 or Office 365. Rules you create in Microsoft 365 or Office 365 are stored in the cloud, whereas the rules you create in your on-premises organization are stored locally in Active Directory. When you manage rules in a hybrid environment, you need to keep the two sets of rules synchronized by making the change in both places, or making the change in one environment and then exporting the rules and importing them in the other environment.
 
   > [!IMPORTANT]
-  > Even though there is a substantial overlap between the conditions and actions that are available in Office 365 and Exchange Server, there are differences. If you plan on creating the same rule in both locations, make sure that all conditions and actions you plan to use are available. To see the list of available conditions and actions that are available in Office 365, see the following topics:<BR><A href="https://technet.microsoft.com/en-us/library/jj919235(v=exchg.150)">Transport rule conditions and exceptions (predicates) in Exchange Online</A><BR><A href="https://technet.microsoft.com/en-us/library/jj919237(v=exchg.150)">Transport rule actions in Exchange Online</A>
+  > Even though there is a substantial overlap between the conditions and actions that are available in no Microsoft 365 or Office 365 and Exchange Server, there are differences. If you plan on creating the same rule in both locations, make sure that all conditions and actions you plan to use are available. To see the list of available conditions and actions that are available in Microsoft 365 or Office 365, see the following topics:<BR><A href="/exchange/security-and-compliance/mail-flow-rules/conditions-and-exceptions">Transport rule conditions and exceptions (predicates) in Exchange Online</A><BR><A href="/exchange/security-and-compliance/mail-flow-rules/mail-flow-rule-actions">Mail flow rule actions in Exchange Online</A>
 
 - **Coexistence with Exchange 2010 or Exchange 2007**
 

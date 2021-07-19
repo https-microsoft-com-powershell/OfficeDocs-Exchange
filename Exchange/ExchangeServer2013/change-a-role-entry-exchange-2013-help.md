@@ -2,13 +2,14 @@
 title: 'Change a role entry: Exchange 2013 Help'
 TOCTitle: Change a role entry
 ms:assetid: 5aa4f39c-16a4-4815-ac4f-2cdcfa2b3ee1
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298005(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298005(v=EXCHG.150)
 ms:contentKeyID: 49289260
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -43,7 +44,7 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to add one or more parameters to a role entry
 
@@ -61,7 +62,7 @@ This example adds the *EmailAddresses* and *Type* parameters to the **Set-Mailbo
 Set-ManagementRoleEntry "Recipient Administrators\Set-Mailbox" -Parameters EmailAddresses, Type -AddParameter
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351162\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/powershell/module/exchange/Set-ManagementRoleEntry).
 
 ## Use the Shell to remove one or more parameters from a role entry
 
@@ -79,7 +80,7 @@ This example removes the *Port*, *ProtocolLoggingLevel*, and *SmartHostAuthMecha
 Set-ManagementRoleEntry "Tier 1 Server Administrators\Set-SendConnector" -Parameters Port, ProtocolLoggingLevel, SmartHostAuthMechanism -RemoveParameter
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351162\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/powershell/module/exchange/Set-ManagementRoleEntry).
 
 ## Use the Shell to remove all parameters from a role entry
 
@@ -102,7 +103,7 @@ This example removes all the parameters from the **Set-CASMailbox** cmdlet on th
 Set-ManagementRoleEntry "Recipient Administrators\Set-CASMailbox" -Parameters $Null
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351162\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/powershell/module/exchange/Set-ManagementRoleEntry).
 
 ## Use the Shell to apply a specific set of parameters
 
@@ -120,4 +121,4 @@ This example includes only the *Identity*, *DisplayName*, *MissedCallNotificatio
 Set-ManagementRoleEntry "Seattle Mail Recipients\Set-UMMailbox" -Parameters Identity, DisplayName, MissedCallNotificationEnabled, PersonalAutoAttendantEnabled
 ```
 
-For detailed syntax and parameter information, see [Set-ManagementRoleEntry](https://technet.microsoft.com/en-us/library/dd351162\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ManagementRoleEntry](/powershell/module/exchange/Set-ManagementRoleEntry).

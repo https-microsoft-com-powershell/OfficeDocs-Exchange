@@ -2,13 +2,14 @@
 title: 'Enable or Disable IRM for Internal Messages: Exchange 2013 Help'
 TOCTitle: Enable or Disable IRM for Internal Messages
 ms:assetid: a6a17f57-5304-41f1-954d-7301857d54a1
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124077(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124077(v=EXCHG.150)
 ms:contentKeyID: 49319927
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -34,7 +35,7 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable IRM for internal messages
 
@@ -44,7 +45,7 @@ This example enables IRM for internal messages for the Exchange organization.
 Set-IRMConfiguration -InternalLicensingEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## Use the Shell to disable IRM for internal messages
 
@@ -54,8 +55,8 @@ This example disables IRM for internal messages for the Exchange organization.
 Set-IRMConfiguration -InternalLicensingEnabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## How do you know this worked?
 
-To verify that you've enabled or disabled IRM for internal messages, use the [Get-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd776120\(v=exchg.150\)) cmdlet to check the configuration.
+To verify that you've enabled or disabled IRM for internal messages, use the [Get-IRMConfiguration](/powershell/module/exchange/Get-IRMConfiguration) cmdlet to check the configuration.

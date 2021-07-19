@@ -2,13 +2,14 @@
 title: 'Use the RollAlternateserviceAccountCredential.ps1 script in the shell'
 TOCTitle: Using the RollAlternateserviceAccountCredential.ps1 Script in the Shell
 ms:assetid: 6ac55aae-472a-4ed6-83df-2d0e7b48e05c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff808311(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff808311(v=EXCHG.150)
 ms:contentKeyID: 63937186
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -21,7 +22,7 @@ You can use the RollAlternateServiceAccountPassword.ps1 script in Exchange Serve
 > [!NOTE]
 > The Exchange Management Shell doesn't load scripts automatically. You need to precede all scripts with **.\\** For example, to run the RollAlternateServiceAccountPassword.ps1 script, type `.\RollAlternateServiceAccountPassword.ps1`. <br/><br/> This script is provided in English only.
 
-For more information about how to use and write scripts, see [Scripting with the Exchange Management Shell](https://technet.microsoft.com/en-us/library/bb123798\(v=exchg.150\)).
+For more information about how to use and write scripts, see [Scripting with the Exchange Management Shell](/powershell/module/microsoft.powershell.core/about/about_scripts).
 
 ## Syntax
 

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 2d0f31dc-eb32-451a-8852-591269026506
-ms.date: 2/19/2016
 ms.reviewer:
 title: Use Windows Server Backup to restore a backup of Exchange
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -30,7 +31,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 - When restoring a database to its original location, the database can remain in a dirty shutdown state and be mountable by the system. When restoring to an alternate location (for example, in preparation to use a recovery database), the database must be manually brought into a clean shutdown state by using Exchange Server Database Utilities (Eseutil.exe).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Windows Server Backup to restore a backup of Exchange
 
@@ -59,7 +60,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 
    - Choose **Recover to original location** if you want to restore the Exchange data directly to its original location. If you use this option, you can't choose which databases are restored; all backed up databases on the volume will be restored to their original locations.
 
-   - Choose **Recover to another location** if you want to restore individual databases and their files to a specified location. Click **Browse** to specify the alternate location. If you use this option, you can choose which databases are restored. After being restored, the data files can then be moved into a recovery database, manually moved back to their original location, or mounted somewhere else in the Exchange organization using [Database Portability](https://technet.microsoft.com/library/387b727a-ce51-4910-b5c4-613c693fa5bd.aspx). When you restore a database to an alternate location, the restored database will be in a dirty shutdown state. After the restore process has completed, you will need to manually put the database into a clean shutdown state using Eseutil.exe.
+   - Choose **Recover to another location** if you want to restore individual databases and their files to a specified location. Click **Browse** to specify the alternate location. If you use this option, you can choose which databases are restored. After being restored, the data files can then be moved into a recovery database, manually moved back to their original location, or mounted somewhere else in the Exchange organization using [database portability](database-portability.md). When you restore a database to an alternate location, the restored database will be in a dirty shutdown state. After the restore process has completed, you will need to manually put the database into a clean shutdown state using Eseutil.exe.
 
 9. On the **Confirmation** page, review the recovery settings, and then click **Recover**.
 

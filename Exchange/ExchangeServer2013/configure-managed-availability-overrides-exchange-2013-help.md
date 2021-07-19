@@ -2,13 +2,14 @@
 title: 'Configure managed availability overrides: Exchange 2013 Help'
 TOCTitle: Configure managed availability overrides
 ms:assetid: c8f315b3-1d5e-4ad9-8bea-9c3a4a13ebfc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn482055(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn482055(v=EXCHG.150)
 ms:contentKeyID: 59888994
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,12 +30,12 @@ For additional management tasks related to managed availability, see [Manage hea
 
 - Estimated time to complete each procedure: 5 minutes
 
-- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](https://technet.microsoft.com/en-us/library/dd638134\(v=exchg.150\)).
+- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Exchange Management Shell to create local overrides
 

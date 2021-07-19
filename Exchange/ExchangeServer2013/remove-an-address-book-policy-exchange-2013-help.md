@@ -4,9 +4,10 @@ TOCTitle: Remove an address book policy
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: c20c6f82-2f75-4116-9be1-c5af10113f71
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,7 +21,7 @@ Use this procedure to remove an address book policy (ABP).
 
 - Estimated time to complete: Less than 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email Address and Address Book Permissions](https://technet.microsoft.com/library/1c1de09d-16ef-4424-9bfb-eb7edffbc8c2.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Address book policies" entry in the [Email address and address book permissions](email-address-and-address-book-permissions-exchange-2013-help.md) topic.
 
 - You can't remove an ABP if it's assigned to a user's mailbox or to a soft-deleted mailbox. To determine if an ABP is assigned to a user, run the following Shell command:
 
@@ -41,7 +42,7 @@ Use this procedure to remove an address book policy (ABP).
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to remove an ABP
 
@@ -51,4 +52,4 @@ This example removes the ABP ABP_TailspinToys.
 Remove-AddressBookPolicy -Identity "ABP_TailspinToys"
 ```
 
-For detailed syntax and parameter information, see [Remove-AddressBookPolicy](https://technet.microsoft.com/library/57ff215a-cba5-46d1-a7f7-ab2512ce4b6f.aspx).
+For detailed syntax and parameter information, see [Remove-AddressBookPolicy](/powershell/module/exchange/remove-addressbookpolicy).

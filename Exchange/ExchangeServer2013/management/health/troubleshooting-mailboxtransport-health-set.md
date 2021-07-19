@@ -2,13 +2,14 @@
 title: Troubleshooting MailboxTransport Health Set
 TOCTitle: Troubleshooting MailboxTransport Health Set
 ms:assetid: 02bfa4cf-6929-437e-bae5-079ea1b92373
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.mailboxtransport(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.mailboxtransport(v=EXCHG.150)
 ms:contentKeyID: 49720714
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The **MailboxTransport** health set monitors the overall health of the Mailbox Transport Submission and Mailbox Transport Delivery services on Mailbox servers. These services are responsible for sending mail to and from mailbox databases. For more information, see [Mail flow](https://technet.microsoft.com/en-us/library/aa996349\(v=exchg.150\)).
+The **MailboxTransport** health set monitors the overall health of the Mailbox Transport Submission and Mailbox Transport Delivery services on Mailbox servers. These services are responsible for sending mail to and from mailbox databases. For more information, see [Mail flow](../../mail-flow-exchange-2013-help.md).
 
 If you receive an alert that indicates that the **MailboxTransport** health set is unhealthy, this indicates an issue that may prevent mail from being sent or received from mailbox databases.
 
@@ -166,7 +167,7 @@ The **MailboxTransport** service is monitored using the following probes and mon
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## User Action
 

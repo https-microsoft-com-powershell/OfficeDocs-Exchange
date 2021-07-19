@@ -2,13 +2,14 @@
 title: 'Transport decryption: Exchange 2013 Help'
 TOCTitle: Transport decryption
 ms:assetid: 4267c46d-f488-404d-a5cb-51f9127461c0
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638122(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638122(v=EXCHG.150)
 ms:contentKeyID: 49319908
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -64,7 +65,7 @@ Messages decrypted by the Decryption agent don't leave the Transport service wit
 
 ## Configuring transport decryption
 
-Transport decryption is configured by using the [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)) cmdlet in the Exchange Management Shell. However, before you configure transport decryption, you must provide Exchange 2013 servers the right to decrypt content protected by your AD RMS server. This is done by adding the Federation mailbox to the super users group configured on the AD RMS cluster in your organization.
+Transport decryption is configured by using the [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration) cmdlet in the Exchange Management Shell. However, before you configure transport decryption, you must provide Exchange 2013 servers the right to decrypt content protected by your AD RMS server. This is done by adding the Federation mailbox to the super users group configured on the AD RMS cluster in your organization.
 
 > [!IMPORTANT]
 > In cross-forest AD&nbsp;RMS deployments where you have an AD&nbsp;RMS cluster deployed in each forest, you must add the Federation mailbox to the super users group on the AD&nbsp;RMS cluster in each forest to allow the Transport service on an Exchange 2013 Mailbox server or an Exchange 2010 Hub Transport server to decrypt the messages protected against each AD&nbsp;RMS cluster.

@@ -4,9 +4,10 @@ TOCTitle: Manage journaling
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: d517f27e-f80a-4a06-988c-cbbf981c701d
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,14 +23,14 @@ Standard journaling is configured on a mailbox database. It enables the Journali
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Journaling" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Journaling" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 - A journaling mailbox has been created, or an existing mailbox is available for use as the journaling mailbox. You can't designate an Exchange Online mailbox as a journaling mailbox. You can deliver journal reports to an on-premises archiving system or a third-party archiving service. If you're running a hybrid deployment with your mailboxes split between on-premises servers and Exchange Online, you can designate an on-premises mailbox as the journaling mailbox for your Exchange Online and on-premises mailboxes.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create a journal rule
 
@@ -96,7 +97,7 @@ This example retrieves the journal rule Brokerage Journal Rule, and pipes the ou
 Get-JournalRule "Brokerage Journal Rule" | Format-List
 ```
 
-If you want to modify the properties of a specific rule, you need to use the [Set-JournalRule](https://technet.microsoft.com/library/e72562c6-64d2-43c3-81b0-062e7d7b28c9.aspx) cmdlet. This example changes the name of the journal rule `JR-Sales` to `TraderVault`. The following rule settings are also changed:
+If you want to modify the properties of a specific rule, you need to use the [Set-JournalRule](/powershell/module/exchange/set-journalrule) cmdlet. This example changes the name of the journal rule `JR-Sales` to `TraderVault`. The following rule settings are also changed:
 
 - Recipient
 
@@ -214,7 +215,7 @@ This example disables per-mailbox database journaling on the Sales Database mail
 Set-MailboxDatabase "Sales Database" -JournalRecipient $Null
 ```
 
-This example disables per-mailbox database journaling on all mailbox databases in the Exchange organization. The [Get-MailboxDatabase](https://technet.microsoft.com/library/e12bd6d3-3793-49cb-9ab6-948d42dd409e.aspx) cmdlet is used to retrieve all mailbox databases in the Exchange organization, and results from the cmdlet are piped to the [Set-MailboxDatabase](https://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx) cmdlet.
+This example disables per-mailbox database journaling on all mailbox databases in the Exchange organization. The [Get-MailboxDatabase](/powershell/module/exchange/get-mailboxdatabase) cmdlet is used to retrieve all mailbox databases in the Exchange organization, and results from the cmdlet are piped to the [Set-MailboxDatabase](/powershell/module/exchange/set-mailboxdatabase) cmdlet.
 
 ```powershell
 Get-MailboxDatabase | Set-MailboxDatabase -JournalRecipient $Null
@@ -238,18 +239,18 @@ Get-MailboxDatabase | Format-Table Name,JournalRecipient
 
 ## For more information
 
-[Disable or Enable Journaling of Voice Mail and Missed Call Notifications](https://technet.microsoft.com/library/5164a92e-69e6-4339-b80c-0cfbf0dc0198.aspx)
+[Disable or enable journaling of voice mail and missed call notifications](disable-or-enable-journaling-of-voice-mail-and-missed-call-notifications-exchange-2013-help.md)
 
-[New-JournalRule](https://technet.microsoft.com/library/fcad9ef1-b3f2-442d-a1a7-cd1bbe442054.aspx)
+[New-JournalRule](/powershell/module/exchange/new-journalrule)
 
-[Get-JournalRule](https://technet.microsoft.com/library/7620913f-cf28-4e82-983f-61a79f0b6e5a.aspx)
+[Get-JournalRule](/powershell/module/exchange/get-journalrule)
 
-[Set-JournalRule](https://technet.microsoft.com/library/e72562c6-64d2-43c3-81b0-062e7d7b28c9.aspx)
+[Set-JournalRule](/powershell/module/exchange/set-journalrule)
 
-[Enable-JournalRule](https://technet.microsoft.com/library/9a4b01b9-27d4-41e6-9573-86e27e82de2d.aspx)
+[Enable-JournalRule](/powershell/module/exchange/enable-journalrule)
 
-[Disable-JournalRule](https://technet.microsoft.com/library/0324144b-2818-4e7f-a483-d6d6a19f8276.aspx)
+[Disable-JournalRule](/powershell/module/exchange/disable-journalrule)
 
-[Remove-JournalRule](https://technet.microsoft.com/library/7cb9d691-2b0c-4f64-982d-ce69f3c3e757.aspx)
+[Remove-JournalRule](/powershell/module/exchange/remove-journalrule)
 
-[Set-MailboxDatabase](https://technet.microsoft.com/library/a01edc66-bc10-4f65-9df4-432cb9e88f58.aspx)
+[Set-MailboxDatabase](/powershell/module/exchange/set-mailboxdatabase)

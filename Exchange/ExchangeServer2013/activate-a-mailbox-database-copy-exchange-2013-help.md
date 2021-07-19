@@ -2,13 +2,14 @@
 title: 'Activate a mailbox database copy: Exchange 2013 Help'
 TOCTitle: Activate a mailbox database copy
 ms:assetid: d948269b-c902-4d8d-8c2b-269473359baa
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee364750(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee364750(v=EXCHG.150)
 ms:contentKeyID: 48385619
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ Looking for other management tasks related to mailbox database copies? Check out
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to move the active mailbox database
 

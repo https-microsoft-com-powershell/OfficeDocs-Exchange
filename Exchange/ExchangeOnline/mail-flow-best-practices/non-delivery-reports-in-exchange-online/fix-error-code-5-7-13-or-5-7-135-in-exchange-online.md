@@ -1,18 +1,20 @@
 ---
 title: "Fix email delivery issues for error code 5.7.13 or 5.7.135 in Exchange Online"
-ms.author: dmaguire
+ms.author: jhendr
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer: 
 audience: Admin
 ms.topic: troubleshooting
 ms.service: o365-administration
 localization_priority: Normal
+f1.keywords:
+- CSH
 ms.custom: MiniMaven
 search.appverid:
 - BCS160
 - MOE150
+- MET150
 ms.assetid: fc1ea7e0-3680-4778-ad96-4328c60d517c
 description: "Learn how to fix email issues for error code 550 5.7.13 or 5.7.135 in Exchange Online (the public folder recipient is configured to reject messages from external or unauthenticated senders)."
 ---
@@ -22,8 +24,9 @@ description: "Learn how to fix email issues for error code 550 5.7.13 or 5.7.135
 It's frustrating when you get an error after sending an email message. This topic describes what you can do if you see error code 550 5.7.13 or 550 5.7.135 in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN). You'll see this automated notification when the recipient is a public folder that's configured to reject messages from external senders (senders from outside the organization).
 
 |||||
-|:-----|:-----|:-----|:-----|
-|![Email user icon](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this?](#im-an-email-admin-how-do-i-fix-this)|
+|---|---|---|---|
+|![Email user icon](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How can I fix this?](#im-an-email-admin-how-do-i-fix-this)|
+|
 
 ## I got this bounce message. How do I fix it?
 
@@ -33,7 +36,7 @@ Only an email admin in the recipient's organization can fix this issue. Contact 
 
 The two methods that will allow the external sender to send messages to the public folder in your organization are described in the following sections.
 
-To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](https://docs.microsoft.com/Exchange/exchange-admin-center).
+To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md).
 
 ### Method 1: Allow all internal and external senders to send messages to this public folder
 
@@ -57,9 +60,9 @@ Instead of allowing all external senders to send messages to this public folder,
 
 **Notes**:
 
-- To add an external sender to a public folder's allowed senders list, you must first create a [mail contact](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-contacts) or a [mail user](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-users) to represent the external sender in your organization.
+- To add an external sender to a public folder's allowed senders list, you must first create a [mail contact](../../recipients-in-exchange-online/manage-mail-contacts.md) or a [mail user](../../recipients-in-exchange-online/manage-mail-users.md) to represent the external sender in your organization.
 
-- To add everyone in your organization to a public folder's allowed sender's list, you can create a [distribution group](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups) or a [dynamic distribution group](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups) that contains everyone in your organization. After you create this group, you can add it to the public folder's allowed senders list.
+- To add everyone in your organization to a public folder's allowed sender's list, you can create a [distribution group](../../recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups.md) or a [dynamic distribution group](../../recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups.md) that contains everyone in your organization. After you create this group, you can add it to the public folder's allowed senders list.
 
 - The public folder's allowed senders list is completely different from the organization's allowed senders list for anti-spam that you manage in the EAC at **Protection** \> **Spam filter**.
 
@@ -81,11 +84,11 @@ To configure the public folder's allowed senders list, open the EAC do the follo
 
 ## Still need help with error code 550 5.7.13 or 550 5.7.135?
 
-[![Get help from the Office 365 community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://go.microsoft.com/fwlink/p/?LinkId=518605)
+[![Get help from the community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://answers.microsoft.com/)
 
-[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://go.microsoft.com/fwlink/p/?LinkId=519124)
+[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://admin.microsoft.com/AdminPortal/Home#/support)
 
-[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](https://go.microsoft.com/fwlink/p/?LinkID=518322)
+[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](/microsoft-365/Admin/contact-support-for-business-products)
 
 ## See also
 

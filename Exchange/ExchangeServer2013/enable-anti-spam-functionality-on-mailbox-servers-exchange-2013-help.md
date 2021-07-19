@@ -2,13 +2,14 @@
 title: 'Enable anti-spam functionality on Mailbox servers: Exchange 2013 Help'
 TOCTitle: Enable anti-spam functionality on Mailbox servers
 ms:assetid: 59d22c5e-64bc-4879-8ad1-364862b6ba11
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb201691(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb201691(v=EXCHG.150)
 ms:contentKeyID: 49248681
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -44,7 +45,7 @@ What happens if you install the available anti-spam agents in the Transport serv
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Use the Shell to run the Install-AntispamAgents.ps1 script
 

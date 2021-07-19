@@ -2,13 +2,14 @@
 title: 'Server health and performance: Exchange 2013 Help'
 TOCTitle: Server health and performance
 ms:assetid: 9d1fdec8-8273-4c71-88f1-b4edfd542c4f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150551(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150551(v=EXCHG.150)
 ms:contentKeyID: 47560078
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

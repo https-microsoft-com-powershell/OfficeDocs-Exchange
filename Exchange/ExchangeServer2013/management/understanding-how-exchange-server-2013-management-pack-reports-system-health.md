@@ -2,13 +2,14 @@
 title: Understanding how Exchange Server 2013 Management Pack reports system health
 TOCTitle: Understanding how Exchange Server 2013 Management Pack reports system health
 ms:assetid: 6ca8847f-93fe-458d-bd43-7afad7fdd2f4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn195910(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn195910(v=EXCHG.150)
 ms:contentKeyID: 53181786
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -50,7 +51,7 @@ The health sets in Exchange are organized into the following four categories tha
 
 For a complete list of Exchange health sets, see [Appendix A: Exchange health sets](appendix-a-exchange-health-sets.md).
 
-To learn more about Managed Availability, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+To learn more about Managed Availability, see [Server health and performance](../server-health-and-performance-exchange-2013-help.md).
 
 ## How health rolls up
 

@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Create a new Sharing Policy to change how people in your organization share calendars with individual business associates, friends, or family members. Sharing policies control how your users share their calendars with people outside your organization. By default, all users can invite anyone with an email address to view their calendar. After you create a new sharing policy, you have to apply that policy to mailboxes before it takes effect. To apply a specific sharing policy to users, see Apply a sharing policy to mailboxes in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: f412ce6c-74dc-4d77-93ab-362c37414015
-ms.date: 4/29/2016
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Create a sharing policy in Exchange Online
 ms.collection: 
 - exchange-online
@@ -59,7 +60,7 @@ Create a new Sharing Policy to change how people in your organization share cale
 
 9. Click **save** to set the rules for the sharing policy.
 
-10. If you want to set this sharing policy as the new default sharing policy for all users in your Office 365 organization, select the **Make this policy my default sharing policy** check box.
+10. If you want to set this sharing policy as the new default sharing policy for all users in your Microsoft 365 or Office 365 organization, select the **Make this policy my default sharing policy** check box.
 
 11. Click **save** to create the sharing policy.
 
@@ -67,25 +68,25 @@ Create a new Sharing Policy to change how people in your organization share cale
 
 - This example creates the sharing policy Contoso. This policy allows users in the contoso.com domain to see your user's detailed calendar availability (free/busy) information. By default, this policy is enabled.
 
-  ```
+  ```PowerShell
   New-SharingPolicy -Name "Contoso" -Domains contoso.com: CalendarSharingFreeBusyDetail
   ```
 
 - This example creates the sharing policy ContosoWoodgrove for two different domains (contoso.com and woodgrovebank.com) with different sharing settings configured for each domain. The policy is disabled.
 
-  ```
+  ```PowerShell
   New-SharingPolicy -Name "ContosoWoodgrove" -Domains 'contoso.com: CalendarSharingFreeBusySimple', 'woodgrovebank.com: CalendarSharingFreeBusyDetail' -Enabled $false
   ```
 
-For detailed syntax and parameter information, see [New-SharingPolicy](https://technet.microsoft.com/library/ffca8853-3429-448f-ad5e-5435dc44f9d0.aspx).
+For detailed syntax and parameter information, see [New-SharingPolicy](/powershell/module/exchange/new-sharingpolicy).
 
 ## How do you know this worked?
 
 To verify that you have successfully created the sharing policy, run the following command to view the sharing policy information.
 
-```
+```PowerShell
 Get-SharingPolicy <policy name> | format-list
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).

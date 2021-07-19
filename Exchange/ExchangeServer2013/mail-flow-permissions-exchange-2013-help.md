@@ -2,13 +2,14 @@
 title: 'Mail flow permissions: Exchange 2013 Help'
 TOCTitle: Mail flow permissions
 ms:assetid: f49f4fb5-af75-43cb-900f-c5f7b8cfa143
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638213(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638213(v=EXCHG.150)
 ms:contentKeyID: 48385715
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The permissions required to perform tasks related to mail flow vary depending on the procedure being performed or the cmdlet you want to run. For more information about transport features, see [Mail flow](mail-flow-exchange-2013-help.md).
 
-This topic lists the permissions required to manage the mail flow features in Microsoft Exchange Server 2013. For information about how Office 365 permissions relate to Exchange permissions, see [Permissions in Office 365](https://docs.microsoft.com/office365/admin/add-users/about-admin-roles).
+This topic lists the permissions required to manage the mail flow features in Microsoft Exchange Server 2013. For information about how Office 365 permissions relate to Exchange permissions, see [About admin roles](/microsoft-365/admin/add-users/about-admin-roles).
 
 To find out what permissions you need to perform the procedure or run the cmdlet, do the following:
 

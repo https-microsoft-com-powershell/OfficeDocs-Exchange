@@ -2,13 +2,14 @@
 title: 'Configure IRM for Exchange Search and In-Place eDiscovery: Exchange 2013 Help'
 TOCTitle: Configure IRM for Exchange Search and In-Place eDiscovery
 ms:assetid: d96790e9-93ad-4a56-b90f-2dbfa2f2073c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg588319(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Gg588319(v=EXCHG.150)
 ms:contentKeyID: 49319934
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 In Microsoft Exchange Server 2013, you can configure Information Rights Management (IRM) so that Exchange Search can index IRM-protected messages.
 
-When members of the Discovery Management role group perform an [In-Place eDiscovery](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery) search, IRM-protected messages are returned in the search results and copied to the Discovery mailbox specified in the search. Furthermore, members of the Discovery Management role group can use Outlook Web App to access the IRM-protected messages that were copied to the Discovery mailbox as a result of the discovery search.
+When members of the Discovery Management role group perform an [In-Place eDiscovery](../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md) search, IRM-protected messages are returned in the search results and copied to the Discovery mailbox specified in the search. Furthermore, members of the Discovery Management role group can use Outlook Web App to access the IRM-protected messages that were copied to the Discovery mailbox as a result of the discovery search.
 
 > [!NOTE]
 > Members of the Discovery Management role group can't access IRM-protected messages exported from a Discovery mailbox to another mailbox or to a .pst file. IRM-protected messages in a Discovery mailbox can be accessed only by using Outlook Web App.
@@ -40,7 +41,7 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure IRM for Exchange Search
 
@@ -53,7 +54,7 @@ This example configures IRM to allow Exchange Search to index IRM-protected mess
 Set-IRMConfiguration -SearchEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## Use the Shell to configure IRM for In-Place eDiscovery
 
@@ -66,8 +67,8 @@ This example enables members of the Discovery Management role group to access IR
 Set-IRMConfiguration -EDiscoverySuperUserEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## How do you know this worked?
 
-To verify that you have successfully configured IRM for Exchange Search and In-Place eDiscovery, use the **Get-IRMConfigurtaion** cmdlet to retrieve the IRM configuration information. For an example of how to retrieve the IRM configuration, see [Examples](https://technet.microsoft.com/en-us/e1821219-fe18-4642-a9c2-58eb0aadd61a\(exchg.150\)#examples) in **Get-IRMConfiguration**.
+To verify that you have successfully configured IRM for Exchange Search and In-Place eDiscovery, use the **Get-IRMConfigurtaion** cmdlet to retrieve the IRM configuration information. For an example of how to retrieve the IRM configuration, see [Examples](/powershell/module/exchange/get-irmconfiguration#examples) in **Get-IRMConfiguration**.

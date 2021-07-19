@@ -2,13 +2,14 @@
 title: 'Simplify the Outlook Web App URL: Exchange 2013 Help'
 TOCTitle: Simplify the Outlook Web App URL
 ms:assetid: 5fb6a873-f3cf-4f82-87d1-2ff6e47a0080
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998359(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998359(v=EXCHG.150)
 ms:contentKeyID: 53957625
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ When you configure redirection from a top-level directory in Windows Server 2008
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Use IIS Manager to simplify the Outlook Web App URL and force redirection to SSL
 

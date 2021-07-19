@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can configure the minimum PIN length for your Outlook Voice Access users who are enabled for Unified Messaging (UM). The PIN settings that you configure on a UM mailbox policy will apply to all UM-enabled users associated with the UM mailbox policy.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: b2ecab54-42e6-45af-8322-615cc1f68dd9
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Set the minimum PIN length for voice mail in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -30,7 +31,7 @@ For additional tasks related to Outlook Voice Access PIN security, see [PIN secu
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -39,7 +40,7 @@ For additional tasks related to Outlook Voice Access PIN security, see [PIN secu
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure the minimum PIN length for Outlook Voice Access
 
@@ -57,12 +58,12 @@ For additional tasks related to Outlook Voice Access PIN security, see [PIN secu
 
 This example sets the minimum PIN length to 8 digits for Outlook Voice Access users who are associated with the UM mailbox policy named `MyUMMailboxPolicy`.
 
-```
+```PowerShell
 Set-UMMailboxPolicy -Identity MyUMMailboxPolicy -MinPINLength 8
 ```
 
 This example sets the minimum PIN length to 8 digits and sets the number of times a sign-in can fail before the user's PIN is reset to 3. This applies to UM-enabled users who are associated with the UM mailbox policy named `MyUMMailboxPolicy`.
 
-```
+```PowerShell
 Set-UMMailboxPolicy -Identity MyUMMailboxPolicy -LogonFailuresBeforePINReset 3 -MinPINLength 8
 ```

@@ -7,9 +7,10 @@ author: msdmaguire
 ms.prod: exchange-server-it-pro
 ms.assetid: 3814b665-01e8-4881-9a44-163f14789ee4
 ms.collection: exchange-server
-ms.date: 6/7/2018
 ms.reviewer: 
 manager: serdars
+f1.keywords:
+- NOCSH
 audience: ITPro
 title: Outlook on the web in Exchange Server
 
@@ -27,7 +28,7 @@ When you install Exchange Server, Outlook on the web is automatically available 
 
 Outlook on the web is provided by the Client Access (frontend) services on Mailbox servers. In Exchange Server, Client Access services are part of the Mailbox server, so you can't configure a standalone Client Access server like you could in previous versions of Exchange. For more information, see [Client access protocol architecture](../../architecture/architecture.md#ClientAccessProtocol).
 
-If you're looking for information about Outlook on the web in Office 365, see [Welcome to Outlook on the web](https://go.microsoft.com/fwlink/p/?LinkId=799535).
+If you're looking for information about Outlook on the web in Microsoft 365 or Office 365, see [Using email in Outlook on the web](https://support.microsoft.com/office/a096dc77-d053-4e04-864d-c278e5712ef9).
 
 ## Administrative tasks for managing Outlook on the web
 <a name="Managing"> </a>

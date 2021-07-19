@@ -2,13 +2,14 @@
 title: 'Use Telnet to test SMTP communication: Exchange 2013 Help'
 TOCTitle: Use Telnet to test SMTP communication
 ms:assetid: 8a5f6715-baa4-48dd-8600-02c6b3d1aa9d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123686(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123686(v=EXCHG.150)
 ms:contentKeyID: 50934219
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -32,18 +33,18 @@ The procedure in this topic shows you how to use Telnet Client, which is a compo
 
 - Exchange permissions don't apply to the procedures in this topic. These procedures are performed in the operating system of the Exchange Server or a client computer.
 
-- The procedures in this topic are best used to connect to and from Internet-facing servers that allow anonymous connections. Message transmission between internal Exchange servers is encrypted and authenticated. To use Telnet to connect to the Hub Transport service on a Mailbox server, you'll need to create a Receive connector that's configured to allow anonymous access or Basic authentication to receive messages. If the connector allows Basic authentication, you need a utility to convert the text strings that are used for the username and password into the Base64 format. Because the user name and password are easily discernible when Basic authentication is used, we don't recommend Basic authentication without encryption.
+- The procedures in this topic are best used to connect to and from Internet-facing servers that allow anonymous connections. Message transmission between internal Exchange servers is encrypted and authenticated. To use Telnet to connect to the Hub Transport service on a Mailbox server, you'll need to create a Receive connector that's configured to allow anonymous access or Basic authentication to receive messages. If the connector allows Basic authentication, you need a utility to convert the text strings that are used for the username and password into the Base64 format. Because the username and password are easily discernible when Basic authentication is used, we don't recommend Basic authentication without encryption.
 
 - If you connect to a remote messaging server, consider performing the procedures in this topic on your Internet-facing Exchange server. This will help to avoid rejection of the test message by remote messaging servers that are configured to validate the source IP address, the corresponding domain name system (DNS) domain name, and the reverse lookup IP address of any Internet host that tries to send a message to the server.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Install the Telnet Client in Windows
 
-By default, the Telnet Client isn't installed in most client or server versions of the Microsoft Windows operating systems. To install it, see [Install Telnet Client](https://go.microsoft.com/fwlink/p/?linkid=179054).
+By default, the Telnet Client isn't installed in most client or server versions of the Microsoft Windows operating systems. To install it, see [Install Telnet Client](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771275(v=ws.10)).
 
 ## Step 2: Use Nslookup to find the FQDN or IP address in the MX record of the remote SMTP server
 
@@ -62,7 +63,7 @@ To connect to a destination SMTP server by using Telnet on port 25, you must use
 
    The output of the command will resemble the following:
 
-   ```text
+   ```console
    fabrikam.com mx preference=10, mail exchanger = mail1.fabrikam.com
    fabrikam.com mx preference=20, mail exchanger = mail2.fabrikam.com
    mail1.fabrikam.com internet address = 192.168.1.10
@@ -99,7 +100,7 @@ In this example, the following values are used:
 > <LI>
 > <P>You can't use the backspace key after you have connected to the destination SMTP server within the Telnet session. If you make a mistake as you type an SMTP command, you must press ENTER and then type the command again. Unrecognized SMTP commands or syntax errors result in an error message that resembles the following:</P>
 >
-> ```powershell
+> ```console
 > 500 5.3.3 Unrecognized command
 > ```
 > </LI></UL>
@@ -120,7 +121,7 @@ In this example, the following values are used:
 
 8. Type **DATA** and then press ENTER. You will receive a response that resembles the following:
 
-    ```text
+    ```console
     354 Start mail input; end with <CLRF>.<CLRF>
     ```
 
@@ -132,13 +133,13 @@ In this example, the following values are used:
 
 12. Press ENTER, type a period ( **.** ) and then press ENTER. You will receive a response that resembles the following:
 
-    ```text
+    ```console
     250 2.6.0 <GUID> Queued mail for delivery
     ```
 
 13. To disconnect from the destination SMTP server, type **QUIT** and then press ENTER. You will receive a response that resembles the following:
 
-    ```text
+    ```console
     221 2.0.0 Service closing transmission channel
     ```
 

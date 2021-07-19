@@ -2,13 +2,14 @@
 title: 'IPv6 support in Unified Messaging: Exchange 2013 Help'
 TOCTitle: IPv6 support in Unified Messaging
 ms:assetid: 91242c85-ce4e-422a-954e-ab623d3d6939
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ150536(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ150536(v=EXCHG.150)
 ms:contentKeyID: 47560052
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -78,7 +79,7 @@ After you install your Client Access and Mailbox servers, you need to create Uni
 
   - After you've configured your UM IP gateways, you must also configure the IP gateways, IP PBXs, and SBCs on your network to support IPv6. For details, see your hardware vendor for a list of devices that support IPv6 and how to correctly configure them.
 
-  - Optionally, you may need to set the Client Access and Mailbox servers to accept IPv6 traffic if either of the servers are only set to receive IPv4 traffic. However, the default setting is for both Client Access servers running the Microsoft Exchange Unified Messaging Call Router service and Mailbox servers running the Microsoft Exchange Unified Messaging service to accept IPv4 and IPv6 traffic. For details about configuring the IPv6 settings on Client Access and Mailbox servers, see [Set-UMCallRouterSettings](https://technet.microsoft.com/en-us/library/jj215758\(v=exchg.150\)) and [Set-UMService](https://technet.microsoft.com/en-us/library/jj552412\(v=exchg.150\)).
+  - Optionally, you may need to set the Client Access and Mailbox servers to accept IPv6 traffic if either of the servers are only set to receive IPv4 traffic. However, the default setting is for both Client Access servers running the Microsoft Exchange Unified Messaging Call Router service and Mailbox servers running the Microsoft Exchange Unified Messaging service to accept IPv4 and IPv6 traffic. For details about configuring the IPv6 settings on Client Access and Mailbox servers, see [Set-UMCallRouterSettings](/powershell/module/exchange/Set-UMCallRouterSettings) and [Set-UMService](/powershell/module/exchange/Set-UMService).
 
     There are two parameters that may need to be configured on Client Access and Mailbox servers to support IPv6: *IPAddressFamily* and *IPAddressFamilyConfigurable*. To enable a Client Access and a Mailbox server to accept IPv6 packets, you must set the Client Access and Mailbox server either to accept both IPv4 and IPv6 connections, or accept only IPv6 connections. To configure the *IPAddressFamily* parameter, the *IPAddressFamilyConfigurable* parameter must be set to `$true`.
 

@@ -5,10 +5,11 @@ ms.topic: conceptual
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 61080b45-8bce-4c23-b744-ed264d5f0b7d
-ms.date: 7/26/2018
 ms.reviewer: 
 title: Access to Active Directory by Exchange servers
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -83,7 +84,7 @@ Each domain controller contains a complete replica of the domain partition for t
 
 Exchange uses an Active Directory API to access information that's stored in Active Directory. This service reads information from all Active Directory partitions. The data that is retrieved is cached and is used by Exchange servers to discover the Active Directory site location of all Exchange services in the organization.
 
-For more information about topology and service discovery in Exchange 2013 or later, see [Planning to use Active Directory sites for routing Mail](https://technet.microsoft.com/library/aa996299(v=exchg.150).aspx).
+For more information about topology and service discovery in Exchange 2013 or later, see [Planning to use Active Directory sites for routing Mail](../../../ExchangeServer2013/planning-to-use-active-directory-sites-for-routing-mail-exchange-2013-help.md).
 
 Exchange is an Active Directory site-aware application that prefers to communicate with the directory servers that are located in the same site as the Exchange server to optimize network traffic. Each Exchange server must communicate with Active Directory to retrieve information about recipients and information about the other Exchange servers. Mailbox servers store configuration information about mailbox users and mailbox stores in Active Directory. Additionally, the Mailbox server stores information in Active Directory for the Client Access protocols, Transport service, Mailbox databases, and so on. The Mailbox server handles all activity for the active mailboxes on that server.
 
@@ -106,14 +107,14 @@ The following guidelines will help you minimize problems or issues when you reco
 
 - If you deleted an Exchange configuration object using Exchange management tools, don't restore the object. Instead, create the object again using the Exchange management tools (the Exchange admin center or the Exchange Management Shell).
 
-- If you deleted an Exchange configuration object without using the Exchange management tools, recover the object as soon as possible. The more administrative and configuration changes that are mae after the deletion, the more likely that restoring the objects will result in misconfiguration.
+- If you deleted an Exchange configuration object without using the Exchange management tools, recover the object as soon as possible. The more administrative and configuration changes that are made after the deletion, the more likely that restoring the objects will result in misconfiguration.
 
 - If you recover deleted Exchange recipients (contacts, users, or distribution groups), monitor closely for collisions and errors relating to the recovered objects. If Exchange policies or other recipient configuration settings were modified after the deletion, re-apply the current policies to the restored recipients to ensure that they're configured correctly.
 
 ## For more information
 
-[Active Directory Recycle Bin Step-by-Step Guide](https://go.microsoft.com/fwlink/p/?linkId=178720)
+[Active Directory Recycle Bin Step-by-Step Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392261(v=ws.10))
 
-[Introduction to Active Directory Administrative Center Enhancements (Level 100)](https://go.microsoft.com/fwlink/p/?linkId=267641)
+[Introduction to Active Directory Administrative Center Enhancements (Level 100)](/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-)
 
-[Advanced AD DS Management Using Active Directory Administrative Center (Level 200)](https://go.microsoft.com/fwlink/p/?LinkId=267642)
+[Advanced AD DS Management Using Active Directory Administrative Center (Level 200)](/windows-server/identity/ad-ds/get-started/adac/advanced-ad-ds-management-using-active-directory-administrative-center--level-200-)

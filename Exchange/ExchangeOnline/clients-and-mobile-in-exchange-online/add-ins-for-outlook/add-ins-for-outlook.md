@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Admins can learn about add-ins for Outlook in Exchange Online.
 ms.topic: overview
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 28b6f2a1-a235-4023-b561-6fd304962775
-ms.date: 
 ms.reviewer: 
 title: Add-ins for Outlook in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -20,7 +21,7 @@ manager: serdars
 Add-ins for Outlook are applications that extend the usefulness of Outlook clients by adding information or tools that your users can use without having to leave Outlook. Add-ins are built by third-party developers and can be installed either from a file or URL or from the Office Store. By default, all users can install add-ins. Exchange Online admins can control whether users can install add-ins for Office.
 
 > [!TIP]
-> For information about add-ins for Outlook from an end-user perspective, check out the Help topic [Installed add-ins](https://go.microsoft.com/fwlink/p/?LinkId=282387) at Office.com. That topic provides an overview of the add-ins and also shows you some of the add-ins for Outlook that might be installed by default.
+> For information about add-ins for Outlook from an end-user perspective, check out [Installed add-ins](https://support.microsoft.com/office/a61762b7-7a82-47bd-b14e-bbc15eaeb70f). The topic provides an overview of the add-ins and also shows you some of the add-ins for Outlook that might be installed by default.
 
 ## Office Store add-ins and custom add-ins
 
@@ -36,4 +37,4 @@ Outlook clients supports a variety of add-ins that are available through the Off
 
 By default, all users can install and remove add-ins. Exchange Online admins have a number of controls available for managing add-ins and users' access to them. Admins can disable users from installing add-ins that are not downloaded from the Office Store (instead they are "side loaded" from a file or URL). Admins can also disable users from installing Office Store add-ins, and from installing add-ins on behalf of other users.
 
-To install add-ins for some or all users in your organization, see [Manage deployment of Office 365 add-ins in the admin center](https://docs.microsoft.com/office365/admin/manage/manage-deployment-of-add-ins)
+To install add-ins for some or all users in your organization, see [Manage deployment of add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)

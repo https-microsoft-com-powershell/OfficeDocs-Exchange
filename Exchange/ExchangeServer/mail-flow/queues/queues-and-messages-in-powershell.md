@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 5433c1d3-ad2e-4f82-b50d-b67964b32f26
-ms.date: 7/10/2018
 ms.reviewer: 
 title: Find queues and messages in queues in the Exchange Management Shell
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -54,7 +55,7 @@ The following table explains the _Identity_ parameter syntax on the queue manage
 
 You can use the _Filter_ parameter on all of the queue management cmdlets to identify one or more queues based on the properties of the queues. The _Filter_ parameter creates an OPath filter with comparison operators to restrict the command to queues that meet the filter criteria. You can use the logical operator `-and` to specify multiple conditions for the match. Here's a generic example of the syntax:
 
- `Get-Queue -Filter {<Property1> -<ComparisonOperator> '<Value1>' -and <Property2> -<ComparisonOperator> '<Value2>'...}`
+ `Get-Queue -Filter "<Property1> -<ComparisonOperator> '<Value1>' -and <Property2> -<ComparisonOperator> '<Value2>'..."`
 
 For a complete list of queue properties you can use with the _Filter_ parameter, see [Queue properties](queues.md#queue-properties).
 
@@ -86,7 +87,7 @@ Note that you can duplicate the functionality of the _Include_ and _Exclude_ par
 
 - `Get-Queue -Exclude Empty`
 
-- `Get-Queue -Filter {MessageCount -gt 0}`
+- `Get-Queue -Filter "MessageCount -gt 0"`
 
 However, as you can see, the syntax of the _Include_ and _Exclude_ parameters is simpler and easier to remember.
 
@@ -97,7 +98,7 @@ The **Get-QueueDigest** cmdlet allows you to view information about some or all 
 Note that queues on a subscribed Edge Transport server aren't included in the results. Also, **Get-QueueDigest** is available on an Edge Transport server, but the results are restricted to local queues on the Edge Transport server.
 
 > [!NOTE]
-> By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see [Configure Get-QueueDigest](https://technet.microsoft.com/library/dn505733.aspx).
+> By default, the **Get-QueueDigest** cmdlet displays delivery queues that contain ten or more messages, and the results are between one and two minutes old. For instructions on how to change these default values, see [Configure Get-QueueDigest](../../../ExchangeServer2013/configure-get-queuedigest-exchange-2013-help.md).
 
 The following table describes the filtering and sorting parameters that are available on the **Get-QueueDigest** cmdlet.
 
@@ -113,7 +114,7 @@ The following table describes the filtering and sorting parameters that are avai
 
 This example returns all non-empty external queues on the servers named Mailbox01, Mailbox02, and Mailbox03.
 
-```
+```powershell
 Get-QueueDigest -Server Mailbox01,Mailbox02,Mailbox03 -Include External -Exclude Empty
 ```
 
@@ -143,7 +144,7 @@ The following table describes the syntax you can use with _Identity_ parameter o
 
 You can use the _Filter_ parameter with the **Get-Message**, **Remove-Message**, **Resume-Message**, and **Suspend-Message** cmdlets to identify one or more messages based on the properties of the messages. The _Filter_ parameter creates an OPath filter with comparison operators to restrict the command to messages that meet the filter criteria. You can use the logical operator `-and` to specify multiple conditions for the match. Here's a generic example of the syntax:
 
- `Get-Message -Filter {<Property1> -<ComparisonOperator> '<Value1>' -and <Property2> -<ComparisonOperator> '<Value2>'...}`
+ `Get-Message -Filter "<Property1> -<ComparisonOperator> '<Value1>' -and <Property2> -<ComparisonOperator> '<Value2>'..."`
 
 For a complete list of message properties you can use with the _Filter_ parameter, see [Message properties](queues.md#message-properties)).
 
@@ -161,26 +162,26 @@ When you create a queue or message filter expression by using the _Filter_ param
 
 |**Operator**|**Function**|**Code example**|
 |:-----|:-----|:-----|
-|`-eq`|Exact match of the specified value.|Show all queues that have a status of Retry: <br/> `Get-Queue -Filter {Status -eq "Retry"}` <br/> Show all messages that have a status of Retry: <br/> `Get-Message -Filter {Status -eq "Retry"}`|
-|`-ne`|Does not match the specified value.|Show all queues that don't have a status of Active: <br/> `Get-Queue -Filter {Status -ne "Active"}` <br/> Show all messages that don't have a status of Active: <br/> `Get-Message -Filter {Status -ne "Active"}`|
-|`-gt`|Greater than the specified integer or date/time value.|Show queues that currently contain more than 1,000 messages: <br/> `Get-Queue -Filter {MessageCount -gt 1000}` <br/> Show messages that currently have a retry count that's more than 3: <br/> `Get-Message -Filter {RetryCount -gt 3}`|
-|`-ge`|Greater than or equal to the specified integer or date/time value.|Show queues that currently contain 1,000 or more messages: <br/> `Get-Queue -Filter {MessageCount -ge 1000}` <br/> Show messages that currently have a retry count that's 3 or more: <br/> `Get-Message -Filter {RetryCount -ge 3}`|
-|`-lt`|Less than the specified integer or date/time value.|Show queues that currently contain less than 1,000 messages: <br/> `Get-Queue -Filter {MessageCount -lt 1000}` <br/> Show messages that have an SCL that's less than 6: <br/> `Get-Message -Filter {SCL -lt 6}`|
-|`-le`|Less than or equal to the specified integer or date/time value.|Show queues that currently contain 1,000 or fewer messages: <br/> `Get-Queue -Filter {MessageCount -le 1000}` <br/> Show messages that have an SCL that's 6 or less: <br/> `Get-Message -Filter {SCL -le 6}`|
-|`-like`|Contains the specified text. You need to include the wildcard character (\*) in the text string.|Show queues that have a destination to any SMTP domain that ends in Contoso.com: <br/> `Get-Queue -Filter {Identity -like "*contoso.com"}` <br/> Show messages that have a subject that contains the text "payday loan": <br/> `Get-Message -Filter {Subject -like "*payday loan*"}`|
+|`-eq`|Exact match of the specified value.|Show all queues that have a status of Retry: <br/> `Get-Queue -Filter "Status -eq 'Retry'"` <br/> Show all messages that have a status of Retry: <br/> `Get-Message -Filter "Status -eq 'Retry'"`|
+|`-ne`|Does not match the specified value.|Show all queues that don't have a status of Active: <br/> `Get-Queue -Filter "Status -ne 'Active'"` <br/> Show all messages that don't have a status of Active: <br/> `Get-Message -Filter "Status -ne 'Active'"`|
+|`-gt`|Greater than the specified integer or date/time value.|Show queues that currently contain more than 1,000 messages: <br/> `Get-Queue -Filter "MessageCount -gt 1000"` <br/> Show messages that currently have a retry count that's more than 3: <br/> `Get-Message -Filter "RetryCount -gt 3"`|
+|`-ge`|Greater than or equal to the specified integer or date/time value.|Show queues that currently contain 1,000 or more messages: <br/> `Get-Queue -Filter "MessageCount -ge 1000"` <br/> Show messages that currently have a retry count that's 3 or more: <br/> `Get-Message -Filter "RetryCount -ge 3"`|
+|`-lt`|Less than the specified integer or date/time value.|Show queues that currently contain less than 1,000 messages: <br/> `Get-Queue -Filter "MessageCount -lt 1000"` <br/> Show messages that have an SCL that's less than 6: <br/> `Get-Message -Filter "SCL -lt 6"`|
+|`-le`|Less than or equal to the specified integer or date/time value.|Show queues that currently contain 1,000 or fewer messages: <br/> `Get-Queue -Filter "MessageCount -le 1000"` <br/> Show messages that have an SCL that's 6 or less: <br/> `Get-Message -Filter "SCL -le 6"`|
+|`-like`|Contains the specified text. You need to include the wildcard character (\*) in the text string.|Show queues that have a destination to any SMTP domain that ends in Contoso.com: <br/> `Get-Queue -Filter "Identity -like '*contoso.com'"` <br/> Show messages that have a subject that contains the text "payday loan": <br/> `Get-Message -Filter "Subject -like '*payday loan*'"`|
 
 You can specify a filter that evaluates multiple expressions by using the logical operator `-and`. The queues or messages must match all of the filter conditions to be included in the results.
 
 This example displays a list of queues that have a destination to any SMTP domain name that ends in Contoso.com and that currently contain more than 500 messages.
 
-```
-Get-Queue -Filter {Identity -like "*contoso.com*" -and MessageCount -gt 500}
+```powershell
+Get-Queue -Filter "Identity -like '*contoso.com*' -and MessageCount -gt 500"
 ```
 
 This example displays a list of messages that are sent from any email address in the contoso.com domain that have an SCL value that's greater than 5.
 
-```
-Get-Message -Filter {FromAddress -like "*Contoso.com*" -and SCL -gt 5}
+```powershell
+Get-Message -Filter "FromAddress -like '*Contoso.com*' -and SCL -gt 5"
 ```
 
 ## Advanced paging parameters
@@ -205,7 +206,7 @@ The advanced paging parameters are described in the following table.
 
 This example shows how to use the advanced paging parameters in a query. The command returns the first 500 messages on the specified server. The results are sorted first in ascending order by sender address, and then in descending order by message size.
 
-```
+```powershell
 Get-Message -Server mailbox01.contoso.com -ResultSize 500 -SortOrder +FromAddress,-Size
 ```
 
@@ -213,18 +214,18 @@ This example returns the first 500 messages on the specified server in the speci
 
 1. Run the following command to retrieve the first page of results.
 
-   ```
+   ```powershell
    $Results=Get-Message -Server mailbox01.contoso.com -ResultSize 500 -SortOrder +FromAddress,-Size
    ```
 
 2. To set the bookmark object, run the following command to save the last element of the first page to a variable.
 
-   ```
+   ```powershell
    $Temp=$Results[$results.length-1]
    ```
 
 3. To retrieve the next 500 objects on the specified server, and to exclude the bookmark object, run the following command.
 
-   ```
+   ```powershell
    Get-Message -Server mailbox01.contoso.com -BookmarkObject:$Temp -IncludeBookmark $false -ResultSize 500 -SortOrder +FromAddress,-Size
    ```

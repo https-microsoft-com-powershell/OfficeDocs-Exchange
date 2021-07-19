@@ -2,13 +2,14 @@
 title: 'Turn off access to the Exchange admin center: Exchange 2013 Help'
 TOCTitle: Turn off access to the Exchange admin center
 ms:assetid: 49f4fa77-1722-4703-81c9-8724ae0334fb
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ218639(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ218639(v=EXCHG.150)
 ms:contentKeyID: 48385052
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ For security purposes, some organizations may want to restrict access to the Exc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to turn off Internet access to the EAC
 
@@ -45,7 +46,7 @@ This example turns off the access to the EAC on server CAS01.
 Set-ECPVirtualDirectory -Identity "CAS01\ecp (default web site)" -AdminEnabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-EcpVirtualDirectory](https://technet.microsoft.com/en-us/library/dd297991\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-EcpVirtualDirectory](/powershell/module/exchange/Set-EcpVirtualDirectory).
 
 ## How do you know this worked?
 

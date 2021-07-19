@@ -2,13 +2,14 @@
 title: 'Release quarantined messages from the spam quarantine mailbox'
 TOCTitle: Release quarantined messages from the spam quarantine mailbox
 ms:assetid: 7a86bfde-f868-4689-bdec-5f01e52b510d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998920(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998920(v=EXCHG.150)
 ms:contentKeyID: 49345049
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,14 +29,14 @@ Spam quarantine is a feature of the Content Filter agent that reduces the risk o
 
 - This procedure requires that you've configured the anti-spam quarantine mailbox. For more information, see [Configure a spam quarantine mailbox](configure-a-spam-quarantine-mailbox-exchange-2013-help.md).
 
-- To access the quarantine mailbox, you need to configure an Outlook profile for that mailbox and then open the mailbox using Outlook. For more information about configuring and using multiple Outlook profiles, see [Overview of Outlook e-mail profiles](https://go.microsoft.com/fwlink/p/?linkid=178975).
+- To access the quarantine mailbox, you need to configure an Outlook profile for that mailbox and then open the mailbox using Outlook. For more information about configuring and using multiple Outlook profiles, see [Overview of Outlook e-mail profiles](https://support.microsoft.com/office/f544c1ba-3352-4b3b-be0b-8d42a540459d).
 
 - To make it easier to locate the message you want to recover, you can create a custom Outlook form and modify the default view to expose the original sender address in the list of messages. For detailed steps, see [Configure Outlook to show the original sender in the quarantine mailbox](configure-outlook-to-show-the-original-sender-in-the-quarantine-mailbox-exchange-2013-help.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use Outlook 2010 or Outlook 2013 to release a message from the spam quarantine mailbox
 

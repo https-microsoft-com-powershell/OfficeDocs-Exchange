@@ -1,6 +1,6 @@
 ---
 localization_priority: Normal
-ms.author: dmaguire
+ms.author: jhendr
 manager: serdars
 ms.topic: article
 author: msdmaguire
@@ -10,15 +10,17 @@ ms.reviewer:
 ms.collection: 
 - exchange-online
 - M365-email-calendar
-description: 'Summary: This article describes how to recover a public folder mailbox in Office 365 that was previously soft-deleted, meaning the mailbox retention period has not yet elapsed and the recycle bin has not been purged.'
+description: 'Summary: This article describes how to recover a public folder mailbox in Microsoft 365 or Office 365 that was previously soft-deleted, meaning the mailbox retention period has not yet elapsed and the recycle bin has not been purged.'
 audience: ITPro
+f1.keywords:
+- NOCSH
 title: Recover a deleted public folder mailbox
 
 ---
 
 # Recover a deleted public folder mailbox
 
- **Summary**: This article describes how to recover a public folder mailbox in Office 365 that was previously soft-deleted, meaning the mailbox retention period has not yet elapsed and the recycle bin has not been purged.
+ **Summary**: This article describes how to recover a public folder mailbox in Microsoft 365 or Office 365 that was previously soft-deleted, meaning the mailbox retention period has not yet elapsed and the recycle bin has not been purged.
 
 You can delete public folder mailboxes either in the EAC or through the `Remove-Mailbox -PublicFolder` cmdlet. To delete a primary mailbox, all other mailboxes must be deleted first. After a mailbox is deleted it will no longer be visible in the EAC.
 
@@ -32,7 +34,7 @@ Deleted Public Folder mailboxes are recoverable for a period of up to 90 days.
 
 - A deleted public folder mailbox is only recoverable for a period of 90 days after the mailbox is soft-deleted. The retention period for a soft-deleted mailbox is 90 days, after which the mailbox is permanently deleted and you won't be able to restore it.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Sharing and collaboration permissions](https://technet.microsoft.com/library/b7fa4b7c-1266-45bd-a14b-f66be0459cc5.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Public folders" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
@@ -45,13 +47,13 @@ To restore a primary public folder mailbox:
 
 1. Type the following command to find the soft-deleted mailbox:
 
-   ```
+   ```PowerShell
    Get-Mailbox -PublicFolder -SoftDeletedMailbox
    ```
 
 2. Type the following command to restore the chosen mailbox:
 
-   ```
+   ```PowerShell
     Undo-SoftDeletedMailbox -PublicFolder
     ```
 
@@ -63,19 +65,19 @@ Perform the following steps to restore both a primary public folder mailbox and 
 
 1. Type the following command to find the soft-deleted mailboxes:
 
-   ```
+   ```PowerShell
    Get-Mailbox -PublicFolder -SoftDeletedMailbox
    ```
 
 2. Type the following command to restore the primary mailbox:
 
-   ```
+   ```PowerShell
    Undo-SoftDeletedMailbox -PublicFolder
    ```
 
 3. Type the following for each secondary public folder mailbox that you want to restore (once per mailbox).
 
-   ```
+   ```PowerShell
    Undo-SoftDeletedMailbox -PublicFolder
    ```
 
@@ -85,7 +87,7 @@ Use this procedure if you want to restore one or more secondary public folder ma
 
 1. Type the following command to find the soft-deleted mailboxes:
 
-   ```
+   ```PowerShell
    Get-Mailbox -PublicFolder -SoftDeletedMailbox
    ```
 
@@ -93,7 +95,7 @@ Use this procedure if you want to restore one or more secondary public folder ma
 
 2. Type the following for each secondary public folder mailbox that you want to restore (once per mailbox).
 
-   ```
+   ```PowerShell
    Undo-SoftDeletedMailbox -PublicFolder
    ```
 

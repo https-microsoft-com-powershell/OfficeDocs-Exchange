@@ -2,13 +2,14 @@
 title: 'Renew the federation certificate: Exchange 2013 Help'
 TOCTitle: Renew the federation certificate
 ms:assetid: 0f390713-3058-44d0-9c07-3c982616e790
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Mt779252(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Mt779252(v=EXCHG.150)
 ms:contentKeyID: 74429166
-ms.date: 02/28/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,7 +29,7 @@ For more information about federation trusts and federation, see [Federation](fe
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Federation and certificates" entry in the [Exchange and Shell infrastructure permissions](exchange-and-shell-infrastructure-permissions-exchange-2013-help.md) topic.
 
-- The procedures in this topic use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Shell](https://technet.microsoft.com/en-us/library/dd638134\(v=exchg.150\)).
+- The procedures in this topic use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - To see if your existing federation certificate has expired, run the following command in the Exchange Management Shell:
 
@@ -39,14 +40,11 @@ For more information about federation trusts and federation, see [Federation](fe
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!WARNING]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Update a working federation certificate
 
 If the federation certificate hasn't expired, you can update the existing federation trust with a new federation certificate.
-
-> [!NOTE]
-> The Graphical User Interface/Wizard can be used as an alternative to update the Microsoft Teams certificate automatically.
 
 ## Step 1: Create a new federation certificate
 
@@ -56,7 +54,7 @@ Run the following command in the Exchange Management Shell to create a new feder
 $SKI = [System.Guid]::NewGuid().ToString("N"); New-ExchangeCertificate -DomainName 'Federation' -FriendlyName "Exchange Delegation Federation" -Services Federation -SubjectKeyIdentifier $SKI -PrivateKeyExportable $true
 ```
 
-For detailed syntax and parameter information, see [New-ExchangeCertificate](https://technet.microsoft.com/en-us/library/aa998327\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ExchangeCertificate](/powershell/module/exchange/New-ExchangeCertificate).
 
 The command output contains the thumbprint value of the new certificate. You'll need this value in the remaining steps, and you can copy the value directly from the Exchange Management Shell window:
 
@@ -80,7 +78,7 @@ This example uses the certificate thumbprint value `6A99CED2E4F2B5BE96C5D17D662D
 Set-FederationTrust -Identity "Microsoft Federation Gateway" -Thumbprint 6A99CED2E4F2B5BE96C5D17D662D217EF58B8F73 -RefreshMetaData
 ```
 
-For detailed syntax and parameter information, see [Set-FederationTrust](https://technet.microsoft.com/en-us/library/dd298034\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-FederationTrust](/powershell/module/exchange/Set-FederationTrust).
 
 **Note:** The command output contains a warning that you need to update the proof of domain ownership TXT record in DNS. You'll do that in the next step.
 
@@ -102,7 +100,7 @@ You can safely perform this step now, because the proof of domain ownership TXT 
 
    The command output looks like this:
 
-   ```text
+   ```console
    Thumbprint : <new certificate thumbprint> (for example, 6A99CED2E4F2B5BE96C5D17D662D217EF58B8F73)
 
    Proof      : <new hash text> (for example, znMfbkgSbOQSsWFdsW+gm3to0nZSdE3zbcPPHGVAqdgsLFGsCPuLHiyVbKoPmgyZKX90NH2g1PbCZH0YTQF6oA==)
@@ -114,7 +112,7 @@ You can safely perform this step now, because the proof of domain ownership TXT 
 
    Note that the command output returns information for two proof of domain ownership records: one for the new certificate, and one for the current certificate that you're replacing. You can tell which is which by the thumbprint value, and the hash text value that's configured in the current proof of domain ownership TXT record in your external (public) DNS.
 
-2. Update the federation proof of domain ownership TXT record in your external DNS. The instructions will vary based on your DNS provider, but you can edit the current TXT record to replace the current hash text value with the new hash text value. For more information, see the Exchange Online section in [External Domain Name System records for Office 365](https://go.microsoft.com/fwlink/p/?linkid=265522).
+2. Update the federation proof of domain ownership TXT record in your external DNS. The instructions will vary based on your DNS provider, but you can edit the current TXT record to replace the current hash text value with the new hash text value. For more information, see the Exchange Online section in [External Domain Name System records for Office 365](/office365/enterprise/external-domain-name-system-records).
 
 ## Step 4: Verify the distribution of the new federation certificate to all Exchange servers
 
@@ -136,7 +134,7 @@ To use the Exchange Management Shell to activate the new federation certificate,
 Set-FederationTrust -Identity "Microsoft Federation Gateway" -PublishFederationCertificate
 ```
 
-For detailed syntax and parameter information, see [Set-FederationTrust](https://technet.microsoft.com/en-us/library/dd298034\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-FederationTrust](/powershell/module/exchange/Set-FederationTrust).
 
 **Note:** The command output contains a warning that you need to update the proof of domain ownership TXT record in DNS (which you already did in Step 3).
 
@@ -190,4 +188,4 @@ If the federation certificate has already expired, you need to remove all federa
    Remove-FederationTrust "Microsoft Federation Gateway"
    ```
 
-5. Recreate the federation trust. For instructions, see [x-Create a Federation Trust](https://technet.microsoft.com/en-us/library/dd335198\(v=exchg.150\)).
+5. Recreate the federation trust. For instructions, see [Configure a federation trust](configure-a-federation-trust-exchange-2013-help.md).

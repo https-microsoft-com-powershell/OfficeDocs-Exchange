@@ -2,13 +2,14 @@
 title: 'Start and stop the IMAP4 services: Exchange 2013 Help'
 TOCTitle: Start and stop the IMAP4 services
 ms:assetid: a52db4bd-69a6-47b2-acf3-d9d8571c7a87
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124022(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124022(v=EXCHG.150)
 ms:contentKeyID: 49315251
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Microsoft Management Console Services snap-in to start or stop the IMAP4 services
 

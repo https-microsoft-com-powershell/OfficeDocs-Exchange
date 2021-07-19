@@ -2,13 +2,14 @@
 title: 'Messages currently exist in one or more queues'
 TOCTitle: Messages currently exist in one or more queues_MessagesInQueue
 ms:assetid: 3ffcdc7e-c1b7-49a7-8e5f-b30c0397908d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.messagesinqueue(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.messagesinqueue(v=EXCHG.150)
 ms:contentKeyID: 46628874
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft® Exchange Server 2007 setup displays this warning because its attempt to uninstall a transport role could cause data loss from a transport queue.
 

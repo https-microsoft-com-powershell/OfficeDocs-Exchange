@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 99fecdde-b158-4dfc-9ca7-ff7c0ada7819
-ms.date: 7/9/2018
 ms.reviewer:
 title: Remove a mailbox database copy
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -17,7 +18,7 @@ manager: serdars
 
 # Remove a mailbox database copy
 
-You can use these procedures to remove a copy of a mailbox database, but you can't use them to remove the **last** copy of a mailbox database. For detailed steps about how to remove the last copy of a mailbox database, see [Remove a mailbox database](../../architecture/mailbox-servers/manage-databases.md#remove-a-mailbox-database) or [Remove-MailboxDatabase](https://technet.microsoft.com/library/4d07d736-1dd7-43af-9f54-37d7c648572e.aspx).
+You can use these procedures to remove a copy of a mailbox database, but you can't use them to remove the **last** copy of a mailbox database. For detailed steps about how to remove the last copy of a mailbox database, see [Remove a mailbox database](../../architecture/mailbox-servers/manage-databases.md#remove-a-mailbox-database) or [Remove-MailboxDatabase](/powershell/module/exchange/remove-mailboxdatabase).
 
 Looking for other management tasks related to mailbox database copies? Check out [Manage mailbox database copies](manage-database-copies.md).
 
@@ -31,14 +32,14 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 - After removing a database copy, you must manually delete any database and transaction log files from the server from which the database copy is being removed.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to remove a mailbox database copy
 
@@ -58,11 +59,11 @@ Looking for other management tasks related to mailbox database copies? Check out
 
 This example removes a copy of the mailbox database DB1 from the Mailbox server MBX1.
 
-```
+```powershell
 Remove-MailboxDatabaseCopy -Identity DB1\MBX1 -Confirm:$False
 ```
 
-For detailed syntax and parameter information, see [Remove-MailboxDatabaseCopy](https://technet.microsoft.com/library/18a41719-99dd-4bf7-97af-2e9b0e39ba2d.aspx).
+For detailed syntax and parameter information, see [Remove-MailboxDatabaseCopy](/powershell/module/exchange/remove-mailboxdatabasecopy).
 
 ## How do you know this worked?
 
@@ -72,7 +73,7 @@ To verify that you've successfully removed a mailbox database copy, do one of th
 
 - In the Exchange Management Shell, run the following command to verify removal of the copy.
 
-  ```
+  ```powershell
   Get-MailboxDatabase <DatabaseName> | Format-List DatabaseCopies
   ```
 

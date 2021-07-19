@@ -2,13 +2,14 @@
 title: 'Start and stop the POP3 services: Exchange 2013 Help'
 TOCTitle: Start and stop the POP3 services
 ms:assetid: 3d543921-d8c9-4d4b-99a1-82446b585ceb
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997475(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997475(v=EXCHG.150)
 ms:contentKeyID: 49300479
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Microsoft Management Console Services snap-in to start or stop the POP3 services
 

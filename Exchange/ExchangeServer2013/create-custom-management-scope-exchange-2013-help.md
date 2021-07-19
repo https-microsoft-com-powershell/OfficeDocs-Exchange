@@ -4,9 +4,10 @@ TOCTitle: Create a custom management scope for In-Place eDiscovery searches
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 1543aefe-3709-402c-b9cd-c11fe898aad1
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,9 +21,9 @@ For In-Place eDiscovery, the only property on a user mailbox that you can use to
 
 To learn more about management scopes, see:
 
-- [Understanding management role scopes](https://technet.microsoft.com/library/24ed4a38-438a-4223-9f9c-5d4dea4b046b.aspx)
+- [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
 
-- [Understanding management role scope filters](https://technet.microsoft.com/library/6acc2922-ee9c-41f1-8a0f-10a541e8c273.aspx)
+- [Understanding management role scope filters](understanding-management-role-scope-filters-exchange-2013-help.md)
 
 ## What do you need to know before you begin?
 
@@ -191,4 +192,4 @@ Here are some ways to verify if you've successfully implemented custom managemen
   Add-RoleGroupMember "Vancouver Discovery Management" -Member paralegal@vancouver.contoso.com
   ```
 
-  You can also use the EAC to add members to a role group. For more information, see the "Add members to a role group" section in [Manage Role Group Members](https://technet.microsoft.com/library/c064729d-7cda-47fc-b105-acf4b300d430.aspx).
+  You can also use the EAC to add members to a role group. For more information, see the "Add members to a role group" section in [Manage role group members](manage-role-group-members-exchange-2013-help.md).

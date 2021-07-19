@@ -3,9 +3,8 @@ localization_priority: Normal
 description: You can create an Outlook on the web mailbox policy to apply a common set of policy settings. Outlook on the web mailbox policies are useful for applying and standardizing settings, for example, attachment settings, for specific groups of users.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 347207fa-cfb7-40a6-b19a-831dcdb54ad5
-ms.date: 
 ms.reviewer: 
 title: Create an Outlook on the web mailbox policy in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -29,12 +30,12 @@ For more information about Outlook on the web mailbox policies, see [Outlook on 
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
-- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create an Outlook on the web mailbox policy
 
@@ -56,17 +57,17 @@ In Exchange Online PowerShell, creating an Outlook on the web mailbox policy is 
 
 1. Create the policy by using the following syntax:
 
-   ```
+   ```PowerShell
    New-OwaMailboxPolicy -Name "<Unique Name>"
    ```
 
    This example creates an Outlook on the web mailbox policy named Executives.
 
-   ```
+   ```PowerShell
    New-OwaMailboxPolicy -Name Policy1
    ```
 
-    For detailed syntax and parameter information, see [New-OwaMailboxPolicy](https://technet.microsoft.com/library/b2e46c22-7e99-4d04-b5ef-81ef64bf7445.aspx).
+    For detailed syntax and parameter information, see [New-OwaMailboxPolicy](/powershell/module/exchange/new-owamailboxpolicy).
 
 2. Modify the default settings of the policy.
 
@@ -84,13 +85,13 @@ To verify that you've successfully created an Outlook on the web mailbox policy,
 
 - In Exchange Online PowerShell, run the following command to verify the policy is listed:
 
-  ```
+  ```PowerShell
   Get-OwaMailboxPolicy | Format-Table Name
   ```
 
 - In Exchange Online PowerShell, replace \<Policy Name\> with the name of the policy, and run the following command to verify the settings:
 
-  ```
+  ```PowerShell
   Get-OwaMailboxPolicy -Identity "<Policy Name>"
   ```
 

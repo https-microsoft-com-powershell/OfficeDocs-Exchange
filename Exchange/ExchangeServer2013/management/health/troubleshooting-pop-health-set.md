@@ -2,13 +2,14 @@
 title: Troubleshooting POP Health Set
 TOCTitle: Troubleshooting POP Health Set
 ms:assetid: 6114e9fe-d037-4cb9-a643-933eb5fabc45
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.pop(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.pop(v=EXCHG.150)
 ms:contentKeyID: 49720812
-ms.date:
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -114,7 +115,7 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
 This monitor alert is typically issued on Mailbox servers.
 
-1. Restart the POP3 back-end service. For more information, see [Start and stop the POP3 services](https://technet.microsoft.com/en-us/library/aa997475\(v=exchg.150\)).
+1. Restart the POP3 back-end service. For more information, see [Start and stop the POP3 services](../../start-and-stop-the-pop3-services-exchange-2013-help.md).
 
 2. Rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
@@ -134,13 +135,13 @@ This monitor alert is typically issued on Mailbox servers.
 
    Set-MailboxServer -Identity <ServerName> -DatabaseCopyActivationDisabledAndMoveNow $false
 
-8. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+8. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## POPCTPMonitor Recovery Actions
 
 This monitor alert is typically issued on CA servers (CAS).
 
-1. Restart the POP3 service on the servers that are running the CAS role. For more information, see [Start and stop the POP3 services](https://technet.microsoft.com/en-us/library/aa997475\(v=exchg.150\)).
+1. Restart the POP3 service on the servers that are running the CAS role. For more information, see [Start and stop the POP3 services](../../start-and-stop-the-pop3-services-exchange-2013-help.md).
 
 2. Rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
@@ -180,13 +181,13 @@ This monitor alert is typically issued on CA servers (CAS).
    Set-PopSettings -server <CAS server name> -ProtocolLoggingEnabled $false
    ```
 
-7. Restart the POP3 service on the servers that are running the CAS role. For more information, see [Start and stop the POP3 services](https://technet.microsoft.com/en-us/library/aa997475\(v=exchg.150\)).
+7. Restart the POP3 service on the servers that are running the CAS role. For more information, see [Start and stop the POP3 services](../../start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-8. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+8. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## PopProxyTestMonitor recovery actions
 
-1. Restart the POP3 service on the servers that are running the CAS role. For more information, see [Start and stop the POP3 services](https://technet.microsoft.com/en-us/library/aa997475\(v=exchg.150\)).
+1. Restart the POP3 service on the servers that are running the CAS role. For more information, see [Start and stop the POP3 services](../../start-and-stop-the-pop3-services-exchange-2013-help.md).
 
 2. Rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
@@ -194,13 +195,13 @@ This monitor alert is typically issued on CA servers (CAS).
 
 4. After the server restarts, rerun the associated probe as described in step 2c in the Verifying the issue still exists section.
 
-5. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+5. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## AverageCommandProcessingTimeGt60sMonitor recovery actions
 
 This monitor alert is typically issued on CA or Mailbox servers.
 
-1. Restart the POP3 service on the CA or Mailbox servers. For more information, see [Start and stop the POP3 services](https://technet.microsoft.com/en-us/library/aa997475\(v=exchg.150\)).
+1. Restart the POP3 service on the CA or Mailbox servers. For more information, see [Start and stop the POP3 services](../../start-and-stop-the-pop3-services-exchange-2013-help.md).
 
 2. Wait 10 minutes to see whether the monitor stays healthy. After 10 minutes, run the following command (the example uses server1.contoso.com).
 
@@ -234,10 +235,10 @@ This monitor alert is typically issued on CA or Mailbox servers.
    Set-MailboxServer -Identity <ServerName> -DatabaseCopyActivationDisabledAndMoveNow $false
    ```
 
-6. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+6. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## For More Information
 
-[Start and stop the POP3 services](https://technet.microsoft.com/en-us/library/aa997475\(v=exchg.150\))
+[Start and stop the POP3 services](../../start-and-stop-the-pop3-services-exchange-2013-help.md)
 
-[Test-PopConnectivity](https://technet.microsoft.com/en-us/library/bb738143\(v=exchg.150\))
+[Test-PopConnectivity](/powershell/module/exchange/Test-PopConnectivity)

@@ -4,6 +4,8 @@ ms.author: dmaguire
 author: msdmaguire
 manager: serdars
 ms.reviewer: dstrome
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-it-pro

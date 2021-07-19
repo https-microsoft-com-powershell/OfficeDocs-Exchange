@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 75388645-cae1-402e-bf02-c4949d3e2c31
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Switchovers and failovers
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

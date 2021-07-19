@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d8d9f735-7181-428f-9049-b9886dce5159
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Customize the Outlook on the web sign-in, language selection, and error pages in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -35,12 +36,12 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Graphics editor" entry under "Outlook on the web Permissions" in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
-- To replace the existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values in the topic [Color Table](https://go.microsoft.com/fwlink/p/?LinkId=280679). If you can't find the color there, you can use an image editing tool to sample a color and determine its HTML RGB value.
+- To replace the existing color with a new color, you need the HTML RGB value of the new color. You can find HTML RGB values in the topic [Color Table](https://developer.mozilla.org/docs/Web/CSS/color_value). If you can't find the color there, you can use an image editing tool to sample a color and determine its HTML RGB value.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Customize the color of the Outlook on the web sign-in page
 
@@ -66,11 +67,7 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
 
 ## Customize the color of the Outlook on the web language selection page
 
-1. Use Notepad to open the file `%ExchangeInstallPath%ClientAccess\Owa\Current2\version\resources\styles\languageselection.css`. An easy way to do this is to press the Windows key + R, and run the following command:
-
-   ```
-   Notepad.exe %ExchangeInstallPath%ClientAccess\Owa\Current2\version\resources\styles\languageselection.css
-   ```
+1. Use Notepad to open the file `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\styles\languageselection.css`.
 
 2. In the `languageselection.css` file, replace the default blue color value #0072c6 with the HTML RGB value that you want to use.
 
@@ -82,20 +79,25 @@ For more information about Outlook on the web, see [Outlook on the web in Exchan
 
 You can edit the existing image files, or replace the files with new files that have the same names and dimensions. The images are described in the following table:
 
-|**Image**|**File name**|**Location**|**Dimensions (width x height in pixels)**|**Bit depth**|
-|:-----|:-----|:-----|:-----|:-----|
+<br>
+
+****
+
+|Image|File name|Location|Dimensions (width x height in pixels)|Bit depth|
+|---|---|---|---|---|
 |1|favicon.ico|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources`|16 x 16|32|
-|2|olk_logo_white.png|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources`|128 x 108|32|
-|3|owa_text_blue.png|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources`|300 x 76|32|
-|4|Sign_in_arrow.png (for left-to-right languages) <br/><br/> Sign_in_arrow_rtl.png (for right-to-left languages)|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources`|22 x 22|32|
+|2|olk_logo_white.png|`%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\0`|128 x 108|32|
+|3|owa_text_blue.png|`%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\0`|300 x 76|32|
+|4|Sign_in_arrow.png (for left-to-right languages) <p> Sign_in_arrow_rtl.png (for right-to-left languages)|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources`|22 x 22|32|
 |5|olk_logo_white_cropped.png|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\auth\<ExchangeVersion>\themes\resources`|265 x 310|32|
-|6|office_logo_white_small.png|`%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\0` (for left-to-right languages) <br/><br/> `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\rtl`(for right-to-left languages)|81 x 26|8|
+|6|office_logo_white_small.png|`%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\0` (for left-to-right languages) <p> `%ExchangeInstallPath%ClientAccess\Owa\prem\<ExchangeVersion>\resources\images\rtl`(for right-to-left languages)|81 x 26|8|
+|
 
 ## How do you know this worked?
 
 To verify that you've successfully customized the Outlook on the web sign-in, language selection, and error pages, perform the following steps:
 
-1. Open the Outlook on the web sign-in page in a web browser. On the Exchange server that hosts the Outlook on the web virtual directory, you can test your changes by opening the URL https://localhost/owa or https://127.0.0.1/owa.
+1. Open the Outlook on the web sign-in page in a web browser. On the Exchange server that hosts the Outlook on the web virtual directory, you can test your changes by opening the URL <https://localhost/owa> or <https://127.0.0.1/owa>.
 
 2. If you don't see your changes, clear your browsing history (delete temporary Internet files), and refresh the browser window.
 

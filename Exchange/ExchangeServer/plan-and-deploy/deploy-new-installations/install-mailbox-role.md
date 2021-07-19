@@ -2,17 +2,18 @@
 localization_priority: Critical
 ms.topic: get-started-article
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - Microsoft.Exchange.Management.ExSetupUI.SetupWizardForm.IntroductionPage
 ms.author: dmaguire
 ms.assetid: da690d47-3384-4430-a69e-0cd4d3bf80a7
-ms.date: 7/27/2018
 ms.reviewer: 
 description: 'Summary: Learn how to use the Setup wizard in Exchange 2016 or Exchange 2019 to install the Edge Mailbox server role on a computer.'
 title: Install Exchange Mailbox servers using the Setup wizard
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- CSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -64,7 +65,7 @@ To install the Edge Transport role on a computer, see [Install Exchange Edge Tra
 
    - **Don't check for updates right now**
 
-   ![Exchange Setup, Check for Updates page](../../media/f0ca225e-b88f-45e9-a8cb-21adaabe984e.png)
+   ![Exchange Setup, Check for Updates page](../../media/exchange-install-checkupdates-no.jpg)
 
 4. The **Copying Files** page shows the progress of copying files to the local hard drive. Typically, the files are copied to `%WinDir%\Temp\ExchangeSetup`, but you can confirm the location in the Exchange Setup log at `C:\ExchangeSetupLogs\ExchangeSetup.log`.
 
@@ -148,4 +149,4 @@ To install the Edge Transport role on a computer, see [Install Exchange Edge Tra
 
 - Complete your deployment by performing the tasks provided in [Exchange post-installation tasks](../../plan-and-deploy/post-installation-tasks/post-installation-tasks.md).
 
-- Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+- Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

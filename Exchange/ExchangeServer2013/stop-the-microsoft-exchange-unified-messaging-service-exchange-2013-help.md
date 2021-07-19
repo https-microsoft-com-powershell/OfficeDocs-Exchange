@@ -2,13 +2,14 @@
 title: 'Stop the Microsoft Exchange Unified Messaging service: Exchange 2013 Help'
 TOCTitle: Stop the Microsoft Exchange Unified Messaging service
 ms:assetid: 64fa5535-8150-45c6-82e6-d2346892a031
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998595(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998595(v=EXCHG.150)
 ms:contentKeyID: 49315438
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ For additional management tasks related to Mailbox servers, see [UM services pro
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the MMC Services snap-in to stop the Microsoft Exchange Unified Messaging service
 

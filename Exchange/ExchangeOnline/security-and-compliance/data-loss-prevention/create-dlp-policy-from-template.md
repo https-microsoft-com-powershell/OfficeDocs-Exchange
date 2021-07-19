@@ -3,10 +3,11 @@ localization_priority: Normal
 description: 'In Microsoft Exchange, you can use data loss prevention (DLP) policy templates to help meet the messaging policy and compliance needs of your organization. These templates contain pre-built sets of rules that can help you manage message data that is associated with several common legal and regulatory requirements. To see a list of all the templates supplied by Microsoft, see DLP policy templates supplied in Exchange. Example DLP templates that are supplied can help you manage:'
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 4432ef8b-6108-48d3-b2af-43ef5b40d2bc
-ms.date: 7/11/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Create a DLP policy from a template
 ms.collection:
 - exchange-online
@@ -27,7 +28,7 @@ In Microsoft Exchange, you can use data loss prevention (DLP) policy templates t
 
 - United States Personally Identifiable Information (U.S. PII)
 
-You can customize any of these DLP templates or use them as-is. DLP policy templates are built on top of mail flow rules (also known as transport rules) that include new conditions or predicates and actions. DLP policies support the full range of traditional mail flow rules, and you can add the additional rules after a DLP policy has been established. For more information about policy templates, see [What the DLP policy templates include](https://docs.microsoft.com/office365/securitycompliance/what-the-dlp-policy-templates-include). To learn more about mail flow rule capabilities, see [Mail flow rules (transport rules) in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rules.md). Once you have started enforcing a policy, you can learn about how to observe the results by reviewing the Exchange Online: [DLP policy detection reports](https://technet.microsoft.com/library/84295dda-5bf7-4fa5-a1ee-3f761501cfe8.aspx)
+You can customize any of these DLP templates or use them as-is. DLP policy templates are built on top of mail flow rules (also known as transport rules) that include new conditions or predicates and actions. DLP policies support the full range of traditional mail flow rules, and you can add the additional rules after a DLP policy has been established. For more information about policy templates, see [What the DLP policy templates include](/microsoft-365/compliance/what-the-dlp-policy-templates-include). To learn more about mail flow rule capabilities, see [Mail flow rules (transport rules) in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rules.md). Once you have started enforcing a policy, you can learn about how to observe the results by reviewing the Exchange Online: [View the reports for data loss prevention](/microsoft-365/compliance/view-the-dlp-reports).
 
 > [!CAUTION]
 > You should enable your DLP policies in test mode before running them in your production environment. During such tests, it is recommended that you configure sample user mailboxes and send test messages that invoke your test policies in order to confirm the results.
@@ -36,16 +37,14 @@ You can customize any of these DLP templates or use them as-is. DLP policy templ
 
 - Estimated time to complete: 30 minutes
 
-- Ensure that Exchange Server is set up as described in [Planning and Deployment](https://technet.microsoft.com/library/692c59e3-f0b0-4cef-a66e-751aa740abae.aspx).
-
 - Configure both administrator and user accounts within your organization and validate basic mail flow.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure a DLP policy from a template
 
@@ -69,7 +68,7 @@ You can customize any of these DLP templates or use them as-is. DLP policy templ
 > [!NOTE]
 > In addition to the rules within a specific template, your organization may have additional expectations or company policies that apply to regulated data within your messaging environment. Exchange Server makes it easy for you to change the basic template in order to add actions so that your Exchange messaging environment complies with your own requirements.
 
-You can modify policies by editing the rules within them once the policy has been saved in your Exchange Server environment. An example rule change might include making specific people exempt from a policy or sending a notice and blocking message delivery if a message is found to have sensitive content. For more information about editing policies and rules, see [Manage DLP Policies](https://technet.microsoft.com/library/ba81fabd-7f7f-4ef7-968f-ce851ada9d70.aspx).
+You can modify policies by editing the rules within them once the policy has been saved in your Exchange Server environment. An example rule change might include making specific people exempt from a policy or sending a notice and blocking message delivery if a message is found to have sensitive content.
 
 You have to navigate to the specific policy's rule set on the **Edit DLP policy** page and use the tools available on that page in order to change a DLP policy you have already created in Exchange Server.
 
@@ -80,5 +79,3 @@ For any of the DLP policies, you can change the rules, actions, exceptions, enfo
 ## For more information
 
 [Data loss prevention](data-loss-prevention.md)
-
-[DLP policy templates](https://technet.microsoft.com/library/c7b1a8e4-30d9-4409-85c5-f85ae023737d.aspx)

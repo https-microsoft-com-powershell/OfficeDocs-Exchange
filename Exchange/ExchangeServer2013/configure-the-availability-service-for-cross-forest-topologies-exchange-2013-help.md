@@ -2,13 +2,14 @@
 title: 'Configure the Availability service for cross-forest topologies'
 TOCTitle: Configure the Availability service for cross-forest topologies
 ms:assetid: f1e7d407-f0d3-47a7-8cc3-03c5980445d5
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125182(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125182(v=EXCHG.150)
 ms:contentKeyID: 51588094
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -44,7 +45,7 @@ To enable GAL synchronization, you create management agents that import mail-ena
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure per-user free/busy information in a trusted cross-forest topology
 
@@ -73,13 +74,13 @@ Get-MailboxServer | Add-ADPermission -Accessrights Extendedright -Extendedright 
 
 For detailed information about syntax and parameters, see the following topics:
 
-- [Get-MailboxServer](https://technet.microsoft.com/en-us/library/bb123539\(v=exchg.150\))
+- [Get-MailboxServer](/powershell/module/exchange/Get-MailboxServer)
 
-- [Add-ADPermission](https://technet.microsoft.com/en-us/library/bb124403\(v=exchg.150\))
+- [Add-ADPermission](/powershell/module/exchange/Add-ADPermission)
 
-- [Add-AvailabilityAddressSpace](https://technet.microsoft.com/en-us/library/bb124122\(v=exchg.150\))
+- [Add-AvailabilityAddressSpace](/powershell/module/exchange/Add-AvailabilityAddressSpace)
 
-- [Set-AvailabilityConfig](https://technet.microsoft.com/en-us/library/bb124103\(v=exchg.150\))
+- [Set-AvailabilityConfig](/powershell/module/exchange/Set-AvailabilityConfig)
 
 ## Use the Shell to configure organization-wide free/busy information in an untrusted cross-forest topology
 

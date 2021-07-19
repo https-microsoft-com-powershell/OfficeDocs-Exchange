@@ -2,13 +2,14 @@
 title: 'Recipient filtering on Edge Transport servers: Exchange 2013 Help'
 TOCTitle: Recipient filtering on Edge Transport servers
 ms:assetid: 994eefd9-3903-41e6-a882-1e333d6d2d18
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123891(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123891(v=EXCHG.150)
 ms:contentKeyID: 49248685
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

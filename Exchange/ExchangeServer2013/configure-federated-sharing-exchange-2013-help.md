@@ -2,13 +2,14 @@
 title: 'Configure federated sharing: Exchange 2013 Help'
 TOCTitle: Configure federated sharing
 ms:assetid: b25ae450-def3-4797-a5fc-6e9bcee71a5d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657483(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657483(v=EXCHG.150)
 ms:contentKeyID: 49289377
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -19,7 +20,7 @@ _**Applies to:** Exchange Server 2013_
 With federated sharing in Exchange Server 2013, users can share information with recipients in external federated organizations. This includes sharing their free/busy (also known as calendar availability) information for scheduling purposes or, depending on the nature of the business relationship, sharing more detailed calendar information. To learn more about federation sharing, see [Sharing](sharing-exchange-2013-help.md).
 
 > [!IMPORTANT]
-> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="https://go.microsoft.com/fwlink/?linkid=313640">Learn about Office 365 operated by 21Vianet</A>.
+> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see [Office 365 operated by 21Vianet](/microsoft-365/admin/services-in-china/services-in-china).
 
 ## What do you need to know before you begin?
 
@@ -30,7 +31,7 @@ With federated sharing in Exchange Server 2013, users can share information with
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Create and configure a federation trust
 

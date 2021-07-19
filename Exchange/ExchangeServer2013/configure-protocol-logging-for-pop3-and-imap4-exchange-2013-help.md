@@ -2,13 +2,14 @@
 title: 'Configure protocol logging for POP3 and IMAP4: Exchange 2013 Help'
 TOCTitle: Configure protocol logging for POP3 and IMAP4
 ms:assetid: 451b337b-cb6b-4460-8687-be0b19c469bc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997690(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997690(v=EXCHG.150)
 ms:contentKeyID: 50395397
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ Protocol logging lets you review the POP3 and IMAP4 connections in your Exchange
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable protocol logging for POP3 or IMAP4
 
@@ -43,7 +44,7 @@ Set-PopSettings -Server "CAS01" -ProtocolLogEnabled $true
 > [!NOTE]
 > After you've changed protocol logging settings for POP3 or IMAP4, you must restart whichever services you're using: POP3 or IMAP4. For information about how to restart the POP3 and IMAP4 services, see <A href="start-and-stop-the-pop3-services-exchange-2013-help.md">Start and stop the POP3 services</A> and <A href="start-and-stop-the-imap4-services-exchange-2013-help.md">Start and stop the IMAP4 services</A>.
 
-For detailed syntax and parameter information, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)) and [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings) and [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 ## Use the Shell to disable protocol logging for POP3 or IMAP4
 
@@ -57,7 +58,7 @@ Set-PopSettings -Server "CAS01" -protocolLogEnabled $false
 > [!NOTE]
 > After you've changed protocol logging settings for POP3 or IMAP4, you must restart whichever services you're using: POP3 or IMAP4. For information about how to restart the POP3 and IMAP4 services, see <A href="start-and-stop-the-pop3-services-exchange-2013-help.md">Start and stop the POP3 services</A> and <A href="start-and-stop-the-imap4-services-exchange-2013-help.md">Start and stop the IMAP4 services</A>.
 
-For detailed syntax and parameter information, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)) and [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings) and [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 ## Use the Shell to modify protocol logging for POP3 or IMAP4
 
@@ -102,7 +103,7 @@ To modify POP3 or IMAP4 logging settings, run the **Set-ImapSettings** or **Set-
 > [!NOTE]
 > After you've changed protocol logging settings for POP3 or IMAP4, you must restart whichever services you're using: POP3 or IMAP4. For information about how to restart the POP3 and IMAP4 services, see <A href="start-and-stop-the-pop3-services-exchange-2013-help.md">Start and stop the POP3 services</A> and <A href="start-and-stop-the-imap4-services-exchange-2013-help.md">Start and stop the IMAP4 services</A>.
 
-For detailed syntax and parameter information, see [Set-ImapSettings](https://technet.microsoft.com/en-us/library/aa998252\(v=exchg.150\)) and [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings) and [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 ## How do you know this worked?
 

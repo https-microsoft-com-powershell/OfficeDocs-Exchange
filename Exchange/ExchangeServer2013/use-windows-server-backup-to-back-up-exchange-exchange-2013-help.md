@@ -2,13 +2,14 @@
 title: 'Use Windows Server Backup to back up Exchange: Exchange 2013 Help'
 TOCTitle: Use Windows Server Backup to back up Exchange
 ms:assetid: 188a8291-0a41-4ca2-b6d2-94242e2b1ffc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876854(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876854(v=EXCHG.150)
 ms:contentKeyID: 48384847
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 - During the backup operation, a consistency check of the Exchange data files is run to make sure that the files are in a good state and can be used for recovery. If the consistency check succeeds, Exchange data is available for recovery from that backup. If the consistency check fails, the Exchange data isn't available for recovery. Windows Server Backup runs the consistency check on the snapshot taken for the backup. As a result, before copying files from the snapshot to backup media, the consistency of the backup is known, and the user is notified of the consistency check results.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use Windows Server Backup to back up Exchange
 
@@ -59,7 +60,7 @@ You can use Windows Server Backup to back up and restore Exchange databases. Exc
 
       - If you choose **Local drives**, the **Select Backup Destination** page appears. Select an option from the **Backup destination** dropdown, and then click **Next**.
 
-      - If you choose **Remote shared folder**, the **Specify remote folder** page appears. Specify a UNC path for the backup files, configure access control settings. Choose **Do not inherit** if you want the backup to be accessible only through a specific account. Provide a user name and password for an account that has write permissions on the computer hosting the remote folder, and then click **OK**. Alternatively, choose **Inherit** if you want the backup to be accessible by everyone who has access to the remote folder. Click **Next**.
+      - If you choose **Remote shared folder**, the **Specify remote folder** page appears. Specify a UNC path for the backup files, configure access control settings. Choose **Do not inherit** if you want the backup to be accessible only through a specific account. Provide a username and password for an account that has write permissions on the computer hosting the remote folder, and then click **OK**. Alternatively, choose **Inherit** if you want the backup to be accessible by everyone who has access to the remote folder. Click **Next**.
 
 10. On the **Confirmation** page, review the backup settings, and then click **Backup**.
 

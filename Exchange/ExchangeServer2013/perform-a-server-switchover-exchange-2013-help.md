@@ -2,13 +2,14 @@
 title: 'Perform a Server Switchover: Exchange 2013 Help'
 TOCTitle: Perform a Server Switchover
 ms:assetid: ffcefd56-b0a0-4229-9011-fff4197b7c74
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298187(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298187(v=EXCHG.150)
 ms:contentKeyID: 62523709
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -25,7 +26,7 @@ A server switchover is a task that you perform to move all active mailbox databa
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Database availability groups" entry in the [High availability and site resilience permissions](high-availability-and-site-resilience-permissions-exchange-2013-help.md) topic.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to perform a server switchover
 
@@ -59,4 +60,4 @@ This example performs a server switchover of the Mailbox server MBX4. When the c
 Move-ActiveMailboxDatabase -Server MBX4 -ActivateOnServer MBX5
 ```
 
-For detailed syntax and parameter information, see [Move-ActiveMailboxDatabase](https://technet.microsoft.com/en-us/library/dd298068\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Move-ActiveMailboxDatabase](/powershell/module/exchange/Move-ActiveMailboxDatabase).

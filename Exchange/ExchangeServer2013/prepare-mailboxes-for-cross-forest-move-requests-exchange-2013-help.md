@@ -2,13 +2,14 @@
 title: 'Prepare mailboxes for cross-forest move requests: Exchange 2013 Help'
 TOCTitle: Prepare mailboxes for cross-forest move requests
 ms:assetid: fdbed4fc-a77e-40d5-a211-863b05d74784
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee633491(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee633491(v=EXCHG.150)
 ms:contentKeyID: 49360516
-ms.date: 11/22/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,9 +37,9 @@ After creating the target mail user, you can then run the **New-MoveRequest** or
 
 For more information about remote move requests, see the following topics:
 
-  - [New-MigrationBatch](https://technet.microsoft.com/en-us/library/jj219166\(v=exchg.150\))
+  - [New-MigrationBatch](/powershell/module/exchange/New-MigrationBatch)
 
-  - [New-MoveRequest](https://technet.microsoft.com/en-us/library/dd351123\(v=exchg.150\))
+  - [New-MoveRequest](/powershell/module/exchange/New-MoveRequest)
 
 For more information about remote mailbox moves and remote legacy moves, see [Mailbox moves in Exchange 2013](mailbox-moves-in-exchange-2013-exchange-2013-help.md).
 

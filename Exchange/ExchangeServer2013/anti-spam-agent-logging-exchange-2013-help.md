@@ -2,13 +2,14 @@
 title: 'Anti-spam agent logging: Exchange 2013 Help'
 TOCTitle: Anti-spam agent logging
 ms:assetid: dbd478d2-7993-4931-80db-5b2f7d4269bd
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124795(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124795(v=EXCHG.150)
 ms:contentKeyID: 49287005
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

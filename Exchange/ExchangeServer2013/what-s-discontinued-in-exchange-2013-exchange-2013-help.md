@@ -2,13 +2,14 @@
 title: "What's discontinued in Exchange 2013: Exchange 2013 Help"
 TOCTitle: What's discontinued in Exchange 2013
 ms:assetid: 0ac0001c-b314-4108-b895-d9c0e271b489
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ619283(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ619283(v=EXCHG.150)
 ms:contentKeyID: 49289156
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,7 +25,7 @@ This topic discusses the components, features, or functionality that have been r
 > <LI>
 > <P><A href="what-s-new-in-exchange-2013-exchange-2013-help.md">What's new in Exchange 2013</A>&nbsp;&nbsp;&nbsp;Information about new features and functionality in Exchange Server 2013.</P>
 > <LI>
-> <P><A href="https://go.microsoft.com/fwlink/p/?linkid=267479">Developer roadmap for Exchange 2013</A>&nbsp;&nbsp;&nbsp;&nbsp;See the "Development technologies removed from Exchange" section for information about the API and Development features discontinued in Exchange 2013.</P></LI></UL>
+> <P><A href="/exchange/client-developer/exchange-server-development">Exchange Online and Exchange development</A></P></LI></UL>
 
 ## Discontinued features from Exchange 2010 to Exchange 2013
 
@@ -155,7 +156,7 @@ This section lists the Exchange Server 2010 features that are no longer availabl
 <tbody>
 <tr class="odd">
 <td><p>Linked connectors</p></td>
-<td><p>The ability to link a Send connector to a Receive connector has been removed. Specifically, the <em>LinkedReceiveConnector</em> parameter has been removed from <a href="https://technet.microsoft.com/en-us/library/aa998936(v=exchg.150)">New-SendConnector</a> and <a href="https://technet.microsoft.com/en-us/library/aa998294(v=exchg.150)">Set-SendConnector</a>.</p></td>
+<td><p>The ability to link a Send connector to a Receive connector has been removed. Specifically, the <em>LinkedReceiveConnector</em> parameter has been removed from <a href="/powershell/module/exchange/New-SendConnector">New-SendConnector</a> and <a href="/powershell/module/exchange/Set-SendConnector">Set-SendConnector</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -258,7 +259,7 @@ This section lists the Exchange Server 2010 features that are no longer availabl
 <tbody>
 <tr class="odd">
 <td><p>Exchange Best Practice Analyzer</p></td>
-<td><p>In Exchange 2010, the Exchange Best Practice Analyzer examined your Exchange deployment and determined whether the configuration was in line with Microsoft best practices. In Exchange 2013, the Exchange Best Practice Analyzer has been replaced by the <a href="https://go.microsoft.com/fwlink/p/?linkid=391077">Office 365 Best Practices Analyzer for Exchange Server 2013</a>.</p></td>
+<td><p>In Exchange 2010, the Exchange Best Practice Analyzer examined your Exchange deployment and determined whether the configuration was in line with Microsoft best practices. In Exchange 2013, the Exchange Best Practice Analyzer has been replaced by the <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/beta-of-microsoft-office-365-best-practices-analyzer-for/ba-p/591294">Office 365 Best Practices Analyzer for Exchange Server 2013</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p>Mail flow troubleshooter</p></td>
@@ -323,7 +324,7 @@ This section lists the Exchange Server 2007 features that are no longer availabl
 <tbody>
 <tr class="odd">
 <td><p>Exchange WebDAV</p></td>
-<td><p>Use <a href="https://go.microsoft.com/fwlink/p/?linkid=167197">Exchange Web Services</a> or <a href="https://go.microsoft.com/fwlink/p/?linkid=157179">EWS Managed API</a>. Alternatively, you can maintain an Exchange 2007 server for mailboxes that are managed by applications that use WebDAV. For more information, see <a href="https://go.microsoft.com/fwlink/p/?linkid=169474">Migrating from WebDAV</a>.</p></td>
+<td><p>Use <a href="/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange">Exchange Web Services (EWS) or the EWS Managed API</a>. Alternatively, you can maintain an Exchange 2007 server for mailboxes that are managed by applications that use WebDAV.</p></td>
 </tr>
 </tbody>
 </table>
@@ -352,7 +353,7 @@ This section lists the Exchange Server 2007 features that are no longer availabl
 </tr>
 <tr class="odd">
 <td><p>User Datagram Protocol (UDP) notifications</p></td>
-<td><p>Support for User Datagram Protocol (UDP) notifications is removed from Exchange 2013. This affects the user experience when Outlook 2003 clients connect to their mailboxes on an Exchange 2013 server. For more information, see Microsoft Knowledge Base article 2009942, <a href="http://go.microsoft.com/fwlink/?linkid=3052&kbid=2009942">Folders take a long time to update when an Exchange Server 2010 user uses Outlook 2003 in online mode</a>.</p></td>
+<td><p>Support for User Datagram Protocol (UDP) notifications is removed from Exchange 2013. This affects the user experience when Outlook 2003 clients connect to their mailboxes on an Exchange 2013 server. For more information, see Microsoft Knowledge Base article 2009942, <a href="https://support.microsoft.com/help/2009942">Folders take a long time to update when an Exchange Server 2010 user uses Outlook 2003 in online mode</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -481,7 +482,7 @@ This section lists the Exchange Server 2007 features that are no longer availabl
 </tr>
 <tr class="odd">
 <td><p>ISInteg</p></td>
-<td><p>In Exchange 2013, use <a href="https://technet.microsoft.com/en-us/library/ff625226(v=exchg.150)">New-MailboxRepairRequest</a>.</p></td>
+<td><p>In Exchange 2013, use <a href="/powershell/module/exchange/New-MailboxRepairRequest">New-MailboxRepairRequest</a>.</p></td>
 </tr>
 </tbody>
 </table>

@@ -2,13 +2,14 @@
 title: 'Register Filter Pack IFilters with Exchange 2013: Exchange 2013 Help'
 TOCTitle: Register Filter Pack IFilters with Exchange 2013
 ms:assetid: 0338980f-3a64-49d3-bc3c-bf6f10f88cb4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ837174(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ837174(v=EXCHG.150)
 ms:contentKeyID: 49940598
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,7 +37,7 @@ For additional management tasks related to Transport rules, see [Manage transpor
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Register the Microsoft Office 2010 Filter Pack
 
@@ -59,7 +60,7 @@ Deploying the Office 2010 Filter Pack consists of two main steps:
 > [!IMPORTANT]
 > You must perform this procedure on all Mailbox servers in your organization.
 
-1. Download and save the Microsoft Office 2010 Filter Pack (`FilterPack64bit.exe`) from the [Microsoft Download Center](https://go.microsoft.com/fwlink/?linkid=191548).
+1. Download and save the Microsoft Office 2010 Filter Pack (`FilterPack64bit.exe`) from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=17062).
 
 2. Run the `FilterPack64bit.exe` file on your Mailbox server and follow the instructions to complete the installation.
 
@@ -163,7 +164,7 @@ This procedure shows how to deploy the [Adobe PDF IFilter](https://www.adobe.com
 
 2. Start Registry Editor and locate the following subkey:
 
-   ```text
+   ```console
    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v15\HubTransportRole\CLSID
    ```
 
@@ -180,7 +181,7 @@ This procedure shows how to deploy the [Adobe PDF IFilter](https://www.adobe.com
 
 4. Locate the following registry key:
 
-    ```text
+    ```console
     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v15\HubTransportRole\filters
     ```
 

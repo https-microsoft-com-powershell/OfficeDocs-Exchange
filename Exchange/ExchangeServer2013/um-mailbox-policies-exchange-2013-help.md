@@ -4,9 +4,10 @@ TOCTitle: UM mailbox policies
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer: 
 ms.assetid: dfae629e-ee89-4494-a3ed-9655b67eb87e
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 41197639-988f-476c-9788-51d5191a7dce
-ms.date: 6/7/2018
 ms.reviewer:
 title: Configure database availability group network properties
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -32,7 +33,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure database availability group network properties
 <a name="UseEMC"> </a>
@@ -55,7 +56,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 
 This example adds a subnet of 10.0.0.0 and subnet mask of 255.0.0.0 to the DAG network MapiDagNetwork in the DAG DAG1.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroupNetwork -Subnets 10.0.0.0/8 -Identity DAG1\MapiDagNetwork
 ```
 
@@ -66,17 +67,17 @@ To verify that you've successfully configured the DAG network, do the following:
 
 - In the Exchange Management Shell, run the following command to display DAG network configuration settings and verify the DAG network was configured successfully.
 
-  ```
+  ```powershell
   Get-DatabaseAvailabilityGroupNetwork <DAGNetworkName> | Format-List
   ```
 
 ## For more information
 <a name="UseShell"> </a>
 
-[Set-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/5c6add57-eef9-4af5-9cf3-54fd910dfe93.aspx)
+[Set-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/set-databaseavailabilitygroupnetwork)
 
-[Get-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/43f57126-a685-4208-ac63-4e3aba4a3e00.aspx)
+[Get-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/get-databaseavailabilitygroupnetwork)
 
-[New-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/3ef8d42f-9da0-456a-b4e8-6f7d99a1fa0f.aspx)
+[New-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/new-databaseavailabilitygroupnetwork)
 
-[Remove-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/library/8da3ddc3-72e0-4c1b-8d3f-848c3ab5584e.aspx)
+[Remove-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/remove-databaseavailabilitygroupnetwork)

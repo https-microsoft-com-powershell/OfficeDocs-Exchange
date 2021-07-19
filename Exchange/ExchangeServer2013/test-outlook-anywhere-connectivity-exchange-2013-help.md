@@ -2,13 +2,14 @@
 title: 'Test Outlook Anywhere connectivity: Exchange 2013 Help'
 TOCTitle: Test Outlook Anywhere connectivity
 ms:assetid: 0dc5b68f-2316-446a-84c9-5f1c50dc3776
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee633453(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee633453(v=EXCHG.150)
 ms:contentKeyID: 50396598
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ For additional management tasks related to Outlook Anywhere, see [Outlook Anywhe
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to test Outlook Anywhere connectivity
 
@@ -46,7 +47,7 @@ Test-OutlookConnectivity -ProbeIdentity 'OutlookMailboxDeepTestProbe' -MailboxId
 
 ## Use the Exchange Remote Connectivity Analyzer to test Outlook Anywhere connectivity
 
-The Exchange Remote Connectivity Analyzer (ExRCA) is a web-based tool designed to test connectivity with a variety of Exchange protocols. You can access the ExRCA [here](https://go.microsoft.com/fwlink/p/?linkid=167905).
+The Exchange Remote Connectivity Analyzer (ExRCA) is a web-based tool designed to test connectivity with a variety of Exchange protocols. You can access the ExRCA [here](https://testconnectivity.microsoft.com/tests/o365).
 
 1. On the ExRCA website, under **Microsoft Office Outlook Connectivity Tests**, select **Outlook Anywhere**, and then select Next at the bottom of the page.
 

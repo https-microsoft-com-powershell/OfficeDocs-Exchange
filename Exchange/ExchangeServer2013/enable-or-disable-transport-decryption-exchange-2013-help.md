@@ -2,13 +2,14 @@
 title: 'Enable or Disable Transport Decryption: Exchange 2013 Help'
 TOCTitle: Enable or Disable Transport Decryption
 ms:assetid: 4663f54e-dd0a-4a42-983e-8765e2adc412
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638126(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638126(v=EXCHG.150)
 ms:contentKeyID: 49319910
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Enabling transport decryption allows the Transport Rules agent on Microsoft Exchange Server 2013 Mailbox servers to access content in messages protected by Information Rights Management (IRM). As a result, other transport agents can access message content and possibly make changes to it. For example, the Transport Rules agent may need to inspect message content and apply transport rules (such as rules that apply a disclaimer to the message). To successfully decrypt IRM-protected messages, you must add the Federated Delivery mailbox to the super users group configured on your [Active Directory Rights Management Services (AD RMS)](https://technet.microsoft.com/en-us/library/hh831364.aspx) server.
+Enabling transport decryption allows the Transport Rules agent on Microsoft Exchange Server 2013 Mailbox servers to access content in messages protected by Information Rights Management (IRM). As a result, other transport agents can access message content and possibly make changes to it. For example, the Transport Rules agent may need to inspect message content and apply transport rules (such as rules that apply a disclaimer to the message). To successfully decrypt IRM-protected messages, you must add the Federated Delivery mailbox to the super users group configured on your [Active Directory Rights Management Services (AD RMS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831364(v=ws.11)) server.
 
 > [!IMPORTANT]
 > Members of the super users group are granted an owner use license when they request a license from the AD&nbsp;RMS cluster. This allows them to decrypt all RMS-protected content created by that AD&nbsp;RMS cluster.
@@ -46,7 +47,7 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable transport decryption
 
@@ -56,7 +57,7 @@ This example enables transport decryption for the Exchange 2013 organization. Me
 Set-IRMConfiguration -TransportDecryptionSetting Mandatory
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## Use the Shell to disable transport decryption
 
@@ -66,10 +67,10 @@ This example disables transport decryption for the Exchange 2013 organization.
 Set-IRMConfiguration -TransportDecryptionSetting Disabled
 ```
 
-For detailed syntax and parameter information, see [Set-IRMConfiguration](https://technet.microsoft.com/en-us/library/dd979792\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration).
 
 ## How do I know this worked?
 
 To verify that you have enabled or disabled transport decryption, use the **Get-IRMConfiguration** cmdlet and check the value of the *JournalDecryptionEnabled* property.
 
-For an example of how to check the IRM configuration, see [Examples](https://technet.microsoft.com/en-us/e1821219-fe18-4642-a9c2-58eb0aadd61a\(exchg.150\)#examples) in **Get-IRMConfiguration**.
+For an example of how to check the IRM configuration, see [Examples](/powershell/module/exchange/get-irmconfiguration#examples) in **Get-IRMConfiguration**.

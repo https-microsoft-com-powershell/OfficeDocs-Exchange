@@ -2,13 +2,14 @@
 title: 'Configure database availability group properties: Exchange 2013 Help'
 TOCTitle: Configure database availability group properties
 ms:assetid: 50daeac5-a16f-4362-a325-19e0fe25d59d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd297985(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd297985(v=EXCHG.150)
 ms:contentKeyID: 48385082
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ You can use the EAC or the Shell to configure the properties of a database avail
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to configure database availability group properties
 
@@ -132,6 +133,6 @@ To verify that you've successfully configured the DAG, do the following:
 
 [Manage database availability group membership](manage-database-availability-group-membership-exchange-2013-help.md)
 
-[Get-DatabaseAvailabilityGroup](https://technet.microsoft.com/en-us/library/dd351226\(v=exchg.150\))
+[Get-DatabaseAvailabilityGroup](/powershell/module/exchange/Get-DatabaseAvailabilityGroup)
 
-[Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/en-us/library/dd297934\(v=exchg.150\))
+[Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup)

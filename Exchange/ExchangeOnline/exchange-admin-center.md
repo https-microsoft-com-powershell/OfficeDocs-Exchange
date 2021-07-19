@@ -2,114 +2,84 @@
 localization_priority: Normal
 description: You use the Exchange admin center to manage email settings for your organization.
 ms.topic: overview
-author: msdmaguire
-ms.author: dmaguire
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: ace44f6b-4084-4f9c-89b3-e0317962472b
-ms.date: 
 ms.reviewer: 
 title: Exchange admin center in Exchange Online
+f1.keywords:
+- NOCSH
 ms.collection: 
 - exchange-online
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
 manager: serdars
-
 ---
-
 # Exchange admin center in Exchange Online
 
-You use the Exchange admin center to manage email settings for your organization.
+The new Exchange admin center (EAC) is a modern, web-based management console for managing Exchange that is designed to provide an experience more in line with the overall Microsoft 365 admin experience. It replaces the Exchange Control Panel (ECP) to manage email settings for your organization.
 
-## Get to the Exchange admin center
+## Experience the new Exchange admin center
 
-You must have [Microsoft 365 admin permissions](https://go.microsoft.com/fwlink/p/?LinkID=255444) to access the Exchange admin center.
+Try the new Exchange adminn center using the URL <https://admin.exchange.microsoft.com> and sign in using your credentials. You can also continue to access the Classic Exchange admin center using the URL [Classic Exchange admin center](https://outlook.office365.com/ecp) and sign in using your credentials.
 
-1. [Sign in](https://go.microsoft.com/fwlink/p/?LinkID=529144) to Office 365 using your work or school account, and then choose the **Admin** tile.
+To experience some of the new Exchange admin center features, see the following:
 
-2. In the Microsoft  365 admin center, choose **Admin centers** \> **Exchange**.
+- **Personalized dashboard, reports, and insights**
 
-    ![Get to the Exchange admin center](media/ae439954-b836-47fa-9d02-3709b93cdb10.jpg)
+  The new EAC offers actionable insights and includes reports for mail flow, migration, and priority monitoring. 
+  
+  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBuGX]  
 
-You can also get to the Exchange admin center directly by using a URL. To do this, go to [https://outlook.office365.com/ecp](https://outlook.office365.com/ecp) and sign in using your credentials.
+- **New navigation panel**
 
-> [!NOTE]
-> Be sure to use a private browsing session (not a regular session) to access the Exchange admin center using the direct URL. This will prevent the credential that you are currently logged on with from being used. To open an InPrivate Browsing session in Microsoft Edge or Internet Explorer or a Private Browsing session in Mozilla FireFox, press CTRL+SHIFT+P. To open a private browsing session in Google Chrome (called an incognito window), press CTRL+SHIFT+N.
+  The new EAC includes a left navigation panel to make it easier to find features.
+  
+  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBuGF]  
 
-## Exchange admin center features
+- **Azure cloud shell support**
 
-Here's what the Exchange admin center looks like.
+  Cloud Shell is a browser-accessible shell that provides a command-line experience built with Azure management tasks in mind. It enables admins to choose a shell experience that best suits their working lifestyle.
+  
+  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBuFn]  
 
-![Common User Interface Elements of the EAC](media/ITPro_EXO_EAC_EACwCallouts.png)
+- **Improved mailbox management**
 
-### Feature pane
+  Recipient management is one of the most crucial tasks that admins perform. The new EAC now includes easier mailbox management.
+  
+  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBGra] 
 
-Here are the features you'll find in the left-hand navigation.
+- **Improved support for groups**
 
-|**Area**|**What you do here**|
-|:-----|:-----|
-|**Dashboard**|An overview of the admin center.|
-|**Recipients**|View and manage your mailboxes, groups, resource mailboxes, contacts, shared mailboxes, and mailbox migrations.|
-|**Permissions**|Manage administrator roles, user roles, and Outlook on the web (formerly known as Outlook Web App) policies.|
-|**Compliance management**|Manage In-Place eDiscovery & Hold, auditing, data loss prevention (DLP), retention policies, retention tags, and journal rules.|
-|**Organization**|Manage organization sharing and apps for Outlook|
-|**Protection**|Manage malware filters, connection filters, content filters, outbound spam, and quarantine for your organization.|
-|**Mail flow**|Manage rules, message tracing, accepted domains, remote domains, and connectors.|
-|**Mobile**|Manage the mobile devices that you allow to connect to your organization. You can manage mobile device access and mobile device mailbox policies.|
-|**Public folders**|Manage public folders and public folder mailboxes.|
-|**Unified messaging**|Manage Unified Messaging (UM) dial plans and UM IP gateways.|
+  The new EAC enables you to create and manage four types of groups: Microsoft 365 Groups, Distribution lists, Mail-enabled security groups, and Dynamic distribution lists.
+  
+  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBJbk]  
 
-### Tabs
+- **Migration capabilities**
 
-The tabs are your second level of navigation. Each of the feature areas contains various tabs, each representing a complete feature.
+  The new EAC supports various kinds of migrations, including cross-tenant migrations for M&A scenarios, and automation Google Workspace (G-Suite) migrations. 
+  
+  > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWBuGs]  
 
-### Toolbar
+## For more information on new EAC and Classic EAC
 
-When you click most tabs, you'll see a toolbar. The toolbar has icons that perform a specific action. The following table describes the most common icons and their actions. To display the action associated with an icon, simply hover over the icon.
+See the following articles:
 
-|**Icon**|**Name**|**Action**|
-|:-----|:-----|:-----|
-|![Add Icon](media/ITPro_EAC_AddIcon.gif)|Add, New|Create a new object. Some of these icons have an associated down arrow you can click to show additional objects you can create. <br/> For example, in **Recipients** \> **Groups**, clicking the down arrow displays **Distribution group**, **Security group**, and **Dynamic distribution group** as additional options.|
-|![Edit icon](media/ITPro_EAC_EditIcon.gif)|Edit|Edit an object.|
-|![Delete icon](media/ITPro_EAC_DeleteIcon.gif)|Delete|Delete an object. Some delete icons have a down arrow you can click to show additional options.|
-|![Search icon](media/ITPro_EAC_.gif)|Search|Open a search box in which you can type the search phrase for an object you want to find.|
-|![Icon: Upgrade distribution group to Office 365 group](media/f48d2ecd-36e1-4ec1-a4eb-7c97a23d81dc.gif)|n/a|Upgrade a distribution group to an Office 365 group. This icon can be used only for a distribution group.|
-|![Refresh Icon](media/ITPro_EAC_RefreshIcon.gif)|Refresh|Refresh the list view.|
-|![More Options Icon](media/ITPro_EAC_MoreOptionsIcon.gif)|More options|View more actions you can perform for that tab's objects. <br/> For example, in **Recipients** \> **Mailboxes** clicking this icon shows the following options: **Add/Remove columns**, **Deleted mailboxes**, **Export data to a CSV file**, and **Advanced search**.|
-|![Up Arrow Icon](media/ITPro_EAC_UpArrowIcon.gif)![Down Arrow Icon](media/ITPro_EAC_DownArrowIcon.gif)|Up arrow and down arrow|Move an object's priority up or down. <br/>  For example, in **Mail flow** \> **Rules** click the up arrow to raise the priority of a rule. You can also use these arrows to navigate the public folder hierarchy.|
-|![Copy Icon](media/ITPro_EAC_CopyIcon.gif)|Copy|Copy an object so you can make changes to it without changing the original object. <br/> For example, in **Permissions** \> **Admin roles**, select a role from the list view, and then click this icon to create a new role group based on an existing one.|
-|![Remove icon](media/ITPro_EAC_RemoveIcon.gif)|Remove|Remove an item from a list. <br/> For example, in the **Public Folder Permissions** dialog box, you can remove users from the list of users allowed to access the public folder by selecting the user and clicking this icon.|
-
-### List view
-
-When you select a tab, in most cases you'll see a list view. The list view in Exchange admin center is designed to remove limitations that existed in Exchange Control Panel.
-
-In Exchange Online, the viewable limit from within the Exchange admin center list view is approximately 10,000 objects. In addition, paging is included so you can page to the results. In the **Recipients** list view, you can also configure page size and export the data to a CSV file.
-
-### Details pane
-
-When you select an item from the list view, information about that object is displayed in the details pane.
-
- **To bulk edit several items**: press the CTRL key, select the objects you want to bulk edit, and use the options in the details pane.
-
-### Centers, Me tile, and Help
-
-The Centers tile allows you to change from one admin center to another. The Me tile allows you to sign out of the EAC and sign in as a different user. From the Help ![Help Icon](media/ITPro_EAC_HelpIcon.gif) drop-down menu, you can perform the following actions:
-
-- **Help**: Click ![Help Icon](media/ITPro_EAC_HelpIcon.gif) to view the online help content.
-
-- **Disable Help bubble**: The Help bubble displays contextual help for fields when you create or edit and object. You can turn off the Help bubble help or turn it on if it has been disabled.
+- To understand the differences between Classic and new EAC, see [Classic and New Exchange admin center differences](/exchange/changes-in-exchange-admin-center).
+- To explore features in new EAC, see [New Exchange admin center](features-in-new-eac.md).
+- To explore features in Classic EAC, see [Classic Exchange admin center](features-in-classic-eac.md).
+- To get an update on the journey of the new EAC, see [What's new in Exchange admin center](/exchange/whats-new).
 
 ## Supported browsers
 
 See the following articles:
 
-- [Office 365 System Requirements](https://go.microsoft.com/fwlink/p/?LinkID=402699): lists supported browsers for Office 365 and the Exchange admin center.
-
-- [Supported Browsers for Outlook on the web](https://support.office.com/article/c89774d6-0722-4c93-a547-ef45e693e006).
+- [Microsoft 365 and Office resources](https://www.microsoft.com/microsoft-365/microsoft-365-and-office-resources): lists supported browsers for Microsoft 365, Office 365, and the Exchange admin center.
+- [Supported Browsers for Outlook on the web](https://support.microsoft.com/office/c89774d6-0722-4c93-a547-ef45e693e006).
 
 ## Related articles
 
-Are you using Exchange Server? See [Exchange admin center in Exchange Server](https://technet.microsoft.com/library/a9aea11a-6ba3-4f4a-a76e-79072e7cfc7d.aspx).
+Are you using Exchange Server? See [Exchange admin center in Exchange Server](/exchange/architecture/client-access/exchange-admin-center).
 
-Are you using Exchange Online Protection? See [Exchange admin center in Exchange Online Protection](https://technet.microsoft.com/library/97921f0e-832f-40c7-b56d-414faede5191.aspx).
+Are you using standalone Exchange Online Protection (EOP)? See [Exchange admin center in Exchange Online Protection](/exchange/standalone-eop/exchange-admin-center-eop).

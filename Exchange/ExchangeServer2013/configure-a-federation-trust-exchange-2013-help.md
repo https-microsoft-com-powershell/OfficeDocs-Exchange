@@ -2,13 +2,14 @@
 title: 'Configure a federation trust: Exchange 2013 Help'
 TOCTitle: Configure a federation trust
 ms:assetid: 7c2b539f-faed-4374-8578-9f329ca628db
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657462(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657462(v=EXCHG.150)
 ms:contentKeyID: 49289316
-ms.date: 07/26/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-A federation trust establishes a trust relationship between a Microsoft Exchange 2013 organization and the Azure Active Directory authentication system. By configuring a federation trust, you can configure federated sharing with other federated Exchange organizations to share calendar free/busy information among recipients. Federated sharing can be configured between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up sharing with an Office 365 organization.
+A federation trust establishes a trust relationship between a Microsoft Exchange 2013 organization and the Azure Active Directory authentication system. By configuring a federation trust, you can configure federated sharing with other federated Exchange organizations to share calendar free/busy information among recipients. Federated sharing can be configured between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up sharing with a Microsoft 365 or Office 365 organization.
 
 > [!NOTE]
 > Creating a federation trust is one of several steps in setting up federated sharing in your Exchange organization. To review all the steps, see <A href="configure-federated-sharing-exchange-2013-help.md">Configure federated sharing</A>.
@@ -24,7 +25,7 @@ A federation trust establishes a trust relationship between a Microsoft Exchange
 For additional management tasks related to federation, see [Federation procedures](federation-procedures-exchange-2013-help.md).
 
 > [!IMPORTANT]
-> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="https://go.microsoft.com/fwlink/?linkid=313640">Learn about Office 365 operated by 21Vianet</A>.
+> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see [Office 365 operated by 21Vianet](/microsoft-365/admin/services-in-china/services-in-china).
 
 ## What do you need to know before you begin?
 
@@ -38,7 +39,7 @@ For additional management tasks related to federation, see [Federation procedure
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-- Both Exchange organizations in a federated sharing relationship must use the same Azure AD authentication system for their federation trusts. This requirement applies when configuring federated sharing between two on-premises Exchange organizations or between an on-premises Exchange organization and an Exchange organization hosted by [Office 365](https://go.microsoft.com/fwlink/?linkid=392576).
+- Both Exchange organizations in a federated sharing relationship must use the same Azure AD authentication system for their federation trusts. This requirement applies when configuring federated sharing between two on-premises Exchange organizations or between an on-premises Exchange organization and an Exchange organization hosted by Microsoft 365 or Office 365.
 
 - When you create a federation trust with the Azure AD authentication system for your Exchange 2013 organization, the federation trust will use the business instance of the Azure AD authentication system. However, other federated Exchange organizations with previous versions of Exchange and existing federation trusts may be using either the business or consumer instance of the Azure AD authentication system.
 
@@ -48,7 +49,7 @@ For additional management tasks related to federation, see [Federation procedure
 
   - Exchange 2010 SP1 or later organizations by using the **New Federation Trust** wizard and self-signed certificates for a federation trust.
 
-  - Exchange organizations hosted by Office 365, such as the Exchange Online.
+  - Exchange organizations hosted by Microsoft 365 and Office 365.
 
     The following Exchange organizations use the consumer instance of the Azure AD authentication system by default:
 
@@ -186,7 +187,7 @@ For additional management tasks related to federation, see [Federation procedure
 
    Remember, any domain or subdomain that you add to the federation trust requires a proof of domain ownership TXT record,
 
-For detailed syntax and parameter information, see [New-ExchangeCertificate](https://technet.microsoft.com/en-us/library/aa998327\(v=exchg.150\)), [New-FederationTrust](https://technet.microsoft.com/en-us/library/dd351047\(v=exchg.150\)), [Get-FederatedDomainProof](https://technet.microsoft.com/en-us/library/ff717833\(v=exchg.150\)), [Set-FederationTrust](https://technet.microsoft.com/en-us/library/dd298034\(v=exchg.150\)), [Set-FederatedOrganizationIdentifier](https://technet.microsoft.com/en-us/library/dd351037\(v=exchg.150\)), and [Add-FederatedDomain](https://technet.microsoft.com/en-us/library/dd351208\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ExchangeCertificate](/powershell/module/exchange/New-ExchangeCertificate), [New-FederationTrust](/powershell/module/exchange/New-FederationTrust), [Get-FederatedDomainProof](/powershell/module/exchange/Get-FederatedDomainProof), [Set-FederationTrust](/powershell/module/exchange/Set-FederationTrust), [Set-FederatedOrganizationIdentifier](/powershell/module/exchange/Set-FederatedOrganizationIdentifier), and [Add-FederatedDomain](/powershell/module/exchange/Add-FederatedDomain).
 
 ## How do you know this worked?
 
@@ -206,7 +207,7 @@ To further verify that you have successfully created and configured the federati
    Get-FederationInformation -DomainName <PrimarySharedDomain>
    ```
 
-For detailed syntax and parameter information, see [Get-FederationTrust](https://technet.microsoft.com/en-us/library/dd351262\(v=exchg.150\)) and [Get-FederationInformation](https://technet.microsoft.com/en-us/library/dd351221\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-FederationTrust](/powershell/module/exchange/Get-FederationTrust) and [Get-FederationInformation](/powershell/module/exchange/Get-FederationInformation).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

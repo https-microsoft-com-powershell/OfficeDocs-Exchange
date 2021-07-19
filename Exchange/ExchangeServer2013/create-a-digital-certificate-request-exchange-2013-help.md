@@ -2,13 +2,14 @@
 title: 'Create a digital certificate request: Exchange 2013 Help'
 TOCTitle: Create a digital certificate request
 ms:assetid: efb00de7-070b-46bf-a2fc-00d07ae085c1
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125165(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125165(v=EXCHG.150)
 ms:contentKeyID: 51492809
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ In Exchange Server 2013, you can manage certificates using the EAC or the Shell.
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a new certificate request
 

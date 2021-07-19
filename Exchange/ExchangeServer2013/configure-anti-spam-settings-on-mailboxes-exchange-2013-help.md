@@ -2,13 +2,14 @@
 title: 'Configure Anti-Spam Settings on Mailboxes: Exchange 2013 Help'
 TOCTitle: Configure Anti-Spam Settings on Mailboxes
 ms:assetid: 868d7fd8-e817-46ba-9b67-edf2f50b9494
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123559(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123559(v=EXCHG.150)
 ms:contentKeyID: 49345051
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -19,7 +20,7 @@ _**Applies to:** Exchange Server 2013_
 You can configure specific anti-spam settings on individual mailboxes that are different than the anti-spam settings that are applied to the rest of the mailboxes in your Exchange organization. When you configure an anti-spam setting on a mailbox, that setting overrides the corresponding organization-wide content filtering or organization configuration anti-spam setting.
 
 > [!NOTE]
-> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://go.microsoft.com/fwlink/p/?linkid=835894">Deprecating support for SmartScreen in Outlook and Exchange</A>.
+> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332">Deprecating support for SmartScreen in Outlook and Exchange</A>.
 
 ## What do you need to know before you begin?
 
@@ -36,7 +37,7 @@ You can configure specific anti-spam settings on individual mailboxes that are d
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure anti-spam features on a single mailbox
 

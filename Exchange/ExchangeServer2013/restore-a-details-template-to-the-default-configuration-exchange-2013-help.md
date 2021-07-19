@@ -2,13 +2,14 @@
 title: 'Restore a details template to the default configuration: Exchange 2013 Help'
 TOCTitle: Restore a details template to the default configuration
 ms:assetid: 84c5f49b-614d-4f0e-8701-0979a2eb90bf
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232102(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232102(v=EXCHG.150)
 ms:contentKeyID: 49289330
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ To learn more about details templates, see [Details templates](details-templates
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Exchange Toolbox to restore a details template to its default configuration
 
@@ -51,4 +52,4 @@ This example restores the United States English contacts details template.
 Restore-DetailsTemplate -Identity "en-US\Contact"
 ```
 
-For detailed syntax and parameter information, see [Restore-DetailsTemplate](https://technet.microsoft.com/en-us/library/bb125188\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Restore-DetailsTemplate](/powershell/module/exchange/Restore-DetailsTemplate).

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: eb8ddf15-0080-457e-9d83-e73e193da334
-ms.date: 7/6/2018
 ms.reviewer: 
 title: Preserve Bcc and expanded distribution group recipients for eDiscovery
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

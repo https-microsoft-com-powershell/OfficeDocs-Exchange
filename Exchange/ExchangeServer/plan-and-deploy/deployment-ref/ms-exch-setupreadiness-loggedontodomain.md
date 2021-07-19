@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Exchange Server 2016 or Exchange 2019 Setup can't continue because your account isn't logged on to Active Directory.
 ms.topic: reference
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - ms.exch.setupreadiness.LoggedOntoDomain
 ms.author: dmaguire
 ms.assetid: 0e229d10-605a-420f-bf8b-58a7fcb5b259
-ms.date: 7/22/2015
 ms.reviewer: 
 title: The current account isn't logged into an Active Directory domain [LoggedOntoDomain]
 ms.collection: exchange-server
+f1.keywords:
+- CSH
 audience: Developer
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -34,4 +35,4 @@ To resolve this issue, run Setup again using an account that has the appropriate
 > [!IMPORTANT]
 > Cross-forest installation of Exchange isn't supported. Use an account in the Active Directory forest where you're installing Exchange.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

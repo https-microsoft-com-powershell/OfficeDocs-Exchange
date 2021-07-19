@@ -4,9 +4,10 @@ TOCTitle: View or configure Outlook Web App mailbox policy properties
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: be012ffe-8fdb-4fb7-aebd-78b3a55593fa
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,12 +21,12 @@ After you create an Outlook Web App mailbox policy, you can configure a variety 
 
 - Estimated time to complete each procedure: 3 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook Web App mailbox policies" entry in the [Client Access Permissions](https://technet.microsoft.com/library/57eca42a-5a7f-4c65-89f0-7a84f2dbea19.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook Web App mailbox policies" entry in the [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to view or configure Outlook Web App mailbox policies
 
@@ -58,7 +59,7 @@ This example enables calendar access in the default mailbox policy.
 Set-OwaMailboxPolicy -Identity Default -CalendarEnabled $true
 ```
 
-For more information about syntax and parameters, see [Set-OwaMailboxPolicy](https://technet.microsoft.com/library/530166f7-ab42-4609-ba73-9b5a39b567be.aspx).
+For more information about syntax and parameters, see [Set-OwaMailboxPolicy](/powershell/module/exchange/set-owamailboxpolicy).
 
 ## Use the Shell to view Outlook Web App mailbox policies
 
@@ -68,7 +69,7 @@ This example retrieves the properties of the Outlook Web App mailbox policyExecu
 Get-OwaMailboxPolicy -Identity Fabrikam\Executives
 ```
 
-For more information about syntax and parameters, see [Get-OwaMailboxPolicy](https://technet.microsoft.com/library/bdd580d3-8812-4b4a-93e8-c6401b0d2f0f.aspx).
+For more information about syntax and parameters, see [Get-OwaMailboxPolicy](/powershell/module/exchange/get-owamailboxpolicy).
 
 ## How do you know this worked?
 

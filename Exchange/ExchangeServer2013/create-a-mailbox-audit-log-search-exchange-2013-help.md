@@ -2,13 +2,14 @@
 title: 'Create a mailbox audit log search: Exchange 2013 Help'
 TOCTitle: Create a mailbox audit log search
 ms:assetid: 48ba22cf-b1f2-4dbc-98fc-fed22d97db14
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff461929(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff461929(v=EXCHG.150)
 ms:contentKeyID: 49300496
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ For additional management tasks related to mailbox audit logging, see [Mailbox a
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a mailbox audit log search
 
@@ -70,4 +71,4 @@ For additional management tasks related to mailbox audit logging, see [Mailbox a
 
 ## Use the Shell to create a mailbox audit log search
 
-For an example of how to use the Shell to create a mailbox audit log search, see [Example 1](https://technet.microsoft.com/en-us/95365cab-bbb2-4a64-8e8f-1c89fa9e0352\(exchg.150\)#example1) in **New-MailboxAuditLogSearch**.
+For an example of how to use the Shell to create a mailbox audit log search, see Example 1 in [New-MailboxAuditLogSearch](/powershell/module/exchange/new-mailboxauditlogsearch).

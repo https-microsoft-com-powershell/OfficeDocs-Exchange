@@ -2,13 +2,14 @@
 title: 'Exchange 2013 prerequisites: Exchange 2013 Help'
 TOCTitle: Exchange 2013 prerequisites
 ms:assetid: e21cf744-7813-48b3-9293-5cecd89a6c25
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb691354(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb691354(v=EXCHG.150)
 ms:contentKeyID: 48385640
-ms.date: 03/20/2017
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,7 +25,7 @@ This topic provides the steps for installing the necessary Windows Server 2012 R
 
 - The Edge Transport server role is available starting with Exchange 2013 SP1.
 
-- Make sure that the functional level of your forest is at least Windows Server 2003, and that the schema master is running Windows Server 2003 with Service Pack 2 or later. For more information about the Windows functional level, see [Managing Domains and Forests](https://go.microsoft.com/fwlink/p/?linkid=137037).
+- Make sure that the functional level of your forest is at least Windows Server 2003, and that the schema master is running Windows Server 2003 with Service Pack 2 or later. For more information about the Windows functional level, see [Managing Domains and Forests](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754918(v=ws.10)).
 
 - The full installation option of Windows Server 2012 R2, Windows Server 2012 and Windows Server 2008 R2 SP1 must be used for all servers running Exchange 2013 server roles or management tools.
 
@@ -38,7 +39,7 @@ This topic provides the steps for installing the necessary Windows Server 2012 R
     > If you're installing the Mailbox server role and you intend for the server to be a member of a database availability group (DAG), you must be running Windows Server 2012 R2 Standard or Datacenter Edition, Windows Server 2012 Standard or Datacenter Edition, or Windows Server 2008 R2 SP1 Enterprise Edition. Windows Server 2008 R2 SP 1 Standard Edition doesn't support the features needed for DAGs.<BR>You can't upgrade Windows when Exchange is installed on the server.<BR>To upgrade to Microsoft Unified Communications Managed API (UCMA) 4.0, you must first uninstall any previous versions of UCMA that are installed by using <STRONG>Add/Remove programs</STRONG>.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Active Directory preparation
 
@@ -46,9 +47,9 @@ The computer you want to use to prepare Active Directory for Exchange 2013 has s
 
 Install the following software, in the order shown, on the computer that will be used to prepare Active Directory:
 
-1. [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+1. [.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)
 
-2. [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/p/?linkid=390234) (included with Windows Server 2012 R2)
+2. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) (included with Windows Server 2012 R2)
 
 After you've installed the software listed above, complete the following steps to install the Remote Tools Administration Pack. After you've installed the Remote Tools Administration Pack you'll be able to use the computer to prepare Active Directory. For more information about preparing Active Directory, see [Prepare Active Directory and domains](prepare-active-directory-and-domains-exchange-2013-help.md).
 
@@ -94,18 +95,18 @@ Do the following to install the required Windows roles and features:
 
 After you've installed the operating system roles and features, install the following software in the order shown:
 
-1. [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+1. [.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)
 
     > [!IMPORTANT]
     > Exchange 2013 CU23 **requires** .NET Framework 4.7.2. Upgrade your servers to .NET Framework 4.7.2 **before** you install Exchange 2013 CU23 or you'll receive an error. If you're running .NET Framework 4.7.1, upgrade to Exchange 2013 CU22 before you install .NET Framework 4.7.2. If you're running .NET Framework 4.6.2, upgrade to Exchange 2013 CU20 before you install .NET Framework 4.7.1.
 
-2. [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/p/?linkid=390234) (included with Windows Server 2012 R2)
+2. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) (included with Windows Server 2012 R2)
 
-3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkid=258269)
+3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://www.microsoft.com/download/details.aspx?id=34992)
 
-4. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30679)
+4. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
-5. [Visual C++ Redistributable Package for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
+5. [Visual C++ Redistributable Package for Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784)
 
   > [!NOTE]
   > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
@@ -126,17 +127,17 @@ Do the following to install the required Windows roles and features:
 
 Install the version of Microsoft .NET Framework that corresponds to the version of Exchange 2013 you're installing:
 
-1. [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+1. [.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)
 
     > [!IMPORTANT]
     > Exchange 2013 CU23 **requires** .NET Framework 4.7.2. Upgrade your servers to .NET Framework 4.7.2 **before** you install Exchange 2013 CU23 or you'll receive an error. If you're running .NET Framework 4.7.1, upgrade to Exchange 2013 CU22 before you install .NET Framework 4.7.2. If you're running .NET Framework 4.6.2, upgrade to Exchange 2013 CU20 before you install .NET Framework 4.7.1.
 
-2. [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/p/?linkid=390234) (included with Windows Server 2012 R2)
+2. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) (included with Windows Server 2012 R2)
 
 3. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
   > [!NOTE]
-  > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+  > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
 
 ## Windows Server 2008 R2 SP1 prerequisites
 
@@ -170,27 +171,27 @@ Do the following to install the required Windows roles and features:
 
 After you've installed the operating system roles and features, install the following software in the order shown:
 
-1. [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+1. [.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)
 
     > [!IMPORTANT]
     > Exchange 2013 CU23 **requires** .NET Framework 4.7.2. Upgrade your servers to .NET Framework 4.7.2 **before** you install Exchange 2013 CU23 or you'll receive an error. If you're running .NET Framework 4.7.1, upgrade to Exchange 2013 CU22 before you install .NET Framework 4.7.2. If you're running .NET Framework 4.6.2, upgrade to Exchange 2013 CU20 before you install .NET Framework 4.7.1.
 
-2. [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/p/?linkid=390234)
+2. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
 
-3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkid=258269)
+3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://www.microsoft.com/download/details.aspx?id=34992)
 
-4. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30679)
+4. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
-5. [Visual C++ Redistributable Package for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
+5. [Visual C++ Redistributable Package for Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=40784)
 
    > [!NOTE]
-   > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+   > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
 
-6. [Microsoft Knowledge Base article KB974405 (Windows Identity Foundation)](https://go.microsoft.com/fwlink/?linkid=3052&kbid=974405)
+6. [Microsoft Knowledge Base article KB974405 (Windows Identity Foundation)](https://support.microsoft.com/help/974405)
 
-7. [Knowledge Base article KB2619234 (Enable the Association Cookie/GUID that is used by RPC over HTTP to also be used at the RPC layer in Windows 7 and in Windows Server 2008 R2)](https://go.microsoft.com/fwlink/?linkid=3052&kbid=2619234)
+7. [Knowledge Base article KB2619234 (Enable the Association Cookie/GUID that is used by RPC over HTTP to also be used at the RPC layer in Windows 7 and in Windows Server 2008 R2)](https://support.microsoft.com/help/2619234)
 
-8. [Knowledge Base article KB2533623 (Insecure library loading could allow remote code execution)](https://go.microsoft.com/fwlink/?linkid=3052&kbid=2533623)
+8. [Knowledge Base article KB2533623 (Insecure library loading could allow remote code execution)](https://support.microsoft.com/help/2533623)
 
     > [!NOTE]
     > This hotfix may already be installed if you've configured Windows Update to install security updates on your computer.
@@ -217,19 +218,19 @@ Do the following to install the required Windows roles and features:
 
 After you've installed the operating system roles and features, install the following software in the order shown:
 
-1. [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+1. [.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)
 
    > [!IMPORTANT]
    > Exchange 2013 CU23 **requires** .NET Framework 4.7.2. Upgrade your servers to .NET Framework 4.7.2 **before** you install Exchange 2013 CU23 or you'll receive an error. If you're running .NET Framework 4.7.1, upgrade to Exchange 2013 CU22 before you install .NET Framework 4.7.2. If you're running .NET Framework 4.6.2, upgrade to Exchange 2013 CU20 before you install .NET Framework 4.7.1.
 
-2. [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/p/?linkid=390234)
+2. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
 
-3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://go.microsoft.com/fwlink/p/?linkid=258269)
+3. [Microsoft Unified Communications Managed API 4.0, Core Runtime 64-bit](https://www.microsoft.com/download/details.aspx?id=34992)
 
-4. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30679)
+4. [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
    > [!NOTE]
-   > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+   > Here you'll find an overview of the latest supported [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
 
 ## Windows 7 prerequisites (admin tools only)
 
@@ -245,12 +246,12 @@ Follow the instructions in this section to install the prerequisites on domain-j
 
 After you've installed the operating system features, install the following software in the order shown:
 
-1. [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+1. [.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)
 
-2. [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/p/?linkid=390234)
+2. [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
 
-3. [Knowledge Base article KB974405 (Windows Identity Foundation)](https://go.microsoft.com/fwlink/?linkid=3052&kbid=974405)
+3. [Knowledge Base article KB974405 (Windows Identity Foundation)](https://support.microsoft.com/help/974405)
 
 ## Windows 8 and Windows 8.1 prerequisites (admin tools only)
 
-[.NET Framework 4.7.2](http://go.microsoft.com/fwlink/p/?linkid=863265)
+[.NET Framework 4.7.2](https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe)

@@ -2,13 +2,14 @@
 title: 'Group metrics and MailTips: Exchange 2013 Help'
 TOCTitle: Group metrics and MailTips
 ms:assetid: 74a55072-4ba9-45bb-a18f-41afbf3de30b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ674302(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ674302(v=EXCHG.150)
 ms:contentKeyID: 49319920
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,7 +23,7 @@ Group metrics is the collection of the following data about distribution groups 
 
   - Number of members who are external to your organization
 
-Group metrics data is used to support MailTips in Microsoft Exchange Server 2013. MailTips are informative messages that are displayed to senders while they're composing messages. For more information about MailTips,including a full list of MailTips available in Exchange 2013, see [MailTips](https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mailtips/mailtips).
+Group metrics data is used to support MailTips in Microsoft Exchange Server 2013. MailTips are informative messages that are displayed to senders while they're composing messages. For more information about MailTips,including a full list of MailTips available in Exchange 2013, see [MailTips](../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips.md).
 
 Group metrics data is used by the following MailTips:
 

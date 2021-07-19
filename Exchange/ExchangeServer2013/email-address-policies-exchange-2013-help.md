@@ -2,13 +2,14 @@
 title: 'Email address policies: Exchange 2013 Help'
 TOCTitle: Email address policies
 ms:assetid: b63b63bb-6faf-4337-8441-50bc64b49bb8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232171(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232171(v=EXCHG.150)
 ms:contentKeyID: 49289383
-ms.date: 07/21/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

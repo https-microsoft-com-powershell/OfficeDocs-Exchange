@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 9fcfb9b6-bd24-4218-a163-bc599cd5476a
-ms.date: 7/8/2018
 ms.reviewer:
 title: Configure and run the Managed Folder Assistant in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -25,7 +26,7 @@ You can also force the MFA to immediately process a specified mailbox.
 
 ## What do you need to know before you begin?
 
-- You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - Although the _ManagedFolderAssistantSchedule_ parameter is available in Exchange Server, it doesn't work on Exchange 2016 or Exchange 2019 servers. It's only used for coexistence with previous versions of Exchange.
 
@@ -43,7 +44,7 @@ Configuring the interval for when the MFA processes mailboxes is a two-step proc
 
 To configure the work cycle for the MFA, use this syntax:
 
-```
+```PowerShell
 New-SettingOverride -Name "<UniqueOverrideName>" -Component TimeBasedAssistants -Section ELCAssistant -Parameters @("WorkCycle=<Timespan>") -Reason "<DescriptiveReason>" [-Server <ServerName>]
 ```
 
@@ -63,13 +64,13 @@ This example configures the work cycle for the MFA to two days (the MFA processe
 
 - **Override reason**: Process mailboxes every 2 days
 
-```
+```PowerShell
 New-SettingOverride -Name "MFA WorkCycle Override" -Component TimeBasedAssistants -Section ELCAssistant -Parameters @("WorkCycle=2.00:00:00") -Reason "Process mailboxes every 2 days"
 ```
 
 This example specifies the same 2 day work cycle for the MFA, but only on the server named Mailbox01.
 
-```
+```PowerShell
 New-SettingOverride -Name "Mailbox01 MFA WorkCycle Override" -Component TimeBasedAssistants -Section ELCAssistant -Parameters @("WorkCycle=2.00:00:00") -Reason "Process mailboxes every 2 days" -Server Mailbox01
 ```
 
@@ -77,7 +78,7 @@ New-SettingOverride -Name "Mailbox01 MFA WorkCycle Override" -Component TimeBase
 
 To apply the new the work cycle value for the MFA, use this syntax:
 
-```
+```PowerShell
 Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService -Component VariantConfiguration -Argument Refresh [-Server <ServerName>]
 ```
 
@@ -89,13 +90,13 @@ Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService
 
 This example applies the new work cycle value for the MFA on all Exchange 2016 and Exchange 2019 Mailbox servers in the organization.
 
-```
+```PowerShell
 Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService -Component VariantConfiguration -Argument Refresh
 ```
 
 This example applies the new work cycle value for the MFA on the server named Mailbox01.
 
-```
+```PowerShell
 Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService -Component VariantConfiguration -Argument Refresh -Server Mailbox01
 ```
 
@@ -103,8 +104,8 @@ Get-ExchangeDiagnosticInfo -Process Microsoft.Exchange.Directory.TopologyService
 
 To verify that you've successfully configured the work cycle for the Managed Folder Assistant on one or more servers, replace _\<ServerName\>_ with the name of the server (not the FQDN), and run the following command to verify the value of the **WorkCycle** property:
 
-```
-$diag=Get-ExchangeDiagnosticInfo -Server <ServerName> -Process MSExchangeMailboxAssistants -Component VariantConfiguration -Argument "Config,Component=TimeBasedAssistants"
+```PowerShell
+[xml]$diag=Get-ExchangeDiagnosticInfo -Server <ServerName> -Process MSExchangeMailboxAssistants -Component VariantConfiguration -Argument "Config,Component=TimeBasedAssistants"
 $diag.Diagnostics.Components.VariantConfiguration.Configuration.TimeBasedAssistants.ElcAssistant
 ```
 
@@ -112,14 +113,14 @@ $diag.Diagnostics.Components.VariantConfiguration.Configuration.TimeBasedAssista
 
 To trigger the MFA to immediately process a mailbox, use this syntax:
 
-```
+```PowerShell
 Start-ManagedFolderAssistant -Identity <MailboxIdentity>
 ```
 
 This example triggers the Managed Folder Assistant to immediately process Morris Cornejo's mailbox.
 
-```
+```PowerShell
 Start-ManagedFolderAssistant -Identity morris.cornejo@contoso.com
 ```
 
-For detailed syntax and parameter information, see [Start-ManagedFolderAssistant](https://technet.microsoft.com/library/75d840ea-5abc-44bb-b361-e81561fa1b04.aspx).
+For detailed syntax and parameter information, see [Start-ManagedFolderAssistant](/powershell/module/exchange/start-managedfolderassistant).

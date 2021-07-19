@@ -7,8 +7,9 @@ ms.author: dmaguire
 ms.assetid: a9e2e08c-d46a-4135-a387-eb653212b676
 title: Digital certificates and encryption in Exchange Server
 ms.collection: exchange-server
-ms.date:
 ms.reviewer:
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -20,7 +21,7 @@ manager: serdars
 Encryption and digital certificates are important considerations in any organization. By default, Exchange Server is configured to use Transport Layer Security (TLS) to encrypt communication between internal Exchange servers, and between Exchange services on the local server. But, Exchange administrators need to consider their encryption requirements for communication with internal and external clients (computers and mobile devices), and external messaging servers.
 
 > [!NOTE]
-> Exchange Server 2019 includes important changes to improve the security of client and server connections. The default configuration for encryption will enable TLS 1.2 only and disable support for older algorithms, namely; DES, 3DES, RC2, RC4 and MD5. It will also configure elliptic curve key exchange algorithms with priority over non-elliptic curve algorithms. In Exchange Server 2016 and later, all cryptography settings are inherited from the configuration specified in the operating system. For additional information, see [Exchange Server TLS Guidance](https://blogs.technet.microsoft.com/exchange/2018/01/26/exchange-server-tls-guidance-part-1-getting-ready-for-tls-1-2/).
+> Exchange Server 2019 includes important changes to improve the security of client and server connections. The default configuration for encryption will enable TLS 1.2 only and disable support for older algorithms (namely, DES, 3DES, RC2, RC4 and MD5). It will also configure elliptic curve key exchange algorithms with priority over non-elliptic curve algorithms. In Exchange Server 2016 and later, all cryptography settings are inherited from the configuration specified in the operating system. For additional information, see [Exchange Server TLS Guidance](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Exchange-Server-TLS-guidance-part-1-Getting-Ready-for-TLS-1-2/ba-p/607649).
 
 This topic describes the different types of certificates that are available, the default configuration for certificates in Exchange, and recommendations for additional certificates that you'll need to use with Exchange.
 
@@ -42,29 +43,44 @@ A certificate contains a public key and attaches that public key to the identity
 
 The three primary types of digital certificates are described in the following table.
 
-|**Type**|**Description**|**Advantages**|**Disadvantages**|
-|:-----|:-----|:-----|:-----|
-|Self-signed certificate|The certificate is signed by the application that created it.|Cost (free).|The certificate isn't automatically trusted by client computers and mobile devices. The certificate needs to be manually added to the trusted root certificate store on all client computers and devices, but not all mobile devices allow changes to the trusted root certificate store. <br/><br/> Not all services work with self-signed certificates. <br/><br/> Difficult to establish an infrastructure for certificate lifecycle management. For example, self-signed certificates can't be revoked.|
-|Certificate issued by an internal CA|The certificate is issued by a public key infrastructure (PKI) in your organization. An example is Active Directory Certificate Services (AD CS). For more information, see [Active Directory Certificate Services Overview](https://go.microsoft.com/fwlink/p/?LinkID=392697).|Allows organizations to issue their own certificates. <br/><br/> Less expensive than certificates from a commercial CA.|Increased complexity to deploy and maintain the PKI. <br/><br/> The certificate isn't automatically trusted by client computers and mobile devices. The certificate needs to be manually added to the trusted root certificate store on all client computers and devices, but not all mobile devices allow changes to the trusted root certificate store.|
+<br>
+
+****
+
+|Type|Description|Advantages|Disadvantages|
+|---|---|:-----|---|
+|Self-signed certificate|The certificate is signed by the application that created it.|Cost (free).|The certificate isn't automatically trusted by client computers and mobile devices. The certificate needs to be manually added to the trusted root certificate store on all client computers and devices, but not all mobile devices allow changes to the trusted root certificate store. <p> Not all services work with self-signed certificates. <p> Difficult to establish an infrastructure for certificate lifecycle management. For example, self-signed certificates can't be revoked.|
+|Certificate issued by an internal CA|The certificate is issued by a public key infrastructure (PKI) in your organization. An example is Active Directory Certificate Services (AD CS). For more information, see [Active Directory Certificate Services Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).|Allows organizations to issue their own certificates. <p> Less expensive than certificates from a commercial CA.|Increased complexity to deploy and maintain the PKI. <p> The certificate isn't automatically trusted by client computers and mobile devices. The certificate needs to be manually added to the trusted root certificate store on all client computers and devices, but not all mobile devices allow changes to the trusted root certificate store.|
 |Certificate issued by a commercial CA|The certificate is purchased from a trusted commercial CA.|Simplified certificate deployment, because all clients, devices, and servers automatically trust the certificates.|Cost. You need to plan ahead to minimize the number of certificates that are required.|
+|
 
 To prove that a certificate holder is who they claim to be, the certificate must accurately identify the certificate holder to other clients, devices, or servers. The three basic methods to do this are described in the following table.
 
-|**Method**|**Description**|**Advantages**|**Disadvantages**|
-|:-----|:-----|:-----|:-----|
-|Certificate subject match|The certificate's **Subject** field contains the common name (CN) of the host. For example, the certificate that's issued to www.contoso.com can be used for the web site https://www.contoso.com.|Compatible with all clients, devices, and services. <br/><br/> Compartmentalization. Revoking the certificate for a host doesn't affect other hosts.|Number of certificates required. You can only use the certificate for the specified host. For example, you can't use the www.contoso.com certificate for ftp.contoso.com, even when the services are installed on the same server. <br/><br/> Complexity. On a web server, each certificate requires its own IP address binding.|
-|Certificate subject alternative name (SAN) match|In addition to the **Subject** field, the certificate's **Subject Alternative Name** field contains a list of multiple host names. For example: <br/>• www.contoso.com <br/>• ftp.contoso.com <br/>• ftp.eu.fabirkam.net|Convenience. You can use the same certificate for multiple hosts in multiple, separate domains. <br/><br/> Most clients, devices, and services support SAN certificates. <br/><br/> Auditing and security. You know exactly which hosts are capable of using the SAN certificate.|More planning required. You need to provide the list of hosts when you create the certificate. <br/><br/> Lack of compartmentalization. You can't selectively revoke certificates for some of the specified hosts without affecting all of the hosts in the certificate.|
-|Wildcard certificate match|The certificate's **Subject** field contains the common name as the wildcard character (\*) plus a single domain or subdomain. For example, \*.contoso.com or \*.eu.contoso.com. The \*.contoso.com wildcard certificate can be used for: <br/>• www.contoso.com <br/>• ftp.contoso.com <br/>• mail.contoso.com|Flexibility. You don't need to provide a list of hosts when you request the certificate, and you can use the certificate on any number of hosts that you may need in the future.|You can't use wildcard certificates with other top-level domains (TLDs). For example, you can't use the \*.contoso.com wildcard certificate for \*.contoso.net hosts. <br/><br/> You can only use wildcard certificates for host names at the level of the wildcard. For example, you can't use the \*.contoso.com certificate for www.eu.contoso.com. Or, you can't use the \*.eu.contoso.com certificate for www.uk.eu.contoso.com. <br/><br/> Older clients, devices, applications, or services might not support wildcard certificates. <br/><br/> Wildcards aren't available with Extended Validation (EV) certificates. <br/><br/> Careful auditing and control is required. If the wildcard certificate is compromised, it affects every host in the specified domain.|
+<br>
+
+****
+
+|Method|Description|Advantages|Disadvantages|
+|---|---|---|---|
+|Certificate subject match|The certificate's **Subject** field contains the common name (CN) of the host. For example, the certificate that's issued to www.contoso.com can be used for the web site <https://www.contoso.com>.|Compatible with all clients, devices, and services. <p> Compartmentalization. Revoking the certificate for a host doesn't affect other hosts.|Number of certificates required. You can only use the certificate for the specified host. For example, you can't use the www.contoso.com certificate for ftp.contoso.com, even when the services are installed on the same server. <p> Complexity. On a web server, each certificate requires its own IP address binding.|
+|Certificate subject alternative name (SAN) match|In addition to the **Subject** field, the certificate's **Subject Alternative Name** field contains a list of multiple host names. For example: <ul><li>www.contoso.com</li><li>ftp.contoso.com</li><li>ftp.eu.fabirkam.net</li></ul>|Convenience. You can use the same certificate for multiple hosts in multiple, separate domains. <p> Most clients, devices, and services support SAN certificates. <p> Auditing and security. You know exactly which hosts are capable of using the SAN certificate.|More planning required. You need to provide the list of hosts when you create the certificate. <p> Lack of compartmentalization. You can't selectively revoke certificates for some of the specified hosts without affecting all of the hosts in the certificate.|
+|Wildcard certificate match|The certificate's **Subject** field contains the common name as the wildcard character (\*) plus a single domain or subdomain. For example, \*.contoso.com or \*.eu.contoso.com. The \*.contoso.com wildcard certificate can be used for: <ul><li>www.contoso.com</li><li>ftp.contoso.com</li><li> mail.contoso.com</li></ul>|Flexibility. You don't need to provide a list of hosts when you request the certificate, and you can use the certificate on any number of hosts that you may need in the future.|You can't use wildcard certificates with other top-level domains (TLDs). For example, you can't use the \*.contoso.com wildcard certificate for \*.contoso.net hosts. <p> You can only use wildcard certificates for host names at the level of the wildcard. For example, you can't use the \*.contoso.com certificate for www.eu.contoso.com. Or, you can't use the \*.eu.contoso.com certificate for www.uk.eu.contoso.com. <p> Older clients, devices, applications, or services might not support wildcard certificates. <p> Wildcards aren't available with Extended Validation (EV) certificates. <p> Careful auditing and control is required. If the wildcard certificate is compromised, it affects every host in the specified domain.|
+|
 
 ## Certificates in Exchange
 
 When you install Exchange 2016 or Exchange 2019 on a server, two self-signed certificates are created and installed by Exchange. A third self-signed certificate is created and installed by Microsoft Windows for the Web Management service in Internet Information Services (IIS). These three certificates are visible in the Exchange admin center (EAC) and the Exchange Management Shell, and are described in the following table:
 
-|**Name**|**Comments**|
-|:-----|:-----|
-|Microsoft Exchange|This Exchange self-signed certificate has the following capabilities: <br/>• The certificate is automatically trusted by all other Exchange servers in the organization. This includes any Edge Transport servers subscribed to the Exchange organization. <br/>• The certificate is automatically enabled for all Exchange services except Unified Messaging, and is used to encrypt internal communication between Exchange servers, Exchange services on the same computer, and client connections that are proxied from the Client Access services to the backend services on Mailbox servers. (**Note**: UM is not available on Exchange 2019.) <br/>• The certificate is automatically enabled for inbound connections from external SMTP messaging servers, and outbound connections to external SMTP messaging servers. This default configuration allows Exchange to provide *opportunistic TLS* on all inbound and outbound SMTP connections. Exchange attempts to encrypt the SMTP session with an external messaging server, but if the external server doesn't support TLS encryption, the session is unencrypted. <br/>• The certificate doesn't provide encrypted communication with internal or external clients. Clients and servers don't trust the Exchange self-signed certificate, because the certificate isn't defined in their trusted root certification stores.|
+<br>
+
+****
+
+|Name|Comments|
+|---|---|
+|Microsoft Exchange|This Exchange self-signed certificate has the following capabilities: <ul><li>The certificate is automatically trusted by all other Exchange servers in the organization. This includes any Edge Transport servers subscribed to the Exchange organization.</li><li>The certificate is automatically enabled for all Exchange services except Unified Messaging, and is used to encrypt internal communication between Exchange servers, Exchange services on the same computer, and client connections that are proxied from the Client Access services to the backend services on Mailbox servers. (**Note**: UM is not available on Exchange 2019.)</li><li>The certificate is automatically enabled for inbound connections from external SMTP messaging servers, and outbound connections to external SMTP messaging servers. This default configuration allows Exchange to provide *opportunistic TLS* on all inbound and outbound SMTP connections. Exchange attempts to encrypt the SMTP session with an external messaging server, but if the external server doesn't support TLS encryption, the session is unencrypted.</li><li>The certificate doesn't provide encrypted communication with internal or external clients. Clients and servers don't trust the Exchange self-signed certificate, because the certificate isn't defined in their trusted root certification stores.</li></ul>|
 |Microsoft Exchange Server Auth Certificate|This Exchange self-signed certificate is used for server-to-server authentication and integration by using OAuth. For more information, see [Plan Exchange Server integration with SharePoint and Skype for Business](../../plan-and-deploy/integration-with-sharepoint-and-skype/integration-with-sharepoint-and-skype.md).|
-|WMSVC|This Windows self-signed certificate is used by the Web Management service in IIS to enable remote management of the web server and its associated web sites and applications. <br/> If you remove this certificate, the Web Management service will fail to start if no valid certificate is selected. Having the service in this state can prevent you from installing Exchange updates, or uninstalling Exchange from the server. For instructions on how to correct this issue, see [Event ID 1007 - IIS Web Management Service Authentication](https://go.microsoft.com/fwlink/p/?LinkId=746383)|
+|WMSVC|This Windows self-signed certificate is used by the Web Management service in IIS to enable remote management of the web server and its associated web sites and applications. <p> If you remove this certificate, the Web Management service will fail to start if no valid certificate is selected. Having the service in this state can prevent you from installing Exchange updates, or uninstalling Exchange from the server. For instructions on how to correct this issue, see [Event ID 1007 - IIS Web Management Service Authentication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc735088(v=ws.10))|
+|
 
 The properties of these self-signed certificates are described in the [Properties of the default self-signed certificates](#properties-of-the-default-self-signed-certificates) section.
 
@@ -78,32 +94,37 @@ These are the key issues that you need to consider when it comes to certificates
 
 The following elements of planning and deployment for Exchange Server are important drivers for your certificate requirements:
 
-- **Load balancing**: Do you plan to terminate the encrypted channel at load balancer or reverse proxy server, use Layer 4 or Layer 7 load balancers, and use session affinity or no session affinity? For more information, see [Load Balancing in Exchange 2016](https://blogs.technet.com/b/exchange/archive/2015/10/08/load-balancing-in-exchange-2016.aspx).
+- **Load balancing**: Do you plan to terminate the encrypted channel at load balancer or reverse proxy server, use Layer 4 or Layer 7 load balancers, and use session affinity or no session affinity? For more information, see [Load Balancing in Exchange 2016](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Load-Balancing-in-Exchange-2016/ba-p/604048).
 
-- **Namespace planning**: What versions of Exchange are present, are you using the bound or unbound namespace model, and are you using *split-brain DNS* (configuring different IP addresses for the same host based on internal vs. external access)? For more information, see [Namespace Planning in Exchange 2016](https://blogs.technet.com/b/exchange/archive/2015/10/06/namespace-planning-in-exchange-2016.aspx).
+- **Namespace planning**: What versions of Exchange are present, are you using the bound or unbound namespace model, and are you using *split-brain DNS* (configuring different IP addresses for the same host based on internal vs. external access)? For more information, see [Namespace Planning in Exchange 2016](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Namespace-Planning-in-Exchange-2016/ba-p/604072).
 
 - **Client connectivity**: What services will your clients use (web-based services, POP, IMAP, etc.) and what versions of Exchange are involved? For more information, see the following topics:
 
-  - [Client Connectivity in an Exchange 2016 Coexistence Environment with Exchange 2013](https://blogs.technet.com/b/exchange/archive/2015/10/28/client-connectivity-in-an-exchange-2016-coexistence-environment-with-exchange-2013.aspx)
+  - [Client Connectivity in an Exchange 2016 Coexistence Environment with Exchange 2013](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Client-Connectivity-in-an-Exchange-2016-Coexistence-Environment/ba-p/603925)
 
-  - [Client Connectivity in an Exchange 2016 Coexistence Environment with Exchange 2010](https://blogs.technet.com/b/exchange/archive/2015/10/26/client-connectivity-in-an-exchange-2016-coexistence-environment-with-exchange-2010.aspx)
+  - [Client Connectivity in an Exchange 2016 Coexistence Environment with Exchange 2010](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Client-Connectivity-in-an-Exchange-2016-Coexistence-Environment/ba-p/603945)
 
-  - [Client Connectivity in an Exchange 2016 Coexistence Environment with Mixed Exchange Versions](https://blogs.technet.com/b/exchange/archive/2015/10/30/client-connectivity-in-an-exchange-2016-coexistence-environment-with-mixed-exchange-versions.aspx)
+  - [Client Connectivity in an Exchange 2016 Coexistence Environment with Mixed Exchange Versions](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Client-Connectivity-in-an-Exchange-2016-Coexistence-Environment/ba-p/604284)
 
 ## Certificate requirements for Exchange services
 
 The Exchange services that certificates can be assigned to are described in the following table.
 
-|**Service**|**Description**|
-|:-----|:-----|
-|IIS (HTTP)|By default, the following services are offered under the default website in the Client Access (frontend) services on a Mailbox server, and are used by clients to connect to Exchange: <br/>• Autodiscover <br/>• Exchange ActiveSync <br/>• Exchange admin center <br/>• Exchange Web Services <br/>• Offline address book (OAB) distribution <br/>• Outlook Anywhere (RPC over HTTP) <br/>• Outlook MAPI over HTTP <br/>• Outlook on the web <br/>• Remote PowerShell<sup>\*</sup> <br/><br/> Because you can only associate a single certificate with a website, all the DNS names that clients use to connect to these services need to be included in the certificate. You can accomplish this by using a SAN certificate or a wildcard certificate.|
-|POP or IMAP|The certificates that are used for POP or IMAP can be different from the certificate that's used for IIS. However, to simplify administration, we recommend that you also include the host names that are used for POP or IMAP in your IIS certificate, and use the same certificate for all of these services.|
-|SMTP|SMTP connections from clients or messaging servers are accepted by one or more Receive connectors that are configured in the Front End Transport service on the Exchange server. For more information, see [Receive connectors](../../mail-flow/connectors/receive-connectors.md). <br/><br/> To require TLS encryption for SMTP connections, you can use a separate certificate for each Receive connector. The certificate must include the DNS name that's used by the SMTP clients or servers to connect to the Receive connector. To simplify certificate management, consider including all DNS names for which you have to support TLS traffic in a single certificate. <br/><br/> To require *mutual TLS authentication*, where the SMTP connections between the source and destination servers are both encrypted and authenticated, see [Domain Security](https://technet.microsoft.com/library/bce3dbca-30a3-4343-924e-4ccf9e3fe0e1.aspx).|
-|Unified Messaging (UM)|For more information, see [Deploying Certificates for UM](https://technet.microsoft.com/library/95658f6f-eac2-4674-90e7-f2d3f25c5242.aspx). <br/> **Note**: UM is not available in Exchange 2019.|
-|Hybrid deployment with Microsoft Office 365|For more information, see [Certificate Requirements for Hybrid Deployments](https://technet.microsoft.com/library/48d532cc-29f9-4009-9d2d-f19a9c13c320.aspx).|
-|Secure/Multipurpose Internet Mail Extensions (S/MIME)|For more information, see [S/MIME for message signing and encryption](../../policy-and-compliance/smime.md).|
+<br>
 
-<sup>\*</sup> Kerberos authentication and Kerberos encryption are used for remote PowerShell access, from both the Exchange admin center and the Exchange Management Shell. Therefore, you don't need to configure your certificates for use with remote PowerShell, as long as you connect directly to an Exchange server (not to a load balanced namespace). To use remote PowerShell to connect to an Exchange server from a computer that isn't a member of the domain, or to connect from the Internet, you need to configure your certificates for use with remote PowerShell.
+****
+
+|Service|Description|
+|---|---|
+|IIS (HTTP)|By default, the following services are offered under the default website in the Client Access (frontend) services on a Mailbox server, and are used by clients to connect to Exchange: <ul><li>Autodiscover</li><li>Exchange ActiveSync</li><li>Exchange admin center</li><li>Exchange Web Services</li><li>Offline address book (OAB) distribution</li><li>Outlook Anywhere (RPC over HTTP)</li><li>Outlook MAPI over HTTP</li><li>Outlook on the web</li><li>Remote PowerShell<sup>\*</sup></li></ul> <p> Because you can only associate a single certificate with a website, all the DNS names that clients use to connect to these services need to be included in the certificate. You can accomplish this by using a SAN certificate or a wildcard certificate.|
+|POP or IMAP|The certificates that are used for POP or IMAP can be different from the certificate that's used for IIS. However, to simplify administration, we recommend that you also include the host names that are used for POP or IMAP in your IIS certificate, and use the same certificate for all of these services.|
+|SMTP|SMTP connections from clients or messaging servers are accepted by one or more Receive connectors that are configured in the Front End Transport service on the Exchange server. For more information, see [Receive connectors](../../mail-flow/connectors/receive-connectors.md). <p> To require TLS encryption for SMTP connections, you can use a separate certificate for each Receive connector. The certificate must include the DNS name that's used by the SMTP clients or servers to connect to the Receive connector. To simplify certificate management, consider including all DNS names for which you have to support TLS traffic in a single certificate. <p> To require *mutual TLS authentication*, where the SMTP connections between the source and destination servers are both encrypted and authenticated, see [Domain Security](/previous-versions/office/exchange-server-2010/bb124392(v=exchg.141)).|
+|Unified Messaging (UM)|For more information, see [Deploying Certificates for UM](../../../ExchangeServer2013/deploying-certificates-for-um-exchange-2013-help.md). <p> **Note**: UM is not available in Exchange 2019.|
+|Hybrid deployment with Microsoft 365 or Office 365|For more information, see [Certificate Requirements for Hybrid Deployments](../../../ExchangeHybrid/certificate-requirements.md).|
+|Secure/Multipurpose Internet Mail Extensions (S/MIME)|For more information, see [S/MIME for message signing and encryption](../../policy-and-compliance/smime/smime.md).|
+|
+
+<sup>\*</sup> Kerberos authentication and Kerberos encryption are used for remote PowerShell access, from both the Exchange admin center and the Exchange Management Shell. Therefore, you don't need to configure your certificates for use with remote PowerShell, as long as you connect directly to an Exchange server (not to a load balanced namespace). To use remote PowerShell to connect to an Exchange server from a computer that isn't a member of the domain, or to connect from the internet, you need to configure your certificates for use with remote PowerShell.
 
 ## Best practices for Exchange certificates
 
@@ -139,10 +160,14 @@ Although the configuration of your organization's digital certificates will vary
 
 Some of the more interesting properties of the default self-signed certificates that are visible in the Exchange admin center and/or the Exchange Management Shell on an Exchange server are described in the following table.
 
-||**Microsoft Exchange**|**Microsoft Exchange Server Auth Certificate**|**WMSVC**|
-|:-----|:-----|:-----|:-----|
+<br>
+
+****
+
+|Property|Microsoft Exchange|Microsoft Exchange Server Auth Certificate|WMSVC|
+|---|---|---|---|
 |**Subject**|`CN=<ServerName>` (for example, `CN=Mailbox01`)|`CN=Microsoft Exchange Server Auth Certificate`|`CN=WMSvc-<ServerName>` (for example, `CN=WMSvc-Mailbox01`)|
-|**Subject Alternative Names (CertificateDomains)**|• _\<ServerName\>_ (for example, Mailbox01) <br/><br/> • _\<ServerFQDN\>_ (for example, Mailbox01.contoso.com)|none|`WMSvc-<ServerName>` (for example, `WMSvc-Mailbox01`)|
+|**Subject Alternative Names (CertificateDomains)**|_\<ServerName\>_ (for example, Mailbox01) <p> _\<ServerFQDN\>_ (for example, Mailbox01.contoso.com)|none|`WMSvc-<ServerName>` (for example, `WMSvc-Mailbox01`)|
 |**Has private key (HasPrivateKey)**|**Yes** (True)|**Yes** (True)|**Yes** (True)|
 |**PrivateKeyExportable**<sup>\*</sup>|False|True|True|
 |**EnhancedKeyUsageList**<sup>\*</sup>|Server Authentication (1.3.6.1.5.5.7.3.1)|Server Authentication (1.3.6.1.5.5.7.3.1)|Server Authentication (1.3.6.1.5.5.7.3.1)|
@@ -155,22 +180,27 @@ Some of the more interesting properties of the default self-signed certificates 
 |**RootCAType**|Registry|None|Registry|
 |**Services**|IMAP, POP, IIS, SMTP|SMTP|None|
 
-<sup>\*</sup>These properties aren't visible in the standard view in the Exchange Management Shell. To see them, you need to specify the property name (exact name or wildcard match) with the **Format-Table** or **Format-List** cmdlets. For example:
+<sup>\*</sup> These properties aren't visible in the standard view in the Exchange Management Shell. To see them, you need to specify the property name (exact name or wildcard match) with the **Format-Table** or **Format-List** cmdlets. For example:
 
 - `Get-ExchangeCertificate -Thumbprint <Thumbprint> | Format-List *`
 
 - `Get-ExchangeCertificate -Thumbprint <Thumbprint> | Format-Table -Auto FriendlyName,*PrivateKey*`
 
-For more information, see [Get-ExchangeCertificate](https://technet.microsoft.com/library/e368589a-6510-4209-9f10-171d1990cd7d.aspx).
+For more information, see [Get-ExchangeCertificate](/powershell/module/exchange/get-exchangecertificate).
 
 Further details about the default self-signed certificates that are visible in Windows Certificate Manger are described in the following table.
 
-||**Microsoft Exchange**|**Microsoft Exchange Server Auth Certificate**|**WMSVC**|
-|:-----|:-----|:-----|:-----|
+<br>
+
+****
+
+|Property|Microsoft Exchange|Microsoft Exchange Server Auth Certificate|WMSVC|
+|---|---|---|---|
 |**Signature algorithm**|sha1RSA|sha1RSA|sha1RSA|
 |**Signature hash algorithm**|sha1|sha1|sha1|
 |**Key usage**|Digital Signature, Key Encipherment (a0)|Digital Signature, Key Encipherment (a0)|Digital Signature, Key Encipherment (a0), Data Encipherment (b0 00 00 00)|
-|**Basic constraints**|• `Subject Type=End Entity` <br/>• `Path Length Constraint=None`.|• `Subject Type=End Entity` <br/>• `Path Length Constraint=None`|n/a|
+|**Basic constraints**|`Subject Type=End Entity` <p> `Path Length Constraint=None`|`Subject Type=End Entity` <p> `Path Length Constraint=None`|n/a|
 |**Thumbprint algorithm**|sha1|sha1|sha1|
+|
 
 Typically, you don't use Windows Certificate Manger to manage Exchange certificates (use the Exchange admin center or the Exchange Management Shell). Note that the WMSVC certificate isn't an Exchange certificate.

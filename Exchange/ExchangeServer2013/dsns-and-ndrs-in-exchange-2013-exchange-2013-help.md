@@ -2,13 +2,14 @@
 title: 'DSNs and NDRs in Exchange 2013: Exchange 2013 Help'
 TOCTitle: DSNs and NDRs in Exchange 2013
 ms:assetid: 8e91de84-76fa-49b2-898c-c5eface76560
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232118(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232118(v=EXCHG.150)
 ms:contentKeyID: 49286851
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -17,7 +18,7 @@ mtps_version: v=EXCHG.150
 _**Applies to:** Exchange Server 2013_
 
 > [!NOTE]
-> If you need help with NDRs in Office 365 or Exchange Online, see <A href="https://go.microsoft.com/fwlink/p/?linkid=524931">Email non-delivery reports in Office 365</A>.
+> If you need help with NDRs in Microsoft 365, Office 365, or Exchange Online, see [Email non-delivery reports in Exchange Online](../ExchangeOnline/mail-flow-best-practices/non-delivery-reports-in-exchange-online/non-delivery-reports-in-exchange-online.md).
 
 When there's a problem delivering a message, Exchange Server 2013 will send a delivery status notification (DSN) to the message sender. These system-generated messages are also known as bounce messages, and they contain an error code, technical details about the problem, and sometimes troubleshooting steps for the message sender. Non-delivery report (NDR) messages are a common type of status notification. This topic for email administrators describes likely causes and solutions for many NDR status codes. It also tells how to read and interpret NDR messages.
 
@@ -316,4 +317,4 @@ The following example shows what happens when a remote email organization reject
 
 ## See Also
 
-[What are Exchange NDRs in Exchange Online and Office 365](https://go.microsoft.com/fwlink/p/?linkid=524931)
+[Email non-delivery reports in Exchange Online](../ExchangeOnline/mail-flow-best-practices/non-delivery-reports-in-exchange-online/non-delivery-reports-in-exchange-online.md)

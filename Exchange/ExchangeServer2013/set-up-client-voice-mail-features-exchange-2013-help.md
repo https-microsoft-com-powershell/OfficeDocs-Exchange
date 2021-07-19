@@ -2,13 +2,14 @@
 title: 'Set up client voice mail features: Exchange 2013 Help'
 TOCTitle: Set up client voice mail features
 ms:assetid: 5e661cfd-d34e-4caa-91a5-967bbecb75eb
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ673529(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ673529(v=EXCHG.150)
 ms:contentKeyID: 49315432
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,15 +29,15 @@ This topic describes the client features that give users who are enabled for Exc
 
 ## Outlook Voice Access
 
-In Exchange UM, a UM-enabled user can call in to an internal or external telephone number that's configured on a UM dial plan to access their mailbox and use the Outlook Voice Access menu system. Using this menu, UM-enabled users can read email, listen to voice messages, interact with their Outlook calendar, access their personal contacts, and perform tasks such as configuring their Outlook Voice Access PIN or recording their voice mail greetings. For details, see [Setting up Outlook Voice Access](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-up-outlook-voice-access).
+In Exchange UM, a UM-enabled user can call in to an internal or external telephone number that's configured on a UM dial plan to access their mailbox and use the Outlook Voice Access menu system. Using this menu, UM-enabled users can read email, listen to voice messages, interact with their Outlook calendar, access their personal contacts, and perform tasks such as configuring their Outlook Voice Access PIN or recording their voice mail greetings. For details, see [Setting up Outlook Voice Access](../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-up-outlook-voice-access.md).
 
 ## Forwarding calls
 
-A UM-enabled user can create and configure call answering rules using Outlook or Outlook Web App. Call answering rules let users control how their incoming calls should be handled. The rules are applied to incoming calls similar to the way Inbox rules are applied to incoming email messages, and are stored along with other voice settings in the user's mailbox. Up to nine call answering rules can be set up for each UM-enabled mailbox. These rules are independent of the Inbox rules and don't take up part of the user's Inbox rules storage quota. For details, see [Allow voice mail users to forward calls](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-voice-mail-users-to-forward-calls).
+A UM-enabled user can create and configure call answering rules using Outlook or Outlook Web App. Call answering rules let users control how their incoming calls should be handled. The rules are applied to incoming calls similar to the way Inbox rules are applied to incoming email messages, and are stored along with other voice settings in the user's mailbox. Up to nine call answering rules can be set up for each UM-enabled mailbox. These rules are independent of the Inbox rules and don't take up part of the user's Inbox rules storage quota. For details, see [Allow voice mail users to forward calls](../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-voice-mail-users-to-forward-calls.md).
 
 ## Voice Mail Preview
 
-Voice Mail Preview is a feature that's available to users who receive their voice mail messages from the UM voice mail system. Voice Mail Preview enhances the voice mail experience by providing a text version of audio recordings. For details, see [Allow users to see a voice mail transcript](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-see-a-voice-mail-transcript).
+Voice Mail Preview is a feature that's available to users who receive their voice mail messages from the UM voice mail system. Voice Mail Preview enhances the voice mail experience by providing a text version of audio recordings. For details, see [Allow users to see a voice mail transcript](../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-see-a-voice-mail-transcript.md).
 
 ## Receiving faxes
 

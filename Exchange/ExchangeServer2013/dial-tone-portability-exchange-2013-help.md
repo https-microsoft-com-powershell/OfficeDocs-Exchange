@@ -2,13 +2,14 @@
 title: 'Dial tone portability: Exchange 2013 Help'
 TOCTitle: Dial tone portability
 ms:assetid: ea62fae0-5e0a-460c-beb6-52532c8c8dbc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876950(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876950(v=EXCHG.150)
 ms:contentKeyID: 50873816
-ms.date: 06/06/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -44,6 +45,6 @@ All three options follow the same basic steps:
 
 4. **Merge the databases.**
 
-    To get the data from the dial tone database into the restored database, you merge the data using the [New-MailboxRestoreRequest](https://technet.microsoft.com/en-us/library/ff829875\(v=exchg.150\)) cmdlet.
+    To get the data from the dial tone database into the restored database, you merge the data using the [New-MailboxRestoreRequest](/powershell/module/exchange/New-MailboxRestoreRequest) cmdlet.
 
 For detailed steps about how to perform a dial tone recovery, see [Perform a dial tone recovery](perform-a-dial-tone-recovery-exchange-2013-help.md).

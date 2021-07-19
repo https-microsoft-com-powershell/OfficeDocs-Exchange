@@ -3,10 +3,11 @@ localization_priority: Normal
 description: In the Outlook client, users in your organization can add public folders to their Favorites folders. Then, depending on your organization's policies, they can use Outlook on the web to add those same public folders to their Favorites and perform certain functions in Outlook on the web that they use in the Outlook client.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: f6f1db72-4465-4eb8-b525-ac2c1fa10a69
-ms.date: 6/24/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Use favorite public folders in Outlook on the web
 ms.collection: 
 - exchange-online
@@ -26,7 +27,7 @@ In the Outlook client, users in your organization can add public folders to thei
 In order for users to perform certain tasks on public folders in their **Favorites** folder, they must first use the Outlook client to add public folders to the **Favorites** folder.
 
 > [!NOTE]
-> For more information about creating and configuring public folders, users in your organization can see [Create a public folder in Outlook](https://support.office.com/article/d5981360-28d3-4c8f-a373-c98ae570420a).
+> For more information about creating and configuring public folders, users in your organization can see [Create a public folder in Outlook](https://support.microsoft.com/office/a2835011-d524-4a5c-a207-05c159bb2a97).
 
 1. In Outlook, go to the **Folders** view. Click the three dots on the Navigation Bar, and the click **Folders**.
 
@@ -68,4 +69,4 @@ Your users can now use Outlook on the web to perform the following tasks in thei
 
 ## See also
 
-[Create a public folder in Outlook](https://support.office.com/article/d5981360-28d3-4c8f-a373-c98ae570420a)
+[Create a public folder in Outlook](https://support.microsoft.com/office/a2835011-d524-4a5c-a207-05c159bb2a97)

@@ -2,13 +2,14 @@
 title: 'Configure internet mail flow through a subscribed Edge Transport server'
 TOCTitle: Configure Internet mail flow through a subscribed Edge Transport server
 ms:assetid: d12ea770-99ce-4ab4-a373-96f2554641fa
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb738158(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb738158(v=EXCHG.150)
 ms:contentKeyID: 61200301
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ If you don't want to subscribe the Edge Transport server to an Active Directory 
   - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Configure Internet mail flow through a subscribed Edge Transport server
 

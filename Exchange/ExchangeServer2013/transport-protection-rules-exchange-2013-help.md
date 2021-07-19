@@ -2,13 +2,14 @@
 title: 'Transport protection rules: Exchange 2013 Help'
 TOCTitle: Transport protection rules
 ms:assetid: 9bd6d049-165e-4e51-a79f-3b8ff409da55
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298166(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298166(v=EXCHG.150)
 ms:contentKeyID: 49319926
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,10 +25,10 @@ For management tasks related to managing IRM, see [Information Rights Management
 
 ## Transport protection rules and AD RMS
 
-Transport protection rules allow you to use transport rules to IRM-protect messages by applying an [Active Directory Rights Management Services](https://go.microsoft.com/fwlink/p/?linkid=129823) (AD RMS) rights policy template.
+Transport protection rules allow you to use transport rules to IRM-protect messages by applying an [Active Directory Rights Management Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772403(v=ws.11)) (AD RMS) rights policy template.
 
 > [!NOTE]
-> AD&nbsp;RMS is an information protection technology that works with Rights Management Service (RMS)-enabled applications and clients to protect sensitive information online and offline. To use IRM protection in an on-premise Exchange deployment, Exchange 2013 requires an on-premises deployment of AD&nbsp;RMS running on Windows Server 2008 or later.
+> AD&nbsp;RMS is an information protection technology that works with Rights Management Service (RMS)-enabled applications and clients to protect sensitive information online and offline. To use IRM protection in an on-premises Exchange deployment, Exchange 2013 requires an on-premises deployment of AD&nbsp;RMS running on Windows Server 2008 or later.
 
 AD RMS uses XML-based policy templates to allow compatible IRM-enabled applications to apply consistent protection policies. In Windows Server 2008 and later, the AD RMS server exposes a Web service that can be used to enumerate and acquire templates. Exchange 2013 ships with the Do Not Forward template.
 
@@ -38,7 +39,7 @@ Additional RMS templates can be created in the on-premises AD RMS deployment to
 > [!IMPORTANT]
 > If a rights policy template is removed from the AD&nbsp;RMS server, you must modify any transport protection rules that use the removed template. If a transport protection rule continues to use a rights policy template that's been removed, the AD&nbsp;RMS server will fail to license the content to any of the recipients, and a non-delivery report (NDR) will be delivered to the sender.<BR>In Windows Server 2008 and later, rights policy templates can be archived instead of deleted. Archived templates can still be used to license content, but when you create or modify a transport protection rule, archived templates aren't included in the list of templates.
 
-For more information about creating AD RMS templates, see [AD RMS Rights Policy Templates Deployment Step-by-Step Guide](https://go.microsoft.com/fwlink/p/?linkid=136593).
+For more information about creating AD RMS templates, see [AD RMS Rights Policy Templates Deployment Step-by-Step Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731070(v=ws.10)).
 
 ## Automatic protection using transport protection rules
 

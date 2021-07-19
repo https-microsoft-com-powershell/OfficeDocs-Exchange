@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 15c284c0-b8e6-42ca-9913-7c59fdb6885d
-ms.date: 6/8/2018
 ms.reviewer:
 title: Manage administrator audit logging
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,7 +24,7 @@ Administrator audit logging in Exchange Server enables you to create a log entry
 
 - Estimated time to complete each procedure: less than 5 minutes
 
-- You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- You can only use PowerShell to perform this procedure. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Administrator audit logging" entry in the [Exchange infrastructure and PowerShell permissions](../../permissions/feature-permissions/infrastructure-permissions.md) topic.
 
@@ -38,7 +39,7 @@ Administrator audit logging in Exchange Server enables you to create a log entry
 
 By default, audit logging creates a log entry for every cmdlet that's run. If you're enabling audit logging for the first time and want this behavior, you don't have to change the cmdlet audit list. If you've previously specified cmdlets to audit and now want to audit all cmdlets, you can audit all cmdlets by specifying the asterisk (\*) wildcard character with the _AdminAuditLogCmdlets_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogCmdlets *
 ```
 
@@ -54,18 +55,18 @@ You can specify which cmdlets to audit by providing a list of cmdlets using the 
 
 This example audits the cmdlets specified in the preceding list.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogCmdlets New-Mailbox, *TransportRule, *Management*, Set-Transport*
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/set-adminauditlogconfig).
 
 ## Specify the parameters to be audited
 <a name="parameters"> </a>
 
 By default, audit logging creates a log entry for every cmdlet that's run, regardless of the parameters specified. If you're enabling audit logging for the first time and want this behavior, you don't have to change the parameter audit list. If you've previously specified parameters to audit and now want to audit all parameters, you can do so by specifying the asterisk (\*) wildcard character with the _AdminAuditLogParameters_ parameter on the **Set-AdminAuditLogConfig** cmdlet, as shown in the following command.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogParameters *
 ```
 
@@ -84,11 +85,11 @@ You can specify which parameters you want to audit by using the _AdminAuditLogPa
 
 This example audits the parameters specified in the preceding list.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogParameters Database, *Address*, Custom*, *Region
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/set-adminauditlogconfig).
 
 ## Specify the admin audit log age limit
 <a name="agelimit"> </a>
@@ -110,11 +111,11 @@ You can specifiy the age limit in days. Or you can specify the number of days, h
 
 This example specifies an age limit of two years and six months.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogAgeLimit 913
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/set-adminauditlogconfig).
 
 ## Enable or disable logging of Test cmdlets
 <a name="testcmdlets"> </a>
@@ -123,24 +124,24 @@ Cmdlets that start with the verb **Test** aren't logged by default. This is beca
 
 This command enables the logging of **Test** cmdlets.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -TestCmdletLoggingEnabled $true
 ```
 
 This command disables the logging of **Test** cmdlets.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -TestCmdletLoggingEnabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](https://technet.microsoft.com/library/9d77294d-a501-4af6-8c3b-753235c741a7.aspx).
+For detailed syntax and parameter information, see [Set-AdminAuditLogConfig](/powershell/module/exchange/set-adminauditlogconfig).
 
 ## Disable admin audit logging
 <a name="disable"> </a>
 
 To disable admin audit logging, use the following command.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogEnabled $false
 ```
 
@@ -149,7 +150,7 @@ Set-AdminAuditLogConfig -AdminAuditLogEnabled $false
 
 To enable admin audit logging, use the following command.
 
-```
+```PowerShell
 Set-AdminAuditLogConfig -AdminAuditLogEnabled $true
 ```
 
@@ -158,6 +159,6 @@ Set-AdminAuditLogConfig -AdminAuditLogEnabled $true
 
 To view the admin audit logging settings that you've configured for your organization, use the following command.
 
-```
+```PowerShell
 Get-AdminAuditLogConfig
 ```

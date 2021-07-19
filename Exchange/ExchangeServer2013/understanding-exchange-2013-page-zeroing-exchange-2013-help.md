@@ -2,13 +2,14 @@
 title: 'Understanding Exchange 2013 page zeroing: Exchange 2013 Help'
 TOCTitle: Understanding Exchange 2013 page zeroing
 ms:assetid: 0ca7b188-efbc-4c0d-bcfe-5138cffc803c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg549096(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Gg549096(v=EXCHG.150)
 ms:contentKeyID: 62279321
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -153,7 +154,7 @@ You can measure and monitor page zeroing functionality by viewing two ESE counte
   - MSExchange Database -\> Database Maintenance Pages Zeroed/sec: Indicates the rate at which pages are zeroed.
 
 > [!NOTE]
-> To learn how to enable these counters, see <A href="https://go.microsoft.com/fwlink/p/?linkid=101194">How to Enable Extended ESE Performance Counters</A>.
+> To learn how to enable these counters, see <A href="/previous-versions/tn-archive/aa997018(v=exchg.65)">How to Enable Extended ESE Performance Counters</A>.
 
 Page zeroing is a database maintenance function, so performance information related to both page zeroing for run-time transactions and page zeroing due to background database maintenance is included in these counters.
 

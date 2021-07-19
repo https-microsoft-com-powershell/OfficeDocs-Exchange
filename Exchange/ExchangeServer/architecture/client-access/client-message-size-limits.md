@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: fef9ca78-b68f-4342-ada0-881ab985ce3c
-ms.date: 7/5/2018
 ms.reviewer: 
 title: Configure client-specific message size limits
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -17,7 +18,7 @@ manager: serdars
 
 # Configure client-specific message size limits
 
-In Exchange Server, there are several different message size limits that apply to messages as they travel through your organization. For more information, see [Message size limits in Exchange Server](../../mail-flow/message-size-limits.md).
+In Exchange Server, there are several different message size limits that apply to messages as they travel through your organization. For more information, see [Message size and recipient limits in Exchange Server](../../mail-flow/message-size-limits.md).
 
 However, there are client-specific message size limits you can configure for Outlook on the web (fornerly known as Outlook Web App) and email clients that use Exchange ActiveSync or Exchange Web Services (EWS). If you change the Exchange organizational, connector, or user message size limits, you likely need change the limits for Outlook on the web, ActiveSync, and EWS. These limits are described in the following tables. To change the message size limit for a specific client type, you need to change **all** the values that are described in the table.
 
@@ -100,17 +101,17 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use Notepad to configure a client-specific message size limit
 
 1. Open the appropriate web.config files in Notepad. For example, to open the web.config files for EWS clients, run the following commands:
 
-   ```
+   ```console
    Notepad %ExchangeInstallPath%ClientAccess\exchweb\ews\web.config
    ```
 
-   ```
+   ```console
    Notepad %ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config
    ```
 
@@ -138,11 +139,11 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
 
    - Run the following commands from an elevated command prompt (a Command Prompt window you open by selecting **Run as administrator**):
 
-     ```
-     net stop was /y
+     ```console
+     net stop w3svc /y
      ```
 
-     ```
+     ```console
      net start w3svc
      ```
 
@@ -150,11 +151,11 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
 
 Instead of using Notepad, you can also configure the client-specific message size limits from the command line. Open an elevated command prompt on the Exchange server (a Command Prompt window you open by selecting **Run as administrator**) and run the appropriate commands for the limits that you want to configure.
 
- **Notes**:
-
-- The size values in the commands are the default values, so you'll need to change them.
-
-- Pay attention to whether the value is in bytes or kilobytes.
+> [!NOTE]
+> 
+> - The size values in the commands are the default values, so you'll need to change them.
+> 
+> - Pay attention to whether the value is in bytes or kilobytes.
 
 ### ActiveSync
 

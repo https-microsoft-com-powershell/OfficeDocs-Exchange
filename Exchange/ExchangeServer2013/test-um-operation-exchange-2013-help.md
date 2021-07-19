@@ -2,13 +2,14 @@
 title: 'Test UM operation: Exchange 2013 Help'
 TOCTitle: Test UM operation
 ms:assetid: 06c9ab4e-8272-47b1-a217-e366f7e9dbaa
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa995957(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa995957(v=EXCHG.150)
 ms:contentKeyID: 55129206
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ For additional management tasks related to Client Access and Mailbox servers, se
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to test the operation of the Unified Messaging services
 

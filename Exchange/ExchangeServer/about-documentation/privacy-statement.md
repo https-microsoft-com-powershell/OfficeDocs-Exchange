@@ -1,14 +1,15 @@
 ---
-localization_priority: Normal
+localization_priority: Priority
 description: The privacy statement for Exchange Server 2016 and Exchange Server 2019.
 ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: f9569bb0-9a65-4121-a354-fa5a394b66c3
-ms.date: 7/13/2018
 ms.reviewer: 
 title: Exchange Server Privacy Statement
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -21,7 +22,7 @@ Microsoft is committed to protecting your privacy, while delivering software tha
 
 Exchange 2016 and Exchange 2019 deliver email, calendaring, contact management, and other online collaboration functionalities on your PC's, mobile phones, and web browsers.
 
-This privacy statement addresses the deployment and use of Exchange 2016 and Exchange 2019 in an enterprise network environment. If you use Exchange Server technologies as a service operated by Microsoft or a third party, please refer to the service-specific privacy and security policies provided by Microsoft or the third party service provider.
+This privacy statement addresses the deployment and use of Exchange 2016 and Exchange 2019 in an enterprise network environment. If you use Exchange Server technologies as a service operated by Microsoft or a third party, please refer to the service-specific privacy and security policies provided by Microsoft or the third-party service provider.
 
 IT administrators of Exchange 2016 and Exchange 2019 may choose to enable or disable certain Internet-enabled features in Exchange, or to deploy other privacy impacting technologies, based on legal or compliance considerations or internal policies. You should direct privacy-related requests related to the entity that's providing your access to Exchange 2016 or Exchange 2019. Microsoft is not responsible for the privacy practices of its customers or other third parties.
 
@@ -55,7 +56,7 @@ Microsoft is committed to helping protect the security of your information. We u
 
  **What This Feature Does**: Microsoft Error Reporting provides a service that allows you to report problems you may be having to Microsoft and to receive information that may help you avoid or solve such problems.
 
- **Information Collected, Processed, or Transmitted**: For information about the information collected, processed, or transmitted by Microsoft Error Reporting, see [Privacy Statement for the Microsoft Error Reporting Service](https://go.microsoft.com/fwlink/p/?linkid=85028).
+ **Information Collected, Processed, or Transmitted**: For information about the information collected, processed, or transmitted by Microsoft Error Reporting, see [Privacy Statement for the Microsoft Error Reporting Service](https://privacy.microsoft.com/microsoft-error-reporting-privacy-statement).
 
  **Use of Information**: The error reporting data that you submit may be used to solve customer problems and to improve Microsoft software and services.
 
@@ -63,7 +64,7 @@ Microsoft is committed to helping protect the security of your information. We u
 
 In rare cases, such as problems that are especially difficult to solve, Microsoft may request additional data, including sections of memory (which may include memory shared by any or all applications running at the time the problem occurred), some registry settings, and one or more files from your computer. Your current documents may also be included. When additional data is requested, you will have an opportunity to view the information contained in the error report before choosing whether or not to send the report to Microsoft.
 
- **Important Information**: Enterprise customers can use Group Policy to configure how Microsoft Error Reporting works on their computers. Configuration options include the ability to turn off Microsoft Error Reporting. If you're an administrator and want to configure Group Policy for Microsoft Error Reporting, technical details are available at the [Group Policy Settings Reference for Windows and Windows Server](https://go.microsoft.com/fwlink/p/?linkid=279978).
+ **Important Information**: Enterprise customers can use Group Policy to configure how Microsoft Error Reporting works on their computers. Configuration options include the ability to turn off Microsoft Error Reporting. If you're an administrator and want to configure Group Policy for Microsoft Error Reporting, technical details are available at the [Group Policy Settings Reference for Windows and Windows Server](https://www.microsoft.com/download/details.aspx?id=25250).
 
 ## Specific Feature: Online Feedback
 
@@ -89,7 +90,7 @@ In rare cases, such as problems that are especially difficult to solve, Microsof
 
  **What This Feature Does**: If you choose to participate, the Customer Experience Improvement Program (CEIP) collects basic information about your hardware configuration and how you use Microsoft software and services in order to identify trends and usage patterns. CEIP also collects the type and number of errors you encounter, software and hardware performance, and the speed of services. Microsoft does not collect your name, address, or other contact information.
 
- **Information Collected, Processed, or Transmitted**: CEIP information is automatically sent to Microsoft when the feature is turned on. For more information about the information collected, processed, or transmitted by CEIP, see the [Privacy Statement for the Microsoft Customer Experience Improvement Program](https://go.microsoft.com/fwlink/p/?linkid=84784).
+ **Information Collected, Processed, or Transmitted**: CEIP information is automatically sent to Microsoft when the feature is turned on. For more information about the information collected, processed, or transmitted by CEIP, see the [Privacy Statement for the Microsoft Customer Experience Improvement Program](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj618322(v=ws.11)).
 
  **Use of Information**: Microsoft uses this information to improve the quality, reliability, and performance of Microsoft software and services.
 
@@ -99,7 +100,7 @@ In rare cases, such as problems that are especially difficult to solve, Microsof
 
  **What This Feature Does**: the Bing Maps extension will appear in Outlook and Outlook on the web (formerly known as Outlook Web App) when Exchange 2016 or Exchange 2019 detects the presence of an address in the body of an email and allow you to query the Bing Maps service for a map of the location.
 
- **Information Collected, Processed, or Transmitted**: when you click on the Bing Maps extension from the user interface, the information that Exchange determines to be an address will be passed to the Bing Maps service, which will perform a query based on the address and return a map for it. For more information on Bing's privacy practices, see the Bing section in [Microsoft Privacy Statement](https://go.microsoft.com/fwlink/p/?linkid=787081).
+ **Information Collected, Processed, or Transmitted**: when you click on the Bing Maps extension from the user interface, the information that Exchange determines to be an address will be passed to the Bing Maps service, which will perform a query based on the address and return a map for it. For more information on Bing's privacy practices, see the Bing section in [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement).
 
  **Use of Information**: The address information is used to display the map for the address.
 
@@ -141,7 +142,7 @@ Microsoft is committed to helping protect the security of your information. We u
 
 ## For More Information
 
-Microsoft welcomes your comments regarding this privacy statement and its supplements. If you have questions or believe that we have not adhered to these documents, please contact us using this [Web form](https://go.microsoft.com/fwlink/p/?linkid=785778), or by email, at the following address:
+Microsoft welcomes your comments regarding this privacy statement and its supplements. If you have questions or believe that we have not adhered to these documents, please contact us using this [web form](https://www.microsoft.com/concern/privacy), or by email, at the following address:
 
 Microsoft Privacy
 
@@ -153,4 +154,4 @@ Redmond, Washington 98052 USA
 
 425-882-8080
 
-To find the Microsoft subsidiary in your country or region, see [Microsoft office locations around the world](https://go.microsoft.com/fwlink/p/?linkid=848727).
+To find the Microsoft subsidiary in your country or region, see [Microsoft office locations around the world](https://www.microsoft.com/worldwide).

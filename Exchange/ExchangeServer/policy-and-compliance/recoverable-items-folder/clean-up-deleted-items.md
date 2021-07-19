@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 82c310f8-de2f-46f2-8e1a-edb6055d6e69
-ms.date: 7/9/2018
 ms.reviewer:
 title: Clean up or delete items from the Recoverable Items folder
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -33,24 +34,24 @@ To learn more about In-Place Hold and Litigation Hold, see [In-Place Hold and Li
 
 - Because incorrectly cleaning up the Recoverable Items folder can result in data loss, it's important that you're familiar with the Recoverable Items folder and the impact of removing its contents. Before performing this procedure, we recommend that you review the information in [Recoverable Items folder in Exchange Server](recoverable-items-folder.md).
 
-- You can't use the Exchange admin center (EAC) to perform these procedures. You must use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- You can't use the Exchange admin center (EAC) to perform these procedures. You must use the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
- Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+ Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to delete items from the Recoverable Items folder for mailboxes that aren't placed on hold or don't have single item recovery enabled
 
 This example permanently deletes items from the user Gurinder Singh's Recoverable Items folder and also copies the items to the GurinderSingh-RecoverableItems folder in the Discovery Search Mailbox (a discovery mailbox created by Exchange Setup).
 
-```
+```PowerShell
 Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
 ```
 
 > [!NOTE]
 > To delete items from the mailbox without copying them to another mailbox, use the preceding command without the _TargetMailbox_ and _TargetFolder_ parameters.
 
-For detailed syntax and parameter information, see [Search-Mailbox](https://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx).
+For detailed syntax and parameter information, see [Search-Mailbox](/powershell/module/exchange/search-mailbox).
 
 ## Use the Exchange Management Shell to clean up the Recoverable Items folder for mailboxes that are placed on hold or have single item recovery enabled
 
@@ -81,83 +82,79 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
    > [!NOTE]
    > If the _UseDatabaseQuotaDefaults_ parameter is set to `$true`, the previous quota settings aren't applied. The corresponding quota settings configured on the mailbox database are applied, even if individual mailbox settings are populated.
 
-   ```
+   ```PowerShell
    Get-Mailbox "Gurinder Singh" | Format-List *Quota*,RetainDeletedItemsFor,UseDatabaseRetentionDefaults
    ```
 
 2. Retrieve the mailbox access settings for the mailbox. Be sure to note these settings for later.
 
-   ```
+   ```PowerShell
    Get-CASMailbox "Gurinder Singh" | Format-List EwsEnabled, ActiveSyncEnabled, MAPIEnabled, OWAEnabled, ImapEnabled, PopEnabled
    ```
 
 3. Retrieve the current size of the Recoverable Items folder. Note the size so you can raise the quotas in Step 6.
 
-   ```
+   ```PowerShell
    Get-MailboxFolderStatistics "Gurinder Singh" -FolderScope RecoverableItems | Format-List Name,FolderAndSubfolderSize
    ```
 
-4. Retrieve the current Managed Folder Assistant work cycle configuration. Be sure to note the setting for later.
+4. Disable client access to the mailbox to make sure no changes can be made to mailbox data for the duration of this procedure.
 
-   ```
-   Get-MailboxServer "My Mailbox Server" | Format-List Name,ManagedFolderWorkCycle
-   ```
-
-5. Disable client access to the mailbox to make sure no changes can be made to mailbox data for the duration of this procedure.
-
-   ```
+   ```PowerShell
    Set-CASMailbox "Gurinder Singh" -EwsEnabled $false -ActiveSyncEnabled $false -MAPIEnabled $false -OWAEnabled $false -ImapEnabled $false -PopEnabled $false
    ```
 
-6. To make sure no items are deleted from the Recoverable Items folder, increase the Recoverable Items quota, increase the Recoverable Items warning quota, and set the deleted item retention period to a value higher than the current size of the user's Recoverable Items folder. This is particularly important for preserving messages for mailboxes placed on In-Place Hold or Litigation Hold. We recommend raising these settings to twice their current size.
+5. To make sure no items are deleted from the Recoverable Items folder, increase the Recoverable Items quota, increase the Recoverable Items warning quota, and set the deleted item retention period to a value higher than the current size of the user's Recoverable Items folder. This is particularly important for preserving messages for mailboxes placed on In-Place Hold or Litigation Hold. We recommend raising these settings to twice their current size.
 
-   ```
-   Set-Mailbox "Gurinder Singh" -RecoverableItemsQuota 50Gb -RecoverableItemsWarningQuota 50Gb -RetainDeletedItemsFor 3650 -ProhibitSendQuota 50Gb -ProhibitSendRecieveQuota 50Gb -UseDatabaseQuotaDefaults $false -UseDatabaseRetentionDefaults $false
+   ```PowerShell
+   Set-Mailbox "Gurinder Singh" -RecoverableItemsQuota 50Gb -RecoverableItemsWarningQuota 50Gb -RetainDeletedItemsFor 3650 -ProhibitSendQuota 50Gb -ProhibitSendReceiveQuota 50Gb -UseDatabaseQuotaDefaults $false -UseDatabaseRetentionDefaults $false
    ```
 
-7. Disable the Managed Folder Assistant on the Mailbox server.
+6. Stop the Microsoft Exchange Mailbox Assistants service and prevent it from starting on the Mailbox server by running the following commands:
 
+   ```PowerShell
+   Stop-Service MSExchangeMailboxAssistants; Set-Service MSExchangeMailboxAssistants -StartupType Disabled
    ```
-   Set-MailboxServer MyMailboxServer -ManagedFolderWorkCycle $null
-   ```
+
+   The effect of this command is to stop the Managed Folder Assistant on the Mailbox server.
 
    > [!IMPORTANT]
    > If the mailbox resides on a mailbox database in a database availability group (DAG), you must disable the Managed Folder Assistant on each DAG member that hosts a copy of the database. If the database fails over to another server, this prevents the Managed Folder Assistant on that server from deleting mailbox data.
 
-8. Disable single item recovery and remove the mailbox from Litigation Hold.
+7. Disable single item recovery and remove the mailbox from Litigation Hold.
 
-   ```
+   ```PowerShell
    Set-Mailbox "Gurinder Singh" -SingleItemRecoveryEnabled $false -LitigationHoldEnabled $false
    ```
 
    > [!IMPORTANT]
    > After you run this command, it may take up to one hour to disable single item recovery or Litigation Hold. We recommend that you perform the next step only after this period has elapsed.
 
-9. Copy items from the Recoverable Items folder to a folder in the Discovery Search Mailbox and delete the contents from the source mailbox.
+8. Copy items from the Recoverable Items folder to a folder in the Discovery Search Mailbox and delete the contents from the source mailbox.
 
-   ```
+   ```PowerShell
    Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
    ```
 
    If you need to delete only messages that match specified conditions, use the _SearchQuery_ parameter to specify the conditions. This example deletes messages that have the string "Your bank statement" in the **Subject** field.
 
-   ```
+   ```PowerShell
    Search-Mailbox -Identity "Gurinder Singh" -SearchQuery "Subject:'Your bank statement'" -SearchDumpsterOnly -TargetMailbox "Discovery Search Mailbox" -TargetFolder "GurinderSingh-RecoverableItems" -DeleteContent
    ```
 
    > [!NOTE]
    > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see [In-Place eDiscovery in Exchange Server](../../policy-and-compliance/ediscovery/ediscovery.md).
 
-10. If the mailbox was placed on Litigation Hold or had single item recovery enabled earlier, enable these features again.
+9. If the mailbox was placed on Litigation Hold or had single item recovery enabled earlier, enable these features again.
 
-    ```
+    ```PowerShell
     Set-Mailbox "Gurinder Singh" -SingleItemRecoveryEnabled $true -LitigationHoldEnabled $true
     ```
 
     > [!IMPORTANT]
     > After you run this command, it may take up to one hour to enable  single item recovery or Litigation Hold. We recommend that you enable the Managed Folder Assistant and allow client access (Steps 11 and 12) only after this period has elapsed.
 
-11. Revert the following quotas to the values noted in Step 1:
+10. Revert the following quotas to the values noted in Step 1:
 
     - _RecoverableItemsQuota_
 
@@ -175,46 +172,42 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
 
     In this example, the mailbox is removed from retention hold, the deleted item retention period is reset to the default value of 14 days, and the Recoverable Items quota is configured to use the same value as the mailbox database. If the values you noted in Step 1 are different, you must use the preceding parameters to specify each value and set the _UseDatabaseQuotaDefaults_ parameter to `$false`. If the _RetainDeletedItemsFor_ _and UseDatabaseRetentionDefaults_ parameters were previously set to a different value, you must also revert them to the values noted in Step 1.
 
-    ```
+    ```PowerShell
     Set-Mailbox "Gurinder Singh" -RetentionHoldEnabled $false -RetainDeletedItemsFor 14 -RecoverableItemsQuota unlimited -UseDatabaseQuotaDefaults $true
     ```
 
-12. Enable the Managed Folder Assistant by setting the work cycle back to the value you noted in Step 4. This example sets the work cycle to one day.
+11. Configure the Microsoft Exchange Mailbox Assistants service to start automatically and start it on the Mailbox server by running the following commands:
 
-    ```
-    Set-MailboxServer MyMailboxServer -ManagedFolderWorkCycle 1
+    ```PowerShell
+    Set-Service MSExchangeMailboxAssistants -StartupType Automatic; Start-Service MSExchangeMailboxAssistants
     ```
 
-13. Enable client access.
+12. Enable client access to the mailbox by running the following command:
 
-    ```
+    ```PowerShell
     Set-CASMailbox -ActiveSyncEnabled $true -EwsEnabled $true -MAPIEnabled $true -OWAEnabled $true -ImapEnabled $true -PopEnabled $true
     ```
 
 For detailed syntax and parameter information, see the following topics:
 
-- [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx)
+- [Get-Mailbox](/powershell/module/exchange/get-mailbox)
 
-- [Get-CASMailbox](https://technet.microsoft.com/library/d80a5990-9106-4eb8-bba8-b3975805c325.aspx)
+- [Get-CASMailbox](/powershell/module/exchange/get-casmailbox)
 
-- [Get-MailboxFolderStatistics](https://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx)
+- [Get-MailboxFolderStatistics](/powershell/module/exchange/get-mailboxfolderstatistics)
 
-- [Get-MailboxServer](https://technet.microsoft.com/library/838bc72a-e3bb-4583-934f-d93a7c93252c.aspx)
+- [Set-CASMailbox](/powershell/module/exchange/set-casmailbox)
 
-- [Set-CASMailbox](https://technet.microsoft.com/library/ff7d4dc5-755e-4005-a0a3-631eed3f9b3b.aspx)
+- [Set-Mailbox](/powershell/module/exchange/set-mailbox)
 
-- [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx)
-
-- [Set-MailboxServer](https://technet.microsoft.com/library/6a229126-b863-4f07-b024-a39c93b253f7.aspx)
-
-- [Search-Mailbox](https://technet.microsoft.com/library/9ee3b02c-d343-4816-a583-a90b1fad4b26.aspx)
+- [Search-Mailbox](/powershell/module/exchange/search-mailbox)
 
 ## How do you know this worked?
 
-To verify that you have successfully cleaned up the Recoverable Items folder of a mailbox, use [Get-MailboxFolderStatistics](https://technet.microsoft.com/library/212ca564-435e-4af6-8673-5564732bf118.aspx) cmdlet the check the size of the Recoverable Items folder.
+To verify that you have successfully cleaned up the Recoverable Items folder of a mailbox, use [Get-MailboxFolderStatistics](/powershell/module/exchange/get-mailboxfolderstatistics) cmdlet the check the size of the Recoverable Items folder.
 
 This example retrieves the size of the Recoverable Items folder and its subfolders and an item count in the folder and each subfolder.
 
-```
+```PowerShell
 Get-MailboxFolderStatistics -Identity "Gurinder Singh" -FolderScope RecoverableItems | Format-Table Name,FolderAndSubfolderSize,ItemsInFolderAndSubfolders -Auto
 ```

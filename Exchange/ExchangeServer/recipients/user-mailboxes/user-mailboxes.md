@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 4f7da774-b484-4312-b822-809dbeced5f8
-ms.date: 7/5/2018
 ms.reviewer:
 title: Manage user mailboxes
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -30,7 +31,7 @@ You can also change properties for multiple user mailboxes at the same time. For
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Change user mailbox properties
 
@@ -169,7 +170,7 @@ Use the **Mailbox Features** section to view or change the following mailbox fea
 
 - **Address book policy**: This box shows the address book policy applied to the mailbox. An address book policy allows you to segment users into specific groups to provide customized views of the address book. To apply or change the address book policy applied to the mailbox, select one from the drop-down list.
 
-- **Unified Messaging (not available in Exchange 2019)**: This feature is disabled by default. When you enable Unified Messaging (UM) in Exchange 2016, the user will be able to use your organization's UM features and a default set of UM properties are applied to the user. Click **Enable** to enable UM for the mailbox. For information about how to enable UM, see [Enable a User for Unified Messaging](https://technet.microsoft.com/library/ad027767-5e14-4cb1-9f8a-0791d9188db5.aspx).
+- **Unified Messaging (not available in Exchange 2019)**: This feature is disabled by default. When you enable Unified Messaging (UM) in Exchange 2016, the user will be able to use your organization's UM features and a default set of UM properties are applied to the user. Click **Enable** to enable UM for the mailbox. For information about how to enable UM, see [Enable a User for Unified Messaging](../../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail.md).
 
     > [!NOTE]
     > A UM dial plan and a UM mailbox policy must exist before you can enable UM.
@@ -266,39 +267,39 @@ To assign permissions to delegates, click **Add** ![Add icon](../../media/ITPro_
 
 Use the **Get-Mailbox** and **Set-Mailbox** cmdlets to view and change properties for user mailboxes. One advantage of using the Exchange Management Shell is the ability to change the properties for multiple mailboxes. For information about what parameters correspond to mailbox properties, see the following topics:
 
-- [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx)
+- [Get-Mailbox](/powershell/module/exchange/get-mailbox)
 
-- [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx)
+- [Set-Mailbox](/powershell/module/exchange/set-mailbox)
 
 Here are some examples of using the Exchange Management Shell to change user mailbox properties.
 
 This example shows how to forward Pat Coleman's email messages to Sunil Koduri's (sunilk@contoso.com) mailbox.
 
-```
+```PowerShell
 Set-Mailbox -Identity patc -DeliverToMailboxAndForward $true -ForwardingAddress sunilk@contoso.com
 ```
 
 This example uses the **Get-Mailbox** command to find all user mailboxes in the organization, and then uses the **Set-Mailbox** command to set the recipient limit to 500 recipients allowed in the To:, Cc:, and Bcc: boxes of an email message.
 
-```
-Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Set-Mailbox -RecipientLimits 500
+```PowerShell
+Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Set-Mailbox -RecipientLimits 500
 ```
 
 This example uses the **Get-Mailbox** command to find all the mailboxes in the Marketing organizational unit, and then uses the **Set-Mailbox** command to configure these mailboxes. The custom warning, prohibit send, and prohibit send and receive limits are set to 200 megabytes (MB), 250 MB, and 280 MB respectively, and the mailbox database's default limits are ignored. This command can be used to configure a specific set of mailboxes to have larger or smaller limits than other mailboxes in the organization.
 
-```
+```PowerShell
 Get-Mailbox -OrganizationalUnit "Marketing" | Set-Mailbox -IssueWarningQuota 209715200 -ProhibitSendQuota 262144000 -ProhibitSendReceiveQuota 293601280 -UseDatabaseQuotaDefaults $false
 ```
 
 This example uses the **Get-Mailbox** cmdlet to find all users in the Customer Service department, and then uses the **Set-Mailbox** cmdlet to change the maximum message size for sending messages to 2 MB.
 
-```
+```PowerShell
 Get-Mailbox -Filter "Department -eq 'Customer Service'" | Set-Mailbox -MaxSendSize 2097152
 ```
 
 This example sets the MailTip translation in French and Chinese.
 
-```
+```PowerShell
 Set-Mailbox john@contoso.com -MailTipTranslations ("FR: C'est la langue française", "CHT: 這是漢語語言")
 ```
 
@@ -310,13 +311,13 @@ To verify that you've successfully changed properties for a user mailbox, do the
 
 - In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mailboxes. In the example above where the recipient limit was changed, run the following command to verify the new value.
 
-  ```
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Format-List Name,RecipientLimits
+  ```PowerShell
+  Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Format-List Name,RecipientLimits
   ```
 
     For the example above where the message limits were changed, run this command.
 
-  ```
+  ```PowerShell
   Get-Mailbox -OrganizationalUnit "Marketing" | Format-List Name,IssueWarningQuota,ProhibitSendQuota,ProhibitSendReceiveQuota,UseDatabaseQuotaDefaults
   ```
 
@@ -368,8 +369,8 @@ To verify that you've successfully bulk edited user mailboxes, do one of the fol
 
 - In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mailboxes. For example, say you used the bulk edit feature in the EAC to enable the archive mailbox and assign a retention policy to all users in your organization. To verify these changes, you could run the following command:
 
-  ```
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox')} | Format-List Name,ArchiveDatabase,RetentionPolicy
+  ```PowerShell
+  Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'UserMailbox'" | Format-List Name,ArchiveDatabase,RetentionPolicy
   ```
 
-  For more information about the available parameters for the **Get-Mailbox** cmdlet, see [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx).
+  For more information about the available parameters for the **Get-Mailbox** cmdlet, see [Get-Mailbox](/powershell/module/exchange/get-mailbox).

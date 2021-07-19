@@ -2,13 +2,14 @@
 title: 'Overview of Exchange 2013 services: Exchange 2013 Help'
 TOCTitle: Overview of Exchange 2013 services
 ms:assetid: 2ed45d18-2ff3-4099-b841-050eb16a416b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee423542(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee423542(v=EXCHG.150)
 ms:contentKeyID: 74479247
-ms.date: 10/20/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -63,7 +64,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides Exchange SmartScreen spam definition updates.</p>
 
 > [!NOTE]
-> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://go.microsoft.com/fwlink/p/?linkid=835894">Deprecating support for SmartScreen in Outlook and Exchange</A>.
+> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332">Deprecating support for SmartScreen in Outlook and Exchange</A>.
 
 </td>
 <td><p>Automatic</p></td>
@@ -430,7 +431,7 @@ The following table describes the Exchange services that are installed on Edge T
 <td><p>Provides Exchange SmartScreen spam definition updates.</p>
 
 > [!NOTE]
-> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://go.microsoft.com/fwlink/p/?linkid=835894">Deprecating support for SmartScreen in Outlook and Exchange</A>.
+> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332">Deprecating support for SmartScreen in Outlook and Exchange</A>.
 
 </td>
 <td><p>Automatic</p></td>

@@ -5,12 +5,13 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 43fbe354-ccfc-45b0-9fbc-4b23c6c5ccf4
-ms.date: 7/5/2018
 ms.reviewer:
 title: Import or install a certificate on an Exchange server
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -43,14 +44,14 @@ These are the types of certificate files that you can import on an Exchange serv
 
 - In the EAC, you can import the certificate file on multiple Exchange servers at the same time (Step 4 in the procedure).
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access services security" entry in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to import a certificate on one or more Exchange servers
 
@@ -76,26 +77,26 @@ These are the types of certificate files that you can import on an Exchange serv
 
 To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, .p12, or .pfx filename extensions), use the following syntax:
 
-```
+```PowerShell
 Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" -Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force) [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
 
 This example imports the certificate file `\\FileServer01\Data\Fabrikam.pfx` that's protected by the password P@ssw0rd1 on the local Exchange server.
 
-```
+```PowerShell
 Import-ExchangeCertificate -FileName "\\FileServer01\Data\Fabrikam.pfx" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
 ```
 
 To import a chain of certificates file (PKCS #7 text files that have .p7b or .p7c filename extensions) that's associated with a certificate, use the following syntax:
 
-```
-Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "<FilePathOrUNCPath>" -ReadCount 0))]
+```PowerShell
+Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "<FilePathOrUNCPath>" -ReadCount 0))
 ```
 
 This example imports the chain of certificates file `\\FileServer01\Data\Chain of Certificates.p7b`.
 
-```
-Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "\\FileServer01\Data\Chain of Certificates.p7b" -ReadCount 0))]
+```PowerShell
+Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path "\\FileServer01\Data\Chain of Certificates.p7b" -ReadCount 0))
 ```
 
  **Notes:**
@@ -106,7 +107,7 @@ Import-ExchangeCertificate -FileData ([Byte[]](Get-Content -Encoding Byte -Path 
 
 - If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
 
-- For more information, see [Import-ExchangeCertificate](https://technet.microsoft.com/library/c1a98e97-e58a-49c8-a44d-948b2fc07876.aspx).
+- For more information, see [Import-ExchangeCertificate](/powershell/module/exchange/import-exchangecertificate).
 
 ## How do you know this worked?
 
@@ -116,7 +117,7 @@ To verify that you have successfully imported (installed) a certificate on an Ex
 
 - In the Exchange Management Shell on the server where you installed the certificate, run the following command:
 
-  ```
+  ```PowerShell
   Get-ExchangeCertificate | where {$_.Status -eq "Valid"} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter
   ```
 

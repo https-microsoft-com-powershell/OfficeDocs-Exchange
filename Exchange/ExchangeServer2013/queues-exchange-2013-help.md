@@ -2,13 +2,14 @@
 title: 'Queues: Exchange 2013 Help'
 TOCTitle: Queues
 ms:assetid: e7ad0ba5-3789-4a2b-9825-6bb1b321609c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb125022(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb125022(v=EXCHG.150)
 ms:contentKeyID: 50646240
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,7 +37,7 @@ The following types of queues are used in Exchange 2013:
 
     Messages in the Unreachable queue are automatically resubmitted when a routing change is detected. So, after the condition or configuration error caused the messages to enter the Unreachable queue is repaired, you don't need to take additional action to move the messages out of the Unreachable queue for delivery.
 
-        The Unreachable queue is typically empty. If the Unreachable queue contains no messages it doesn't appear in Queue Viewer or **Get-Queue** results.
+    The Unreachable queue is typically empty. If the Unreachable queue contains no messages it doesn't appear in Queue Viewer or **Get-Queue** results.
 
   - **Poison message queue**: The poison message queue is a special queue that's used to isolate messages that are determined to be harmful to the Exchange 2013 system after a transport server or service failure. The messages may be genuinely harmful in their content and format. Alternatively, they may be the results of a poorly written agent that has caused the Exchange server to fail when it processed the supposedly bad messages.
 

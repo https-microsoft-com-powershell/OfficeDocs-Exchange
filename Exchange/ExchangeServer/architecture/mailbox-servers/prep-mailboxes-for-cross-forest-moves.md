@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: fdbed4fc-a77e-40d5-a211-863b05d74784
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Prepare mailboxes for cross-forest move requests
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -29,7 +30,7 @@ To prepare for the mailbox move, you need to create mail users (also known as ma
 
 - If you deployed Identity Lifecycle Manager (ILM) for cross-forest global address list (GAL) synchronization, we recommend that you use Microsoft Identity Manager 2016 Service Pack 1. We've created sample code that you can use to learn how to customize ILM to synchronize the source mailbox user and target mail user.
 
-    For more information, including how to download the sample code, see [Prepare mailboxes for cross-forest moves using sample code](https://technet.microsoft.com/en-us/library/ee861124(v=exchg.150).aspx).
+    For more information, including how to download the sample code, see [Prepare mailboxes for cross-forest moves using sample code](../../../ExchangeServer2013/prepare-mailboxes-for-cross-forest-moves-using-sample-code-exchange-2013-help.md).
 
 - If you created the target mail user using an Active Directory tool other than ILM or Microsoft Identity Integration Server (MIIS), use the **Update-Recipient** cmdlet with the _Identity_ parameter to generate the **LegacyExchangeDN** attribute for the target mail user. We've created a sample PowerShell script that reads from and writes to Active Directory and calls the **Update-Recipient** cmdlet.
 
@@ -39,11 +40,9 @@ After creating the target mail user, you can then run the **New-MoveRequest** or
 
 For more information about remote move requests, see the following topics:
 
-- [New-MigrationBatch](https://docs.microsoft.com/powershell/module/exchange/move-and-migration/new-migrationbatch)
+- [New-MigrationBatch](/powershell/module/exchange/new-migrationbatch)
 
-- [New-MoveRequest](https://docs.microsoft.com/powershell/module/exchange/move-and-migration/new-moverequest)
-
-For more information about remote mailbox moves and remote legacy moves, see [Move Mailboxes to Exchange 2016](https://technet.microsoft.com/library/mt473797.aspx).
+- [New-MoveRequest](/powershell/module/exchange/new-moverequest)
 
 The remainder of this topic describes the mail user Active Directory attributes that are required for a mailbox move. These attributes are configured for you when you use either the code or the script to prepare for the mailbox move. However, you can manually copy these attributes using an Active Directory editor.
 

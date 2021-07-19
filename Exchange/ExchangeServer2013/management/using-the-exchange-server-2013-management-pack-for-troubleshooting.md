@@ -2,13 +2,14 @@
 title: Using the Exchange Server 2013 Management Pack for troubleshooting
 TOCTitle: Using the Exchange Server 2013 Management Pack for troubleshooting
 ms:assetid: c9672dad-1e67-4f07-bad9-539a67f2ac70
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn195913(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn195913(v=EXCHG.150)
 ms:contentKeyID: 53181780
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,7 +27,7 @@ Rob double-clicks on the server which opens the **Health Explorer** window. In t
 
 ![Failed CAS server healthset details](images/Dn195913.8e4d05a6-9128-40d8-b262-e60e9affc973(EXCHG.150).png "Failed CAS server healthset details")
 
-The link provided under External Knowledge Resources takes Rob to the [Troubleshooting OWA.Proxy Health Set](https://technet.microsoft.com/en-us/library/jj737712\(v=exchg.150\)) topic. In this article, Rob sees that the first thing to do is to verify that the issue still exists. Following the instructions, he runs the following command to verify the current state of the OWA.Proxy health set in the Shell:
+The link provided under External Knowledge Resources takes Rob to the [Troubleshooting OWA.Proxy Health Set](/exchange/management/health/troubleshooting-owa-proxy-health-set) topic. In this article, Rob sees that the first thing to do is to verify that the issue still exists. Following the instructions, he runs the following command to verify the current state of the OWA.Proxy health set in the Shell:
 
 ```powershell
 Get-ServerHealth Server1.contoso.com | ?{$_.HealthSetName -eq "OWA.Proxy"}

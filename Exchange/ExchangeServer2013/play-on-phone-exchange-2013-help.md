@@ -4,9 +4,10 @@ TOCTitle: Play on Phone
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 11/17/2014
 ms.reviewer: 
 ms.assetid: 511e4950-340a-48cc-a020-35d11e76b993
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -2,13 +2,14 @@
 title: 'Active Directory does not exist or cannot be contacted: Exchange 2013 Help'
 TOCTitle: Active Directory does not exist or cannot be contacted
 ms:assetid: 56adb6fe-ecb8-4a7f-b440-89aa401c28b7
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.cannotaccessad(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.cannotaccessad(v=EXCHG.150)
 ms:contentKeyID: 46628912
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,14 +25,14 @@ For more information about Active Directory troubleshooting and configuration fo
 
 - [Prepare Active Directory and domains](prepare-active-directory-and-domains-exchange-2013-help.md)
 
-- [Troubleshooting Active Directory Domain Services](https://go.microsoft.com/fwlink/p/?linkid=272144)
+- [Troubleshooting Active Directory Domain Services](/windows-server/identity/ad-ds/manage/ad-ds-troubleshooting)
 
-- [Configuring a Computer for Troubleshooting](https://go.microsoft.com/fwlink/p/?linkid=272141)
+- [Configuring a Computer for Troubleshooting](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc990293(v=ws.10))
 
-- [Troubleshooting Active Directory Replication Problems](https://go.microsoft.com/fwlink/p/?linkid=272142)
+- [Troubleshooting Active Directory Replication Problems](/windows-server/identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems)
 
-- [Monitoring and Troubleshooting Active Directory Replication Using Repadmin](https://go.microsoft.com/fwlink/p/?linkid=272143)
+- [Monitoring and Troubleshooting Active Directory Replication Using Repadmin](/previous-versions/windows/it-pro/windows-server-2003/cc811551(v=ws.10))
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Did you find what you're looking for? Please take a minute to [send us feedback](mailto:exsetuphelpfeedback@microsoft.com?subject=exchange%202013%20setup%20help%20feedback) about the information you were hoping to find.

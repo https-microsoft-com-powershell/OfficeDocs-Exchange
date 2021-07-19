@@ -2,11 +2,10 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 5296a30b-00cb-44be-8855-ed9d14d93e17
-ms.date: 8/15/2018
 ms.reviewer: 
-description: Convert Exchange 2007 mailboxes to mail enabled users.
+description: Convert Exchange 2003 mailboxes to mail enabled users.
 title: Convert Exchange 2003 mailboxes to mail-enabled users
 ms.collection: 
 - exchange-online
@@ -21,6 +20,8 @@ search.appverid:
 - GEA150
 - BCS160
 audience: Admin
+f1.keywords:
+- CSH
 ms.custom: Adm_O365
 ms.service: exchange-online
 manager: serdars
@@ -33,7 +34,7 @@ After you have completed a staged migration, convert the mailboxes to mail-enabl
 
 ## Why convert mailboxes to mail-enabled users?
 
-If you've completed a staged Exchange migration to migrate your organization's Exchange 2003 on-premises mailboxes to Office 365 and you want to manage cloud-based users from your on-premises organization (using Active Directory) you should convert the on-premises mailboxes to mail-enabled users (MEUs).
+If you've completed a staged Exchange migration to migrate your organization's Exchange 2003 on-premises mailboxes to Microsoft 365 or Office 365 and you want to manage cloud-based users from your on-premises organization (using Active Directory) you should convert the on-premises mailboxes to mail-enabled users (MEUs).
 
 This article includes a Windows PowerShell script that collects information from the cloud-based mailboxes and a Visual Basic (VB) script that you can run to convert Exchange 2003 mailboxes to MEUs. When you run this script, the proxy addresses from the cloud-based mailbox are copied to the MEU, which resides in Active Directory. Also, the properties of the MEU enable the Microsoft Online Services Directory Synchronization tool (DirSync) to match the MEU with its corresponding cloud mailbox
 
@@ -41,83 +42,87 @@ It's recommended that you convert on-premises mailboxes to MEUs for a migration 
 
 ## PowerShell script to collect data from cloud mailboxes
 
-You can use the scripts below to collect information about the cloud-based mailboxes, and to convert the Exchange 2007 mailboxes to MEUs.
+You can use the scripts below to collect information about the cloud-based mailboxes, and to convert the Exchange 2003 mailboxes to MEUs.
 
 The following script collects information from your cloud mailboxes and saves it to a CSV file. Run this script first.
 
 Copy the script below to a .txt file and then save the file and save it as ExportO365UserInfo.ps1.
 
-```
+> [!NOTE]
+>
+> - Before you run the following script, you need to install the Exchange Online PowerShell V2 module. For instructions, see [Install and maintain the EXO V2 module](/powershell/exchange/exchange-online-powershell-v2#install-and-maintain-the-exo-v2-module). The EXO V2 module uses modern authentication.
+>
+> - Typically, you can use the script as-is if your organization is Microsoft 365 or Microsoft 365 GCC. If your organization is Office 365 Germany, Microsoft 365 GCC High, or Microsoft 365 DoD, you need to edit the `Connect-ExchangeOnline` line in the script. Specifically, you need to use the *ExchangeEnvironmentName* parameter and the appropriate value for your organization type. For more information, see the examples in [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell#connect-to-exchange-online-powershell-without-using-mfa).
+
+```PowerShell
 Param($migrationCSVFileName = "migration.csv")
 function O365Logon
 {
-	#Check for current open O365 sessions and allow the admin to either use the existing session or create a new one
-	$session = Get-PSSession | ?{$_.ConfigurationName -eq 'Microsoft.Exchange'}
-	if($session -ne $null)
-	{
-		$a = Read-Host "An open session to Office 365 already exists. Do you want to use this session?  Enter y to use the open session, anything else to close and open a fresh session."
-		if($a.ToLower() -eq 'y')
-		{
-			Write-Host "Using existing Office 365 Powershell Session." -ForeGroundColor Green
-			return	
-		}
-		$session | Remove-PSSession
-	}
-	Write-Host "Please enter your Office 365 credentials" -ForeGroundColor Green
-	$cred = Get-Credential
-	$s = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell -Credential $cred -Authentication Basic -AllowRedirection
-	$importresults = Import-PSSession $s
+    #Check for current open O365 sessions and allow the admin to either use the existing session or create a new one
+    $session = Get-PSSession | ?{$_.ConfigurationName -eq 'Microsoft.Exchange'}
+    if($session -ne $null)
+    {
+        $a = Read-Host "An open session to Exchange Online PowerShell already exists. Do you want to use this session?  Enter y to use the open session, anything else to close and open a fresh session."
+        if($a.ToLower() -eq 'y')
+        {
+            Write-Host "Using existing Exchange Online Powershell Session." -ForeGroundColor Green
+            return
+        }
+        Disconnect-ExchangeOnline -Confirm:$false
+    }
+    Import-Module ExchangeOnlineManagement
+    Connect-ExchangeOnline
 }
 function Main
 {
-	#Verify the migration CSV file exists
-	if(!(Test-Path $migrationCSVFileName))
-	{
-		Write-Host "File $migrationCSVFileName does not exist." -ForegroundColor Red
-		Exit
-	}
-	#Import user list from migration.csv file
-	$MigrationCSV = Import-Csv $migrationCSVFileName
-	#Get mailbox list based on email addresses from CSV file
-	$MailBoxList = $MigrationCSV | %{$_.EmailAddress} | Get-Mailbox
-	$Users = @()
-	#Get LegacyDN, Tenant, and On-Premise Email addresses for the users
-	foreach($user in $MailBoxList)
-	{
-		$UserInfo = New-Object System.Object
-		$CloudEmailAddress = $user.EmailAddresses | ?{($_ -match 'onmicrosoft') -and ($_ -cmatch 'smtp:')}	
-		if ($CloudEmailAddress.Count -gt 1)
-		{
-			$CloudEmailAddress = $CloudEmailAddress[0].ToString().ToLower().Replace('smtp:', '')
-			Write-Host "$user returned more than one cloud email address. Using $CloudEmailAddress" -ForegroundColor Yellow
-		}
-		else
-		{
-			$CloudEmailAddress = $CloudEmailAddress.ToString().ToLower().Replace('smtp:', '')
-		}
-		$UserInfo | Add-Member -Type NoteProperty -Name LegacyExchangeDN -Value $user.LegacyExchangeDN	
-		$UserInfo | Add-Member -Type NoteProperty -Name CloudEmailAddress -Value $CloudEmailAddress
-		$UserInfo | Add-Member -Type NoteProperty -Name OnPremiseEmailAddress -Value $user.PrimarySMTPAddress.ToString()
-		$Users += $UserInfo
-	}
-	#Check for existing csv file and overwrite if needed
-	if(Test-Path ".\cloud.csv")
-	{
-		$delete = Read-Host "The file cloud.csv already exists in the current directory. Do you want to delete it?  Enter y to delete, anything else to exit this script."
-		if($delete.ToString().ToLower() -eq 'y')
-		{
-			Write-Host "Deleting existing cloud.csv file" -ForeGroundColor Red
-			Remove-Item ".\cloud.csv"
-		}
-		else
-		{
-			Write-Host "Will NOT delete current cloud.csv file. Exiting script." -ForeGroundColor Green
-			Exit
-		}
-	}
-	$Users | Export-CSV -Path ".\cloud.csv" -notype
-	(Get-Content ".\cloud.csv") | %{$_ -replace '"', ''} | Set-Content ".\cloud.csv" -Encoding Unicode
-	Write-Host "CSV File Successfully Exported to cloud.csv" -ForeGroundColor Green
+    #Verify the migration CSV file exists
+    if(!(Test-Path $migrationCSVFileName))
+    {
+        Write-Host "File $migrationCSVFileName does not exist." -ForegroundColor Red
+        Exit
+    }
+    #Import user list from migration.csv file
+    $MigrationCSV = Import-Csv $migrationCSVFileName
+    #Get mailbox list based on email addresses from CSV file
+    $MailBoxList = $MigrationCSV | %{$_.EmailAddress} | Get-Mailbox
+    $Users = @()
+    #Get LegacyDN, Tenant, and On-Premises Email addresses for the users
+    foreach($user in $MailBoxList)
+    {
+        $UserInfo = New-Object System.Object
+        $CloudEmailAddress = $user.EmailAddresses | ?{($_ -match 'onmicrosoft') -and ($_ -cmatch 'smtp:')}
+        if ($CloudEmailAddress.Count -gt 1)
+        {
+            $CloudEmailAddress = $CloudEmailAddress[0].ToString().ToLower().Replace('smtp:', '')
+            Write-Host "$user returned more than one cloud email address. Using $CloudEmailAddress" -ForegroundColor Yellow
+        }
+        else
+        {
+            $CloudEmailAddress = $CloudEmailAddress.ToString().ToLower().Replace('smtp:', '')
+        }
+        $UserInfo | Add-Member -Type NoteProperty -Name LegacyExchangeDN -Value $user.LegacyExchangeDN
+        $UserInfo | Add-Member -Type NoteProperty -Name CloudEmailAddress -Value $CloudEmailAddress
+        $UserInfo | Add-Member -Type NoteProperty -Name OnPremiseEmailAddress -Value $user.PrimarySMTPAddress.ToString()
+        $Users += $UserInfo
+    }
+    #Check for existing csv file and overwrite if needed
+    if(Test-Path ".\cloud.csv")
+    {
+        $delete = Read-Host "The file cloud.csv already exists in the current directory. Do you want to delete it?  Enter y to delete, anything else to exit this script."
+        if($delete.ToString().ToLower() -eq 'y')
+        {
+            Write-Host "Deleting existing cloud.csv file" -ForeGroundColor Red
+            Remove-Item ".\cloud.csv"
+        }
+        else
+        {
+            Write-Host "Will NOT delete current cloud.csv file. Exiting script." -ForeGroundColor Green
+            Exit
+        }
+    }
+    $Users | Export-CSV -Path ".\cloud.csv" -notype
+    (Get-Content ".\cloud.csv") | %{$_ -replace '"', ''} | Set-Content ".\cloud.csv" -Encoding Unicode
+    Write-Host "CSV File Successfully Exported to cloud.csv" -ForeGroundColor Green
 }
 O365Logon
 Main
@@ -168,14 +173,14 @@ ElseIf StrComp(WScript.Arguments(0), "-c", vbTextCompare) = 0 Then
 ElseIf wscript.Arguments.Count <> 4 Then
     'Invalid Arguments
     WScript.Echo WScript.Arguments.Count
-	Call ShowHelp()
+    Call ShowHelp()
 Else
     'Manual Mode
-	UserDN = wscript.Arguments(0)
-	remoteSMTPAddress = wscript.Arguments(1)
-	remoteLegacyDN = wscript.Arguments(2)
-	domainController = wscript.Arguments(3)
-End If	
+    UserDN = wscript.Arguments(0)
+    remoteSMTPAddress = wscript.Arguments(1)
+    remoteLegacyDN = wscript.Arguments(2)
+    domainController = wscript.Arguments(3)
+End If
 Main()
 'Main entry point
 Sub Main
@@ -195,7 +200,7 @@ End Sub
 Sub ProcessSingleUser(ByRef UserInfo)
     userADSIPath = "LDAP://" & domainController & "/" & UserInfo.DistinguishedName
     WScript.Echo "Processing user " & userADSIPath
-	Set MyUser = GetObject(userADSIPath)
+    Set MyUser = GetObject(userADSIPath)
     proxyCounter = 1
     For Each address in MyUser.Get("proxyAddresses")
         UserInfo.ProxyAddresses.Add proxyCounter, address
@@ -297,45 +302,45 @@ Function ReadCSVFile()
 End Function
 'Process the migration
 Sub ProcessMailbox(User)
-	'Get user properties
-	userADSIPath = "LDAP://" & domainController & "/" & User.DistinguishedName
-	Set MyUser = GetObject(userADSIPath)
-	'Add x.500 address to list of existing proxies
-	existingLegDnFound = FALSE
-	newLegDnFound = FALSE
+    'Get user properties
+    userADSIPath = "LDAP://" & domainController & "/" & User.DistinguishedName
+    Set MyUser = GetObject(userADSIPath)
+    'Add x.500 address to list of existing proxies
+    existingLegDnFound = FALSE
+    newLegDnFound = FALSE
     'Loop through each address in User.ProxyAddresses
-	For i = 1 To User.ProxyAddresses.Count
-		If StrComp(address, "x500:" & User.LegacyDN, vbTextCompare) = 0 Then
-			WScript.Echo "x500 proxy " & User.LegacyDN & " already exists"
-			existingLegDNFound = true
-		End If
-		If StrComp(address, "x500:" & User.CloudLegacyDN, vbTextCompare) = 0 Then
-			WScript.Echo "x500 proxy " & User.CloudLegacyDN & " already exists"
-			newLegDnFound = true
-		End If
-	Next
-	'Add existing leg DN to proxy list
-	If existingLegDnFound = FALSE Then
-		WScript.Echo "Adding existing legacy DN " & User.LegacyDN & " to proxy addresses"
+    For i = 1 To User.ProxyAddresses.Count
+        If StrComp(address, "x500:" & User.LegacyDN, vbTextCompare) = 0 Then
+            WScript.Echo "x500 proxy " & User.LegacyDN & " already exists"
+            existingLegDNFound = true
+        End If
+        If StrComp(address, "x500:" & User.CloudLegacyDN, vbTextCompare) = 0 Then
+            WScript.Echo "x500 proxy " & User.CloudLegacyDN & " already exists"
+            newLegDnFound = true
+        End If
+    Next
+    'Add existing leg DN to proxy list
+    If existingLegDnFound = FALSE Then
+        WScript.Echo "Adding existing legacy DN " & User.LegacyDN & " to proxy addresses"
         User.ProxyAddresses.Add (User.ProxyAddresses.Count+1),("x500:" & User.LegacyDN)
-	End If
-	'Add new leg DN to proxy list
-	If newLegDnFound = FALSE Then
-		'Add new leg DN to proxy addresses
-		WScript.Echo "Adding new legacy DN " & User.CloudLegacyDN & " to existing proxy addresses"
+    End If
+    'Add new leg DN to proxy list
+    If newLegDnFound = FALSE Then
+        'Add new leg DN to proxy addresses
+        WScript.Echo "Adding new legacy DN " & User.CloudLegacyDN & " to existing proxy addresses"
         User.ProxyAddresses.Add (User.ProxyAddresses.Count+1),("x500:" & User.CloudLegacyDN)
-	End If
+    End If
     'Dump out new list of addresses
     WScript.Echo "Original proxy addresses updated count: " & User.ProxyAddresses.Count
-	For i = 1 to User.ProxyAddresses.Count
-		WScript.Echo "	proxyAddress " & i & ": " & User.ProxyAddresses(i)
-	Next
+    For i = 1 to User.ProxyAddresses.Count
+        WScript.Echo " proxyAddress " & i & ": " & User.ProxyAddresses(i)
+    Next
     'Delete the Mailbox
-	WScript.Echo "Opening " & userADSIPath & " as CDOEXM::IMailboxStore object"
-	Set Mailbox = MyUser
-	Wscript.Echo "Deleting Mailbox"
+    WScript.Echo "Opening " & userADSIPath & " as CDOEXM::IMailboxStore object"
+    Set Mailbox = MyUser
+    Wscript.Echo "Deleting Mailbox"
     On Error Resume Next
-	Mailbox.DeleteMailbox
+    Mailbox.DeleteMailbox
     'Handle any errors deleting the mailbox
     If Err.Number <> 0 Then
         WScript.Echo "Error " & Err.number & ". Skipping User." & vbCrLf & "Description: " & Err.Description & vbCrLf
@@ -343,76 +348,76 @@ Sub ProcessMailbox(User)
     End If
     On Error Goto 0
     'Save and continue
-	WScript.Echo "Saving Changes"
-	MyUser.SetInfo
-	WScript.Echo "Refeshing ADSI Cache"
-	MyUser.GetInfo
-	Set Mailbox = nothing
-	'Mail Enable the User
-	WScript.Echo "Opening " & userADSIPath & " as CDOEXM::IMailRecipient"
-	Set MailUser = MyUser
-	WScript.Echo "Mail Enabling user using targetAddress " & User.CloudEmailAddress
-	MailUser.MailEnable User.CloudEmailAddress
-	WScript.Echo "Disabling Recipient Update Service for user"
-	MyUser.PutEx ADS_PROPERTY_APPEND, "msExchPoliciesExcluded", Array("{26491CFC-9E50-4857-861B-0CB8DF22B5D7}")
-	WScript.Echo "Saving Changes"
-	MyUser.SetInfo
-	WScript.Echo "Refreshing ADSI Cache"
-	MyUser.GetInfo
-	'Add Legacy DN back on to the user
-	WScript.Echo "Writing legacyExchangeDN as " & User.LegacyDN
-	MyUser.Put "legacyExchangeDN", User.LegacyDN
+    WScript.Echo "Saving Changes"
+    MyUser.SetInfo
+    WScript.Echo "Refeshing ADSI Cache"
+    MyUser.GetInfo
+    Set Mailbox = nothing
+    'Mail Enable the User
+    WScript.Echo "Opening " & userADSIPath & " as CDOEXM::IMailRecipient"
+    Set MailUser = MyUser
+    WScript.Echo "Mail Enabling user using targetAddress " & User.CloudEmailAddress
+    MailUser.MailEnable User.CloudEmailAddress
+    WScript.Echo "Disabling Recipient Update Service for user"
+    MyUser.PutEx ADS_PROPERTY_APPEND, "msExchPoliciesExcluded", Array("{26491CFC-9E50-4857-861B-0CB8DF22B5D7}")
+    WScript.Echo "Saving Changes"
+    MyUser.SetInfo
+    WScript.Echo "Refreshing ADSI Cache"
+    MyUser.GetInfo
+    'Add Legacy DN back on to the user
+    WScript.Echo "Writing legacyExchangeDN as " & User.LegacyDN
+    MyUser.Put "legacyExchangeDN", User.LegacyDN
     'Add old proxies list back on to the MEU
-	WScript.Echo "Writing proxyAddresses back to the user"
+    WScript.Echo "Writing proxyAddresses back to the user"
     For j=1 To User.ProxyAddresses.Count
         MyUser.PutEx ADS_PROPERTY_APPEND, "proxyAddresses", Array(User.ProxyAddresses(j))
         MyUser.SetInfo
         MyUser.GetInfo
     Next
-	'Add mail attribute back on to the MEU
-	WScript.Echo "Writing mail attribute as " & User.Mail
-	MyUser.Put "mail", User.Mail
-	'Add msExchMailboxGUID back on to the MEU
-	WScript.Echo "Converting mailbox GUID to writable format"
-	Dim mbxGUIDByteArray
-	Call ConvertHexStringToByteArray(OctetToHexString(User.MailboxGUID), mbxGUIDByteArray)
-	WScript.Echo "Writing property msExchMailboxGUID to user object with value " & OctetToHexString(User.MailboxGUID)
-	MyUser.Put "msExchMailboxGUID", mbxGUIDByteArray
-	WScript.Echo "Saving Changes"
-	MyUser.SetInfo
-	WScript.Echo "Migration Complete!" & vbCrLf
+    'Add mail attribute back on to the MEU
+    WScript.Echo "Writing mail attribute as " & User.Mail
+    MyUser.Put "mail", User.Mail
+    'Add msExchMailboxGUID back on to the MEU
+    WScript.Echo "Converting mailbox GUID to writable format"
+    Dim mbxGUIDByteArray
+    Call ConvertHexStringToByteArray(OctetToHexString(User.MailboxGUID), mbxGUIDByteArray)
+    WScript.Echo "Writing property msExchMailboxGUID to user object with value " & OctetToHexString(User.MailboxGUID)
+    MyUser.Put "msExchMailboxGUID", mbxGUIDByteArray
+    WScript.Echo "Saving Changes"
+    MyUser.SetInfo
+    WScript.Echo "Migration Complete!" & vbCrLf
 End Sub
 'Returns the primary SMTP address of a user
 Function GetPrimarySMTPAddress(Addresses)
-	For Each address in Addresses
-		If Left(address, 4) = "SMTP" Then GetPrimarySMTPAddress = address
-	Next
+    For Each address in Addresses
+        If Left(address, 4) = "SMTP" Then GetPrimarySMTPAddress = address
+    Next
 End Function
 'Converts Hex string to byte array for writing to AD
 Sub ConvertHexStringToByteArray(ByVal strHexString, ByRef pByteArray)
-	Set FSO = CreateObject("Scripting.FileSystemObject")
-	Set Stream = CreateObject("ADODB.Stream")
-	Temp = FSO.GetTempName()
-	Set TS = FSO.CreateTextFile(Temp)
-	For i = 1 To (Len (strHexString) -1) Step 2
-		TS.Write Chr("&h" & Mid (strHexString, i, 2))
-	Next
-	TS.Close
-	Stream.Type = 1
-	Stream.Open
-	Stream.LoadFromFile Temp
-	pByteArray = Stream.Read
-	Stream.Close
-	FSO.DeleteFile Temp
-	Set Stream = nothing
-	Set FSO = Nothing
+    Set FSO = CreateObject("Scripting.FileSystemObject")
+    Set Stream = CreateObject("ADODB.Stream")
+    Temp = FSO.GetTempName()
+    Set TS = FSO.CreateTextFile(Temp)
+    For i = 1 To (Len (strHexString) -1) Step 2
+        TS.Write Chr("&h" & Mid (strHexString, i, 2))
+    Next
+    TS.Close
+    Stream.Type = 1
+    Stream.Open
+    Stream.LoadFromFile Temp
+    pByteArray = Stream.Read
+    Stream.Close
+    FSO.DeleteFile Temp
+    Set Stream = nothing
+    Set FSO = Nothing
 End Sub
 'Converts raw bytes from AD GUID to readable string
 Function OctetToHexString (arrbytOctet)
-	OctetToHexStr = ""
-	For k = 1 To Lenb (arrbytOctet)
-		OctetToHexString = OctetToHexString & Right("0" & Hex(Ascb(Midb(arrbytOctet, k, 1))), 2)
-	Next
+    OctetToHexStr = ""
+    For k = 1 To Lenb (arrbytOctet)
+        OctetToHexString = OctetToHexString & Right("0" & Hex(Ascb(Midb(arrbytOctet, k, 1))), 2)
+    Next
 End Function
 Sub ShowHelp()
     WScript.Echo("This script runs in two modes, CSV Mode and Manual Mode." & vbCrLf & "CSV Mode allows you to specify a CSV file from which to pull usernames." & vbCrLf& "Manual mode allows you to run the script against a single user.")
@@ -469,9 +474,9 @@ When you run the Exchange2003MBtoMEU.vbs script, it does the following for each 
   - **targetAddress**: Read from the on-premises mailbox; the value is the primary SMTP of the cloud mailbox.
 
     > [!IMPORTANT]
-    > To enable off-boarding from Office 365 to Exchange 2003, you have to replace the value of msExchMailboxGuid on the MEU with the Guid from the cloud-based mailbox. To obtain the Guids for the mailboxes in your cloud organization and save them to a CSV file, run the following PowerShell command:
+    > To enable off-boarding from Microsoft 365 or Office 365 to Exchange 2003, you have to replace the value of msExchMailboxGuid on the MEU with the Guid from the cloud-based mailbox. To obtain the Guids for the mailboxes in your cloud organization and save them to a CSV file, run the following PowerShell command:
 
-    ```
+    ```PowerShell
     Get-Mailbox | Select PrimarySmtpAddress, Guid | Export-csv -Path .\guid.csv
     ```
 
@@ -491,13 +496,13 @@ Instead of using the input CSV file to convert a batch of mailboxes, you can run
 
 1. Run the ExportO365UserInfo in your cloud organization. Use the CSV file for the migration batch as the input file. The script creates a CSV file named Cloud.csv.
 
-   ```
+   ```PowerShell
    .\ExportO365UserInfo.ps1 <CSV input file>
    ```
 
    For example:
 
-   ```
+   ```PowerShell
    .\ExportO365UserInfo.ps1 .\MigrationBatch1.csv
    ```
 
@@ -507,25 +512,25 @@ Instead of using the input CSV file to convert a batch of mailboxes, you can run
 
 3. In your on-premises organization, run the following command:
 
-    ```
+    ```vbscript
     cscript Exchange2003MBtoMEU.vbs -c .\Cloud.csv <FQDN of on-premises domain controller>
     ```
 
     For example:
 
-    ```
+    ```vbscript
     cscript Exchange2003MBtoMEU.vbs -c .\Cloud.csv DC1.contoso.com
     ```
 
     To run the script in manual mode, enter the following command. Use spaces between each value.
 
-    ```
+    ```vbscript
     cscript Exchange2003MBtoMEU.vbs "<DN of on-premises mailbox>" "<Primary SMTP of cloud mailbox>" "<ExchangeLegacyDN of cloud mailbox>" <FQDN of on-premises domain controller>
     ```
 
     For example:
 
-    ```
+    ```vbscript
     cscript Exchange2003MBtoMEU.vbs "CN=Ann Beebe,CN=Users,DC=contoso,DC=com" "annb@contoso.onmicrosoft.com" "/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=d808d014cec5411ea6de1f70cc116e7b-annb" DC1.contoso.com
     ```
 
@@ -544,13 +549,9 @@ Instead of using the input CSV file to convert a batch of mailboxes, you can run
 5. Use Active Directory Users and Computers, ADSI Edit, or Ldp.exe to verify that the following MEU properties are populated with the correct information.
 
    - legacyExchangeDN
-
    - mail
-
    - msExchMailboxGuid<sup>*</sup>
-
    - proxyAddresses
-
    - targetAddress
 
-    <sup>*</sup>As previously explained, the Exchange2003MBtoMEU.vbs script retains the **msExchMailboxGuid** value from the on-premises mailbox. To enable off-boarding from Office 365 to Exchange 2003, you have to replace the value for the **msExchMailboxGuid** property on the MEU with the Guid from the cloud-based mailbox.
+    <sup>*</sup> As previously explained, the Exchange2003MBtoMEU.vbs script retains the **msExchMailboxGuid** value from the on-premises mailbox. To enable off-boarding from Microsoft 365 or Office 365 to Exchange 2003, you have to replace the value for the **msExchMailboxGuid** property on the MEU with the Guid from the cloud-based mailbox.

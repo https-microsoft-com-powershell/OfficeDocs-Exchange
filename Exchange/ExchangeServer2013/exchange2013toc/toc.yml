@@ -97,7 +97,7 @@
       - name: 'Exchange 2013: editions and versions'
         href: ../exchange-2013-editions-and-versions-exchange-2013-help.md
       - name: Exchange Server Supportability Matrix
-        href: ../exchange-server-supportability-matrix-exchange-2013-help.md
+        href: ../../ExchangeServer/plan-and-deploy/supportability-matrix.md
       - name: Exchange 2013 deployment permissions reference
         href: ../exchange-2013-deployment-permissions-reference-exchange-2013-help.md
       - name: Deployment security checklist
@@ -194,13 +194,13 @@
         - name: The local computer is responsible for expanding group membership_ServerIsGroupExpansionServer
           href: ../the-local-computer-is-responsible-for-expanding-group-membership-serverisgroupexpansionserver-exchange-2013-help.md
         - name: The local computer is responsible for expanding group membership_ServerIsDynamicGroupExpansionServer
-          href: ../the-local-computer-is-responsible-for-expanding-group-membership-serverisdynamicgroupexpansionserver-exchange-2013-help.md
+          href: ../serverisdynamicgroupexpansionserver-exchange-2013-help.md
         - name: The fully-qualified domain name of the computer matches a recipient policy_ServerFQDNMatchesSMTPPolicy
-          href: ../the-fully-qualified-domain-name-of-the-computer-matches-a-recipient-policy-serverfqdnmatchessmtppolicy-exchange-2013-help.md
+          href: ../serverfqdnmatchessmtppolicy-exchange-2013-help.md
         - name: Older database files present_SecondSGFilesExist
           href: ../older-database-files-present-secondsgfilesexist-exchange-2013-help.md
         - name: The schema master is not running Windows Server 2003 Service Pack 1 or later_SchemaFSMONotWin2003SPn
-          href: ../the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-schemafsmonotwin2003spn-exchange-2013-help.md
+          href: ../schemafsmonotwin2003spn-exchange-2013-help.md
         - name: Cannot find a recipient update service_RUSMissing
           href: ../cannot-find-a-recipient-update-service-rusmissing-exchange-2013-help.md
         - name: Active Directory domain is mixed mode_RootDomainModeMixed
@@ -220,9 +220,9 @@
         - name: Not in schema master site/domain_NotInSchemaMasterDomain
           href: ../not-in-schema-master-site-domain-notinschemamasterdomain-exchange-2013-help.md
         - name: Cannot install Exchange 2007 roles after you prepare Active Directory for Exchange 2010_NoE12ServerWarning
-          href: ../cannot-install-exchange-2007-roles-after-you-prepare-active-directory-for-exchange-2010-noe12serverwarning-exchange-2013-help.md
+          href: ../noe12serverwarning-exchange-2013-help.md
         - name: The Distributed Transaction Coordinator Service must be started before setup can continue_MSDTCStopped
-          href: ../the-distributed-transaction-coordinator-service-must-be-started-before-setup-can-continue-msdtcstopped-exchange-2013-help.md
+          href: ../msdtcstopped-exchange-2013-help.md
         - name: Messages currently exist in one or more queues_MessagesInQueue
           href: ../messages-currently-exist-in-one-or-more-queues-messagesinqueue-exchange-2013-help.md
         - name: Storage group drive specification is missing_MailboxLogDriveDoesNotExist
@@ -230,7 +230,7 @@
         - name: Mailbox database drive specification is missing_MailboxEDBDriveDoesNotExist
           href: ../mailbox-database-drive-specification-is-missing-mailboxedbdrivedoesnotexist-exchange-2013-help.md
         - name: The Windows Process Activation Service - Process Model component is required_LonghornWASProcessModelInstalled
-          href: ../the-windows-process-activation-service-process-model-component-is-required-longhornwasprocessmodelinstalled-exchange-2013-help.md
+          href: ../longhornwasprocessmodelinstalled-exchange-2013-help.md
         - name: IIS 7 component not installed_LonghornIIS7WindowsAuthNotInstalled
           href: ../iis-7-component-not-installed-longhorniis7windowsauthnotinstalled-exchange-2013-help.md
         - name: IIS 7 .NET Extensibility component is required_LonghornIIS7NetExt
@@ -260,7 +260,7 @@
         - name: One or more Active Directory Connector servers were found_ADCFound
           href: ../one-or-more-active-directory-connector-servers-were-found-adcfound-exchange-2013-help.md
         - name: The schema master is not running Windows Server 2003 Service Pack 1 or later_DomainControllerIsOutOfSite
-          href: ../the-schema-master-is-not-running-windows-server-2003-service-pack-1-or-later-domaincontrollerisoutofsite-exchange-2013-help.md
+          href: ../domaincontrollerisoutofsite-exchange-2013-help.md
         - name: Domain preparation required_DomainPrepRequired
           href: ../domain-preparation-required-domainpreprequired-exchange-2013-help.md
         - name: The COM+ Event System Service must be started before setup can continue_EventSystemStopped
@@ -665,53 +665,53 @@
       - name: Manage In-Place Archives in Exchange 2013
         href: ../manage-in-place-archives-in-exchange-2013-exchange-2013-help.md
       - name: Modify archive policies
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/modify-archive-policies
+        href: ../../ExchangeOnline/security-and-compliance/modify-archive-policies.md
       - name: Configure archive quotas for an In-Place Archive in Exchange 2013
         href: ../configure-archive-quotas-for-an-in-place-archive-in-exchange-2013-exchange-2013-help.md
       - name: Archive Lync conversations and meeting content to Exchange
-        href: https://docs.microsoft.com/en-us/Office365/SecurityCompliance/eop/exchange-online-protection-overview
+        href: /Office365/SecurityCompliance/eop/exchange-online-protection-overview
       - name: Using OAuth authentication to support Archiving in an Exchange hybrid deployment
         href: ../using-oauth-authentication-to-support-archiving-in-an-exchange-hybrid-deployment-exchange-2013-help.md
     - name: In-Place Hold and Litigation Hold
-      href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-and-litigation-holds
+      href: ../../ExchangeOnline/security-and-compliance/in-place-and-litigation-holds.md
       items:
       - name: Create or remove an In-Place Hold
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/create-or-remove-in-place-holds
+        href: ../../ExchangeOnline/security-and-compliance/create-or-remove-in-place-holds.md
       - name: Place a mailbox on Litigation Hold
-        href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/place-a-mailbox-on-litigation-hold
+        href: /office365/SecurityCompliance/place-a-mailbox-on-litigation-hold
       - name: Place all mailboxes on hold
-        href: https://docs.microsoft.com/en-us/office365/securitycompliance/change-the-hold-duration-for-an-inactive-mailbox
+        href: /office365/securitycompliance/change-the-hold-duration-for-an-inactive-mailbox
       - name: Preserve Bcc and expanded distribution group recipients for eDiscovery
-        href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/preserve-bcc-and-expanded-distribution-group-recipients-for-ediscovery
+        href: /office365/SecurityCompliance/preserve-bcc-and-expanded-distribution-group-recipients-for-ediscovery
     - name: In-Place eDiscovery
-      href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery
+      href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md
       items:
       - name: Assign eDiscovery permissions in Exchange
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/assign-ediscovery-permissions
+        href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/assign-ediscovery-permissions.md
       - name: Create an In-Place eDiscovery search
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search
+        href: /exchange/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search
       - name: Copy eDiscovery search results to a discovery mailbox
         href: ../copy-ediscovery-search-results-to-a-discovery-mailbox-exchange-2013-help.md
       - name: Export eDiscovery search results to a PST file
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/export-search-results
+        href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/export-search-results.md
       - name: Message properties and search operators for In-Place eDiscovery
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/message-properties-and-search-operators
+        href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/message-properties-and-search-operators.md
       - name: Create a discovery mailbox
-        href: https://docs.microsoft.com/en-us/Office365/SecurityCompliance/eop/exchange-online-protection-overview
+        href: /Office365/SecurityCompliance/eop/exchange-online-protection-overview
       - name: Start or stop an In-Place eDiscovery search
-        href: https://docs.microsoft.com/en-us/office365/securitycompliance/use-content-search-in-ediscovery
+        href: /office365/securitycompliance/use-content-search-in-ediscovery
       - name: Modify an In-Place eDiscovery search
-        href: https://docs.microsoft.com/en-us/office365/securitycompliance/search-for-ediscovery-activities-in-the-audit-log
+        href: /office365/securitycompliance/search-for-ediscovery-activities-in-the-audit-log
       - name: Create a custom management scope for In-Place eDiscovery searches
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/create-custom-management-scope
+        href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/create-custom-management-scope.md
       - name: Remove an In-Place eDiscovery search
-        href: https://docs.microsoft.com/en-us/SharePoint/governance/create-and-run-queries-in-the-ediscovery-center
+        href: /SharePoint/governance/create-and-run-queries-in-the-ediscovery-center
       - name: Search for and delete messages - Admin help
-        href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/search-for-and-delete-messagesadmin-help
+        href: /office365/SecurityCompliance/search-for-and-delete-messagesadmin-help
       - name: Reduce the size of a discovery mailbox in Exchange
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/reduce-discovery-mailbox-size
+        href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/reduce-discovery-mailbox-size.md
       - name: Delete and re-create the default discovery mailbox in Exchange
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/delete-and-re-create-default-discovery-mailbox
+        href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/delete-and-re-create-default-discovery-mailbox.md
       - name: Re-create the Discovery system mailbox
         href: ../re-create-the-discovery-system-mailbox-exchange-2013-help.md
       - name: Using OAuth authentication to support eDiscovery in an Exchange hybrid deployment
@@ -721,34 +721,34 @@
       - name: Unsearchable items in Exchange eDiscovery
         href: ../unsearchable-items-in-exchange-ediscovery-exchange-2013-help.md
     - name: Messaging records management
-      href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/messaging-records-management
+      href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/messaging-records-management.md
       items:
       - name: Messaging records management terminology in Exchange 2013
         href: ../messaging-records-management-terminology-in-exchange-2013-exchange-2013-help.md
       - name: Retention tags and retention policies
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/retention-tags-and-policies
+        href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/retention-tags-and-policies.md
         items:
         - name: Default Retention Policy
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/default-retention-policy
+          href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/default-retention-policy.md
         - name: Default folders that support Retention Policy Tags
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/default-folders
+          href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/default-folders.md
         - name: How retention age is calculated
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/retention-age
+          href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/retention-age.md
         - name: 'Checklist: Deploying retention policies'
           href: ../checklist-deploying-retention-policies-exchange-2013-help.md
         - name: Messaging Records Management Procedures
-          href: https://docs.microsoft.com/en-us/office365/securitycompliance/inactive-mailboxes-in-office-365
+          href: /office365/securitycompliance/inactive-mailboxes-in-office-365
           items:
           - name: Create a Retention Policy
-            href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/create-a-retention-policy
+            href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/create-a-retention-policy.md
           - name: Add retention tags to or remove retention tags from a retention policy
-            href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/add-or-remove-retention-tags
+            href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/add-or-remove-retention-tags.md
           - name: Apply a retention policy to mailboxes
-            href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/apply-retention-policy
+            href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/apply-retention-policy.md
           - name: Configure the Managed Folder Assistant
             href: ../configure-the-managed-folder-assistant-exchange-2013-help.md
           - name: Place a mailbox on retention hold
-            href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/mailbox-retention-hold
+            href: ../../ExchangeOnline/security-and-compliance/messaging-records-management/mailbox-retention-hold.md
           - name: Export and import retention tags
             href: ../export-and-import-retention-tags-exchange-2013-help.md
           - name: Configure Outlook client blocking
@@ -770,7 +770,7 @@
       href: ../journaling-exchange-2013-help.md
       items:
       - name: Manage journaling
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/journaling/manage-journaling
+        href: ../../ExchangeOnline/security-and-compliance/journaling/manage-journaling.md
       - name: Disable or enable journaling of voice mail and missed call notifications
         href: ../disable-or-enable-journaling-of-voice-mail-and-missed-call-notifications-exchange-2013-help.md
     - name: Transport rules
@@ -781,87 +781,87 @@
       - name: Transport rule actions
         href: ../mail-flow-rule-actions-in-exchange-2013-exchange-2013-help.md
       - name: Best practices for configuring transport rules
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/configuration-best-practices
+        href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/configuration-best-practices.md
       - name: Use transport rules to inspect message attachments
         href: ../use-transport-rules-to-inspect-message-attachments-exchange-2013-help.md
       - name: Common attachment blocking scenarios for transport rules
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/common-attachment-blocking-scenarios
+        href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/common-attachment-blocking-scenarios.md
       - name: Organization-wide disclaimers, signatures, footers, or headers
-        href: ../organization-wide-disclaimers-signatures-footers-or-headers-exchange-online-help.md
+        href: ../organization-wide-disclaimers-signatures-footers-or-headers-exchange-2013-help.md
       - name: Transport rule procedures
         href: ../mail-flow-or-transport-rule-procedures-exchange-2013-help.md
         items:
         - name: Manage transport rules
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/manage-mail-flow-rules
+          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/manage-mail-flow-rules.md
         - name: Test a transport rule
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/test-mail-flow-rules
+          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/test-mail-flow-rules.md
         - name: Use transport rules so messages can bypass Clutter
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/use-rules-to-bypass-clutter
+          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/use-rules-to-bypass-clutter.md
         - name: Use transport rules to route email based on a list of words, phrases, or patterns
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/use-rules-to-route-email
+          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/use-rules-to-route-email.md
         - name: Register Filter Pack IFilters with Exchange 2013
           href: ../register-filter-pack-ifilters-with-exchange-2013-exchange-2013-help.md
       - name: Manage message approval
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/manage-message-approval
+        href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/manage-message-approval.md
         items:
         - name: Common message approval scenarios
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/common-message-approval-scenarios
+          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/common-message-approval-scenarios.md
         - name: Manage and troubleshoot message approval
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/ttroubleshoot-message-approval
+          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/ttroubleshoot-message-approval.md
     - name: Data loss prevention
-      href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention
+      href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/data-loss-prevention.md
       items:
       - name: How DLP rules are applied to evaluate messages
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/dlp-rule-application
+        href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/dlp-rule-application.md
       - name: Integrating sensitive information rules with transport rules
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/integrate-sensitive-information-rules
+        href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/integrate-sensitive-information-rules.md
       - name: What the sensitive information types look for
-        href: ../what-the-sensitive-information-types-in-exchange-look-for-exchange-online-help.md
+        href: ../what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md
       - name: DLP policy templates
-        href: https://docs.microsoft.com/en-us/office365/securitycompliance/what-the-dlp-policy-templates-include
+        href: /office365/securitycompliance/what-the-dlp-policy-templates-include
         items:
         - name: DLP policy templates supplied in Exchange
-          href: https://docs.microsoft.com/en-us/office365/securitycompliance/create-a-dlp-policy-from-a-template
+          href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
         - name: Policy templates from Microsoft partners
-          href: https://docs.microsoft.com/en-us/office365/securitycompliance/eop/exchange-online-protection-overview
+          href: /office365/securitycompliance/eop/exchange-online-protection-overview
       - name: DLP procedures
         href: ../dlp-procedures-exchange-2013-help.md
         items:
         - name: Manage DLP policies
-          href: https://docs.microsoft.com/en-us/office365/securitycompliance/data-loss-prevention-policies
+          href: /office365/securitycompliance/data-loss-prevention-policies
         - name: Create a DLP policy from a template
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/create-dlp-policy-from-template
+          href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/create-dlp-policy-from-template.md
         - name: Create a custom DLP policy
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/create-custom-dlp-policy
+          href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/create-custom-dlp-policy.md
         - name: Import a custom DLP policy template from a file
-          href: https://docs.microsoft.com/en-us/office365/securitycompliance/create-a-dlp-policy-from-a-template
+          href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
         - name: View DLP policy detection reports
           href: ../view-dlp-policy-detection-reports-exchange-2013-help.md
         - name: Create incident reports for DLP policy detections
           href: ../create-incident-reports-for-dlp-policy-detections-exchange-2013-help.md
         - name: Define your own DLP templates and information types
-          href: https://docs.microsoft.com/en-us/office365/securitycompliance/create-a-dlp-policy-from-a-template
+          href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
           items:
           - name: Developing DLP policy template files
-            href: https://docs.microsoft.com/en-us/office365/securitycompliance/create-a-dlp-policy-from-a-template
+            href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
           - name: Developing sensitive information rule packages
-            href: https://docs.microsoft.com/en-us/Office365/SecurityCompliance/eop/exchange-online-protection-overview
+            href: /Office365/SecurityCompliance/eop/exchange-online-protection-overview
           - name: Matching methods and techniques for rule packages
-            href: https://docs.microsoft.com/en-us/office365/securitycompliance/eop/exchange-online-protection-overview
+            href: /office365/securitycompliance/eop/exchange-online-protection-overview
           - name: Customize the built-in DLP sensitive information types
-            href: https://docs.microsoft.com/en-us/office365/securitycompliance/customize-a-built-in-sensitive-information-type
+            href: /office365/securitycompliance/customize-a-built-in-sensitive-information-type
           - name: Export DLP sensitive information types from Exchange
-            href: https://docs.microsoft.com/en-us/office365/securitycompliance/eop/exchange-online-protection-overview
+            href: /office365/securitycompliance/eop/exchange-online-protection-overview
       - name: Policy Tips
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/policy-tips
+        href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/policy-tips.md
         items:
         - name: Manage policy tips
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/manage-policy-tips
+          href: ../../ExchangeOnline/security-and-compliance/data-loss-prevention/manage-policy-tips.md
       - name: Document Fingerprinting
         href: ../overview-of-document-fingerprinting-in-exchange.md
         items:
         - name: Protect form data with document fingerprinting
-          href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting
+          href: /exchange/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting
     - name: Information Rights Management
       href: ../information-rights-management-exchange-2013-help.md
       items:
@@ -903,14 +903,14 @@
         - name: Enable or Disable Information Rights Management Logging
           href: ../enable-or-disable-information-rights-management-logging-exchange-2013-help.md
     - name: S/MIME for message signing and encryption
-      href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/s-mime-for-message-signing-and-encryption
+      href: /office365/SecurityCompliance/s-mime-for-message-signing-and-encryption
       items:
       - name: Configure S/MIME settings for Outlook Web App
-        href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/configure-s-mime-settings-for-outlook-web-app
+        href: /office365/SecurityCompliance/configure-s-mime-settings-for-outlook-web-app
       - name: Set up virtual certificate collection to validate S/MIME
-        href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/set-up-virtual-certificate-collection-to-validate-s-mime
+        href: /office365/SecurityCompliance/set-up-virtual-certificate-collection-to-validate-s-mime
       - name: Send and receive S/MIME signed and encrypted email
-        href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/send-and-receive-s-mime-signed-and-encrypted-email
+        href: /office365/SecurityCompliance/send-and-receive-s-mime-signed-and-encrypted-email
     - name: Mailbox audit logging
       href: ../mailbox-audit-logging-exchange-2013-help.md
       items:
@@ -933,18 +933,18 @@
       - name: Manage administrator audit logging
         href: ../manage-administrator-audit-logging-exchange-2013-help.md
     - name: Exchange auditing reports
-      href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/exchange-auditing-reports/exchange-auditing-reports
+      href: ../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/exchange-auditing-reports.md
       items:
       - name: Export mailbox audit logs
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/exchange-auditing-reports/export-mailbox-audit-logs
+        href: ../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/export-mailbox-audit-logs.md
       - name: Run a non-owner mailbox access report
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/exchange-auditing-reports/non-owner-mailbox-access-report
+        href: ../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/non-owner-mailbox-access-report.md
       - name: Run a per-mailbox litigation hold report
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/exchange-auditing-reports/per-mailbox-litigation-hold-report
+        href: ../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/per-mailbox-litigation-hold-report.md
       - name: Search the role group changes or administrator audit logs
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/exchange-auditing-reports/search-role-group-changes
+        href: ../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md
       - name: View the administrator audit log
-        href: https://docs.microsoft.com/en-us/exchange/security-and-compliance/exchange-auditing-reports/view-administrator-audit-log
+        href: ../../ExchangeOnline/security-and-compliance/exchange-auditing-reports/view-administrator-audit-log.md
   - name: Anti-spam and anti-malware protection
     href: ../anti-spam-and-anti-malware-protection-exchange-2013-help.md
     items:
@@ -1104,7 +1104,7 @@
         - name: Configure an accepted domain for an independent business unit
           href: ../configure-an-accepted-domain-for-an-independent-business-unit-exchange-2013-help.md
         - name: Configure an accepted domain for a business unit with mailboxes outside your Exchange organization
-          href: ../configure-an-accepted-domain-for-a-business-unit-with-mailboxes-outside-your-exchange-organization-exchange-2013-help.md
+          href: ../config-accepted-domain-business-unit-outside-org-exchange-2013-help.md
         - name: Configure Exchange to accept mail for multiple authoritative domains
           href: ../configure-exchange-to-accept-mail-for-multiple-authoritative-domains-exchange-2013-help.md
       - name: Remote domains
@@ -1119,7 +1119,7 @@
         - name: Configure remote domain message reporting
           href: ../configure-remote-domain-message-reporting-exchange-2013-help.md
         - name: Supported character sets for remote domains
-          href: https://docs.microsoft.com/en-us/exchange/mail-flow-best-practices/remote-domains/supported-character-sets
+          href: ../../ExchangeOnline/mail-flow-best-practices/remote-domains/supported-character-sets.md
     - name: Transport agents
       href: ../transport-agents-exchange-2013-help.md
       items:
@@ -1261,51 +1261,51 @@
     - name: Create user mailboxes
       href: ../create-user-mailboxes-exchange-2013-help.md
     - name: Manage user mailboxes
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes.md
       items:
       - name: Add or remove email addresses for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/add-or-remove-email-addresses.md
       - name: Configure email forwarding for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/configure-email-forwarding
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/configure-email-forwarding.md
       - name: Configure message delivery restrictions for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/configure-message-delivery-restrictions
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/configure-message-delivery-restrictions.md
       - name: Configure message size limits for a mailbox
         href: ../configure-message-size-limits-for-a-mailbox-exchange-2013-help.md
       - name: Configure storage quotas for a mailbox
         href: ../configure-storage-quotas-for-a-mailbox-exchange-2013-help.md
       - name: Convert a Mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/convert-a-mailbox
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/convert-a-mailbox.md
       - name: Enable or disable Exchange ActiveSync for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-exchange-activesync
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-exchange-activesync.md
       - name: Enable or disable MAPI for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-mapi
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-mapi.md
       - name: Enable or disable Outlook Web App for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-outlook-web-app
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-outlook-web-app.md
       - name: Enable or disable single item recovery for a mailbox
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-single-item-recovery
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/enable-or-disable-single-item-recovery.md
     - name: Manage linked mailboxes
       href: ../manage-linked-mailboxes-exchange-2013-help.md
     - name: Create and manage distribution groups
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups.md
       items:
       - name: Create a distribution group naming policy
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-distribution-groups/create-group-naming-policy
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-distribution-groups/create-group-naming-policy.md
       - name: Override the distribution group naming policy
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-distribution-groups/override-group-naming-policy
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-distribution-groups/override-group-naming-policy.md
     - name: Manage mail-enabled security groups
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-mail-enabled-security-groups.md
     - name: Manage dynamic distribution groups
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups.md
       items:
       - name: View members of a dynamic distribution group
-        href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/view-group-members
+        href: ../../ExchangeOnline/recipients-in-exchange-online/manage-dynamic-distribution-groups/view-group-members.md
     - name: Manage mail contacts
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-contacts
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-mail-contacts.md
       items:
       - name: Enable or disable email for a mail contact
         href: ../enable-or-disable-email-for-a-mail-contact-exchange-2013-help.md
     - name: Manage mail users
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-users
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-mail-users.md
       items:
       - name: Enable or disable email for a mail user
         href: ../enable-or-disable-email-for-a-mail-user-exchange-2013-help.md
@@ -1331,7 +1331,7 @@
     - name: Custom attributes
       href: ../custom-attributes-exchange-2013-help.md
     - name: Manage permissions for recipients
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-permissions-for-recipients
+      href: ../../ExchangeOnline/recipients-in-exchange-online/manage-permissions-for-recipients.md
     - name: Unsupported characters for Exchange 2013 object names
       href: ../unsupported-characters-for-exchange-2013-object-names-exchange-2013-help.md
     - name: Automatic mailbox distribution
@@ -1354,47 +1354,47 @@
       - name: Considerations when deploying public folders
         href: ../considerations-when-deploying-public-folders-exchange-2013-help.md
       - name: Accessing public folders with Outlook 2016 for Mac
-        href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/access-public-folders-with-outlook-2016-for-mac
-      - name: Migrate your public folders to Office 365 Groups
-        href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/migrate-your-public-folders-to-office-365-groups
+        href: ../../ExchangeOnline/collaboration-exo/public-folders/access-public-folders-with-outlook-2016-for-mac.md
+      - name: Migrate your public folders to Microsoft 365 Groups
+        href: ../../ExchangeOnline/collaboration-exo/public-folders/migrate-your-public-folders-to-microsoft-365-groups.md
       - name: Public folder procedures
         href: ../public-folder-procedures-exchange-2013-help.md
         items:
         - name: Set up public folders in a new organization
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/set-up-public-folders
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/set-up-public-folders.md
         - name: Configure legacy on-premises public folders for a hybrid deployment
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/set-up-legacy-hybrid-public-folders
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/set-up-legacy-hybrid-public-folders.md
         - name: Configure Exchange 2013 public folders for a hybrid deployment
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/set-up-modern-hybrid-public-folders
+          href: /exchange/collaboration-exo/public-folders/set-up-modern-hybrid-public-folders
         - name: Configure Exchange Online public folders for a hybrid deployment
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/set-up-exo-hybrid-public-folders
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/set-up-exo-hybrid-public-folders.md
         - name: Configure legacy public folders where user mailboxes are on Exchange 2013 servers
           href: ../configure-legacy-public-folders-where-user-mailboxes-are-on-exchange-2013-servers-exchange-2013-help.md
         - name: Use batch migration to migrate public folders to Exchange 2013 from previous versions
           href: ../use-batch-migration-to-migrate-public-folders-to-exchange-2013-from-previous-versions-exchange-2013-help.md
         - name: Use batch migration to migrate legacy public folders to Office 365 and Exchange Online
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/batch-migration-of-legacy-public-folders
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/batch-migration-of-legacy-public-folders.md
         - name: Use batch migration to migrate Exchange 2013 public folders to Exchange Online
-          href: https://docs.microsoft.com/exchange/collaboration/public-folders/migrate-to-exchange-online
+          href: ../../ExchangeServer/collaboration/public-folders/migrate-to-exchange-online.md
           items:
           - name: Roll back a public folder migration from Exchange 2013 to Exchange Online
-            href: https://docs.microsoft.com/exchange/collaboration/public-folders/roll-back-exchange-online-migration
-        - name: Use batch migration to migrate Exchange 2010 public folders to Office 365 Groups
-          href: ../use-batch-migration-to-migrate-exchange-2010-public-folders-to-office-365-groups-exchange-2013-help.md
-        - name: Use batch migration to migrate Exchange 2013 public folders to Office 365 Groups
-          href: ../use-batch-migration-to-migrate-exchange-2013-public-folders-to-office-365-groups-exchange-2013-help.md
+            href: ../../ExchangeServer/collaboration/public-folders/roll-back-exchange-online-migration.md
+        - name: Use batch migration to migrate Exchange 2010 public folders to Microsoft 365 Groups
+          href: ../use-batch-migration-to-migrate-exchange-2010-public-folders-to-microsoft-365-groups-exchange-2013-help.md
+        - name: Use batch migration to migrate Exchange 2013 public folders to Microsoft 365 Groups
+          href: ../use-batch-migration-to-migrate-exchange-2013-public-folders-to-microsoft-365-groups-exchange-2013-help.md
         - name: Create a public folder mailbox
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/create-public-folder-mailbox
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/create-public-folder-mailbox.md
         - name: Create a public folder
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/create-public-folder
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/create-public-folder.md
         - name: Mail-enable or mail-disable a public folder
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/enable-or-disable-mail-for-public-folder
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/enable-or-disable-mail-for-public-folder.md
         - name: Update the public folder hierarchy
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/update-public-folder-hierarchy
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/update-public-folder-hierarchy.md
         - name: Remove a public folder
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/remove-public-folder
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/remove-public-folder.md
         - name: Use favorite public folders in Outlook on the web
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/use-favorite-public-folders
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/use-favorite-public-folders.md
         - name: Move a public folder mailbox to a different mailbox database
           href: ../move-a-public-folder-mailbox-to-a-different-mailbox-database-exchange-2013-help.md
         - name: Move a public folder to a different public folder mailbox
@@ -1402,7 +1402,7 @@
         - name: Restore public folders and public folder mailboxes from failed moves
           href: ../restore-public-folders-and-public-folder-mailboxes-from-failed-moves-exchange-2013-help.md
         - name: View statistics for public folders and public folder items
-          href: https://docs.microsoft.com/en-us/exchange/collaboration-exo/public-folders/view-public-folder-statistics
+          href: ../../ExchangeOnline/collaboration-exo/public-folders/view-public-folder-statistics.md
     - name: Shared mailboxes
       href: ../shared-mailboxes-exchange-2013-help.md
       items:
@@ -1412,7 +1412,7 @@
     href: ../email-addresses-and-address-books-exchange-2013-help.md
     items:
     - name: Address book policies
-      href: https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/address-book-policies
+      href: ../../ExchangeOnline/address-books/address-book-policies/address-book-policies.md
       items:
       - name: 'Scenario: Deploying address book policies'
         href: ../scenario-deploying-address-book-policies-exchange-2013-help.md
@@ -1422,13 +1422,13 @@
         - name: Install and configure the Address Book Policy Routing agent
           href: ../install-and-configure-the-address-book-policy-routing-agent-exchange-2013-help.md
         - name: Create an address book policy
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/create-an-address-book-policy
+          href: ../../ExchangeOnline/address-books/address-book-policies/create-an-address-book-policy.md
         - name: Assign an address book policy to mail users
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/assign-an-address-book-policy-to-mail-users
+          href: ../../ExchangeOnline/address-books/address-book-policies/assign-an-address-book-policy-to-mail-users.md
         - name: Change the settings of an address book policy
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/change-the-settings-of-an-address-book-policy
+          href: ../../ExchangeOnline/address-books/address-book-policies/change-the-settings-of-an-address-book-policy.md
         - name: Remove an address book policy
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-book-policies/remove-an-address-book-policy
+          href: ../../ExchangeOnline/address-books/address-book-policies/remove-an-address-book-policy.md
     - name: Details templates
       href: ../details-templates-exchange-2013-help.md
       items:
@@ -1454,28 +1454,28 @@
       href: ../offline-address-books-exchange-2013-help.md
       items:
       - name: Offline address book procedures
-        href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/offline-address-book-procedures
+        href: ../../ExchangeOnline/address-books/offline-address-books/offline-address-book-procedures.md
         items:
         - name: Create an offline address book
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/create-offline-address-book
+          href: ../../ExchangeOnline/address-books/offline-address-books/create-offline-address-book.md
         - name: Add an address list to or remove an address list from an offline address book
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/add-or-remove-an-address-list
+          href: ../../ExchangeOnline/address-books/offline-address-books/add-or-remove-an-address-list.md
         - name: Change the default offline address book
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/change-default-offline-address-book
+          href: ../../ExchangeOnline/address-books/offline-address-books/change-default-offline-address-book.md
         - name: Provision recipients for offline address book downloads
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/provision-recipients
+          href: ../../ExchangeOnline/address-books/offline-address-books/provision-recipients.md
         - name: Remove an offline address book
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/remove-offline-address-book
+          href: ../../ExchangeOnline/address-books/offline-address-books/remove-offline-address-book.md
         - name: Update an offline address book
           href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/update-offline-address-book
         - name: Create an offline address book virtual directory
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/create-virtual-directory
+          href: /exchange/address-books/offline-address-books/create-virtual-directory
         - name: Change the offline address book generation schedule
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/change-address-book-generation-schedule
+          href: /exchange/address-books/offline-address-books/change-address-book-generation-schedule
         - name: Configure offline address book distribution properties
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/configure-distribution-properties
+          href: ../../ExchangeOnline/address-books/offline-address-books/configure-distribution-properties.md
     - name: Address lists
-      href: https://docs.microsoft.com/en-us/exchange/address-books/address-lists/address-lists
+      href: ../../ExchangeOnline/address-books/address-lists/address-lists.md
       items:
       - name: Address list procedures
         href: ../address-list-procedures-exchange-2013-help.md
@@ -1485,24 +1485,24 @@
         - name: Update an address list
           href: ../update-an-address-list-exchange-2013-help.md
         - name: Create an address list by using recipient filters
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-lists/use-recipient-filters-to-create-an-address-list
+          href: ../../ExchangeOnline/address-books/address-lists/use-recipient-filters-to-create-an-address-list.md
         - name: Move an address list
           href: ../move-an-address-list-exchange-2013-help.md
         - name: Remove an address list
           href: ../remove-an-address-list-exchange-2013-help.md
         - name: Create a global address list
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-lists/create-global-address-list
+          href: ../../ExchangeOnline/address-books/address-lists/create-global-address-list.md
         - name: Configure global address list properties
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-lists/configure-global-address-list-properties
+          href: ../../ExchangeOnline/address-books/address-lists/configure-global-address-list-properties.md
         - name: Remove a global address list
-          href: https://docs.microsoft.com/en-us/exchange/address-books/address-lists/remove-a-global-address-list
+          href: ../../ExchangeOnline/address-books/address-lists/remove-a-global-address-list.md
         - name: Update a global address list
           href: ../update-a-global-address-list-exchange-2013-help.md
     - name: Hierarchical address books
-      href: https://docs.microsoft.com/en-us/exchange/address-books/hierarchical-address-books/hierarchical-address-books
+      href: ../../ExchangeOnline/address-books/hierarchical-address-books/hierarchical-address-books.md
       items:
       - name: Enable or disable hierarchical address books
-        href: https://docs.microsoft.com/en-us/exchange/address-books/hierarchical-address-books/enable-or-disable-hierarchical-address-books
+        href: ../../ExchangeOnline/address-books/hierarchical-address-books/enable-or-disable-hierarchical-address-books.md
   - name: Sharing
     href: ../sharing-exchange-2013-help.md
     items:
@@ -1574,8 +1574,6 @@
           href: ../add-or-remove-users-from-a-mobile-mailbox-policy-exchange-2013-help.md
         - name: Create or modify a mobile device mailbox policy
           href: ../create-or-modify-a-mobile-device-mailbox-policy-exchange-2013-help.md
-        - name: Supported mobile device mailbox policies for Windows Phones and devices
-          href: ../supported-mobile-device-mailbox-policies-for-windows-phones-and-devices-exchange-2013-help.md
       - name: Mobile devices
         href: ../mobile-devices-exchange-2013-help.md
         items:
@@ -1586,9 +1584,9 @@
         - name: Mobile phone and tablet features
           href: ../mobile-phone-and-tablet-features-exchange-2013-help.md
         - name: Perform a remote wipe on a mobile phone
-          href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mobile-access/remote-wipe-on-mobile-phone
+          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/remote-wipe-on-mobile-phone.md
         - name: Configure mobile phones to access email
-          href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mobile-access/configure-email-on-mobile-phone
+          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/configure-email-on-mobile-phone.md
     - name: POP3 and IMAP4
       href: ../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md
       items:
@@ -1628,19 +1626,19 @@
         - name: Configure protocol logging for POP3 and IMAP4
           href: ../configure-protocol-logging-for-pop3-and-imap4-exchange-2013-help.md
     - name: Outlook for iOS and Android
-      href: ../outlook-for-ios-and-android-exchange-2013-help.md
+      href: ../../ExchangeServer/clients/outlook-for-ios-and-android/outlook-for-ios-and-android.md?view=exchserver-2019
       items:
       - name: Using hybrid Modern Authentication with Outlook for iOS and Android
-        href: ../using-hybrid-modern-authentication-with-outlook-for-ios-and-android-exchange-2013-help.md
+        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md?view=exchserver-2019
       - name: Using Basic authentication with Outlook for iOS and Android
-        href: ../using-basic-authentication-with-outlook-for-ios-and-android-exchange-2013-help.md
+        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-basic-auth.md?view=exchserver-2019
         items:
         - name: Account setup in Outlook for iOS and Android using Basic authentication
-          href: ../account-setup-in-outlook-for-ios-and-android-using-basic-authentication-exchange-2013-help.md
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/account-setup.md?view=exchserver-2019
         - name: Passwords and Security in Outlook for iOS and Android for Exchange Server
-          href: ../passwords-and-security-in-outlook-for-ios-and-android-for-exchange-server-exchange-2013-help.md
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/passwords-and-security.md?view=exchserver-2019
         - name: Managing devices for Outlook for iOS and Android for Exchange Server
-          href: ../managing-devices-for-outlook-for-ios-and-android-for-exchange-server-exchange-2013-help.md
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/manage-devices.md?view=exchserver-2019
     - name: Client protocol management
       href: ../client-protocol-management-exchange-2013-help.md
       items:
@@ -1655,19 +1653,19 @@
       href: ../outlook-web-app-exchange-2013-help.md
       items:
       - name: Outlook Web App mailbox policies
-        href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies
+        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies.md
         items:
         - name: Outlook Web App mailbox policy procedures
-          href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policy-procedures
+          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policy-procedures.md
           items:
           - name: Create an Outlook Web App mailbox policy
-            href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/create-outlook-web-app-mailbox-policy
+            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/create-outlook-web-app-mailbox-policy.md
           - name: Apply or remove an Outlook Web App mailbox policy on a mailbox
-            href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy
+            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy.md
           - name: Remove an Outlook Web App mailbox policy from Exchange
-            href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/remove-outlook-web-app-mailbox-policy
+            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/remove-outlook-web-app-mailbox-policy.md
           - name: View or configure Outlook Web App mailbox policy properties
-            href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/configure-outlook-web-app-mailbox-policy-properties
+            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/configure-outlook-web-app-mailbox-policy-properties.md
       - name: Integrate Outlook Web App with Lync Server
         href: ../integrate-outlook-web-app-with-lync-server-exchange-2013-help.md
       - name: View or configure Outlook Web App virtual directories
@@ -1685,19 +1683,19 @@
       - name: Using Outlook Web App Web parts
         href: ../using-outlook-web-app-web-parts-exchange-2013-help.md
     - name: MailTips
-      href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mailtips/mailtips
+      href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips.md
       items:
       - name: Enable or disable MailTips
         href: ../enable-or-disable-mailtips-exchange-2013-help.md
       - name: Configure the large audience size for your organization
-        href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mailtips/configure-large-audience-size
+        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/configure-large-audience-size.md
       - name: Configure custom MailTips for recipients
-        href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mailtips/configure-custom-mailtips
+        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/configure-custom-mailtips.md
       - name: MailTips over organization relationships
-        href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mailtips/mailtips-over-organization-relationships
+        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips-over-organization-relationships.md
         items:
         - name: Manage MailTips for organization relationships
-          href: https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships
+          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships.md
       - name: Group metrics and MailTips
         href: ../group-metrics-and-mailtips-exchange-2013-help.md
         items:
@@ -1777,9 +1775,9 @@
         - name: Install a UM language pack
           href: ../install-a-um-language-pack-exchange-2013-help.md
         - name: Set the default language on a dial plan
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/set-dial-plan-default-language
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/set-dial-plan-default-language.md
         - name: Select the language for an auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/select-auto-attendant-language
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/select-auto-attendant-language.md
         - name: Remove a UM language pack
           href: ../remove-a-um-language-pack-exchange-2013-help.md
         - name: Import and export custom greetings, announcements, menus, and prompts
@@ -1787,9 +1785,9 @@
         - name: Import custom prompts from Exchange 2007 to Exchange 2013
           href: ../import-custom-prompts-from-exchange-2007-to-exchange-2013-exchange-2013-help.md
         - name: Enable custom prompt recording using the telephone user interface
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/enable-custom-prompt-recording
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/greetings-announcements-menus-and-prompts/enable-custom-prompt-recording.md
     - name: Telephone system integration with UM
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephone-system-integration-with-um
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/telephone-system-integration-with-um.md
       items:
       - name: Telephony concepts and components
         href: ../telephony-concepts-and-components-exchange-2013-help.md
@@ -1799,9 +1797,9 @@
         href: ../connect-um-to-your-telephone-system-exchange-2013-help.md
         items:
         - name: Telephony advisor for Exchange 2013
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013.md
         - name: Configuration notes for supported VoIP gateways, IP PBXs, and PBXs
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways.md
         - name: Connect a VoIP gateway, IP PBX, or session border controller to UM
           href: ../connect-a-voip-gateway-ip-pbx-or-session-border-controller-to-um-exchange-2013-help.md
         - name: Connect UM to a supported VoIP gateway
@@ -1809,12 +1807,12 @@
         - name: Connect a VoIP gateway to communicate with a PBX
           href: ../connect-a-voip-gateway-to-communicate-with-a-pbx-exchange-2013-help.md
         - name: Configuration notes for supported session border controllers
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-session-border-controllers
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-session-border-controllers.md
     - name: Connect your voice mail system to your telephone network
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/connect-voice-mail-system
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/connect-voice-mail-system.md
       items:
       - name: UM dial plans
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/um-dial-plans
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-dial-plans.md
         items:
         - name: Audio codecs
           href: ../audio-codecs-exchange-2013-help.md
@@ -1824,61 +1822,61 @@
           href: ../um-dial-plan-procedures-exchange-2013-help.md
           items:
           - name: Create a UM dial plan
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md
           - name: Manage a UM dial plan
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/manage-um-dial-plan
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/manage-um-dial-plan.md
           - name: Add Mailbox and Client Access servers to a SIP URI dial plan
             href: ../add-mailbox-and-client-access-servers-to-a-sip-uri-dial-plan-exchange-2013-help.md
           - name: Remove Mailbox and Client Access servers from a SIP URI dial plan
             href: ../remove-mailbox-and-client-access-servers-from-a-sip-uri-dial-plan-exchange-2013-help.md
           - name: Change the audio codec
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/change-audio-codec
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/change-audio-codec.md
           - name: Configure the maximum call duration
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-maximum-call-duration
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-maximum-call-duration.md
           - name: Configure the maximum recording duration
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-maximum-recording-duration
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-maximum-recording-duration.md
           - name: Configure the recording idle time-out value
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-recording-idle-time-out
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-recording-idle-time-out.md
           - name: Configure the VoIP security setting
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-voip-security-setting
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-voip-security-setting.md
           - name: Configure a dial plan for users who have similar names
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-dial-plan-for-users-with-similar-names
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-dial-plan-for-users-with-similar-names.md
           - name: Delete a UM dial plan
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/delete-um-dial-plan
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/delete-um-dial-plan.md
       - name: UM IP gateways
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/um-ip-gateways
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-ip-gateways.md
         items:
         - name: UM IP gateway procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/um-ip-gateway-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-ip-gateway-procedures.md
           items:
           - name: Create a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/create-um-ip-gateway.md
           - name: Manage a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/manage-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/manage-um-ip-gateway.md
           - name: Enable a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/enable-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/enable-um-ip-gateway.md
           - name: Disable a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/disable-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/disable-um-ip-gateway.md
           - name: Configure a fully qualified domain name
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-fully-qualified-domain-name
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-fully-qualified-domain-name.md
           - name: Configure the IP address
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-ip-address
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-ip-address.md
           - name: Configure the listening port
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-listening-port
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/configure-listening-port.md
           - name: Delete a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/delete-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/delete-um-ip-gateway.md
       - name: UM hunt groups
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/um-hunt-groups
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-hunt-groups.md
         items:
         - name: UM hunt group procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/um-hunt-group-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-hunt-group-procedures.md
           items:
           - name: Create a UM hunt group
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-hunt-group
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/create-um-hunt-group.md
           - name: View a UM hunt group
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/view-um-hunt-group
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/view-um-hunt-group.md
           - name: Delete a UM hunt group
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/delete-um-hunt-group
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/delete-um-hunt-group.md
       - name: UM services
         href: ../um-services-exchange-2013-help.md
         items:
@@ -1914,349 +1912,349 @@
           - name: Set the TLS listening port on a Client Access server
             href: ../set-the-tls-listening-port-on-a-client-access-server-exchange-2013-help.md
     - name: Automatically answer and route incoming calls
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/automatically-answer-and-route-calls
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/automatically-answer-and-route-calls.md
       items:
       - name: DTMF interface
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/dtmf-interface
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/dtmf-interface.md
       - name: UM auto attendant procedures
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/um-auto-attendant-procedures
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/um-auto-attendant-procedures.md
         items:
         - name: Set up a UM auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-up-um-auto-attendant
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-up-um-auto-attendant.md
           items:
           - name: Create a UM auto attendant
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-um-auto-attendant
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-um-auto-attendant.md
           - name: Add an auto attendant extension number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/add-an-auto-attendant-extension-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/add-an-auto-attendant-extension-number.md
           - name: Configure business hours
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-business-hours
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-business-hours.md
           - name: Create a holiday schedule
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-holiday-schedule
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-holiday-schedule.md
           - name: Enter a business name
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enter-a-business-name
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enter-a-business-name.md
           - name: Set a business location
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-a-business-location
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-a-business-location.md
           - name: Configure the time zone
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-the-time-zone
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-the-time-zone.md
           - name: Enable a customized business hours greeting
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-business-hours-greeting
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-business-hours-greeting.md
           - name: Enable a customized business hours menu prompt
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-business-hours-menu-prompt
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-business-hours-menu-prompt.md
           - name: Enable a customized non-business hours greeting
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-non-business-hours-greeting
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-non-business-hours-greeting.md
           - name: Enable a customized non-business hours menu prompt
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-non-business-hours-menu-prompt
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-a-customized-non-business-hours-menu-prompt.md
           - name: Enable an informational announcement
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-an-informational-announcement
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-an-informational-announcement.md
           - name: Create menu navigation
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-menu-navigation
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-menu-navigation.md
           - name: Create business hours navigation menus
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-business-hours-navigation-menus
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-business-hours-navigation-menus.md
           - name: Create non-business hours navigation menus
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-non-business-hours-navigation-menus
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-non-business-hours-navigation-menus.md
         - name: Manage a UM auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/manage-um-auto-attendant
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/manage-um-auto-attendant.md
         - name: Configure a DTMF fallback auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-dtmf-fallback-auto-attendant
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-dtmf-fallback-auto-attendant.md
         - name: Enable a UM auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-um-auto-attendant
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-um-auto-attendant.md
         - name: Disable a UM auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/disable-um-auto-attendant
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/disable-um-auto-attendant.md
         - name: Delete a UM auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/delete-um-auto-attendant
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/delete-um-auto-attendant.md
         - name: Enable or disable automatic speech recognition
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-disable-speech-recognition
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-disable-speech-recognition.md
         - name: Enable or prevent transferring calls from an auto attendant
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-prevent-transferring-calls
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-prevent-transferring-calls.md
         - name: Enable or disable sending voice messages to users
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-disable-sending-voice-messages
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-disable-sending-voice-messages.md
         - name: Enable or disable directory lookups
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-disable-directory-lookups
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/enable-or-disable-directory-lookups.md
         - name: Configure the group of users that can be contacted
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-users-that-can-be-contacted
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-users-that-can-be-contacted.md
         - name: Configure an auto attendant for users who have similar names
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-auto-attendant-for-users-with-similar-names
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/configure-auto-attendant-for-users-with-similar-names.md
     - name: Set up voice mail for users
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/set-up-voice-mail
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/set-up-voice-mail.md
       items:
       - name: UM mailbox policies
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/um-mailbox-policies
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/um-mailbox-policies.md
         items:
         - name: UM mailbox policy procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/um-mailbox-policy-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/um-mailbox-policy-procedures.md
           items:
           - name: Create a UM mailbox policy
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy.md
           - name: Manage a UM mailbox policy
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy.md
           - name: Delete a UM mailbox policy
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/delete-um-mailbox-policy
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/delete-um-mailbox-policy.md
       - name: Voice mail for users
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/voice-mail-for-users
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/voice-mail-for-users.md
         items:
         - name: Voice mail-enabled user procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/voice-mail-enabled-user-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/voice-mail-enabled-user-procedures.md
           items:
           - name: Enable a user for voice mail
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail.md
           - name: Include text with the email message sent when a user Is enabled for voice mail
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/include-text-with-email-sent-when-voicemail-is-enabled
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/include-text-with-email-sent-when-voicemail-is-enabled.md
           - name: Manage voice mail settings for a user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-voice-mail-settings
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/manage-voice-mail-settings.md
           - name: Assign a UM mailbox policy
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/assign-um-mailbox-policy
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/assign-um-mailbox-policy.md
           - name: Change the UM dial plan
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-um-dial-plan
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-um-dial-plan.md
           - name: Enable calls from users who aren't UM-enabled
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/enable-calls-from-users-who-aren-t-um-enabled
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/enable-calls-from-users-who-aren-t-um-enabled.md
           - name: Disable calls from users who aren't UM-enabled
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/disable-calls-from-users-who-aren-t-um-enabled
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/disable-calls-from-users-who-aren-t-um-enabled.md
           - name: Allow callers without a caller ID to leave a voice message
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/allow-callers-without-caller-id-to-leave-voice-message
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/allow-callers-without-caller-id-to-leave-voice-message.md
           - name: Include text with the email message sent when a voice message Is received
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/include-text-with-email-sent-when-voice-message-is-received
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/include-text-with-email-sent-when-voice-message-is-received.md
           - name: Prevent callers without a caller ID from leaving a voice message
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/prevent-callers-without-caller-id-from-leaving-voice-message
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/prevent-callers-without-caller-id-from-leaving-voice-message.md
           - name: Disable voice mail  for a user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/disable-voice-mail
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/disable-voice-mail.md
           - name: Change a SIP address
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-sip-address
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-sip-address.md
           - name: Change an extension number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-extension-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-extension-number.md
           - name: Add a SIP address
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/add-sip-address
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-sip-address.md
           - name: Remove a SIP address
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/remove-sip-address
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-sip-address.md
           - name: Add an extension number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/add-extension-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-extension-number.md
           - name: Remove an extension number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/remove-extension-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-extension-number.md
           - name: Change an E.164 number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/change-e-164-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-e-164-number.md
           - name: Add an E.164 number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/add-e-164-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-e-164-number.md
           - name: Remove an E.164 number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/remove-e-164-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-e-164-number.md
     - name: Set up client voice mail features
       href: ../set-up-client-voice-mail-features-exchange-2013-help.md
       items:
       - name: Setting up Outlook Voice Access
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-up-outlook-voice-access
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-up-outlook-voice-access.md
         items:
         - name: Outlook Voice Access commands
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/outlook-voice-access-commands
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/outlook-voice-access-commands.md
         - name: Navigating menus with Outlook Voice Access
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/navigating-menus-with-outlook-voice-access
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/navigating-menus-with-outlook-voice-access.md
         - name: Play on Phone
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/play-on-phone
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/play-on-phone.md
         - name: Outlook Voice Access procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/outlook-voice-access-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/outlook-voice-access-procedures.md
           items:
           - name: Enable or disable Outlook Voice Access for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-outlook-voice-access
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-outlook-voice-access.md
           - name: Configure an Outlook Voice Access number
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-outlook-voice-access-number
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-outlook-voice-access-number.md
           - name: Disable selected features for Outlook Voice Access users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-selected-features
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-selected-features.md
           - name: Set mailbox features for Outlook Voice Access users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-mailbox-features-for-users
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-mailbox-features-for-users.md
           - name: Set mailbox features for an Outlook Voice Access user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-mailbox-features-for-a-user
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-mailbox-features-for-a-user.md
           - name: Enable or disable automatic speech recognition for an Outlook Voice Access user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-automatic-speech-recognition
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-automatic-speech-recognition.md
           - name: Enable an informational announcement for Outlook Voice Access users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-an-informational-announcement
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-an-informational-announcement.md
           - name: Enable a customized greeting for Outlook Voice Access users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-a-customized-greeting
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-a-customized-greeting.md
           - name: Enable or disable Play on Phone for Outlook Voice Access users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-play-on-phone
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-play-on-phone.md
           - name: Enable or disable sending voice messages from Outlook Voice Access
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-sending-voice-messages
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-sending-voice-messages.md
           - name: Enable or prevent transferring calls from Outlook Voice Access
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-prevent-transferring-calls
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-prevent-transferring-calls.md
           - name: Configure the group of users that Outlook Voice Access users can contact
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-the-group-of-users-that-outlook-voice-access-users-can-contact
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-the-group-of-users-that-outlook-voice-access-users-can-contact.md
           - name: Configure the primary way for Outlook Voice Access users to search
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-primary-search-method
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-primary-search-method.md
           - name: Configure the secondary way for Outlook Voice Access users to search
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-secondary-search-method
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-secondary-search-method.md
           - name: Configure the number of sign-in failures before Outlook Voice Access users are disconnected
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-number-of-sign-in-failures
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-number-of-sign-in-failures.md
           - name: Configure the number of input failures before Outlook Voice Access users are disconnected
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-number-of-input-failures
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-number-of-input-failures.md
           - name: Configure the limit on personal greetings for Outlook Voice Access users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-personal-greetings-limit
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-personal-greetings-limit.md
       - name: Allow voice mail users to forward calls
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-voice-mail-users-to-forward-calls
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-voice-mail-users-to-forward-calls.md
         items:
         - name: Forwarding calls procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/forwarding-calls-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/forwarding-calls-procedures.md
           items:
           - name: Allow or prevent a user from creating call answering rules
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/call-answering-rules
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/call-answering-rules.md
           - name: Allow or prevent users in the same UM mailbox policy from creating call answering rules
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/call-answering-rules-in-the-same-mailbox-policy
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/call-answering-rules-in-the-same-mailbox-policy.md
           - name: Create a call answering rule
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/create-a-call-answering-rule
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/create-a-call-answering-rule.md
           - name: View and manage a call answering rule
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/view-and-manage-a-call-answering-rule
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/view-and-manage-a-call-answering-rule.md
           - name: Enable or disable a call answering rule for a user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-a-call-answering-rule-for-a-user
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-a-call-answering-rule-for-a-user.md
           - name: Remove a call answering rule for a user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/remove-a-call-answering-rule-for-a-user
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/remove-a-call-answering-rule-for-a-user.md
       - name: Allow users to make calls
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-make-calls
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-make-calls.md
         items:
         - name: Dial codes, number prefixes, and number formats
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/dial-codes-number-prefixes-number-formats
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/dial-codes-number-prefixes-number-formats.md
         - name: Allowing users to make calls procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-make-calls-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-make-calls-procedures.md
           items:
           - name: Enable outgoing calls on UM IP gateways
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-outgoing-calls-on-um-ip-gateways
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-outgoing-calls-on-um-ip-gateways.md
           - name: Disable outgoing calls on UM IP gateways
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-outgoing-calls-on-um-ip-gateways
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-outgoing-calls-on-um-ip-gateways.md
           - name: Configure dial codes
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-dial-codes
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-dial-codes.md
           - name: Create dialing rules for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/create-dialing-rules
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/create-dialing-rules.md
           - name: Authorize calls using dialing rules
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-using-dialing-rules
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-using-dialing-rules.md
             items:
             - name: Authorize calls for auto attendant callers
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-auto-attendant-callers
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-auto-attendant-callers.md
             - name: Authorize calls for users in a dial plan
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-users-in-a-dial-plan
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-users-in-a-dial-plan.md
             - name: Authorize calls for a group of users
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-a-group-of-users
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-a-group-of-users.md
       - name: Allow users to see a voice mail transcript
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-see-a-voice-mail-transcript
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-to-see-a-voice-mail-transcript.md
         items:
         - name: Voice Mail Preview advisor
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/voice-mail-preview-advisor
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/voice-mail-preview-advisor.md
         - name: Voice Mail Preview procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/voice-mail-preview-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/voice-mail-preview-procedures.md
           items:
           - name: Configure Voice Mail Preview partner services for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-voice-mail-preview-partner-services
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-voice-mail-preview-partner-services.md
             items:
             - name: Set the Voice Mail Preview partner address
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-voice-mail-preview-partner-address
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-voice-mail-preview-partner-address.md
             - name: Set the Voice Mail Preview partner ID
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-voice-mail-preview-partner-id
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-voice-mail-preview-partner-id.md
             - name: Set the maximum message duration for a Voice Mail Preview partner
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-maximum-message-duration-for-a-voice-mail-preview-partner
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-maximum-message-duration-for-a-voice-mail-preview-partner.md
             - name: Set the maximum delivery delay for a Voice Mail Preview partner
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-maximum-delivery-delay-for-a-voice-mail-preview-partner
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-maximum-delivery-delay-for-a-voice-mail-preview-partner.md
           - name: Enable Voice Mail Preview for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-voice-mail-preview
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-voice-mail-preview.md
           - name: Disable Voice Mail Preview for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-voice-mail-preview
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-voice-mail-preview.md
       - name: Enable voice mail users to receive faxes
         href: ../enable-voice-mail-users-to-receive-faxes-exchange-2013-help.md
         items:
         - name: Fax advisor for Exchange UM
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/fax-advisor-for-exchange-um
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/fax-advisor-for-exchange-um.md
         - name: Setting up incoming faxing
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-up-incoming-faxing
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-up-incoming-faxing.md
           items:
           - name: Faxing procedures
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/faxing-procedures
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/faxing-procedures.md
             items:
             - name: Set the partner fax server URI to allow faxing
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-partner-fax-server-uri-to-allow-faxing
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/set-the-partner-fax-server-uri-to-allow-faxing.md
             - name: Include text with the email message sent when a fax message is received
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/include-text-with-the-email-sent-when-a-fax-message-is-received
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/include-text-with-the-email-sent-when-a-fax-message-is-received.md
             - name: Allow users in the same dial plan to receive faxes
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-in-the-same-dial-plan-to-receive-faxes
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-users-in-the-same-dial-plan-to-receive-faxes.md
             - name: Prevent users in the same dial plan from receiving faxes
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/prevent-users-in-the-same-dial-plan-from-receiving-faxes
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/prevent-users-in-the-same-dial-plan-from-receiving-faxes.md
             - name: Enable faxing for a group of users
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-faxing-for-a-group-of-users
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-faxing-for-a-group-of-users.md
             - name: Disable faxing for a group of users
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-faxing-for-a-group-of-users
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-faxing-for-a-group-of-users.md
             - name: Enable a user to receive faxes
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-a-user-to-receive-faxes
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-a-user-to-receive-faxes.md
             - name: Prevent a user from receiving faxes
-              href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/prevent-a-user-from-receiving-faxes
+              href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/prevent-a-user-from-receiving-faxes.md
       - name: Protect voice mail
         href: ../protect-voice-mail-exchange-2013-help.md
         items:
         - name: Protected Voice Mail procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/protected-voice-mail-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/protected-voice-mail-procedures.md
           items:
           - name: Configure Protected Voice Mail from authenticated callers
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-protected-voice-mail-from-authenticated-callers
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-protected-voice-mail-from-authenticated-callers.md
           - name: Configure Protected Voice Mail from unauthenticated callers
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-protected-voice-mail-from-unauthenticated-callers
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/configure-protected-voice-mail-from-unauthenticated-callers.md
           - name: Enable or disable multimedia playback of protected voice messages
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-multimedia-playback
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-or-disable-multimedia-playback.md
           - name: Specify the text to display for email clients that don't support Windows Rights Management
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/specify-text-to-display-for-clients-that-don-t-support-windows-rights-management
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/specify-text-to-display-for-clients-that-don-t-support-windows-rights-management.md
       - name: Allow Message Waiting Indicator
         href: ../allow-message-waiting-indicator-exchange-2013-help.md
         items:
         - name: Allow Message Waiting Indicator procedures
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-mwi-procedures
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-mwi-procedures.md
           items:
           - name: Allow Message Waiting Indicator (MWI) on a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-mwi-on-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/allow-mwi-on-um-ip-gateway.md
           - name: Prevent Message Waiting Indicator (MWI) on a UM IP gateway
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/prevent-mwi-on-um-ip-gateway
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/prevent-mwi-on-um-ip-gateway.md
           - name: Enable Message Waiting Indicator (MWI) for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-mwi-for-users
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-mwi-for-users.md
           - name: Disable Message Waiting Indicator (MWI) for users
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-mwi-for-users
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-mwi-for-users.md
           - name: Enable missed call notifications for a user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-missed-call-notifications
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/enable-missed-call-notifications.md
           - name: Disable missed call notifications for a user
-            href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-missed-call-notifications
+            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/disable-missed-call-notifications.md
     - name: Set Outlook Voice Access PIN security
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-outlook-voice-access-pin-security
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-outlook-voice-access-pin-security.md
       items:
       - name: PIN security procedures
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/pin-security-procedures
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/pin-security-procedures.md
         items:
         - name: Set Outlook Voice Access PIN policies
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-pin-policies
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-pin-policies.md
         - name: Reset a voice mail PIN
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/reset-a-voice-mail-pin
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/reset-a-voice-mail-pin.md
         - name: Retrieve voice mail PIN information
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/retrieve-voice-mail-pin-information
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/retrieve-voice-mail-pin-information.md
         - name: Include text with the email message sent when a PIN Is reset
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/include-text-in-email-sent-when-pin-is-reset
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/include-text-in-email-sent-when-pin-is-reset.md
         - name: Set the minimum PIN length for voice mail
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-minimum-pin-length
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-minimum-pin-length.md
         - name: Set the PIN lifetime for voice mail
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-pin-lifetime.md
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-pin-lifetime.md
         - name: Set the number of previous voice mail PINs to recycle
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-number-of-previous-pins-to-recycle
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-number-of-previous-pins-to-recycle.md
         - name: Disable common PIN patterns for voice mail
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/disable-common-pin-patterns
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/disable-common-pin-patterns.md
         - name: Enable common PIN patterns for voice mail
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/enable-common-pin-patterns
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/enable-common-pin-patterns.md
         - name: Set the number of sign-in failures before a voice mail PIN is reset
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-number-of-sign-in-failures-before-pin-reset
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-number-of-sign-in-failures-before-pin-reset.md
         - name: Set the number of sign-in failures before a voice mail user Is locked out
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-number-of-sign-in-failures-before-lock-out
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/set-outlook-voice-access-pin-security/set-number-of-sign-in-failures-before-lock-out.md
         - name: Enable PIN-less sign-Ins for voice mail
           href: ../enable-pin-less-sign-ins-for-voice-mail-exchange-2013-help.md
     - name: Run reports for voice mail calls
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/run-voice-mail-call-reports
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/run-voice-mail-call-reports.md
       items:
       - name: UM reports procedures
-        href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/um-reports-procedures
+        href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/um-reports-procedures.md
         items:
         - name: Review the voice mail calls in your organization
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/review-voice-mail-calls-for-organization
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/review-voice-mail-calls-for-organization.md
         - name: Review the voice mail calls for a user
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/review-voice-mail-calls-for-user
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/review-voice-mail-calls-for-user.md
         - name: Investigate the audio quality of voice calls in your organization
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/audio-quality-of-voice-calls-in-organization
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/audio-quality-of-voice-calls-in-organization.md
         - name: Investigate the audio quality of voice calls for a user
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/audio-quality-of-voice-calls-for-user
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/audio-quality-of-voice-calls-for-user.md
         - name: Interpret voice mail call records
-          href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/run-voice-mail-call-reports/interpret-voice-mail-call-records
+          href: ../../ExchangeOnline/voice-mail-unified-messaging/run-voice-mail-call-reports/interpret-voice-mail-call-records.md
     - name: Test and troubleshoot voice mail
       href: ../test-and-troubleshoot-voice-mail-exchange-2013-help.md
       items:
@@ -2279,7 +2277,7 @@
         - name: Test UM connectivity to VoIP gateways and PBXs
           href: ../test-um-connectivity-to-voip-gateways-and-pbxs-exchange-2013-help.md
     - name: UM and voice mail terminology
-      href: https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/um-and-voice-mail-terminology
+      href: ../../ExchangeOnline/voice-mail-unified-messaging/um-and-voice-mail-terminology.md
   - name: Mailbox and Client Access servers
     href: ../mailbox-and-client-access-servers-exchange-2013-help.md
     items:
@@ -2344,7 +2342,7 @@
         - name: Configure Deleted Item retention and Recoverable Items quotas
           href: ../configure-deleted-item-retention-and-recoverable-items-quotas-exchange-2013-help.md
         - name: Recover deleted messages in a user's mailbox
-          href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages
+          href: ../../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/recover-deleted-messages.md
         - name: Get Recoverable Items folder statistics
           href: ../get-recoverable-items-folder-statistics-exchange-2013-help.md
     - name: Client Access server
@@ -2581,9 +2579,9 @@
       - name: Change user throttling settings for all users in your organization
         href: ../change-user-throttling-settings-for-all-users-in-your-organization-exchange-2013-help.md
   - name: About Exchange documentation
-    href: https://docs.microsoft.com/en-us/exchange/about-exchange-documentation
+    href: ../../ExchangeOnline/about-exchange-documentation.md
     items:
     - name: Accessibility for people with disabilities
-      href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/eop/accessibility-for-people-with-disabilities
+      href: /office365/SecurityCompliance/eop/accessibility-for-people-with-disabilities
     - name: Third-party copyright notices
-      href: https://docs.microsoft.com/en-us/office365/SecurityCompliance/eop/third-party-copyright-notices
+      href: /office365/SecurityCompliance/eop/third-party-copyright-notices

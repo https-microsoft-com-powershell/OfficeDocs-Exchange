@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Before you create a Unified Messaging (UM) IP gateway, you must first set the IP address or the fully qualified domain name (FQDN) on the VoIP gateway, IP PBX, or session border controller (SBC) that you're using. Then, when you create the UM IP gateway, you set the IP address or FQDN. You can change the IP address or FQDN later.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 100541c1-2297-4c46-9602-b304736541a8
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Configure the IP address in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -27,7 +28,7 @@ For additional management tasks related to UM IP gateways, see [UM IP gateway pr
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM IP gateways" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan.md).
 
@@ -36,7 +37,7 @@ For additional management tasks related to UM IP gateways, see [UM IP gateway pr
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure the IP address on a UM IP gateway
 
@@ -53,18 +54,18 @@ For additional management tasks related to UM IP gateways, see [UM IP gateway pr
 
 This example configures a UM IP gateway named `MyUMIPGateway` with an IP address of 10.10.10.1.
 
-```
+```PowerShell
 Set-UMIPGateway -Identity MyUMIPGateway -Address 10.10.10.1
 ```
 
 This example configures a UM IP gateway named `MyUMIPGateway` with an IP address of 10.10.10.10 and listens for SIP requests on TCP port 5061.
 
-```
+```PowerShell
 Set-UMIPGateway -Identity MyUMIPGateway -Address 10.10.10.10 -Port 5061
 ```
 
 This example prevents the UM IP gateway named `MyUMIPGateway` from accepting incoming and outgoing calls, sets an IPv6 address, and allows the UM IP gateway to use IPv4 and IPV6 addresses.
 
-```
+```PowerShell
 Set-UMIPGateway -Identity MyUMIPGateway -Address fe80::39bd:88f7:6969:d223%11 -IPAddressFamily Any -Status Disabled -OutcallsAllowed $false
 ```

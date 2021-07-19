@@ -3,14 +3,16 @@ localization_priority: Normal
 description: You can use Exchange Online PowerShell to delete the default discovery mailbox, re-create it, and then assign permissions to it.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 4bde0b00-bdf7-44b4-ba64-aa062bc10ca2
-ms.date: 7/11/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Delete and re-create the default discovery mailbox in Exchange
 ms.collection: 
 - exchange-online
 - M365-email-calendar
+search.appverid: MET150
 audience: Admin
 ms.service: exchange-online
 manager: serdars
@@ -39,7 +41,7 @@ How you resolve this issue depends on whether you want to save the search result
 
 1. Run the following command to delete the default discovery mailbox.
 
-   ```
+   ```PowerShell
    Remove-Mailbox "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}"
    ```
 
@@ -49,12 +51,12 @@ How you resolve this issue depends on whether you want to save the search result
 
 3. Run the following command to re-create the default discovery mailbox.
 
-   ```
+   ```PowerShell
    New-Mailbox -Name "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}" -Alias "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}" -DisplayName "Discovery Search Mailbox" -Discovery
    ```
 
 4. Run the following command to assign the Discovery Management role group permissions to open the default discovery mailbox and view search results.
 
-   ```
+   ```PowerShell
    Add-MailboxPermission "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}" -User "Discovery Management" -AccessRights FullAccess -InheritanceType all
    ```

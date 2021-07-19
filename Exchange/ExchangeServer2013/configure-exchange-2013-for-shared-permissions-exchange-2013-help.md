@@ -2,13 +2,14 @@
 title: 'Configure Exchange 2013 for shared permissions: Exchange 2013 Help'
 TOCTitle: Configure Exchange 2013 for shared permissions
 ms:assetid: 7d119977-b420-4b66-acf0-0a978b188cdd
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638146(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638146(v=EXCHG.150)
 ms:contentKeyID: 49289319
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -61,7 +62,7 @@ Looking for other management tasks related to permissions? Check out [Advanced p
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Switch from RBAC split permissions to shared permissions
 
@@ -96,7 +97,7 @@ To configure shared permissions on the Organization Management role group, do th
     New-ManagementRoleAssignment -Role "Security Group Creation and Membership" -SecurityGroup "Organization Management"
     ```
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).
 
 ## Remove permissions from Active Directory administrators (Optional)
 
@@ -121,7 +122,7 @@ To remove Exchange-related split permissions from Active Directory administrator
 
 3. Optional. If you want to remove all Exchange permissions from the Active Directory administrators, you can remove the role group or USG in which they're members. For more information about how to remove a role group, see [Manage role groups](manage-role-groups-exchange-2013-help.md).
 
-For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351024\(v=exchg.150\)) or [Remove-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd351205\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-ManagementRoleAssignment](/powershell/module/exchange/Get-ManagementRoleAssignment) or [Remove-ManagementRoleAssignment](/powershell/module/exchange/Remove-ManagementRoleAssignment).
 
 ## Switch from Active Directory split permissions to shared permissions
 
@@ -153,4 +154,4 @@ To switch from Active Directory split permissions to shared permissions, do the 
    > [!NOTE]
    > If you have Exchange 2010 servers in your organization, you also need to restart those servers.
 
-For detailed syntax and parameter information, see [New-ManagementRoleAssignment](https://technet.microsoft.com/en-us/library/dd335193\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRoleAssignment](/powershell/module/exchange/New-ManagementRoleAssignment).

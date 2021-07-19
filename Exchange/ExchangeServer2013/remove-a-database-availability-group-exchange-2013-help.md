@@ -2,13 +2,14 @@
 title: 'Remove a database availability group: Exchange 2013 Help'
 TOCTitle: Remove a database availability group
 ms:assetid: 071296e9-31b0-40f4-9a02-177d97486ebd
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335069(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335069(v=EXCHG.150)
 ms:contentKeyID: 48384792
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to remove a database availability group
 

@@ -2,13 +2,14 @@
 title: 'Using Outlook Web App Web parts: Exchange 2013 Help'
 TOCTitle: Using Outlook Web App Web parts
 ms:assetid: 7272e3ab-430c-4d6c-8621-9535236ce463
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Mt574711(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Mt574711(v=EXCHG.150)
 ms:contentKeyID: 70319891
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,6 +37,9 @@ Outlook Web App Web Parts can be used to create URLs of varying complexity. A si
 Depending on the security measures that have been applied to your network, you may have to configure encoding for the Web Parts URL. After you configure the encoding, the code behind the UI will create the URL by using the URL-encoded parameters. URL-encoded parameters use %20 in place of spaces and %2f in place of the path delimiter "/". All examples in this topic use encoded parameters.
 
 The following table lists the parameters of a Web Part and examples of how they're used.
+
+> [!NOTE]
+> Exchange 2016, Exchange 2019, and Exchange Online no longer include support for Web Parts.
 
 ### Web Part parameters and how they're used
 
@@ -79,7 +83,7 @@ The following table lists the parameters of a Web Part and examples of how they'
 <tr class="even">
 <td><p>exsvurl</p></td>
 <td><p>This parameter must be included when using LiveID authentication</p>
-<p>All parameters will be discarded during LiveID authentication if &quot;exsvurl=1&quot; is not present. This parameter is for Office 365 mailboxes only.</p>
+<p>All parameters will be discarded during LiveID authentication if &quot;exsvurl=1&quot; is not present. This parameter is for Microsoft 365 and Office 365 mailboxes only.</p>
 </td>
 
 <td><p>https://&lt;server name&gt;/owa/?cmd=contents&amp;exsvurl=1</p></td>

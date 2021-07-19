@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can configure a Unified Messaging (UM) dial plan to specify the information that is provided for callers when users have the same or similar names. UM uses this setting to differentiate between users who have the same or similar names and provide this information to callers. When a caller or an Outlook Voice Access user is prompted to enter letters to find a particular user, sometimes more than one name matches the caller's input. You can use one of the available options for providing the caller with more information to help them locate the user they're trying to reach.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 14783f45-95f5-49de-8215-0a3aef7dc034
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Configure a dial plan for users who have similar names in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -24,20 +25,20 @@ You can set this setting on both UM dial plans and UM auto attendants. When a UM
 > [!NOTE]
 > For the information that will be included for users with similar names to work correctly, you must provide the title, department, and location information for the recipients in your Microsoft Exchange organization.
 
-For additional management tasks related to UM dial plans, see [UM Dial Plan Procedures](https://technet.microsoft.com/library/1bda77c8-c4e2-4ae0-a001-76ae029bf843.aspx).
+For additional management tasks related to UM dial plans, see [UM dial plan procedures in Exchange Online](um-dial-plan-procedures.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md)) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure a UM dial plan for users with similar names
 
@@ -61,18 +62,18 @@ For additional management tasks related to UM dial plans, see [UM Dial Plan Proc
 
 This example sets the information to include with users with similar names to prompt for the user's alias on a UM dial plan named `MyDialPlan`.
 
-```
+```PowerShell
 Set-UMDialplan -Identity MyDialPlan -MatchedNameSelectionMethod PromptForAlias
 ```
 
 This example sets the information to include with users with similar names to department on a UM dial plan named `MyDialPlan`.
 
-```
+```PowerShell
 Set-UMDialplan -Identity MyDialPlan -MatchedNameSelectionMethod Department
 ```
 
 This example sets the information to include with users with similar names to location on a UM dial plan named `MyDialPlan`.
 
-```
+```PowerShell
 Set-UMDialplan -Identity MyDialPlan -MatchedNameSelectionMethod Location
 ```

@@ -5,10 +5,11 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 3addd71a-4165-401f-a009-002bcd8baba6
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Edge Subscriptions
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -104,7 +105,7 @@ When you create an Edge Subscription file by running the **New-EdgeSubscription*
 
 This example creates and exports the Edge Subscription file on the Edge Transport server.
 
-```
+```PowerShell
 New-EdgeSubscription -FileName "C:\Data\EdgeSubscriptionInfo.xml"
 ```
 
@@ -143,7 +144,7 @@ When you import the Edge Subscription file to the Active Directory site by runni
 
 This example subscribes an Edge Transport server to the specified site and automatically creates the Internet Send connector and the Send connector from the Edge Transport server to the Mailbox servers.
 
-```
+```PowerShell
 New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "C:\Data\EdgeSubscriptionInfo.xml" -Encoding Byte -ReadCount 0)) -Site "Default-First-Site-Name"
 ```
 

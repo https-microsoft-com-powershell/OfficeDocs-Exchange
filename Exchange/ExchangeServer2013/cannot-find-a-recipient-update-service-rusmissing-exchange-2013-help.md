@@ -2,13 +2,14 @@
 title: 'Cannot find a recipient update service_RUSMissing: Exchange 2013 Help'
 TOCTitle: Cannot find a recipient update service_RUSMissing
 ms:assetid: 920fbf51-d5e4-4ac6-869f-7f1c5d9a3024
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.rusmissing(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.rusmissing(v=EXCHG.150)
 ms:contentKeyID: 46629034
-ms.date: 12/15/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft® Exchange Server 2007 or Exchange Server 2010 setup cannot continue because the Recipient Update Service (RUS) responsible for a domain in the existing Exchange organization cannot be found.
 
@@ -48,13 +49,3 @@ To resolve this issue, verify that an instance of the Recipient Update Service e
 </tr>
 </tbody>
 </table>
-
-For more information about the Recipient Update Service, see the following Microsoft Knowledge Base articles:
-
-  - "How the Recipient Update Service applies recipient policies" ([https://go.microsoft.com/fwlink/?linkid=3052\&kbid=328738](https://go.microsoft.com/fwlink/?linkid=3052&kbid=328738)).
-
-  - "How the Recipient Update Service Populates Address Lists" ([https://go.microsoft.com/fwlink/?linkid=3052\&kbid=253828](https://go.microsoft.com/fwlink/?linkid=3052&kbid=253828)).
-
-  - "How to check the progress of the Exchange Recipient Update Service" ([https://go.microsoft.com/fwlink/?linkid=3052\&kbid=246127](https://go.microsoft.com/fwlink/?linkid=3052&kbid=246127)).
-
-  - "Tasks performed by the Exchange Recipient Update Service" ([https://go.microsoft.com/fwlink/?linkid=3052\&kbid=253770](https://go.microsoft.com/fwlink/?linkid=3052&kbid=253770)).

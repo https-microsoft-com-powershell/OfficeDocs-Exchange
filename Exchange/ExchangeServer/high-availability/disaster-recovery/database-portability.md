@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: a765ead1-43bc-4786-ae93-1835cacfc8fc
-ms.date: 7/9/2018
 ms.reviewer:
 title: Move a mailbox database using database portability
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -31,7 +32,7 @@ Database portability can help reduce overall recovery times for some failure sce
 - You can't use the EAC to move user mailboxes to a recovered or dial tone database using database portability.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to move user mailboxes to a recovered or dial tone database using database portability
 
@@ -42,7 +43,7 @@ Database portability can help reduce overall recovery times for some failure sce
 
    To commit all uncommitted log files to the database, from a command prompt, run the following command.
 
-   ```
+   ```powershell
    ESEUTIL /R <Enn>
    ```
 
@@ -51,13 +52,13 @@ Database portability can help reduce overall recovery times for some failure sce
 
 2. Create a database on a server using the following syntax:
 
-   ```
+   ```powershell
    New-MailboxDatabase -Name <DatabaseName> -Server <ServerName> -EdbFilePath <DatabaseFileNameandPath> -LogFolderPath <LogFilesPath>
    ```
 
 3. Set the _This database can be over written by restore_ attribute using the following syntax:
 
-   ```
+   ```powershell
    Set-MailboxDatabase <DatabaseName> -AllowFileRestore $true
    ```
 
@@ -65,19 +66,19 @@ Database portability can help reduce overall recovery times for some failure sce
 
 5. Mount the database using the following syntax:
 
-   ```
+   ```powershell
    Mount-Database <DatabaseName>
    ```
 
-6. After the database is mounted, modify the user account settings with the [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) cmdlet so that the account points to the mailbox on the new mailbox server. To move all of the users from the old database to the new database, use the following syntax.
+6. After the database is mounted, modify the user account settings with the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet so that the account points to the mailbox on the new mailbox server. To move all of the users from the old database to the new database, use the following syntax.
 
-   ```
+   ```powershell
    Get-Mailbox -Database <SourceDatabase> |where {$_.ObjectClass -NotMatch '(SystemAttendantMailbox|ExOleDbSystemMailbox)'}| Set-Mailbox -Database <TargetDatabase>
    ```
 
 7. Trigger delivery of any messages remaining in queues using the following syntax.
 
-   ```
+   ```powershell
    Get-Queue <QueueName> | Retry-Queue -Resubmit $true
    ```
 

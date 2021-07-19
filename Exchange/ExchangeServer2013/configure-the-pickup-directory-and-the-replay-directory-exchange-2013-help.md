@@ -2,13 +2,14 @@
 title: 'Configure the Pickup directory and the Replay directory: Exchange 2013 Help'
 TOCTitle: Configure the Pickup directory and the Replay directory
 ms:assetid: c9ca7358-9a08-4f57-89d0-910e4438df8a
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124549(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124549(v=EXCHG.150)
 ms:contentKeyID: 49382862
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ The Pickup and replay directories are used by the Transport service on Mailbox s
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## What Do You Want to Do?
 

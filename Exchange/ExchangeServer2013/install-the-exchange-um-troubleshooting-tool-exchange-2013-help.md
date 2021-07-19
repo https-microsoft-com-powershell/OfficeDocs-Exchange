@@ -2,13 +2,14 @@
 title: 'Install the Exchange UM Troubleshooting Tool: Exchange 2013 Help'
 TOCTitle: Install the Exchange UM Troubleshooting Tool
 ms:assetid: 84223af0-a717-49ee-add6-86313bb30d17
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff844714(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff844714(v=EXCHG.150)
 ms:contentKeyID: 55129211
-ms.date: 12/09/2016
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,22 +27,22 @@ The UM Troubleshooting tool can be installed on a local Unified Messaging server
 
 - The UM Troubleshooting tool requires that the following components be installed on a computer running Windows Vista, Windows 7, Windows 8, or the 64-bit edition of Windows Server 2008 or Windows Server 2012 or later before the tool is installed:
 
-  - Microsoft .NET Framework 3.5 Service Pack 1 (SP1)   See [Microsoft .NET Framework 3.5 Service Pack 1](https://go.microsoft.com/fwlink/p/?linkid=152380).
+  - Microsoft .NET Framework 3.5 Service Pack 1 (SP1). See [Microsoft .NET Framework 3.5 Service Pack 1](https://www.microsoft.com/download/details.aspx?id=22).
 
-  - If the tool will be run on a Windows Vista or Windows Server 2008 computer, see [Microsoft .NET Framework 3.5 Family Update for Windows Vista x64, and Windows Server 2008 x64](https://go.microsoft.com/fwlink/p/?linkid=178998).
+  - If the tool will be run on a Windows Vista or Windows Server 2008 computer, see [Microsoft .NET Framework 3.5 Family Update for Windows Vista x64, and Windows Server 2008 x64](https://www.microsoft.com/download/details.aspx?id=1055).
 
-  - Windows Remote Management (WinRM) 2.0 and Windows PowerShell V2 (Windows6.0-KB968930.msu). See Microsoft Knowledge Base article 968930, [Windows Management Framework Core package (Windows PowerShell 2.0 and WinRM 2.0)](https://go.microsoft.com/fwlink/p/?linkid=3052&kbid=968930).
+  - Windows Remote Management (WinRM) 2.0 and Windows PowerShell V2 (Windows6.0-KB968930.msu). See Microsoft Knowledge Base article 968930, [Windows Management Framework Core package (Windows PowerShell 2.0 and WinRM 2.0)](https://support.microsoft.com/help/968930).
 
-  - Microsoft Unified Communications Managed API 2.0 Core Runtime (UcmaRuntimeWebDownloadX64.msi). See [Unified Communications Managed API 2.0, Core Runtime (64-bit)](https://go.microsoft.com/fwlink/p/?linkid=198175).
+  - Microsoft Unified Communications Managed API 2.0 Core Runtime (UcmaRuntimeWebDownloadX64.msi).
 
   - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Install the UM Troubleshooting Tool
 
-1. Download the Unified Messaging Troubleshooting Tool from the [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?linkid=182625), and then double-click the MicrosoftExchange2010UMTroubleshootingTool.msi installation folder.
+1. Download the Unified Messaging Troubleshooting Tool from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=20839), and then double-click the MicrosoftExchange2010UMTroubleshootingTool.msi installation folder.
 
 2. On the **Welcome to the Microsoft Exchange 2010 UM Troubleshooting Tool Setup Wizard** page, click **Next**.
 

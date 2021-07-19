@@ -2,13 +2,14 @@
 title: 'View or configure Outlook Web App virtual directories: Exchange 2013 Help'
 TOCTitle: View or configure Outlook Web App virtual directories
 ms:assetid: 90babcf6-4486-4e01-9819-6d3ca4ed756c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298140(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298140(v=EXCHG.150)
 ms:contentKeyID: 49315461
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -26,7 +27,7 @@ If you use the Shell to view the properties of an Outlook Web App virtual direct
 
 - Exchange server version
 
-You can also retrieve information for a specific virtual directory on a specific server by using the available parameters. For more information about the parameters for the **Get-OWAVirtualDirectory** cmdlet, see [Get-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/aa998588\(v=exchg.150\)).
+You can also retrieve information for a specific virtual directory on a specific server by using the available parameters. For more information about the parameters for the **Get-OWAVirtualDirectory** cmdlet, see [Get-OwaVirtualDirectory](/powershell/module/exchange/Get-OwaVirtualDirectory).
 
 If you use the EAC to view the properties of an Outlook Web App virtual directory, you'll be able to view most of the properties for the virtual directory that you're viewing.
 
@@ -39,7 +40,7 @@ If you use the EAC to view the properties of an Outlook Web App virtual director
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to view or configure Outlook Web App virtual directory properties
 
@@ -75,23 +76,23 @@ If you use the EAC to view the properties of an Outlook Web App virtual director
 
      **Basic authentication (password is sent in clear text)**: This method is a simple authentication mechanism defined by the HTTP specification that encodes a user's sign-in name and password before the user's credentials are sent to the server. To make sure that the password is as secure as possible, you should use Secure Sockets Layer (SSL) encryption between client computers and the server that has the Client Access server role installed.
 
-   - **Use forms-based authentication**: Forms-based authentication provides enhanced security for Outlook Web App virtual directories. Forms-based authentication creates a sign-in page for Outlook Web App. You can configure the type of sign-in prompt used by forms-based authentication. For example, you can configure forms-based authentication to require users to provide their domain and user name information, in the domain\\user name format on the Outlook Web App sign-in page.
+   - **Use forms-based authentication**: Forms-based authentication provides enhanced security for Outlook Web App virtual directories. Forms-based authentication creates a sign-in page for Outlook Web App. You can configure the type of sign-in prompt used by forms-based authentication. For example, you can configure forms-based authentication to require users to provide their domain and username information, in the domain\\username format on the Outlook Web App sign-in page.
 
      > [!IMPORTANT]
      > Forms-based authentication won't provide a secure channel unless SSL is enabled.
 
      Select one of the following:
 
-     **Domain\\user name**: This requires the user to enter their domain and user name in the format domain\\user name. For example, for a user named Kweku in the domain Contoso, the sign-in would be contoso\\kweku.
+     **Domain\\user name**: This requires the user to enter their domain and username in the format domain\\user name. For example, for a user named Kweku in the domain Contoso, the sign-in would be contoso\\kweku.
 
      **User principal name (UPN)** If the user principal name (UPN) sign-in format is specified, the **User name** box on the Outlook Web App sign-in page guides users to enter their email address, for example, kweku@contoso.com. If a user's UPN isn't identical to the email address, the user can't access Outlook Web App by using the **PrincipalName** sign-in prompt. It's a best practice to use the **PrincipalName** sign-in prompt only if users' UPNs match their email addresses.
 
-     **User name only** The user enters their user name only, without the domain name, for example, Kweku. If you use the **User name only** sign-in prompt for forms-based authentication, you must also specify the **Logon Domain** property. The **Logon Domain** property determines the default domain to use when a user tries to sign in to Outlook Web App. For example, if the default domain is Contoso, and a domain user named Kweku signs in to Outlook Web App, only Kweku must be entered as the user name. The server will use the default domain Contoso. If the user isn't a member of the Contoso domain, the domain and user name must be entered.
+     **Username only** The user enters their username only, without the domain name, for example, Kweku. If you use the **Username only** sign-in prompt for forms-based authentication, you must also specify the **Logon Domain** property. The **Logon Domain** property determines the default domain to use when a user tries to sign in to Outlook Web App. For example, if the default domain is Contoso, and a domain user named Kweku signs in to Outlook Web App, only Kweku must be entered as the user name. The server will use the default domain Contoso. If the user isn't a member of the Contoso domain, the domain and username must be entered.
 
 5. On the **Features** tab, specify the features that you want to enable or disable for Outlook Web App users on a virtual directory.
 
    > [!NOTE]
-   > Features settings for individual users override virtual directory settings. You can change segmentation settings for individual users by using the <STRONG>Set-CASMailbox</STRONG> cmdlet or by using Outlook Web App mailbox policies. For more information, see <A href="https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies">Outlook Web App mailbox policies</A>.
+   > Features settings for individual users override virtual directory settings. You can change segmentation settings for individual users by using the <STRONG>Set-CASMailbox</STRONG> cmdlet or by using Outlook Web App mailbox policies. For more information, see <A href="/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies">Outlook Web App mailbox policies</A>.
 
    Use the check boxes to enable or disable features. By default, the most common features are displayed. To see all features that can be enabled or disabled, click **More options**.
 
@@ -118,7 +119,7 @@ This example enables forms-based authentication on the default Outlook Web App v
 Set-OwaVirtualDirectory -Identity "Contoso\owa (default web site)" -FormsAuthentication $true
 ```
 
-For more information about syntax and parameters, see [Set-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/bb123515\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory).
 
 ## Use the Shell to view Outlook Web App virtual directory properties
 
@@ -146,7 +147,7 @@ This example lets you view the values of the properties for every Outlook Web Ap
 Get-OWAVirtualDirectory | format-list
 ```
 
-For more information about syntax and parameters, see [Get-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/aa998588\(v=exchg.150\)).
+For more information about syntax and parameters, see [Get-OwaVirtualDirectory](/powershell/module/exchange/Get-OwaVirtualDirectory).
 
 ## How do you know this worked?
 

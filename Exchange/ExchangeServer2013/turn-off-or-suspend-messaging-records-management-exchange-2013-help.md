@@ -2,13 +2,14 @@
 title: 'Turn off or suspend messaging records management: Exchange 2013 Help'
 TOCTitle: Turn off or suspend messaging records management
 ms:assetid: 631191aa-3bba-4ebf-a727-c48ed2ebe176
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998580(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998580(v=EXCHG.150)
 ms:contentKeyID: 51439479
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -36,15 +37,15 @@ To meet individual, IT, or business requirements, you may need to turn off or te
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Place mailboxes on retention hold
 
 You can place mailboxes on retention hold to turn off MRM temporarily (for example when users are on vacation). This suspends the processing of retention policies for the mailbox until retention hold is disabled. This is different from placing mailboxes on In-Place Hold or litigation hold.
 
-For details about how to place a mailbox on retention hold, see [Place a mailbox on retention hold](https://docs.microsoft.com/en-us/exchange/security-and-compliance/messaging-records-management/mailbox-retention-hold).
+For details about how to place a mailbox on retention hold, see [Place a mailbox on retention hold](../ExchangeOnline/security-and-compliance/messaging-records-management/mailbox-retention-hold.md).
 
-To learn more about In-Place Hold and litigation hold, see [In-Place Hold and Litigation Hold](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-and-litigation-holds).
+To learn more about In-Place Hold and litigation hold, see [In-Place Hold and Litigation Hold](../ExchangeOnline/security-and-compliance/in-place-and-litigation-holds.md).
 
 ## Remove retention tags from mailboxes
 
@@ -60,7 +61,7 @@ $tags -= "Deleted Items - 3 Days"
 Set-RetentionPolicy "Corp-Users" -RetentionPolicyTagLinks $tags
 ```
 
-For detailed syntax and parameter information, see [Get-RetentionPolicy](https://technet.microsoft.com/en-us/library/dd298086\(v=exchg.150\)) and [Set-RetentionPolicy](https://technet.microsoft.com/en-us/library/dd335196\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-RetentionPolicy](/powershell/module/exchange/Get-RetentionPolicy) and [Set-RetentionPolicy](/powershell/module/exchange/Set-RetentionPolicy).
 
 ## Remove retention policies from mailboxes
 
@@ -77,16 +78,16 @@ Set-Mailbox jpeoples -RetentionPolicy $null.
 This Shell example removes the retention policy from all mailboxes in the Exchange organization.
 
 ```powershell
-Get-Mailbox -ResultSize unlimited -Filter {RetentionPolicy -ne $null} | Set-Mailbox -RetentionPolicy $null
+Get-Mailbox -ResultSize unlimited -Filter "RetentionPolicy -ne `$null" | Set-Mailbox -RetentionPolicy $null
 ```
 
 This Shell example removes the retention policy Corp-Finance from all mailbox users who have the policy applied.
 
 ```powershell
-Get-Mailbox -ResultSize unlimited -Filter {RetentionPolicy -eq "Corp-Finance"} | Set-Mailbox -RetentionPolicy $null
+Get-Mailbox -ResultSize unlimited -Filter "RetentionPolicy -eq 'Corp-Finance'" | Set-Mailbox -RetentionPolicy $null
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)) and [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) and [Get-Mailbox](/powershell/module/exchange/Get-Mailbox).
 
 ## Turn off MRM permanently for an entire organization
 
@@ -120,8 +121,8 @@ Remove-RetentionPolicy Corp-Users
 
 For detailed syntax and parameter information, see the following topics:
 
-- [Get-RetentionPolicyTag](https://technet.microsoft.com/en-us/library/dd298009\(v=exchg.150\))
+- [Get-RetentionPolicyTag](/powershell/module/exchange/Get-RetentionPolicyTag)
 
-- [Remove-RetentionPolicyTag](https://technet.microsoft.com/en-us/library/dd335092\(v=exchg.150\))
+- [Remove-RetentionPolicyTag](/powershell/module/exchange/Remove-RetentionPolicyTag)
 
-- [Remove-RetentionPolicy](https://technet.microsoft.com/en-us/library/dd297962\(v=exchg.150\))
+- [Remove-RetentionPolicy](/powershell/module/exchange/Remove-RetentionPolicy)

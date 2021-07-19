@@ -2,13 +2,14 @@
 title: 'MailboxSearchApplication role: Exchange 2013 Help'
 TOCTitle: MailboxSearchApplication role
 ms:assetid: 914b9132-e420-4b27-ab30-57f672166d24
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657470(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657470(v=EXCHG.150)
 ms:contentKeyID: 49289345
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -82,89 +83,3 @@ You can also change the management scopes on existing role assignments between t
 ## Enabling or disabling role assignments
 
 By enabling or disabling a role assignment, you control whether that role assignment should be in effect. If a role assignment is disabled, the permissions granted by the associated role aren't applied to the role assignee. This is convenient if you want to temporarily remove permissions without deleting a role assignment. For more information, see [Change a role assignment](change-a-role-assignment-exchange-2013-help.md).
-
-## Default management role assignments
-
-This role has role assignments to one or more role assignees. The following table indicates whether the role assignment is regular or delegating, and also indicates the management scopes applied to each assignment. The following list describes each column:
-
-  - **Regular assignment**: Regular role assignments enable the role assignee to access the permissions provided by the management role entries on this role.
-
-  - **Delegating assignment**: Delegating role assignments give the role assignee the ability to assign this role to role groups, users, or USGs.
-
-  - **Recipient read scope**: The recipient read scope determines what recipient objects the role assignee is allowed to read from Active Directory.
-
-  - **Recipient write scope**: The recipient write scope determines what recipient objects the role assignee is allowed to modify in Active Directory.
-
-  - **Configuration read scope**: The configuration read scope determines what configuration and server objects the role assignee is allowed to read from Active Directory.
-
-  - **Configuration write scope**: The configuration write scope determines what organizational and server objects the role assignee is allowed to modify in Active Directory.
-
-### Default management role assignments for this role
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Role group</th>
-<th>Regular assignment</th>
-<th>Delegating assignment</th>
-<th>Recipient read scope</th>
-<th>Recipient write scope</th>
-<th>Configuration read scope</th>
-<th>Configuration write scope</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-</tbody>
-</table>
-
-## Management role customization
-
-This role has been configured to provide a role assignee with all necessary cmdlets and parameters to manage the features and components listed in the beginning of this topic. Other roles have also been provided to enable management of other features. By adding and removing roles to and from role groups, you can create a customized permissions model without the need to customize individual management roles. For a complete list of roles, see [Built-in management roles](built-in-management-roles-exchange-2013-help.md). For more information about customizing role groups, see [Manage role groups](manage-role-groups-exchange-2013-help.md).
-
-If you decide that you need to create a customized version of this role, you must create a role as a child of this role, and customize the new role.
-
-> [!WARNING]
-> The following information enables you to perform advanced management of permissions. Customizing management roles can significantly increase the complexity of your permissions model. You could cause certain features to stop functioning if you replace a built-in management role with an incorrectly configured custom role.
-
-The following are the most common steps to create a customized role and assign it to a role assignee:
-
-1. Create a copy of this role. For more information, see [Create a role](create-a-role-exchange-2013-help.md).
-
-2. Change or remove the role entries on the new role using the **Set-ManagementRoleEntry** and **Remove-ManagementRoleEntry** cmdlets. You can't add additional role entries to the new role because it can only contain the role entries on the parent built-in role. For more information, see the following topics:
-
-      - [Change a role entry](change-a-role-entry-exchange-2013-help.md)
-
-      - [Remove a role entry from a role](remove-a-role-entry-from-a-role-exchange-2013-help.md)
-
-3. If you want to replace the built-in role with this new customized role, remove any role assignments associated with the built-in role. For more information, see the following topics:
-
-      - "Add or remove a role to or from a role group" section in [Manage role groups](manage-role-groups-exchange-2013-help.md)
-
-      - [Remove a role from a user or USG](remove-a-role-from-a-user-or-usg-exchange-2013-help.md)
-
-4. Add the new customized role to the required role assignees. For more information, see the following topics:
-
-      - "Add or remove a role to or from a role group" section in [Manage role groups](manage-role-groups-exchange-2013-help.md)
-
-      - [Add a role to a user or USG](add-a-role-to-a-user-or-usg-exchange-2013-help.md)
-
-        > [!IMPORTANT]
-        > If you want other users, in addition to the user that created the role, to be able to assign the new customized role, be sure to add a delegating role assignment to at least one role assignee. For more information, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).

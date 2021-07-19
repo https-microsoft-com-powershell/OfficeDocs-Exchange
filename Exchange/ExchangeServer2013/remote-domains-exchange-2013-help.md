@@ -2,13 +2,14 @@
 title: 'Remote domains: Exchange 2013 Help'
 TOCTitle: Remote domains
 ms:assetid: 10fb7d62-4d78-40a3-82db-d62bcd27ba42
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996309(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996309(v=EXCHG.150)
 ms:contentKeyID: 49289173
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -80,4 +81,4 @@ Exchange 2013 provides you with granular control over the contents of an NDR des
 
 This feature is controlled with the *NDRDiagnosticInfoEnabled* parameter on the **Set-RemoteDomain** cmdlet. Because this setting is configurable for each remote domain, you can have different settings based on your needs. For example, you can choose to remove the NDR diagnostic information for the default remote domain, but allow full NDR diagnostic information for the remote domains that represent your partners.
 
-For more information about this new setting, see [Set-RemoteDomain](https://technet.microsoft.com/en-us/library/aa997857\(v=exchg.150\)).
+For more information about this new setting, see [Set-RemoteDomain](/powershell/module/exchange/Set-RemoteDomain).

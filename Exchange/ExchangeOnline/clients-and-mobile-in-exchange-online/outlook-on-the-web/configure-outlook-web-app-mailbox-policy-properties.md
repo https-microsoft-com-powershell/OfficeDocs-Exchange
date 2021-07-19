@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Admins can learn how to view and modify Outlook on the web mailbox policies (formerly known as Outlook Web App mailbox policies) in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: be012ffe-8fdb-4fb7-aebd-78b3a55593fa
-ms.date: 
 ms.reviewer: 
 title: View or configure Outlook on the web mailbox policy properties in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -29,12 +30,12 @@ For more information about Outlook on the web mailbox policies, see [Outlook on 
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
-- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to view or configure Outlook on the web mailbox policies
 
@@ -60,39 +61,39 @@ For more information about Outlook on the web mailbox policies, see [Outlook on 
 
 To modify an Outlook on the web mailbox policy, use the following syntax:
 
-```
+```PowerShell
 Set-OwaMailboxPolicy -Identity "<Policy Name>" [Settings]
 ```
 
 This example enables calendar access in the default mailbox policy.
 
-```
+```PowerShell
 Set-OwaMailboxPolicy -Identity Default -CalendarEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-OwaMailboxPolicy](https://technet.microsoft.com/library/530166f7-ab42-4609-ba73-9b5a39b567be.aspx).
+For detailed syntax and parameter information, see [Set-OwaMailboxPolicy](/powershell/module/exchange/set-owamailboxpolicy).
 
 ## Use Exchange Online PowerShell to view Outlook on the web mailbox policies
 
 To view an Outlook on the web mailbox policy, use the following syntax:
 
-```
+```PowerShell
 Get-OwaMailboxPolicy [-Identity "<Policy Name>"]
 ```
 
 This example returns a summary list of all policies in the organization
 
-```
+```PowerShell
 Get-OwaMailboxPolicy | Format-Table Name
 ```
 
 This example retrieves detailed information for the policy named Executives.
 
-```
+```PowerShell
 Get-OwaMailboxPolicy -Identity Executives
 ```
 
-For detailed syntax and parameter information, see [Get-OwaMailboxPolicy](https://technet.microsoft.com/library/bdd580d3-8812-4b4a-93e8-c6401b0d2f0f.aspx).
+For detailed syntax and parameter information, see [Get-OwaMailboxPolicy](/powershell/module/exchange/get-owamailboxpolicy).
 
 ## How do you know this worked?
 
@@ -102,6 +103,6 @@ To verify that you've successfully modified an Outlook on the web mailbox policy
 
 - In Exchange Online PowerShell, replace \<Policy Name\> with the name of the policy, and run the following command to verify the settings:
 
-  ```
+  ```PowerShell
   Get-OwaMailboxPolicy -Identity "<Policy Name>"
   ```

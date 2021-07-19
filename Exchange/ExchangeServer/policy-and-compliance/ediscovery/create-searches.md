@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: feedc0c9-4a44-4bb2-8520-cc29d66d4fc3
-ms.date: 6/12/2018
 ms.reviewer:
 title: Create an In-Place eDiscovery search in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,9 +24,9 @@ manager: serdars
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions in Exchange Server](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
 
-- To create eDiscovery searches, you have to have an SMTP address in the organization that you're creating the searches in. In an Exchange hybrid organization, your on-premises Exchange mailbox must have a corresponding mail user account in your Office 365 organization so that you can search cloud-based mailboxes. Or, if you sign in with an account that only exists in Office 365, such as the tenant administrator account, that account must be assigned an Exchange Online license. For more information about the Office 365 licensing requirements for In-Place eDiscovery searches, see [Exchange Online Service Description](https://go.microsoft.com/fwlink/p/?LinkID=275416).
+- To create eDiscovery searches, you have to have an SMTP address in the organization that you're creating the searches in. In an Exchange hybrid organization, your on-premises Exchange mailbox must have a corresponding mail user account in your Microsoft 365 or Office 365 organization, such as the tenant administrator account, that account must be assigned an Exchange Online license. For more information about the Microsoft 365 or Office 365 licensing requirements for in-place eDiscovery searches, see [Exchange Online Service Description](/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description).
 
-- Exchange Server Setup creates a Discovery mailbox called **Discovery Search Mailbox** to copy search results. You can create additional Discovery mailboxes. For details, see [Create a discovery mailbox](https://technet.microsoft.com/library/bc20285d-35e2-4e49-9bd3-38abf96114ba.aspx).
+- Exchange Server Setup creates a Discovery mailbox called **Discovery Search Mailbox** to copy search results. You can create additional Discovery mailboxes. For details, see [Create a discovery mailbox](../../../ExchangeServer2013/create-a-discovery-mailbox-exchange-2013-help.md).
 
 - When you create a search, messages returned in search results aren't copied automatically to a discovery mailbox. After you create the search, you can use the Exchange admin center (EAC) to estimate and preview search results or copy them to a discovery mailbox. You can also export the search results to a .pst file. For details, see:
 
@@ -35,7 +36,7 @@ manager: serdars
 
   - [Export eDiscovery search results to a PST file](export-results-to-pst.md)
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 ## Use the EAC to create a search
 
@@ -81,7 +82,7 @@ As previously explained, to create eDiscovery searches, you have to sign in to a
 
 ## Use the Exchange Management Shell to create a search
 
-Here are four examples of using the Exchange Management Shell to search and place a hold on content in mailboxes and public folders. For detailed syntax and parameter information about using the Exchange Management Shell to create eDiscovery searches, see [New-MailboxSearch](https://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx)
+Here are four examples of using the Exchange Management Shell to search and place a hold on content in mailboxes and public folders. For detailed syntax and parameter information about using the Exchange Management Shell to create eDiscovery searches, see [New-MailboxSearch](/powershell/module/exchange/new-mailboxsearch)
 
 ### Example 1
 
@@ -102,11 +103,11 @@ This example creates the search Discovery-CaseId012 for items containing the key
 > [!IMPORTANT]
 > If you don't specify a search query, a date range, or a message type, all items in the source mailboxes or public folders are returned in the results. The results would be similar to selecting **Include all content** on the **Search query** page in the EAC.
 
-```
+```PowerShell
 New-MailboxSearch "Discovery-CaseId012" -StartDate "01/01/2013" -EndDate "12/31/2015" -SourceMailboxes "DG-Finance" -TargetMailbox "Discovery Search Mailbox" -SearchQuery '"Contoso" AND "Project A"' -MessageTypes Email -IncludeUnsearchableItems -LogLevel Full -InPlaceHoldEnabled $true
 ```
 
-```
+```PowerShell
 Start-MailboxSearch "Discovery-CaseId012"
 ```
 
@@ -119,11 +120,11 @@ After using the Exchange Management Shell to create an In-Place eDiscovery searc
 
 This example creates an In-Place eDiscovery search named HRCase090116 that searches for email messages sent by Alex Darrow to Sara Davis in 2015.
 
-```
+```PowerShell
 New-MailboxSearch "HRCase090116" -StartDate "01/01/2015" -EndDate "12/31/2015" -SourceMailboxes alexd,sarad -SearchQuery 'From:alexd@contoso.com AND To:sarad@contoso.com' -MessageTypes Email -TargetMailbox "Discovery Search Mailbox" -IncludeUnsearchableItems -LogLevel Full
 ```
 
-```
+```PowerShell
 Start-MailboxSearch "HRCase090116"
 ```
 
@@ -131,11 +132,11 @@ Start-MailboxSearch "HRCase090116"
 
 This example creates an estimate-only search that searches all public folders in the organization for items sent between January 1, 2015 and June 30, 2015, and that contain the phrase "patent infringement". The search doesn't include any mailboxes. The **Start-MailboxSearch** cmdlet is used to start the estimate-only search.
 
-```
+```PowerShell
 New-MailboxSearch -Name "Northwind Subpoena-All PFs" -AllPublicFolderSources $true -AllSourceMailboxes $false -SearchQuery "patent infringement" -StartDate "01/01/2015" -EndDate "06/30/2015" -TargetMailbox "Discovery Search Mailbox" -EstimateOnly
 ```
 
-```
+```PowerShell
 Start-MailboxSearch "Northwind Subpoena-All PFs"
 ```
 
@@ -143,11 +144,11 @@ Start-MailboxSearch "Northwind Subpoena-All PFs"
 
 This example searches all mailboxes and public folders for any content that contains the words "price list" and "Contoso" and that was sent after January 1, 2015. The **Start-MailboxSearch** cmdlet is use to run the search and copy the search results to the discovery mailbox.
 
-```
+```PowerShell
 New-MailboxSearch -Name "Contoso Litigation" -AllSourceMailboxes $true -AllPublicFolderSources $true -SearchQuery '"price list" AND "contoso"' -StartDate "01/01/2015" -TargetMailbox "Discovery Search Mailbox"
 ```
 
-```
+```PowerShell
 Start-MailboxSearch "Contoso Litigation"
 ```
 
@@ -176,22 +177,22 @@ You can use the _EstimateOnly_ switch to get an estimate of the search results a
 
 For example, you would run the following commands to create a new search and then display an estimate of the search results:
 
-```
+```PowerShell
 New-MailboxSearch "FY15 Q2 Financial Results" -StartDate "04/01/2015" -EndDate "06/30/2015" -SourceMailboxes "DG-Finance" -SearchQuery '"Financial" AND "Fabrikam"' -EstimateOnly -IncludeKeywordStatistics
 
 ```
 
-```
+```PowerShell
 Start-MailboxSearch "FY15 Q2 Financial Results"
 ```
 
-```
+```PowerShell
 Get-MailboxSearch "FY15 Q2 Financial Results"
 ```
 
 To display specific information about the estimated search results from the previous example, you could run the following command:
 
-```
+```PowerShell
 Get-MailboxSearch "FY15 Q2 Financial Results" | Format-List Name,Status,LastRunBy,LastStartTime,LastEndTime,Sources,SearchQuery,ResultSizeEstimate,ResultNumberEstimate,Errors,KeywordHits
 ```
 

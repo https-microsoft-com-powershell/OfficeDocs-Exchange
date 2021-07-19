@@ -3,10 +3,11 @@ localization_priority: Normal
 description: Learn how to use Exchange Online PowerShell to view or configure one or more call answering rules for a user.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: de6d9fa1-7878-49a9-bddb-e3317d94f4d8
-ms.date: 4/8/2015
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: View and manage a call answering rule in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -30,7 +31,7 @@ For additional management tasks related to Call Answering Rules, see [Forwarding
 
 - Estimated time to complete: Less than 1 minute.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM call answering rules" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform this procedure, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -38,12 +39,12 @@ For additional management tasks related to Call Answering Rules, see [Forwarding
 
 - Before you perform this procedure, confirm that the user's mailbox has been UM-enabled. For detailed steps, see [Enable a user for voice mail](../../voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail.md).
 
-- You can only use Exchange Online PowerShell to perform this procedure. To learn how to connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://go.microsoft.com/fwlink/p/?linkid=396554)..
+- You can only use Exchange Online PowerShell to perform this procedure. To learn how to connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell)..
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to view a call answering rule
 
@@ -51,13 +52,13 @@ You can retrieve the properties for a single call answering rule or a list of ca
 
 This example returns a formatted list of call answering rules in a user's UM-enabled mailbox.
 
-```
+```PowerShell
 Get-UMCallAnsweringRule-Mailbox tonysmith | Format-List
 ```
 
 This example displays the properties of the call answering rule `MyUMCallAnsweringRule`.
 
-```
+```PowerShell
 Get-UMCallAnsweringRule -Identity MyUMCallAnsweringRule
 ```
 
@@ -83,7 +84,7 @@ You can also specify the following actions:
 
 This example sets the priority to 2 on the call answering rule `MyCallAnsweringRule` that exists in the mailbox for Tony Smith.
 
-```
+```PowerShell
 Set-UMCallAnsweringRule -Mailbox tonysmith -Name MyCallAnsweringRule -Priority 2
 ```
 
@@ -95,12 +96,12 @@ This example performs the following actions on the call answering rule `MyCallAn
 
 - Sets the call answering rule to allow callers to interrupt the greeting.
 
-```
+```PowerShell
 Set-UMCallAnsweringRule -Name MyCallAnsweringRule -CallerIds "1,4255550100,,","1,4255550123,," -Priority 2 -CallersCanInterruptGreeting $true -Mailbox tonysmith
 ```
 
 This example changes the free/busy status to Away on the call answering rule `MyCallAnsweringRule` in the mailbox for Tony Smith and sets the priority to 2.
 
-```
+```PowerShell
 Set-UMCallAnsweringRule -Name MyCallAnsweringRule -Priority 2 -Mailbox tonysmith@contoso.com -ScheduleStatus 0x8
 ```

@@ -2,13 +2,14 @@
 title: 'Export messages from queues: Exchange 2013 Help'
 TOCTitle: Export messages from queues
 ms:assetid: 688b342c-f380-4fe0-afce-7e38cf490627
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998625(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998625(v=EXCHG.150)
 ms:contentKeyID: 50646234
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -41,7 +42,7 @@ When you export a message from a queue to a file, the message isn't removed from
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to export a specific message from a specific queue
 
@@ -78,7 +79,7 @@ Get-Message -Queue Mailbox01\Contoso.com | ForEach-Object {$Temp="D:\Contoso Exp
 To export specific messages from all queues on a server and use the **InternetMessageID** value of each message as the file name, use the following syntax.
 
 ```powershell
-Get-Message -Filter {<MessageFilter>} [-Server <ServerIdentity>] | ForEach-Object {$Temp=<Path>+$_.InternetMessageID+".eml";$Temp=$Temp.Replace("<","_");$Temp=$Temp.Replace(">","_");Export-Message $_.Identity | AssembleMessage -Path $Temp}
+Get-Message -Filter "<MessageFilter>" [-Server <ServerIdentity>] | ForEach-Object {$Temp=<Path>+$_.InternetMessageID+".eml";$Temp=$Temp.Replace("<","_");$Temp=$Temp.Replace(">","_");Export-Message $_.Identity | AssembleMessage -Path $Temp}
 ```
 
 Note that the **InternetMessageID** value contains angled brackets (\> and \<), which need to be removed because they aren't allowed in file names.
@@ -86,7 +87,7 @@ Note that the **InternetMessageID** value contains angled brackets (\> and \<), 
 This example exports a copy of all the messages from senders in the contoso.com domain from all queues on the server named Mailbox01 to the local directory named D:\\Contoso Export.
 
 ```powershell
-Get-Message -Filter {FromAddress -like "*@contoso.com"} -Server Mailbox01 | ForEach-Object {$Temp="D:\Contoso Export\"+$_.InternetMessageID+".eml";$Temp=$Temp.Replace("<","_");$Temp=$Temp.Replace(">","_");Export-Message $_.Identity | AssembleMessage -Path $Temp}
+Get-Message -Filter "FromAddress -like '*@contoso.com'" -Server Mailbox01 | ForEach-Object {$Temp="D:\Contoso Export\"+$_.InternetMessageID+".eml";$Temp=$Temp.Replace("<","_");$Temp=$Temp.Replace(">","_");Export-Message $_.Identity | AssembleMessage -Path $Temp}
 ```
 
 > [!NOTE]

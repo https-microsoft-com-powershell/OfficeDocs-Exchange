@@ -2,13 +2,14 @@
 title: Troubleshooting Autodiscover.Proxy Health Set
 TOCTitle: Troubleshooting Autodiscover.Proxy Health Set
 ms:assetid: b6a817cf-0b85-4620-adb7-cc3616c11268
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.scom.autodiscover.proxy(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.autodiscover.proxy(v=EXCHG.150)
 ms:contentKeyID: 49720876
-ms.date:
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -51,7 +52,7 @@ The Autodiscover service is monitored by using the following probes and monitors
 </tbody>
 </table>
 
-For more information about probes and monitors, see [Server health and performance](https://technet.microsoft.com/en-us/library/jj150551\(v=exchg.150\)).
+For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## Common issues
 
@@ -137,10 +138,10 @@ To troubleshoot this issue, follow these steps:
 
 9. After the server restarts, rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
-10. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit the [Exchange Server Solutions Center](https://go.microsoft.com/fwlink/p/?linkid=180809). In the navigation pane, click **Support options and resources** and use one of the options listed under **Get technical support** to contact a Microsoft Support professional. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
+10. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
 ## For More Information
 
-[What's new in Exchange 2013](https://technet.microsoft.com/en-us/library/jj150540\(v=exchg.150\))
+[What's new in Exchange 2013](../../what-s-new-in-exchange-2013-exchange-2013-help.md)
 
-[Autodiscover service](https://technet.microsoft.com/en-us/library/bb124251\(v=exchg.150\))
+[Autodiscover service](../../autodiscover-service-for-exchange-2013.md)

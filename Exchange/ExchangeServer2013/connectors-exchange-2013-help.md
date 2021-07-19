@@ -2,13 +2,14 @@
 title: 'Connectors: Exchange 2013 Help'
 TOCTitle: Connectors
 ms:assetid: 73559b0c-fc0e-41fd-84df-d07442137a0c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657461(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657461(v=EXCHG.150)
 ms:contentKeyID: 49289306
-ms.date: 06/02/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

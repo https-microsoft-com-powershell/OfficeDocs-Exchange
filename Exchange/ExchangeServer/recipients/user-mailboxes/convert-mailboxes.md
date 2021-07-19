@@ -4,12 +4,13 @@ localization_priority: Normal
 ms.author: dmaguire
 ms.topic: article
 author: msdmaguire
-ms.date:
 ms.reviewer:
 manager: serdars
 ms.prod: exchange-server-it-pro
 ms.assetid: dfed045e-a740-4a90-aff9-c58d53592f79
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 title: Convert a mailbox in Exchange Server
 
@@ -33,7 +34,8 @@ You can convert the following mailboxes to a different type:
 
 - Room or equipment mailbox to shared mailbox
 
- **Note:** If your organization uses a hybrid Exchange environment, you need to manage your mailboxes by using the on-premises Exchange management tools. To convert a mailbox in a hybrid environment, you might need to move the mailbox back to on-premises Exchange, convert the mailbox type, and then move it back to Office 365.
+> [!NOTE]
+> If your organization uses a hybrid Exchange environment, you need to manage your mailboxes by using the on-premises Exchange management tools. To convert a mailbox in a hybrid environment, you might need to move the mailbox back to on-premises Exchange, convert the mailbox type, and then move it back to Microsoft 365 or Office 365.
 
 ## What do you need to know before you begin?
 
@@ -47,51 +49,51 @@ You can convert the following mailboxes to a different type:
 
     For room mailboxes, you can enable the associated user account, which also requires you to specify a password (which requires the Reset Password role). You need to enable the room mailbox user account for features like the Skype for Business Room System.
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../../permissions/feature-permissions/recipient-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Management Shell to convert a mailbox
 
 To convert a mailbox to a different type, use this syntax:
 
-```
+```PowerShell
 Set-Mailbox -Identity <MailboxIdentity> -Type <Regular | Room | Equipment | Shared> [-Password (ConvertTo-SecureString -String '<Password>' -AsPlainText -Force)] [-EnableRoomMailboxAccount <$true | $false>] [-RoomMailboxPassword (ConvertTo-SecureString -String '<Password>' -AsPlainText -Force)] [-ResetPasswordOnNextLogon <$true | $false>]
 ```
 
 This example converts the shared mailbox named Marketing Dept 01 to a user mailbox with the new password P@ssw0rd25, and the requirement to change the password the next time the user logs in to the mailbox.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Marketing Dept 01" -Type Regular -Password (ConvertTo-SecureString -String 'P@ssw0rd25' -AsPlainText -Force) -ResetPasswordOnNextLogon $true
 ```
 
 This example converts the user mailbox named Conference Room 01 to a room mailbox.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Conference Room 01" -Type Room
 ```
 
 This is the same example, but the user account for the room mailbox is enabled, and the password is P@ssw0rd25
 
-```
+```PowerShell
 Set-Mailbox -Identity "Conference Room 01" -Type Room -EnableRoomMailboxAccount $true -RoomMailboxPassword (ConvertTo-SecureString -String 'P@ssw0rd25' -AsPlainText -Force)
 ```
 
  **Note**: Even when you convert a user mailbox with a known password to a room mailbox, you still need to use the _RoomMailboxPassword_ parameter to specify a password.
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ## How do you know this worked?
 
 To verify that you've successfully converted a mailbox, replace _\<MailboxIdentity\>_ with the name, alias, or email address of the mailbox, and run this command in the Exchange Management Shell to verify the property values:
 
-```
+```PowerShell
 Get-Mailbox -Identity <MailboxIdentity> | Format-List Name,RecipientTypeDetails,UserPrincipalName,AccountDisabled
 ```
 
-For detailed syntax and parameter information, see [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx).
+For detailed syntax and parameter information, see [Get-Mailbox](/powershell/module/exchange/get-mailbox).

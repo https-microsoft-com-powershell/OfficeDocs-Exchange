@@ -3,10 +3,11 @@ localization_priority: Normal
 description: You can enable a Unified Messaging (UM) user to receive faxes. By default, when you enable a user for Unified Messaging, they will be able to receive faxes if you enable faxing and configure a fax partner's URI on the UM mailbox policy that is linked to the user. Faxing can be enabled or disabled on UM dial plans, UM mailbox policies, or the UM-enabled user's mailbox.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: a0505001-aac0-41ef-824f-76e5e56d7675
-ms.date: 12/9/2016
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Enable a user to receive faxes in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
@@ -24,7 +25,7 @@ By default, the user's mailbox and the dial plan that is linked with the user al
 > [!NOTE]
 > You can use the EAC to configure fax settings on a UM mailbox policy. However, you must use Exchange Online PowerShell to configure fax settings on dial plans or for individual users.
 
-For more information about fax partners, see [Microsoft PinPoint for Fax Partners](https://go.microsoft.com/fwlink/p/?LinkId=190238).
+For more information about fax partners, see [Microsoft solution providers](https://www.microsoft.com/solution-providers/).
 
  For additional management tasks related to faxing, see [Faxing procedures](faxing-procedures.md).
 
@@ -32,7 +33,7 @@ For more information about fax partners, see [Microsoft PinPoint for Fax Partner
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM mailbox policies" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Unified Messaging" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](../../voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan.md).
 
@@ -45,12 +46,12 @@ For more information about fax partners, see [Microsoft PinPoint for Fax Partner
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to enable a UM user to receive faxes
 
 This example enables Tony Smith to receive incoming faxes.
 
-```
+```PowerShell
 Set-UMMailbox -Identity tonysmith@contoso.com -FaxEnabled $true
 ```

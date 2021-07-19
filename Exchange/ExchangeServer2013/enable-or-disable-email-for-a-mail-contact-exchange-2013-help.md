@@ -2,13 +2,14 @@
 title: 'Enable or disable email for a mail contact: Exchange 2013 Help'
 TOCTitle: Enable or disable email for a mail contact
 ms:assetid: ca47441f-1aa4-4958-aba5-18d51e59837e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124552(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124552(v=EXCHG.150)
 ms:contentKeyID: 50383001
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,7 +21,7 @@ You can disable email for an existing mail contact in your Exchange organization
 
 After you disable email for a mail contact, you can mail-enable the contact again by using the **Enable-MailContact** cmdlet in the Shell. You can also use this cmdlet to mail-enable any Active Directory contact.
 
-For additional management tasks related to mail contacts, see [Manage mail contacts](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-contacts).
+For additional management tasks related to mail contacts, see [Manage mail contacts](../ExchangeOnline/recipients-in-exchange-online/manage-mail-contacts.md).
 
 ## What do you need to know before you begin?
 
@@ -31,7 +32,7 @@ For additional management tasks related to mail contacts, see [Manage mail conta
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Disable email for a mail contact
 
@@ -57,7 +58,7 @@ This example disables email for the mail contact Neil Black.
 Disable-MailContact -Identity "Neil Black"
 ```
 
-For detailed syntax and parameter information, see [Disable-MailContact](https://technet.microsoft.com/en-us/library/aa997465\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Disable-MailContact](/powershell/module/exchange/Disable-MailContact).
 
 ## How do you know this worked?
 

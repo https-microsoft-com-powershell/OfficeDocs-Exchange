@@ -4,9 +4,10 @@ TOCTitle: Create a distribution group naming policy
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: b2ffb654-345d-4be1-be8e-83d28901373e
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -56,7 +57,7 @@ Here are some examples of a group naming policy. In each, **\<Group Name\>** is 
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution Groups" entry in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution Groups" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
 - The maximum length for a group name is 64 characters. This includes the combined number of characters in the prefix, the group name provided by the user, and the suffix.
 
@@ -69,7 +70,7 @@ Here are some examples of a group naming policy. In each, **\<Group Name\>** is 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a group naming policy
 

@@ -2,13 +2,14 @@
 title: 'Public Folder Management: Exchange 2013 Help'
 TOCTitle: Public Folder Management
 ms:assetid: e167d95e-bb39-43fd-b960-204ab0de27da
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876947(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876947(v=EXCHG.150)
 ms:contentKeyID: 49289438
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

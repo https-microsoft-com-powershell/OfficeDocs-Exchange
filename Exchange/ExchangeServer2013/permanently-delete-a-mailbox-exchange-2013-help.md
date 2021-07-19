@@ -2,13 +2,14 @@
 title: 'Permanently delete a mailbox: Exchange 2013 Help'
 TOCTitle: Permanently delete a mailbox
 ms:assetid: df35765a-0bef-4561-9846-d91d69c0269c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ863440(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ863440(v=EXCHG.150)
 ms:contentKeyID: 50387725
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -42,7 +43,7 @@ To learn more about disconnected mailboxes and perform other related management 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Permanently delete an active mailbox
 
@@ -57,7 +58,7 @@ Remove-Mailbox -Identity <identity> -Permanent $true
 > [!NOTE]
 > If you don't include the <EM>Permanent</EM> parameter, the deleted mailbox is retained in the mailbox database for 30 days, by default, before it's permanently deleted.
 
-For detailed syntax and parameter information, see [Remove-Mailbox](https://technet.microsoft.com/en-us/library/aa995948\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-Mailbox](/powershell/module/exchange/Remove-Mailbox).
 
 ## How do you know this worked?
 
@@ -119,7 +120,7 @@ This example permanently deletes all soft-deleted mailboxes from mailbox databas
 Get-MailboxStatistics -Database MBD01 | where {$_.DisconnectReason -eq "SoftDeleted"} | ForEach {Remove-StoreMailbox -Database $_.Database -Identity $_.MailboxGuid -MailboxState SoftDeleted}
 ```
 
-For detailed syntax and parameter information, see [Remove-StoreMailbox](https://technet.microsoft.com/en-us/library/ff829913\(v=exchg.150\)) and [Get-MailboxStatistics](https://technet.microsoft.com/en-us/library/bb124612\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Remove-StoreMailbox](/powershell/module/exchange/Remove-StoreMailbox) and [Get-MailboxStatistics](/powershell/module/exchange/Get-MailboxStatistics).
 
 ## How do you know this worked?
 

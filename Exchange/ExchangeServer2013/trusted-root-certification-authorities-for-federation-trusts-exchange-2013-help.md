@@ -2,13 +2,14 @@
 title: 'Trusted root certification authorities for federation trusts'
 TOCTitle: Trusted root certification authorities for federation trusts
 ms:assetid: d4224bf5-69b3-484c-8a70-4f230d3dbdd9
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee332350(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee332350(v=EXCHG.150)
 ms:contentKeyID: 48385572
-ms.date: 07/26/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-To establish a federation trust between your Microsoft Exchange Server 2013 organization and the [Azure Active Directory authentication system](https://go.microsoft.com/fwlink/p/?linkid=135986), you need a digital certificate installed on the Exchange server used to create the trust. We strongly recommend using a self-signed certificate. A self-signed certificate is created and installed automatically when using the **Enable federation trust** wizard in the Exchange admin center (EAC).
+To establish a federation trust between your Microsoft Exchange Server 2013 organization and the [Azure Active Directory authentication system](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/gg638824(v=ws.11)), you need a digital certificate installed on the Exchange server used to create the trust. We strongly recommend using a self-signed certificate. A self-signed certificate is created and installed automatically when using the **Enable federation trust** wizard in the Exchange admin center (EAC).
 
 If you don't want to use the recommended self-signed certificate, you should request and install an X.509 Secure Sockets Layer (SSL) certificate from a certification authority (CA) trusted by Microsoft. Although certificates issued by other CAs may also be used to establish a federation trust with the Azure AD authentication system, they aren't certified by Microsoft to date.
 

@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d2d89ce6-4721-4737-a325-fba5ad9422e0
-ms.date: 
 ms.reviewer: 
 title: Default settings for Exchange virtual directories
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -38,7 +39,7 @@ The following table lists the default settings in the Client Access services (th
 |PowerShell|By default, all authentication methods are disabled.|Not required|EAC or Exchange Management Shell|
 |Rpc|Basic authentication <br/> Windows authentication|Not required|EAC or Exchange Management Shell|
 
-<sup>1</sup>The API virtual directory is available in Exchange 2016 CU3 or newer.
+<sup>1</sup> The API virtual directory is available in Exchange 2016 CU3 or newer.
 
 ## Back End Virtual Directories on Mailbox servers
 
@@ -46,20 +47,20 @@ The following table lists the default settings in the back end services on Excha
 
 |**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
 |:-----|:-----|:-----|:-----|
-|Exchange Back End|Anonymous authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|API<sup>1</sup>|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|Autodiscover|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|ecp|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|EWS|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|Microsoft-Server-ActiveSync|Basic authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|OAB|Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|owa|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|PowerShell|Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory should not be configured by the user.|
-|Rpc|Windows authentication|Not required|This virtual directory should not be configured by the user.|
-|RpcWithCert|Windows authentication|Not required|This virtual directory should not be configured by the user.|
+|Exchange Back End|Anonymous authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|API<sup>1</sup>|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|Autodiscover|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|ecp|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|EWS|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|Microsoft-Server-ActiveSync|Basic authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|OAB|Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|owa|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|PowerShell|Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
+|Rpc|Windows authentication|Not required|This virtual directory shouldn't be configured by the user.|
+|RpcWithCert|Windows authentication|Not required|This virtual directory shouldn't be configured by the user.|
 
-<sup>1</sup>The API virtual directory is available in Exchange 2016 CU3 or newer.
+<sup>1</sup> The API virtual directory is available in Exchange 2016 CU3 or newer.
 
 ## See also
 
-[Virtual directory management](https://technet.microsoft.com/library/ff952752(v=exchg.150).aspx)
+[Virtual directory management](../../ExchangeServer2013/virtual-directory-management-exchange-2013-help.md)

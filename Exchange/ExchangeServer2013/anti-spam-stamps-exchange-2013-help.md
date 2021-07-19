@@ -2,13 +2,14 @@
 title: 'Anti-spam stamps: Exchange 2013 Help'
 TOCTitle: Anti-spam stamps
 ms:assetid: 28d3a5c2-8509-4b25-9876-763536e77c27
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996878(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996878(v=EXCHG.150)
 ms:contentKeyID: 49248677
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -21,7 +22,7 @@ Anti-spam stamps help you diagnose spam-related problems by applying diagnostic 
 You can use anti-spam stamps as diagnostic tools to determine what actions to take on false-positives and on suspected spam messages that individuals receive in their mailboxes.
 
 > [!NOTE]
-> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://go.microsoft.com/fwlink/p/?linkid=835894">Deprecating support for SmartScreen in Outlook and Exchange</A>.
+> On November 1, 2016, Microsoft stopped producing spam definition updates for the SmartScreen filters in Exchange and Outlook. The existing SmartScreen spam definitions will be left in place, but their effectiveness will likely degrade over time. For more information, see <A href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecating-support-for-smartscreen-in-outlook-and-exchange/ba-p/605332">Deprecating support for SmartScreen in Outlook and Exchange</A>.
 
 ## Viewing anti-spam stamps
 
@@ -136,7 +137,7 @@ The following table describes the filter information that can appear in an anti-
 </tr>
 <tr class="even">
 <td><p>IPOnAllowList</p></td>
-<td><p>The IPOnAllowList stamp indicates that the sender's IP address is on the IP Allow list. For more information about the IP Allow list, see <a href="https://go.microsoft.com/fwlink/?linkid=268732">Understanding Connection Filtering</a>.</p></td>
+<td><p>The IPOnAllowList stamp indicates that the sender's IP address is on the IP Allow list. For more information about the IP Allow list, see <a href="/previous-versions/office/exchange-server-2010/bb124320(v=exchg.141)">Understanding Connection Filtering</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>MessageSecurityAntispamBypass</p></td>

@@ -1,16 +1,17 @@
 ---
 localization_priority: Normal
-description: 'Summary: Learn how to verify ord troubleshoot your Exchange 2016 or Exchange 2019 installation.'
+description: 'Summary: Learn how to verify or troubleshoot your Exchange 2016 or Exchange 2019 installation.'
 ms.topic: get-started-article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: fdd20a2a-c8c1-4d17-b813-3c05d88a4411
-ms.date: 6/8/2018
 ms.reviewer:
 title: Verify Exchange Server installations
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -21,25 +22,25 @@ manager: serdars
 
 After you install Exchange Server 2016 or Exchange Server 2019, we recommend that you verify the installation by running the **Get-ExchangeServer** cmdlet and by reviewing the Exchange Setup log. If the setup process fails or errors occur during installation, you can use the Setup log to find the source of the problem.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Run Get-ExchangeServer
 
-To verify that Exchange installed successfully, run the following commands in the Exchange Management Shell. To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+To verify that Exchange installed successfully, run the following commands in the Exchange Management Shell. To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 This command returns a summary list of the names, Active Directory sites, Exchange server roles, Exchange editions, and Exchange versions of all Exchange servers in the organization.
 
-```
+```powershell
 Get-ExchangeServer
 ```
 
 This example returns additional details about the Exchange server named Mailbox01.
 
-```
+```powershell
 Get-ExchangeServer -Identity Mailbox01 | Format-List
 ```
 
-For detailed syntax and parameter information, see [Get-ExchangeServer](https://technet.microsoft.com/library/96543903-10fa-46fe-9ea0-90570ca0ad2e.aspx).
+For detailed syntax and parameter information, see [Get-ExchangeServer](/powershell/module/exchange/get-exchangeserver).
 
 ## Review the Windows Application log and the Exchange Setup log
 

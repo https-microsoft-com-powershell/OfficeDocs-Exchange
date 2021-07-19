@@ -2,13 +2,14 @@
 title: 'Domains: Exchange 2013 Help'
 TOCTitle: Domains
 ms:assetid: 11748c2d-2e32-43a4-b77d-e0c17db6200b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ673041(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ673041(v=EXCHG.150)
 ms:contentKeyID: 49289175
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

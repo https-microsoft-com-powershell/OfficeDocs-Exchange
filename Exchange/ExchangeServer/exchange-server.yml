@@ -1,0 +1,85 @@
+### YamlMime:Landing
+
+title: Exchange Server documentation # < 60 chars
+summary: Welcome to Microsoft Exchange Server! Here's some fundamental and essential information to help you dig in. # < 160 chars
+
+metadata:
+  title: Exchange Server documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: All the information and resources you need to get started with Exchange Server 2016 or Exchange Server 2019. # Required; article description that is displayed in search results. < 160 chars.
+  ms.prod: exchange-server-it-pro
+  ms.topic: landing-page # Required
+  ms.collection: exchange-server # Optional; Remove if no collection is used.
+  author: msdmaguire #Required; your GitHub user alias, with correct capitalization.
+  ms.author: dmaguire #Required; microsoft alias of author; optional team alias.
+  manager: serdars
+  ms.date: 07/08/2020 #Required; mm/dd/yyyy format.
+  ms.assetid: d2ce4e55-208e-46b0-a775-e7e266132100
+  localization_priority: Normal
+  audience: ITPro
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card (optional)
+  - title: About Exchange Server
+    linkLists:
+      - linkListType: download
+        links:
+          - text: Buy Exchange or download a trial version
+            url: https://go.microsoft.com/fwlink/p/?linkId=836306
+          - text: Download full versions, including updates
+            url: ./new-features/updates.md
+      - linkListType: whats-new
+        links:
+          - text: What's new
+            url: ./new-features/new-features.md
+          - text: Set up Outlook
+            url: ./new-features/build-numbers-and-release-dates.md
+
+  # Card (optional)
+  - title: Plan and deploy
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Exchange Server Deployment Assistant for quickly deploy
+            url: https://assistants.microsoft.com/
+          - text: Release notes for Exchange 
+            url: ./release-notes.md
+      - linkListType: deploy
+        links:
+          - text: Exchange system requirements
+            url: ./plan-and-deploy/system-requirements.md
+          - text: Exchange prerequisites
+            url: ./plan-and-deploy/prerequisites.md
+          - text: Prepare Active Directory and domains
+            url: ./plan-and-deploy/prepare-ad-and-domains.md
+
+  # Card
+  - title: Install and upgrade
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Install the Exchange Mailbox role using the Setup wizard
+            url: ./plan-and-deploy/deploy-new-installations/install-mailbox-role.md
+          - text: Install Exchange using unattended mode
+            url: ./plan-and-deploy/deploy-new-installations/unattended-installs.md
+          - text: Install the Exchange Edge Transport role using the Setup wizard
+            url: ./plan-and-deploy/deploy-new-installations/install-edge-transport-role.md
+          - text: Upgrade Exchange to the latest cumulative update
+            url: ./plan-and-deploy/install-cumulative-updates.md
+          - text: Exchange post-installation tasks
+            url: ./plan-and-deploy/post-installation-tasks/post-installation-tasks.md
+
+  # Card
+  - title: Reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Exchange Server forums
+            url: https://social.technet.microsoft.com/forums/office/home?category=exchangeserver
+          - text: Exchange Server 2010
+            url: /previous-versions/office/exchange-server-2010/bb124558(v=exchg.141)
+          - text: Exchange Server 2013
+            url: ../ExchangeServer2013/exchange-server-2013-exchange-2013-help.md

@@ -2,13 +2,14 @@
 title: 'Configure Exchange to accept mail for multiple authoritative domains'
 TOCTitle: Configure Exchange to accept mail for multiple authoritative domains
 ms:assetid: 11801f73-4934-4025-a1c1-3935dada7e9b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996314(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996314(v=EXCHG.150)
 ms:contentKeyID: 50874000
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -47,7 +48,7 @@ The following examples are scenarios in which your Exchange organization may hav
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Create an authoritative domain
 

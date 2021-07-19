@@ -2,13 +2,14 @@
 title: 'DSN message identity: Exchange 2013 Help'
 TOCTitle: DSN message identity
 ms:assetid: 70ffba22-e4fd-4cd3-98f5-8bfca2df89e4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998835(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998835(v=EXCHG.150)
 ms:contentKeyID: 49286847
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

@@ -2,13 +2,14 @@
 title: 'Export and import retention tags: Exchange 2013 Help'
 TOCTitle: Export and import retention tags
 ms:assetid: 18405ea2-7ccc-475e-bd84-8b040e17bf44
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ907307(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ907307(v=EXCHG.150)
 ms:contentKeyID: 50639770
-ms.date: 12/10/2017
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ In these scenarios, the Managed Folder Assistant can correctly process an item t
 > [!WARNING]
 > To keep retention tags and retention policies synchronized between two organizations, every time you make changes to a retention tag or policy in the source organization, you must perform this procedure to export retention tags and policies from the source organization and import them in the destination organization.<BR>You can't select specific retention tags or policies to export. The Export-RetentionTags.ps1 script exports all retention tags and policies from an organization.
 
-For additional management tasks related to Messaging Records Management, see [Messaging Records Management Procedures](https://docs.microsoft.com/en-us/office365/securitycompliance/inactive-mailboxes-in-office-365).
+For additional management tasks related to Messaging Records Management, see [Messaging Records Management Procedures](/office365/securitycompliance/inactive-mailboxes-in-office-365).
 
 ## What do you need to know before you begin?
 
@@ -50,7 +51,7 @@ For additional management tasks related to Messaging Records Management, see [Me
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Export retention tags from an on-premises Exchange organization
 
@@ -63,7 +64,7 @@ For additional management tasks related to Messaging Records Management, see [Me
 2. Run the Export-RetentionTags.ps1 script to export retention tags to an XML file.
 
    > [!IMPORTANT]
-   > If you're importing or exporting retention tags and retention policies to Exchange Online, you must connect your Windows PowerShell session to Exchange Online. For details, see <A href="https://technet.microsoft.com/en-us/library/jj984289(v=exchg.150)">Connect to Exchange Online using remote PowerShell</A>.
+   > If you're importing or exporting retention tags and retention policies to Exchange Online, you must connect your Windows PowerShell session to Exchange Online. For details, see <A href="/powershell/exchange/connect-to-exchange-online-powershell">Connect to Exchange Online PowerShell</A>.
 
    ```powershell
    .\Export-RetentionTags.ps1 "c:\docs\ExportedRetentionTags.xml"
@@ -88,7 +89,7 @@ To verify that you have successfully exported retention tags and retention polic
 2. Run the Import-RetentionTags.ps1 script to import retention tags from a previously exported XML file.
 
    > [!IMPORTANT]
-   > If you're importing or exporting retention tags and retention policies to Exchange Online, you must connect your Windows PowerShell session to Exchange Online. For details, see <A href="https://technet.microsoft.com/en-us/library/jj984289(v=exchg.150)">Connect to Exchange Online using remote PowerShell</A>. <br>/<br/> When running this script against Exchange Online, you may be prompted to confirm that you want to run software from an untrusted publisher. Verify that the name of the publisher appears as <CODE>CN=Microsoft Corporation, OU=MOPR, O=Microsoft Corporation, L=Redmond, S=Washington, C=US</CODE>, and then click <STRONG>R</STRONG> to allow the script to be run once or <STRONG>A</STRONG> to always run.
+   > If you're importing or exporting retention tags and retention policies to Exchange Online, you must connect your Windows PowerShell session to Exchange Online. For details, see <A href="/powershell/exchange/connect-to-exchange-online-powershell">Connect to Exchange Online PowerShell</A>. <br>/<br/> When running this script against Exchange Online, you may be prompted to confirm that you want to run software from an untrusted publisher. Verify that the name of the publisher appears as <CODE>CN=Microsoft Corporation, OU=MOPR, O=Microsoft Corporation, L=Redmond, S=Washington, C=US</CODE>, and then click <STRONG>R</STRONG> to allow the script to be run once or <STRONG>A</STRONG> to always run.
 
    ```powershell
    .\Import-RetentionTags.ps1 "c:\docs\ExportedRetentionTags.xml"
@@ -100,4 +101,4 @@ To verify that you have successfully imported retention tags and retention polic
 
 1. In the EAC, navigate to **Compliance Management** \> **Retention tags**, and verify that the retention tags have been imported successfully. Navigate to **Compliance Management** \> **Retention policies**, and verify that the retention policies have been imported successfully.
 
-2. Use the **Get-RetentionPolicy** and **Get-RetentionPolicyTag** cmdlets to verify that the tags and policies have been created. For an example about how to retrieve retention tags and retention policies, see Examples in [Get-RetentionPolicyTag](https://technet.microsoft.com/en-us/library/dd298009\(v=exchg.150\)) and [Get-RetentionPolicy](https://technet.microsoft.com/en-us/library/dd298086\(v=exchg.150\)).
+2. Use the **Get-RetentionPolicy** and **Get-RetentionPolicyTag** cmdlets to verify that the tags and policies have been created. For an example about how to retrieve retention tags and retention policies, see Examples in [Get-RetentionPolicyTag](/powershell/module/exchange/Get-RetentionPolicyTag) and [Get-RetentionPolicy](/powershell/module/exchange/Get-RetentionPolicy).

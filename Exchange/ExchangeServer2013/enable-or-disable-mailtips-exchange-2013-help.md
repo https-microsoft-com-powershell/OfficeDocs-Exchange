@@ -2,13 +2,14 @@
 title: 'Enable or disable MailTips: Exchange 2013 Help'
 TOCTitle: Enable or disable MailTips
 ms:assetid: 11ad3848-f303-4ad5-a21d-9b0883db4bda
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ649321(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ649321(v=EXCHG.150)
 ms:contentKeyID: 49318493
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -29,7 +30,7 @@ You can use the Exchange Management Shell to configure various settings that def
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable MailTips
 
@@ -39,4 +40,4 @@ You use the **Set-OrganizationConfig** cmdlet to enable or disable MailTips in y
 Set-OrganizationConfig -MailTipsAllTipsEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-OrganizationConfig](https://technet.microsoft.com/en-us/library/aa997443\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-OrganizationConfig](/powershell/module/exchange/Set-OrganizationConfig).

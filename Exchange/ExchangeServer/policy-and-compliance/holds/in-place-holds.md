@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 9d5d8d37-a053-4830-9cb1-6e1ede25e963
-ms.date: 7/6/2018
 ms.reviewer:
 title: Create or remove an In-Place Hold
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -35,7 +36,7 @@ You can create In-Place holds in the Exchange admin center (EAC) or in the Excha
 
 - See the [More information](#more-information) section for a description of the In-Place Hold workflow process.
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 ## Create an In-Place Hold
 
@@ -82,17 +83,17 @@ This example creates an In-Place Hold named Hold-CaseId012 and adds the mailbox 
 > [!IMPORTANT]
 > If you don't specify additional search parameters for an In-Place Hold, all items in the specified source mailboxes are placed on hold. If you don't specify the _ItemHoldPeriod_ parameter, items are placed on hold indefinitely or until the mailbox is either removed from hold or the hold is deleted.
 
-```
+```PowerShell
 New-MailboxSearch "Hold-CaseId012" -SourceMailboxes "joe@contoso.com" -InPlaceHoldEnabled $true
 ```
 
 This example places an In-Place Hold on all public folders in the organization, and holds content for 7 years. The hold doesn't include any mailboxes.
 
-```
+```PowerShell
 New-MailboxSearch -Name "Hold for Public Folders" -AllPublicFolderSources $true -AllSourceMailboxes $false -ItemHoldPeriod 2555 -InPlaceHoldEnabled $true
 ```
 
-For detailed syntax and parameter information, see [New-MailboxSearch](https://technet.microsoft.com/library/74303b47-bb49-407c-a43b-590356eae35c.aspx).
+For detailed syntax and parameter information, see [New-MailboxSearch](/powershell/module/exchange/new-mailboxsearch).
 
 ### How do you know this worked?
 
@@ -102,19 +103,19 @@ To verify that you have successfully created the In-Place Hold, do one of the fo
 
 - Use the **Get-MailboxSearch** cmdlet to retrieve the mailbox search and check the hold properties. For example, the following command displays the hold properties for the search named Hold-CaseId012:
 
-  ```
+  ```PowerShell
   Get-MailboxSearch "Hold-CaseId012" | Format-List InPlaceHoldEnabled,ItemHoldPeriod,InPlaceHoldIdentity
   ```
 
 - Use the **Get-Mailbox** cmdlet to display In-Place Hold information for specific user mailboxes or public folder mailboxes. For example, the following command displays the GUID for the In-Place Hold:
 
-  ```
+  ```PowerShell
   Get-Mailbox "joe@contoso.com" | Format-List InPlaceHolds
   ```
 
     This example will display the In-Place Hold GUID for all public folder mailboxes in the organization.
 
-  ```
+  ```PowerShell
   Get-Mailbox -PublicFolder | Format-List Name,InPlaceHolds
   ```
 
@@ -138,11 +139,11 @@ In Exchange Server, eDiscovery searches are used to hold and search for content 
 
 This example first disables In-Place Hold named Hold-CaseId012 and then removes the mailbox search.
 
-```
+```PowerShell
 Set-MailboxSearch "Hold-CaseId012" -InPlaceHoldEnabled $false; Remove-MailboxSearch "Hold-CaseId012"
 ```
 
-For detailed syntax and parameter information, see [Set-Mailboxsearch](https://technet.microsoft.com/library/23201ff0-e30a-4efd-9384-ab0af5815701.aspx).
+For detailed syntax and parameter information, see [Set-Mailboxsearch](/powershell/module/exchange/set-mailboxsearch).
 
 ### How do you know this worked?
 

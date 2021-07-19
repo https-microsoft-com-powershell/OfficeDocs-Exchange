@@ -2,13 +2,14 @@
 title: 'Deploying voice mail and UM: Exchange 2013 Help'
 TOCTitle: Deploying voice mail and UM
 ms:assetid: 3df61b62-a1e4-41fb-969c-319189ae4e42
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ673519(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ673519(v=EXCHG.150)
 ms:contentKeyID: 49315394
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ When you're deploying Unified Messaging, you have multiple options depending on 
 > [!WARNING]
 > When you're deploying Exchange UM in a hosted or hybrid environment, you must deploy session border controllers (SBCs). SBCs don't enable UM to connect to a telephony network or provide a dial tone for an organization. However, they do connect your on-premises UM deployment to a datacenter using the IP protocol over a public or private WAN.
 
-**Telephony Hardware**: Choosing the correct VoIP gateway, IP PBX, or SBC is only the first step in integrating your telephony network with UM. You must configure those devices to work with UM, deploy the required Client Access and Mailbox servers, and create and configure all needed UM components. These components allow you to connect your circuit-based protocol network to your IP data network and enable voice mail for users in your organization. For details, see [Telephony advisor for Exchange 2013](https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013).
+**Telephony Hardware**: Choosing the correct VoIP gateway, IP PBX, or SBC is only the first step in integrating your telephony network with UM. You must configure those devices to work with UM, deploy the required Client Access and Mailbox servers, and create and configure all needed UM components. These components allow you to connect your circuit-based protocol network to your IP data network and enable voice mail for users in your organization. For details, see [Telephony advisor for Exchange 2013](../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/telephony-advisor-for-exchange-2013.md).
 
 **Microsoft Lync Server**: Unified Messaging can use Microsoft Lync Server to combine voice messaging, instant messaging, enhanced presence, audio/video conferencing, and email into a familiar, integrated communications experience. Integrating UM and Lync Server has the following benefits:
 
@@ -45,7 +46,7 @@ When you're deploying Unified Messaging, you have multiple options depending on 
 
   - Continuity of the user experience across multiple devices.
 
-For more information about Lync Server, see [Microsoft Lync Server](https://go.microsoft.com/fwlink/p/?linkid=265752).
+For more information about Lync Server, see [Microsoft Lync Server](/lyncserver/microsoft-lync-server-2013).
 
 ## Deployment steps
 

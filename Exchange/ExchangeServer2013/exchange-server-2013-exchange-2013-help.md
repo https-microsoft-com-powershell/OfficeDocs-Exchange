@@ -2,13 +2,14 @@
 title: 'Exchange Server 2013: Exchange 2013 Help'
 TOCTitle: '@NoTitle'
 ms:assetid: cb24ddb7-0659-4d9d-9057-52843f861ba8
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124558(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124558(v=EXCHG.150)
 ms:contentKeyID: 48157381
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,9 +21,7 @@ Welcome to Microsoft Exchange Server 2013\! We know you're eager to get started,
 
 - If you want a quick overview of what's new in Exchange 2013, check out [What's new in Exchange 2013](what-s-new-in-exchange-2013-exchange-2013-help.md).
 
-- If you want to learn more about Exchange 2013, check out the [Exchange Server 2013 TechCenter](https://go.microsoft.com/fwlink/?linkid=266622).
-
-- If you need more help or want to share ideas, the [Exchange Server forums](https://go.microsoft.com/fwlink/p/?linkid=60612) are a great place to start.
+- If you need more help or want to share ideas, the [Exchange Server forums](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver) are a great place to start.
 
 - To get started with Exchange 2013, head for [Planning and deployment](planning-and-deployment-for-exchange-2013-installation-instructions.md). It lays out the recommended sequence for preparing for and then installing Exchange 2013 and includes the following important topics:
 
@@ -80,16 +79,16 @@ The Help content for Exchange 2013 consists of the following top-level categorie
 
 - [High availability and site resilience](high-availability-and-site-resilience-exchange-2013-help.md)
 
-- [Using PowerShell with Exchange 2013 (Exchange Management Shell)](https://technet.microsoft.com/en-us/library/bb123778\(v=exchg.150\))
+- [Using PowerShell with Exchange 2013 (Exchange Management Shell)](/powershell/exchange/exchange-management-shell)
 
 - [Exchange admin center in Exchange 2013](exchange-admin-center-in-exchange-2013-exchange-2013-help.md)
 
 - [Server health and performance](server-health-and-performance-exchange-2013-help.md)
 
-- [About Exchange documentation](https://docs.microsoft.com/en-us/exchange/about-exchange-documentation)
+- [About Exchange documentation](../ExchangeOnline/about-exchange-documentation.md)
 
 > [!NOTE]
-> Check out our other Exchange content:<BR><A href="https://technet.microsoft.com/en-us/library/jj200580(v=exchg.150)">Exchange Online</A><BR><A href="https://technet.microsoft.com/en-us/library/jj200581(v=exchg.150)">Exchange Server Hybrid Deployments</A><BR><A href="https://technet.microsoft.com/en-us/library/jj723137(v=exchg.150)">Exchange Online Protection</A>
+> Check out our other Exchange content:<BR><A href="/exchange/exchange-online">Exchange Online</A><BR><A href="/exchange/exchange-hybrid">Exchange Server Hybrid Deployments</A><BR><A href="/microsoft-365/security/office-365-security/exchange-online-protection-overview">Exchange Online Protection</A>
 
 ## Tell us what you think
 

@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Microsoft Exchange Server 2016 Setup has detected that the computer you're attempting to install Exchange 2016 on is an Active Directory domain controller. Installing Exchange 2016 on a domain controller isn't recommended.
 ms.topic: reference
 author: msdmaguire
-f1_keywords:
+ms.custom:
 - ms.exch.setupreadiness.WarningInstallExchangeRolesOnDomainController
 ms.author: dmaguire
 ms.assetid: 48922de2-a68c-4092-96a5-d38c8e5f49f5
-ms.date: 8/2/2018
 ms.reviewer: 
 title: Installing Exchange on a domain controller is not recommended [WarningInstallExchangeRolesOnDomainController]
 ms.collection: exchange-server
+f1.keywords:
+- CSH
 audience: Developer
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,7 +24,7 @@ Exchange Server 2016 or Exchange 2019 Setup has detected that the target compute
 
 If you install Exchange on a domain controller, be aware of the following issues:
 
-- Configuring Exchange for Active Directory split permissions isn't supported. For more information about split permissions, see [Understanding split permissions](https://technet.microsoft.com/library/dd638106(v=exchg.150).aspx).
+- Configuring Exchange for Active Directory split permissions isn't supported. For more information about split permissions, see [Understanding split permissions](../../../ExchangeServer2013/understanding-split-permissions-exchange-2013-help.md).
 
 - The Exchange Trusted Subsystem universal security group (USG) is added to the Domain Admins group. This action grants all Exchange servers domain administrator rights in the domain.
 
@@ -39,4 +40,4 @@ If you install Exchange on a domain controller, be aware of the following issues
 
 Therefore, we recommend that you install Exchange on a member server, not on a domain controller.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

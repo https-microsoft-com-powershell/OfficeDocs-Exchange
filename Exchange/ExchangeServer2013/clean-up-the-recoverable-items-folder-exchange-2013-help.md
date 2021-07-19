@@ -2,15 +2,16 @@
 title: 'Clean up the Recoverable Items folder: Exchange 2013 Help'
 TOCTitle: Clean up the Recoverable Items folder
 ms:assetid: 82c310f8-de2f-46f2-8e1a-edb6055d6e69
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff678798(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff678798(v=EXCHG.150)
 ms:contentKeyID: 50470877
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
-f1_keywords:
+ms.custom:
 - classified message spillage
 - classified message spillage cleanup
 - Message spillage
@@ -34,7 +35,7 @@ How you clean up the Recoverable Items folder in a user's mailbox depends on whe
 
 - If the mailbox is placed on In-Place Hold or Litigation Hold or has single item recovery enabled, it's important to preserve the mailbox data until the hold is removed or single item recovery is disabled. In this case, you need to perform more detailed steps to clean up the Recoverable Items folder.
 
-To learn more about In-Place Hold and Litigation Hold, see [In-Place Hold and Litigation Hold](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-and-litigation-holds). To learn more about single item recovery, see "Single Item Recovery" in [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
+To learn more about In-Place Hold and Litigation Hold, see [In-Place Hold and Litigation Hold](../ExchangeOnline/security-and-compliance/in-place-and-litigation-holds.md). To learn more about single item recovery, see "Single Item Recovery" in [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
 
 To learn more about the Recoverable Items folder, see [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md).
 
@@ -44,7 +45,7 @@ To learn more about the Recoverable Items folder, see [Recoverable Items folder]
 
 - You need to be assigned the following management roles to use the **Search-Mailbox** cmdlet to search for and delete messages in a user's mailbox.
 
-  - **Mailbox Search**: This role allows you to search for messages across multiple mailboxes in your organization. Administrators aren't assigned this role by default. To assign yourself this role so that you can search mailboxes, add yourself as a member of the Discovery Management role group. See [Assign eDiscovery permissions in Exchange](https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/assign-ediscovery-permissions).
+  - **Mailbox Search**: This role allows you to search for messages across multiple mailboxes in your organization. Administrators aren't assigned this role by default. To assign yourself this role so that you can search mailboxes, add yourself as a member of the Discovery Management role group. See [Assign eDiscovery permissions in Exchange](../ExchangeOnline/security-and-compliance/in-place-ediscovery/assign-ediscovery-permissions.md).
 
   - **Mailbox Import Export**: This role allows you to delete messages from a user's mailbox. By default, this role isn't assigned to any role group. To delete messages from users' mailboxes, you can add the Mailbox Import Export role to the Organization Management role group. For more information, see the "Add a role to a role group" section in [Manage role groups](manage-role-groups-exchange-2013-help.md) .
 
@@ -54,7 +55,7 @@ To learn more about the Recoverable Items folder, see [Recoverable Items folder]
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to delete items from the Recoverable Items folder for mailboxes that aren't placed on hold or don't have single item recovery enabled
 
@@ -67,7 +68,7 @@ Search-Mailbox -Identity "Gurinder Singh" -SearchDumpsterOnly -TargetMailbox "Di
 > [!NOTE]
 > To delete items from the mailbox without copying them to another mailbox, use the preceding command without the <EM>TargetMailbox</EM> and <EM>TargetFolder</EM> parameters.
 
-For detailed syntax and parameter information, see [Search-Mailbox](https://technet.microsoft.com/en-us/library/dd298173\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Search-Mailbox](/powershell/module/exchange/Search-Mailbox).
 
 ## Use the Shell to clean up the Recoverable Items folder for mailboxes that are placed on hold or have single item recovery enabled
 
@@ -161,7 +162,7 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
    ```
 
    > [!NOTE]
-   > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see <A href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery">In-Place eDiscovery</A>.
+   > It isn't required to copy items to the Discovery Search Mailbox. You can copy messages to any mailbox. However, to prevent access to potentially sensitive mailbox data, we recommend copying messages to a mailbox that has access restricted to authorized records managers. By default, access to the default Discovery Search Mailbox is restricted to members of the Discovery Management role group. For details, see <A href="/exchange/security-and-compliance/in-place-ediscovery/in-place-ediscovery">In-Place eDiscovery</A>.
 
 10. If the mailbox was placed on Litigation Hold or had single item recovery enabled earlier, enable these features again.
 
@@ -208,25 +209,25 @@ This procedure copies items from Gurinder Singh's Recoverable Items folder to th
 
 For detailed syntax and parameter information, see the following topics:
 
-- [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\))
+- [Get-Mailbox](/powershell/module/exchange/Get-Mailbox)
 
-- [Get-CASMailbox](https://technet.microsoft.com/en-us/library/bb124754\(v=exchg.150\))
+- [Get-CASMailbox](/powershell/module/exchange/Get-CASMailbox)
 
-- [Get-MailboxFolderStatistics](https://technet.microsoft.com/en-us/library/aa996762\(v=exchg.150\))
+- [Get-MailboxFolderStatistics](/powershell/module/exchange/Get-MailboxFolderStatistics)
 
-- [Get-MailboxServer](https://technet.microsoft.com/en-us/library/bb123539\(v=exchg.150\))
+- [Get-MailboxServer](/powershell/module/exchange/Get-MailboxServer)
 
-- [Set-CASMailbox](https://technet.microsoft.com/en-us/library/bb125264\(v=exchg.150\))
+- [Set-CASMailbox](/powershell/module/exchange/Set-CASMailbox)
 
-- [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\))
+- [Set-Mailbox](/powershell/module/exchange/Set-Mailbox)
 
-- [Set-MailboxServer](https://technet.microsoft.com/en-us/library/aa998651\(v=exchg.150\))
+- [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer)
 
-- [Search-Mailbox](https://technet.microsoft.com/en-us/library/dd298173\(v=exchg.150\))
+- [Search-Mailbox](/powershell/module/exchange/Search-Mailbox)
 
 ## How do you know this worked?
 
-To verify that you have successfully cleaned up the Recoverable Items folder of a mailbox, use [Get-MailboxFolderStatistics](https://technet.microsoft.com/en-us/library/aa996762\(v=exchg.150\)) cmdlet the check the size of the Recoverable Items folder.
+To verify that you have successfully cleaned up the Recoverable Items folder of a mailbox, use [Get-MailboxFolderStatistics](/powershell/module/exchange/Get-MailboxFolderStatistics) cmdlet the check the size of the Recoverable Items folder.
 
 This example retrieves the size of the Recoverable Items folder and its subfolders and an item count in the folder and each subfolder.
 

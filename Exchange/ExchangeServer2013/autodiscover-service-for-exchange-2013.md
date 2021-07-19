@@ -2,13 +2,14 @@
 title: Autodiscover service for Exchange 2013
 TOCTitle: Autodiscover service
 ms:assetid: b03c0f21-cbc2-4be8-ad03-73a7dac16ffc
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124251(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124251(v=EXCHG.150)
 ms:contentKeyID: 50396327
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -58,17 +59,17 @@ When you install a Client Access server in Exchange 2013, a default virtual dire
 
 Additionally, a new Active Directory object named the service connection point (SCP) is created on the server where you install the Client Access server.
 
-The SCP object contains the authoritative list of Autodiscover service URLs for the forest. You can use the **Set-ClientAccessServer** cmdlet to update the SCP object. For more information, see [Set-ClientAccessServer](https://technet.microsoft.com/en-us/library/bb125157\(v=exchg.150\)).
+The SCP object contains the authoritative list of Autodiscover service URLs for the forest. You can use the **Set-ClientAccessServer** cmdlet to update the SCP object. For more information, see [Set-ClientAccessServer](/powershell/module/exchange/Set-ClientAccessServer).
 
 > [!IMPORTANT]
 > Before you run the <STRONG>Set-ClientAccessServer</STRONG> cmdlet, make sure the Authenticated Users account on the Client Access server has Read permissions for the SCP object. If users don't have the correct permissions, they can't search for and read items.
 
-For more information about SCP objects, see [Publishing with Service Connection Points](https://go.microsoft.com/fwlink/p/?linkid=72744).
+For more information about SCP objects, see [Publishing with Service Connection Points](/windows/win32/ad/publishing-with-service-connection-points).
 
 For external access, or using DNS, the client locates the Autodiscover service on the Internet by using the primary SMTP domain address from the user's email address.
 
 > [!NOTE]
-> You must provide a record in DNS for Outlook clients to discover the Autodiscover service by using DNS. For more information, see your Windows documentation for configuring DNS and also see the <A href="https://go.microsoft.com/fwlink/p/?linkid=85214">White Paper: Exchange 2007 Autodiscover Service</A>.
+> You must provide a record in DNS for Outlook clients to discover the Autodiscover service by using DNS. For more information, see your Windows documentation for configuring DNS and also see the <A href="/previous-versions/office/exchange-server-2007-technical-articles/bb332063(v=exchg.80)">White Paper: Exchange 2007 Autodiscover Service</A>.
 
 Depending on whether you've configured the Autodiscover service on a separate site, the Autodiscover service URL will be either https://\<*smtp-address-domain*\>/autodiscover/autodiscover.xml or https://autodiscover.\<*smtp-address-domain*\>/autodiscover/autodiscover.xml, where ://\<*smtp-address-domain*\> is the primary SMTP domain address. For example, if the user's email address is tony@contoso.com, the primary SMTP domain address is contoso.com. When the client connects to Active Directory, the client looks for the SCP object created during Setup. In deployments that include multiple Client Access servers, an Autodiscover SCP object is created for each Client Access server. The SCP object contains the *ServiceBindingInfo* attribute with the fully qualified domain name (FQDN) of the Client Access server in the form https://CAS01/autodiscover/autodiscover.xml, where CAS01 is the FQDN for the Client Access server. Using the user credentials, the Outlook 2007, Outlook 2010, or Outlook 2013 client authenticates to Active Directory and searches for the Autodiscover SCP objects. After the client obtains and enumerates the instances of the Autodiscover service, the client connects to the first Client Access server in the enumerated list and obtains the profile information in the form of XML data that's needed to connect to the user's mailbox and available Exchange features.
 
@@ -78,6 +79,6 @@ The Autodiscover service must be deployed and configured correctly for Outlook 2
 
 ## Configuring Autodiscover for cross-forest moves
 
-The Autodiscover service can provide user profile information to connecting Outlook clients for mailboxes that have been moved from one Exchange forest to another. For this to happen, you must configure a mail-enabled user in both the original forest where the user's mailbox resided and in the target forest using the **New-MailUser** cmdlet. In the source forest, you should use the *ExternalEmailAddress* parameter in the cmdlet to specify the new email address of the mailbox in the target forest. For more information, see [New-MailUser](https://technet.microsoft.com/en-us/library/aa996335\(v=exchg.150\)).
+The Autodiscover service can provide user profile information to connecting Outlook clients for mailboxes that have been moved from one Exchange forest to another. For this to happen, you must configure a mail-enabled user in both the original forest where the user's mailbox resided and in the target forest using the **New-MailUser** cmdlet. In the source forest, you should use the *ExternalEmailAddress* parameter in the cmdlet to specify the new email address of the mailbox in the target forest. For more information, see [New-MailUser](/powershell/module/exchange/New-MailUser).
 
 When you configure a mail-enabled user, the Autodiscover service in the original forest will redirect the authenticating user to the new email address in the target forest. The connecting Outlook client will then be redirected to the Client Access server in the target forest where the mailbox has been moved.

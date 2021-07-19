@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 8c36bb03-e716-4fdd-9958-4aa7a2a1db42
-ms.date: 6/12/2018
 ms.reviewer:
 title: Search for and delete messages in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -50,23 +51,23 @@ The first step is to create and run a Compliance Search to find the message that
 
 In this example, the commands will create and start a search of all mailboxes in the organization for a message that contains the words "Update your account information" in the subject line.
 
-1. [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+1. [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 2. Run the following commands.
 
-   ```
+   ```PowerShell
    New-ComplianceSearch -Name "Remove Phishing Message" -ExchangeLocation all -ContentMatchQuery 'subject:"Update your account information"'
    ```
 
-   ```
+   ```PowerShell
    Start-ComplianceSearch -Identity "Remove Phishing Message"
    ```
 
 For information about creating a Compliance Search and configuring search queries, see the following topics:
 
-- [New-ComplianceSearch](https://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx)
+- [New-ComplianceSearch](/powershell/module/exchange/new-compliancesearch)
 
-- [Start-ComplianceSearch](https://technet.microsoft.com/library/17ef8cc9-d716-446c-a8b9-b9109a6cab5a.aspx)
+- [Start-ComplianceSearch](/powershell/module/exchange/start-compliancesearch)
 
 - [Message properties and search operators for In-Place eDiscovery in Exchange Server](message-properties-and-search-operators.md)
 
@@ -82,19 +83,19 @@ The goal of the search query is to narrow the results of the search to only the 
 
 - Preview the search results to verify that the search returned only the message (or messages) that you want to delete.
 
-- Use the search estimate statistics (by running the [Get-ComplianceSearch](https://technet.microsoft.com/library/3bf7edeb-7674-464e-abad-4b1b8858114d.aspx) cmdlet) to get a count of the total number of search results.
+- Use the search estimate statistics (by running the [Get-ComplianceSearch](/powershell/module/exchange/get-compliancesearch) cmdlet) to get a count of the total number of search results.
 
 Here are two examples of queries to find suspicious email messages.
 
 - This query returns messages that were received by users between April 13, 2016 and April 14, 2016 and that contain the words "action" and "required" in the subject line.
 
-  ```
+  ```PowerShell
   (Received:4/13/2016..4/14/2016) AND (Subject:'Action required')
   ```
 
 - This query returns messages that were sent by chatsuwloginsset12345@outlook.com and that contain the exact phrase "Update your account information" in the subject line.
 
-  ```
+  ```PowerShell
   (From:chatsuwloginsset12345@outlook.com) AND (Subject:"Update your account information")
   ```
 
@@ -105,11 +106,11 @@ After you've created and refined a Compliance Search to return the message that 
 
 In this example, the command will delete the search results returned by a Compliance Search named "Remove Phishing Message".
 
-1. [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+1. [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 2. Run the following command.
 
-   ```
+   ```PowerShell
    New-ComplianceSearchAction -SearchName "Remove Phishing Message" -Purge -PurgeType SoftDelete
    ```
 

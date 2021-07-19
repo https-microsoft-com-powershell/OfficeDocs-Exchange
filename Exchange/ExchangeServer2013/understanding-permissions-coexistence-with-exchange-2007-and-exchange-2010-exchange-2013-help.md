@@ -2,13 +2,14 @@
 title: 'Understand permissions coexistence with Exchange 2007 and Exchange 2010'
 TOCTitle: Understanding permissions coexistence with Exchange 2007 and Exchange 2010
 ms:assetid: 28ab1433-23ee-4914-8f21-9a32578792e5
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd335157(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd335157(v=EXCHG.150)
 ms:contentKeyID: 56278647
-ms.date: 07/14/2016
 ms.reviewer:
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -231,8 +232,6 @@ In Exchange 2007, you can separate administrators by assigning them various role
 </table>
 
 If you need to make more granular permission assignments, you can modify the ACLs on individual Exchange 2007 objects, such as address lists or databases. You must add the user or security group of which the user is a member directly to the ACL. Then, the actions are performed in the context of the particular user.
-
-For more information about how to manage permissions in Exchange 2007, see [Configuring Permissions in Exchange Server 2007](https://go.microsoft.com/fwlink/p/?linkid=90671).
 
 ## Exchange 2013 and Exchange 2007 coexistence permissions
 

@@ -3,6 +3,8 @@ title: "Hybrid deployments with Exchange 2013 and Exchange 2010"
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.topic: article
 ms.prod: exchange-server-it-pro

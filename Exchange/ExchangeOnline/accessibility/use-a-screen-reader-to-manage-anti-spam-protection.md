@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: adad2c0d-7452-4392-a95e-058c4678c05e
-ms.date: 
 ms.reviewer: 
 manager: serdars
 description: Admins can learn how to use a screen reader to manage anti-spam settings in the Exchange admin center (EAC) in Exchange Online
@@ -13,6 +12,8 @@ ms.collection:
 - exchange-online
 - M365-email-calendar
 audience: ITPro
+f1.keywords:
+- CSH
 ms.custom: A11y_UseSR
 ms.service: exchange-online
 
@@ -23,29 +24,29 @@ ms.service: exchange-online
 Exchange Online includes spam filtering capabilities that help protect your network from spam transferred through email. Administrators do not need to set up or maintain these filtering technologies, which are enabled by default. However, administrators can make company-specific filtering customizations in the Exchange admin center (EAC), all using a screen reader and keyboard shortcuts.
 
 > [!NOTE]
-> To learn more about protecting your organization from spam in Exchange Online, go to [Anti-Spam and Anti-Malware Protection](https://technet.microsoft.com/library/07d0f42d-2adc-48bf-b07f-189a560d365b.aspx).
+> To learn more about protecting your organization from spam in Exchange Online, go to [Anti-spam and anti-malware protection in EOP](/microsoft-365/security/office-365-security/anti-spam-and-anti-malware-protection).
 
 ## Get started
 
-Navigate with Internet Explorer and keyboard shortcuts, and make sure that you have the appropriate Office 365 subscription and admin role to work in the EAC. Then, open the EAC and get started. For more information about the EAC, see [Exchange admin center in Exchange Online](../exchange-admin-center.md).
+Navigate with Internet Explorer and keyboard shortcuts, and make sure that you have the appropriate Office 365 or Microsoft 365 subscription and admin role to work in the EAC. Then, open the EAC and get started. For more information about the EAC, see [Exchange admin center in Exchange Online](../exchange-admin-center.md).
 
 ### Use your browser and keyboard to navigate in the EAC
 
 Exchange Online, which includes the EAC, is a web-based application, so the keyboard shortcuts and navigation may be different from those in Exchange 2016. [Accessibility in the Exchange admin center](accessibility-in-exchange-admin-center.md).
 
-For best results when working in the EAC in Exchange Online, use Internet Explorer as your browser. [Learn more about Internet Explorer keyboard shortcuts](https://go.microsoft.com/fwlink/p/?LinkID=787614).
+For best results when working in the EAC in Exchange Online, use Internet Explorer as your browser. [Learn more about Internet Explorer keyboard shortcuts](https://support.microsoft.com/help/17456/).
 
-Many tasks in the EAC require the use of pop-up windows so, in your browser, be sure to [enable pop-up windows for Office 365](https://go.microsoft.com/fwlink/p/?LinkID=317550).
+Many tasks in the EAC require the use of pop-up windows. In your browser, be sure to [enable pop-up windows](https://support.microsoft.com/help/17479) for Microsoft 365 or Office 365.
 
-### Confirm your Office 365 subscription plan
+### Confirm your Office 365 or Microsoft 365 subscription plan
 
-Exchange Online is included in Office 365 business and enterprise subscription plans, but capabilities may differ by plan. If your EAC doesn't include a function described in this article, your plan might not include it.
+Exchange Online is included in several different subscription plans, but capabilities may differ by plan. If your EAC doesn't include a function described in this article, your plan might not include it.
 
-For more information about the Exchange Online capabilities in your subscription plan, go to [What Office 36 business product or license do I have?](https://go.microsoft.com/fwlink/p/?LinkID=797552) and [Exchange Online Service Description](https://go.microsoft.com/fwlink/p/?LinkID=797553).
+For more information about the Exchange Online capabilities in your subscription plan, go to [What Office 365 for business product or license do I have?](https://support.microsoft.com/office/f8ab5e25-bf3f-4a47-b264-174b1ee925fd) and [Exchange Online Service Description](/office365/servicedescriptions/exchange-online-service-description/exchange-online-service-description).
 
 ### Open the EAC, and confirm your admin role
 
-To complete the tasks covered in this topic, [Use a screen reader to open the Exchange admin center](use-screen-reader-to-open-exchange-admin-center.md) and check that your Office 365 global administrator has assigned you to the [Organization Management](https://go.microsoft.com/fwlink/p/?LinkId=797868) and [Hygiene Management](https://go.microsoft.com/fwlink/p/?LinkId=797870) admin role groups. Learn how to [Use a screen reader to identify your admin role in the Exchange admin center](use-screen-reader-to-identify-admin-role-in-exchange-admin-center.md).
+To complete the tasks covered in this topic, see [Use a screen reader to open the Exchange admin center](use-screen-reader-to-open-exchange-admin-center.md) and check that your Microsoft 365 or Office 365 global administrator has assigned you to the Organization Management and Hygiene Management admin role groups. Learn how to [Use a screen reader to identify your admin role in the Exchange admin center](use-screen-reader-to-identify-admin-role-in-exchange-admin-center.md).
 
 ## Customize your spam filter settings
 
@@ -71,12 +72,12 @@ To complete the steps for spam filter customizations covered in this topic, move
 
 3. As the focus moves to the **Name** box in the content area of the **Spam filter policy** pop-up window that opens, you hear "Spam filter policy, Name, Edit..
 
-4. In the **Spam filter policy **pop-up window, specify new filter settings such as name, description, spam and bulk actions, block lists, allow lists, international spam, and advanced options.
+4. In the **Spam filter policy** pop-up window, specify new filter settings such as name, description, spam and bulk actions, block lists, allow lists, international spam, and advanced options.
 
     > [!TIP]
     > This page doesn't contain a navigation pane. To move the focus to each setting that's listed on the page, press the Tab key. As you select each setting, you hear information about the setting. To open menus, press Spacebar. To move between and select menu options, press the arrow keys. To choose an option, press Enter. You can also press the Spacebar to select or clear a check box selection.
 
-5. After you've pressed the Tab key to tab through all the settings on the page, the last two elements on the page are the **Save** button and the **Cancel **button. To activate either button, press Enter.
+5. After you've pressed the Tab key to tab through all the settings on the page, the last two elements on the page are the **Save** button and the **Cancel** button. To activate either button, press Enter.
 
 6. As the **Spam filter policy** pop-up window closes and the focus moves back to the **New** button in the **spam filter** content area, you hear "Spam filter, New button..
 
@@ -86,11 +87,11 @@ To complete the steps for spam filter customizations covered in this topic, move
 
 2. To move the focus to each of the following three elements of the user interface, press the Tab key:
 
- - The **Name** column. You hear "Name, Column header..
+   - The **Name** column. You hear "Name, Column header..
 
- - The list of spam filters in the **Name** column. You hear the name of the first spam filter followed by "Button..
+   - The list of spam filters in the **Name** column. You hear the name of the first spam filter followed by "Button..
 
- - The first spam filter in the list. You hear the name of the first spam filter followed by "Row."
+   - The first spam filter in the list. You hear the name of the first spam filter followed by "Row."
 
 3. To move the focus to one of your spam filters, press the Up Arrow or Down arrow key until you hear the name of the filter you want to edit. Press Enter.
 

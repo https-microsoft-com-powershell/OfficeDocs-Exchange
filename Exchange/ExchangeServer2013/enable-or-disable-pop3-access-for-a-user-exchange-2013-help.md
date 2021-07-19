@@ -2,13 +2,14 @@
 title: 'Enable or disable POP3 access for a user: Exchange 2013 Help'
 TOCTitle: Enable or disable POP3 access for a user
 ms:assetid: 57e12f07-3b14-45bd-9a82-e6032d14214f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb691018(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb691018(v=EXCHG.150)
 ms:contentKeyID: 49315250
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -21,7 +22,7 @@ You can enable or disable POP3 for a user.
 > [!NOTE]
 > After you've enabled or disabled POP3 for a user, you must restart the Microsoft Exchange POP3 service and the Microsoft Exchange POP3 Backend service. For more information about how to restart the POP3 service, see <A href="start-and-stop-the-pop3-services-exchange-2013-help.md">Start and stop the POP3 services</A>.
 
-For additional information related to managing user mailboxes, see [Manage user mailboxes](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes).
+For additional information related to managing user mailboxes, see [Manage user mailboxes](../ExchangeOnline/recipients-in-exchange-online/manage-user-mailboxes/manage-user-mailboxes.md).
 
 For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exchange Server 2013](pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md).
 
@@ -34,7 +35,7 @@ For additional information related to POP3 and IMAP4, see [POP3 and IMAP4 in Exc
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to enable or disable POP3 for a user
 

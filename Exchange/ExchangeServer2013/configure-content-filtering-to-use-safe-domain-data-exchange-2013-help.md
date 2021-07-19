@@ -2,13 +2,14 @@
 title: 'Configure Content Filtering to Use Safe Domain Data: Exchange 2013 Help'
 TOCTitle: Configure Content Filtering to Use Safe Domain Data
 ms:assetid: 1ee2b663-b4f3-4fef-8954-986f2d820924
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn467930(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn467930(v=EXCHG.150)
 ms:contentKeyID: 58899940
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ We recommend that you don't modify the default setting in most cases. However, y
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use a command prompt to configure content filtering to use safe domain data
 
@@ -47,7 +48,7 @@ We recommend that you don't modify the default setting in most cases. However, y
 
 2. Locate the *\</appsettings\>* key at the end of the file, and paste the following key before the *\</appsettings\>* key:
 
-   ```command line
+   ```xml
    <add key="IncludeSafeDomains" value="true" />
    ```
 

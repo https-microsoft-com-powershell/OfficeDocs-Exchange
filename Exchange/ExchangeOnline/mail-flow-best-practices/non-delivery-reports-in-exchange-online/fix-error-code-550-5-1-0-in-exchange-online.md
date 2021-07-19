@@ -1,18 +1,20 @@
 ---
 title: "Fix email delivery issues for error code 550 5.1.0 in Exchange Online"
-ms.author: dmaguire
+ms.author: jhendr
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer: 
 audience: Admin
 ms.topic: troubleshooting
 ms.service: o365-administration
 localization_priority: Normal
+f1.keywords:
+- CSH
 ms.custom: MiniMaven
 search.appverid:
 - BCS160
 - MOE150
+- MET150
 ms.assetid: 477289e6-9150-4627-afce-f61fc7c4605b
 description: "Learn how to fix email issues for error code 550 5.5.0 or address rejected: SPF Permanent Error in Exchange Online (the destination email server won't accept messages from the sender or for the recipient)."
 ---
@@ -28,8 +30,9 @@ Use the information in the NDR to help you decide how to fix the problem.
 The destination email server that generated the 5.1.0 error won't accept messages from you (the sender) or messages for the recipient. This can happen if messages from you (your email address, your Exchange Online organization, or even all of Exchange Online) are being blocked by the recipient.
 
 |||||||
-|:-----|:-----|:-----|:-----|:-----|:-----|
+|---|---|---|---|---|---|
 |![Email user icon](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this?](#im-an-email-admin-how-do-i-fix-this)|![Help symbol](../../media/5bf13e77-0400-4dda-a569-b99b8a918b48.png)|[Details for error code 5.1.0](#details-for-error-code-510)|
+|
 
 ## I got this bounce message. How do I fix it?
 
@@ -49,9 +52,9 @@ You might have an invalid entry in your Auto-Complete list (also known as the _n
 
 #### Fix your Auto-Complete list entries in Outlook
 
-To remove invalid recipients or all recipients from your Auto-Complete list in Outlook 2010 later, see [Manage suggested recipients in the To, Cc, and Bcc boxes with Auto-Complete](https://support.office.com/article/dbe46e31-c098-4881-8cf7-66b037bce23e).
+To remove invalid recipients or all recipients from your Auto-Complete list in Outlook 2010 later, see [Manage suggested recipients in the To, Cc, and Bcc boxes with Auto-Complete](https://support.microsoft.com/office/dbe46e31-c098-4881-8cf7-66b037bce23e).
 
-To resend the message in Outlook, see [Resend an email message](https://support.office.com/article/ACD16AC4-C881-477D-B4AA-36168FA96088).
+To resend the message in Outlook, see [Resend an email message](https://support.microsoft.com/office/acd16ac4-c881-477d-b4aa-36168fa96088).
 
 #### Fix your Auto-Complete list entries in Outlook on the web
 
@@ -93,7 +96,7 @@ After you open your mailbox in the light version of Outlook on the web, do the f
 
 ## I'm an email admin. How do I fix this?
 
-The Sender Policy Framework (SPF) record for your Exchange Online domain might be incomplete, and might not include all sources of mail for your domain. For more information, see [Set up SPF in Office 365 to help prevent spoofing](https://go.microsoft.com/fwlink/p/?linkid=836403).
+The Sender Policy Framework (SPF) record for your Exchange Online domain might be incomplete, and might not include all sources of mail for your domain. For more information, see [Set up SPF to help prevent spoofing](/microsoft-365/security/office-365-security/set-up-spf-in-office-365-to-help-prevent-spoofing).
 
 ## Details for error code 5.1.0
 
@@ -105,11 +108,11 @@ The NDR from Exchange Online for this specific error might contain some or all o
 
 ## Still need help?
 
-[![Get help from the Office 365 community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://go.microsoft.com/fwlink/p/?LinkId=518605)
+[![Get help from the community forums](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://answers.microsoft.com/)
 
-[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://go.microsoft.com/fwlink/p/?LinkId=519124)
+[![Admins: Sign in and create a service request](../../media/10862798-181d-47a5-ae4f-3f8d5a2874d4.png)](https://admin.microsoft.com/AdminPortal/Home#/support)
 
-[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](https://go.microsoft.com/fwlink/p/?LinkID=518322)
+[![Admins: Call Support](../../media/9f262e67-e8c9-4fc0-85c2-b3f4cfbc064e.png)](/microsoft-365/Admin/contact-support-for-business-products)
 
 ## See also
 

@@ -5,10 +5,11 @@ ms.topic: reference
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: cfff9f59-afac-447c-8297-afcebe49a52d
-ms.date: 7/3/2018
 ms.reviewer: 
 title: Edge Transport servers
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars

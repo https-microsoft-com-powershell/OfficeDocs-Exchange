@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: cf186561-ab2c-45c0-90f5-8d3ecfabeeac
-ms.date: 7/9/2018
 ms.reviewer:
 title: Configure mailbox database copy properties
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -23,14 +24,14 @@ Each mailbox database copy has its own properties, which you can configure. Thes
 
 - Estimated time to complete this task: 1 minute
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox database copies" entry in the [High availability and site resilience permissions](../../permissions/feature-permissions/ha-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to configure mailbox database copy properties
 
@@ -70,13 +71,13 @@ Each mailbox database copy has its own properties, which you can configure. Thes
 
 This example configures a mailbox database copy with an activation preference number of 3.
 
-```
+```powershell
 Set-MailboxDatabaseCopy -Identity DB3\EX3 -ActivationPreference 3
 ```
 
 This example configures a copy of the database DB1 that's hosted on Server1 with a replay lag time and truncation lag time of 1 day, and an activation preference number of 2.
 
-```
+```powershell
 Set-MailboxDatabaseCopy -Identity DB1\Server1 -ReplayLagTime 1.0:0:0 -TruncationLagTime 1.0:0:0 -ActivationPreference 2
 ```
 
@@ -88,14 +89,14 @@ To verify that you've successfully configured a mailbox database copy, do one of
 
 - In the Exchange Management Shell, run the following command to display configuration information for a database copy.
 
-  ```
+  ```powershell
   Get-MailboxDatabaseCopyStatus <DatabaseCopyName> | Format-List
   ```
 
 ## For more information
 
-[Set-MailboxDatabaseCopy](https://technet.microsoft.com/library/839f8781-2eb1-47bd-85ff-a31c8773998a.aspx)
+[Set-MailboxDatabaseCopy](/powershell/module/exchange/set-mailboxdatabasecopy)
 
-[Get-MailboxDatabaseCopyStatus](https://technet.microsoft.com/library/6ad690fb-3a23-41d4-b19d-666b34e62b26.aspx)
+[Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/get-mailboxdatabasecopystatus)
 
-[Get-MailboxDatabase](https://technet.microsoft.com/library/e12bd6d3-3793-49cb-9ab6-948d42dd409e.aspx)
+[Get-MailboxDatabase](/powershell/module/exchange/get-mailboxdatabase)

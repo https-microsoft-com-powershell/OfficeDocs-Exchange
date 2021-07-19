@@ -2,13 +2,14 @@
 title: 'Use the Exchange Management Shell to manage queues: Exchange 2013 Help'
 TOCTitle: Use the Exchange Management Shell to manage queues
 ms:assetid: 5433c1d3-ad2e-4f82-b50d-b67964b32f26
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998047(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998047(v=EXCHG.150)
 ms:contentKeyID: 50646233
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -205,7 +206,7 @@ The *Include* and *Exclude* parameters use the following queue properties to fil
 </tbody>
 </table>
 
-Note that you can duplicate the functionality of the *Include* and *Exclude* parameters by using the *Filter* parameter. For example, the command `Get-Queue -Exclude Empty` yields the same result as `Get-Queue -Filter {MessageCount -gt 0}`. However, the syntax of the *Include* and *Exclude* parameters is simpler and easier to remember.
+Note that you can duplicate the functionality of the *Include* and *Exclude* parameters by using the *Filter* parameter. For example, the command `Get-Queue -Exclude Empty` yields the same result as `Get-Queue -Filter "MessageCount -gt 0"`. However, the syntax of the *Include* and *Exclude* parameters is simpler and easier to remember.
 
 ## Get-QueueDigest
 
@@ -401,57 +402,57 @@ When you create a queue or message filter expression by using the *Filter* param
 <td><p><code>-eq</code></p></td>
 <td><p>This operator is used to specify that the results must exactly match the property value that's supplied in the expression.</p></td>
 <td><p>To display a list of all queues that have a status of Retry:</p>
-<p><code>Get-Queue -Filter {Status -eq &quot;Retry&quot;}</code></p>
+<p><code>Get-Queue -Filter &quot;Status -eq 'Retry'&quot;</code></p>
 <p>To display a list of all messages that have a status of Retry:</p>
-<p><code>Get-Message -Filter {Status -eq &quot;Retry&quot;}</code></p></td>
+<p><code>Get-Message -Filter &quot;Status -eq 'Retry'&quot;</code></p></td>
 </tr>
 <tr class="even">
 <td><p><code>-ne</code></p></td>
 <td><p>This operator is used to specify that the results shouldn't match the property value that's supplied in the expression.</p></td>
 <td><p>To display a list of all queues that don't have a status of Active:</p>
-<p><code>Get-Queue -Filter {Status -ne &quot;Active&quot;}</code></p>
+<p><code>Get-Queue -Filter &quot;Status -ne 'Active'&quot;</code></p>
 <p>To display a list of all messages that don't have a status of Active:</p>
-<p><code>Get-Message -Filter {Status -ne &quot;Active&quot;}</code></p></td>
+<p><code>Get-Message -Filter &quot;Status -ne 'Active'&quot;</code></p></td>
 </tr>
 <tr class="odd">
 <td><p><code>-gt</code></p></td>
 <td><p>This operator is used with properties where the value is expressed as an integer or date/time. The filter results only include queues or messages where the value of the specified property is greater than the value that's supplied in the expression.</p></td>
 <td><p>To display a list of queues that currently contain more than 1,000 messages:</p>
-<p><code>Get-Queue -Filter {MessageCount -gt 1000}</code></p>
+<p><code>Get-Queue -Filter &quot;MessageCount -gt 1000&quot;</code></p>
 <p>To display a list of messages that currently have a retry count that's more than 3:</p>
-<p><code>Get-Message -Filter {RetryCount -gt 3}</code></p></td>
+<p><code>Get-Message -Filter &quot;RetryCount -gt 3&quot;</code></p></td>
 </tr>
 <tr class="even">
 <td><p><code>-ge</code></p></td>
 <td><p>This operator is used with properties where the value is expressed as an integer or date/time. The filter results only include queues or messages where the value of the specified property is greater than or equal to the value that's supplied in the expression.</p></td>
 <td><p>To display a list of queues that currently contain 1,000 or more messages:</p>
-<p><code>Get-Queue -Filter {MessageCount -ge 1000}</code></p>
+<p><code>Get-Queue -Filter &quot;MessageCount -ge 1000&quot;</code></p>
 <p>To display a list of messages that currently have a retry count that's 3 or more:</p>
-<p><code>Get-Message -Filter {RetryCount -ge 3}</code></p></td>
+<p><code>Get-Message -Filter &quot;RetryCount -ge 3&quot;</code></p></td>
 </tr>
 <tr class="odd">
 <td><p><code>-lt</code></p></td>
 <td><p>This operator is used with properties where the value is expressed as an integer or date/time. The filter results only include queues or messages where the value of the specified property is less than the value that's supplied in the expression.</p></td>
 <td><p>To display a list of queues that currently contain less than 1,000 messages:</p>
-<p><code>Get-Queue -Filter {MessageCount -lt 1000}</code></p>
+<p><code>Get-Queue -Filter &quot;MessageCount -lt 1000&quot;</code></p>
 <p>To display a list of messages that have an SCL that's less than 6:</p>
-<p><code>Get-Message -Filter {SCL -lt 6}</code></p></td>
+<p><code>Get-Message -Filter &quot;SCL -lt 6&quot;</code></p></td>
 </tr>
 <tr class="even">
 <td><p><code>-le</code></p></td>
 <td><p>This operator is used with properties where the value is expressed as an integer or date/time. The filter results only include queues or messages where the value of the specified property is less than or equal to the value supplied in the expression.</p></td>
 <td><p>To display a list of queues that currently contain 1,000 or fewer messages:</p>
-<p><code>Get-Queue -Filter {MessageCount -le 1000}</code></p>
+<p><code>Get-Queue -Filter &quot;MessageCount -le 1000&quot;</code></p>
 <p>To display a list of messages that have an SCL that's 6 or less:</p>
-<p><code>Get-Message -Filter {SCL -le 6}</code></p></td>
+<p><code>Get-Message -Filter &quot;SCL -le 6&quot;</code></p></td>
 </tr>
 <tr class="odd">
 <td><p><code>-like</code></p></td>
 <td><p>This operator is used with properties where the value is expressed as a text string. The filter results only include queues or messages where the value of the specified property contains the text string that's supplied in the expression. You can include the wildcard character (*) in a <strong>-like</strong> expression that's applied to a text string field, but not with a field that has the enumeration type.</p></td>
 <td><p>To display a list of delivery queues that have a destination to any SMTP domain that ends in Contoso.com:</p>
-<p><code>Get-Queue -Filter {Identity -like &quot;*contoso.com&quot;}</code></p>
+<p><code>Get-Queue -Filter &quot;Identity -like '*contoso.com'&quot;</code></p>
 <p>To display a list of messages that have a subject that contains the text &quot;payday loan&quot;:</p>
-<p><code>Get-Messages -Filter {Subject -like &quot;*payday loan*&quot;}</code></p></td>
+<p><code>Get-Messages -Filter &quot;Subject -like '*payday loan*'&quot;</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -461,13 +462,13 @@ You can specify a filter that evaluates multiple expressions by using the **-and
 This example displays a list of queues that have a destination to any SMTP domain name that ends in Contoso.com and that currently contain more than 500 messages.
 
 ```powershell
-Get-Queue -Filter {Identity -like "*contoso.com*" -and MessageCount -gt 500}
+Get-Queue -Filter "Identity -like '*contoso.com*' -and MessageCount -gt 500"
 ```
 
 This example displays a list of messages that are sent from any email address in the contoso.com domain that have an SCL that's greater than 5.
 
 ```powershell
-Get-Message -Filter {FromAddress -like "*Contoso.com*" -and SCL -gt 5}
+Get-Message -Filter "FromAddress -like '*Contoso.com*' -and SCL -gt 5"
 ```
 
 ## Advanced paging parameters

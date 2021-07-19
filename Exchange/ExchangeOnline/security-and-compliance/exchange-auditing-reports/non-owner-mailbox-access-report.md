@@ -3,11 +3,12 @@ localization_priority: Normal
 description: Admins can learn how to use the Exchange admin center (EAC) to run a non-owner mailbox access report in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: dbbef170-e726-4735-abf1-2857db9bb52d
-ms.date: 6/23/2018
 ms.reviewer: 
-title: Run a non-owner mailbox access report
+f1.keywords:
+- NOCSH
+title: Run a non-owner mailbox access report in Exchange Online
 ms.collection: 
 - exchange-online
 - M365-email-calendar
@@ -19,7 +20,7 @@ manager: serdars
 
 # Run a non-owner mailbox access report in Exchange Online
 
-The Non-Owner Mailbox Access Report in the Exchange admin center (EAC) lists the mailboxes that have been accessed by someone other than the person who owns the mailbox. When a mailbox is accessed by a non-owner, Exchange Online logs information about this action in a mailbox audit log that's stored as an email message in a hidden folder in the mailbox being audited. Entries from this log are displayed as search results and include a list of mailboxes accessed by a non-owner, who accessed the mailbox and when, the actions performed by the non-owner, and whether the action was successful. By default, entries in the mailbox audit log are retained for 90 days.
+In Exchange Online, the Non-owner mailbox access report in the Exchange admin center (EAC) lists the mailboxes that have been accessed by someone other than the person who owns the mailbox. When a mailbox is accessed by a non-owner, Exchange Online logs information about this action in a mailbox audit log that's stored as an email message in a hidden folder in the mailbox being audited. Entries from this log are displayed as search results and include a list of mailboxes accessed by a non-owner, who accessed the mailbox and when, the actions performed by the non-owner, and whether the action was successful. By default, entries in the mailbox audit log are retained for 90 days.
 
 When you enable mailbox audit logging for a mailbox, Exchange Online logs specific actions by non-owners, including both administrators and users, called delegated users, who have been assigned permissions to a mailbox. You can also narrow the search to users inside or outside your organization.
 
@@ -27,7 +28,7 @@ When you enable mailbox audit logging for a mailbox, Exchange Online logs specif
 
 - Estimated time to complete: 5 minutes.
 
-- As of January 2019, mailbox audit logging on by default is enabled for all Exchange Online organizations. For more information, see [Manage mailbox auditing](https://docs.microsoft.com/office365/securitycompliance/enable-mailbox-auditing).
+- As of January 2019, mailbox audit logging on by default is enabled for all Exchange Online organizations. For more information, see [Manage mailbox auditing](/microsoft-365/compliance/enable-mailbox-auditing).
 
 - To find and open the Exchange admin center (EAC), see, [Exchange admin center in Exchange Online](../../exchange-admin-center.md).
 
@@ -36,7 +37,7 @@ When you enable mailbox audit logging for a mailbox, Exchange Online logs specif
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) forum.
 
 ## Run a non-owner mailbox access report
 
@@ -56,11 +57,8 @@ When you enable mailbox audit logging for a mailbox, Exchange Online logs specif
 You can also specify the type of non-owner access, also called the logon type, to search for. Here are your options:
 
 - **All non-owners**: Search for access by admins and delegated users inside your organization, and by Microsoft datacenter administrators in Exchange Online.
-
 - **External users**: Search for access by Microsoft datacenter administrators.
-
 - **Administrators and delegated users**: Search for access by admins and delegated users inside your organization.
-
 - **Administrators**: Search for access by admins in your organization.
 
 ### How do you know this worked?
@@ -72,11 +70,8 @@ To verify that you've successfully run a non-owner mailbox access report, check 
 When you run a non-owner mailbox access report, entries from the mailbox audit log are displayed in the search results in the EAC. Each report entry contains this information:
 
 - Who accessed the mailbox and when
-
 - The actions performed by the non-owner
-
 - The affected message and its folder location
-
 - Whether the action was successful
 
-For detailed information, see [Mailbox actions for user mailboxes and shared mailboxes](https://docs.microsoft.com/office365/securitycompliance/enable-mailbox-auditing#mailbox-actions-for-user-mailboxes-and-shared-mailboxes).
+For detailed information, see [Mailbox actions for user mailboxes and shared mailboxes](/microsoft-365/compliance/enable-mailbox-auditing#mailbox-actions-for-user-mailboxes-and-shared-mailboxes).

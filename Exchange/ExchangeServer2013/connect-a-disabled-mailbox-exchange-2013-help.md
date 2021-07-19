@@ -2,13 +2,14 @@
 title: 'Connect a disabled mailbox: Exchange 2013 Help'
 TOCTitle: Connect a disabled mailbox
 ms:assetid: a8abd399-75fd-4ee2-b2e4-634b55e4f79f
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ863439(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ863439(v=EXCHG.150)
 ms:contentKeyID: 50387720
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -52,7 +53,7 @@ To learn more about disconnected mailboxes and perform other related management 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to connect a disabled mailbox
 
@@ -98,7 +99,7 @@ Connect-Mailbox -Identity "Corporate Shared Mailbox" -Database "Mailbox Database
 > [!NOTE]
 > If you don't include the <EM>Alias</EM> parameter when you run the <STRONG>Connect-Mailbox</STRONG> cmdlet, the value specified in the <EM>User</EM> or <EM>LinkedMasterAccount</EM> parameter is used to create the email address alias for the reconnected mailbox.
 
-For detailed syntax and parameter information, see [Connect-Mailbox](https://technet.microsoft.com/en-us/library/aa997878\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Connect-Mailbox](/powershell/module/exchange/Connect-Mailbox).
 
 ## How do you know this worked?
 

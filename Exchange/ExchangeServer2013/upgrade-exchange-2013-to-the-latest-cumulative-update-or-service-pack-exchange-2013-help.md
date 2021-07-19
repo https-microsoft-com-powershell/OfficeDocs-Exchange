@@ -2,13 +2,14 @@
 title: 'Upgrade Exchange 2013 to the latest cumulative update or service pack'
 TOCTitle: Upgrade Exchange 2013 to the latest cumulative update or service pack
 ms:assetid: 928a4a0b-0082-4d50-a696-bfaf2782f42d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ983803(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ983803(v=EXCHG.150)
 ms:contentKeyID: 51407267
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,7 +36,7 @@ If you have Microsoft Exchange Server 2013 installed, you can upgrade it to the 
 - After you install a cumulative update or service pack, you must restart the computer so that changes can be made to the registry and operating system.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Install the Exchange 2013 cumulative update or service pack
 

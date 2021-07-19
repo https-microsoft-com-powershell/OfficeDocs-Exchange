@@ -2,13 +2,14 @@
 title: 'EdgeSync replication data: Exchange 2013 Help'
 TOCTitle: EdgeSync replication data
 ms:assetid: c7dd137d-7ed4-4f16-9895-f354c449cf9b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb232177(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb232177(v=EXCHG.150)
 ms:contentKeyID: 61200299
-ms.date: 07/14/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

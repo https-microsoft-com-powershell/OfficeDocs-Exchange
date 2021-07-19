@@ -4,10 +4,11 @@ TOCTitle: Retention tags and retention policies
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 48c13be5-3f01-4849-a089-766210e54f89
 
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -62,7 +63,7 @@ Users can apply personal tags to folders they create or to individual items. Mes
 > [!NOTE]
 > Users can apply archive policies to default folders, user-created folders or subfolders, and individual items. Users can apply a retention policy to user-created folders or subfolders and individual items (including subfolders and items in a default folder), but not to default folders.
 
-Users can also use the Exchange admin center (EAC) to select additional personal tags that aren't linked to their retention policy. The selected tags then become available in Outlook 2010 and Outlook Web App. To enable users to select additional tags from the EAC, you must add the [MyRetentionPolicies Role](https://technet.microsoft.com/library/65f49d19-cfb5-4142-8359-8368d5c48085.aspx) to the user's role assignment policy. To learn more about role assignment policies for users, see [Understanding Management Role Assignment Policies](https://technet.microsoft.com/library/25913e43-326a-4371-90b5-021a35f100fe.aspx). If you allow users to select additional personal tags, all personal tags in your Exchange organization become available to them.
+Users can also use the Exchange admin center (EAC) to select additional personal tags that aren't linked to their retention policy. The selected tags then become available in Outlook 2010 and Outlook Web App. To enable users to select additional tags from the EAC, you must add the [MyRetentionPolicies role](myretentionpolicies-role-exchange-2013-help.md) to the user's role assignment policy. To learn more about role assignment policies for users, see [Understanding management role assignment policies](understanding-management-role-assignment-policies-exchange-2013-help.md). If you allow users to select additional personal tags, all personal tags in your Exchange organization become available to them.
 
 > [!NOTE]
 > Personal tags are a premium feature. Mailboxes with policies that contain these tags (or as a result of users adding the tags to their mailbox) require an Exchange Enterprise client access license (CAL).
@@ -81,8 +82,8 @@ When creating or configuring a retention tag, you can select one of the followin
 
 |**Retention action**|**Action taken...**|**Except...**|
 |:-----|:-----|:-----|
-|**Move to Archive**<sup>1</sup>| Moves the message to the user's archive mailbox <br/><br/> Only available for DPTs and personal tags <br/><br/> For details about archiving, see [In-Place Archiving](https://technet.microsoft.com/library/b5e4c0e9-0558-4b90-bc12-f67adbfb59ac.aspx)|If the user doesn't have an archive mailbox, no action is taken.|
-|**Delete and Allow Recovery**|Emulates the behavior when the user empties the Deleted Items folder. <br/><br/> Items are moved to the [Recoverable Items Folder](https://technet.microsoft.com/library/efc48fb4-2ed8-4d05-93af-f3505fbc389d.aspx) in the mailbox and preserved until the deleted item retention period. <br/><br/> Provides the user a second chance to recover the item using the **Recover Deleted Items** dialog box in Outlook or Outlook Web App| If you've set the deleted item retention period to zero days, items are permanently deleted.|
+|**Move to Archive**<sup>1</sup>| Moves the message to the user's archive mailbox <br/><br/> Only available for DPTs and personal tags <br/><br/> For details about archiving, see [In-Place Archiving in Exchange 2013](in-place-archiving-in-exchange-2013-exchange-2013-help.md)|If the user doesn't have an archive mailbox, no action is taken.|
+|**Delete and Allow Recovery**|Emulates the behavior when the user empties the Deleted Items folder. <br/><br/> Items are moved to the [Recoverable Items folder](recoverable-items-folder-exchange-2013-help.md) in the mailbox and preserved until the deleted item retention period. <br/><br/> Provides the user a second chance to recover the item using the **Recover Deleted Items** dialog box in Outlook or Outlook Web App| If you've set the deleted item retention period to zero days, items are permanently deleted.|
 |**Permanently Delete**|Permanently deletes messages. <br/><br/> You can't recover messages after they're permanently deleted.| If mailbox is placed on [In-Place Hold and Litigation Hold](in-place-and-litigation-holds-exchange-2013-help.md) or Litigation Hold, items are preserved in the Recoverable Items folder based on hold parameters. [In-Place eDiscovery](in-place-ediscovery-exchange-2013-help.md) will still return these items in search results.|
 |**Mark as Past Retention Limit**|Marks a message as expired. In Outlook 2010 or later, and Outlook Web App, expired items are displayed with the notification stating 'This item has expired' and 'This item will expire in 0 days'. In Outlook 2007, items marked as expired are displayed by using strikethrough text.|N. A.|
 
@@ -128,7 +129,7 @@ The Managed Folder Assistant applies the retention policy by inspecting items in
 
 The Managed Folder Assistant is a throttle-based assistant. Throttle-based assistants are always running and don't need to be scheduled. The system resources they can consume are throttled. You can configure the Managed Folder Assistant to process all mailboxes on a Mailbox server within a certain period (known as a work cycle). Additionally, at a specified interval (known as the work cycle checkpoint), the assistant refreshes the list of mailboxes to be processed. During the refresh, the assistant adds newly created or moved mailboxes to the queue. It also reprioritizes existing mailboxes that haven't been processed successfully due to failures and moves them higher in the queue so they can be processed during the same work cycle.
 
-You can also use the [Start-ManagedFolderAssistant](https://technet.microsoft.com/library/75d840ea-5abc-44bb-b361-e81561fa1b04.aspx) cmdlet to manually trigger the assistant to process a specified mailbox. To learn more, see [Configure the Managed Folder Assistant](https://technet.microsoft.com/library/9fcfb9b6-bd24-4218-a163-bc599cd5476a.aspx).
+You can also use the [Start-ManagedFolderAssistant](/powershell/module/exchange/start-managedfolderassistant) cmdlet to manually trigger the assistant to process a specified mailbox. To learn more, see [Configure the Managed Folder Assistant](configure-the-managed-folder-assistant-exchange-2013-help.md).
 
 > [!NOTE]
 > The Managed Folder Assistant doesn't take any action on messages that aren't subject to retention, specified by disabling the retention tag. You can also disable a retention tag to temporarily suspend items with that tag from being processed.
@@ -164,7 +165,7 @@ If you disable a retention tag, the Managed Folder Assistant ignores items that 
 When users are temporarily away from work and don't have access to their e-mail, retention settings can be applied to new messages before they return to work or access their e-mail. Depending on the retention policy, messages may be deleted or moved to the user's personal archive. You can temporarily suspend retention policies from processing a mailbox for a specified period by placing the mailbox on retention hold. When you place a mailbox on retention hold, you can also specify a retention comment that informs the mailbox user (or another user authorized to access the mailbox) about the retention hold, including when the hold is scheduled to begin and end. Retention comments are displayed in supported Outlook clients. You can also localize the retention hold comment in the user's preferred language.
 
 > [!NOTE]
-> Placing a mailbox on retention hold doesn't affect how mailbox storage quotas are processed. Depending on the mailbox usage and applicable mailbox quotas, consider temporarily increasing the mailbox storage quota for users when they're on vacation or don't have access to e-mail for an extended period. For more information about mailbox storage quotas, see [Configure Storage Quotas for a Mailbox](https://technet.microsoft.com/library/5f5fe292-c80e-4a0b-b3e6-e193ea5171d0.aspx).
+> Placing a mailbox on retention hold doesn't affect how mailbox storage quotas are processed. Depending on the mailbox usage and applicable mailbox quotas, consider temporarily increasing the mailbox storage quota for users when they're on vacation or don't have access to e-mail for an extended period. For more information about mailbox storage quotas, see [Configure storage quotas for a mailbox](configure-storage-quotas-for-a-mailbox-exchange-2013-help.md).
 
 During long absences from work, users may accrue a large amount of e-mail. Depending on the volume of e-mail and the length of absence, it may take these users several weeks to sort through their messages. In these cases, consider the additional time it may take the users to catch up on their mail before removing them from retention hold.
 

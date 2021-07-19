@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 9f0f4a3d-de9a-4d8a-9172-2edf4288d766
-ms.date: 7/6/2018
 ms.reviewer:
 title: Use Compliance Search to search all mailboxes in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -30,15 +31,15 @@ The first step is to use the Exchange Management Shell to create a compliance se
 
 Here's an example of using the **New-ComplianceSearch** cmdlet to search all mailboxes in your organization. The search query returns all messages sent between October 1, 2015 and October 31, 2015 and that contain the phrase "financial report" in the subject line. The first command creates the search, and the second command runs the search.
 
-```
+```PowerShell
 New-ComplianceSearch -Name "Search All-Financial Report" -ExchangeLocation all -ContentMatchQuery 'sent>=01/01/2015 AND sent<=06/30/2015 AND subject:"financial report"'
 ```
 
-```
+```PowerShell
 Start-ComplianceSearch -Identity "Search All-Financial Report"
 ```
 
-For more information, see [New-ComplianceSearch](https://technet.microsoft.com/library/433d1602-a026-4d63-be5e-605dd6b7b0d0.aspx).
+For more information, see [New-ComplianceSearch](/powershell/module/exchange/new-compliancesearch).
 
 > [!IMPORTANT]
 > When you create a compliance search by using the **New-ComplianceSearch** cmdlet, a shadow In-Place eDiscovery search is created (but not started) and displayed on the **In-Place eDiscovery & Hold** page in the Exchange admin center (EAC). It's also returned by using the **Get-MailboxSearch** cmdlet. This mailbox search is named **ComplianceSearchName -shadow**. We recommend that you delete the shadow In-Place eDiscovery search, and use the script in Step 3 to create the In-Place eDiscovery search. The functionality of creating a shadow search will be removed in a cumulative update for Exchange 2016.
@@ -52,7 +53,7 @@ To help you create a compliance search with no more than 500 source mailboxes, f
 
 1. Save the following text to a Windows PowerShell script file by using a filename suffix of .ps1. For example, you could save it to a file named SourceMailboxes.ps1.
 
-   ```
+   ```PowerShell
    [CmdletBinding()]
    Param(
         [Parameter(Mandatory=$True,Position=1)]
@@ -84,7 +85,7 @@ To help you create a compliance search with no more than 500 source mailboxes, f
 
 2. In the Exchange Management Shell, go to the folder where the script you created in the previous step is located, and then run the script; for example:
 
-   ```
+   ```PowerShell
    .\SourceMailboxes.ps1
    ```
 
@@ -106,7 +107,7 @@ The next step is to run a script that will convert an existing compliance search
 
 - Creates a new In-Place eDiscovery search, with the following properties. Note that the new search isn't started. You'll start it in step 4.
 
-  - **Name**: The name of the new search uses this format: *\<Name of compliance search\>* _MBSearch1. If you run the script again and use the same source compliance search, the search will be named *\<Name of compliance search\>* _MBSearch2.
+  - **Name**: The name of the new search uses this format: *\<Name of compliance search\>*\_MBSearch1. If you run the script again and use the same source compliance search, the search will be named *\<Name of compliance search\>*\_MBSearch2.
 
   - **Source mailboxes**: All mailboxes from the compliance search that contain search results.
 
@@ -116,7 +117,7 @@ The next step is to run a script that will convert an existing compliance search
 
 1. Save the following text to a Windows PowerShell script file by using a filename suffix of ps1. For example, you could save it to a file named MBSearchFromComplianceSearch.ps1.
 
-   ```
+   ```PowerShell
    [CmdletBinding()]
    Param(
        [Parameter(Mandatory=$True,Position=1)]
@@ -127,15 +128,15 @@ The next step is to run a script that will convert an existing compliance search
    $search = Get-ComplianceSearch $SearchName
    if ($search.Status -ne "Completed")
    {
-   	"Please wait until the search finishes";
-   	break;
+      "Please wait until the search finishes";
+      break;
    }
    $results = $search.SuccessResults;
    if (($search.Items -le 0) -or ([string]::IsNullOrWhiteSpace($results)))
    {
-   	"The compliance search " + $SearchName + " didn't return any useful results";
-   	"A mailbox search object wasn't created";
-   	break;
+      "The compliance search " + $SearchName + " didn't return any useful results";
+      "A mailbox search object wasn't created";
+      break;
    }
    $mailboxes = @();
    $lines = $results -split '[\r\n]+';
@@ -174,17 +175,17 @@ The next step is to run a script that will convert an existing compliance search
    }
    if ([string]::IsNullOrWhiteSpace($query))
    {
-   	New-MailboxSearch "$msPrefix$i" -SourceMailboxes $mailboxes -EstimateOnly;
+      New-MailboxSearch "$msPrefix$i" -SourceMailboxes $mailboxes -EstimateOnly;
    }
    else
    {
-   	New-MailboxSearch "$msPrefix$i" -SourceMailboxes $mailboxes -SearchQuery $query -EstimateOnly;
+      New-MailboxSearch "$msPrefix$i" -SourceMailboxes $mailboxes -SearchQuery $query -EstimateOnly;
    }
    ```
 
 2. In the Exchange Management Shell, go to the folder where the script that you created in the previous step is located, and then run the script; for example:
 
-   ```
+   ```PowerShell
    .\MBSearchFromComplianceSearch.ps1
    ```
 
@@ -193,7 +194,6 @@ The next step is to run a script that will convert an existing compliance search
    If the script is successful, a new In-Place eDiscovery search is created with a status of **NotStarted**. Run the command `Get-MailboxSearch <Name of compliance search>_MBSearch1 | FL` to display the properties of the new search.
 
 ## Step 4: Start the In-Place eDiscovery search
-
 
 The script that you run in Step 3 creates a new In-Place eDiscovery search, but doesn't start it. The next step is to start the search so you can get an estimate of the search results.
 

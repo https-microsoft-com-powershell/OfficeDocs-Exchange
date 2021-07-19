@@ -2,13 +2,14 @@
 title: 'Set connection limits for POP3: Exchange 2013 Help'
 TOCTitle: Set connection limits for POP3
 ms:assetid: 512d61c2-2a34-4813-92a9-875339d3388b
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa997988(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa997988(v=EXCHG.150)
 ms:contentKeyID: 50395399
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ For additional information related to POP3, see [POP3 and IMAP4 in Exchange Serv
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EMC to set POP3 connection limits for a server, an IP address, or a user
 
@@ -59,16 +60,16 @@ After you set connection limits, you must restart the POP3 services. For informa
 
 ## Use the Shell to set POP3 connection limits for a server, an IP address, or a user
 
-This example sets the connection limit for a server.
+This example sets the connection limit for a server named CAS01.
 
 ```powershell
-Set-PopSettings -Identity CAS01 -MaxConnections Value
+Set-PopSettings -Server CAS01 -MaxConnections Value
 ```
 
-This example sets the connection limit for an IP address.
+This example sets the connection limit for an IP address to a server named CAS01.
 
 ```powershell
-Set-PopSettings -Identity CAS01 -MaxConnectionsFromSingleIP Value
+Set-PopSettings -Server CAS01 -MaxConnectionsFromSingleIP Value
 ```
 
 This example sets the connection limit for a user.
@@ -85,7 +86,7 @@ Set-PopSettings -MaxCommandSize Value
 
 After you set connection limits, you must restart the POP3 services. For information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
-For more information about syntax and parameters, see [Set-PopSettings](https://technet.microsoft.com/en-us/library/aa997154\(v=exchg.150\)).
+For more information about syntax and parameters, see [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
 ## How do you know this worked?
 

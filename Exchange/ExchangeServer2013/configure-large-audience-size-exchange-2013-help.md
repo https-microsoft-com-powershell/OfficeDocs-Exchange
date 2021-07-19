@@ -4,9 +4,10 @@ TOCTitle: Configure the large audience size for your organization
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: 8a37911c-4339-4921-b5d3-0a5a774d4517
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -20,14 +21,14 @@ You can use the Exchange Management Shell to configure various settings that def
 
 - Estimated time to complete: 5 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "MailTips" entry in the [Mail flow permissions](https://technet.microsoft.com/library/f49f4fb5-af75-43cb-900f-c5f7b8cfa143.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "MailTips" entry in the [Mail flow permissions](mail-flow-permissions-exchange-2013-help.md) topic.
 
 - You can only use the Shell to perform this procedure.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to configure the large audience size for your organization
 
@@ -37,4 +38,4 @@ You use the **Set-OrganizationConfig** cmdlet to configure the large audience si
 Set-OrganizationConfig -MailTipsLargeAudienceThreshold 50
 ```
 
-For detailed syntax and parameter information, see [Set-OrganizationConfig](https://technet.microsoft.com/library/3b6df0fe-27c8-415f-ad0c-8b265f234c1a.aspx).
+For detailed syntax and parameter information, see [Set-OrganizationConfig](/powershell/module/exchange/set-organizationconfig).

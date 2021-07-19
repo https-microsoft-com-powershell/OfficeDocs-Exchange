@@ -3,10 +3,11 @@ localization_priority: Normal
 description: A custom data loss prevention (DLP) policy allows you to establish conditions, rules, and actions that can help meet the specific needs of your organization, and which may not be covered in one of the pre-existing DLP templates.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: b3299a39-9663-41e4-b76e-9d2f7879d486
-ms.date: 7/11/2018
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Create a custom DLP policy
 ms.collection:
 - exchange-online
@@ -17,35 +18,32 @@ manager: serdars
 
 ---
 
+# Create a custom DLP policy in Exchange Online
+
 A custom data loss prevention (DLP) policy allows you to establish conditions, rules, and actions that can help meet the specific needs of your organization, and which may not be covered in one of the pre-existing DLP templates.
 
-The rule conditions that are available to you in a single policy include all the traditional mail flow rules (also known as transport rules) in addition to the sensitive information types presented in [Sensitive Information Types Inventory](https://technet.microsoft.com/library/98b81f9c-87bb-4905-8e53-04621c3ae74d.aspx). For more information about mail flow rules, see [Mail flow rules (transport rules) in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rules.md).
+The rule conditions that are available to you in a single policy include all the traditional mail flow rules (also known as transport rules) in addition to the sensitive information types presented in [Sensitive information types in Exchange Server](../../../ExchangeServer/policy-and-compliance/data-loss-prevention/sensitive-information-types.md). For more information about mail flow rules, see [Mail flow rules (transport rules) in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rules.md).
 
 > [!CAUTION]
-> You should enable your DLP policies in test mode before running them in your production environment. During such tests, it is recommended that you configure sample user mailboxes and send test messages that invoke your test policies in order to confirm the results. for more information about testing, see [Test a mail flow rule](../../security-and-compliance/mail-flow-rules/test-mail-flow-rules.md).
-
-For additional management tasks related to creating a custom DLP policy, see [DLP Procedures](https://technet.microsoft.com/library/e2f575aa-552e-4dcc-8d7b-1ffd697d67df.aspx)(Exchange Server) or [DLP Procedures](https://technet.microsoft.com/library/925290cc-f3b4-401e-b6c7-9a216a726f17.aspx) (Exchange Online).
+> You should enable your DLP policies in test mode before running them in your production environment. During such tests, it is recommended that you configure sample user mailboxes and send test messages that invoke your test policies in order to confirm the results. for more information about testing, see [Test mail flow rules in Exchange Online](../../security-and-compliance/mail-flow-rules/test-mail-flow-rules.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 60 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Messaging policy and compliance permissions](https://technet.microsoft.com/library/ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b.aspx) topic.
-
-- In order to create a new custom DLP policy, you must follow the installation instructions for Exchange Server. For more information about deployment, see [Planning and Deployment](https://technet.microsoft.com/library/692c59e3-f0b0-4cef-a66e-751aa740abae.aspx).
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Data loss prevention (DLP)" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!NOTE]
-> Due to the variances in customer environments and content match requirements, Microsoft Support cannot assist in providing custom content matching definitions; e.g., defining Custom Classifications and/or Regular Expression patterns ("RegEx"). For custom content matching development, testing, and debugging, Office 365 customers will need to rely upon internal IT resources, or use an external
-consulting resource such as Microsoft Consulting Services (MCS). Support engineers can provide limited support for the feature, but cannot provide assurances that any custom content matching development will fulfill the customer's requirements or obligations. As an example of the type of support which can be provided, sample regular expression patterns may be provided for testing purposes. Or support can assist with troubleshooting an existing RegEx pattern which is not triggering as expected with a single specific content example.
+> Due to the variances in customer environments and content match requirements, Microsoft Support cannot assist in providing custom content matching definitions; e.g., defining Custom Classifications and/or Regular Expression patterns ("RegEx"). For custom content matching development, testing, and debugging, customers will need to rely upon internal IT resources, or use an external consulting resource such as Microsoft Consulting Services (MCS). Support engineers can provide limited support for the feature, but cannot provide assurances that any custom content matching development will fulfill the customer's requirements or obligations. As an example of the type of support which can be provided, sample regular expression patterns may be provided for testing purposes, or support can assist with troubleshooting an existing RegEx pattern which is not triggering as expected with a single specific content example.
 
-For additional information on the .NET regex engine which is used for processing the text, see https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions.
+For additional information on the .NET regex engine which is used for processing the text, see /dotnet/standard/base-types/regular-expressions.
 
-# Create a custom DLP policy
+## Create custom DLP policies
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to create a custom DLP policy without any existing rules
 
@@ -53,16 +51,16 @@ For additional information on the .NET regex engine which is used for processing
 
 2. Click the arrow that is beside the **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) icon, and select **New custom policy**.
 
-    > [!IMPORTANT]
-    > If you click **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) icon instead of the arrow, you will create a new policy based on a template. For more information about using templates, see [Create a DLP policy from a template](create-dlp-policy-from-template.md).
+   > [!IMPORTANT]
+   > If you click **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) icon instead of the arrow, you will create a new policy based on a template. For more information about using templates, see [Create a DLP policy from a template](create-dlp-policy-from-template.md).
 
 3. On the **New custom policy** page, complete the following fields:
 
-1. **Name**: Add a name that will distinguish this policy from others.
+   1. **Name**: Add a name that will distinguish this policy from others.
 
-2. **Description**: Add an optional description that summarizes this policy.
+   2. **Description**: Add an optional description that summarizes this policy.
 
-3. **Choose a state**: Select the mode or state for this policy. The new policy is not fully enabled until you specify that it should be. The default mode for a policy is test without notifications.
+   3. **Choose a state**: Select the mode or state for this policy. The new policy is not fully enabled until you specify that it should be. The default mode for a policy is test without notifications.
 
 4. Click **Save** to finish creating the new policy reference information. The policy is added to the list of all policies that you have configured, although there are not yet any rules or actions associated with this new custom policy.
 
@@ -70,25 +68,23 @@ For additional information on the .NET regex engine which is used for processing
 
 6. On the **Edit DLP policy** page, click **Rules**.
 
-    Click **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) to add a new blank rule. You can establish conditions using all the traditional mail flow rules in addition to the sensitive information types.
+   Click **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) to add a new blank rule. You can establish conditions using all the traditional mail flow rules in addition to the sensitive information types.
 
-    In order to avoid confusion, supply a unique name for each part of your policy or rule when you have the option to provide your own character string. There are several options additional options available to you:
+   In order to avoid confusion, supply a unique name for each part of your policy or rule when you have the option to provide your own character string. There are several options additional options available to you:
 
-1. Click the arrow that is beside the **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) icon to add a rule about sender notification or allowing overrides.
+   1. Click the arrow that is beside the **Add** ![Add Icon](../../media/ITPro_EAC_AddIcon.gif) icon to add a rule about sender notification or allowing overrides.
 
-2. To remove a rule, highlight the rule and click **Delete** ![Delete icon](../../media/ITPro_EAC_DeleteIcon.gif).
+   2. To remove a rule, highlight the rule and click **Delete** ![Delete icon](../../media/ITPro_EAC_DeleteIcon.gif).
 
-3. Click **More options** ![More Options Icon](../../media/ITPro_EAC_MoreOptionsIcon.gif) to add additional conditions and actions for this rule including time-bound limits of enforcement or effects on other rules in this policy.
+   3. Click **More options** ![More Options Icon](../../media/ITPro_EAC_MoreOptionsIcon.gif) to add additional conditions and actions for this rule including time-bound limits of enforcement or effects on other rules in this policy.
 
 7. Click **Save** to finish modifying the policy and save your changes.
 
-DLP policy templates are one type of feature Microsoft Exchange that can help you design and apply a robust policy and compliance system for your messaging environment. For more information about compliance features, see [Messaging Policy and Compliance](https://technet.microsoft.com/library/65f20a20-27a4-4f6e-9b27-f8705d65b8d9.aspx) (Exchange 2016) or [Security and compliance for Exchange Online](../../security-and-compliance/security-and-compliance.md).
+DLP policy templates are one type of feature Exchange Online that can help you design and apply a robust policy and compliance system for your messaging environment. For more information about compliance features, see [Security and compliance for Exchange Online](../../security-and-compliance/security-and-compliance.md).
 
 ## For more information
 
 [Data loss prevention](data-loss-prevention.md)
-
-[Mail flow rules in Exchange Server](https://technet.microsoft.com/library/c3d2031c-fb7b-4866-8ae1-32928d0138ef.aspx) Exchange 2016
 
 [Mail flow rules (transport rules) in Exchange Online](../../security-and-compliance/mail-flow-rules/mail-flow-rules.md) Exchange Online
 

@@ -2,13 +2,14 @@
 title: 'Message tracking: Exchange 2013 Help'
 TOCTitle: Message tracking
 ms:assetid: bada2ea7-6d7c-4630-b7f1-67f56818f0ff
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124375(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124375(v=EXCHG.150)
 ms:contentKeyID: 50646522
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -45,8 +46,6 @@ Message tracking logs contain vast amounts of data as messages move through an E
 
 - **Delivery reports for administrators**: Administrators can use the **Delivery reports** tab in the Exchange admin center (EAC) or the underlying **Search-MessageTrackingReport** and **Get-MesageTrackingReport** cmdlets to search the message tracking logs for information about messages sent by or received by a specific mailbox in the organization. For more information see [Delivery reports for administrators](delivery-reports-for-administrators-exchange-2013-help.md).
 
-- **Delivery reports for users**: Users can use the **Delivery reports** tab in Outlook Web App to search the message tracking logs for information about messages sent to or sent by their own mailbox. For more information, see [Delivery Reports for Users](https://go.microsoft.com/fwlink/?linkid=279920).
-
 ## Structure of the message tracking log files
 
 By default, the message tracking log files exist in %ExchangeInstallPath%TransportRoles\\Logs\\MessageTracking.
@@ -55,7 +54,7 @@ The naming convention for log files in the message tracking log directory is `MS
 
 - **MSGTRK**: These logs are associated with the Transport service.
 
-- **MSGTRKMA**: These logs are associated with the approvals and rejections used by moderated transport. For more information, see [Manage message approval](https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/manage-message-approval).
+- **MSGTRKMA**: These logs are associated with the approvals and rejections used by moderated transport. For more information, see [Manage message approval](../ExchangeOnline/security-and-compliance/mail-flow-rules/manage-message-approval.md).
 
 - **MSGTRKMD**: These logs are associated with messages delivered to mailboxes by the Mailbox Transport Delivery service.
 
@@ -311,7 +310,7 @@ Various event types in the **event-id** field are used to classify the message e
 </tr>
 <tr class="even">
 <td><p><strong>INITMESSAGECREATED</strong></p></td>
-<td><p>A message was sent to a moderated recipient, so the message was sent to the arbitration mailbox for approval. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a>.</p></td>
+<td><p>A message was sent to a moderated recipient, so the message was sent to the arbitration mailbox for approval. For more information, see <a href="/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>LOAD</strong></p></td>
@@ -319,7 +318,7 @@ Various event types in the **event-id** field are used to classify the message e
 </tr>
 <tr class="even">
 <td><p><strong>MODERATIONEXPIRE</strong></p></td>
-<td><p>A moderator for a moderated recipient never approved or rejected the message, so the message expired. For more information about moderated recipients, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a>.</p></td>
+<td><p>A moderator for a moderated recipient never approved or rejected the message, so the message expired. For more information about moderated recipients, see <a href="/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>MODERATORAPPROVE</strong></p></td>
@@ -442,7 +441,7 @@ The values in the **source** field in the message tracking log indicate the tran
 </tr>
 <tr class="odd">
 <td><p><strong>APPROVAL</strong></p></td>
-<td><p>The event source was the approval framework that's used with moderated recipients. For more information, see <a href="https://docs.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a>.</p></td>
+<td><p>The event source was the approval framework that's used with moderated recipients. For more information, see <a href="/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a>.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>BOOTLOADER</strong></p></td>
@@ -462,7 +461,7 @@ The values in the **source** field in the message tracking log indicate the tran
 </tr>
 <tr class="even">
 <td><p><strong>MAILBOXRULE</strong></p></td>
-<td><p>The event source was an Inbox rule. For more information, see <a href="https://go.microsoft.com/fwlink/?linkid=285479">Inbox rules</a>.</p></td>
+<td><p>The event source was an Inbox rule. For more information, see <a href="https://support.microsoft.com/office/edea3d17-00c9-434b-b9b7-26ee8d9f5622">Inbox rules</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>MEETINGMESSAGEPROCESSOR</strong></p></td>

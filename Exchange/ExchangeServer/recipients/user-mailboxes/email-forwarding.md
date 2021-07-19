@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: c7a7afaf-577e-49d6-8cee-bb4c4a5d570b
-ms.date: 7/5/2018
 ms.reviewer:
 title: Configure email forwarding for a mailbox
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -46,21 +47,21 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 ### Use the Exchange Management Shell to set up mail forwarding
 
-Haven't used Exchange Management Shell much? Check out the [Exchange Management Shell](https://technet.microsoft.com/library/925ad66f-2f05-4269-9923-c353d9c19312.aspx) topic to learn more. Take a look at the [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx) and [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx) topics for more details on the cmdlets used here.
+Haven't used Exchange Management Shell much? Check out the [Exchange Management Shell](/powershell/exchange/exchange-management-shell) topic to learn more. Take a look at the [Get-Mailbox](/powershell/module/exchange/get-mailbox) and [Set-Mailbox](/powershell/module/exchange/set-mailbox) topics for more details on the cmdlets used here.
 
-This example delivers email to the mailbox of Douglas Kohn and, at the same time, forwards all mail sent to Douglas Kohn to douglaskohn.parents@fineartschool.net.
+This example delivers email to the mailbox of Douglas Kohn and also forwards all mail sent to Douglas Kohn to an external email address, douglaskohn.parents@fineartschool.net.
 
-```
+```PowerShell
 Set-Mailbox -Identity "Douglas Kohn" -DeliverToMailboxAndForward $true -ForwardingSMTPAddress "douglaskohn.parents@fineartschool.net"
 ```
 
 This example forwards all email sent to the mailbox of Ken Sanchez, an employee of Contoso Suites, to one of his coworkers, pilarp@contoso.com.
 
-```
-Set-Mailbox -Identity "Ken Sanchez" -ForwardingSMTPAddress "pilarp@contoso.com"
+```PowerShell
+Set-Mailbox -Identity "Ken Sanchez" -ForwardingAddress "pilarp@contoso.com"
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/set-mailbox).
 
 ## How do you know this worked?
 
@@ -78,7 +79,7 @@ Or
 
 Run the following command in the Exchange Management Shell.
 
-```
+```PowerShell
 Get-Mailbox <identity> | Format-List ForwardingSMTPAddress,DeliverToMailboxandForward
 ```
 
@@ -88,12 +89,12 @@ Make sure that the forwarding address is listed in the _ForwardingSMTPAddress_ p
 
 Check out the following topics on how to forward your email to another email address by using Outlook and Outlook Web App.
 
-- [Forward email to another email account](https://go.microsoft.com/fwlink/p/?LinkId=510866)
+- [Forward email to another email account](https://support.microsoft.com/office/ecafbc06-e812-4b9e-a7af-5074a9c7abd0)
 
-- [Manage email messages by using rules](https://go.microsoft.com/fwlink/p/?LinkId=510869)
+- [Manage email messages by using rules](https://support.microsoft.com/office/c24f5dea-9465-4df4-ad17-a50704d66c59)
 
 ## Additional information
 
 For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).

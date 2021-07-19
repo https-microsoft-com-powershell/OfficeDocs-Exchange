@@ -2,13 +2,14 @@
 title: 'POP3 and IMAP4 in Exchange Server 2013: Exchange 2013 Help'
 TOCTitle: POP3 and IMAP4
 ms:assetid: a7dc91ee-2919-4db3-ae9c-cd665d2e09ea
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657728(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657728(v=EXCHG.150)
 ms:contentKeyID: 49300645
-ms.date: 08/16/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -37,7 +38,7 @@ The POP3 and IMAP4 protocols have the following benefits and limitations:
 POP3 and IMAP4 email applications don't use POP3 and IMAP4 to send messages to the email server; they rely on the SMTP protocol to send messages. The connector for receiving email submissions from client applications that use POP3 or IMAP4 is created automatically when you install Exchange. For more information about connectors, see [Receive connectors](receive-connectors-exchange-2013-help.md).
 
 > [!NOTE]
-> Each time a user uses a POP or IMAP based email program to open their Office 365 email, they may experience a delay of several seconds. The delay is caused by a proxy server, which introduces an additional hop for authentication. The proxy server first looks up the assigned pod server (Client Access server), and then authenticates against that.
+> Each time a user uses a POP or IMAP based email program to open their Microsoft 365 or Office 365 email, they may experience a delay of several seconds. The delay is caused by a proxy server, which introduces an additional hop for authentication. The proxy server first looks up the assigned pod server (Client Access server), and then authenticates against that.
 
 ## POP3 and IMAP4 cross-site connectivity
 
@@ -117,7 +118,7 @@ To connect from the Internet, they'll need the following information:
 
 You can make these settings available to your users through email or other manual communication methods. You can also configure Exchange so that your users can use Outlook Web App to look up their own settings.
 
-**Configure Exchange so users can look up their POP3, IMAP4, and SMTP server settings**
+## Configure Exchange so users can look up their POP3, IMAP4, and SMTP server settings
 
 By default, users can't look up their POP3, IMAP4, and SMTP server settings through Outlook Web App. To allow your users to do this, you need to use the **Set-PopSettings** and **Set-ImapSettings** cmdlets. To allow your users to look up their SMTP (outgoing) server settings, you must use the **Set-ReceiveConnector** cmdlet.
 
@@ -137,6 +138,6 @@ Do the following to allow users to look up their own POP3, IMAP4, and SMTP setti
 
 After you change your default settings by running the **Set-POPSettings**, **Set-IMAPSettings**, and **Set-ReceiveConnector** cmdlets, your users can look up their external POP, IMAP, and SMTP server settings in Outlook Web App by clicking **Settings** \> **Options** \> **Account** \> **My account** \> **Settings for POP or IMAP access**.
 
-**Leave a copy of messages on the server**
+## Leave a copy of messages on the server
 
 The default setting on some email programs is to remove the messages on the server after they're retrieved. Be sure to recommend that your users set up their email program to keep a copy of all messages the client retrieves on the server. By keeping a copy of messages on the server, your users can access their messages from a different email program.

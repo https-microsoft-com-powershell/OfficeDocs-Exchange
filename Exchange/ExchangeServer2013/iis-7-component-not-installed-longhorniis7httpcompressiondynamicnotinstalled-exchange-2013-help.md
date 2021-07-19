@@ -2,13 +2,14 @@
 title: 'IIS 7 component not installed'
 TOCTitle: IIS 7 component not installed_LonghornIIS7HttpCompressionDynamicNotInstalled
 ms:assetid: d909e329-2436-43f9-af75-a5ee14e67ebf
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/ms.exch.setupreadiness.longhorniis7httpcompressiondynamicnotinstalled(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.longhorniis7httpcompressiondynamicnotinstalled(v=EXCHG.150)
 ms:contentKeyID: 46629153
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 The content in this topic hasn't been updated for Microsoft Exchange Server 2013. While it hasn't been updated yet, it may still be applicable to Exchange 2013. If you still need help, check out the community resources below.
 
-Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 Microsoft Exchange Server 2010 Setup or Microsoft Exchange Server 2007 Setup cannot install the Client Access Server (CAS) role or the Mailbox server role on a Microsoft Windows Server 2008-based computer or on a Windows Server 2008 R2-based computer because the required Internet Information Server (IIS) 7 components are not installed.
 

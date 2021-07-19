@@ -4,9 +4,10 @@ TOCTitle: Remove an Outlook Web App mailbox policy from Exchange
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date:
 ms.reviewer:
 ms.assetid: edab7bac-b62c-4b82-8f21-dcac77cf0e8f
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -22,12 +23,12 @@ For additional management tasks related to Outlook Web App mailbox policies, see
 
 - Estimated time to complete each procedure: 3 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook Web App mailbox policies" entry in the [Client Access Permissions](https://technet.microsoft.com/library/57eca42a-5a7f-4c65-89f0-7a84f2dbea19.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook Web App mailbox policies" entry in the [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to remove an Outlook Web App mailbox policy
 
@@ -47,7 +48,7 @@ This example removes an Outlook Web App mailbox policy named `Policy1`.
 Remove-OwaMailboxPolicy -Name Policy1
 ```
 
-For more information about syntax and parameters, see [Remove-OwaMailboxPolicy](https://technet.microsoft.com/library/834bee7a-1044-4628-9d0d-1601e88a73f8.aspx).
+For more information about syntax and parameters, see [Remove-OwaMailboxPolicy](/powershell/module/exchange/remove-owamailboxpolicy).
 
 ## How do you know this worked?
 

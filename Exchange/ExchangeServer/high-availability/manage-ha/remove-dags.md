@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 071296e9-31b0-40f4-9a02-177d97486ebd
-ms.date: 7/9/2018
 ms.reviewer: 
 title: Remove a database availability group
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -32,7 +33,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the EAC to remove a database availability group
 
@@ -46,7 +47,7 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
 
 This example removes the DAG DAG1.
 
-```
+```powershell
 Remove-DatabaseAvailabilityGroup -Identity DAG1
 ```
 
@@ -58,7 +59,7 @@ To verify that you've successfully removed the DAG, do one of the following:
 
 - In the Exchange Management Shell, run the following command to see if the DAG still exists:
 
-  ```
+  ```powershell
   Get-DatabaseAvailabilityGroup <DAGName>
   ```
 

@@ -3,14 +3,15 @@ localization_priority: Normal
 description: Admins can learn how to specify the default offline address book (OAB) in Exchange Online
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 61abf78e-2543-4431-acc8-839e3c7a4548
-ms.date: 
 ms.reviewer: 
 title: Change the default offline address book in Exchange Online
 ms.collection: exchange-online
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -33,25 +34,25 @@ For additional management tasks related to OABs, see [Offline address book proce
 
 - By default, the Address List role isn't assigned to any role groups in Exchange Online. To use any cmdlets that require the Address List role, you need to add the role to a role group. For more information, see [Modify role groups](../../permissions-exo/role-groups.md#modify-role-groups).
 
-- You can only use Exchange Online PowerShell to perform the procedures in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- You can only use Exchange Online PowerShell to perform the procedures in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to change the default OAB
 
 This example sets the OAB named My OAB as the default OAB.
 
-```
+```PowerShell
 Set-OfflineAddressBook -Identity "My OAB" -IsDefault $true
 ```
 
-For detailed syntax and parameter information, see [Set-OfflineAddressBook](https://technet.microsoft.com/library/1221dda7-1923-4fec-a756-7540e18ae9f9.aspx).
+For detailed syntax and parameter information, see [Set-OfflineAddressBook](/powershell/module/exchange/set-offlineaddressbook).
 
 ## How do you know this worked?
 
 To verify that you've successfully changed the default OAB, run the following command to verify the `IsDefault` property value:
 
-```
+```PowerShell
 Get-OfflineAddressBook | Format-List Name,IsDefault
 ```

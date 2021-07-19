@@ -2,13 +2,14 @@
 title: 'Create a theme for Outlook Web App: Exchange 2013 Help'
 TOCTitle: Create a theme for Outlook Web App
 ms:assetid: 7e1fa13c-3de3-45c2-b1fa-e74fc8487bda
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb201700(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb201700(v=EXCHG.150)
 ms:contentKeyID: 53957626
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -44,7 +45,7 @@ After you create a theme, you may also want to [Customize the Outlook Web App si
 
 - You need local server administrator access to perform these procedures.
 
-- You'll need a text editor to change the default colors, and a graphics editor to change the images. If you must match a specific color and you can't find a match for it at [Color Table](https://go.microsoft.com/fwlink/p/?linkid=280679), you can use an image editing tool to sample a color and determine its HTML RGB value.
+- You'll need a text editor to change the default colors, and a graphics editor to change the images. If you must match a specific color and you can't find a match for it at [Color Table](https://developer.mozilla.org/docs/Web/CSS/color_value), you can use an image editing tool to sample a color and determine its HTML RGB value.
 
 - As a best practice, we recommend that you use the following guidelines any time that you change or create an Outlook Web App theme:
 
@@ -55,7 +56,7 @@ After you create a theme, you may also want to [Customize the Outlook Web App si
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Create a new Outlook Web App theme
 
@@ -156,7 +157,7 @@ This example sets the default theme for Outlook Web App, where the server name i
 set-owavirtualdirectory -identity "fourthcoffee\owa (default web site)" -defaulttheme Custom
 ```
 
-For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/bb123515\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory).
 
 ### Use the Shell to disable theme selection for Outlook Web App
 
@@ -172,7 +173,7 @@ You can also complete both commands at the same time as shown in the following e
 set-owavirtualdirectory -identity "fourthcoffee\owa (default web site)" -defaulttheme Custom -themeselectionenabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](https://technet.microsoft.com/en-us/library/bb123515\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory).
 
 ## Step 6: Run iisreset/noforce to save your changes
 

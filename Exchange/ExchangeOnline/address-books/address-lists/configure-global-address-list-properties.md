@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Admins can learn how to modify the settings of a global address list (GAL) in Exchange Online.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 5fd2c96f-fe93-4b5a-8495-70c450511a37
-ms.date:
 ms.reviewer:
 title: Configure global address list properties in Exchange Online
 ms.collection:
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -29,22 +30,22 @@ The same settings to configure a GAL are available as when you created the GAL. 
 
 - By default, the Address List role isn't assigned to any role groups in Exchange Online. To use any cmdlets that require the Address List role, you need to add the role to a role group. For more information, see [Modify role groups](../../permissions-exo/role-groups.md#modify-role-groups).
 
-- You can't modify the GAL named Default Offline Address Book, the built-in GAL that's available in Exchange Online, and the only GAL that has the **IsDefaultGlobalAddressList** property value `True`.
+- You can't modify the GAL named Default Global Address List, the built-in GAL that's available in Exchange Online, and the only GAL that has the **IsDefaultGlobalAddressList** property value `True`.
 
 - You can't replace a custom recipient filter with a precanned recipient filter or vice-versa in an existing GAL.
 
-- You can only use Exchange Online PowerShell to perform the procedures in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- You can only use Exchange Online PowerShell to perform the procedures in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 - For details about recipient filters in the Exchange Online PowerShell, see [Recipient filters for address lists in Exchange Online PowerShell](use-recipient-filters-to-create-an-address-list.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use the Exchange Online PowerShell to modify global address lists
 
 To modify a GAL, use the following syntax:
 
-```
+```PowerShell
 Set-GlobalAddressList -Identity <GALIdentity>] [-Name <Name>] [<Precanned recipient filter | Custom recipient filter>]
 ```
 
@@ -52,16 +53,16 @@ When you modify the precanned _Conditional_ parameter values, you can use the fo
 
 This example modifies the existing GAL named Contoso GAL by adding the **Company** value Fabrikam to the precanned recipient filter.
 
-```
+```PowerShell
 Set-GlobalAddressList -Identity "Contoso GAL" -ConditionalCompany @{Add="Fabrikam"}
 ```
 
-For detailed syntax and parameter information, see [Set-GlobalAddressList](https://technet.microsoft.com/library/96bf236f-0fb8-44db-9b22-ddc0933db951.aspx).
+For detailed syntax and parameter information, see [Set-GlobalAddressList](/powershell/module/exchange/set-globaladdresslist).
 
 #### How do you know this worked?
 
 To verify that you've successfully modified a GAL, replace _\<GAL Name\>_ with the name of the GAL and run the following command in Exchange Online PowerShell to verify the property values:
 
-```
+```PowerShell
 Get-GlobalAddressList -Identity "<GAL Name>" | Format-List Name,RecipientFilterType,RecipientFilter,IncludedRecipients,Conditional*
 ```

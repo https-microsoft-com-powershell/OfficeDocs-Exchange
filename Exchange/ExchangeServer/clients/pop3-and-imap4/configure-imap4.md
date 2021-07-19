@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: c1ae10dd-14da-4400-b38d-2aeafde8abe6
-ms.date: 7/5/2018
 ms.reviewer:
 title: Enable and configure IMAP4 on an Exchange server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -49,14 +50,14 @@ For more information about IMAP4, see [POP3 and IMAP4 in Exchange Server](pop3-a
 
 - Secure Sockets Layer (SSL) is being replaced by Transport Layer Security (TLS) as the protocol that's used to encrypt data sent between computer systems. They're so closely related that the terms "SSL" and "TLS" (without versions) are often used interchangeably. Because of this similarity, references to "SSL" in Exchange topics, the Exchange admin center, and the Exchange Management Shell have often been used to encompass both the SSL and TLS protocols. Typically, "SSL" refers to the actual SSL protocol only when a version is also provided (for example, SSL 3.0). To find out why you should disable the SSL protocol and switch to TLS, check out [Protecting you against the SSL 3.0 vulnerability](https://blogs.office.com/2014/10/29/protecting-ssl-3-0-vulnerability/).
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "POP3 and IMAP4 Permissions" section in the [Clients and mobile devices permissions](../../permissions/feature-permissions/client-and-mobile-device-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Step 1: Start the IMAP4 services, and configure the services to start automatically
 
@@ -94,17 +95,17 @@ You can perform this step by using the Windows Services console, or the Exchange
 
 1. Run the following command to start the IMAP4 services:
 
-   ```
+   ```powershell
    Start-Service MSExchangeIMAP4; Start-Service MSExchangeIMAP4BE
    ```
 
 2. Run the following command to configure the IMAP4 services to start automatically:
 
-   ```
+   ```powershell
    Set-Service MSExchangeIMAP4 -StartupType Automatic; Set-Service MSExchangeIMAP4BE -StartupType Automatic
    ```
 
-For more information about these cmdlets, see [Start-Service](https://go.microsoft.com/fwlink/p/?LinkID=113406) and [Set-Service](https://go.microsoft.com/fwlink/p/?LinkID=113399).
+For more information about these cmdlets, see [Start-Service](/powershell/module/microsoft.powershell.management/start-service) and [Set-Service](/powershell/module/microsoft.powershell.management/set-service).
 
 ### How do you know this step worked?
 
@@ -114,7 +115,7 @@ To verify that you've successfully started the IMAP4 services, use either of the
 
 - In the Exchange Management Shell, run the following command to verify that the IMAP4 services are running:
 
-  ```
+  ```powershell
   Get-Service MSExchangeIMAP4; Get-Service MSExchangeIMAP4BE
   ```
 
@@ -122,7 +123,7 @@ To verify that you've successfully started the IMAP4 services, use either of the
 
 To configure the IMAP4 settings for external clients, use the following syntax:
 
-```
+```powershell
 Set-ImapSettings -ExternalConnectionSettings "<FQDN1>:<TCPPort1>:<SSL | TLS | blank>", "<FQDN2>:<TCPPort2>:<SSL | TLS | blank>"...  -X509CertificateName <FQDN> [-SSLBindings "<IPv4Orv6Address1>:<TCPPort1>","<IPv4Orv6Address2>:<TCPPort2>"...] [-UnencryptedOrTLSBindings "<IPv4Orv6Address1>:<TCPPort1>","<IPv4Orv6Address2>:<TCPPort2>"...]
 ```
 
@@ -138,13 +139,13 @@ This example allows configures the following settings for external IMAP4 connect
 
 - **FQDN used for encryption**: mail.contoso.com. This value identifies the certificate that matches or contains the IMAP4 server FQDN.
 
-```
+```powershell
 Set-ImapSettings -ExternalConnectionSettings "mail.contoso.com:993:SSL","mail.contoso.com:143:TLS" -X509CertificateName mail.contoso.com
 ```
 
  **Notes**:
 
-- For detailed syntax and parameter information, see [Set-IMAPSettings](https://technet.microsoft.com/library/58e51734-83bd-4e71-bd13-9960efaa80c3.aspx).
+- For detailed syntax and parameter information, see [Set-IMAPSettings](/powershell/module/exchange/set-imapsettings).
 
 - The external IMAP4 server FQDN that you configure needs to have a corresponding record in your public DNS, and the TCP port (143 or 993) needs to be allowed through your firewall to the Exchange server.
 
@@ -158,11 +159,11 @@ Set-ImapSettings -ExternalConnectionSettings "mail.contoso.com:993:SSL","mail.co
 
 To verify that you've successfully configured the IMAP4 settings for external clients, run the following command in the Exchange Management Shell and verify the settings:
 
-```
+```powershell
 Get-ImapSettings | Format-List *ConnectionSettings,*Bindings,X509CertificateName
 ```
 
-For more information, see [Get-IMAPSettings](https://technet.microsoft.com/library/172e1a14-bd90-4010-abd9-e4878b4213a2.aspx).
+For more information, see [Get-IMAPSettings](/powershell/module/exchange/get-imapsettings).
 
 ## Step 3: Restart the IMAP4 services
 
@@ -180,15 +181,15 @@ After you enable and configure IMAP4, you need to restart the IMAP4 services on 
 
 Run the following command to restart the IMAP4 services.
 
-```
+```powershell
 Restart-Service MSExchangeIMAP4; Restart-Service MSExchangeIMAP4BE
 ```
 
-For more information about this cmdlet, see [Restart-Service](https://go.microsoft.com/fwlink/p/?LinkID=113385).
+For more information about this cmdlet, see [Restart-Service](/powershell/module/microsoft.powershell.management/restart-service).
 
 To verify that you've successfully restarted the IMAP4 services, run the following command:
 
-```
+```powershell
 Get-Service MSExchangeIMAP4; Get-Service MSExchangeIMAP4BE
 ```
 
@@ -208,15 +209,15 @@ To verify that you have enabled and configured IMAP4 on the Exchange server, per
 
    ![IMAP settings in Outlook on the web](../../media/2fc6813d-0b2e-4813-8bbc-bc3dfaf4c261.png)
 
-   **Note**: If you configured 993/SSL **and** 143/TLS values for the _ExternalConnectionSettings_ parameter on the **Set-ImapSettings** cmdlet, only the 993/SSL value is displayed in Outlook on the web. Also, if the external IMAP4 settings that you configured don't appear as expected in Outlook on the web after you restart the IMAP4 services, run the commands `net stop was /y` and `net start w3svc` to restart Internet Information Services (IIS).
+   **Note**: If you configured 993/SSL **and** 143/TLS values for the _ExternalConnectionSettings_ parameter on the **Set-ImapSettings** cmdlet, only the 993/SSL value is displayed in Outlook on the web. Also, if the external IMAP4 settings that you configured don't appear as expected in Outlook on the web after you restart the IMAP4 services, run the commands `net stop w3svc /y` and `net start w3svc` to restart Internet Information Services (IIS).
 
 3. You can test IMAP4 client connectivity to the Exchange server by using the following methods:
 
-   - **Internal clients**: Use the **Test-ImapConnectivity** cmdlet. For example, `Test-ImapConnectivity -ClientAccessServer <ServerName> -Lightmode -MailboxCredential (Get-Credential)`. For more information, see [Test-ImapConnectivity](https://technet.microsoft.com/library/273690c8-4e0d-4f05-8786-11d71868dae0.aspx).
+   - **Internal clients**: Use the **Test-ImapConnectivity** cmdlet. For example, `Test-ImapConnectivity -ClientAccessServer <ServerName> -Lightmode -MailboxCredential (Get-Credential)`. For more information, see [Test-ImapConnectivity](/powershell/module/exchange/test-imapconnectivity).
 
    **Note**: The _Lightmode_ switch tells the command test IMAP4 logons to the server. To test sending (SMTP) and receiving (IMAP4) a message, you need to configure the authenticated SMTP settings as described in [Configure authenticated SMTP settings for POP3 and IMAP4 clients in Exchange Server](configure-authenticated-smtp.md).
 
-   - **External clients**: Use the **Exchange Server** \> **Imap Email** test in the Microsoft Remote Connectivity Analyzer at [https://go.microsoft.com/fwlink/p/?LinkID=313840](https://go.microsoft.com/fwlink/p/?LinkID=313840).
+   - **External clients**: Use the **Imap Email** test in the [Microsoft Remote Connectivity Analyzer](https://testconnectivity.microsoft.com/tests/o365).
 
    **Note**: You can't use IMAP4 to connect to the Administrator mailbox. This limitation was intentionally included in Exchange 2016 and Exchange 2019 to enhance the security of the Administrator mailbox.
 

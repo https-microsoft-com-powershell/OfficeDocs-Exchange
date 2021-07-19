@@ -2,13 +2,14 @@
 title: 'Create an unscoped role: Exchange 2013 Help'
 TOCTitle: Create an unscoped role
 ms:assetid: 5a042ccf-4d5f-4609-a91b-21c20d1e6459
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd876886(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd876886(v=EXCHG.150)
 ms:contentKeyID: 49289258
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -43,7 +44,7 @@ Looking for other management tasks related to roles? Check out [Advanced permiss
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Create an unscoped top-level management role
 
@@ -67,7 +68,7 @@ New-ManagementRole "IT Scripts" -UnscopedTopLevel
 
 After it's created, the role is empty until you add scripts or non-Exchange cmdlets to it.
 
-For detailed syntax and parameter information, see [New-ManagementRole](https://technet.microsoft.com/en-us/library/dd298073\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRole](/powershell/module/exchange/New-ManagementRole).
 
 ## Step 2a: Add script management role entries
 
@@ -153,7 +154,7 @@ This example copies the IT Global Scripts role and its management role entries t
 New-ManagementRole -Parent "IT Global Scripts" -Name "Diagnostic IT Scripts"
 ```
 
-For detailed syntax and parameter information, see [New-ManagementRole](https://technet.microsoft.com/en-us/library/dd298073\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-ManagementRole](/powershell/module/exchange/New-ManagementRole).
 
 ## Step 2: Change the role's management role entries
 

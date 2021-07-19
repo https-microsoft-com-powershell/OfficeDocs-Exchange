@@ -2,13 +2,14 @@
 title: 'Enable or disable email for a mail user: Exchange 2013 Help'
 TOCTitle: Enable or disable email for a mail user
 ms:assetid: 1e2571d4-ff84-4fda-bb1d-825e96e1bd26
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996598(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996598(v=EXCHG.150)
 ms:contentKeyID: 50382995
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -23,7 +24,7 @@ After you disable email for a mail user, you can mail-enable the user again by u
 > [!NOTE]
 > Mail users (also called <EM>mail-enabled users</EM>) are different than users in your organization that have a mailbox. The primary difference is that mail users represent users outside your Exchange organization that have an external email address. They don't have a mailbox in your organization. For more information about the differences between users who have mailboxes in your organization and mail users, see <A href="recipients-exchange-2013-help.md">Recipients</A>.
 
-For additional management tasks related to mail users, see [Manage mail users](https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-users).
+For additional management tasks related to mail users, see [Manage mail users](../ExchangeOnline/recipients-in-exchange-online/manage-mail-users.md).
 
 ## What do you need to know before you begin?
 
@@ -34,7 +35,7 @@ For additional management tasks related to mail users, see [Manage mail users](h
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Disable email for a mail user
 
@@ -60,7 +61,7 @@ This example disables email for the mail user Yan Li.
 Disable-MailUser -Identity "Yan Li"
 ```
 
-For detailed syntax and parameter information, see [Disable-MailUser](https://technet.microsoft.com/en-us/library/aa998578\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Disable-MailUser](/powershell/module/exchange/Disable-MailUser).
 
 ## How do you know this worked?
 

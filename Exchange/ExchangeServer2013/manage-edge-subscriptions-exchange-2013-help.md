@@ -2,13 +2,14 @@
 title: 'Manage Edge Subscriptions: Exchange 2013 Help'
 TOCTitle: Manage Edge Subscriptions
 ms:assetid: 27de4104-fb8e-4eab-9ad2-a64f81a4fb69
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996865(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996865(v=EXCHG.150)
 ms:contentKeyID: 61200280
-ms.date: 04/16/2018
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -27,7 +28,7 @@ This topic gives detailed information on a variety of Edge Subscription manageme
 - You need to have an Edge server subscribed to your Internet-facing Active Directory site. For more information, see [Configure Internet mail flow through a subscribed Edge Transport server](configure-internet-mail-flow-through-a-subscribed-edge-transport-server-exchange-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Subscribe an Edge Transport server
 

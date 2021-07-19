@@ -3,9 +3,8 @@ localization_priority: Normal
 description: You can use Exchange Online PowerShell to configure custom settings for MailTips between various organizations.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 6e6b48ef-c41c-47ad-8063-66901765c2a5
-ms.date: 4/8/2015
 ms.reviewer: 
 title: Manage MailTips for organization relationships
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -31,42 +32,42 @@ You use the **Set-OrganizationRelationship** cmdlet to configure these settings.
 
 - Estimated time to complete each procedure: 5 minutes
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "MailTips" entry in the [Mail flow permissions](https://technet.microsoft.com/library/f49f4fb5-af75-43cb-900f-c5f7b8cfa143.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "MailTips" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - You can only use Exchange Online PowerShell to perform this procedure.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to enable or disable MailTips between two organizations
 
 This example configures the organizational relationship so that MailTips are returned to senders in the remote organization when composing messages to recipients in your organization.
 
-```
+```PowerShell
 Set-OrganizationRelationship "Contoso Online" -MailTipsAccessEnabled $true
 ```
 
 This example configures the organizational relationship to prevent MailTips from being returned to senders in the remote organization when composing messages to recipients in your organization.
 
-```
+```PowerShell
 Set-OrganizationRelationship "Contoso Online" -MailTipsAccessEnabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-OrganizationRelationship](https://technet.microsoft.com/library/4e3b9d1d-cf41-4fd0-97e3-a0bbc816cf87.aspx).
+For detailed syntax and parameter information, see [Set-OrganizationRelationship](/powershell/module/exchange/set-organizationrelationship).
 
 ## Use Exchange Online PowerShell to configure which MailTips are returned to the remote organization
 
 For each organizational relationship, you can determine which set of MailTips are returned to senders in the other organization. This example configures the organizational relationship so that all MailTips are returned.
 
-```
+```PowerShell
 Set-OrganizationRelationship "Contoso Online" -MailTipsAccessLevel All
 ```
 
 This example configures the organizational relationship so that only the Automatic Replies, Oversize Message, Restricted Recipient, and Mailbox Full MailTips are returned.
 
-```
+```PowerShell
 Set-OrganizationRelationship "Contoso Online" -MailTipsAccessLevel Limited
 ```
 
@@ -75,11 +76,11 @@ This example configures the organizational relationship so that no MailTips are 
 > [!NOTE]
 > Don't use this method to disable MailTips for this relationship. To disable MailTips, set the _MailTipsAccessEnabled_ parameter to `$false`.
 
-```
+```PowerShell
 Set-OrganizationRelationship "Contoso Online" -MailTipsAccessLevel None
 ```
 
-For detailed syntax and parameter information, see [Set-OrganizationRelationship](https://technet.microsoft.com/library/4e3b9d1d-cf41-4fd0-97e3-a0bbc816cf87.aspx).
+For detailed syntax and parameter information, see [Set-OrganizationRelationship](/powershell/module/exchange/set-organizationrelationship).
 
 ## Use Exchange Online PowerShell to configure a specific group of users for whom recipient-specific MailTips are returned
 
@@ -93,8 +94,8 @@ You can restrict the return of recipient-specific MailTips to a specific group o
 
 You can specify a MailTips access group on the organizational relationship. After you specify a group, the recipient-specific MailTips are returned only for mailboxes, mail contacts, and mail users that are members of that group. This example configures the organizational relationship to return recipient-specific MailTips only for members of the ShareMailTips@contoso.com group.
 
-```
+```PowerShell
 Set-OrganizationRelationship "Contoso Online" -MailTipsAccessScope ShareMailTips@contoso.com
 ```
 
-For detailed syntax and parameter information, see [Set-OrganizationRelationship](https://technet.microsoft.com/library/4e3b9d1d-cf41-4fd0-97e3-a0bbc816cf87.aspx).
+For detailed syntax and parameter information, see [Set-OrganizationRelationship](/powershell/module/exchange/set-organizationrelationship).

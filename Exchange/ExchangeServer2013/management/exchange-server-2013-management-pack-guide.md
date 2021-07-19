@@ -2,13 +2,14 @@
 title: Exchange Server 2013 Management Pack Guide
 TOCTitle: '@NoTitle'
 ms:assetid: 5e3d40c1-9230-467e-be80-633407078468
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ee758046(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ee758046(v=EXCHG.150)
 ms:contentKeyID: 53181776
-ms.date: 
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

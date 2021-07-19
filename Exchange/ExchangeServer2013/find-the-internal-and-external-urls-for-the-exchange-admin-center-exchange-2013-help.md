@@ -2,13 +2,14 @@
 title: 'Find internal and external URLs for the Exchange admin center'
 TOCTitle: Find the internal and external URLs for the Exchange admin center
 ms:assetid: 3ddb30ff-a405-4b9d-8d77-2d7a3a5ab8fa
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ680108(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ680108(v=EXCHG.150)
 ms:contentKeyID: 49558154
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -34,7 +35,7 @@ To learn more about the EAC, see [Exchange admin center in Exchange 2013](exchan
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to find the internal and external URLs for the ECP virtual directory
 
@@ -46,4 +47,4 @@ Get-ECPVirtualDirectory | Format-List Name,InternalURL,ExternalURL
 
 When the command is completed, use the *InternalURL* or *ExternalURL* values in your web browser to launch the EAC.
 
-For detailed syntax and parameter information, see [Get-EcpVirtualDirectory](https://technet.microsoft.com/en-us/library/dd351058\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-EcpVirtualDirectory](/powershell/module/exchange/Get-EcpVirtualDirectory).

@@ -2,13 +2,14 @@
 title: 'Configuring SSL offloading in Exchange 2013: Exchange 2013 Help'
 TOCTitle: Configuring SSL offloading in Exchange 2013
 ms:assetid: 654cc2c2-918b-48fc-9532-9c8e3012810d
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn635115(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dn635115(v=EXCHG.150)
 ms:contentKeyID: 61200287
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -35,16 +36,16 @@ One of the biggest advantages to SSL offloading is having the ability to more ea
 
 - To see what permissions you need for Client Access servers, see "Outlook Web App permissions" in [Clients and mobile devices permissions](clients-and-mobile-devices-permissions-exchange-2013-help.md).
 
-- You might be able to use only the Shell to perform some procedures. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](https://technet.microsoft.com/en-us/library/dd638134\(v=exchg.150\)).
+- You might be able to use only the Shell to perform some procedures. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
-- To use an existing certificate on your Client Access servers and on the device you are terminating the SSL connections with, export the certificate with the private key on a Client Access server and import or install it on the device. For details, see [Export-ExchangeCertificate](https://technet.microsoft.com/en-us/library/aa996305\(v=exchg.150\)).
+- To use an existing certificate on your Client Access servers and on the device you are terminating the SSL connections with, export the certificate with the private key on a Client Access server and import or install it on the device. For details, see [Export-ExchangeCertificate](/powershell/module/exchange/Export-ExchangeCertificate).
 
 - To use a new certificate, you must use EAC or the Shell to create, import, and enable the new certificate. For details, see [Exchange 2013 certificate management UI](exchange-2013-certificate-management-ui-exchange-2013-help.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Configure SSL offloading for Outlook Web App
 
@@ -317,7 +318,7 @@ To enable SSL offloading for the Autodiscover service, you need to remove the SS
 
 ## Configuring SSL Offloading for the Mailbox Replication Proxy Service (MRSProxy)
 
-The Mailbox Replication Proxy (MRSProxy) service is installed on every Exchange 2013 Client Access server. MRSProxy helps you to make cross-forest move requests on-premises as well as moving on-premises mailboxes to Office 365. However, by default, MRSProxy is disabled. If you are enabling it, you should enable it in the remote Exchange forest for cross-forest, on-premises mailbox moves or in the on-premises Exchange forest for moving a mailbox to Office 365. Although the MRSProxy service runs under Exchange Web Services (EWS), it's not supported to configure SSL offloading.
+The Mailbox Replication Proxy (MRSProxy) service is installed on every Exchange 2013 Client Access server. MRSProxy helps you to make cross-forest move requests on-premises as well as moving on-premises mailboxes to Microsoft 365 or Office 365. However, by default, MRSProxy is disabled. If you are enabling it, you should enable it in the remote Exchange forest for cross-forest, on-premises mailbox moves or in the on-premises Exchange forest for moving a mailbox to Microsoft 365 or Office 365. Although the MRSProxy service runs under Exchange Web Services (EWS), it's not supported to configure SSL offloading.
 
 The reason for this is that the MRSProxy service expects traffic to be signed/encrypted. Any hardware load balancer or firewall must reencrypt the MRSProxy traffic before sending it to Client Access servers. If this is the case, it is recommended that you configure SSL bridging for offloading to work.
 

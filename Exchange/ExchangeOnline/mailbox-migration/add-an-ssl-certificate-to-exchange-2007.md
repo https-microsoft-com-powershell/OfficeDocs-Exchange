@@ -2,9 +2,8 @@
 localization_priority: Normal
 ms.topic: conceptual
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: d4524743-a63f-413f-b290-5f0d2f070392
-ms.date: 8/16/2018
 ms.reviewer: 
 description: Steps to add an SSL certificate to Exchange 2007,
 title: Add an SSL certificate to Exchange 2007
@@ -18,6 +17,8 @@ search.appverid:
 - MBS150
 - BCS160
 audience: Admin
+f1.keywords:
+- CSH
 ms.custom: Adm_O365
 ms.service: exchange-online
 manager: serdars
@@ -26,7 +27,7 @@ manager: serdars
 
 # Add an SSL certificate to Exchange 2007
 
-Some services, such as Outlook Anywhere, Cutover migration to Office 365, and Exchange ActiveSync, require certificates to be configured on your Microsoft Exchange Server 2007 server. This article shows you how to configure an SSL certificate from a third-party certificate authority (CA).
+Some services, such as Outlook Anywhere, Cutover migration to Microsoft 365 or Office 365, and Exchange ActiveSync, require certificates to be configured on your Microsoft Exchange Server 2007 server. This article shows you how to configure an SSL certificate from a third-party certificate authority (CA).
 
 ## Tasks for adding an SSL certificate
 
@@ -41,7 +42,7 @@ Adding an SSL certificate to Microsoft Exchange Server 2007 is a three step proc
 ## Create a certificate request
 <a name="BK_Createrequest"> </a>
 
-To create a certificate request in Microsoft Exchange Server 2007, use the [New-ExchangeCertificate](https://go.microsoft.com/fwlink/p/?LinkId=615756) command. To run the **New-ExchangeCertificate** command, the account you use must be in the Exchange Server Administrator role and local Administrators group for the target server.
+To create a certificate request in Microsoft Exchange Server 2007, use the [New-ExchangeCertificate](/previous-versions/office/exchange-server-2007/aa998327(v=exchg.80)) command. To run the **New-ExchangeCertificate** command, the account you use must be in the Exchange Server Administrator role and local Administrators group for the target server.
 
  **To create a certificate request**
 
@@ -49,7 +50,7 @@ To create a certificate request in Microsoft Exchange Server 2007, use the [New-
 
 2. On the command line, type:
 
-    ```
+    ```PowerShell
     New-ExchangeCertificate -DomainName "owa.servername.contoso.com","mail.servername.contoso.com","autodiscover.servername.contoso.com","sts.servername,contoso.com","oos.servername.contoso.com","mail12.servername.contoso.com","edge.servername.contoso.com" -FriendlyName "Exchange 2007 Certificate" -GenerateRequest:$true -KeySize 2048 -Path "C:\certlocation" -PrivateKeyExportable $true -SubjectName "c=us, o=ContosoCorporation, cn=servername,contoso.com"
     ```
 
@@ -73,7 +74,7 @@ After you've saved the certificate request, submit the request to your CA. This 
 ## Import the certificate
 <a name="BK_import"> </a>
 
-After you receive the certificate from the CA, use the [Import-ExchangeCertificate](https://go.microsoft.com/fwlink/p/?LinkId=615769) command to import it.
+After you receive the certificate from the CA, use the [Import-ExchangeCertificate](/previous-versions/office/exchange-server-2007/bb124424(v=exchg.80)) command to import it.
 
  **To import the certificate request**
 
@@ -81,7 +82,7 @@ After you receive the certificate from the CA, use the [Import-ExchangeCertifica
 
 2. On the command line, type:
 
-    ```
+    ```PowerShell
     Import-ExchangeCertificate C:\filepath
     ```
 
@@ -91,9 +92,9 @@ After you receive the certificate from the CA, use the [Import-ExchangeCertifica
 
  **To enable the certificate**
 
-1. To enable the certificate, you use the [Enable-ExchangeCertificate](https://go.microsoft.com/fwlink/p/?LinkId=615770) command. On the command line, type:
+1. To enable the certificate, you use the [Enable-ExchangeCertificate](/previous-versions/office/exchange-server-2007/aa997231(v=exchg.80)) command. On the command line, type:
 
-    ```
+    ```PowerShell
     Enable-ExchangeCertificate -Thumbprint 5113ae0233a72fccb75b1d0198628675333d010e -Services iis,smtp,pop,imap
     ```
 
@@ -106,4 +107,4 @@ After you receive the certificate from the CA, use the [Import-ExchangeCertifica
 ## See also
 <a name="BK_import"> </a>
 
-[Blog article on adding an SSL to Exchange Server 2007](https://go.microsoft.com/fwlink/p/?LinkId=615759)
+[Blog article on adding an SSL to Exchange Server 2007](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-2007-autodiscover-and-certificates/ba-p/593753)

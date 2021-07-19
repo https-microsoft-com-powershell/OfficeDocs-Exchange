@@ -2,13 +2,14 @@
 title: 'Configure Edge Transport server using cloned configuration: Exchange 2013 Help'
 TOCTitle: Configure Edge Transport server using cloned configuration
 ms:assetid: 0bbc83e3-e5e8-4480-a8a6-15f035360856
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa996008(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa996008(v=EXCHG.150)
 ms:contentKeyID: 61200276
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,20 +31,20 @@ Both these scripts are located in the %ExchangeInstallPath%Scripts folder.
 
 ## Before you begin
 
-  - Estimated time to complete this task: 30 minutes.
+- Estimated time to complete this task: 30 minutes.
 
-  - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Edge Transport servers" entry in the [Mail flow permissions](mail-flow-permissions-exchange-2013-help.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Edge Transport servers" entry in the [Mail flow permissions](mail-flow-permissions-exchange-2013-help.md) topic.
 
-  - Cloned configuration doesn't duplicate a server's Edge Subscription settings. EdgeSync certificates aren't cloned. You need to run the EdgeSync process separately for each Edge Transport server. EdgeSync overwrites any settings included in both cloned configuration information and in EdgeSync replication information.
+- Cloned configuration doesn't duplicate a server's Edge Subscription settings. EdgeSync certificates aren't cloned. You need to run the EdgeSync process separately for each Edge Transport server. EdgeSync overwrites any settings included in both cloned configuration information and in EdgeSync replication information.
 
-  - If any Send connectors are configured to use credentials, the password is written to the intermediate XML file as an encrypted string. You can use the *-key* parameter with the ImportEdgeConfig.ps1 and ExportEdgeConfig.ps1 scripts to specify the 32-byte string to use for password encryption and decryption. If you don't use the *-key* parameter, a default encryption key is used.
+- If any Send connectors are configured to use credentials, the password is written to the intermediate XML file as an encrypted string. You can use the *-key* parameter with the ImportEdgeConfig.ps1 and ExportEdgeConfig.ps1 scripts to specify the 32-byte string to use for password encryption and decryption. If you don't use the *-key* parameter, a default encryption key is used.
 
-  - You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](https://technet.microsoft.com/en-us/library/dd638134\(v=exchg.150\)).
+- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
-  - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
+- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Export the source server configuration data to a file on the source server
 

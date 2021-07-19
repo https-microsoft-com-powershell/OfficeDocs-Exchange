@@ -2,13 +2,14 @@
 title: 'Voice mail greetings, announcements, menus, and prompts: Exchange 2013 Help'
 TOCTitle: Voice mail greetings, announcements, menus, and prompts
 ms:assetid: df61105d-c9d8-452c-b028-50cbda47aecf
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb124902(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb124902(v=EXCHG.150)
 ms:contentKeyID: 49315544
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

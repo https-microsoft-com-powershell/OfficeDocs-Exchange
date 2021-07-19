@@ -2,13 +2,14 @@
 title: 'Clients and mobile devices permissions: Exchange 2013 Help'
 TOCTitle: Clients and mobile devices permissions
 ms:assetid: 57eca42a-5a7f-4c65-89f0-7a84f2dbea19
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638131(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638131(v=EXCHG.150)
 ms:contentKeyID: 48385114
-ms.date: 05/13/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

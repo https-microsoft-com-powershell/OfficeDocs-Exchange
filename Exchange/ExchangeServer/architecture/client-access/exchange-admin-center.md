@@ -5,12 +5,13 @@ ms.topic: overview
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: a9aea11a-6ba3-4f4a-a76e-79072e7cfc7d
-ms.date: 6/8/2018
 ms.reviewer:
 title: Exchange admin center in Exchange Server
 ms.collection:
 - Strat_EX_Admin
 - exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -21,9 +22,9 @@ manager: serdars
 
 The Exchange admin center (EAC) is the web-based management console in Exchange Server that's optimized for on-premises, online, and hybrid Exchange deployments. The EAC was introduced in Exchange Server 2013, and replaces the Exchange Management Console (EMC) and the Exchange Control Panel (ECP), which were the two management interfaces in Exchange Server 2010.
 
-Looking for the Exchange Online version of this topic? See [Exchange admin center in Exchange Online](https://technet.microsoft.com/library/ace44f6b-4084-4f9c-89b3-e0317962472b.aspx).
+Looking for the Exchange Online version of this topic? See [Exchange admin center in Exchange Online](/exchange/exchange-admin-center).
 
-Looking for the Exchange Online Protection version of this topic? See [Exchange admin center](https://technet.microsoft.com/library/97921f0e-832f-40c7-b56d-414faede5191.aspx).
+Looking for the standalone Exchange Online Protection (EOP) version of this topic? See [Exchange admin center in EOP](/microsoft-365/security/office-365-security/exchange-admin-center-eop).
 
 ## Accessing the EAC
 <a name="access"> </a>
@@ -44,29 +45,29 @@ The URL of the EAC is controlled by the Internet Information Services (IIS) virt
 
     **Note**: External users who connect to Outlook on the web (formerly known as Outlook Web App) also need access to the EAC to access their own **Options** page. You can disable external administrator access to the EAC while still allowing users to access their **Options** page in Outlook on the web. For more information, see [Turn off access to the Exchange admin center](disable-exchange-admin-center-access.md).
 
-The easiest way to find the internal and external URL values for the EAC (without using **Servers** \> **Virtual directories** in the EAC itself) is by using the **Get-EcpVirtualDirectory** cmdlet in the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+The easiest way to find the internal and external URL values for the EAC (without using **Servers** \> **Virtual directories** in the EAC itself) is by using the **Get-EcpVirtualDirectory** cmdlet in the Exchange Management Shell. To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 These examples show you how to find the internal and external URL values for the EAC virtual directories in your organization:
 
 - To find the values on all Exchange servers in your organization, run the following command:
 
-  ```
+  ```PowerShell
   Get-EcpVirtualDirectory | Format-List Server,Name,*Url
   ```
 
 - To find the values on the server named Mailbox01, run the following command:
 
-  ```
+  ```PowerShell
   Get-EcpVirtualDirectory | Format-List Name,*Url
   ```
 
 - To find the value for the virtual directory named "ecp (Default Web Site)" on the server named Mailbox01, run the following command.
 
-  ```
+  ```PowerShell
   Get-EcpVirtualDirectory -Identity "Mailbox01\ecp (Default Web Site)" | Format-List *Url
   ```
 
-For more information, see [Get-EcpVirtualDirectory](https://technet.microsoft.com/library/afa04216-965d-4a6c-949c-170f916e8f4c.aspx).
+For more information, see [Get-EcpVirtualDirectory](/powershell/module/exchange/get-ecpvirtualdirectory).
 
 In Exchange 2016, if you're in a coexistence environment with Exchange 2010, the location of your mailbox controls the default behavior for opening the EAC or ECP:
 
@@ -83,7 +84,7 @@ The section describes the user interface elements that are common across the EAC
 
 ### 1: Cross-premises navigation
 
-The cross-premises navigation allows you to easily switch between your Exchange Online and on-premises Exchange deployments. If you don't have an Exchange Online organization, the **Office 365** link takes you to a page that compares plans and pricing for Office 365 services.
+The cross-premises navigation allows you to easily switch between your Exchange Online and on-premises Exchange deployments. If you don't have an Exchange Online organization, the **Office 365** link takes you to a page that compares plans and pricing for Microsoft 365 and Office 365 services.
 
 ### 2: Feature pane
 
@@ -105,7 +106,7 @@ The feature pane is the first level of navigation for most of the tasks that you
 
   - [Manage role groups](../../permissions/role-groups.md) , [Manage role group members](../../permissions/role-group-members.md), and [Manage role assignment policies](../../permissions/role-assignment-policies.md).
 
-  - [Outlook on the web mailbox policies](https://technet.microsoft.com/library/213b8b7a-1c29-49ee-8c98-d0364ddf4f9d.aspx)
+  - [View or configure Outlook on the web mailbox policy properties](../../clients/outlook-on-the-web/mailbox-policies.md)
 
 - **Compliance management**: This is where you'll manage In-Place eDiscovery, In-Place Hold, auditing (mailbox audit logging and administrator audit logging), data loss prevention (DLP), retention policies, retention tags, and journal rules. For more information, see the following topics:
 
@@ -121,9 +122,9 @@ The feature pane is the first level of navigation for most of the tasks that you
 
 - **Organization**: Manage federated sharing, Outlook Apps, and address lists. For more information, see the following topics:
 
-  - [Sharing](https://technet.microsoft.com/library/09e6732a-4e99-44d0-801d-9463fdc57a9b.aspx)
+  - [Sharing](../../../ExchangeServer2013/sharing-exchange-2013-help.md)
 
-  - [Install or Remove Apps for Outlook for Your Organization](https://technet.microsoft.com/library/112f3ef7-9943-4a1e-8a42-e08e8e9f67f4.aspx)
+  - [Install or remove add-ins for Outlook for your Exchange 2013 organization](../../../ExchangeServer2013/install-or-remove-outlook-add-ins-2013-help.md)
 
   - [Address lists in Exchange Server](../../email-addresses-and-address-books/address-lists/address-lists.md)
 
@@ -139,7 +140,7 @@ The feature pane is the first level of navigation for most of the tasks that you
 
   - [Accepted domains in Exchange Server](../../mail-flow/accepted-domains/accepted-domains.md)
 
-  - [Remote Domains](https://technet.microsoft.com/library/10fb7d62-4d78-40a3-82db-d62bcd27ba42.aspx)
+  - [Remote Domains](../../../ExchangeServer2013/remote-domains-exchange-2013-help.md)
 
   - [Email address policies in Exchange Server](../../email-addresses-and-address-books/email-address-policies/email-address-policies.md)
 
@@ -157,37 +158,35 @@ The feature pane is the first level of navigation for most of the tasks that you
 
 - **Unified Messaging**: Manage UM dial plans and UM IP gateways. (UM is not available in Exchange 2019.) For more information, see the following topics:
 
-  - [UM Dial Plans](https://technet.microsoft.com/library/ed7afc03-94af-4b23-8745-6a61f203c149.aspx)
+  - [UM Dial Plans](../../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-dial-plans.md)
 
-  - [UM IP Gateways](https://technet.microsoft.com/library/991d77e0-3995-44ab-bedf-52ff7a0301ab.aspx)
+  - [UM IP Gateways](../../../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/um-ip-gateways.md)
 
 - **Servers**: View and manage server-specific settings, databases, database availability groups (DAGs), virtual directories, and certificates. For more information, see the following topics:
 
   - [POP3 and IMAP4 in Exchange Server](../../clients/pop3-and-imap4/pop3-and-imap4.md)
 
-  - [Configure the Startup Mode on a Client Access Server](https://technet.microsoft.com/library/71cc9061-9e3c-4b4a-8dbe-f590ca5bcee8.aspx) and [Configure the Startup Mode on a Mailbox Server](https://technet.microsoft.com/library/4457d6a0-52bd-4269-8cb5-d34d7fe9bfc3.aspx)
+  - [Configure the Startup Mode on a Client Access Server](../../../ExchangeServer2013/configure-the-startup-mode-on-a-client-access-server-exchange-2013-help.md) and [Configure the Startup Mode on a Mailbox Server](../../../ExchangeServer2013/configure-the-startup-mode-on-a-mailbox-server-exchange-2013-help.md)
 
   - [Message retry, resubmit, and expiration intervals](../../mail-flow/queues/message-intervals.md)
 
   - [Configure message tracking](../../mail-flow/transport-logs/configure-message-tracking.md) , [Configure connectivity logging in Exchange Server](../../mail-flow/transport-logs/configure-connectivity-logging.md), and [Protocol logging](../../mail-flow/connectors/protocol-logging.md)
 
-  - [Manage Outlook Anywhere](https://technet.microsoft.com/library/9026d461-ec6a-4ef5-ba9d-de33030858f3.aspx#managing)
+  - [Manage Outlook Anywhere](../../../ExchangeServer2013/outlook-anywhere-exchange-2013-help.md)
 
   - [Manage mailbox database copies](../../high-availability/manage-ha/manage-database-copies.md)
 
   - [Manage database availability groups](../../high-availability/manage-ha/manage-dags.md)
 
-  - [Virtual Directory Management](https://technet.microsoft.com/library/1af30fd5-621c-4acb-b6df-d8fa64d719ba.aspx)
+  - [Virtual Directory Management](../../../ExchangeServer2013/virtual-directory-management-exchange-2013-help.md)
 
   - [Certificate procedures in Exchange Server](certificate-procedures.md)
 
 - **Hybrid**: Set up and configure a Hybrid organization.
 
-- **Tools**: Check your Exchange server with the Office 365 Best Practices Analyzer. For more information, see [About the Office 365 Best Practices Analyzer for Exchange Server](https://go.microsoft.com/p/?linkid=9839202).
-
 ### 3: Tabs
 
-The tabs are your second level of navigation. Typically, each feature pane contains multiple tabs that represent complete features. However, the **Tools** and **Hybrid** panes each contain only one tab: the **Checks** tab to install and run the Office 365 Best Practices Analyzer, or the **Setup** tab that allows you to run the Hybrid Configuration Wizard, or modify the settings of your existing hybrid deployment.
+The **Setup** tab allows you to run the Hybrid Configuration Wizard or modify the settings of your existing hybrid deployment.
 
 ### 4: Toolbar
 
@@ -198,7 +197,7 @@ When you click most tabs, you'll see a toolbar. The toolbar has icons that perfo
 |![Add icon](../../media/ITPro_EAC_AddIcon.png)|Add, New|Create a new object.  <br/>  Some of these icons have an associated down arrow you can click to show additional objects you can create. For example, in **Recipients** \> **Mailboxes**, clicking the down arrow displays **User mailbox** and **Linked mailbox** as additional options.|
 |![Edit icon](../../media/ITPro_EAC_EditIcon.png)|Edit|Edit an object.|
 |![Delete icon](../../media/ITPro_EAC_DeleteIcon.png)|Delete|Delete an object. Some delete icons have a down arrow you can click to show additional options.|
-|![Search icon](../../media/ITPro_EAC_.png)|Search|Open a search box so you can enter text for an object that you want to find you want to find in a long list of objects. Check out [Advanced search](https://technet.microsoft.com/library/cf4251f9-e4ec-44d7-97c2-c5cdd67ce60c.aspx) for more search options.|
+|![Search icon](../../media/ITPro_EAC_.png)|Search|Open a search box so you can enter text for an object that you want to find you want to find in a long list of objects.|
 |![Refresh icon](../../media/ITPro_EAC_RefreshIcon.png)|Refresh|Refresh the list view.|
 |![More Options icon](../../media/ITPro_EAC_MoreOptionsIcon.png)|More options|View more actions you can perform for that tab's objects.  <br/> For example, in **Recipients** \> **Mailboxes** clicking this icon shows the following options: **Disable**, **Add/Remove columns**, **Export data to a CSV file**, **Connect a mailbox**, and **Advanced search**.|
 |![Up Arrow Icon](../../media/ITPro_EAC_UpArrowIcon.png)           <br/> ![Down Arrow Icon](../../media/ITPro_EAC_DownArrowIcon.png)|Up arrow and down arrow|Move an object up or down in the list, when the order is important.  <br/> For example, in **Mail flow** \> **Email address policies** click the up arrow to move the policy higher in the list, which increases the priority of the policy by specifying which policy is applied first.  <br/> You can also use these arrows to navigate the public folder hierarchy and to move rules up or down in the list view.|
@@ -256,11 +255,11 @@ The levels of support for operating system and browser combinations that you can
 
   - **Supported**: All functionality and features are supported and have been fully tested.
 
-  - **Unsupported**: The browser and operating system combination isn't supported, **or** hasn't been tested. For more information about supported versions of Internet Explorer on Windows, see [Internet Explorer Support Announcement](https://go.microsoft.com/fwlink/p/?LinkId=823717).
+  - **Unsupported**: The browser and operating system combination isn't supported, **or** hasn't been tested. For more information about supported versions of Internet Explorer on Windows, see [Internet Explorer Support Announcement](/lifecycle/announcements/internet-explorer-dotnet-framework-support).
 
   - **n/a**: The browser and operating system combination isn't possible. For example, an older browser on a newer operating system, or vice-versa.
 
-- Operating system and browser combinations that aren't listed are unsupported. This includes iOS, Android, and Windows Phone.
+- Operating system and browser combinations that aren't listed are unsupported. This includes iOS and Android.
 
 - Third-party plug-ins might cause issues with the EAC for supported browsers.
 

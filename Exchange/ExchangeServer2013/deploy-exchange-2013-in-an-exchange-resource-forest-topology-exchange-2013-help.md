@@ -2,13 +2,14 @@
 title: 'Deploy Exchange 2013 in an Exchange resource forest topology'
 TOCTitle: Deploy Exchange 2013 in an Exchange resource forest topology
 ms:assetid: 537a7b2b-d002-40a6-84ae-fd02635f9e23
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa998031(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa998031(v=EXCHG.150)
 ms:contentKeyID: 50406263
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -28,17 +29,17 @@ The following figure shows an Exchange organization with a resource forest.
 
 To perform the following procedure in Exchange 2013, confirm you have the following:
 
-  - You have the following two Active Directory forests:
+- You have the following two Active Directory forests:
 
-      - One forest contains the user accounts for your organization. In this procedure, this forest is called the *accounts forest*.
+  - One forest contains the user accounts for your organization. In this procedure, this forest is called the *accounts forest*.
 
-      - One forest does not contain user accounts and does not yet have Exchange installed. In this procedure, this forest is called the *Exchange forest*. You will use the procedure to install Exchange 2013 in this forest.
+  - One forest does not contain user accounts and does not yet have Exchange installed. In this procedure, this forest is called the *Exchange forest*. You will use the procedure to install Exchange 2013 in this forest.
 
-  - You have correctly configured Domain Name System (DNS) for name resolution across forests in your organization. To check that you have DNS configured correctly, ping each forest from the other forest or forests in your organization. For more information about configuring DNS, see the [DNS Servers Operations Guide](https://go.microsoft.com/fwlink/p/?linkid=282295).
+- You have correctly configured Domain Name System (DNS) for name resolution across forests in your organization. To check that you have DNS configured correctly, ping each forest from the other forest or forests in your organization. For more information about configuring DNS, see the [DNS Servers Operations Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816603(v=ws.10)).
 
 ## Deploy Exchange 2013 in an Exchange resource forest topology
 
-1. From a domain controller in the Exchange forest, create a one-way outgoing trust so that the Exchange forest trusts the accounts forest. For detailed steps, see [Create a one-way, outgoing, forest trust for both sides of the trust](https://go.microsoft.com/fwlink/p/?linkid=69130).
+1. From a domain controller in the Exchange forest, create a one-way outgoing trust so that the Exchange forest trusts the accounts forest. For detailed steps, see [Create a one-way, outgoing, forest trust for both sides of the trust](/previous-versions/windows/it-pro/windows-server-2003/cc779840(v=ws.10)).
 
     > [!NOTE]
     > Although we recommend that you create a forest trust, you can create either a forest trust or an external trust. If you create an external trust, when you create linked mailboxes in Step&nbsp;3, on the <STRONG>Master Account</STRONG> page of the New Mailbox wizard, you must specify a user account that can access the domain controller in the trusted forest. You can't use the credentials with which you are currently logged on. If you create linked mailboxes by using the <STRONG>New-Mailbox</STRONG> cmdlet, you must specify a user account that can access the domain controller in the trusted forest by using the <EM>LinkedCredential</EM> parameter.

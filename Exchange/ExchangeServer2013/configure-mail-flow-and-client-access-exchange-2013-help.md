@@ -2,13 +2,14 @@
 title: 'Configure mail flow and client access: Exchange 2013 Help'
 TOCTitle: Configure mail flow and client access
 ms:assetid: 4acc7f2a-93ce-468c-9ace-d5f7eecbd8d4
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ218640(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ218640(v=EXCHG.150)
 ms:contentKeyID: 48385058
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -41,7 +42,7 @@ For additional management tasks related to mail flow and clients and devices, se
 > Each organization requires at a minimum one Client Access server and one Mailbox server in the Active Directory forest. Additionally, each Active Directory site that contains a Mailbox server must also contain at least one Client Access server. If you're separating your server roles, we recommend installing the Mailbox server role first.
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Step 1: Create a Send connector
 
@@ -51,7 +52,7 @@ Before you can send mail to the Internet, you need to create a Send connector on
 
 1. Open the EAC by browsing to the URL of your Client Access server. For example, https://Ex2013CAS/ECP.
 
-2. Enter your user name and password in **Domain\\user name** and **Password** and then click **Sign in**.
+2. Enter your username and password in **Domain\\user name** and **Password** and then click **Sign in**.
 
 3. Go to **Mail flow** \> **Send connectors**. On the **Send connectors** page, click **New** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon").
 
@@ -89,7 +90,7 @@ By default, when you deploy a new Exchange 2013 organization in an Active Direct
 
 1. Open the EAC by browsing to the URL of your Client Access server. For example, https://Ex2013CAS/ECP.
 
-2. Enter your user name and password in **Domain\\user name** and **Password** and then click **Sign in**.
+2. Enter your username and password in **Domain\\user name** and **Password** and then click **Sign in**.
 
 3. Go to **Mail flow** \> **Accepted domains**. On the **Accepted domains** page, click **New** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon").
 
@@ -111,7 +112,7 @@ If you added an accepted domain in the previous step and you want that domain to
 
 1. Open the EAC by browsing to the URL of your Client Access server. For example, https://Ex2013CAS/ECP.
 
-2. Enter your user name and password in **Domain\\user name** and **Password** and then click **Sign in**.
+2. Enter your username and password in **Domain\\user name** and **Password** and then click **Sign in**.
 
 3. Go to **Mail flow** \> **Email address policies**. On the **Email address policies** page, select **Default Policy** and then click **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
@@ -126,7 +127,7 @@ If you added an accepted domain in the previous step and you want that domain to
 8. In the **Default Policy** details pane, click **Apply**.
 
 > [!NOTE]
-> We recommend that you configure a user principal name (UPN) that matches the primary email address of each user. If you don't provide a UPN that matches the email address of a user, the user will be required to manually provide their domain\user name or UPN in addition to their email address. If their UPN matches their email address, Outlook Web App, ActiveSync, and Outlook will automatically match their email address to their UPN.
+> We recommend that you configure a user principal name (UPN) that matches the primary email address of each user. If you don't provide a UPN that matches the email address of a user, the user will be required to manually provide their domain\username or UPN in addition to their email address. If their UPN matches their email address, Outlook Web App, ActiveSync, and Outlook will automatically match their email address to their UPN.
 
 ### How do you know this step worked?
 
@@ -152,7 +153,7 @@ Before clients can connect to your new server from the Internet, you need to con
 
 1. Open the EAC by browsing to the URL of your Client Access server. For example, https://Ex2013CAS/ECP.
 
-2. Enter your user name and password in **Domain\\user name** and **Password** and then click **Sign in**.
+2. Enter your username and password in **Domain\\user name** and **Password** and then click **Sign in**.
 
 3. Go to **Servers** \> **Servers**, select the name of the Internet-facing Client Access server and then click **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
@@ -296,7 +297,7 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 Before clients can connect to your new server from yourintranet, you need to configure the internal domains, or URLs, on the Client Access server's virtual directories and then configure your private domain name service (DNS) records.
 
-The procedure below lets you choose whether you want users to use the same URL on your intranet and on the Internet to access your Exchange server or whether they should use a different URL. What you choose depends on the addressing scheme you have in place already or that you want to implement. If you're implementing a new addressing scheme, we recommend that you use the same URL for both internal and external URLs. Using the same URL makes it easier for users to access your Exchange server because they only have to remember one address. Regardless of the choice you make, you need to make sure you configure a private DNS zone for the address space you configure. For more information about administering DNS zones, see [Administering DNS Server](https://go.microsoft.com/fwlink/p/?linkid=190631).
+The procedure below lets you choose whether you want users to use the same URL on your intranet and on the Internet to access your Exchange server or whether they should use a different URL. What you choose depends on the addressing scheme you have in place already or that you want to implement. If you're implementing a new addressing scheme, we recommend that you use the same URL for both internal and external URLs. Using the same URL makes it easier for users to access your Exchange server because they only have to remember one address. Regardless of the choice you make, you need to make sure you configure a private DNS zone for the address space you configure. For more information about administering DNS zones, see [Administering DNS Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794771(v=ws.10)).
 
 For more information about internal and external URLs on virtual directories, see [Virtual directory management](virtual-directory-management-exchange-2013-help.md).
 
@@ -544,7 +545,7 @@ Some services, such as Outlook Anywhere and Exchange ActiveSync, require certifi
 
 1. Open the EAC by browsing to the URL of your Client Access server. For example, https://Ex2013CAS/ECP.
 
-2. Enter your user name and password in **Domain\\user name** and **Password** and then click **Sign in**.
+2. Enter your username and password in **Domain\\user name** and **Password** and then click **Sign in**.
 
 3. Go to **Servers** \> **Certificates**. On the **Certificates** page, make sure your Client Access server is selected in the **Select server** field, and then click **New** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon").
 

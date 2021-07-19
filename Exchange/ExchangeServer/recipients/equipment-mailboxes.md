@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: e5f58b3a-83e1-4742-8846-85103a44ee18
-ms.date: 7/5/2018
 ms.reviewer:
 title: Manage equipment mailboxes
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -17,7 +18,7 @@ manager: serdars
 
 # Manage equipment mailboxes
 
-In Exchange Server, an *equipment mailbox* is a resource mailbox assigned to a resource that's not location specific, such as a portable computer, projector, microphone, or a company car. After an administrator creates an equipment mailbox, users can easily reserve the piece of equipment by including the corresponding equipment mailbox in a meeting request. You can use the Exchange admin center (EAC) and the Exchange Management Shell to create an equipment mailbox or change equipment mailbox properties. For more information, see [Recipients](https://technet.microsoft.com/library/40300ed4-85a5-463d-bb3a-cf787bd44e9d.aspx).
+In Exchange Server, an *equipment mailbox* is a resource mailbox assigned to a resource that's not location specific, such as a portable computer, projector, microphone, or a company car. After an administrator creates an equipment mailbox, users can easily reserve the piece of equipment by including the corresponding equipment mailbox in a meeting request. You can use the Exchange admin center (EAC) and the Exchange Management Shell to create an equipment mailbox or change equipment mailbox properties. For more information, see [Recipients](recipients.md).
 
 For information about another type of resource mailbox, a room mailbox, see [Create and manage room mailboxes](room-mailboxes.md).
 
@@ -25,14 +26,14 @@ For information about another type of resource mailbox, a room mailbox, see [Cre
 
 - Estimated time to complete: 2 to 5 minutes.
 
-- To open the EAC, see [Exchange admin center in Exchange Server](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](https://technet.microsoft.com/library/63976059-25f8-4b4f-b597-633e78b803c0.aspx).
+- To open the EAC, see [Exchange admin center in Exchange Server](../architecture/client-access/exchange-admin-center.md). To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipient Provisioning Permissions" section in the [Recipients Permissions](../permissions/feature-permissions/recipient-permissions.md) topic.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Create an equipment mailbox
 
@@ -69,11 +70,11 @@ This example creates an equipment mailbox with the following configuration:
 
 - The _Equipment_ parameter specifies that this mailbox will be created as an equipment mailbox.
 
-```
+```PowerShell
 New-Mailbox -Database "Mailbox Database 1" -Name MotorVehicle2 -OrganizationalUnit Equipment -DisplayName "Motor Vehicle 2" -Equipment
 ```
 
-For detailed syntax and parameter information, see [New-Mailbox](https://technet.microsoft.com/library/42dbb25a-0b23-4775-ae15-7af62c089565.aspx).
+For detailed syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/new-mailbox).
 
 ### How do you know this worked?
 
@@ -83,7 +84,7 @@ To verify that you've successfully created a user mailbox, do one of the followi
 
 - In the Exchange Management Shell, run the following command to display information about the new equipment mailbox.
 
-  ```
+  ```PowerShell
   Get-Mailbox <Name> | Format-List Name,RecipientTypeDetails,PrimarySmtpAddress
   ```
 
@@ -227,36 +228,36 @@ Use the following sets of cmdlets to view and change equipment mailbox propertie
 
 For information about these cmdlets, see the following topics:
 
-- [Get-User](https://technet.microsoft.com/library/2a33c9e6-33da-438c-912d-28ce3f4c9afb.aspx)
+- [Get-User](/powershell/module/exchange/get-user)
 
-- [Set-User](https://technet.microsoft.com/library/56d7fc86-2ac3-4e28-bc7a-761e91ac655a.aspx)
+- [Set-User](/powershell/module/exchange/set-user)
 
-- [Get-Mailbox](https://technet.microsoft.com/library/8a5a6eb9-4a75-47f9-ae3b-a3ba251cf9a8.aspx)
+- [Get-Mailbox](/powershell/module/exchange/get-mailbox)
 
-- [Set-Mailbox](https://technet.microsoft.com/library/a0d413b9-d949-4df6-ba96-ac0906dedae2.aspx)
+- [Set-Mailbox](/powershell/module/exchange/set-mailbox)
 
-- [Get-CalendarProcessing](https://technet.microsoft.com/library/8ffece5d-acc9-4061-822e-e452479c03e9.aspx)
+- [Get-CalendarProcessing](/powershell/module/exchange/get-calendarprocessing)
 
-- [Set-CalendarProcessing](https://technet.microsoft.com/library/000bc90f-1d00-4384-ab59-d6cf6f674825.aspx)
+- [Set-CalendarProcessing](/powershell/module/exchange/set-calendarprocessing)
 
 Here are some examples of using the Exchange Management Shell to change equipment mailbox properties.
 
 This example changes the display name and primary SMTP address (called the default reply address) for the MotorPool 1 equipment mailbox. The previous reply address is kept as a proxy address.
 
-```
+```PowerShell
 Set-Mailbox "MotorPool 1" -DisplayName "Motor Pool 1 - Compact" -EmailAddresses SMTP:MP1.compact@contoso.com,smtp:MP.1@contoso.com
 ```
 
 This example configures equipment mailboxes to allow booking requests to be scheduled only during working hours.
 
-```
-Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'EquipmentMailbox')} | Set-CalendarProcessing -ScheduleOnlyDuringWorkHours $true
+```PowerShell
+Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'EquipmentMailbox'" | Set-CalendarProcessing -ScheduleOnlyDuringWorkHours $true
 ```
 
 This example uses the **Get-User** cmdlet to find all equipment mailboxes in the Audio Visual department, and then uses the **Set-CalendarProcessing** cmdlet to send booking requests to a delegate named Ann Beebe to accept or decline.
 
-```
-Get-User -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'EquipmentMailbox') -and (Department -eq 'Audio Visual')} | Set-CalendarProcessing -AllBookInPolicy $false -AllRequestInPolicy $true -ResourceDelegates "Ann Beebe"
+```PowerShell
+Get-User -ResultSize unlimited -Filter "(RecipientTypeDetails -eq 'EquipmentMailbox') -and (Department -eq 'Audio Visual')" | Set-CalendarProcessing -AllBookInPolicy $false -AllRequestInPolicy $true -ResourceDelegates "Ann Beebe"
 ```
 
 ### How do you know this worked?
@@ -267,6 +268,6 @@ To verify that you've successfully changed properties for an equipment mailbox, 
 
 - In the Exchange Management Shell, use the **Get-Mailbox** cmdlet to verify the changes. One advantage of using the Exchange Management Shell is that you can view multiple properties for multiple mailboxes. In the example above where booking requests could be scheduled only during working hours, run the following command to verify the new value.
 
-  ```
-  Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'EquipmentMailbox')} | Get-CalendarProcessing | Format-List Identity,ScheduleOnlyDuringWorkHours
+  ```PowerShell
+  Get-Mailbox -ResultSize unlimited -Filter "RecipientTypeDetails -eq 'EquipmentMailbox'" | Get-CalendarProcessing | Format-List Identity,ScheduleOnlyDuringWorkHours
   ```

@@ -3,9 +3,8 @@ localization_priority: Normal
 description: Admins can learn how to increase or decrease the space that's available to store Inbox rules in mailboxes in an Exchange Online organization.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: 3f01edde-1cdc-4891-ad9d-7d01582664e9
-ms.date: 
 ms.reviewer: 
 title: Modify the space used by Inbox rules in Exchange Online
 ms.collection: 
@@ -13,6 +12,8 @@ ms.collection:
 - M365-email-calendar
 audience: ITPro
 ms.service: exchange-online
+f1.keywords:
+- NOCSH
 manager: serdars
 
 ---
@@ -35,10 +36,10 @@ Inbox rules in Outlook on the web (formerly known as Outlook Web App) and Outloo
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox settings" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
-- You can only use Exchange Online PowerShell to perform the procedure in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
+- You can only use Exchange Online PowerShell to perform the procedure in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
 ## Use Exchange Online PowerShell to increase the limit for Inbox rules
 
@@ -46,13 +47,13 @@ There are three basic methods you can use to modify the rules quota for a mailbo
 
 - **Individual mailboxes**: Use the following syntax:
 
-    ```
+    ```PowerShell
     Set-Mailbox -Identity <MailboxIdentity> -RulesQuota "<32 KB to 256 KB>"
     ```
 
     This example decreases the rules quota to 200 KB for the user douglas@contoso.com.
 
-    ```
+    ```PowerShell
     Set-Mailbox -Identity douglas@contoso.com -RulesQuota "200 KB"
     ```
 
@@ -64,51 +65,47 @@ There are three basic methods you can use to modify the rules quota for a mailbo
 
     The syntax uses the following two commands (one to identify the mailboxes, and the other to apply the rules quota to the mailboxes):
 
-    ```
+    ```PowerShell
     $<VariableName> = <Get-User | Get-Mailbox> -ResultSize unlimited -Filter <Filter>
     ```
 
-    ```
+    ```PowerShell
     $<VariableName> | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -RulesQuota "<32 KB to 256 KB>"}
     ```
 
     This example decreases the rules quota to 32 KB to all mailboxes whose **Title** attribute contains "Vendor" or "Contractor".
 
-    ```
-    $V = Get-User -ResultSize unlimited -Filter {(RecipientType -eq 'UserMailbox') -and (Title -like '*Vendor*' -or Title -like '*Contractor*')}
+    ```PowerShell
+    $V = Get-User -ResultSize unlimited -Filter "(RecipientType -eq 'UserMailbox') -and (Title -like '*Vendor*' -or Title -like '*Contractor*')"
     ```
 
-    ```
+    ```PowerShell
     $V | foreach {Set-Mailbox -Identity $_.MicrosoftOnlineServicesID -RulesQuota "32 KB"}
     ```
 
 - **Use a list of specific mailboxes**: This method requires a text file to identify the mailboxes. Values that don't contain spaces (for example, the user account) work best. The text file must contain one user account on each line like this:
 
-    `akol@contoso.com`
+  > akol@contoso.com <br/> tjohnston@contoso.com <br/> kakers@contoso.com
 
-    `tjohnston@contoso.com`
+  The syntax uses the following two commands (one to identify the user accounts, and the other to apply the rules quota to those users):
 
-    `kakers@contoso.com`
+  ```PowerShell
+  $<VariableName> = Get-Content "<text file>"
+  ```
 
-    The syntax uses the following two commands (one to identify the user accounts, and the other to apply the rules quota to those users):
-
-    ```
-    $<VariableName> = Get-Content "<text file>"
-    ```
-
-    ```
+  ```PowerShell
     $<VariableName> | foreach {Set-Mailbox -Identity $_ RulesQuota "<32 KB to 256 KB>"}
-    ```
+  ```
 
-   This example decreases the rules quota to 150 KB to the mailboxes specified in the file C:\My Documents\Junior Managers.txt.
+  This example decreases the rules quota to 150 KB to the mailboxes specified in the file C:\My Documents\Junior Managers.txt.
 
-    ```
-    $Jr = Get-Content "C:\My Documents\Junior Managers.txt"
-    ```
+  ```PowerShell
+  $Jr = Get-Content "C:\My Documents\Junior Managers.txt"
+  ```
 
-    ```
-    $Jr | foreach {Set-Mailbox -Identity $_ -RulesQuota "150 KB"}
-    ```
+  ```PowerShell
+  $Jr | foreach {Set-Mailbox -Identity $_ -RulesQuota "150 KB"}
+  ```
 
 ## How do you know this worked?
 
@@ -116,13 +113,13 @@ To verify that you've modified the Inbox rules quota on a mailbox, use any of th
 
 - Replace \<MailboxIdentity\> with the name, alias, email address, or account name of the mailbox, and run the following command to verify the value of the **RulesQuota** property:
 
-    ```
+    ```PowerShell
     Get-Mailbox -Identity "<MailboxIdentity>" | Format-List RulesQuota
     ```
 
 - Run the following command to verify the value of the **RulesQuota** property for all mailboxes:
 
-    ```
+    ```PowerShell
     Get-Mailbox -ResultSize unlimited | Format-Table Name,RulesQuota -Auto
     ```
 

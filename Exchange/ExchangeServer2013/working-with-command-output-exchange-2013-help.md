@@ -2,13 +2,14 @@
 title: 'Working with command output: Exchange 2013 Help'
 TOCTitle: Working with command output
 ms:assetid: 8320e1a5-d3f5-4615-878d-b23e2aaa6b1e
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Bb123533(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Bb123533(v=EXCHG.150)
 ms:contentKeyID: 49289327
-ms.date: 03/23/2018
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -30,11 +31,11 @@ The Exchange Management Shell offers several methods that you can use to format 
 
 To use the functionality that is described in this topic, you must be familiar with the following concepts:
 
-- [Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\))
+- [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines)
 
-- [Shell variables](https://technet.microsoft.com/en-us/library/bb124036\(v=exchg.150\))
+- [Shell variables](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 
-- [Comparison operators](https://technet.microsoft.com/en-us/library/bb125229\(v=exchg.150\))
+- [Comparison operators](/powershell/module/microsoft.powershell.core/about/about_comparison_operators)
 
 ## How to format data
 
@@ -238,9 +239,9 @@ Get-ChildItem | Format-Wide -Column 4 >> C:\OutputFile.txt
 
 In this example, the output from the **Get-Childitem** cmdlet is piped to the **Format-Wide** cmdlet for formatting and then is written to the end of the `OutputFile.txt` file. Notice that if the `OutputFile.txt` file didn't exist, use of the double right-angle brackets ( `>>` ) would create the file.
 
-For more information about pipelines, see [Pipelining](https://technet.microsoft.com/en-us/library/aa998260\(v=exchg.150\)).
+For more information about pipelines, see [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines).
 
-For more information about the syntax used in the previous examples, see [Syntax](https://technet.microsoft.com/en-us/library/bb123552\(v=exchg.150\)).
+For more information about the syntax used in the previous examples, see [Syntax](/powershell/exchange/exchange-cmdlet-syntax).
 
 ## Viewing data in Internet Explorer
 
@@ -396,8 +397,8 @@ The **Get-Alias** cmdlet and the **Where** command work together to return the l
 
 In the example, the objects that are returned by the **Get-Alias** cmdlet represent all the defined aliases on the system. Even though you don't see them from the command line, the aliases are collected and passed to the **Where** cmdlet through the pipeline. The **Where** cmdlet uses the information in the script block to apply a filter to the alias objects.
 
-The special variable `$`\_represents the objects that are being passed. The `$_`variable is automatically initiated by the Shell and is bound to the current pipeline object. For more information about this special variable, see [Shell variables](https://technet.microsoft.com/en-us/library/bb124036\(v=exchg.150\)).
+The special variable `$`\_represents the objects that are being passed. The `$_`variable is automatically initiated by the Shell and is bound to the current pipeline object. For more information about this special variable, see [Shell variables](/powershell/module/microsoft.powershell.core/about/about_automatic_variables).
 
-Using standard "dot" notation (object.property), the `Definition` property is added to define the exact property of the object to evaluate. The `-eq` comparison operator then compares the value of this property to `"Clear-Host"`. Only the objects that have the `Definition` property that match this criterion are passed to the console window for output. For more information about comparison operators, see [Comparison operators](https://technet.microsoft.com/en-us/library/bb125229\(v=exchg.150\)).
+Using standard "dot" notation (object.property), the `Definition` property is added to define the exact property of the object to evaluate. The `-eq` comparison operator then compares the value of this property to `"Clear-Host"`. Only the objects that have the `Definition` property that match this criterion are passed to the console window for output. For more information about comparison operators, see [Comparison operators](/powershell/module/microsoft.powershell.core/about/about_comparison_operators).
 
 After the **Where** command has filtered the objects returned by the **Get-Alias** cmdlet, you can pipe the filtered objects to another command. The next command processes only the filtered objects returned by the Where command.

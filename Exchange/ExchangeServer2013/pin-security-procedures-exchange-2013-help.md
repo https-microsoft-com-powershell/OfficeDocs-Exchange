@@ -4,9 +4,10 @@ TOCTitle: PIN security procedures
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/24/2018
 ms.reviewer: 
 ms.assetid: 58e4b02e-dc99-46b8-a65d-d441bbfee8a9
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 

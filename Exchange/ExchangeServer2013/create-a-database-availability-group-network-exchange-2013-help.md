@@ -2,13 +2,14 @@
 title: 'Create a database availability group network: Exchange 2013 Help'
 TOCTitle: Create a database availability group network
 ms:assetid: 6caec7be-788a-4058-87a7-f31c575b870c
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd298051(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd298051(v=EXCHG.150)
 ms:contentKeyID: 48385202
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ Looking for other management tasks related to DAGs? Check out [Managing database
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to create a database availability group network
 
@@ -73,10 +74,10 @@ To verify that you've successfully created a DAG network, do one of the followin
 
 ## For more information
 
-[Set-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/en-us/library/dd298008\(v=exchg.150\))
+[Set-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/Set-DatabaseAvailabilityGroupNetwork)
 
-[Get-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/en-us/library/dd297938\(v=exchg.150\))
+[Get-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/Get-DatabaseAvailabilityGroupNetwork)
 
-[New-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/en-us/library/dd335225\(v=exchg.150\))
+[New-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/New-DatabaseAvailabilityGroupNetwork)
 
-[Remove-DatabaseAvailabilityGroupNetwork](https://technet.microsoft.com/en-us/library/dd298131\(v=exchg.150\))
+[Remove-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/Remove-DatabaseAvailabilityGroupNetwork)

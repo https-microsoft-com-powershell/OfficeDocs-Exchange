@@ -2,13 +2,14 @@
 title: 'Create an organization relationship: Exchange 2013 Help'
 TOCTitle: Create an organization relationship
 ms:assetid: 5ea61b96-c8ca-44fc-b8b5-ca4341af36a6
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ657451(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ657451(v=EXCHG.150)
 ms:contentKeyID: 49289267
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -16,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Set up an organization relationship to share calendar information with an external business partner. You can configure an organization relationship between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up an organization relationship between your on-premises Exchange organization and an Office 365 organization.
+Set up an organization relationship to share calendar information with an external business partner. You can configure an organization relationship between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up an organization relationship between your on-premises Exchange organization and a Microsoft 365 or Office 365 organization.
 
 > [!IMPORTANT]
 > Creating an organization relationship is one of several steps in setting up federated sharing in your Exchange organization and requires the configuration of a federation trust for your on-premises Exchange organization.
@@ -43,7 +44,7 @@ To learn more about federated sharing, see [Sharing](sharing-exchange-2013-help.
 
 3. In **new organization relationship**, in the **Relationship name** box, type a friendly name for the organization relationship.
 
-4. In the **Domains to share with** box, type the federated domain or federated subdomain for the Office 365 or Exchange on-premises organization you want to let see your calendars. If you need to enter multiple domains for the external organization, separate the domains with a comma. For example, **contoso.com, service.contoso.com**.
+4. In the **Domains to share with** box, type the federated domain or federated subdomain for the Microsoft 365 or Office 365 or Exchange on-premises organization you want to let see your calendars. If you need to enter multiple domains for the external organization, separate the domains with a comma. For example, **contoso.com, service.contoso.com**.
 
 5. Select the **Enable calendar free/busy information sharing** check box to turn on calendar sharing with the domains you listed. Set the sharing level for calendar free/busy information and set which users can share calendar free/busy information.
 
@@ -80,10 +81,10 @@ New-OrganizationRelationship -Name "Contoso" -DomainNames "contoso.com","northam
 This example attempts to automatically discover configuration information from the external Exchange organization Contoso.com by using the domain names provided in the **Get-FederationInformation** cmdlet. If you use this method to create your organization relationship, you must first make sure that you've created an organization identifier by using the **Set-FederatedOrganizationIdentifier** cmdlet.
 
 ```powershell
-Get-FederationInformation -DomainName Contoso.com | New-OrganizationRelationship -Name "Contoso" -FreeBusyAccessEnabled $true -FreeBusyAccessLevel -LimitedDetails
+Get-FederationInformation -DomainName Contoso.com | New-OrganizationRelationship -Name "Contoso" -FreeBusyAccessEnabled $true -FreeBusyAccessLevel LimitedDetails
 ```
 
-For detailed syntax and parameter information, see [Get-FederationInformation](https://technet.microsoft.com/en-us/library/dd351221\(v=exchg.150\)) and [New-OrganizationRelationship](https://technet.microsoft.com/en-us/library/ee332357\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Get-FederationInformation](/powershell/module/exchange/Get-FederationInformation) and [New-OrganizationRelationship](/powershell/module/exchange/New-OrganizationRelationship).
 
 This example creates an organization relationship with Fourth Coffee. In this example, the connection settings with the external Exchange organization are provided. The following conditions apply:
 
@@ -98,10 +99,10 @@ This example creates an organization relationship with Fourth Coffee. In this ex
 - The requesting organization receives only free/busy information with the time.
 
 ```powershell
-New-OrganizationRelationship -Name "Fourth Coffee" -DomainNames "fourthcoffee.com" -FreeBusyAccessEnabled $true -FreeBusyAccessLevel -AvailabilityOnly -TargetAutodiscoverEpr "https://mail.fourthcoffee.com/autodiscover/autodiscover.svc/wssecurity" -TargetApplicationUri "mail.fourthcoffee.com"
+New-OrganizationRelationship -Name "Fourth Coffee" -DomainNames "fourthcoffee.com" -FreeBusyAccessEnabled $true -FreeBusyAccessLevel AvailabilityOnly -TargetAutodiscoverEpr "https://mail.fourthcoffee.com/autodiscover/autodiscover.svc/wssecurity" -TargetApplicationUri "mail.fourthcoffee.com"
 ```
 
-For detailed syntax and parameter information, see [New-OrganizationRelationship](https://technet.microsoft.com/en-us/library/ee332357\(v=exchg.150\)).
+For detailed syntax and parameter information, see [New-OrganizationRelationship](/powershell/module/exchange/New-OrganizationRelationship).
 
 ## How do you know this worked?
 
@@ -114,4 +115,4 @@ Get-OrganizationRelationship | format-list
 ```
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).

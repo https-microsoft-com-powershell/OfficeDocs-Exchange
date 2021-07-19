@@ -2,13 +2,14 @@
 title: 'Manage content filtering: Exchange 2013 Help'
 TOCTitle: Manage content filtering
 ms:assetid: 05bd9d39-81dc-4514-8b75-7be386d5bcad
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Aa995953(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Aa995953(v=EXCHG.150)
 ms:contentKeyID: 49248674
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -31,7 +32,7 @@ Content filtering is provided by the Content Filter agent. The Content Filter ag
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable content filtering
 

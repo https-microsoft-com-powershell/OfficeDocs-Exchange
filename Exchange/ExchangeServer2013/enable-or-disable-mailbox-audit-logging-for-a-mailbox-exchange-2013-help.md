@@ -2,13 +2,14 @@
 title: 'Enable or disable mailbox audit logging for a mailbox: Exchange 2013 Help'
 TOCTitle: Enable or disable mailbox audit logging for a mailbox
 ms:assetid: c4bbfd52-6196-49c7-8c31-777fbbee11f2
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Ff461937(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Ff461937(v=EXCHG.150)
 ms:contentKeyID: 49300697
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -44,7 +45,7 @@ For additional tasks related to mailbox audit logging, see [Mailbox audit loggin
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the Shell to enable or disable mailbox audit logging
 
@@ -62,7 +63,7 @@ This example disables mailbox audit logging for Ben Smith's mailbox.
 Set-Mailbox -Identity "Ben Smith" -AuditEnabled $false
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).
 
 ## Use the Shell to configure mailbox audit logging settings for administrator, delegate, and owner access
 
@@ -86,11 +87,11 @@ This example specifies that the `HardDelete` action performed by the mailbox own
 Set-Mailbox -Identity "Ben Smith" -AuditOwner HardDelete -AuditEnabled $true
 ```
 
-For detailed syntax and parameter information, see [Set-Mailbox](https://technet.microsoft.com/en-us/library/bb123981\(v=exchg.150\)).
+For detailed syntax and parameter information, see [Set-Mailbox](/powershell/module/exchange/Set-Mailbox).
 
 ## How do you know this worked?
 
-To verify that you have successfully enabled mailbox audit logging for a mailbox and specified the correct logging settings for administrator, delegate, or owner access, use the [Get-Mailbox](https://technet.microsoft.com/en-us/library/bb123685\(v=exchg.150\)) cmdlet to retrieve the mailbox audit logging settings for that mailbox.
+To verify that you have successfully enabled mailbox audit logging for a mailbox and specified the correct logging settings for administrator, delegate, or owner access, use the [Get-Mailbox](/powershell/module/exchange/Get-Mailbox) cmdlet to retrieve the mailbox audit logging settings for that mailbox.
 
 This example retrieves Ben Smith's mailbox settings and pipes the specified audit settings, including the audit log age limit, to the **Format-List** cmdlet.
 

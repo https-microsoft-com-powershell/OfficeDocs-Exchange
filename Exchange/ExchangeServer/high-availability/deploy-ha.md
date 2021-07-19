@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: 4c4e00a4-1f57-4fdb-b9b2-2779abf381a9
-ms.date:
 ms.reviewer:
 title: Exchange high availability, Exchange high availability step by step, Exchange site resilience, Site resilience Exchange, High availability for Exchange, High availability Exchange Server, Exchange DAG high availability, High availability DAG
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -69,22 +70,22 @@ The settings for each network adapter in each node are detailed in the following
 |MBX2 (MAPI)|192.168.1.5|255.255.255.0|192.168.1.1|
 |MBX3 (MAPI)|192.168.2.4|255.255.255.0|192.168.2.1|
 |MBX4 (MAPI)|192.168.2.5|255.255.255.0|192.168.2.1|
-|MBX1 (Replication)|10.0.1.4|255.255.0.0|None|
-|MBX2 (Replication)|10.0.1.5|255.255.0.0|None|
-|MBX3 (Replication)|10.0.2.4|255.255.0.0|None|
-|MBX4 (Replication)|10.0.2.5|255.255.0.0|None|
+|MBX1 (Replication)|10.0.1.4|255.255.255.0|None|
+|MBX2 (Replication)|10.0.1.5|255.255.255.0|None|
+|MBX3 (Replication)|10.0.2.4|255.255.255.0|None|
+|MBX4 (Replication)|10.0.2.5|255.255.255.0|None|
 
 As shown in the preceding table, adapters used for Replication networks don't use default gateways. To provide network connectivity between each of the Replication network adapters, Contoso uses persistent static routes, which they configure by using the Netsh.exe tool.
 
 To configure routing for the Replication network adapters on MBX1 and MBX2, the following command was run on each server.
 
-```
+```powershell
 netsh interface ipv4 add route 10.0.2.0/24 <NetworkName> 10.0.1.254
 ```
 
 To configure routing for the Replication network adapters on MBX3 and MBX4, the following command was run on each server.
 
-```
+```powershell
 netsh interface ipv4 add route 10.0.1.0/24 <NetworkName> 10.0.2.254
 ```
 
@@ -102,23 +103,23 @@ After the network adapters have been configured, Contoso is ready to create a DA
 
 The administrator has decided to create a Windows PowerShell command-line interface script that performs several tasks:
 
-- It uses the [New-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/c0cd98a9-eaaa-4cfb-845d-213e5d606d3b.aspx) cmdlet to create the DAG. Because BOSTON is considered to be the primary datacenter, Contoso has chosen to use a witness server in the same datacenter, namely, MBX5.
+- It uses the [New-DatabaseAvailabilityGroup](/powershell/module/exchange/new-databaseavailabilitygroup) cmdlet to create the DAG. Because BOSTON is considered to be the primary datacenter, Contoso has chosen to use a witness server in the same datacenter, namely, MBX5.
 
-- It uses the [Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) cmdlet to preconfigure an alternate witness server and alternate witness directory in case a datacenter switchover is ever necessary.
+- It uses the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup) cmdlet to preconfigure an alternate witness server and alternate witness directory in case a datacenter switchover is ever necessary.
 
-- It uses the [Add-DatabaseAvailabilityGroupServer](https://technet.microsoft.com/library/6bd0a3fe-dec6-47c2-b9a3-8dffb60e4aad.aspx) cmdlet to add each of the four Mailbox servers to the DAG.
+- It uses the [Add-DatabaseAvailabilityGroupServer](/powershell/module/exchange/add-databaseavailabilitygroupserver) cmdlet to add each of the four Mailbox servers to the DAG.
 
-- It uses the [Set-DatabaseAvailabilityGroup](https://technet.microsoft.com/library/4353c3ab-75b7-485e-89ae-d4b09b44b646.aspx) cmdlet to configure the DAG for DAC mode. For more information about DAC mode, see [Datacenter Activation Coordination mode](database-availability-groups/dac-mode.md).
+- It uses the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup) cmdlet to configure the DAG for DAC mode. For more information about DAC mode, see [Datacenter Activation Coordination mode](database-availability-groups/dac-mode.md).
 
 The following are the commands used in the script:
 
-```
+```powershell
 New-DatabaseAvailabilityGroup -Name DAG1 -WitnessServer MBX5 -WitnessDirectory C:\DAGWitness\DAG1.contoso.com -DatabaseAvailabilityGroupIPAddresses 192.168.1.8,192.168.2.8
 ```
 
 The preceding command creates the DAG DAG1, configures MBX5 to act as the witness server, configures a specific witness directory (C:\DAGWitness\DAG1.contoso.com), and configures two IP addresses for the DAG (one for each subnet on the MAPI network).
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -AlternateWitnessDirectory C:\DAGWitness\DAG1.contoso.com -AlternateWitnessServer MBX10
 ```
 
@@ -127,7 +128,7 @@ The preceding command configures DAG1 to use an alternate witness server of MBX1
 > [!NOTE]
 > Using the same path isn't required; Contoso has chosen to do this to standardize their configuration.
 
-```
+```powershell
 Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer MBX1
 Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer MBX3
 Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer MBX2
@@ -136,7 +137,7 @@ Add-DatabaseAvailabilityGroupServer -Identity DAG1 -MailboxServer MBX4
 
 The preceding commands add each of the Mailbox servers, one at a time, to the DAG. The commands also install the Windows Failover Clustering component on each Mailbox server (if it isn't already installed), create a failover cluster, and join each Mailbox server to the newly created cluster.
 
-```
+```powershell
 Set-DatabaseAvailabilityGroup -Identity DAG1 -DatacenterActivationMode DagOnly
 ```
 
@@ -160,7 +161,7 @@ To create this configuration, the administrator runs several commands.
 
 On MBX1, run the following commands.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB1 -MailboxServer MBX2
 Add-MailboxDatabaseCopy -Identity DB1 -MailboxServer MBX4
 Add-MailboxDatabaseCopy -Identity DB1 -MailboxServer MBX3 -ReplayLagTime 3.00:00:00 -SeedingPostponed
@@ -171,7 +172,7 @@ Suspend-MailboxDatabaseCopy -Identity DB1\MBX3 -ActivationOnly
 
 On MBX2, run the following commands.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB2 -MailboxServer MBX1
 Add-MailboxDatabaseCopy -Identity DB2 -MailboxServer MBX3
 Add-MailboxDatabaseCopy -Identity DB2 -MailboxServer MBX4 -ReplayLagTime 3.00:00:00 -SeedingPostponed
@@ -182,7 +183,7 @@ Suspend-MailboxDatabaseCopy -Identity DB2\MBX4 -ActivationOnly
 
 On MBX3, run the following commands.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB3 -MailboxServer MBX4
 Add-MailboxDatabaseCopy -Identity DB3 -MailboxServer MBX2
 Add-MailboxDatabaseCopy -Identity DB3 -MailboxServer MBX1 -ReplayLagTime 3.00:00:00 -SeedingPostponed
@@ -193,7 +194,7 @@ Suspend-MailboxDatabaseCopy -Identity DB3\MBX1 -ActivationOnly
 
 On MBX4, run the following commands.
 
-```
+```powershell
 Add-MailboxDatabaseCopy -Identity DB4 -MailboxServer MBX3
 Add-MailboxDatabaseCopy -Identity DB4 -MailboxServer MBX1
 Add-MailboxDatabaseCopy -Identity DB4 -MailboxServer MBX2 -ReplayLagTime 3.00:00:00 -SeedingPostponed
@@ -204,22 +205,22 @@ Suspend-MailboxDatabaseCopy -Identity DB4\MBX2 -ActivationOnly
 
 In the preceding examples for the **Add-MailboxDatabaseCopy** cmdlet, the _ActivationPreference_ parameter wasn't specified. The task automatically increments the activation preference number with each copy that's added. The original database always has a preference number of 1. The first copy added with the **Add-MailboxDatabaseCopy** cmdlet is automatically assigned a preference number of 2. Assuming no copies are removed, the next copy added is automatically assigned a preference number of 3, and so forth. Thus, in the preceding examples, the passive copy in the same datacenter as the active copy has an activation preference number of 2; the non-lagged passive copy in the remote datacenter has an activation preference number of 3, and the lagged passive copy in the remote datacenter has an activation preference number of 4.
 
-Although there are two copies of each active database across the WAN in the other location, seeding over the WAN was only performed once. This is because Contoso is leveraging the Exchange Server ability to use a passive copy of a database as the source for seeding. Using the [Add-MailboxDatabaseCopy](https://technet.microsoft.com/library/84198fa9-ac8e-44ea-bd7b-64fe1e83e709.aspx) cmdlet with the _SeedingPostponed_ parameter prevents the task from automatically seeding the new database copy being created. Then, the administrator can suspend the un-seeded copy, and by using the [Update-MailboxDatabaseCopy](https://technet.microsoft.com/library/37ebb66a-382e-4fd9-81f8-795f776a87b1.aspx) cmdlet with the _SourceServer_ parameter, the administrator can specify the local copy of the database as the source of the seeding operation. As a result, seeding of the second database copy added to each location happens locally and not over the WAN.
+Although there are two copies of each active database across the WAN in the other location, seeding over the WAN was only performed once. This is because Contoso is leveraging the Exchange Server ability to use a passive copy of a database as the source for seeding. Using the [Add-MailboxDatabaseCopy](/powershell/module/exchange/add-mailboxdatabasecopy) cmdlet with the _SeedingPostponed_ parameter prevents the task from automatically seeding the new database copy being created. Then, the administrator can suspend the un-seeded copy, and by using the [Update-MailboxDatabaseCopy](/powershell/module/exchange/update-mailboxdatabasecopy) cmdlet with the _SourceServer_ parameter, the administrator can specify the local copy of the database as the source of the seeding operation. As a result, seeding of the second database copy added to each location happens locally and not over the WAN.
 
 > [!NOTE]
 > In the preceding example, the non-lagged database copy is seeded over the WAN, and that copy is then used to seed the lagged copy of the database that's in the same datacenter as the non-lagged copy.
 
-Contoso has configured one of the passive copies of each mailbox database as a lagged database copy to provide protection against the extremely rare but catastrophic case of database logical corruption. As a result, the administrator is configuring the lagged copies as blocked for activation by using the [Suspend-MailboxDatabaseCopy](https://technet.microsoft.com/library/b6e03402-706e-40c6-b392-92e3da21b5c0.aspx) cmdlet with the _ActivationOnly_ parameter. This ensures that the lagged database copies won't be activated if a database or server failover occurs.
+Contoso has configured one of the passive copies of each mailbox database as a lagged database copy to provide protection against the extremely rare but catastrophic case of database logical corruption. As a result, the administrator is configuring the lagged copies as blocked for activation by using the [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/suspend-mailboxdatabasecopy) cmdlet with the _ActivationOnly_ parameter. This ensures that the lagged database copies won't be activated if a database or server failover occurs.
 
 ### Validating the solution
 
 After the solution has been deployed and configured, the administrator performs several tasks that validate the solution's readiness prior to moving production mailboxes to the databases in the DAG. The solution should be tested and inspected using several methods, including failure simulations. To validate the solution, the administrator performs several tasks.
 
-To verify the overall health of the DAG, the administrator runs the [Test-ReplicationHealth](https://technet.microsoft.com/library/da55fa0f-e100-44b1-b9b4-bf14e55a5b4d.aspx) cmdlet. This cmdlet checks several aspects of the replication and replay status to provide information about each Mailbox server and database copy in the DAG.
+To verify the overall health of the DAG, the administrator runs the [Test-ReplicationHealth](/powershell/module/exchange/test-replicationhealth) cmdlet. This cmdlet checks several aspects of the replication and replay status to provide information about each Mailbox server and database copy in the DAG.
 
-To verify replication and replay activity, the administrator runs the [Get-MailboxDatabaseCopyStatus](https://technet.microsoft.com/library/6ad690fb-3a23-41d4-b19d-666b34e62b26.aspx) cmdlet. This cmdlet can provide real-time status information about a specific mailbox database copy or for all mailbox database copies on a specific server. For more information about monitoring the health and status of replicated databases in a DAG, see [Monitor database availability groups](manage-ha/monitor-dags.md).
+To verify replication and replay activity, the administrator runs the [Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/get-mailboxdatabasecopystatus) cmdlet. This cmdlet can provide real-time status information about a specific mailbox database copy or for all mailbox database copies on a specific server. For more information about monitoring the health and status of replicated databases in a DAG, see [Monitor database availability groups](manage-ha/monitor-dags.md).
 
-To verify that switchovers work as expected, the administrator uses the [Move-ActiveMailboxDatabase](https://technet.microsoft.com/library/755d1ecb-95d1-45e3-9a21-56df9f196f37.aspx) cmdlet to perform a series of database switchovers and server switchovers. When these tasks have completed successfully, the administrator uses the same cmdlet to move the active database copies back to their original locations.
+To verify that switchovers work as expected, the administrator uses the [Move-ActiveMailboxDatabase](/powershell/module/exchange/move-activemailboxdatabase) cmdlet to perform a series of database switchovers and server switchovers. When these tasks have completed successfully, the administrator uses the same cmdlet to move the active database copies back to their original locations.
 
 To verify the expected behaviors in various failure scenarios, the administrator performs several tasks that either simulate failures or actually cause failures to occur. For example, the administrator might:
 

@@ -2,13 +2,14 @@
 title: 'Configure pipeline tracing: Exchange 2013 Help'
 TOCTitle: Configure pipeline tracing
 ms:assetid: 10293c83-2157-474e-840d-942e064a4672
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ916678(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/JJ916678(v=EXCHG.150)
 ms:contentKeyID: 50934211
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -33,7 +34,7 @@ Pipeline tracing captures copies of email messages as they move through the tran
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkid=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Enable and configure pipeline tracing
 

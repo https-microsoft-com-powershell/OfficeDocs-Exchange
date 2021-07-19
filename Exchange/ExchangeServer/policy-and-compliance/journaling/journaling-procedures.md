@@ -5,10 +5,11 @@ ms.topic: article
 author: msdmaguire
 ms.author: dmaguire
 ms.assetid: d517f27e-f80a-4a06-988c-cbbf981c701d
-ms.date:
 ms.reviewer:
 title: Journaling procedures in Exchange Server
 ms.collection: exchange-server
+f1.keywords:
+- NOCSH
 audience: ITPro
 ms.prod: exchange-server-it-pro
 manager: serdars
@@ -27,12 +28,12 @@ This topic shows you how to configure standard journaling (journal messages for 
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Journaling" entry in the [Messaging policy and compliance permissions in Exchange Server](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
 
-- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](https://docs.microsoft.com/powershell/exchange/exchange-server/open-the-exchange-management-shell).
+- To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](../../about-documentation/exchange-admin-center-keyboard-shortcuts.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612), [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542), or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351). If you're having trouble with the **JournalingReportDNRTo** mailbox, see [Transport and Mailbox Rules in Exchange Online don't work as expected](https://go.microsoft.com/fwlink/p/?LinkId=331674).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE). If you're having trouble with the **JournalingReportDNRTo** mailbox, see [Transport and Mailbox Rules in Exchange Online don't work as expected](https://support.microsoft.com/help/2829319).
 
 ## Procedures for standard journaling
 
@@ -105,7 +106,7 @@ To verify that you've successfully enabled or disabled journaling on a mailbox d
 
 ## Procedures for premium journaling
 
-Premium journaling uses *journal rules* to record messages based on recipients (all recipients or specified recipients) and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange Server Licensing](https://go.microsoft.com/fwlink/p/?linkid=237292).
+Premium journaling uses *journal rules* to record messages based on recipients (all recipients or specified recipients) and scope (internal messages, external messages, or all messages). Premium journaling requires Exchange Enterprise client access licenses (CALs). For more information about CALs, see [Exchange licensing FAQs](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview).
 
 ### Create journal rules
 
@@ -169,7 +170,7 @@ New-JournalRule -Name "Regulation 123" -JournalEmailAddress "Journal Mailbox" -R
 
  **Note**: To create a journal rule that applies to all recipients, don't use the _Recipient_ parameter.
 
-For detailed syntax and parameter information, see [New-JournalRule](https://technet.microsoft.com/library/fcad9ef1-b3f2-442d-a1a7-cd1bbe442054.aspx).
+For detailed syntax and parameter information, see [New-JournalRule](/powershell/module/exchange/new-journalrule).
 
 #### How do you know this worked?
 
@@ -248,7 +249,7 @@ No additional settings are available when you modify a journal rule. They're the
 
     You can't use the **Set-Journal** cmdlet to enable or disable the rule (there's no _Enabled_ parameter). To enable or disable the rule, you use the **Enable-JournalRule** and **Disable-JournalRule** cmdlets as described in the [Enable or disable journal rules](#enable-or-disable-journal-rules) section.
 
-    For detailed syntax and parameter information, see [Set-JournalRule](https://technet.microsoft.com/library/e72562c6-64d2-43c3-81b0-062e7d7b28c9.aspx).
+    For detailed syntax and parameter information, see [Set-JournalRule](/powershell/module/exchange/set-journalrule).
 
 ### Remove journal rules
 
@@ -272,7 +273,7 @@ This example removes the journal rule named Brokerage Journal Rule.
 Remove-JournalRule "Brokerage Journal Rule"
 ```
 
-For detailed syntax and parameter information, see [Remove-JournalRule](https://technet.microsoft.com/library/7cb9d691-2b0c-4f64-982d-ce69f3c3e757.aspx).
+For detailed syntax and parameter information, see [Remove-JournalRule](/powershell/module/exchange/remove-journalrule).
 
 #### How do you know this worked?
 
@@ -372,7 +373,7 @@ Journal report decryption allows **premium journaling** to save a clear-text cop
 
 To enable journal report decryption, perform the following steps:
 
-1. Configure the AD RMS super users group. For instructions, see [Add the Federation Mailbox to the AD RMS Super Users Group](https://technet.microsoft.com/library/44618df9-54f0-4474-a450-dcba48a02901.aspx).
+1. Configure the AD RMS super users group. For instructions, see [Add the Federation Mailbox to the AD RMS Super Users Group](../../../ExchangeServer2013/add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 2. Run the following command in the Exchange Management Shell:
 
@@ -380,4 +381,4 @@ To enable journal report decryption, perform the following steps:
    Set-IRMConfiguration -JournalReportDecryptionEnabled $true
    ```
 
-For more information, see [Enable or Disable Journal Report Decryption](https://technet.microsoft.com/library/1dedbe73-2c1a-4b14-8799-5091aaec7965.aspx).
+For more information, see [Enable or Disable Journal Report Decryption](../../../ExchangeServer2013/enable-or-disable-journal-report-decryption-exchange-2013-help.md).

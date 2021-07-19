@@ -2,13 +2,14 @@
 title: 'Checklist: Integrate Exchange 2013 UM with Lync Server: Exchange 2013 Help'
 TOCTitle: 'Checklist: Integrate Exchange 2013 UM with Lync Server'
 ms:assetid: 3b82e86f-9f30-4445-96ad-744082abeaeb
-ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dd638120(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Dd638120(v=EXCHG.150)
 ms:contentKeyID: 49315388
-ms.date: 12/09/2016
 ms.reviewer: 
 manager: serdars
 ms.author: dmaguire
 author: msdmaguire
+f1.keywords:
+- NOCSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -24,7 +25,7 @@ Before you start working with this checklist, make sure you're familiar with the
 
   - [Coexistence with Office Communications Server 2007 R2 and Lync Server](coexistence-with-office-communications-server-2007-r2-and-lync-server-exchange-2013-help.md)
 
-For more information about how to perform the tasks that must be completed for Lync Server, see [Microsoft Lync Server 2013](https://go.microsoft.com/fwlink/p/?linkid=265752).
+For more information about how to perform the tasks that must be completed for Lync Server, see [Microsoft Lync Server 2013](/lyncserver/microsoft-lync-server-2013).
 
 ## Checklist for deploying Microsoft Lync Server and Unified Messaging
 
@@ -55,10 +56,10 @@ For more information about how to perform the tasks that must be completed for L
 <tr class="odd">
 <td><p></p></td>
 <td><p>Review the prerequisites for integrating Microsoft Lync Server 2013 and Microsoft Exchange Server 2013.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=282082">Prerequisites for Integrating Microsoft Lync Server 2013 and Microsoft Exchange Server 2013</a></p>
+<td><p><a href="/skypeforbusiness/plan-your-deployment/integrate-with-exchange/integrate-with-exchange">Prerequisites for Integrating Microsoft Lync Server 2013 and Microsoft Exchange Server 2013</a></p>
 
 > [!TIP]
-> The Unified Communications Managed API (UCMA) 4.0 Runtime is required for Exchange 2013 and Lync Server 2010 and 2013 and is installed during installation. To download and review information about UCMA 4.0, see <A href="https://go.microsoft.com/fwlink/p/?linkid=258269">Unified Communications Managed API 4.0 Runtime</A>
+> The Unified Communications Managed API (UCMA) 4.0 Runtime is required for Exchange 2013 and Lync Server 2010 and 2013 and is installed during installation. To download and review information about UCMA 4.0, see <A href="https://www.microsoft.com/download/details.aspx?id=34992">Unified Communications Managed API 4.0 Runtime</A>
 
 </td>
 </tr>
@@ -80,12 +81,12 @@ For more information about how to perform the tasks that must be completed for L
 <tr class="odd">
 <td><p><strong> </strong></p></td>
 <td><p>Create the number of SIP URI dial plans required for your organization.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan">Create a UM dial plan</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan">Create a UM dial plan</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Configure the dial plan security setting.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-voip-security-setting">Configure the VoIP security setting</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/connect-voice-mail-system/configure-voip-security-setting">Configure the VoIP security setting</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
@@ -95,7 +96,7 @@ For more information about how to perform the tasks that must be completed for L
 <tr class="even">
 <td><p></p></td>
 <td><p>Configure Outlook Voice Access numbers and other settings.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/connect-voice-mail-system/manage-um-dial-plan">Manage a UM dial plan</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/connect-voice-mail-system/manage-um-dial-plan">Manage a UM dial plan</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
@@ -105,18 +106,18 @@ For more information about how to perform the tasks that must be completed for L
 <tr class="even">
 <td><p></p></td>
 <td><p>Configure outbound dialing for Unified Messaging. Allow all calls on the SIP URI dial plans and UM mailbox policies that are linked to those dial plans.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-users-in-a-dial-plan">Authorize calls for users in a dial plan</a></p>
-<p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-a-group-of-users">Authorize calls for a group of users</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-users-in-a-dial-plan">Authorize calls for users in a dial plan</a></p>
+<p><a href="/exchange/voice-mail-unified-messaging/set-up-client-voice-mail-features/authorize-calls-for-a-group-of-users">Authorize calls for a group of users</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
 <td><p>Create the required number of auto attendants.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-um-auto-attendant">Create a UM auto attendant</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-um-auto-attendant">Create a UM auto attendant</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Set up and configure each of the UM auto attendants.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-up-um-auto-attendant">Set up a UM auto attendant</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-up-um-auto-attendant">Set up a UM auto attendant</a></p></td>
 </tr>
 <tr class="odd">
 <td><p> </p></td>
@@ -140,34 +141,34 @@ For more information about how to perform the tasks that must be completed for L
 <tr class="even">
 <td><p><strong> </strong></p></td>
 <td><p>Create a UM mailbox policy or configure the default UM mailbox policy.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy">Create a UM mailbox policy</a></p>
-<p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy">Manage a UM mailbox policy</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy">Create a UM mailbox policy</a></p>
+<p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy">Manage a UM mailbox policy</a></p></td>
 </tr>
 <tr class="odd">
 <td><p> </p></td>
 <td><p>Enable users for Unified Messaging with a SIP address and link them to a SIP URI dial plan.</p></td>
-<td><p><a href="https://docs.microsoft.com/en-us/exchange/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail">Enable a user for voice mail</a></p></td>
+<td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail">Enable a user for voice mail</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Review the Lync Server 2013 Planning documentation.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=282081">Planning</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-planning">Planning</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
 <td><p>Install and deploy Lync Server 2013.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=282051">Deploying Lync Server 2013</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-deploying-lync-server">Deploying Lync Server 2013</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Import the mutually-trusted internal PKI or third-party certificate that is imported on the Exchange UM servers.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281863">Configure Certificates for Servers</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=281865">Configure Certificates on the Server Running Microsoft Exchange Server Unified Messaging</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-configure-certificates-for-servers">Configure Certificates for Servers</a></p>
+<p><a href="/lyncserver/lync-server-2013-configure-certificates-on-the-server-running-microsoft-exchange-server-unified-messaging">Configure Certificates on the Server Running Microsoft Exchange Server Unified Messaging</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
 <td><p>If required, start Lync services on servers to load the certificates.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=282084">Start Services on Servers</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-start-services-on-servers">Start Services on Servers</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
@@ -178,43 +179,43 @@ For more information about how to perform the tasks that must be completed for L
 <tr class="odd">
 <td><p></p></td>
 <td><p>Review the requirements for Enterprise Voice.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281876">Software Prerequisites for Enterprise Voice</a></p>
-<p><a href="https://go.microsoft.com/fwlink/p/?linkid=281875">Security and Configuration Prerequisites for Enterprise Voice</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-software-prerequisites-for-enterprise-voice">Software Prerequisites for Enterprise Voice</a></p>
+<p><a href="/skypeforbusiness/deploy/deploy-enterprise-voice/enterprise-voice-security">Security and Configuration Prerequisites for Enterprise Voice</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Deploy and configure media gateways or Mediation Servers and define peers.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281872">Deploying Mediation Servers and Defining Peers</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-deploying-mediation-servers-and-defining-peers">Deploying Mediation Servers and Defining Peers</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
 <td><p>Configure a trunk between a Mediation Server and one or more of the peers to provide public switched telephone network (PSTN) connectivity.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281868">Configuring Trunks</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-configuring-trunks">Configuring Trunks</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Create and configure a Lync dial plan and create, define, and associate normalization rules.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281867">Configuring Dial Plans</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-configuring-dial-plans">Configuring Dial Plans</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
 <td><p>Configure voice policies and define telephone usage and outbound call routes.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281869">Configuring Voice Policies, PSTN Usage Records, and Voice Routes</a></p></td>
+<td><p><a href="/skypeforbusiness/deploy/deploy-enterprise-voice/voice-and-pstn">Configuring Voice Policies, PSTN Usage Records, and Voice Routes</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Run the Exchange Integration utility (ocsumutil.exe), which creates the contact objects for Outlook Voice Access and for the auto attendants.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281866">Configure Lync Server 2013 to Work with Unified Messaging on Microsoft Exchange Server</a></p></td>
+<td><p><a href="/lyncserver/lync-server-2013-configure-lync-server-2013-to-work-with-unified-messaging-on-microsoft-exchange-server">Configure Lync Server 2013 to Work with Unified Messaging on Microsoft Exchange Server</a></p></td>
 </tr>
 <tr class="odd">
 <td><p></p></td>
 <td><p>Define, deploy, and configure any required advanced Enterprise Voice features.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281871">Deploying Advanced Enterprise Voice Features</a></p></td>
+<td><p><a href="/skypeforbusiness/deploy/deploy-enterprise-voice/deploy-advanced-enterprise-voice-features">Deploying Advanced Enterprise Voice Features</a></p></td>
 </tr>
 <tr class="even">
 <td><p></p></td>
 <td><p>Enable the users for Enterprise Voice. Enter a line URI and assign a voice policy and a Lync dial plan.</p></td>
-<td><p><a href="https://go.microsoft.com/fwlink/p/?linkid=281873">Enable Users for Enterprise Voice</a></p></td>
+<td><p><a href="/skypeforbusiness/deploy/deploy-enterprise-voice/enable-users-for-enterprise-voice">Enable Users for Enterprise Voice</a></p></td>
 </tr>
 </tbody>
 </table>

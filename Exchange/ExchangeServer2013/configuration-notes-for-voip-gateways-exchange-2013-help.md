@@ -4,9 +4,7 @@ TOCTitle: Configuration notes for supported VoIP gateways, IP PBXs, and PBXs
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 6/24/2018
 ms.reviewer: 
-ms.assetid: 1583674f-5a57-45fd-8125-087d1624e686
 mtps_version: v=EXCHG.150
 ---
 
@@ -34,7 +32,7 @@ Each PBX configuration note contains information about how to deploy Unified Mes
 
   - A list of Unified Messaging features that may not be available with a given telephony configuration.
 
-To find out more about the Microsoft Unified Communications Open Interoperability Program for enterprise telephony infrastructure, including finding qualified SIP PSTN gateways and IP PBXs and the process telephony infrastructure vendors can use to join and participate in the program, see [Microsoft Unified Communications Open Interoperability Program](https://go.microsoft.com/fwlink/p/?linkId=132071).
+To find out more about the Microsoft Unified Communications Open Interoperability Program for enterprise telephony infrastructure, including finding qualified SIP PSTN gateways and IP PBXs and the process telephony infrastructure vendors can use to join and participate in the program, see [Microsoft Unified Communications Open Interoperability Program](/SkypeForBusiness/lync-cert/qualified-lync-apps).
 
 ## VoIP gateway, IP PBX, and PBX configuration notes
 
@@ -45,8 +43,8 @@ Microsoft is working with VoIP gateway partners, AudioCodes and Dialogic, to add
 
 |**PBX model**|**PBX software release**|**Protocol**|**Gateway vendor**|**Gateway model**|**Configuration author**|**Configuration file download**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|Aastra MD110 (formerly Ericsson MD110)|MX1 TSW R2A (aka BC13)|Analog - Serial MD110|Dialogic|DMG1008LSW|Dialogic|[Download](https://www.dialogic.com/support/helpweb/mg/integration-exchange-2013-help.md)|
-| Aastra MD110 (formerly Ericsson MD110)|MX1 TSW R2A (aka BC13)|E1 Q.SIG|Dialogic|DMG2030DTIQ|Dialogic|[Download](https://www.dialogic.com/support/helpweb/mg/integration-exchange-2013-help.md)|
+|Aastra MD110 (formerly Ericsson MD110)|MX1 TSW R2A (aka BC13)|Analog - Serial MD110|Dialogic|DMG1008LSW|Dialogic|[Download](https://www.dialogic.com/support/helpweb/mg/)|
+| Aastra MD110 (formerly Ericsson MD110)|MX1 TSW R2A (aka BC13)|E1 Q.SIG|Dialogic|DMG2030DTIQ|Dialogic|[Download](https://www.dialogic.com/support/helpweb/mg/)|
 | Aastra MX-ONE|4.0|Direct SIP Connection|N.A.|N.A.|Aastra|[Download](http://www.aastra.com/cps/rde/aareddownload?file_id=4384-14746-_P06_XML&dsproject=aastra&mtype=pdf)|
 
 ### Alcatel
@@ -83,10 +81,10 @@ Microsoft is working with VoIP gateway partners, AudioCodes and Dialogic, to add
 |**PBX model**|**PBX software release**|**Protocol**|**Gateway vendor**|**Gateway model**|**Configuration author**|**Configuration file download**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |Cisco Call Manager 4.x|4.x|IP-to-IP|AudioCodes|AudioCodes|AudioCodes|[Download](https://www.audiocodes.com/solutions/microsoft-unified-messaging)|
-|Cisco Call Manager 5.1|5.1.0.9921-12|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://go.microsoft.com/fwlink/p/?linkId=225083)|
-|Cisco Unified Communications Manager 6.0 and 6.1|6.x|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://go.microsoft.com/fwlink/p/?linkId=225083)|
-|Cisco Unified Communications Manager 7.0|7.0.2.20000-5|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://go.microsoft.com/fwlink/p/?linkId=196361)|
-|Cisco Unified Communications Manager 8.0|8.0.3.20000-5|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://go.microsoft.com/fwlink/p/?linkId=213007)|
+|Cisco Call Manager 5.1|5.1.0.9921-12|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://www.microsoft.com/download/details.aspx?id=26834)|
+|Cisco Unified Communications Manager 6.0 and 6.1|6.x|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://www.microsoft.com/download/details.aspx?id=26834)|
+|Cisco Unified Communications Manager 7.0|7.0.2.20000-5|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://www.microsoft.com/download/details.aspx?id=18298)|
+|Cisco Unified Communications Manager 8.0|8.0.3.20000-5|Direct SIP Connection|N.A.|N.A.|Microsoft|[Download](https://www.microsoft.com/download/details.aspx?id=13591)|
 
 ### Inter-Tel
 <a name="inter-tel"> </a>

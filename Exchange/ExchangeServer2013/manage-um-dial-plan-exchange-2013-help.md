@@ -4,11 +4,12 @@ TOCTitle: Manage a UM dial plan
 ms.author: dmaguire
 author: msdmaguire
 manager: serdars
-ms.date: 4/26/2018
 ms.reviewer:
-f1_keywords:
+ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Servers.UnifiedMessaging.DialPlanGeneralPropertyPage'
 ms.assetid: a89735e4-36ec-49fb-ad0f-192fad37e801
+f1.keywords:
+- CSH
 mtps_version: v=EXCHG.150
 ---
 
@@ -18,20 +19,20 @@ _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
 After you create a Unified Messaging (UM) dial plan, you can view and configure a variety of settings. For example, you can configure the level of Voice over IP (VoIP) security, the audio codec, and dialing restrictions. The settings that you configure on the UM dial plan affect all users who are linked with the dial plan through a UM mailbox policy.
 
-For additional management tasks related to UM dial plans, see [UM Dial Plan Procedures](https://technet.microsoft.com/library/1bda77c8-c4e2-4ae0-a001-76ae029bf843.aspx).
+For additional management tasks related to UM dial plans, see [UM dial plan procedures in Exchange Server](um-dial-plan-procedures-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging Permissions](https://technet.microsoft.com/library/d326c3bc-8f33-434a-bf02-a83cc26a5498.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "UM dial plans" entry in the [Unified Messaging permissions](unified-messaging-permissions-exchange-2013-help.md) topic.
 
 - Before you perform these procedures, confirm that a UM dial plan has been created. For detailed steps, see [Create a UM dial plan](create-um-dial-plan-exchange-2013-help.md).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center in Exchange 2013](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://go.microsoft.com/fwlink/p/?linkId=60612).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
 ## Use the EAC to view or configure UM dial plan settings
 
@@ -254,7 +255,7 @@ For additional management tasks related to UM dial plans, see [UM Dial Plan Proc
    - **Allow calls to any extension**: When this setting is disabled, users who call in to an Outlook Voice Access number on the dial plan can't place calls to users who aren't UM-enabled or to other extension numbers not associated with a UM-enabled user. However, they can place a call or transfer a call to extension numbers associated with UM-enabled users. This is because the **Calls in the same UM dial plan** setting is enabled by default. The **Allow calls to any extension** setting is disabled by default.
 
      > [!NOTE]
-     > To avoid attempted fraud and other potential threats to your UM environment, follow the guidance in the blog post [Is your Exchange Unified Messaging protected against telecommunication fraud?](https://blogs.msdn.microsoft.com/mahmoud_badran/2017/02/15/is-your-exchange-unified-messaging-protected-against-telecommunication-fraud/)
+     > To avoid attempted fraud and other potential threats to your UM environment, follow the guidance in the blog post [Is your Exchange Unified Messaging protected against telecommunication fraud?](/archive/blogs/mahmoud_badran/is-your-exchange-unified-messaging-protected-against-telecommunication-fraud)
 
      When this setting is enabled, users who call in to an Outlook Voice Access number configured on the dial plan can place calls to users who aren't UM-enabled, to other extension numbers not associated with a UM-enabled user, and to UM-enabled users. This is because the **Calls in the same UM dial plan** setting is enabled by default.
 

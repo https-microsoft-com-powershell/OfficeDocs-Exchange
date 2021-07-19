@@ -1,12 +1,13 @@
 ---
 localization_priority: Normal
-description: A group naming policy lets you standardize and manage the names of distribution groups created by users in your organization. You can require a specific prefix and suffix be added to the name for a distribution group when it's created, and you can block specific words from being used. This helps you minimize the use of inappropriate words in group names.
+description: A group naming policy lets you standardize and manage the names of distribution groups created by users in your organization. You can add specific prefix and suffix to the name of a distribution group when it's created. And you can also block specific words from being used. This helps you minimize the use of inappropriate words in group names.
 ms.topic: article
 author: msdmaguire
-ms.author: dmaguire
+ms.author: jhendr
 ms.assetid: b2ffb654-345d-4be1-be8e-83d28901373e
-ms.date: 11/17/2014
 ms.reviewer: 
+f1.keywords:
+- NOCSH
 title: Create a distribution group naming policy
 ms.collection: 
 - exchange-online
@@ -19,7 +20,7 @@ manager: serdars
 
 # Create a distribution group naming policy
 
-A group naming policy lets you standardize and manage the names of distribution groups created by users in your organization. You can require a specific prefix and suffix be added to the name for a distribution group when it's created, and you can block specific words from being used. This helps you minimize the use of inappropriate words in group names.
+A group naming policy lets you standardize and manage the names of distribution groups created by users in your organization. You can add specific prefix and suffix to the name of a distribution group when it's created. And you can also block specific words from being used. This helps you minimize the use of inappropriate words in group names.
 
 A group naming policy:
 
@@ -61,7 +62,7 @@ Here are some examples of a group naming policy. In each, **\<Group Name\>** is 
 
 - Estimated time to complete: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution Groups" entry in the [Recipients permissions](https://technet.microsoft.com/library/5b690bcb-c6df-4511-90e1-08ca91f43b37.aspx) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Recipients" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
 
 - The maximum length for a group name is 64 characters. This includes the combined number of characters in the prefix, the group name provided by the user, and the suffix.
 
@@ -74,11 +75,33 @@ Here are some examples of a group naming policy. In each, **\<Group Name\>** is 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
-> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://go.microsoft.com/fwlink/p/?linkId=267542) or [Exchange Online Protection](https://go.microsoft.com/fwlink/p/?linkId=285351).
+> Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
-## Use the EAC to create a group naming policy
+## Use the new EAC to create a group naming policy
 
-1. In the EAC, select **Groups** \> **More** ![More Options Icon](../../media/ITPro_EAC_MoreOptionsIcon.gif) \> **Configure group naming policy**.
+1. Go to [new Exchange admin center](https://admin.exchange.microsoft.com/#/), and navigate to **Recipients** > **Groups**.
+
+2. Click **Add naming policy** to add prefixes and suffixes to your group names.
+
+3. In **Edit group naming policy** details pane, under **Policy** section, configure the prefix by selecting either **Attribute** or **Text** in the drop-down menu. 
+   
+4. Click **Add prefix** to add more prefixes.
+
+5. For the suffix, in the drop-down menu, select either **Attribute** or **Text**, and configure the suffix.
+
+6. Click **Add suffix** to add more prefixes.
+
+   After you add a prefix and suffix, notice that a preview of the group naming policy is displayed.
+   
+ 7. To delete a prefix or suffix from the policy, select **X**.
+ 
+ 8. Under **Blocked words** section, add specific words that you want to block from being used in group names and aliases.
+ 
+ 9. When you are finished, click **Save**.
+ 
+## Use the Classic EAC to create a group naming policy
+
+1. In the Classic EAC, select **Groups** \> **More** ![More Options Icon](../../media/ITPro_EAC_MoreOptionsIcon.gif) \> **Configure group naming policy**.
 
 2. Under **Group Naming Policy**, configure the prefix by selecting either **Attribute** or **Text** in the pull-down menu.
 
@@ -88,11 +111,11 @@ Here are some examples of a group naming policy. In each, **\<Group Name\>** is 
 
    Notice that the text string that you typed or the attribute you selected is displayed as a hyperlink. Click the hyperlink to change the text string or attribute.
 
-3. Click **Add** to add additional prefixes.
+3. Click **Add** to add more prefixes.
 
 4. For the suffix, in the pull-down menu, select either **Attribute** or **Text**, and configure the suffix.
 
-5. Click **Add** to add additional suffixes.
+5. Click **Add** to add more suffixes.
 
    After you add a prefix or suffix, notice that a preview of the group naming policy is displayed.
 
@@ -112,12 +135,16 @@ Here are some examples of a group naming policy. In each, **\<Group Name\>** is 
 
 To verify that you've successfully created a group naming policy, do the following:
 
-- In the EAC, select **Groups** \> **More** \> **Configure group naming policy**.
+- In the new EAC, select **Recipients** > **Groups** > **Add naming policy**.
+
+  In **Edit group naming policy** details pane, the group naming policy that you defined is displayed under **Preview policy** section.
+  
+- In the Classic EAC, select **Groups** \> **More** \> **Configure group naming policy**.
 
   On the **Group naming policy** page, the group naming policy that you defined is displayed under **Preview of policy**.
 
 - In Windows PowerShell, run the following command to display the group naming policy.
 
-  ```
+  ```PowerShell
   Get-OrganizationConfig | Format-List DistributionGroupNamingPolicy
   ```
